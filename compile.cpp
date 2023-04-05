@@ -8,15 +8,70 @@
 #include <fstream>
 #include <vector>
 #include <unordered_map>
+#include <filesystem>
 
-struct SklHeader {
-  uint32_t deadbeef, fileType;
-  uint8_t padding_a[4];
-  uint32_t hash_id;
-  uint8_t padding_b[48];
-  uint32_t skill_tree_offset, skill_tree_len;
-  uint8_t padding_c[8];
-  uint32_t something_offset, something_len, idk;
+const char *hexLookup[] = {
+  "\\0",
+  "\\x01",
+  "\\x02",
+  "\\x03",
+  "\\x04",
+  "\\x05",
+  "\\x06",
+  "\\a",
+  "\\b",
+  "\\t",
+  "\\n",
+  "\\v",
+  "\\f",
+  "\\r",
+  "\\x0E",
+  "\\x0F",
+  "\\x10",
+  "\\x11",
+  "\\x12",
+  "\\x13",
+  "\\x14",
+  "\\x15",
+  "\\x16",
+  "\\x17",
+  "\\x18",
+  "\\x19",
+  "\\x1A",
+  "\\x1B",
+  "\\x1C",
+  "\\x1D",
+  "\\x1E",
+  "\\x1F",
+};
+
+class JsonInterface {
+  public:
+    std::string escape(std::string str) {
+      std::string ret = "";
+
+      for (char &c : str) {
+
+        switch (c) {
+          case '"':
+          case '\\':
+            ret += "\\" + c;
+            break;
+
+          default:
+            if (c < 32) {
+              ret += hexLookup[c];
+            }
+            else {
+              ret += c;
+            }
+        }
+      }
+
+      return ret;
+    }
+
+    virtual void OutputJSON(std::ofstream &out) = 0;
 };
 
 struct SklField {
@@ -31,16 +86,23 @@ struct SklField {
   std::vector<uint32_t> connections;
 };
 
-class SklFile {
-  std::ifstream file;
-public:
-  SklHeader header;
+struct SklFile : virtual public JsonInterface {
+  struct {
+    uint32_t deadbeef, fileType;
+    uint8_t padding_a[4];
+    uint32_t hash_id;
+    uint8_t padding_b[48];
+    uint32_t skill_tree_offset, skill_tree_len;
+    uint8_t padding_c[8];
+    uint32_t something_offset, something_len, idk;
+  } header;
+
   std::vector<SklField> fields;
 
   SklFile(const char *filename) {
     uint32_t data[4];
+    std::ifstream file(filename, std::fstream::binary);
 
-    file.open(filename, std::fstream::binary);
     file.read((char*)&header, sizeof(header));
     file.seekg(header.skill_tree_offset);
     file.read((char*)&data, 16);
@@ -62,23 +124,12 @@ public:
       }
     }
   }
-};
 
-int main() {
-  std::unordered_map<std::string, SklFile*> files;
-
-  files["Barbarian"] = new SklFile("data/Barbarian.skl");
-  files["Druid"] = new SklFile("data/Druid.skl");
-  files["Necromancer"] = new SklFile("data/Necromancer.skl");
-  files["Rogue"] = new SklFile("data/Rogue.skl");
-  files["Sorcerer"] = new SklFile("data/Sorcerer.skl");
-
-  for (const std::pair<const std::string, SklFile*> &sklfile : files) {
-    std::ofstream out("json/" + sklfile.first + ".skl.json");
+  void OutputJSON(std::ofstream &out) {
     out << "[\n";
     int c = 0;
 
-    for (const auto &skill : sklfile.second->fields) {
+    for (const auto &skill : fields) {
       if (c > 0) {
         out << ",\n";
       }
@@ -106,6 +157,75 @@ int main() {
       c++;
     }
     out << "\n]\n";
+  }
+};
+
+struct StlField {
+  uint32_t padding_a[2], key_offset, key_len, padding_b[2], val_offset, val_len, padding_c[2];
+};
+
+struct StlFile : virtual public JsonInterface {
+  struct {
+    uint32_t deadbeef, padding_a[2], hash_id, padding_b[5], info_len, padding_c[2];
+  } header;
+
+  std::unordered_map<std::string, std::string> strings;
+
+  StlFile(const char *filename) {
+    std::ifstream file(filename, std::fstream::binary);
+    file.read((char*)&header, sizeof(header));
+    int num_pairs = header.info_len / 40;
+    std::vector<StlField> fields;
+
+    while(num_pairs--) {
+      StlField field;
+      file.read((char*)&field, sizeof(field));
+      fields.push_back(field);
+    }
+
+    for (const StlField &field : fields) {
+      char key[field.key_len + 1]{0};
+      char val[field.val_len + 1]{0};
+
+      file.seekg(field.key_offset + 16);
+      file.read(key, field.key_len);
+      file.seekg(field.val_offset + 16);
+      file.read(val, field.val_len);
+      strings[key] = val;
+    }
+  }
+
+  void OutputJSON(std::ofstream &out) {
+    out << "{\n";
+
+    int count = 0;
+
+    for (const auto &entry : strings) {
+      if (count) {
+        out << ",\n";
+      }
+      out << "  \"" << escape(entry.first) << "\": \"" << escape(entry.second) << "\"";
+      count++;
+    }
+
+    out << "\n}\n";
+  }
+};
+
+int main() {
+  for (const auto &entry : std::filesystem::directory_iterator("data/")) {
+    std::string path = entry.path();
+    std::string name = entry.path().filename();
+    std::string ext = entry.path().extension();
+
+    if (ext == ".skl") {
+      std::ofstream out("json/" + name + ".json");
+      SklFile(path.c_str()).OutputJSON(out);
+    }
+    else if (ext == ".stl") {
+      std::ofstream out("json/" + name + ".json");
+      StlFile(path.c_str()).OutputJSON(out);
+    }
   }
 
   return 0;
