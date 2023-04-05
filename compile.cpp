@@ -7,7 +7,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <unordered_map>
+#include <map>
+#include <set>
 #include <filesystem>
 
 const char *hexLookup[] = {
@@ -169,7 +170,7 @@ struct StlFile : virtual public JsonInterface {
     uint32_t deadbeef, padding_a[2], hash_id, padding_b[5], info_len, padding_c[2];
   } header;
 
-  std::unordered_map<std::string, std::string> strings;
+  std::map<std::string, std::string> strings;
 
   StlFile(const char *filename) {
     std::ifstream file(filename, std::fstream::binary);
@@ -237,12 +238,16 @@ int main() {
       findex << "[\n";
       int count = 0;
 
+      std::set<std::filesystem::path> sorted;
+
       for (const auto &subentry : std::filesystem::directory_iterator(path)) {
+        sorted.insert(subentry);
+      }
+
+      for (const std::string &subpath : sorted) {
         if (count > 0) {
           findex << ",\n";
         }
-
-        std::string subpath = subentry.path();
 
         findex << "  \"" << escape(subpath.substr(5)) << "\"";
         count++;
