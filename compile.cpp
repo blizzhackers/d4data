@@ -59,7 +59,7 @@ class JsonInterface {
             break;
 
           default:
-            if (c < 32) {
+            if (c >= 0 && c < 32) {
               ret += hexLookup[c];
             }
             else {
@@ -219,10 +219,12 @@ int main() {
     std::string ext = entry.path().extension();
 
     if (ext == ".skl") {
+      std::cout << "Compiling skl file: " << path << ".json" << std::endl;
       std::ofstream out("json/" + name + ".json");
       SklFile(path.c_str()).OutputJSON(out);
     }
     else if (ext == ".stl") {
+      std::cout << "Compiling stl file: " << path << ".json" << std::endl;
       std::ofstream out("json/" + name + ".json");
       StlFile(path.c_str()).OutputJSON(out);
     }
