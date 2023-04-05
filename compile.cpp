@@ -45,32 +45,32 @@ const char *hexLookup[] = {
   "\\x1F",
 };
 
+std::string escape(std::string str) {
+  std::string ret = "";
+
+  for (char &c : str) {
+
+    switch (c) {
+      case '"':
+      case '\\':
+        ret += "\\" + c;
+        break;
+
+      default:
+        if (c >= 0 && c < 32) {
+          ret += hexLookup[c];
+        }
+        else {
+          ret += c;
+        }
+    }
+  }
+
+  return ret;
+}
+
 class JsonInterface {
   public:
-    std::string escape(std::string str) {
-      std::string ret = "";
-
-      for (char &c : str) {
-
-        switch (c) {
-          case '"':
-          case '\\':
-            ret += "\\" + c;
-            break;
-
-          default:
-            if (c >= 0 && c < 32) {
-              ret += hexLookup[c];
-            }
-            else {
-              ret += c;
-            }
-        }
-      }
-
-      return ret;
-    }
-
     virtual void OutputJSON(std::ofstream &out) = 0;
 };
 
@@ -220,13 +220,35 @@ int main() {
 
     if (ext == ".skl") {
       std::cout << "Compiling skl file: " << path << ".json" << std::endl;
-      std::ofstream out("json/" + name + ".json");
+      std::ofstream out("json/skl/" + name + ".json");
       SklFile(path.c_str()).OutputJSON(out);
     }
     else if (ext == ".stl") {
       std::cout << "Compiling stl file: " << path << ".json" << std::endl;
-      std::ofstream out("json/" + name + ".json");
+      std::ofstream out("json/stl/" + name + ".json");
       StlFile(path.c_str()).OutputJSON(out);
+    }
+  }
+
+  for (const auto &entry : std::filesystem::directory_iterator("json")) {
+    if (entry.is_directory()) {
+      std::string path = entry.path();
+      std::ofstream findex(path + ".json");
+      findex << "[\n";
+      int count = 0;
+
+      for (const auto &subentry : std::filesystem::directory_iterator(path)) {
+        if (count > 0) {
+          findex << ",\n";
+        }
+
+        std::string subpath = subentry.path();
+
+        findex << "  \"" << escape(subpath.substr(5)) << "\"";
+        count++;
+      }
+
+      findex << "\n]\n";
     }
   }
 
