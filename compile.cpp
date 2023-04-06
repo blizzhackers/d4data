@@ -70,6 +70,12 @@ std::string escape(std::string str) {
   return ret;
 }
 
+struct FileChunk {
+  uint32_t unk[2];
+  uint32_t offset;
+  uint32_t length;
+};
+
 class JsonInterface {
   public:
     virtual void OutputJSON(std::ofstream &out) = 0;
@@ -77,15 +83,14 @@ class JsonInterface {
 
 struct SklField {
   uint32_t id;
-  uint32_t reward_hash;
-  uint32_t padding_a;
+  uint32_t unk_hash;
+  uint32_t unk_a;
   float x, y;
   uint32_t is_root;
   uint32_t req_points;
-  uint32_t padding_b[3];
-  uint32_t connection_offset;
-  uint32_t connection_len;
-  uint32_t padding_c[4];
+  uint32_t unk_b;
+  FileChunk connection;
+  uint32_t unk_c[4];
   std::vector<uint32_t> connections;
 };
 
@@ -93,17 +98,12 @@ struct SklFile : virtual public JsonInterface {
   struct {
     uint32_t deadbeef;
     uint32_t fileType;
-    uint32_t padding_a;
+    uint32_t unk_a;
     uint32_t hash_id;
-    uint32_t padding_b[12];
-    uint32_t skill_tree_offset;
-    uint32_t skill_tree_len;
-    // start FileChunk
-    uint32_t padding_c[2];
-    uint32_t something_offset;
-    // end FileChunk;
-    uint32_t something_len;
-    uint32_t padding_d;
+    uint32_t unk_b[10];
+    FileChunk skill_tree;
+    FileChunk something;
+    uint32_t unk_d;
   } header;
 
   std::vector<SklField> fields;
@@ -113,20 +113,20 @@ struct SklFile : virtual public JsonInterface {
     std::ifstream file(filename, std::fstream::binary);
 
     file.read((char*)&header, sizeof(header));
-    file.seekg(header.skill_tree_offset);
+    file.seekg(header.skill_tree.offset);
     file.read((char*)&data, 16);
 
-    for (long c = 0; c < header.skill_tree_len; c += 64) {
+    for (long c = 0; c < header.skill_tree.length; c += 64) {
       SklField tmp;
       file.read((char*)&tmp, 64);
       fields.push_back(tmp);
     }
 
     for (SklField &tmp : fields) {
-      file.seekg(tmp.connection_offset);
+      file.seekg(tmp.connection.offset);
       uint32_t cdata[4];
       file.read((char*)&cdata, 16);
-      for (long c = 0; c < tmp.connection_len; c += 4) {
+      for (long c = 0; c < tmp.connection.length; c += 4) {
         uint32_t connection;
         file.read((char*)&connection, 4);
         tmp.connections.push_back(connection);
@@ -135,21 +135,21 @@ struct SklFile : virtual public JsonInterface {
   }
 
   void OutputJSON(std::ofstream &out) {
-    out << "[\n";
+    out << "[";
     int c = 0;
 
     for (const auto &skill : fields) {
       if (c > 0) {
-        out << ",\n";
+        out << ",";
       }
 
-      out << "  {\n";
-      out << "    \"id\": " << skill.id << ",\n";
-      out << "    \"is_root\": " << skill.is_root << ",\n";
-      out << "    \"x\": " << skill.x << ",\n";
-      out << "    \"y\": " << skill.y << ",\n";
-      out << "    \"req_points\": " << skill.req_points << ",\n";
-      out << "    \"connections\": [";
+      out << "\n  {";
+      out << "\n    \"id\": " << skill.id << ",";
+      out << "\n    \"is_root\": " << skill.is_root << ",";
+      out << "\n    \"x\": " << skill.x << ",";
+      out << "\n    \"y\": " << skill.y << ",";
+      out << "\n    \"req_points\": " << skill.req_points << ",";
+      out << "\n    \"connections\": [";
 
       int d = 0;
 
@@ -170,21 +170,23 @@ struct SklFile : virtual public JsonInterface {
 };
 
 struct StlField {
-  uint32_t padding_a[2];
-  uint32_t key_offset;
-  uint32_t key_len;
-  uint32_t padding_b[2];
-  uint32_t val_offset;
-  uint32_t val_len;
-  uint32_t padding_c[2];
+  FileChunk key;
+  FileChunk value;
+  uint32_t hash;
+  uint32_t unk;
 };
 
 struct StlFile : virtual public JsonInterface {
   struct {
-    uint32_t deadbeef, padding_a[2], hash_id, padding_b[5], info_len, padding_c[2];
+    uint32_t deadbeef;
+    uint32_t unk_a[2];
+    uint32_t hash_id;
+    uint32_t unk_b[5];
+    uint32_t info_len;
+    uint32_t unk_c[2];
   } header;
 
-  std::map<std::string, std::string> strings;
+  std::map<std::string, std::map<std::string, std::string>> strings;
 
   StlFile(const char *filename) {
     std::ifstream file(filename, std::fstream::binary);
@@ -199,28 +201,45 @@ struct StlFile : virtual public JsonInterface {
     }
 
     for (const StlField &field : fields) {
-      char key[field.key_len + 1]{0};
-      char val[field.val_len + 1]{0};
+      char key[field.key.length + 1]{0};
+      char val[field.value.length + 1]{0};
+      char hash[9]{0};
 
-      file.seekg(field.key_offset + 16);
-      file.read(key, field.key_len);
-      file.seekg(field.val_offset + 16);
-      file.read(val, field.val_len);
-      strings[key] = val;
+      sprintf(hash, "%08X", field.hash);
+
+      file.seekg(field.key.offset + 16);
+      file.read(key, field.key.length);
+      file.seekg(field.value.offset + 16);
+      file.read(val, field.value.length);
+      strings[hash][key] = val;
     }
   }
 
   void OutputJSON(std::ofstream &out) {
-    out << "{\n";
+    out << "{";
 
-    int count = 0;
+    int c = 0;
 
-    for (const auto &entry : strings) {
-      if (count) {
-        out << ",\n";
+    for (const auto &hash_entry : strings) {
+      if (c) {
+        out << ",";
       }
-      out << "  \"" << escape(entry.first) << "\": \"" << escape(entry.second) << "\"";
-      count++;
+
+      out << "\n  \"" << hash_entry.first << "\": {";
+
+      int d = 0;
+      for (const auto &entry : hash_entry.second) {
+        if (d) {
+          out << ",";
+        }
+
+        out << "\n    \"" << escape(entry.first) << "\": \"" << escape(entry.second) << "\"";
+        d++;
+      }
+
+      out << "\n  }";
+
+      c++;
     }
 
     out << "\n}\n";
