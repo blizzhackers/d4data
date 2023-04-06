@@ -76,26 +76,34 @@ class JsonInterface {
 };
 
 struct SklField {
-  uint32_t id, reward_hash;
+  uint32_t id;
+  uint32_t reward_hash;
   uint32_t padding_a;
   float x, y;
   uint32_t is_root;
   uint32_t req_points;
   uint32_t padding_b[3];
-  uint32_t connection_offset, connection_len;
+  uint32_t connection_offset;
+  uint32_t connection_len;
   uint32_t padding_c[4];
   std::vector<uint32_t> connections;
 };
 
 struct SklFile : virtual public JsonInterface {
   struct {
-    uint32_t deadbeef, fileType;
-    uint8_t padding_a[4];
+    uint32_t deadbeef;
+    uint32_t fileType;
+    uint32_t padding_a;
     uint32_t hash_id;
-    uint8_t padding_b[48];
-    uint32_t skill_tree_offset, skill_tree_len;
-    uint8_t padding_c[8];
-    uint32_t something_offset, something_len, idk;
+    uint32_t padding_b[12];
+    uint32_t skill_tree_offset;
+    uint32_t skill_tree_len;
+    // start FileChunk
+    uint32_t padding_c[2];
+    uint32_t something_offset;
+    // end FileChunk;
+    uint32_t something_len;
+    uint32_t padding_d;
   } header;
 
   std::vector<SklField> fields;
@@ -162,7 +170,13 @@ struct SklFile : virtual public JsonInterface {
 };
 
 struct StlField {
-  uint32_t padding_a[2], key_offset, key_len, padding_b[2], val_offset, val_len, padding_c[2];
+  uint32_t padding_a[2];
+  uint32_t key_offset;
+  uint32_t key_len;
+  uint32_t padding_b[2];
+  uint32_t val_offset;
+  uint32_t val_len;
+  uint32_t padding_c[2];
 };
 
 struct StlFile : virtual public JsonInterface {
