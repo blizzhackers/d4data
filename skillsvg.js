@@ -20,10 +20,10 @@ JSON.parse(fs.readFileSync('./json/skl.json')).forEach((filename) => {
     ymax.push(skill.y);
   });
 
-  xmin = Math.min(...xmin) - 100;
-  xmax = Math.max(...xmax) + 100;
-  ymin = Math.min(...ymin) - 100;
-  ymax = Math.max(...ymax) + 100;
+  xmin = Math.min(...xmin) - 300;
+  xmax = Math.max(...xmax) + 300;
+  ymin = Math.min(...ymin) - 300;
+  ymax = Math.max(...ymax) + 300;
 
   const width = xmax - xmin;
   const height = ymax - ymin;
