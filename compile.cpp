@@ -11,6 +11,8 @@
 #include <set>
 #include <filesystem>
 
+#include "DirectX/bc.h"
+
 const char *hexLookup[] = {
   "\\0",
   "\\x01",
@@ -70,6 +72,13 @@ std::string escape(std::string str) {
   return ret;
 }
 
+struct FileHeader {
+  uint32_t deadbeef;
+  uint32_t fileType;
+  uint32_t unk_a;
+  uint32_t hash_id;
+};
+
 struct FileChunk {
   uint32_t unk[2];
   uint32_t offset;
@@ -96,10 +105,7 @@ struct SklField {
 
 struct SklFile : virtual public JsonInterface {
   struct {
-    uint32_t deadbeef;
-    uint32_t fileType;
-    uint32_t unk_a;
-    uint32_t hash_id;
+    FileHeader header;
     uint32_t unk_b[10];
     FileChunk skill_tree;
     FileChunk something;
@@ -178,9 +184,7 @@ struct StlField {
 
 struct StlFile : virtual public JsonInterface {
   struct {
-    uint32_t deadbeef;
-    uint32_t unk_a[2];
-    uint32_t hash_id;
+    FileHeader header;
     uint32_t unk_b[5];
     uint32_t info_len;
     uint32_t unk_c[2];
@@ -247,7 +251,7 @@ struct StlFile : virtual public JsonInterface {
 };
 
 int main() {
-  for (const auto &entry : std::filesystem::directory_iterator("data/")) {
+  for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/SkillKit")) {
     std::string path = entry.path();
     std::string name = entry.path().filename();
     std::string ext = entry.path().extension();
@@ -257,7 +261,14 @@ int main() {
       std::ofstream out("json/skl/" + name + ".json");
       SklFile(path.c_str()).OutputJSON(out);
     }
-    else if (ext == ".stl") {
+  }
+
+  for (const auto &entry : std::filesystem::directory_iterator("data/enUS_Text/meta/StringList")) {
+    std::string path = entry.path();
+    std::string name = entry.path().filename();
+    std::string ext = entry.path().extension();
+
+    if (ext == ".stl") {
       std::cout << "Compiling stl file: " << path << ".json" << std::endl;
       std::ofstream out("json/stl/" + name + ".json");
       StlFile(path.c_str()).OutputJSON(out);
