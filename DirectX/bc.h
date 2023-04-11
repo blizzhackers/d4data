@@ -11,6 +11,8 @@
 
 #pragma once
 
+#pragma pack(push,1)
+
 namespace DirectX
 {
 //-------------------------------------------------------------------------------------
@@ -146,7 +148,6 @@ namespace DirectX
         return pOut;
     }
 
-#pragma pack(push,1)
 // BC1/DXT1 compression (4 bits per texel)
     struct D3DX_BC1
     {
@@ -168,7 +169,6 @@ namespace DirectX
         uint8_t     bitmap[6];  // 3bpp alpha bitmap
         D3DX_BC1    bc1;        // BC1 rgb data
     };
-#pragma pack(pop)
 
 //-------------------------------------------------------------------------------------
 // Templates
@@ -378,3 +378,5 @@ namespace DirectX
     void D3DXEncodeBC7(uint8_t *pBC, const XMVECTOR *pColor, uint32_t flags) noexcept;
 
 } // namespace
+
+#pragma pack(pop)

@@ -1,7 +1,12 @@
 /**
- * Diablo 4 JSON Compiler.
+ * Diablo 4 JSON and Texture Compiler.
+ *
+ * Requires libpng dev package:
+ *   sudo apt install libpng++-dev
  *
  * .skl structure adapted from https://github.com/mfloob/diablo4-data-harvest
+ * .stl structure adapted from https://github.com/mfloob/diablo4-data-harvest
+ * .tex structure from research by ejt
  */
 
 #include <iostream>
@@ -10,8 +15,18 @@
 #include <map>
 #include <set>
 #include <filesystem>
+#include <png.h>
+#include <math.h>
+#include <sys/stat.h>
 
 #include "DirectX/bc.h"
+
+#pragma pack(push,1)
+
+inline bool file_exists(const std::string& name) {
+  struct stat buffer;
+  return (stat (name.c_str(), &buffer) == 0);
+}
 
 const char *hexLookup[] = {
   "\\0",
@@ -250,6 +265,184 @@ struct StlFile : virtual public JsonInterface {
   }
 };
 
+enum class TexFormat : uint32_t {
+  B8G8R8A8_UNORM_SRGB = 0,
+  R8_UNORM = 7,  // XXX: looks like one of either R8_UNORM or A8_UNORM
+  BC1_UNORM_SRGB_128_ALIGNED = 9,
+  BC1_UNORM_SRGB_128_ALIGNED2 = 10,
+  BC3_UNORM_SRGB = 12,
+  R8_UNORM_128_ALIGNED = 23, // R8_UNORM or A8_UNORM
+  R16G16B16A16_UNORM = 25,  // XXX: wrong, right?
+  BC4_UNORM = 41,
+  BC5_UNORM = 42,
+  BC6H_SF16 = 43,
+  BC7_UNORM_SRGB = 44,
+  B8G8R8A8_UNORM = 45,
+  BC1_UNORM = 46,
+  BC1_UNORM_128_ALIGNED = 47,
+  BC2_UNORM = 48,
+  BC3_UNORM = 49,
+  BC7_UNORM = 50,
+  BC6H_UF16 = 51,
+};
+
+struct TexUnkChunk {
+  uint32_t unk_a;
+  float unk_b[8];
+};
+
+uint32_t align(uint32_t value, uint32_t alignment) {
+  return ceil(double(value) / double(alignment)) * alignment;
+}
+
+struct BmpHeader {
+    char bitmapSignatureBytes[2] = {'B', 'M'};
+    uint32_t sizeOfBitmapFile = 56;
+    uint32_t reservedBytes = 0;
+    uint32_t pixelDataOffset = 56;
+    uint32_t sizeOfThisHeader = 40;
+    int32_t width = 0; // in pixels
+    int32_t height = 0; // in pixels
+    uint16_t numberOfColorPlanes = 1; // must be 1
+    uint16_t colorDepth = 24;
+    uint32_t compressionMethod = 0;
+    uint32_t rawBitmapDataSize = 0; // generally ignored
+    int32_t horizontalResolution = 3780; // in pixel per meter
+    int32_t verticalResolution = 3780; // in pixel per meter
+    uint32_t colorTableEntries = 0;
+    uint32_t importantColors = 0;
+
+    BmpHeader(uint32_t width, uint32_t height) {
+      this->pixelDataOffset = sizeof(BmpHeader);
+      this->sizeOfBitmapFile = this->pixelDataOffset + width * height * 3;
+      this->width = width;
+      this->height = height;
+    }
+};
+
+struct BmpPixel {
+  uint8_t blue, green, red;
+} pixel;
+
+struct TexFile : virtual public JsonInterface {
+  struct {
+    FileHeader header;
+    uint32_t Id;
+    uint8_t unk_a[3];
+    uint8_t AlphaDepth;
+    TexFormat Format;
+    uint32_t unk_b;
+    uint16_t width;
+    uint16_t height;
+    uint32_t unk_c[11];
+    FileChunk chunk1;
+    FileChunk chunk2;
+    uint32_t unk_d[6];
+  } header;
+
+  uint32_t aligned_width;
+  uint32_t aligned_height;
+
+  TexFile(const char *filename) {
+    std::ifstream file(filename, std::fstream::binary);
+    file.read((char*)&header, sizeof(header));
+    if (
+      header.Format == TexFormat::BC1_UNORM ||
+      header.Format == TexFormat::BC1_UNORM_SRGB_128_ALIGNED ||
+      header.Format == TexFormat::BC1_UNORM_SRGB_128_ALIGNED2 ||
+      header.Format == TexFormat::R8_UNORM_128_ALIGNED ||
+      header.Format == TexFormat::BC1_UNORM_128_ALIGNED
+    ) {
+      aligned_width = align(header.width, 128);
+      aligned_height = align(header.height, 128);
+    } else {
+      aligned_width = align(header.width, 64);
+      aligned_height = align(header.height, 64);
+    }
+  }
+
+  void OutputJSON(std::ofstream &out) {
+    out << "{";
+    out << "\n  \"format\": " << uint32_t(header.Format) << ",";
+    out << "\n  \"width\": " << header.width << ",";
+    out << "\n  \"height\": " << header.height << ",";
+    out << "\n  \"alignedWidth\": " << aligned_width << ",";
+    out << "\n  \"alignedHeight\": " << aligned_height << "";
+    out << "\n}";
+  }
+
+  size_t Decode(DirectX::XMVECTOR *pColor, uint8_t *&pBC) noexcept {
+    switch (header.Format) {
+      case TexFormat::BC1_UNORM:
+      case TexFormat::BC1_UNORM_128_ALIGNED:
+      case TexFormat::BC1_UNORM_SRGB_128_ALIGNED:
+      case TexFormat::BC1_UNORM_SRGB_128_ALIGNED2:
+        DirectX::D3DXDecodeBC1(pColor, pBC);
+        pBC += sizeof(DirectX::D3DX_BC1);
+        return sizeof(DirectX::D3DX_BC1);
+
+      case TexFormat::BC2_UNORM:
+        DirectX::D3DXDecodeBC2(pColor, pBC);
+        pBC += sizeof(DirectX::D3DX_BC2);
+        return sizeof(DirectX::D3DX_BC2);
+
+      case TexFormat::BC3_UNORM:
+      case TexFormat::BC3_UNORM_SRGB:
+        DirectX::D3DXDecodeBC3(pColor, pBC);
+        pBC += sizeof(DirectX::D3DX_BC3);
+        return sizeof(DirectX::D3DX_BC3);
+
+      default:
+        return 0;
+    }
+
+    return 0;
+  }
+
+  bool WriteBMP(const std::string texturePayloadFilename, const std::string outFilename) {
+    if (file_exists(texturePayloadFilename)) {
+      std::ifstream in(texturePayloadFilename, std::ios::binary);
+      std::ofstream out(outFilename, std::ios::trunc | std::ios::binary);
+      std::string contents((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
+      uint8_t *ptr = (uint8_t *)contents.c_str();
+      DirectX::XMVECTOR res[NUM_PIXELS_PER_BLOCK]{0};
+      BmpHeader bmpheader(header.width, header.height);
+
+      BmpPixel *pixels = new BmpPixel[aligned_width * aligned_height]{0};
+
+      out.write((const char *) &bmpheader, sizeof(bmpheader));
+
+      for (uint32_t oy = 0; oy < aligned_height; oy += 4) {
+        for (uint32_t ox = 0; ox < aligned_width; ox += 4) {
+          if (!Decode(res, ptr)) {
+            return false;
+          }
+
+          for (uint32_t y = 0; y < 4; y++) {
+            for (uint32_t x = 0; x < 4; x++) {
+              uint32_t soff = x + y * 4;
+              uint32_t doff = (ox + x) + (aligned_height - 1 - oy - y) * aligned_width;
+              pixels[doff].red = res[soff].vector4_f32[0] * res[soff].vector4_f32[3] * 255.f;
+              pixels[doff].green = res[soff].vector4_f32[1] * res[soff].vector4_f32[3] * 255.f;
+              pixels[doff].blue = res[soff].vector4_f32[2] * res[soff].vector4_f32[3] * 255.f;
+            }
+          }
+        }
+      }
+
+      for (size_t c = aligned_height - header.height; c < aligned_height; c += 1) {
+        out.write((const char *)(pixels + c * aligned_width), header.width * sizeof(BmpPixel));
+      }
+
+      delete[] pixels;
+
+      return true;
+    }
+
+    return false;
+  }
+};
+
 int main() {
   for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/SkillKit")) {
     std::string path = entry.path();
@@ -272,6 +465,20 @@ int main() {
       std::cout << "Compiling stl file: " << path << ".json" << std::endl;
       std::ofstream out("json/stl/" + name + ".json");
       StlFile(path.c_str()).OutputJSON(out);
+    }
+  }
+
+  for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/Texture")) {
+    std::string path = entry.path();
+    std::string name = entry.path().filename();
+    std::string ext = entry.path().extension();
+
+    if (ext == ".tex") {
+      std::cout << "Compiling tex file: " << path << ".json" << std::endl;
+      std::ofstream out("json/tex/" + name + ".json");
+      TexFile tex(path.c_str());
+      tex.OutputJSON(out);
+      tex.WriteBMP("data/Base/payload/Texture/" + name, "texture/" + name + ".bmp");
     }
   }
 
@@ -303,3 +510,5 @@ int main() {
 
   return 0;
 }
+
+#pragma pack(pop)
