@@ -23,6 +23,17 @@
 
 #pragma pack(push,1)
 
+template <class A>
+A clamp(A minimum, A value, A maximum) {
+  return value < minimum ? minimum : value > maximum ? maximum : value;
+}
+
+float gammaCorrect(float c) {
+  return c <= 0.0031308 ?
+    clamp<float>(0, 12.92 * c, 1) :
+    clamp<float>(0, 1.055 * pow(c, 1.f / 2.4f) - 0.055f, 1);
+}
+
 inline bool file_exists(const std::string& name) {
   struct stat buffer;
   return (stat (name.c_str(), &buffer) == 0);
@@ -427,6 +438,17 @@ struct TexFile : virtual public JsonInterface {
                     color,
                     color,
                     res[soff].vector4_f32[3] * 255);
+
+                  image.set_pixel(ox + x, oy + y, pixel);
+                }
+                if (header.Format == TexFormat::BC6H_SF16) {
+
+                  png::rgba_pixel pixel(
+                    gammaCorrect(res[soff].vector4_f32[0]) * 255,
+                    gammaCorrect(res[soff].vector4_f32[1]) * 255,
+                    gammaCorrect(res[soff].vector4_f32[2]) * 255,
+                    clamp<float>(0, res[soff].vector4_f32[3], 1) * 255
+                  );
 
                   image.set_pixel(ox + x, oy + y, pixel);
                 }
