@@ -343,29 +343,60 @@ struct TexFile : virtual public JsonInterface {
     out << "\n}";
   }
 
-  size_t Decode(DirectX::XMVECTOR *pColor, uint8_t *&pBC) noexcept {
+  size_t Decode(DirectX::XMVECTOR *pColor, uint8_t *&pBC) {
     switch (header.Format) {
       case TexFormat::BC1_UNORM:
       case TexFormat::BC1_UNORM_128_ALIGNED:
       case TexFormat::BC1_UNORM_SRGB_128_ALIGNED:
       case TexFormat::BC1_UNORM_SRGB_128_ALIGNED2:
         DirectX::D3DXDecodeBC1(pColor, pBC);
-        pBC += sizeof(DirectX::D3DX_BC1);
-        return sizeof(DirectX::D3DX_BC1);
+        pBC += 8;
+        return 8;
 
       case TexFormat::BC2_UNORM:
         DirectX::D3DXDecodeBC2(pColor, pBC);
-        pBC += sizeof(DirectX::D3DX_BC2);
-        return sizeof(DirectX::D3DX_BC2);
+        pBC += 16;
+        return 16;
 
       case TexFormat::BC3_UNORM:
       case TexFormat::BC3_UNORM_SRGB:
         DirectX::D3DXDecodeBC3(pColor, pBC);
-        pBC += sizeof(DirectX::D3DX_BC3);
-        return sizeof(DirectX::D3DX_BC3);
+        pBC += 16;
+        return 16;
 
+      case TexFormat::BC4_UNORM:
+        DirectX::D3DXDecodeBC4U(pColor, pBC);
+        pBC += 8;
+        return 8;
+
+      case TexFormat::BC5_UNORM:
+        DirectX::D3DXDecodeBC5U(pColor, pBC);
+        pBC += 16;
+        return 16;
+
+      case TexFormat::BC6H_SF16:
+        DirectX::D3DXDecodeBC6HS(pColor, pBC);
+        pBC += 16;
+        return 16;
+
+      case TexFormat::BC6H_UF16:
+        DirectX::D3DXDecodeBC6HU(pColor, pBC);
+        pBC += 16;
+        return 16;
+
+      case TexFormat::BC7_UNORM:
+      case TexFormat::BC7_UNORM_SRGB:
+        DirectX::D3DXDecodeBC7(pColor, pBC);
+        pBC += 16;
+        return 16;
+
+      case TexFormat::B8G8R8A8_UNORM_SRGB:
+      case TexFormat::R8_UNORM:
+      case TexFormat::R8_UNORM_128_ALIGNED:
+      case TexFormat::R16G16B16A16_UNORM:
+      case TexFormat::B8G8R8A8_UNORM:      
       default:
-        return 0;
+        throw "Unknown format!";
     }
 
     return 0;
@@ -390,11 +421,23 @@ struct TexFile : virtual public JsonInterface {
               if (ox + x < header.width && oy + y < header.height) {
                 uint32_t soff = x + y * 4;
 
-                png::rgba_pixel pixel(res[soff].vector4_f32[0] * 255,
-                  res[soff].vector4_f32[1] * 255,
-                  res[soff].vector4_f32[2] * 255,
-                  res[soff].vector4_f32[3] * 255);
-                image.set_pixel(ox + x, oy + y, pixel);
+                if (header.Format == TexFormat::BC4_UNORM) {
+                  png::byte color = res[soff].vector4_f32[0] * 255;
+                  png::rgba_pixel pixel(color,
+                    color,
+                    color,
+                    res[soff].vector4_f32[3] * 255);
+
+                  image.set_pixel(ox + x, oy + y, pixel);
+                }
+                else {
+                  png::rgba_pixel pixel(res[soff].vector4_f32[0] * 255,
+                    res[soff].vector4_f32[1] * 255,
+                    res[soff].vector4_f32[2] * 255,
+                    res[soff].vector4_f32[3] * 255);
+
+                  image.set_pixel(ox + x, oy + y, pixel);
+                }
               }
             }
           }

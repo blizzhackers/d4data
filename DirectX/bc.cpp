@@ -9,11 +9,9 @@
 // http://go.microsoft.com/fwlink/?LinkId=248926
 //-------------------------------------------------------------------------------------
 
-#include <iostream>
-#include <assert.h>
-#include <float.h>
-#include <memory.h>
 #include "bc.h"
+
+using namespace DirectX;
 
 namespace DirectX
 {
@@ -21,8 +19,8 @@ namespace DirectX
   // Constants
   //-------------------------------------------------------------------------------------
 
-  const uint32_t XM_SELECT_0   = 0x00000000;
-  const uint32_t XM_SELECT_1   = 0xFFFFFFFF;
+  const uint32_t XM_SELECT_0 = 0x00000000;
+  const uint32_t XM_SELECT_1 = 0xFFFFFFFF;
 
   // Perceptual weightings for the importance of each channel.
   const HDRColorA g_Luminance(0.2125f / 0.7154f, 1.0f, 0.0721f / 0.7154f, 1.0f);
@@ -63,6 +61,16 @@ namespace DirectX
 
   void XMStoreFloat4(XMFLOAT4 *pDestination, FXMVECTOR V)
   {
+    pDestination->x = V.vector4_f32[0];
+    pDestination->y = V.vector4_f32[1];
+    pDestination->z = V.vector4_f32[2];
+    pDestination->w = V.vector4_f32[3];
+  }
+
+  void XMStoreFloat4A(XMFLOAT4A *pDestination, FXMVECTOR V)
+  {
+    assert(pDestination);
+    assert((reinterpret_cast<uintptr_t>(pDestination) & 0xF) == 0);
     pDestination->x = V.vector4_f32[0];
     pDestination->y = V.vector4_f32[1];
     pDestination->z = V.vector4_f32[2];
@@ -504,7 +512,7 @@ namespace DirectX
 
     for (size_t i = 0; i < 8; ++i, dw >>= 4)
     {
-  #pragma prefast(suppress : 22103, "writing blocks in two halves confuses tool")
+#pragma prefast(suppress : 22103, "writing blocks in two halves confuses tool")
       pColor[i] = XMVectorSetW(pColor[i], static_cast<float>(dw & 0xf) * (1.0f / 15.0f));
     }
 
