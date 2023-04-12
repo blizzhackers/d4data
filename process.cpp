@@ -30,8 +30,14 @@ A clamp(A minimum, A value, A maximum) {
 
 float gammaCorrect(float c) {
   return c <= 0.0031308 ?
-    clamp<float>(0, 12.92 * c, 1) :
-    clamp<float>(0, 1.055 * pow(c, 1.f / 2.4f) - 0.055f, 1);
+    clamp<float>(0, 12.92f * c, 1) :
+    clamp<float>(0, 1.055f * pow(c, 1.f / 2.4f) - 0.055f, 1);
+}
+
+float gammaUnCorrect(float c) {
+  return c <= 0.040449936 ?
+    clamp<float>(0, c / 12.92, 1) :
+    clamp<float>(0, pow((c + 0.055f) / 1.055f, 2.4f), 1);
 }
 
 inline bool file_exists(const std::string& name) {
@@ -447,6 +453,22 @@ struct TexFile : virtual public JsonInterface {
                     gammaCorrect(res[soff].vector4_f32[0]) * 255,
                     gammaCorrect(res[soff].vector4_f32[1]) * 255,
                     gammaCorrect(res[soff].vector4_f32[2]) * 255,
+                    clamp<float>(0, res[soff].vector4_f32[3], 1) * 255
+                  );
+
+                  image.set_pixel(ox + x, oy + y, pixel);
+                }
+                else if (
+                  header.Format == TexFormat::B8G8R8A8_UNORM_SRGB ||
+                  header.Format == TexFormat::BC1_UNORM_SRGB_128_ALIGNED ||
+                  header.Format == TexFormat::BC1_UNORM_SRGB_128_ALIGNED2 ||
+                  header.Format == TexFormat::BC3_UNORM_SRGB ||
+                  header.Format == TexFormat::BC7_UNORM_SRGB
+                ) {
+                  png::rgba_pixel pixel(
+                    gammaUnCorrect(res[soff].vector4_f32[0]) * 255,
+                    gammaUnCorrect(res[soff].vector4_f32[1]) * 255,
+                    gammaUnCorrect(res[soff].vector4_f32[2]) * 255,
                     clamp<float>(0, res[soff].vector4_f32[3], 1) * 255
                   );
 
