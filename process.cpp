@@ -441,7 +441,7 @@ struct TexFile : virtual public JsonInterface {
 
                   image.set_pixel(ox + x, oy + y, pixel);
                 }
-                if (header.Format == TexFormat::BC6H_SF16) {
+                else if (header.Format == TexFormat::BC6H_SF16 || header.Format == TexFormat::BC6H_UF16) {
 
                   png::rgba_pixel pixel(
                     gammaCorrect(res[soff].vector4_f32[0]) * 255,
