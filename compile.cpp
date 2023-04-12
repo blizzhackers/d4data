@@ -15,7 +15,7 @@
 #include <map>
 #include <set>
 #include <filesystem>
-#include <png.h>
+#include <png++/png.hpp>
 #include <math.h>
 #include <sys/stat.h>
 
@@ -295,35 +295,6 @@ uint32_t align(uint32_t value, uint32_t alignment) {
   return ceil(double(value) / double(alignment)) * alignment;
 }
 
-struct BmpHeader {
-    char bitmapSignatureBytes[2] = {'B', 'M'};
-    uint32_t sizeOfBitmapFile = 56;
-    uint32_t reservedBytes = 0;
-    uint32_t pixelDataOffset = 56;
-    uint32_t sizeOfThisHeader = 40;
-    int32_t width = 0; // in pixels
-    int32_t height = 0; // in pixels
-    uint16_t numberOfColorPlanes = 1; // must be 1
-    uint16_t colorDepth = 24;
-    uint32_t compressionMethod = 0;
-    uint32_t rawBitmapDataSize = 0; // generally ignored
-    int32_t horizontalResolution = 3780; // in pixel per meter
-    int32_t verticalResolution = 3780; // in pixel per meter
-    uint32_t colorTableEntries = 0;
-    uint32_t importantColors = 0;
-
-    BmpHeader(uint32_t width, uint32_t height) {
-      this->pixelDataOffset = sizeof(BmpHeader);
-      this->sizeOfBitmapFile = this->pixelDataOffset + width * height * 3;
-      this->width = width;
-      this->height = height;
-    }
-};
-
-struct BmpPixel {
-  uint8_t blue, green, red;
-} pixel;
-
 struct TexFile : virtual public JsonInterface {
   struct {
     FileHeader header;
@@ -364,6 +335,7 @@ struct TexFile : virtual public JsonInterface {
   void OutputJSON(std::ofstream &out) {
     out << "{";
     out << "\n  \"format\": " << uint32_t(header.Format) << ",";
+    out << "\n  \"id\": " << uint32_t(header.Id) << ",";
     out << "\n  \"width\": " << header.width << ",";
     out << "\n  \"height\": " << header.height << ",";
     out << "\n  \"alignedWidth\": " << aligned_width << ",";
@@ -399,18 +371,13 @@ struct TexFile : virtual public JsonInterface {
     return 0;
   }
 
-  bool WriteBMP(const std::string texturePayloadFilename, const std::string outFilename) {
+  bool WritePNG(const std::string texturePayloadFilename, const std::string outFilename) {
     if (file_exists(texturePayloadFilename)) {
       std::ifstream in(texturePayloadFilename, std::ios::binary);
-      std::ofstream out(outFilename, std::ios::trunc | std::ios::binary);
+      png::image<png::rgba_pixel> image(header.width, header.height);
       std::string contents((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
       uint8_t *ptr = (uint8_t *)contents.c_str();
       DirectX::XMVECTOR res[NUM_PIXELS_PER_BLOCK]{0};
-      BmpHeader bmpheader(header.width, header.height);
-
-      BmpPixel *pixels = new BmpPixel[aligned_width * aligned_height]{0};
-
-      out.write((const char *) &bmpheader, sizeof(bmpheader));
 
       for (uint32_t oy = 0; oy < aligned_height; oy += 4) {
         for (uint32_t ox = 0; ox < aligned_width; ox += 4) {
@@ -420,21 +387,21 @@ struct TexFile : virtual public JsonInterface {
 
           for (uint32_t y = 0; y < 4; y++) {
             for (uint32_t x = 0; x < 4; x++) {
-              uint32_t soff = x + y * 4;
-              uint32_t doff = (ox + x) + (aligned_height - 1 - oy - y) * aligned_width;
-              pixels[doff].red = res[soff].vector4_f32[0] * res[soff].vector4_f32[3] * 255.f;
-              pixels[doff].green = res[soff].vector4_f32[1] * res[soff].vector4_f32[3] * 255.f;
-              pixels[doff].blue = res[soff].vector4_f32[2] * res[soff].vector4_f32[3] * 255.f;
+              if (ox + x < header.width && oy + y < header.height) {
+                uint32_t soff = x + y * 4;
+
+                png::rgba_pixel pixel(res[soff].vector4_f32[0] * 255,
+                  res[soff].vector4_f32[1] * 255,
+                  res[soff].vector4_f32[2] * 255,
+                  res[soff].vector4_f32[3] * 255);
+                image.set_pixel(ox + x, oy + y, pixel);
+              }
             }
           }
         }
       }
 
-      for (size_t c = aligned_height - header.height; c < aligned_height; c += 1) {
-        out.write((const char *)(pixels + c * aligned_width), header.width * sizeof(BmpPixel));
-      }
-
-      delete[] pixels;
+      image.write(outFilename);
 
       return true;
     }
@@ -478,7 +445,7 @@ int main() {
       std::ofstream out("json/tex/" + name + ".json");
       TexFile tex(path.c_str());
       tex.OutputJSON(out);
-      tex.WriteBMP("data/Base/payload/Texture/" + name, "texture/" + name + ".bmp");
+      tex.WritePNG("data/Base/payload/Texture/" + name, "texture/" + name + ".png");
     }
   }
 
