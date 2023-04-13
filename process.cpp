@@ -125,7 +125,7 @@ class JsonInterface {
 struct SklField {
   uint32_t id;
   uint32_t unk_hash;
-  uint32_t unk_a;
+  int32_t unk_a;
   float x, y;
   uint32_t is_root;
   uint32_t req_points;
@@ -138,10 +138,13 @@ struct SklField {
 struct SklFile : virtual public JsonInterface {
   struct {
     FileHeader header;
-    uint32_t unk_b[10];
+    uint32_t uid;
+    uint32_t unused_0x14;
+    FileChunk unk_0x18;
+    FileChunk unk_0x28;
     FileChunk skill_tree;
-    FileChunk something;
-    uint32_t unk_d;
+    FileChunk unk_0x48;
+    int32_t unk_0x58; // always unique
   } header;
 
   std::vector<SklField> fields;
@@ -217,7 +220,8 @@ struct StlField {
 struct StlFile : virtual public JsonInterface {
   struct {
     FileHeader header;
-    uint32_t unk_b[5];
+    uint32_t uid;
+    uint32_t unk_b[4];
     uint32_t info_len;
     uint32_t unk_c[2];
   } header;
@@ -315,7 +319,7 @@ uint32_t align(uint32_t value, uint32_t alignment) {
 struct TexFile : virtual public JsonInterface {
   struct {
     FileHeader header;
-    uint32_t Id;
+    uint32_t uid;
     uint8_t unk_a[3];
     uint8_t AlphaDepth;
     TexFormat Format;
@@ -351,8 +355,8 @@ struct TexFile : virtual public JsonInterface {
 
   void OutputJSON(std::ofstream &out) {
     out << "{";
+    out << "\n  \"id\": " << uint32_t(header.uid) << ",";
     out << "\n  \"format\": " << uint32_t(header.Format) << ",";
-    out << "\n  \"id\": " << uint32_t(header.Id) << ",";
     out << "\n  \"width\": " << header.width << ",";
     out << "\n  \"height\": " << header.height << ",";
     out << "\n  \"alignedWidth\": " << aligned_width << ",";
@@ -497,7 +501,16 @@ struct TexFile : virtual public JsonInterface {
   }
 };
 
+typedef int32_t bool32_t;
+
+struct PowFile {
+  FileHeader header;
+  uint32_t uid;
+};
+
 int main() {
+  std::map<std::string, std::map<uint32_t, std::string>> json;
+
   for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/SkillKit")) {
     std::string path = entry.path();
     std::string name = entry.path().filename();
@@ -505,8 +518,11 @@ int main() {
 
     if (ext == ".skl") {
       std::cout << "Compiling skl file: " << path << ".json" << std::endl;
-      std::ofstream out("json/skl/" + name + ".json");
-      SklFile(path.c_str()).OutputJSON(out);
+      std::string outname = "json/skl/" + name + ".json";
+      std::ofstream out(outname);
+      SklFile tmp(path.c_str());
+      tmp.OutputJSON(out);
+      json["skl"][tmp.header.uid] = outname;
     }
   }
 
@@ -517,8 +533,11 @@ int main() {
 
     if (ext == ".stl") {
       std::cout << "Compiling stl file: " << path << ".json" << std::endl;
-      std::ofstream out("json/stl/" + name + ".json");
-      StlFile(path.c_str()).OutputJSON(out);
+      std::string outname = "json/stl/" + name + ".json";
+      std::ofstream out(outname);
+      StlFile tmp(path.c_str());
+      tmp.OutputJSON(out);
+      json["stl"][tmp.header.uid] = outname;
     }
   }
 
@@ -529,37 +548,30 @@ int main() {
 
     if (ext == ".tex") {
       std::cout << "Compiling tex file: " << path << ".json" << std::endl;
-      std::ofstream out("json/tex/" + name + ".json");
+      std::string outname = "json/tex/" + name + ".json";
+      std::ofstream out(outname);
       TexFile tex(path.c_str());
       tex.OutputJSON(out);
       tex.WritePNG("data/Base/payload/Texture/" + name, "texture/" + name + ".png");
+      json["tex"][tex.header.uid] = outname;
     }
   }
 
-  for (const auto &entry : std::filesystem::directory_iterator("json")) {
-    if (entry.is_directory()) {
-      std::string path = entry.path();
-      std::ofstream findex(path + ".json");
-      findex << "[\n";
-      int count = 0;
+  for (const auto &category : json) {
+    std::ofstream findex("json/" + category.first + ".json");
+    findex << "{\n";
 
-      std::set<std::filesystem::path> sorted;
-
-      for (const auto &subentry : std::filesystem::directory_iterator(path)) {
-        sorted.insert(subentry);
+    int count = 0;
+    for (const auto &entry : category.second) {
+      if (count > 0) {
+        findex << ",\n";
       }
 
-      for (const std::string &subpath : sorted) {
-        if (count > 0) {
-          findex << ",\n";
-        }
-
-        findex << "  \"" << escape(subpath.substr(5)) << "\"";
-        count++;
-      }
-
-      findex << "\n]\n";
+      findex << "  \"" << entry.first << "\": \"" << escape(entry.second.substr(5)) << "\"";
+      count++;
     }
+
+    findex << "\n}\n";
   }
 
   return 0;

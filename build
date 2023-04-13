@@ -1,3 +1,4 @@
 #!/bin/bash
 set -e
-g++ *.cpp DirectX/*.cpp -lpng -o ./process
+cd "$(dirname "$0")"
+g++ *.cpp DirectX/*.cpp -lpng -o ./process "$@"
