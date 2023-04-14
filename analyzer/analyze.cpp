@@ -236,7 +236,7 @@ int main(int argc, char *argv[]) {
         else if (
           p[0] == 0 &&
           p[1] == 0 &&
-          p[2] >= headerSize &&
+          p[2] >= (headerSize - 16) &&
           v.s > 0 &&
           p[2] + v.s < fileSize
         ) {
