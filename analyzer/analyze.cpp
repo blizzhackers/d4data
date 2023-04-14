@@ -178,7 +178,7 @@ int main(int argc, char *argv[]) {
   std::vector<stats> data;
   size_t fileCount = 0;
 
-  int32_t maxHeaderOffset = INT32_MAX;
+  int32_t minHeaderOffset = INT32_MAX;
 
   for (const auto &entry : std::filesystem::recursive_directory_iterator(searchPath)) {
     if (entry.is_directory()) {
@@ -186,7 +186,7 @@ int main(int argc, char *argv[]) {
     }
 
     long fileSize = GetFileSize(entry.path().c_str());
-    long maxHeaderOffset = fileSize;
+    long minHeaderOffset = fileSize;
     std::string fileExtension = entry.path().extension();
     std::transform(fileExtension.begin(), fileExtension.end(), fileExtension.begin(), [](unsigned char c){ return std::tolower(c); });
 
@@ -204,7 +204,7 @@ int main(int argc, char *argv[]) {
 
     file.seekg(0);
 
-    maxHeaderOffset = min(maxHeaderOffset, fileSize);
+    minHeaderOffset = min(minHeaderOffset, fileSize);
     fileCount++;
 
     for (int pos = 0; file.read((char*)&v, sizeof(v)) && !file.eof(); pos++) {
@@ -271,16 +271,16 @@ int main(int argc, char *argv[]) {
 
         for (const auto &entry : data[pos + 2].s.count) {
           if (entry.first > 0) {
-            maxHeaderOffset = min(maxHeaderOffset, entry.first + 16);
+            minHeaderOffset = min(minHeaderOffset, entry.first);
           }
         }
       }
     }
   }
 
-  std::cout << "Possible Header Size: 16 + " << (maxHeaderOffset - 16) << std::endl << std::endl;
+  std::cout << "Possible Header Size: 16 + " << minHeaderOffset << std::endl << std::endl;
 
-  int32_t headerSize = maxHeaderOffset / 4;
+  int32_t headerSize = minHeaderOffset / 4;
 
   for (int pos = 0; pos < headerSize && pos < data.size(); pos++) {
     std::cout << "0x" << std::hex << pos * 4 << std::dec << ": ";
