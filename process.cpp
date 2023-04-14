@@ -141,11 +141,20 @@ struct SklFile : virtual public JsonInterface {
     FileHeader header;
     uint32_t uid;
     uint32_t unused_0x14;
-    FileChunk unk_0x18;
-    FileChunk unk_0x28;
+    FileChunk powers;
+    FileChunk ints;
     FileChunk skill_tree;
     FileChunk unk_0x48;
     int32_t unk_0x58; // always unique
+    float unk_0x5c; // Looks like skill tree position data
+    float unk_0x60; // Looks like skill tree position data
+    float unk_0x64; // Looks like skill tree position data
+    float unk_0x68; // Looks like skill tree position data
+    int32_t unk_0x6c; // unused
+    int32_t unk_0x70; // unused
+    int32_t unk_0x74; // unused
+    int32_t unk_0x78; // unused
+    int32_t unk_0x7c; // unused
   } header;
 
   std::vector<SklField> fields;
