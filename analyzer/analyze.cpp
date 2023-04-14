@@ -162,21 +162,14 @@ std::string formatFloat(float v) {
 }
 
 int main(int argc, char *argv[]) {
-  if (argc < 4) {
+  if (argc < 3) {
     std::cerr << "Usage: " << argv[0] << " [header_size] [extension] [directory]" << std::endl;
     return 1;
   }
 
-  long headerSize = std::stol(argv[1]);
-
-  if (headerSize % 4) {
-    std::cerr << "Header size must be divisible by 4!" << std::endl;
-  }
-
-  headerSize /= 4;
-  std::string targetExtension = argv[2];
+  std::string targetExtension = argv[1];
   std::transform(targetExtension.begin(), targetExtension.end(), targetExtension.begin(), [](unsigned char c){ return std::tolower(c); });
-  std::string searchPath = argv[3];
+  std::string searchPath = argv[2];
 
   if (targetExtension[0] != '.') {
     targetExtension = "." + targetExtension;
@@ -185,12 +178,15 @@ int main(int argc, char *argv[]) {
   std::vector<stats> data;
   size_t fileCount = 0;
 
+  int32_t maxHeaderOffset = INT32_MAX;
+
   for (const auto &entry : std::filesystem::recursive_directory_iterator(searchPath)) {
     if (entry.is_directory()) {
       continue;
     }
 
     long fileSize = GetFileSize(entry.path().c_str());
+    long maxHeaderOffset = fileSize;
     std::string fileExtension = entry.path().extension();
     std::transform(fileExtension.begin(), fileExtension.end(), fileExtension.begin(), [](unsigned char c){ return std::tolower(c); });
 
@@ -202,9 +198,16 @@ int main(int argc, char *argv[]) {
     field v;
     int32_t p[3];
 
+    if (!file.read((char*)&v, sizeof(v)) || v.u != 0xdeadbeef) {
+      continue;
+    }
+
+    file.seekg(0);
+
+    maxHeaderOffset = min(maxHeaderOffset, fileSize);
     fileCount++;
 
-    for (int pos = 0; pos < headerSize && file.read((char*)&v, sizeof(v)) && !file.eof(); pos++) {
+    for (int pos = 0; file.read((char*)&v, sizeof(v)) && !file.eof(); pos++) {
       if (data.size() < pos + 1) {
         stats tmp;
 
@@ -230,13 +233,13 @@ int main(int argc, char *argv[]) {
       data[pos].s.count[v.s].insert(entry.path().filename());
 
       if (pos >= 7) {
-        if (p[0] == 0 && p[1] == 0 && (p[2] == 0 || p[2] >= headerSize) && v.u == 0) {
+        if (p[0] == 0 && p[1] == 0 && (p[2] == 0 || p[2] >= (pos * 4 - 12)) && v.u == 0) {
           data[pos - 3].fileChunkPossibleHits++;
         }
         else if (
           p[0] == 0 &&
           p[1] == 0 &&
-          p[2] >= (headerSize - 16) &&
+          p[2] >= (pos * 4 - 12) &&
           v.s > 0 &&
           p[2] + v.s < fileSize
         ) {
@@ -261,6 +264,23 @@ int main(int argc, char *argv[]) {
       p[2] = v.s;
     }
   }
+
+  for (int pos = 0; pos < data.size(); pos++) {
+    if (data[pos].s.min == 0 && data[pos].s.max == 0) {
+      if (data[pos].fileChunkHits > 0 && data[pos].fileChunkHits + data[pos].fileChunkPossibleHits == fileCount) {
+
+        for (const auto &entry : data[pos + 2].s.count) {
+          if (entry.first > 0) {
+            maxHeaderOffset = min(maxHeaderOffset, entry.first + 16);
+          }
+        }
+      }
+    }
+  }
+
+  std::cout << "Possible Header Size: 16 + " << (maxHeaderOffset - 16) << std::endl << std::endl;
+
+  int32_t headerSize = maxHeaderOffset / 4;
 
   for (int pos = 0; pos < headerSize && pos < data.size(); pos++) {
     std::cout << "0x" << std::hex << pos * 4 << std::dec << ": ";

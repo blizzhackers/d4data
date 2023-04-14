@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+cd "$(dirname "$0")"
+
+echo Analyzing gaf... && ./analyze gaf data/Base/meta > analysis/ParagonGlyphAffix.gaf.yml
+echo Analyzing gam... && ./analyze gam data/Base/meta > analysis/GameBalance.gam.yml
+echo Analyzing glo... && ./analyze glo data/Base/meta > analysis/Global.glo.yml
+echo Analyzing gph... && ./analyze gph data/Base/meta > analysis/ParagonGlyph.gph.yml
+echo Analyzing pbd... && ./analyze pbd data/Base/meta > analysis/ParagonBoard.pbd.yml
+echo Analyzing pcl... && ./analyze pcl data/Base/meta > analysis/PlayerClass.pcl.yml
+echo Analyzing pgn... && ./analyze pgn data/Base/meta > analysis/ParagonNode.pgn.yml
+echo Analyzing pth... && ./analyze pth data/Base/meta > analysis/ParagonThreshold.pth.yml
+echo Analyzing qst... && ./analyze qst data/Base/meta > analysis/Questqst.yml
+echo Analyzing ui...  && ./analyze ui  data/Base/meta > analysis/UI.ui.yml
+echo Analyzing wrl... && ./analyze wrl data/Base/meta > analysis/World.wrl.yml
+echo Analyzing wst... && ./analyze wst data/Base/meta > analysis/WorldState.wst.yml
+echo Analyzing skl... && ./analyze skl data/Base/meta > analysis/SkillKit.skl.yml
+echo Analyzing tex... && ./analyze tex data/Base/meta > analysis/Texture.tex.yml
+echo Analyzing pow... && ./analyze pow data/Base/meta > analysis/Power.pow.yml
