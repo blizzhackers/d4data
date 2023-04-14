@@ -18,6 +18,7 @@
 #include <png++/png.hpp>
 #include <math.h>
 #include <sys/stat.h>
+#include <chrono>
 
 #include "DirectX/bc.h"
 
@@ -509,6 +510,8 @@ struct PowFile {
 };
 
 int main() {
+  auto start = std::chrono::high_resolution_clock::now();
+
   std::map<std::string, std::map<uint32_t, std::string>> json;
 
   for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/SkillKit")) {
@@ -557,6 +560,8 @@ int main() {
     }
   }
 
+  size_t fileCount = 0;
+
   for (const auto &category : json) {
     std::ofstream findex("json/" + category.first + ".json");
     findex << "{\n";
@@ -568,11 +573,17 @@ int main() {
       }
 
       findex << "  \"" << entry.first << "\": \"" << escape(entry.second.substr(5)) << "\"";
+      fileCount++;
       count++;
     }
 
     findex << "\n}\n";
   }
+
+  auto end = std::chrono::high_resolution_clock::now();
+  auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+
+  std::cout << "Processed " << fileCount << " files in " << (duration.count() / 100000.f) << " seconds." << std::endl;
 
   return 0;
 }
