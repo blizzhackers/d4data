@@ -583,7 +583,7 @@ int main() {
   auto end = std::chrono::high_resolution_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
-  std::cout << "Processed " << fileCount << " files in " << (duration.count() / 100000.f) << " seconds." << std::endl;
+  std::cout << "Processed " << fileCount << " files in " << (duration.count() / 1000000.f) << " seconds." << std::endl;
 
   return 0;
 }
