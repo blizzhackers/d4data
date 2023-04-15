@@ -305,10 +305,7 @@ int main(int argc, char *argv[]) {
     }
     else {
       if (data[pos].s.min == data[pos].s.max) {
-        if (pos < 4) {
-          std::cout << "0x" << std::hex << data[pos].s.min << std::dec << " # always this value" << std::endl;
-        }
-        else if (isReasonableFloat(data[pos].f.min)) {
+        if (isReasonableFloat(data[pos].f.min)) {
           std::cout << formatFloat(data[pos].f.min) << " # always this value" << std::endl;
         }
         else if (data[pos].stringHits > 0 && data[pos].stringHits + data[pos].stringPossibleHits == fileCount) {
@@ -318,14 +315,11 @@ int main(int argc, char *argv[]) {
           std::cout << "string: \"" << escape(tmp[0].c) << "\" # always this value" << std::endl;
         }
         else {
-          std::cout << data[pos].s.min << " # always this value" << std::endl;
+          std::cout << "0x" << std::hex << std::setfill('0') << std::setw(8) << data[pos].s.min << std::dec << " # always this value" << std::endl;
         }
       }
       else {
-        if (pos < 4) {
-          std::cout << "[0x" << std::hex << data[pos].s.min << ", " << "0x" << std::hex << data[pos].s.max << "]" << std::dec << std::endl;
-        }
-        else if (isReasonableFloat(data[pos].f.min) && isReasonableFloat(data[pos].f.max)) {
+        if (isReasonableFloat(data[pos].f.min) && isReasonableFloat(data[pos].f.max)) {
           std::cout << "[" << formatFloat(data[pos].f.min) << ", " << formatFloat(data[pos].f.max) << "] # range of values" << std::endl;
         }
         else if (data[pos].stringHits > 0 && data[pos].stringHits + data[pos].stringPossibleHits == fileCount) {
@@ -341,14 +335,14 @@ int main(int argc, char *argv[]) {
           }
 
           if (isUnique) {
-            std::cout << "[" << data[pos].s.min << ", " << data[pos].s.max << "] # always unique" << std::endl;
+            std::cout << "[0x" << std::hex << std::setfill('0') << std::setw(8) << data[pos].s.min << std::dec << ", 0x" << std::hex << std::setfill('0') << std::setw(8) << data[pos].s.max << std::dec << "] # always unique" << std::endl;
           }
           else {
             std::cout << std::endl << "  occurrences: # Value: File" << std::endl;
 
             for (const auto &entry : data[pos].s.count) {
               if (entry.second.size() == 1) {
-                std::cout << "    " << entry.first << ": ";
+                std::cout << "    0x" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << ": ";
 
                 for (const auto &filename : entry.second) {
                   std::cout << filename << std::endl;
@@ -356,14 +350,14 @@ int main(int argc, char *argv[]) {
 
               }
               else if (entry.second.size() <= 5) {
-                std::cout << "    " << entry.first << ":" << std::endl;
+                std::cout << "    0x" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << ":" << std::endl;
 
                 for (const auto &filename : entry.second) {
                   std::cout << "      - " << filename << std::endl;
                 }
               }
               else {
-                std::cout << "    " << entry.first << ": (" << entry.second.size() << " files)" << std::endl;
+                std::cout << "    0x" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << ": (" << entry.second.size() << " files)" << std::endl;
               }
             }
           }

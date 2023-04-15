@@ -112,15 +112,35 @@ struct FileHeader {
   uint32_t hash_id;
 };
 
+class JsonInterface {
+  public:
+    virtual void OutputJSON(std::ofstream &out) = 0;
+};
+
+struct FileBase : virtual public JsonInterface  {
+  struct {
+    FileHeader header;
+    uint32_t uid;
+  } header;
+
+  FileBase(const char *filename) {
+    uint32_t data[4];
+    std::ifstream file(filename, std::fstream::binary);
+
+    file.read((char*)&header, sizeof(header));
+  }
+
+  void OutputJSON(std::ofstream &out) {
+    out << "{";
+    out << "\n  \"id\": " << uint32_t(header.uid);
+    out << "\n}";
+  }
+};
+
 struct FileChunk {
   uint32_t unk[2];
   uint32_t offset;
   uint32_t length;
-};
-
-class JsonInterface {
-  public:
-    virtual void OutputJSON(std::ofstream &out) = 0;
 };
 
 struct SklField {
@@ -133,7 +153,7 @@ struct SklField {
   uint32_t unk_b;
   FileChunk connection;
   uint32_t unk_c[4];
-  std::vector<uint32_t> connections;
+  std::vector<uint32_t> connections{};
 };
 
 struct SklFile : virtual public JsonInterface {
@@ -157,7 +177,7 @@ struct SklFile : virtual public JsonInterface {
     int32_t unk_0x7c; // unused
   } header;
 
-  std::vector<SklField> fields;
+  std::vector<SklField> fields{};
 
   SklFile(const char *filename) {
     uint32_t data[4];
@@ -242,7 +262,7 @@ struct StlFile : virtual public JsonInterface {
     std::ifstream file(filename, std::fstream::binary);
     file.read((char*)&header, sizeof(header));
     int num_pairs = header.info_len / 40;
-    std::vector<StlField> fields;
+    std::vector<StlField> fields{};
 
     while(num_pairs--) {
       StlField field;
@@ -327,20 +347,26 @@ uint32_t align(uint32_t value, uint32_t alignment) {
 }
 
 struct TexFile : virtual public JsonInterface {
-  struct {
-    FileHeader header;
-    uint32_t uid;
-    uint8_t unk_a[3];
-    uint8_t AlphaDepth;
-    TexFormat Format;
-    uint32_t unk_b;
-    uint16_t width;
-    uint16_t height;
-    uint32_t unk_c[11];
-    FileChunk chunk1;
-    FileChunk chunk2;
-    uint32_t unk_d[6];
-  } header;
+  union {
+    struct {
+      FileHeader header;
+      uint32_t uid;
+      uint8_t unk_a[3], AlphaDepth;
+      TexFormat Format;
+      uint32_t unk_b;
+      uint16_t width;
+      uint16_t height;
+      uint32_t unk_c[11];
+      FileChunk chunk1;
+      FileChunk chunk2;
+      uint32_t unk_d[6];
+    } header;
+
+    struct {
+      uint32_t header1[4];
+      uint32_t header2[30];
+    } header_words;
+  };
 
   uint32_t aligned_width;
   uint32_t aligned_height;
@@ -523,13 +549,45 @@ int main() {
 
   std::map<std::string, std::map<uint32_t, std::string>> json;
 
+  std::map<std::string, std::string> unknowns;
+
+  unknowns["gam"] = "data/Base/meta/GameBalance";
+  unknowns["glo"] = "data/Base/meta/Global";
+  unknowns["pbd"] = "data/Base/meta/ParagonBoard";
+  unknowns["gph"] = "data/Base/meta/ParagonGlyph";
+  unknowns["gaf"] = "data/Base/meta/ParagonGlyphAffix";
+  unknowns["pgn"] = "data/Base/meta/ParagonNode";
+  unknowns["pth"] = "data/Base/meta/ParagonThreshold";
+  unknowns["pcl"] = "data/Base/meta/PlayerClass";
+  unknowns["qst"] = "data/Base/meta/Quest";
+  unknowns["ui"] = "data/Base/meta/UI";
+  unknowns["wrl"] = "data/Base/meta/World";
+  unknowns["wst"] = "data/Base/meta/WorldState";
+
+  for (auto unknown : unknowns) {
+    for (const auto &entry : std::filesystem::directory_iterator(unknown.second)) {
+      std::string path = entry.path();
+      std::string name = entry.path().filename();
+      std::string ext = entry.path().extension();
+
+      if (ext == "." + unknown.first) {
+        std::cout << "Processing " << unknown.first << " file: " << path << ".json" << std::endl;
+        std::string outname = "json/" + unknown.first + "/" + name + ".json";
+        std::ofstream out(outname);
+        FileBase tmp(path.c_str());
+        tmp.OutputJSON(out);
+        json[unknown.first][tmp.header.uid] = outname;
+      }
+    }
+  }
+
   for (const auto &entry : std::filesystem::directory_iterator("data/Base/meta/SkillKit")) {
     std::string path = entry.path();
     std::string name = entry.path().filename();
     std::string ext = entry.path().extension();
 
     if (ext == ".skl") {
-      std::cout << "Compiling skl file: " << path << ".json" << std::endl;
+      std::cout << "Processing skl file: " << path << ".json" << std::endl;
       std::string outname = "json/skl/" + name + ".json";
       std::ofstream out(outname);
       SklFile tmp(path.c_str());
@@ -544,7 +602,7 @@ int main() {
     std::string ext = entry.path().extension();
 
     if (ext == ".stl") {
-      std::cout << "Compiling stl file: " << path << ".json" << std::endl;
+      std::cout << "Processing stl file: " << path << ".json" << std::endl;
       std::string outname = "json/stl/" + name + ".json";
       std::ofstream out(outname);
       StlFile tmp(path.c_str());
@@ -559,7 +617,7 @@ int main() {
     std::string ext = entry.path().extension();
 
     if (ext == ".tex") {
-      std::cout << "Compiling tex file: " << path << ".json" << std::endl;
+      std::cout << "Processing tex file: " << path << ".json" << std::endl;
       std::string outname = "json/tex/" + name + ".json";
       std::ofstream out(outname);
       TexFile tex(path.c_str());
@@ -581,7 +639,7 @@ int main() {
         findex << ",\n";
       }
 
-      findex << "  \"" << entry.first << "\": \"" << escape(entry.second.substr(5)) << "\"";
+      findex << "  \"0x" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << "\": \"" << escape(entry.second.substr(5)) << "\"";
       fileCount++;
       count++;
     }
