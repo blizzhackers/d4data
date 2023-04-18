@@ -13,6 +13,7 @@
 #include <fstream>
 #include <vector>
 #include <map>
+#include <unordered_map>
 #include <set>
 #include <filesystem>
 #include <png++/png.hpp>
@@ -46,42 +47,42 @@ inline bool file_exists(const std::string& name) {
   return (stat (name.c_str(), &buffer) == 0);
 }
 
-const char *hexLookup[] = {
-  "\\0",
-  "\\x01",
-  "\\x02",
-  "\\x03",
-  "\\x04",
-  "\\x05",
-  "\\x06",
-  "\\a",
-  "\\b",
-  "\\t",
-  "\\n",
-  "\\v",
-  "\\f",
-  "\\r",
-  "\\x0E",
-  "\\x0F",
-  "\\x10",
-  "\\x11",
-  "\\x12",
-  "\\x13",
-  "\\x14",
-  "\\x15",
-  "\\x16",
-  "\\x17",
-  "\\x18",
-  "\\x19",
-  "\\x1A",
-  "\\x1B",
-  "\\x1C",
-  "\\x1D",
-  "\\x1E",
-  "\\x1F",
-};
-
 std::string escape(std::string str) {
+  static const char *hexLookup[] = {
+    "\\0",
+    "\\x01",
+    "\\x02",
+    "\\x03",
+    "\\x04",
+    "\\x05",
+    "\\x06",
+    "\\a",
+    "\\b",
+    "\\t",
+    "\\n",
+    "\\v",
+    "\\f",
+    "\\r",
+    "\\x0E",
+    "\\x0F",
+    "\\x10",
+    "\\x11",
+    "\\x12",
+    "\\x13",
+    "\\x14",
+    "\\x15",
+    "\\x16",
+    "\\x17",
+    "\\x18",
+    "\\x19",
+    "\\x1A",
+    "\\x1B",
+    "\\x1C",
+    "\\x1D",
+    "\\x1E",
+    "\\x1F",
+  };
+
   std::string ret = "";
 
   for (char &c : str) {
@@ -143,6 +144,10 @@ struct FileChunk {
   uint32_t length;
 };
 
+struct Vector2D {
+  float x, y;
+};
+
 struct SklField {
   uint32_t id;
   uint32_t unk_hash;
@@ -166,15 +171,10 @@ struct SklFile : virtual public JsonInterface {
     FileChunk skill_tree;
     FileChunk unk_0x48;
     int32_t unk_0x58; // always unique
-    float unk_0x5c; // Looks like skill tree position data
-    float unk_0x60; // Looks like skill tree position data
-    float unk_0x64; // Looks like skill tree position data
-    float unk_0x68; // Looks like skill tree position data
-    int32_t unk_0x6c; // unused
-    int32_t unk_0x70; // unused
-    int32_t unk_0x74; // unused
-    int32_t unk_0x78; // unused
-    int32_t unk_0x7c; // unused
+    Vector2D viewboxMin; // unknown
+    Vector2D viewboxMax; // unknown
+    Vector2D unk_0x6c; // unknown
+    Vector2D unk_0x74; // unknown
   } header;
 
   std::vector<SklField> fields{};
@@ -639,7 +639,7 @@ int main() {
         findex << ",\n";
       }
 
-      findex << "  \"0x" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << "\": \"" << escape(entry.second.substr(5)) << "\"";
+      findex << "  \"" << std::hex << std::setfill('0') << std::setw(8) << entry.first << std::dec << "\": \"" << escape(entry.second.substr(5)) << "\"";
       fileCount++;
       count++;
     }
