@@ -25,10 +25,23 @@ void collisions(long pos) {
     return;
   }
 
-  for (char c = 32; c <= 126; c++) {
+  for (char c = '0'; c <= '9'; c++) {
     tmp[pos] = c;
     collisions(pos - 1);
   }
+
+  for (char c = 'A'; c <= 'Z'; c++) {
+    tmp[pos] = c;
+    collisions(pos - 1);
+  }
+
+  for (char c = 'a'; c <= 'z'; c++) {
+    tmp[pos] = c;
+    collisions(pos - 1);
+  }
+
+  tmp[pos] = '_';
+  collisions(pos - 1);
 }
 
 int main(int argc, char *argv[]) {
