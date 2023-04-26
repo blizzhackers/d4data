@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
 
-char pool[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
+char pool[] = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
 char tmp[64]{ 0 };
 uint32_t checksumMatch = 0;
 
@@ -16,14 +16,14 @@ uint32_t checksum(std::string str) {
 void collisions(long pos) {
   if (pos == -1) {
     if(checksum(tmp) == checksumMatch) {
-      std::cout << tmp << std::endl;
+      std::cout << "  " << tmp << std::endl;
     }
 
     return;
   }
 
-  for (int c = 0; c < sizeof(pool) - 1; c++) {
-    tmp[pos] = pool[c];
+  for (int c = 32; c < 127; c++) {
+    tmp[pos] = c;
     collisions(pos - 1);
   }
 }
@@ -35,7 +35,10 @@ int main(int argc, char *argv[]) {
     ss << std::hex << argv[1];
     ss >> checksumMatch;
 
+    std::cout << "Matching: " << std::hex << checksumMatch << std::endl;
+
     for (uint32_t c = 0; c < sizeof(tmp); c++) {
+      std::cout << "Length: " << c << std::endl;
       collisions(c);
     }
   }
