@@ -10,7 +10,7 @@ uint32_t checksum(std::string str) {
   for (size_t i = 0; i < str.length(); i++) {
     hash = hash * 33 + str[i];
   }
-  return hash;
+  return hash & 0xFFFFFFF;
 }
 
 void collisions(long pos) {
