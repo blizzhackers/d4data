@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
   if (checksumMatch.size()) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
     for (uint32_t c = 0; c < sizeof(tmp); c++) {
-      std::cerr << "Length: " << c << std::endl;
+      std::cerr << "Length: " << (c + 1) << std::endl;
       collisions(c);
     }
   }
