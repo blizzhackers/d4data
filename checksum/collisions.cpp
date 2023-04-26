@@ -25,9 +25,11 @@ void collisions(long pos) {
     return;
   }
 
-  for (char c = '0'; c <= '9'; c++) {
-    tmp[pos] = c;
-    collisions(pos - 1);
+  if (pos > 0) {
+    for (char c = '0'; c <= '9'; c++) {
+      tmp[pos] = c;
+      collisions(pos - 1);
+    }
   }
 
   for (char c = 'A'; c <= 'Z'; c++) {
