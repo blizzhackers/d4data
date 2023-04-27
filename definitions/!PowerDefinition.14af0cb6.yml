@@ -2,14 +2,14 @@
 # Hash: 14af0cb6
 # Flags: 00000000 00000000 00000000 01011100
 
-0x8: unk_12c58eb # DT_CHARARRAY (7 bits used) [64 array size]
-0x48: unk_267315b # DT_INT (1 bits used)
+0x8: szInternalName # DT_CHARARRAY (7 bits used) [64 array size]
+0x48: bDefensive # DT_INT (1 bits used)
 0x4c: unk_bd561bf # DT_INT (1 bits used)
 0x50: unk_8dd1734 # unknown 0xee739e40
 0x58: unk_f140b61 # DT_VARIABLEARRAY => unknown 0xee739e40
 0x68: unk_7d4625c # DT_ENUM (32 bits used)
 0x6c: eType # DT_ENUM (32 bits used)
-0x70: unk_b18c7a3 # DT_ENUM (32 bits used)
+0x70: eCategory # DT_ENUM (32 bits used)
 0x74: unk_2b4eb99 # DT_ENUM (32 bits used)
 0x78: unk_9a3836e # DT_ENUM (32 bits used)
 0x7c: unk_49c0222 # DT_ENUM (32 bits used)
@@ -22,7 +22,7 @@
 0x98: unk_c19db61 # DT_STRING_FORMULA
 0xb8: unk_9aad0d1 # DT_INT (1 bits used)
 0xbc: unk_7aab3b8 # DT_INT (1 bits used)
-0xc0: unk_df3aa19 # DT_INT (1 bits used)
+0xc0: bIsPassive # DT_INT (1 bits used)
 0xc4: unk_30531f7 # DT_INT (1 bits used)
 0xc8: unk_1229e8f # DT_INT (1 bits used)
 0xcc: unk_1f1fcc # DT_INT (1 bits used)
@@ -52,18 +52,18 @@
 0x17c: unk_8cdde38 # DT_INT (1 bits used)
 0x180: unk_df9a366 # DT_VARIABLEARRAY => unknown 0x5f5e88ad
 0x190: unk_4bf03ff # DT_INT (1 bits used)
-0x198: unk_169875d # DT_STRING_FORMULA
+0x198: tAttackSpeed # DT_STRING_FORMULA
 0x1b8: unk_6deb090 # DT_INT (1 bits used)
 0x1bc: unk_ed2bdad # DT_INT (1 bits used)
 0x1c0: unk_d028a89 # DT_INT (1 bits used)
 0x1c4: unk_7a86b64 # DT_INT (1 bits used)
-0x1c8: unk_df8aec6 # DT_ENUM (32 bits used)
+0x1c8: eDamageType # DT_ENUM (32 bits used)
 0x1cc: unk_752edeb # DT_INT (1 bits used)
 0x1d0: unk_623da19 # DT_STRING_FORMULA
 0x1f0: unk_7cfb7ba # DT_STRING_FORMULA
 0x210: unk_923b5fb # DT_INT (1 bits used)
 0x214: unk_e517f6f # DT_INT (1 bits used)
-0x218: unk_ef298f3 # DT_ENUM (32 bits used)
+0x218: eHitSound # DT_ENUM (32 bits used)
 0x21c: unk_4d7691e # unknown 0x3940c0fe
 0x228: unk_1a5392 # DT_INT (32 bits used)
 0x22c: unk_97eadb8 # DT_UINT (32 bits used)
@@ -72,10 +72,10 @@
 0x238: unk_41f8768 # DT_ENUM (32 bits used)
 0x240: unk_de3b427 # DT_VARIABLEARRAY => unknown 0x9bf9054e
 0x250: unk_aadd503 # DT_STRING_FORMULA
-0x270: unk_3426537 # DT_STRING_FORMULA
-0x290: unk_6645ad7 # DT_STRING_FORMULA
-0x2b0: unk_9335a24 # DT_STRING_FORMULA
-0x2d0: unk_6ccb688 # DT_STRING_FORMULA
+0x270: tChargeCost # DT_STRING_FORMULA
+0x290: tMaxCharges # DT_STRING_FORMULA
+0x2b0: tRechargeTime # DT_STRING_FORMULA
+0x2d0: tCooldownTime # DT_STRING_FORMULA
 0x2f0: unk_b26a921 # DT_STRING_FORMULA
 0x310: unk_86a6e05 # DT_STRING_FORMULA
 0x330: unk_bddddda # DT_INT (1 bits used)
@@ -116,7 +116,7 @@
 0x42c: unk_b2d506d # DT_FLOAT (32 bits used)
 0x430: unk_8b4e7a # DT_ENUM (32 bits used)
 0x434: unk_44bbb8e # DT_INT (1 bits used)
-0x438: unk_b356214 # DT_STRING_FORMULA
+0x438: tAttackRadius # DT_STRING_FORMULA
 0x458: unk_3587b29 # DT_INT (1 bits used)
 0x45c: unk_49a1799 # DT_INT (1 bits used)
 0x460: unk_a114e2b # DT_SNO (32 bits used) {group 0x1d "Power"}
@@ -134,7 +134,7 @@
 0x504: unk_ea58c49 # DT_FLOAT (32 bits used)
 0x508: unk_692752d # DT_FLOAT (32 bits used)
 0x50c: unk_eb84fbe # DT_INT (1 bits used)
-0x510: unk_53187f0 # DT_INT (1 bits used)
+0x510: bInvisibleDuring # DT_INT (1 bits used)
 0x514: unk_31e452 # DT_INT (1 bits used)
 0x518: unk_1de20c9 # DT_INT (1 bits used)
 0x51c: unk_4b139c0 # DT_INT (1 bits used)
@@ -146,9 +146,9 @@
 0xa70: unk_6afae78 # DT_INT (1 bits used)
 0xa74: unk_14e8917 # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
 0xa78: unk_91a7640 # DT_SNO (32 bits used) {group 0x74 "ItemRequirement"}
-0xa7c: unk_2037570 # DT_SNO (32 bits used) {group 0x49 "Item"}
+0xa7c: snoItemRequirement # DT_SNO (32 bits used) {group 0x49 "Item"}
 0xa80: unk_1b291d6 # DT_SNO (32 bits used) {group 0x33 "Condition"}
-0xa84: unk_8382cdd # DT_INT (1 bits used)
+0xa84: bUsableInTown # DT_INT (1 bits used)
 0xa88: unk_f49838b # DT_INT (1 bits used)
 0xa8c: unk_c2c995e # DT_INT (1 bits used)
 0xa90: unk_744a4fd # DT_INT (1 bits used)
@@ -180,9 +180,9 @@
 0xb1c: unk_3f7ac9c # DT_INT (1 bits used)
 0xb20: unk_36a68ce # DT_INT (1 bits used)
 0xb28: unk_8a74e60 # DT_VARIABLEARRAY => unknown 0x6f71323a
-0xb38: unk_9a955e9 # DT_VARIABLEARRAY => unknown 0x3fd70b39
+0xb38: unk_9a955e9 # DT_VARIABLEARRAY => PowerBuffDefinition
 0xb48: unk_3fd5e42 # DT_VARIABLEARRAY => unknown 0x20e37537
-0xb58: unk_12c8cad # DT_INT (32 bits used)
+0xb58: nFormulaCount # DT_INT (32 bits used)
 0xb60: unk_8efedf0 # DT_VARIABLEARRAY => unknown 0x30754ce0
 0xb70: unk_a7f6d26 # DT_VARIABLEARRAY => PowerMod
 0xb80: unk_d6e35f3 # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
