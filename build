@@ -1,4 +1,9 @@
 #!/bin/bash
 set -e
 cd "$(dirname "$0")"
-g++ *.cpp DirectX/*.cpp -lpng -o ./process "$@"
+
+if [ ! -e "types/types.a" ]; then
+  ./buildlib
+fi
+
+g++ process_new.cpp types/types.a -o ./process_new "$@"
