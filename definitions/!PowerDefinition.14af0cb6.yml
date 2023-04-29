@@ -21,7 +21,7 @@
 0x94: unk_6c6eb6b # DT_INT (1 bits used)
 0x98: unk_c19db61 # DT_STRING_FORMULA
 0xb8: unk_9aad0d1 # DT_INT (1 bits used)
-0xbc: unk_7aab3b8 # DT_INT (1 bits used)
+0xbc: bIsBasicAttack # DT_INT (1 bits used)
 0xc0: bIsPassive # DT_INT (1 bits used)
 0xc4: unk_30531f7 # DT_INT (1 bits used)
 0xc8: unk_1229e8f # DT_INT (1 bits used)
@@ -78,7 +78,7 @@
 0x2d0: tCooldownTime # DT_STRING_FORMULA
 0x2f0: unk_b26a921 # DT_STRING_FORMULA
 0x310: unk_86a6e05 # DT_STRING_FORMULA
-0x330: unk_bddddda # DT_INT (1 bits used)
+0x330: bTargetGroundOnly # DT_INT (1 bits used)
 0x334: unk_fc01065 # DT_ENUM (32 bits used)
 0x338: unk_2ce4eb5 # DT_INT (1 bits used)
 0x33c: unk_e65bc77 # DT_INT (1 bits used)
@@ -97,10 +97,10 @@
 0x370: unk_79e716a # DT_FLOAT (32 bits used)
 0x374: unk_ead9008 # DT_FLOAT (32 bits used)
 0x378: unk_767809 # DT_FLOAT (32 bits used)
-0x37c: unk_5e8d04e # DT_INT (1 bits used)
-0x380: unk_b19b3fa # DT_INT (1 bits used)
+0x37c: bCastTargetAllies # DT_INT (1 bits used)
+0x380: bCastTargetEnemies # DT_INT (1 bits used)
 0x384: unk_7095076 # DT_INT (1 bits used)
-0x388: unk_6007b9e # DT_STRING_FORMULA
+0x388: tCastTargetNecroCorpsesOnly # DT_STRING_FORMULA
 0x3a8: unk_b9b985 # DT_STRING_FORMULA
 0x3c8: unk_bcdb405 # DT_INT (1 bits used)
 0x3cc: unk_6e40571 # DT_INT (1 bits used)
@@ -127,7 +127,7 @@
 0x4e8: unk_4d3c3c1 # DT_ENUM (32 bits used)
 0x4ec: unk_d2e4b3e # DT_ENUM (32 bits used)
 0x4f0: unk_6714077 # DT_INT (1 bits used)
-0x4f4: unk_2e90552 # DT_INT (1 bits used)
+0x4f4: bRequiresActorTarget # DT_INT (1 bits used)
 0x4f8: unk_805ebfc # DT_INT (1 bits used)
 0x4fc: unk_b4ad6e7 # DT_INT (1 bits used)
 0x500: unk_6fdff1 # DT_ENUM (32 bits used)
@@ -137,12 +137,12 @@
 0x510: bInvisibleDuring # DT_INT (1 bits used)
 0x514: unk_31e452 # DT_INT (1 bits used)
 0x518: unk_1de20c9 # DT_INT (1 bits used)
-0x51c: unk_4b139c0 # DT_INT (1 bits used)
+0x51c: bCannotDieDuring # DT_INT (1 bits used)
 0x520: unk_636a66b # DT_INT (1 bits used)
 0x524: unk_160bc26 # DT_INT (1 bits used)
 0x528: unk_e0369f5 # DT_INT (1 bits used)
 0x52c: unk_7a416a6 # DT_INT (1 bits used)
-0x530: unk_d90ac45 # DT_FIXEDARRAY [14 array size] => unknown 0x146f0099
+0x530: arCCInfo # DT_FIXEDARRAY [14 array size] => unknown 0x146f0099
 0xa70: unk_6afae78 # DT_INT (1 bits used)
 0xa74: unk_14e8917 # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
 0xa78: unk_91a7640 # DT_SNO (32 bits used) {group 0x74 "ItemRequirement"}
@@ -161,7 +161,7 @@
 0xaac: unk_ef10d9b # DT_INT (1 bits used)
 0xab0: unk_ecb7a82 # DT_INT (1 bits used)
 0xab4: arCollisionSettings # DT_FIXEDARRAY [2 array size] => CollisionSettings
-0xadc: unk_4dca2e9 # DT_INT (1 bits used)
+0xadc: fCannotLMBAssign # DT_INT (1 bits used)
 0xae0: unk_2e3cde8 # DT_INT (1 bits used)
 0xae4: unk_fc20c9f # DT_INT (1 bits used)
 0xae8: unk_a75e08a # DT_INT (1 bits used)
@@ -180,11 +180,11 @@
 0xb1c: unk_3f7ac9c # DT_INT (1 bits used)
 0xb20: unk_36a68ce # DT_INT (1 bits used)
 0xb28: unk_8a74e60 # DT_VARIABLEARRAY => unknown 0x6f71323a
-0xb38: unk_9a955e9 # DT_VARIABLEARRAY => PowerBuffDefinition
+0xb38: arBuffs # DT_VARIABLEARRAY => PowerBuffDefinition
 0xb48: unk_3fd5e42 # DT_VARIABLEARRAY => unknown 0x20e37537
 0xb58: nFormulaCount # DT_INT (32 bits used)
-0xb60: unk_8efedf0 # DT_VARIABLEARRAY => unknown 0x30754ce0
-0xb70: unk_a7f6d26 # DT_VARIABLEARRAY => PowerMod
+0xb60: arPayloads # DT_VARIABLEARRAY => unknown 0x30754ce0
+0xb70: arMods # DT_VARIABLEARRAY => PowerMod
 0xb80: unk_d6e35f3 # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
 0xb84: unk_cb067ec # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
 0xb88: unk_c5a8e20 # HardpointLink
