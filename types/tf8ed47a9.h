@@ -1,0 +1,300 @@
+/**
+ * Definition: tf8ed47a9
+ * Hash: f8ed47a9
+ */
+
+#pragma once
+
+#include "../types.h"
+#include "ScrollbarStyle.h"
+#include "t1d865fc7.h"
+#include "t22d9402d.h"
+#include "t31220ee1.h"
+#include "t36837ce3.h"
+#include "t55ee8277.h"
+#include "t5960905c.h"
+#include "t7a02a8d6.h"
+#include "t894bd255.h"
+#include "ta77b14db.h"
+#include "taec481b3.h"
+#include "tc36fb4b8.h"
+#include "te3bec795.h"
+#include "te4a9aedd.h"
+#include "tfac0f318.h"
+#include "tfd221bd1.h"
+
+#pragma push(pack, 1)
+
+struct tf8ed47a9 : public ComplexRead {
+  DT_UINT dwType;
+  DT_UINT dwPad;
+  DT_FIXEDARRAY<tc36fb4b8, 3> unk_9468809;
+  DT_FLOAT unk_7e4617a;
+  DT_FLOAT unk_1598718;
+  DT_FLOAT unk_2c2d08c;
+  DT_FLOAT unk_3687be2;
+  DT_FLOAT unk_f29cf9f;
+  DT_FLOAT unk_a1a0b99;
+  DT_FLOAT unk_8fd95d7;
+  DT_FLOAT unk_7fad401;
+  DT_FLOAT unk_5610641;
+  DT_FLOAT unk_876f67;
+  DT_FLOAT unk_196eaf0;
+  DT_FLOAT unk_cd8b828;
+  DT_FLOAT unk_c13ed3;
+  DT_FLOAT unk_b86032f;
+  DT_FLOAT unk_d3174a3;
+  DT_FLOAT unk_6ccfe46;
+  DT_FLOAT unk_837ae57;
+  DT_FLOAT unk_3e0d388;
+  DT_FLOAT unk_4708c6a;
+  DT_FLOAT unk_faf290a;
+  DT_FLOAT unk_57eb5c3;
+  DT_FLOAT unk_1224aa7;
+  DT_FLOAT unk_9801a36;
+  DT_FLOAT unk_9946cbb;
+  DT_FLOAT unk_9f87fb4;
+  DT_FLOAT unk_aaf0c18;
+  DT_UINT unk_e16b011;
+  DT_UINT unk_4f3cd66;
+  DT_UINT unk_b825f41;
+  DT_UINT unk_478de7c;
+  DT_UINT unk_5e323f0;
+  DT_FLOAT unk_c47180a;
+  DT_FLOAT unk_b12c0aa;
+  DT_FLOAT unk_9b4effb;
+  DT_FLOAT unk_f65fa83;
+  DT_VECTOR2D unk_d30a7e3;
+  DT_SNO<SnoGroup::Texture> unk_1b1414e;
+  DT_SNO<SnoGroup::Texture> unk_87ac7ca;
+  DT_SNO<SnoGroup::Texture> unk_a48542c;
+  DT_FLOAT unk_ef09f54;
+  DT_FLOAT unk_11c15f5;
+  DT_RGBACOLOR unk_6ed18a4;
+  DT_RGBACOLOR unk_29e5ce5;
+  DT_RGBACOLOR unk_6f7d3ac;
+  DT_RGBACOLOR unk_2a917ed;
+  DT_RGBACOLOR unk_72266f8;
+  DT_RGBACOLOR unk_435bf79;
+  DT_RGBACOLOR unk_ac1d2c7;
+  DT_RGBACOLOR unk_72dd8a6;
+  DT_FLOAT unk_12e00f0;
+  DT_FLOAT unk_848bcbf;
+  DT_FLOAT unk_8086880;
+  DT_FLOAT unk_c4559fc;
+  DT_FLOAT unk_786fe3d;
+  DT_FLOAT unk_1b8406b;
+  DT_FLOAT unk_8badfc2;
+  DT_FLOAT unk_d55c009;
+  DT_FLOAT unk_d0f26d6;
+  DT_FLOAT unk_7a8104a;
+  DT_FLOAT unk_ce839dc;
+  DT_VECTOR2D unk_1a7cebb;
+  DT_FLOAT unk_cd7a774;
+  DT_FLOAT unk_2dbafe8;
+  DT_FLOAT unk_f1bb679;
+  DT_FLOAT unk_f1bb57b;
+  DT_FLOAT unk_ecabd08;
+  DT_FLOAT unk_a584681;
+  DT_FLOAT unk_dbf4030;
+  DT_FLOAT unk_a133a8;
+  DT_FLOAT unk_f577b0;
+  DT_INT unk_3ab43a3;
+  DT_FLOAT unk_9c8f277;
+  DT_UINT unk_f2cc835;
+  DT_FLOAT unk_a5093bf;
+  DT_UINT unk_eeb8012;
+  DT_SNO<SnoGroup::Shader> unk_887a373;
+  DT_SNO<SnoGroup::Shader> unk_5dbe647;
+  DT_FLOAT unk_149bdee;
+  DT_FLOAT unk_10d9d74;
+  DT_FLOAT unk_d347c44;
+  DT_FLOAT unk_430d091;
+  DT_FLOAT unk_7a41cb9;
+  DT_FLOAT unk_5c6981e;
+  DT_INT unk_62b69ec;
+  DT_FLOAT unk_3a17c48;
+  DT_FIXEDARRAY<t36837ce3, 4> unk_91849cb;
+  t5960905c unk_88f4ecc;
+  DT_FLOAT unk_2c3270;
+  DT_FLOAT unk_ec0001f;
+  DT_FLOAT unk_c0496bf;
+  DT_FLOAT unk_ec858c;
+  DT_FLOAT unk_5135a05;
+  DT_FLOAT unk_3f64492;
+  DT_FLOAT unk_c993839;
+  DT_FLOAT unk_4cf9be8;
+  DT_FLOAT unk_eee69a4;
+  DT_FLOAT unk_df2414f;
+  DT_FLOAT unk_3fdcbeb;
+  DT_FLOAT unk_3fdcaed;
+  DT_FLOAT unk_b0e8e55;
+  DT_FLOAT unk_85356ef;
+  t894bd255 unk_a82d7f5;
+  t894bd255 unk_cfff5f6;
+  DT_FIXEDARRAY<t894bd255, 2> unk_f2e396e;
+  t31220ee1 unk_d9fccf3;
+  DT_VECTOR2D unk_c0e1b71;
+  DT_VECTOR2D unk_5161778;
+  DT_VECTOR2D unk_78b2a91;
+  DT_FLOAT unk_10c7eaa;
+  DT_FLOAT unk_a61c4bf;
+  t55ee8277 unk_e058ac2;
+  tfac0f318 unk_abdc576;
+  tfac0f318 unk_55e00d8;
+  tfac0f318 unk_3ba9d7b;
+  tfac0f318 unk_575246e;
+  tfac0f318 unk_155fd0;
+  tfac0f318 unk_9c59a73;
+  tfac0f318 unk_88a6181;
+  DT_RGBACOLOR unk_cfbdf91;
+  DT_RGBACOLOR unk_62538b3;
+  DT_RGBACOLOR unk_988bcb0;
+  DT_RGBACOLOR unk_f581a6f;
+  t31220ee1 unk_78ed1cc;
+  DT_FLOAT unk_5cf738e;
+  DT_FLOAT unk_695a8a5;
+  DT_FLOAT unk_b2e2e43;
+  DT_FLOAT unk_e2be78;
+  DT_FLOAT unk_dada65f;
+  DT_BYTE unk_ccab046;
+  DT_BYTE unk_78e60c2;
+  DT_BYTE unk_1333341;
+  DT_BYTE unk_15a4084;
+  DT_BYTE unk_c019b27;
+  DT_BYTE unk_c091278;
+  DT_FLOAT unk_7c3f20c;
+  DT_UINT unk_f993efd;
+  DT_UINT unk_ba98f17;
+  DT_FIXEDARRAY<taec481b3, 6> unk_8c77381;
+  DT_FLOAT unk_934d708;
+  DT_FLOAT unk_77a9a02;
+  DT_FLOAT unk_e3de54d;
+  DT_UINT unk_2bdd3a2;
+  DT_FLOAT unk_6d92ca8;
+  DT_FLOAT pGameGetPlayerHandicapValues;
+  DT_FLOAT unk_99df291;
+  DT_FLOAT unk_ecfa0a0;
+  DT_FLOAT unk_599fb20;
+  DT_UINT unk_6fd1380;
+  DT_UINT unk_71f6e7e;
+  DT_UINT unk_5df2c46;
+  DT_UINT unk_80370e6;
+  DT_UINT unk_321b8d8;
+  DT_BYTE unk_59d8d4;
+  DT_BYTE unk_15da863;
+  DT_FLOAT unk_67c326a;
+  DT_FIXEDARRAY<ScrollbarStyle, 4> unk_994e59c;
+  DT_UINT unk_c6bdf51;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Item>> unk_90ccf89;
+  DT_UINT unk_2738127;
+  t22d9402d unk_d9cee69;
+  t22d9402d unk_d9cee6a;
+  t22d9402d unk_d9cee6b;
+  t22d9402d unk_d9cee6c;
+  t22d9402d unk_d9cee6d;
+  t22d9402d unk_d9cee6e;
+  t22d9402d unk_d9cee6f;
+  t22d9402d unk_d9cee70;
+  t22d9402d unk_d9cf2aa;
+  t22d9402d unk_d9cf2ab;
+  t22d9402d unk_d9cf2ac;
+  t22d9402d unk_d9cf2ad;
+  t22d9402d unk_d9cf2ae;
+  t22d9402d unk_d9cf2af;
+  t22d9402d unk_d9cf2b0;
+  t22d9402d unk_d9cf2b1;
+  t22d9402d unk_d9cf6eb;
+  t22d9402d unk_d9cf6ec;
+  t22d9402d unk_d9cf6ed;
+  t22d9402d unk_d9cf6ee;
+  t22d9402d unk_d9cf6ef;
+  t22d9402d unk_d9cf6f0;
+  t22d9402d unk_d9cf6f1;
+  t22d9402d unk_d9cf6f2;
+  DT_UINT unk_db41c87;
+  DT_UINT unk_ee3ceab;
+  DT_UINT unk_bd7d800;
+  DT_UINT unk_9d49dc4;
+  DT_UINT unk_537458b;
+  DT_UINT unk_d1d3a2f;
+  DT_UINT unk_8e05798;
+  DT_UINT unk_d949c5c;
+  DT_UINT unk_d3dd9b3;
+  DT_UINT unk_1aea757;
+  DT_UINT unk_ac8d9e4;
+  DT_UINT unk_666e28;
+  DT_UINT unk_a47711;
+  DT_UINT unk_a044f75;
+  DT_UINT unk_81f03e4;
+  DT_UINT unk_c26d828;
+  DT_UINT unk_8bfe111;
+  DT_UINT unk_dd1f975;
+  DT_UINT unk_444be6e;
+  DT_UINT unk_8d8b8f2;
+  DT_UINT unk_b45637b;
+  DT_UINT unk_15b8e1f;
+  DT_UINT unk_84522db;
+  DT_UINT unk_ef9e97f;
+  DT_UINT unk_da9dee8;
+  DT_UINT unk_b0735ac;
+  DT_UINT unk_41cf76a;
+  DT_UINT unk_c67ef6e;
+  DT_UINT unk_47c4557;
+  DT_UINT unk_635f97b;
+  DT_UINT unk_2e61264;
+  DT_UINT unk_e1af6a8;
+  DT_UINT unk_c68bf91;
+  DT_UINT unk_e49e7f5;
+  DT_UINT unk_6eebf91;
+  DT_UINT unk_c8fe7f5;
+  DT_UINT unk_187125e;
+  DT_UINT unk_b5d02e2;
+  DT_FIXEDARRAY<DT_UINT, 23> unk_e931d19;
+  DT_FIXEDARRAY<te4a9aedd, 10> unk_40bddf0;
+  DT_FIXEDARRAY<tfd221bd1, 3> unk_15b9c64;
+  DT_UINT unk_aa34698;
+  DT_FIXEDARRAY<ta77b14db, 5> tClassInfo;
+  DT_VARIABLEARRAY<t7a02a8d6> unk_51e3091;
+  DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_dc621b6;
+  DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_1ff54e;
+  DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_6a92c0c;
+  DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_2db68;
+  DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_dbd3ebc;
+  DT_VARIABLEARRAY<DT_FLOAT> unk_bb45514;
+  DT_INT unk_6494906;
+  DT_FLOAT unk_31fce21;
+  DT_FLOAT unk_774d89f;
+  DT_FLOAT unk_ef2cbab;
+  DT_FLOAT unk_4f23516;
+  DT_FLOAT unk_d3ef4e8;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Texture>> unk_199897;
+  DT_FLOAT unk_17dc82;
+  DT_FLOAT unk_29f26f5;
+  DT_FLOAT flMinimapRevealRadius;
+  DT_UINT unk_b8c638c;
+  DT_VARIABLEARRAY<t1d865fc7> unk_2b6498d;
+  DT_FLOAT unk_7b6861c;
+  DT_FLOAT unk_c56ad90;
+  DT_FLOAT unk_1f7cfee;
+  DT_FLOAT unk_85af920;
+  DT_FLOAT unk_3ec7e81;
+  DT_FLOAT unk_586724;
+  DT_INT unk_1fa8d3c;
+  DT_INT unk_1fa8c3e;
+  DT_INT unk_17a967d;
+  DT_INT unk_f063bba;
+  DT_INT unk_ce72bfa;
+  DT_INT unk_ce72afc;
+  DT_INT unk_9ecbbb;
+  DT_INT unk_39edff8;
+  DT_INT unk_c79c16e;
+  DT_INT unk_c79c070;
+  DT_INT unk_c70a82f;
+  DT_INT unk_531d66c;
+  DT_FIXEDARRAY<te3bec795, 1> unk_26a4b93;
+
+  void read(const char* base, char* &ptr);
+};
+
+#pragma pop(pack)

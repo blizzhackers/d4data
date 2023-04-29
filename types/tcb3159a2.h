@@ -1,0 +1,209 @@
+/**
+ * Definition: tcb3159a2
+ * Hash: cb3159a2
+ */
+
+#pragma once
+
+#include "../types.h"
+#include "TestDefinitionMusic.h"
+#include "t11e7e638.h"
+#include "t19c611ca.h"
+#include "t1d308425.h"
+#include "t1de9164f.h"
+#include "t220eeabc.h"
+#include "t2d18fb5c.h"
+#include "t39952607.h"
+#include "t4b4f38f.h"
+#include "t85177256.h"
+#include "t8f2bc52f.h"
+#include "t9934af2e.h"
+#include "tcd121122.h"
+#include "tdd0bf409.h"
+#include "te8e345d9.h"
+#include "tfd4746f8.h"
+
+#pragma push(pack, 1)
+
+struct tcb3159a2 : public ComplexRead {
+  DT_UINT dwType;
+  DT_UINT dwPad;
+  DT_FLOAT wdMicrophoneHeight;
+  DT_FLOAT wdMicrophoneXYOffset;
+  DT_FLOAT unk_4c9095b;
+  DT_FLOAT unk_bcf2fa1;
+  DT_FLOAT flDopplerFactor;
+  DT_FLOAT unk_2e9c7dd;
+  DT_FLOAT unk_581b15a;
+  DT_FLOAT unk_f1fb37b;
+  DT_FLOAT unk_a24f195;
+  te8e345d9 unk_de216d0;
+  DT_INT unk_aab60e9;
+  DT_INT unk_5e1713;
+  DT_INT unk_4889712;
+  DT_FLOAT unk_14c506c;
+  DT_FLOAT unk_9109f33;
+  DT_INT unk_97eca79;
+  DT_FLOAT unk_9bb9a7b;
+  DT_FLOAT unk_bff9025;
+  DT_FLOAT unk_6667f4c;
+  DT_FLOAT unk_d4f116d;
+  DT_FLOAT unk_3d2f7b4;
+  DT_FLOAT unk_d06da3d;
+  DT_INT unk_1c5bd37;
+  DT_FLOAT unk_c1c8d33;
+  DT_FLOAT unk_2d19c28;
+  DT_FLOAT unk_84bd05e;
+  DT_FLOAT unk_a674d1f;
+  DT_FLOAT unk_48115e6;
+  DT_FLOAT unk_1140ffa;
+  DT_FLOAT unk_27bd142;
+  DT_FLOAT unk_b7979d6;
+  DT_FLOAT unk_1dc7c7a;
+  DT_FLOAT unk_15e2cbc;
+  DT_FLOAT flSpringMagnitude;
+  DT_FLOAT flSpringStiffness;
+  DT_FLOAT flOrbitSLerpScalar;
+  DT_FLOAT flOrbitTransitionExponentialScalar;
+  DT_FLOAT flOrbitTransitionDuration;
+  DT_VECTOR3D wvOrbitOffsetCenterForAngleLimiting;
+  DT_FLOAT flOrbitMaxAngleFromOffsetCenter;
+  DT_VECTOR3D vConsoleCameraShakeScalar;
+  DT_FLOAT flZNear;
+  DT_FLOAT unk_4849eb5;
+  DT_FLOAT unk_d16853d;
+  DT_FLOAT unk_efc10ac;
+  DT_FLOAT unk_67c3614;
+  DT_FLOAT unk_6236ef1;
+  DT_FLOAT unk_5d800f3;
+  DT_FLOAT unk_75c2a63;
+  DT_FLOAT unk_32ded65;
+  DT_FLOAT unk_ba7c108;
+  DT_FLOAT unk_ea151f5;
+  DT_FLOAT unk_26bea03;
+  DT_FLOAT unk_26bec71;
+  DT_FLOAT unk_4d37f57;
+  DT_FLOAT unk_fe87183;
+  DT_FLOAT unk_9773164;
+  DT_FLOAT unk_8682ecb;
+  DT_RGBACOLOR unk_b5787f8;
+  DT_RGBACOLOR unk_dacb099;
+  DT_RGBACOLOR unk_1d93a;
+  DT_RGBACOLOR unk_25701db;
+  DT_RGBACOLOR unk_dca1d11;
+  DT_RGBACOLOR unk_dd6ca58;
+  DT_RGBACOLOR unk_14e6af7;
+  DT_RGBACOLOR unk_db836fa;
+  DT_RGBACOLOR unk_ed20455;
+  DT_RGBACOLOR unk_a879fd8;
+  DT_FLOAT unk_614e428;
+  DT_FLOAT unk_b7ccb15;
+  DT_FLOAT unk_ed46ae1;
+  DT_FLOAT unk_a3a221d;
+  DT_FLOAT unk_4450d33;
+  DT_FLOAT unk_52fa93a;
+  DT_FLOAT unk_f719403;
+  DT_FLOAT unk_556d46a;
+  DT_FLOAT unk_25055f1;
+  DT_FLOAT unk_808753f;
+  DT_FLOAT unk_c393e43;
+  DT_FLOAT unk_5149854;
+  DT_FLOAT unk_83c9b2a;
+  DT_FLOAT unk_8e6396a;
+  DT_FLOAT unk_922b1da;
+  DT_FLOAT unk_b08e030;
+  DT_FLOAT unk_26ab22f;
+  DT_FLOAT unk_55f065;
+  DT_FLOAT unk_c8a3761;
+  DT_FLOAT unk_e661bd7;
+  DT_VECTOR3D unk_f48f9ad;
+  DT_VECTOR3D unk_f48f8af;
+  DT_FLOAT unk_7f22f2a;
+  DT_UINT unk_2665f25;
+  DT_UINT unk_c28b473;
+  DT_FLOAT unk_df5ec50;
+  DT_FLOAT unk_620e28d;
+  DT_FLOAT unk_f12663d;
+  DT_FLOAT unk_6bec509;
+  DT_FLOAT unk_4ae734e;
+  DT_FLOAT unk_cd9698b;
+  DT_FLOAT unk_d3bbd69;
+  DT_VECTOR3D unk_5822eea;
+  DT_FLOAT unk_725b405;
+  DT_FLOAT unk_aebfc2b;
+  DT_FLOAT unk_cbab47a;
+  DT_FLOAT unk_d958d9;
+  DT_FLOAT unk_eacf58c;
+  DT_FLOAT unk_13a3e3b;
+  DT_FLOAT unk_cb97e5a;
+  DT_FLOAT unk_8fb07f8;
+  DT_FLOAT unk_ae24927;
+  DT_FLOAT unk_c9de46;
+  DT_FLOAT unk_b3fd1d8;
+  DT_FLOAT unk_5594707;
+  DT_FLOAT unk_ba7e426;
+  DT_FLOAT unk_836453e;
+  DT_FLOAT unk_4ee8575;
+  DT_SNO<SnoGroup::Observer> unk_14d0aad;
+  DT_FLOAT unk_884eb16;
+  DT_FLOAT unk_9b111e3;
+  DT_FLOAT unk_25a68ac;
+  DT_FLOAT unk_b5e6750;
+  DT_FLOAT unk_ec28624;
+  DT_FLOAT unk_f070975;
+  DT_FLOAT unk_db6c589;
+  DT_FLOAT unk_2dc7eb1;
+  DT_FLOAT unk_b629779;
+  DT_FLOAT unk_3f0c40a;
+  DT_FLOAT unk_e02135;
+  DT_FLOAT unk_40a2406;
+  DT_FLOAT unk_bc4473;
+  DT_FLOAT unk_cb3bd6f;
+  DT_FLOAT unk_e69e500;
+  DT_VARIABLEARRAY<t11e7e638> unk_9d0dad3;
+  DT_FIXEDARRAY<tdd0bf409, 6> unk_63a579c;
+  DT_INT unk_efa9723;
+  DT_INT unk_2140bd4;
+  DT_INT unk_9e6e6b5;
+  DT_INT unk_3d0e848;
+  DT_INT unk_aa1fd73;
+  DT_INT unk_88029e3;
+  DT_INT unk_b56464f;
+  DT_INT unk_f17e0f7;
+  DT_UINT unk_2900bd9;
+  DT_UINT unk_4f6a577;
+  DT_UINT unk_410fa4f;
+  DT_FLOAT unk_575837;
+  DT_FLOAT unk_93531cf;
+  DT_FLOAT unk_4ae2208;
+  DT_VARIABLEARRAY<TestDefinitionMusic> unk_8c41fbd;
+  DT_FLOAT unk_5202085;
+  DT_FLOAT unk_c322de7;
+  DT_FLOAT unk_aa0944b;
+  t1d308425 unk_f37fb19;
+  DT_FLOAT unk_fa3df7c;
+  t9934af2e unk_c9c8405;
+  t19c611ca unk_80c61be;
+  t220eeabc unk_553ab0;
+  tfd4746f8 unk_f084aec;
+  t8f2bc52f unk_53d9623;
+  t2d18fb5c unk_32acc50;
+  tcd121122 unk_55e0096;
+  DT_VARIABLEARRAY<t85177256> unk_edffb30;
+  DT_VARIABLEARRAY<t39952607> unk_a90a48d;
+  t1de9164f unk_77afde8;
+  t1de9164f unk_6c7ea27;
+  t1de9164f unk_23d823e;
+  t1de9164f unk_e54f346;
+  DT_FLOAT unk_a412bc0;
+  DT_FLOAT unk_e0c0343;
+  DT_FLOAT unk_9dd7abd;
+  DT_FLOAT unk_66301bd;
+  DT_FLOAT unk_f0e8c35;
+  DT_FLOAT unk_9b5adac;
+  t4b4f38f unk_2fb4383;
+
+  void read(const char* base, char* &ptr);
+};
+
+#pragma pop(pack)

@@ -1,0 +1,16 @@
+/**
+ * Definition: tfe0bd4d
+ * Hash: fe0bd4d
+ */
+
+#include "tfe0bd4d.h"
+
+void tfe0bd4d::read(const char* base, char* &ptr) {
+  ptr += 8;
+  readData(&dwType, base, ptr);
+  readData(&dwPad, base, ptr);
+  readData(&tConditions, base, ptr);
+  readData(&fGenerated, base, ptr);
+  readData(&unk_6cba752, base, ptr);
+  readData(&unk_e560b0b, base, ptr);
+}
