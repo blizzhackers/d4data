@@ -355,6 +355,11 @@ struct D4File {
     char *base = (char*)data.c_str();
 
     readData(&deadbeef, base, base);
+
+    if (deadbeef != 0xdeadbeef) {
+      throw std::string("File lacks 0xdeadbeef signature!");
+    }
+
     readData(&fileType, base, base);
     readData(&unk, base, base);
     readData(&hash, base, base);
