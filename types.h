@@ -5,20 +5,6 @@
 
 #pragma pack(push,1)
 
-struct ComplexRead {
-  virtual void read(const char* base, char* &ptr) = 0;
-};
-
-template<class T>
-void readData(T *data, const char* base, char* &ptr) {
-  if constexpr (std::is_base_of_v<ComplexRead, T>) {
-    data->read(base, ptr);
-  } else {
-    *data = *(T*)ptr;
-    ptr += sizeof(T);
-  }
-}
-
 enum class TexFormat : int32_t {
   B8G8R8A8_UNORM_SRGB = 0,
   R8_UNORM = 7,  // XXX: looks like one of either R8_UNORM or A8_UNORM
@@ -165,6 +151,129 @@ enum class SnoGroup : int32_t {
   Face = 140,
   MaxSnoGroups = 141,
 };
+
+enum class D4DataType : uint32_t {
+  ABTest = 0x662A2096,
+  Achievement = 0x63CFE94B,
+  Actor = 0x52132929,
+  Activity = 0x28D46A2C,
+  Affix = 0x6CCA3827,
+  AmbientSound = 0x2586356E,
+  Anim2D = 0xA1C3DB4B,
+  Anim = 0xB4893876,
+  AnimSet = 0x227F4A92,
+  AnimTree = 0x4FB8B3DC,
+  Appearance = 0xF1E17243,
+  Aspect = 0x903E859F,
+  AudioContext = 0xAA92CD9A,
+  Biome = 0xA5387E0F,
+  Boost = 0x59BB7738,
+  Challenge = 0x7D7B70E6,
+  Cloth = 0xBD4A23E6,
+  Condition = 0xB33B5D4C,
+  Conversation = 0x91FA003,
+  CollisionSettings = 0xD0E9F00A,
+  Crafter = 0x21753D53,
+  DungeonAffix = 0xFBE69FD5,
+  DemonScroll = 0x7076D5D8,
+  Dye = 0x3303DF37,
+  EffectGroup = 0x50D0CDA0,
+  Emblem = 0xD93022F1,
+  Emote = 0x2CB54509,
+  Encounter = 0xF4FD7791,
+  EyeColor = 0x92C6B888,
+  Face = 0xD12ED4C3,
+  FacialHair = 0x2C9CBC23,
+  FlagSet = 0x394E1220,
+  Font = 0x6B7CF43D,
+  FogVolume = 0xC24D28DC,
+  FogOfWar = 0xD9885328,
+  ParagonGlyphAffix = 0x456DB743,
+  GameBalance = 0xCA3FD8A1,
+  Global = 0x89238CAF,
+  ParagonGlyph = 0x74F841B,
+  HairStyle = 0x4BC3F828,
+  HairColor = 0x53332438,
+  HoudiniParticlesSim = 0xA22B28E5,
+  ItemRequirement = 0x6148402A,
+  Item = 0xC3396F78,
+  ItemType = 0x672435BB,
+  Jewelry = 0xCAE08715,
+  Light = 0xB1AB434F,
+  Lore = 0x603CD52B,
+  LevelArea = 0x4C8367D1,
+  MonsterAffix = 0x3580DF4C,
+  Makeup = 0x2D08ED12,
+  Material = 0xB885B6ED,
+  MarkingColor = 0x69E2ACE4,
+  MonsterFamily = 0x3A0EBA81,
+  MarkerSet = 0x50953856,
+  MarkingShape = 0x23E27AF4,
+  MaterialValue = 0x3E39C656,
+  Music = 0x626BEA4,
+  MaterialValueSet = 0x2B792BBF,
+  NPCComponentSet = 0x6936F46A,
+  Observer = 0x538AACE1,
+  ParagonBoard = 0x652665A,
+  PlayerClass = 0x93BF70C2,
+  ParagonNode = 0x1B2C3E66,
+  Physics = 0x4589A3C,
+  Power = 0x77B9C481,
+  StoreProduct = 0xA7C6CAE3,
+  Particle = 0xF1202F2B,
+  PlayerTitle =  0xDA7B8916,
+  ParagonThreshold = 0x9EBCFAF3,
+  QuestChain =  0x82A26990,
+  Quest = 0x1648F857,
+  Recipe = 0xF65B63C0,
+  Reputation = 0xE2E34320,
+  Reverb = 0x4A6678A,
+  Rope = 0x13568C4B,
+  Subzone = 0xC6728896,
+  Scene = 0x703FD70A,
+  SoundTable = 0x75DA10D,
+  SetItemBonus = 0x6C2A1B,
+  Shader = 0xD9C39BAC,
+  Shake = 0xD25048A2,
+  ShaderMap = 0x83C748AB,
+  SkillKit = 0x83D037D,
+  Sound = 0x13E65970,
+  Speaker = 0xBF2C02D7,
+  Surface = 0x86A6A028,
+  Storyboard = 0xB4A2D202,
+  Stagger = 0x9C60B334,
+  StringList = 0x4FE48576,
+  Territory = 0xA74ED120,
+  Texture = 0xFC2EC4E0,
+  TrackedReward = 0x77CFFBB7,
+  Trail = 0x22C0E93A,
+  TiledSize = 0xA1438466,
+  Tutorial = 0xA0C4AE75,
+  UI =  0x3A57B8EC,
+  VectorField = 0x813EA8CC,
+  Vibration = 0x5FFF292D,
+  Movie = 0x67EFD8D0,
+  Wall = 0x81FE2166,
+  World = 0x3751CD09,
+  wWiseSoundBank = 0xB54FBAA8,
+  WorldState = 0xCFDEDE48,
+  Weather = 0xC40847A6,
+  Explosion = 0xF2096E31,
+};
+
+struct ComplexRead {
+  virtual void read(const char* base, char* &ptr) = 0;
+};
+
+template<class T>
+void readData(T *data, const char* base, char* &ptr) {
+  if constexpr (std::is_base_of_v<ComplexRead, T>) {
+    data->read(base, ptr);
+  } else {
+    *data = *(T*)ptr;
+    ptr += sizeof(T);
+  }
+}
 
 template <class T, int32_t len>
 class DT_FIXEDARRAY : public ComplexRead {
@@ -343,7 +452,7 @@ struct DT_RANGE : public ComplexRead {
 template <class T>
 struct D4File {
   DT_UINT deadbeef;
-  DT_UINT fileType;
+  D4DataType fileType;
   DT_UINT unk;
   DT_UINT hash;
   DT_UINT uid;
