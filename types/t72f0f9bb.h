@@ -12,10 +12,10 @@
 
 struct t72f0f9bb : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_SNO<SnoGroup::MarkingShape> unk_7d2386a;
-  DT_SNO<SnoGroup::MarkingColor> unk_6b4b5b8;
+  DT_SNO<SnoGroup::MarkingShape> snoMarkingShape;
+  DT_SNO<SnoGroup::MarkingColor> snoMarkingColor;
   DT_SNO<SnoGroup::Jewelry> snoJewelry;
-  DT_SNO<SnoGroup::Makeup> unk_3657ed3;
+  DT_SNO<SnoGroup::Makeup> snoMakeup;
 
   void read(const char* base, char* &ptr);
 };

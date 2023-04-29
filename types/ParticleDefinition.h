@@ -109,7 +109,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_FLOAT unk_3e0459a;
   DT_FLOAT unk_a0877a9;
   DT_FLOAT unk_63d7722;
-  DT_SNO<SnoGroup::VectorField> unk_1143767;
+  DT_SNO<SnoGroup::VectorField> snoVectorField;
   DT_VECTOR3D unk_a4cad4f;
   DT_ENUM<DT_INT> unk_817d767;
   DT_FLOAT unk_16aecc9;

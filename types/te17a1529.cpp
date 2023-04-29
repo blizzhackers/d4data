@@ -10,6 +10,6 @@ void te17a1529::read(const char* base, char* &ptr) {
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
   readData(&unk_d192efe, base, ptr);
-  readData(&unk_ad7dd9c, base, ptr);
+  readData(&snoMaterialValue, base, ptr);
   readData(&unk_111c745, base, ptr);
 }

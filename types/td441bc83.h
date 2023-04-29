@@ -14,7 +14,7 @@
 struct td441bc83 : public ComplexRead {
   t72bd65f8 tHeader;
   DT_UINT unk_dce541c;
-  t30f99fc2 unk_cca47a3;
+  t30f99fc2 tPlayerTitle;
 
   void read(const char* base, char* &ptr);
 };

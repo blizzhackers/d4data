@@ -37,5 +37,5 @@ void t63129ce3::read(const char* base, char* &ptr) {
   readData(&unk_ed8215b, base, ptr);
   readData(&unk_f6ded77, base, ptr);
   readData(&unk_f84da79, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
 }

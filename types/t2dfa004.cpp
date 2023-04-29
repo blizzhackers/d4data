@@ -10,7 +10,7 @@ void t2dfa004::read(const char* base, char* &ptr) {
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
   readData(&ptProxData, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
   readData(&unk_877fa6b, base, ptr);
   readData(&fDisabled, base, ptr);
   readData(&unk_80c961e, base, ptr);

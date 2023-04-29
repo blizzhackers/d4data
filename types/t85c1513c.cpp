@@ -6,6 +6,6 @@
 #include "t85c1513c.h"
 
 void t85c1513c::read(const char* base, char* &ptr) {
-  readData(&unk_39488c4, base, ptr);
+  readData(&snoTerritory, base, ptr);
   readData(&arPoints, base, ptr);
 }

@@ -13,7 +13,7 @@ struct te47cc1cb : public ComplexRead {
   DT_UINT dwType;
   DT_ENUM<DT_INT> eParamType;
   DT_UINT dwPad;
-  DT_SNO<SnoGroup::TrackedReward> unk_3993993;
+  DT_SNO<SnoGroup::TrackedReward> snoTrackedReward;
 
   void read(const char* base, char* &ptr);
 };

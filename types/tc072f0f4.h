@@ -14,7 +14,7 @@
 struct tc072f0f4 : public ComplexRead {
   DT_INT unk_370e8c2;
   DT_VARIABLEARRAY<t924ae201> unk_d1de32b;
-  DT_SNO<SnoGroup::NpcComponentSet> unk_bd812b0;
+  DT_SNO<SnoGroup::NpcComponentSet> snoNPCComponentSet;
   DT_VARIABLEARRAY<tabf5cfe3> unk_a9187cf;
   DT_INT unk_4c7112f;
   DT_ENUM<DT_INT> unk_1c56441;

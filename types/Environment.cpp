@@ -8,7 +8,7 @@
 void Environment::read(const char* base, char* &ptr) {
   readData(&tPostFXParams, base, ptr);
   readData(&snoSkyboxActor, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
   readData(&snoWeather, base, ptr);
   readData(&unk_4c76230, base, ptr);
   readData(&unk_afd6821, base, ptr);

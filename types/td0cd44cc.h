@@ -24,7 +24,7 @@ struct td0cd44cc : public ComplexRead {
   DT_INT unk_49e9257;
   DT_INT unk_5490979;
   DT_UINT dwPad;
-  DT_SNO<SnoGroup::Movie> unk_db59a90;
+  DT_SNO<SnoGroup::Movie> snoMovie;
   DT_INT unk_54c8b32;
   DT_INT unk_295ed9d;
 

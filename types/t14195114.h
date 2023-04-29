@@ -12,7 +12,7 @@
 struct t14195114 : public ComplexRead {
   DT_UINT dwID;
   DT_UINT hImage;
-  DT_SNO<SnoGroup::Movie> unk_db59a90;
+  DT_SNO<SnoGroup::Movie> snoMovie;
 
   void read(const char* base, char* &ptr);
 };

@@ -12,7 +12,7 @@
 struct ta50877b0 : public ComplexRead {
   DT_ENUM<DT_INT> eRewardType;
   DT_SNO<SnoGroup::Item> snoItemReward;
-  DT_SNO<SnoGroup::TrackedReward> unk_3993993;
+  DT_SNO<SnoGroup::TrackedReward> snoTrackedReward;
   DT_INT nGoldTier;
   DT_INT unk_a451150;
 

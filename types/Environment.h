@@ -14,7 +14,7 @@
 struct Environment : public ComplexRead {
   PostFXParams tPostFXParams;
   DT_SNO<SnoGroup::Actor> snoSkyboxActor;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_SNO<SnoGroup::Weather> snoWeather;
   DT_SNO<SnoGroup::Texture> unk_4c76230;
   bcQuat unk_afd6821;

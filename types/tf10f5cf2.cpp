@@ -7,5 +7,5 @@
 
 void tf10f5cf2::read(const char* base, char* &ptr) {
   readData(&tHeader, base, ptr);
-  readData(&unk_3993993, base, ptr);
+  readData(&snoTrackedReward, base, ptr);
 }

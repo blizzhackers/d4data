@@ -98,7 +98,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   readData(&unk_3e0459a, base, ptr);
   readData(&unk_a0877a9, base, ptr);
   readData(&unk_63d7722, base, ptr);
-  readData(&unk_1143767, base, ptr);
+  readData(&snoVectorField, base, ptr);
   readData(&unk_a4cad4f, base, ptr);
   readData(&unk_817d767, base, ptr);
   readData(&unk_16aecc9, base, ptr);

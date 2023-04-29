@@ -17,9 +17,9 @@ void StoreProductDefinition::read(const char* base, char* &ptr) {
   readData(&snoItemTransmog, base, ptr);
   readData(&snoMount, base, ptr);
   readData(&snoEmote, base, ptr);
-  readData(&unk_7d2386a, base, ptr);
+  readData(&snoMarkingShape, base, ptr);
   readData(&snoJewelry, base, ptr);
-  readData(&unk_1908c22, base, ptr);
+  readData(&snoEmblem, base, ptr);
   readData(&snoHeadstone, base, ptr);
   readData(&unk_e4265e4, base, ptr);
   readData(&unk_54edf70, base, ptr);

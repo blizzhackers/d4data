@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t85c1513c : public ComplexRead {
-  DT_SNO<SnoGroup::Territory> unk_39488c4;
+  DT_SNO<SnoGroup::Territory> snoTerritory;
   DT_VARIABLEARRAY<DT_VECTOR2D> arPoints;
 
   void read(const char* base, char* &ptr);

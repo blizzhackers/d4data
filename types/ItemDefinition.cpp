@@ -50,7 +50,7 @@ void ItemDefinition::read(const char* base, char* &ptr) {
   readData(&ptSocketedEffects, base, ptr);
   readData(&unk_ab5ef77, base, ptr);
   readData(&snoRecipe, base, ptr);
-  readData(&unk_cea72d2, base, ptr);
+  readData(&snoDemonScroll, base, ptr);
   readData(&snoMount, base, ptr);
   readData(&snoParagonGlyph, base, ptr);
   readData(&unk_3202773, base, ptr);

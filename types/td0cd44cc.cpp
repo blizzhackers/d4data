@@ -19,7 +19,7 @@ void td0cd44cc::read(const char* base, char* &ptr) {
   readData(&unk_49e9257, base, ptr);
   readData(&unk_5490979, base, ptr);
   readData(&dwPad, base, ptr);
-  readData(&unk_db59a90, base, ptr);
+  readData(&snoMovie, base, ptr);
   readData(&unk_54c8b32, base, ptr);
   readData(&unk_295ed9d, base, ptr);
 }

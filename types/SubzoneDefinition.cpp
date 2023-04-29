@@ -12,7 +12,7 @@ void SubzoneDefinition::read(const char* base, char* &ptr) {
   readData(&arLevelAreas, base, ptr);
   readData(&eType, base, ptr);
   readData(&unk_110432b, base, ptr);
-  readData(&unk_39488c4, base, ptr);
+  readData(&snoTerritory, base, ptr);
   readData(&unk_d447cfd, base, ptr);
   readData(&unk_f34c43f, base, ptr);
   readData(&snoActorGroups, base, ptr);

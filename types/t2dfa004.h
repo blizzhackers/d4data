@@ -14,7 +14,7 @@ struct t2dfa004 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_POLYMORPHIC_VARIABLEARRAY ptProxData;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_SNO<SnoGroup::EffectGroup> unk_877fa6b;
   DT_INT fDisabled;
   DT_INT unk_80c961e;

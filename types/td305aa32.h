@@ -12,10 +12,10 @@
 
 struct td305aa32 : public ComplexRead {
   tb42131c6 tFace;
-  tb42131c6 unk_c187277;
+  tb42131c6 tMakeup;
   tb42131c6 tJewelry;
   tb42131c6 tHairStyle;
-  tb42131c6 unk_634c158;
+  tb42131c6 tFacialHair;
 
   void read(const char* base, char* &ptr);
 };

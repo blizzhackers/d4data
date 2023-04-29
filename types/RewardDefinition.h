@@ -16,8 +16,8 @@ struct RewardDefinition : public ComplexRead {
   DT_ENUM<DT_INT> tCurrency;
   DT_UINT uQuantity;
   DT_SNO<SnoGroup::Item> snoItem;
-  DT_SNO<SnoGroup::PlayerTitle> unk_b96d7f;
-  DT_SNO<SnoGroup::StoreProduct> unk_bf65cfe;
+  DT_SNO<SnoGroup::PlayerTitle> snoPlayerTitle;
+  DT_SNO<SnoGroup::StoreProduct> snoStoreProduct;
 
   void read(const char* base, char* &ptr);
 };

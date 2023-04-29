@@ -22,9 +22,9 @@ struct StoreProductDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Item> snoItemTransmog;
   DT_SNO<SnoGroup::Item> snoMount;
   DT_SNO<SnoGroup::Emote> snoEmote;
-  DT_SNO<SnoGroup::MarkingShape> unk_7d2386a;
+  DT_SNO<SnoGroup::MarkingShape> snoMarkingShape;
   DT_SNO<SnoGroup::Jewelry> snoJewelry;
-  DT_SNO<SnoGroup::Emblem> unk_1908c22;
+  DT_SNO<SnoGroup::Emblem> snoEmblem;
   DT_SNO<SnoGroup::Actor> snoHeadstone;
   DT_INT unk_e4265e4;
   DT_INT unk_54edf70;

@@ -12,7 +12,7 @@ void SceneSpecification::read(const char* base, char* &ptr) {
   readData(&snoPrevWorld, base, ptr);
   readData(&uPrevEntranceGUID, base, ptr);
   readData(&snoPrevLevelArea, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
   readData(&snoWeather, base, ptr);
   readData(&snoPresetWorld, base, ptr);
   readData(&nSceneChunk, base, ptr);

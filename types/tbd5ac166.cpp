@@ -10,6 +10,6 @@ void tbd5ac166::read(const char* base, char* &ptr) {
   readData(&dwType, base, ptr);
   readData(&bNegate, base, ptr);
   readData(&dwPad, base, ptr);
-  readData(&unk_59d58e5, base, ptr);
+  readData(&snoQuestChain, base, ptr);
   readData(&eState, base, ptr);
 }

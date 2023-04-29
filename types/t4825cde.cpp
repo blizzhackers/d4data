@@ -20,6 +20,6 @@ void t4825cde::read(const char* base, char* &ptr) {
   readData(&unk_34b452, base, ptr);
   readData(&unk_3620f37, base, ptr);
   readData(&unk_c60b9b0, base, ptr);
-  readData(&unk_7fe336e, base, ptr);
+  readData(&arFogOfWar, base, ptr);
   readData(&unk_ff16ba3, base, ptr);
 }

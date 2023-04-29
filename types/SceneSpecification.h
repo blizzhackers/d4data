@@ -17,7 +17,7 @@ struct SceneSpecification : public ComplexRead {
   DT_SNO<SnoGroup::World> snoPrevWorld;
   DT_STARTLOC_NAME uPrevEntranceGUID;
   DT_SNO<SnoGroup::LevelArea> snoPrevLevelArea;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_SNO<SnoGroup::Weather> snoWeather;
   DT_SNO<SnoGroup::World> snoPresetWorld;
   DT_INT nSceneChunk;

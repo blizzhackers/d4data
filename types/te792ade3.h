@@ -11,7 +11,7 @@
 
 struct te792ade3 : public ComplexRead {
   DT_UINT dwID;
-  DT_SNO<SnoGroup::QuestChain> unk_59d58e5;
+  DT_SNO<SnoGroup::QuestChain> snoQuestChain;
 
   void read(const char* base, char* &ptr);
 };

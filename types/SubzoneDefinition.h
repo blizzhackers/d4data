@@ -17,7 +17,7 @@ struct SubzoneDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;
   DT_ENUM<DT_INT> eType;
   DT_ENUM<DT_INT> unk_110432b;
-  DT_SNO<SnoGroup::Territory> unk_39488c4;
+  DT_SNO<SnoGroup::Territory> snoTerritory;
   DT_ENUM<DT_INT> unk_d447cfd;
   DT_SNO<SnoGroup::World> unk_f34c43f;
   DT_SNO<SnoGroup::GameBalance> snoActorGroups;

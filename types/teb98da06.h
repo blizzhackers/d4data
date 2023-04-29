@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct teb98da06 : public ComplexRead {
-  DT_SNO<SnoGroup::MaterialValue> unk_ad7dd9c;
+  DT_SNO<SnoGroup::MaterialValue> snoMaterialValue;
   DT_FLOAT flDefaultValue;
 
   void read(const char* base, char* &ptr);

@@ -13,7 +13,7 @@ struct tbd5ac166 : public ComplexRead {
   DT_UINT dwType;
   DT_INT bNegate;
   DT_UINT dwPad;
-  DT_SNO<SnoGroup::QuestChain> unk_59d58e5;
+  DT_SNO<SnoGroup::QuestChain> snoQuestChain;
   DT_ENUM<DT_INT> eState;
 
   void read(const char* base, char* &ptr);

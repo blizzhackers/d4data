@@ -11,7 +11,7 @@
 
 struct MakeupDefinition : public ComplexRead {
   DT_FIXEDARRAY<DT_INT, 5> unk_9da2273;
-  DT_SNO<SnoGroup::Texture> unk_3657ed3;
+  DT_SNO<SnoGroup::Texture> snoMakeup;
   DT_FLOAT flIntensity;
   DT_FLOAT unk_e0611b0;
   DT_FLOAT unk_254bd5e;

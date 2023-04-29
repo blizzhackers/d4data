@@ -43,7 +43,7 @@ struct t63129ce3 : public ComplexRead {
   DT_SNO<SnoGroup::World> unk_ed8215b;
   t6b1c5d9c unk_f6ded77;
   t6b1c5d9c unk_f84da79;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
 
   void read(const char* base, char* &ptr);
 };

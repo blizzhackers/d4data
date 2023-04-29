@@ -11,6 +11,6 @@ void tb1cccfae::read(const char* base, char* &ptr) {
   readData(&unk_2431f29, base, ptr);
   readData(&unk_3d8089d, base, ptr);
   readData(&arWaypoints, base, ptr);
-  readData(&unk_7fe336e, base, ptr);
+  readData(&arFogOfWar, base, ptr);
   readData(&unk_e89c432, base, ptr);
 }

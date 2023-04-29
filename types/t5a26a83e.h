@@ -13,7 +13,7 @@
 struct t5a26a83e : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_SNO<SnoGroup::PlayerClass> snoClass;
-  DT_SNO<SnoGroup::FacialHair> unk_ba89bb4;
+  DT_SNO<SnoGroup::FacialHair> snoFacialHair;
   DT_SNO<SnoGroup::HairStyle> snoHairStyle;
   DT_SNO<SnoGroup::Jewelry> snoJewelry;
   DT_INT bFemale;

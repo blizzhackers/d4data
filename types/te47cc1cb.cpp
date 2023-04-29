@@ -10,5 +10,5 @@ void te47cc1cb::read(const char* base, char* &ptr) {
   readData(&dwType, base, ptr);
   readData(&eParamType, base, ptr);
   readData(&dwPad, base, ptr);
-  readData(&unk_3993993, base, ptr);
+  readData(&snoTrackedReward, base, ptr);
 }

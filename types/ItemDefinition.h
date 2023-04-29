@@ -57,7 +57,7 @@ struct ItemDefinition : public ComplexRead {
   DT_VARIABLEARRAY<SocketedEffects> ptSocketedEffects;
   DT_SNO<SnoGroup::Power> unk_ab5ef77;
   DT_SNO<SnoGroup::Recipe> snoRecipe;
-  DT_SNO<SnoGroup::DemonScroll> unk_cea72d2;
+  DT_SNO<SnoGroup::DemonScroll> snoDemonScroll;
   DT_SNO<SnoGroup::Actor> snoMount;
   DT_SNO<SnoGroup::ParagonGlyph> snoParagonGlyph;
   DT_VARIABLEARRAY<DT_GBID<0x12>> unk_3202773;

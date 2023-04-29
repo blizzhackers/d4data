@@ -7,5 +7,5 @@
 
 void te792ade3::read(const char* base, char* &ptr) {
   readData(&dwID, base, ptr);
-  readData(&unk_59d58e5, base, ptr);
+  readData(&snoQuestChain, base, ptr);
 }

@@ -16,7 +16,7 @@ void tc65eab2c::read(const char* base, char* &ptr) {
   readData(&unk_eec6058, base, ptr);
   readData(&unk_677237e, base, ptr);
   readData(&snoLevelArea, base, ptr);
-  readData(&unk_7b7ab4b, base, ptr);
+  readData(&snoFogOfWar, base, ptr);
   readData(&unk_c9913ac, base, ptr);
   readData(&ptData, base, ptr);
 }

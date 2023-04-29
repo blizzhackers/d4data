@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct td7ee8f26 : public ComplexRead {
-  DT_SNO<SnoGroup::MaterialValue> unk_ad7dd9c;
+  DT_SNO<SnoGroup::MaterialValue> snoMaterialValue;
   DT_INT nBitOffset;
   DT_VARIABLEARRAY<DT_FLOAT> unk_bbe4258;
   DT_FLOAT flDefaultValue;

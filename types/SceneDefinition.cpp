@@ -15,7 +15,7 @@ void SceneDefinition::read(const char* base, char* &ptr) {
   readData(&tLookLink, base, ptr);
   readData(&unk_f60a9cd, base, ptr);
   readData(&snoAppearance, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
   readData(&unk_dcccfb8, base, ptr);
   readData(&unk_dcccfb9, base, ptr);
   readData(&unk_c20ed15, base, ptr);

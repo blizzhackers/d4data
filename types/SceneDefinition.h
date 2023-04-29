@@ -24,7 +24,7 @@ struct SceneDefinition : public ComplexRead {
   LookLink tLookLink;
   DT_VARIABLEARRAY<t9109ba33> unk_f60a9cd;
   DT_SNO<SnoGroup::Appearance> snoAppearance;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_FLOAT unk_dcccfb8;
   DT_FLOAT unk_dcccfb9;
   DT_VARIABLEARRAY<t53a5f131> unk_c20ed15;

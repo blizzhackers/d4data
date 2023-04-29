@@ -62,7 +62,7 @@ struct QuestDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_GBID<0x2d>> unk_b43b442;
   DT_GBID<0x39> unk_68d2b86;
   DT_GBID<0x39> unk_b37e635;
-  DT_SNO<SnoGroup::AudioContext> unk_6367947;
+  DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Item>> unk_af3a4c1;
 
   void read(const char* base, char* &ptr);

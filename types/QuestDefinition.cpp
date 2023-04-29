@@ -56,6 +56,6 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   readData(&unk_b43b442, base, ptr);
   readData(&unk_68d2b86, base, ptr);
   readData(&unk_b37e635, base, ptr);
-  readData(&unk_6367947, base, ptr);
+  readData(&snoAudioContext, base, ptr);
   readData(&unk_af3a4c1, base, ptr);
 }

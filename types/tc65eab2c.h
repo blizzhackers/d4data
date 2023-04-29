@@ -22,7 +22,7 @@ struct tc65eab2c : public ComplexRead {
   PRTransform unk_eec6058;
   DT_SNO<SnoGroup::Condition> unk_677237e;
   DT_SNO<SnoGroup::LevelArea> snoLevelArea;
-  DT_SNO<SnoGroup::FogofWar> unk_7b7ab4b;
+  DT_SNO<SnoGroup::FogofWar> snoFogOfWar;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::SubZone>> unk_c9913ac;
   DT_POLYMORPHIC_VARIABLEARRAY ptData;
 

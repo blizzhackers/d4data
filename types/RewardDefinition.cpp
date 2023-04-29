@@ -12,6 +12,6 @@ void RewardDefinition::read(const char* base, char* &ptr) {
   readData(&tCurrency, base, ptr);
   readData(&uQuantity, base, ptr);
   readData(&snoItem, base, ptr);
-  readData(&unk_b96d7f, base, ptr);
-  readData(&unk_bf65cfe, base, ptr);
+  readData(&snoPlayerTitle, base, ptr);
+  readData(&snoStoreProduct, base, ptr);
 }

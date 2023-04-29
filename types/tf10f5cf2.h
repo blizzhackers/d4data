@@ -12,7 +12,7 @@
 
 struct tf10f5cf2 : public ComplexRead {
   ta78f399f tHeader;
-  DT_SNO<SnoGroup::TrackedReward> unk_3993993;
+  DT_SNO<SnoGroup::TrackedReward> snoTrackedReward;
 
   void read(const char* base, char* &ptr);
 };

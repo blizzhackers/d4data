@@ -11,7 +11,7 @@
 
 struct t9bdeeb8c : public ComplexRead {
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Dye>, 4> unk_28d5aa0;
-  DT_INT unk_605f291;
+  DT_INT nHairColor;
   DT_INT nSkinColor;
 
   void read(const char* base, char* &ptr);
