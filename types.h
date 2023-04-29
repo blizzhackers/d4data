@@ -222,6 +222,9 @@ class DT_CHARARRAY : public ComplexRead {
 
 template <class T>
 class DT_VARIABLEARRAY : public ComplexRead {
+  uint32_t unk[2];
+  uint32_t offset;
+  uint32_t size;
   std::vector<T> elements;
 
   public:
@@ -230,10 +233,14 @@ class DT_VARIABLEARRAY : public ComplexRead {
     uint32_t *p = (uint32_t *)ptr;
     ptr += sizeof(uint32_t) * 4;
 
-    char *pSrc = (char*)base + p[2];
-    int length = p[3] / sizeof(T);
+    unk[0] = p[0];
+    unk[1] = p[1];
+    offset = p[2];
+    size = p[3];
 
-    for (int c = 0; c < length; c++) {
+    char *pSrc = (char*)base + p[2];
+
+    for (int c = 0; c < size / sizeof(T); c++) {
       T tmp;
       readData(&tmp, base, pSrc);
       elements.push_back(tmp);
@@ -252,6 +259,7 @@ class DT_VARIABLEARRAY : public ComplexRead {
     return elements.length();
   }
 };
+
 template<class T = int32_t>
 using DT_ENUM = T;
 
