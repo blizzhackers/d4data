@@ -10,16 +10,13 @@ struct ComplexRead {
 };
 
 template<class T>
-std::enable_if_t<std::is_base_of_v<ComplexRead, T>, void>
-readData(T *data, const char* base, char* &ptr) {
-  data->read(base, ptr);
-}
-
-template<class T>
-std::enable_if_t<!std::is_base_of_v<ComplexRead, T>, void>
-readData(T *data, const char* base, char* &ptr) {
-  *data = *(T*)ptr;
-  ptr += sizeof(T);
+void readData(T *data, const char* base, char* &ptr) {
+  if constexpr (std::is_base_of_v<ComplexRead, T>) {
+    data->read(base, ptr);
+  } else {
+    *data = *(T*)ptr;
+    ptr += sizeof(T);
+  }
 }
 
 enum class TexFormat : int32_t {
