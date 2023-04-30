@@ -5,12 +5,17 @@
 
 char tmp[64]{ 0 };
 std::vector<uint32_t> checksumMatch;
+std::string prefix = "";
+std::string suffix = "";
 
 uint32_t checksum(std::string str) {
+  str = prefix + str + suffix;
+
   uint32_t hash = 0;
   for (size_t i = 0; i < str.length(); i++) {
     hash = hash * 33 + (unsigned char)str[i];
   }
+
   return hash;
 }
 
@@ -18,7 +23,7 @@ void collisions(long pos) {
   if (pos == -1) {
     for (int c = 0; c < checksumMatch.size(); c++) {
       if(checksum(tmp) == checksumMatch[c]) {
-        std::cout << "  " << std::hex << checksumMatch[c] << ": " << tmp << std::endl;
+        std::cout << "  " << std::hex << checksumMatch[c] << ": " << (prefix + tmp + suffix) << std::endl;
         break;
       }
     }
@@ -50,13 +55,36 @@ void collisions(long pos) {
 int main(int argc, char *argv[]) {
   if (argc > 1) {
     unsigned int x;
+    bool isPrefix = false;
+    bool isSuffix = false;
 
     for (int c = 1; c < argc; c++) {
-      uint32_t tmp = 0;
-      std::stringstream ss;
-      ss << std::hex << argv[c];
-      ss >> tmp;
-      checksumMatch.push_back(tmp);
+      std::string arg = argv[c];
+
+      if (arg == "-p" || arg == "--prefix") {
+        isPrefix = true;
+      }
+      else if(arg == "-s" || arg == "--suffix") {
+        isSuffix = true;
+      }
+      else if (isPrefix) {
+        prefix = arg;
+        std::cerr << "Using prefix: " << prefix << std::endl;
+        isPrefix = false;
+      }
+      else if (isSuffix) {
+        suffix = arg;
+        std::cerr << "Using suffix: " << suffix << std::endl;
+        isSuffix = false;
+      }
+      else {
+        uint32_t tmp = 0;
+        std::stringstream ss;
+
+        ss << std::hex << arg;
+        ss >> tmp;
+        checksumMatch.push_back(tmp);
+      }
     }
   }
 
