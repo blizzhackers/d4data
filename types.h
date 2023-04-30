@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <string>
+#include <cstring>
 #include <vector>
 
 #pragma pack(push,1)
@@ -270,7 +271,7 @@ void readData(T *data, const char* base, char* &ptr) {
   if constexpr (std::is_base_of_v<ComplexRead, T>) {
     data->read(base, ptr);
   } else {
-    *data = *(T*)ptr;
+    std::memcpy(data, ptr, sizeof(T));
     ptr += sizeof(T);
   }
 }
@@ -339,8 +340,9 @@ class DT_VARIABLEARRAY : public ComplexRead {
   public:
 
   void read(const char *base, char* &ptr) {
-    uint32_t *p = (uint32_t *)ptr;
-    ptr += sizeof(uint32_t) * 4;
+    uint32_t p[4]{ 0 };
+    std::memcpy(p, ptr, sizeof(p));
+    ptr += sizeof(p);
 
     unk[0] = p[0];
     unk[1] = p[1];
@@ -376,7 +378,7 @@ template <uint32_t gbgroup = 0x0>
 using DT_GBID = int32_t;
 
 template <SnoGroup group>
-using DT_SNO = uint32_t;
+using DT_SNO = int32_t;
 
 using DT_CHAR = char;
 using DT_BYTE = unsigned char;
