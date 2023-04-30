@@ -341,6 +341,7 @@ class DT_VARIABLEARRAY : public ComplexRead {
 
   void read(const char *base, char* &ptr) {
     uint32_t p[4]{ 0 };
+    uint32_t typeSize = sizeof(T);
     std::memcpy(p, ptr, sizeof(p));
     ptr += sizeof(p);
 
@@ -350,8 +351,9 @@ class DT_VARIABLEARRAY : public ComplexRead {
     size = p[3];
 
     char *pSrc = (char*)base + p[2];
+    char *pEnd = (char*)base + p[2] + p[3];
 
-    for (int c = 0; c < size / sizeof(T); c++) {
+    while (pSrc < pEnd) {
       T tmp;
       readData(&tmp, base, pSrc);
       elements.push_back(tmp);
