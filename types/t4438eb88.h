@@ -17,7 +17,7 @@ struct t4438eb88 : public ComplexRead {
   DT_INT fGenerated;
   DT_INT unk_6cba752;
   DT_UINT unk_e560b0b;
-  DT_SNO<SnoGroup::Ui> snoUI;
+  DT_SNO<SnoGroup::UI> snoUI;
 
   void read(const char* base, char* &ptr);
 };

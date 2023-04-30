@@ -1,11 +1,11 @@
 /**
- * Definition: tb0c0d2cc
+ * Definition: UIDefinitionH
  * Hash: b0c0d2cc
  */
 
-#include "tb0c0d2cc.h"
+#include "UIDefinitionH.h"
 
-void tb0c0d2cc::read(const char* base, char* &ptr) {
+void UIDefinitionH::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);

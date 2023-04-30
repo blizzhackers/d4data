@@ -11,7 +11,7 @@
 
 struct tdbd500aa : public ComplexRead {
   DT_SNO<SnoGroup::Script> snoScript;
-  DT_INT unk_eb4ff85;
+  DT_INT fCannotBeTargetedByAI;
   DT_INT unk_195410b;
   DT_INT unk_e1b2967;
   DT_INT fInvulnerable;

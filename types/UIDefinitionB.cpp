@@ -1,11 +1,11 @@
 /**
- * Definition: ta92e8853
- * Hash: a92e8853
+ * Definition: UIDefinitionB
+ * Hash: 6a402f89
  */
 
-#include "ta92e8853.h"
+#include "UIDefinitionB.h"
 
-void ta92e8853::read(const char* base, char* &ptr) {
+void UIDefinitionB::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
@@ -14,5 +14,5 @@ void ta92e8853::read(const char* base, char* &ptr) {
   readData(&unk_b835d15, base, ptr);
   readData(&unk_582a697, base, ptr);
   readData(&unk_b4f614c, base, ptr);
-  readData(&unk_171f018, base, ptr);
+  readData(&unk_8e594da, base, ptr);
 }

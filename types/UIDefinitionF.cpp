@@ -1,11 +1,11 @@
 /**
- * Definition: t6a402f89
- * Hash: 6a402f89
+ * Definition: UIDefinitionF
+ * Hash: 112661d5
  */
 
-#include "t6a402f89.h"
+#include "UIDefinitionF.h"
 
-void t6a402f89::read(const char* base, char* &ptr) {
+void UIDefinitionF::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);

@@ -28,7 +28,7 @@ struct te6346255 : public ComplexRead {
   DT_FLOAT unk_d17f29d;
   DT_FLOAT unk_b6d51da;
   DT_INT unk_4c74fea;
-  DT_INT unk_9e8c546;
+  DT_INT nSpawnMaxCount;
   DT_INT unk_7524f2c;
   DT_SNO<SnoGroup::Condition> unk_a838b80;
   DT_INT unk_b123ad6;

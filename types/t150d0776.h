@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t150d0776 : public ComplexRead {
-  DT_SNO<SnoGroup::Ui> snoUI;
+  DT_SNO<SnoGroup::UI> snoUI;
   DT_CHARARRAY<256> unk_4bb155f;
   DT_CHARARRAY<256> szScreenName;
   DT_ENUM<DT_INT> eGroup;

@@ -1,11 +1,11 @@
 /**
- * Definition: t98d4e83a
- * Hash: 98d4e83a
+ * Definition: UIDefinitionA
+ * Hash: 2d640fff
  */
 
-#include "t98d4e83a.h"
+#include "UIDefinitionA.h"
 
-void t98d4e83a::read(const char* base, char* &ptr) {
+void UIDefinitionA::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
@@ -14,5 +14,5 @@ void t98d4e83a::read(const char* base, char* &ptr) {
   readData(&unk_b835d15, base, ptr);
   readData(&unk_582a697, base, ptr);
   readData(&unk_b4f614c, base, ptr);
-  readData(&unk_ff11bff, base, ptr);
+  readData(&unk_466d804, base, ptr);
 }

@@ -1,6 +1,6 @@
 /**
- * Definition: t2d640fff
- * Hash: 2d640fff
+ * Definition: UIDefinitionG
+ * Hash: a92e8853
  */
 
 #pragma once
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct t2d640fff : public ComplexRead {
+struct UIDefinitionG : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   UIControlHandle unk_5770323;
@@ -19,7 +19,7 @@ struct t2d640fff : public ComplexRead {
   DT_TAGMAP<DT_INT> unk_b835d15;
   tb8237382 unk_582a697;
   DT_TAGMAP<DT_INT> unk_b4f614c;
-  DT_TAGMAP<DT_INT> unk_466d804;
+  DT_TAGMAP<DT_INT> unk_171f018;
 
   void read(const char* base, char* &ptr);
 };

@@ -1,11 +1,11 @@
 /**
- * Definition: t4873be59
- * Hash: 4873be59
+ * Definition: UIDefinitionD
+ * Hash: 98d4e83a
  */
 
-#include "t4873be59.h"
+#include "UIDefinitionD.h"
 
-void t4873be59::read(const char* base, char* &ptr) {
+void UIDefinitionD::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
@@ -14,5 +14,5 @@ void t4873be59::read(const char* base, char* &ptr) {
   readData(&unk_b835d15, base, ptr);
   readData(&unk_582a697, base, ptr);
   readData(&unk_b4f614c, base, ptr);
-  readData(&unk_725129e, base, ptr);
+  readData(&unk_ff11bff, base, ptr);
 }

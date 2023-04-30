@@ -23,7 +23,7 @@ void te6346255::read(const char* base, char* &ptr) {
   readData(&unk_d17f29d, base, ptr);
   readData(&unk_b6d51da, base, ptr);
   readData(&unk_4c74fea, base, ptr);
-  readData(&unk_9e8c546, base, ptr);
+  readData(&nSpawnMaxCount, base, ptr);
   readData(&unk_7524f2c, base, ptr);
   readData(&unk_a838b80, base, ptr);
   readData(&unk_b123ad6, base, ptr);
