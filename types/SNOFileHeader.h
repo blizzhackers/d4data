@@ -11,7 +11,7 @@
 
 struct SNOFileHeader : public ComplexRead {
   DT_UINT dwSignature;
-  DT_UINT unk_7eba88;
+  DT_UINT dwFileTypeID;
   DT_UINT dwDummy;
   DT_UINT dwXMLHash;
 

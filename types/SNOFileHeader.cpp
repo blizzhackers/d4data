@@ -7,7 +7,7 @@
 
 void SNOFileHeader::read(const char* base, char* &ptr) {
   readData(&dwSignature, base, ptr);
-  readData(&unk_7eba88, base, ptr);
+  readData(&dwFileTypeID, base, ptr);
   readData(&dwDummy, base, ptr);
   readData(&dwXMLHash, base, ptr);
 }
