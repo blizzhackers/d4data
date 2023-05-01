@@ -277,76 +277,39 @@ void readData(T *data, const char* base, char* &ptr) {
 }
 
 template <class T, int32_t len>
-class DT_FIXEDARRAY : public ComplexRead {
+struct DT_FIXEDARRAY : public ComplexRead {
   T elements[len];
-
-  public:
 
   void read(const char *base, char* &ptr) {
     for (int c = 0; c < len; c++) {
       readData(&elements[c], base, ptr);
     }
-  }
-
-  T operator [](uint32_t index) {
-    if (index < 0 || index >= len) {
-      throw "Invalid index!";
-    }
-
-    return elements[index];
-  }
-
-  uint32_t length() {
-    return len;
   }
 };
 
 template <int32_t len>
-class DT_CHARARRAY : public ComplexRead {
+struct DT_CHARARRAY : public ComplexRead {
   char elements[len];
-
-  public:
 
   void read(const char *base, char* &ptr) {
     for (int c = 0; c < len; c++) {
       readData(&elements[c], base, ptr);
     }
   }
-
-  char operator [](uint32_t index) {
-    if (index < 0 || index >= len) {
-      return 0;
-    }
-
-    return elements[index];
-  }
-
-  operator char*() {
-    return elements;
-  }
-
-  uint32_t length() {
-    return len;
-  }
 };
 
 template <class T>
-class DT_VARIABLEARRAY : public ComplexRead {
-  uint32_t unk[2];
-  uint32_t offset;
-  uint32_t size;
+struct DT_VARIABLEARRAY : public ComplexRead {
   std::vector<T> elements;
 
-  public:
-
   void read(const char *base, char* &ptr) {
+    uint32_t offset;
+    uint32_t size;
     uint32_t p[4]{ 0 };
     uint32_t typeSize = sizeof(T);
     std::memcpy(p, ptr, sizeof(p));
     ptr += sizeof(p);
 
-    unk[0] = p[0];
-    unk[1] = p[1];
     offset = p[2];
     size = p[3];
 
