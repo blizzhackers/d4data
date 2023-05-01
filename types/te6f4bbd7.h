@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 
 #pragma push(pack, 1)
 
 struct te6f4bbd7 : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_ENUM<DT_INT> eScope;
   DT_ENUM<DT_INT> eType;
   DT_INT nDefaultValue;

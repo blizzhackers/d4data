@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 
 #pragma push(pack, 1)
 
 struct tf5b98542 : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_FLOAT flChance;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::StringList>> unk_b28752e;
   DT_INT unk_6c70b7e;

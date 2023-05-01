@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 #include "ta8549fba.h"
 
 #pragma push(pack, 1)
 
 struct Currencies : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_ENUM<DT_INT> eCurrencyType;
   DT_INT unk_490dc23;
   DT_INT unk_5adf42e;

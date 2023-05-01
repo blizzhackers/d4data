@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 #include "te87d70c1.h"
 
 #pragma push(pack, 1)
 
 struct tff870ab6 : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_SNO<SnoGroup::Power> snoPower;
   DT_SNO<SnoGroup::Power> snoBuff;
   DT_SNO<SnoGroup::Quest> unk_891f4a8;

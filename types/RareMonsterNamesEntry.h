@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 
 #pragma push(pack, 1)
 
 struct RareMonsterNamesEntry : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_INT fPrefix;
   DT_SNO<SnoGroup::MonsterAffix> snoAffixEffect;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::MonsterFamily>> unk_4a1da9e;

@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "ta78f399f.h"
+#include "GBIDHeader.h"
 
 #pragma push(pack, 1)
 
 struct PetType : public ComplexRead {
-  ta78f399f tHeader;
+  GBIDHeader tHeader;
   DT_ENUM<DT_INT> unk_887ea65;
   DT_INT unk_17d5315;
   DT_INT unk_a9f95f3;

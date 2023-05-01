@@ -1,5 +1,5 @@
 /**
- * Definition: ta78f399f
+ * Definition: GBIDHeader
  * Hash: a78f399f
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct ta78f399f : public ComplexRead {
+struct GBIDHeader : public ComplexRead {
   DT_CHARARRAY<256> szName;
   DT_GBID<0xffffffff> gbid;
 
