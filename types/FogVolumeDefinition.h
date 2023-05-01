@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct FogVolumeDefinition : public ComplexRead {
-  t3248a683 unk_a1f5263;
+  t3248a683 tInstanceData;
   DT_VECTOR3D vecScale;
 
   void read(const char* base, char* &ptr);

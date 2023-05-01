@@ -18,7 +18,7 @@ struct t7fc234c1 : public ComplexRead {
   DT_FLOAT height;
   DT_FLOAT unk_9c026b5;
   DT_WORD boneIndex;
-  DT_FIXEDARRAY<DT_WORD, 7> unk_7092ef7;
+  DT_FIXEDARRAY<DT_WORD, 7> padding;
 
   void read(const char* base, char* &ptr);
 };

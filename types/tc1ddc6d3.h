@@ -18,7 +18,7 @@ struct tc1ddc6d3 : public ComplexRead {
   DT_INT nTriangleCount;
   DT_INT height;
   DT_FLOAT unk_c27e1a2;
-  DT_INT unk_7092ef7;
+  DT_INT padding;
 
   void read(const char* base, char* &ptr);
 };

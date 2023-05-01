@@ -14,5 +14,5 @@ void tc1ddc6d3::read(const char* base, char* &ptr) {
   readData(&nTriangleCount, base, ptr);
   readData(&height, base, ptr);
   readData(&unk_c27e1a2, base, ptr);
-  readData(&unk_7092ef7, base, ptr);
+  readData(&padding, base, ptr);
 }

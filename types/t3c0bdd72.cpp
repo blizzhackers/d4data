@@ -16,7 +16,7 @@ void t3c0bdd72::read(const char* base, char* &ptr) {
   readData(&unk_609e23d, base, ptr);
   readData(&unk_d8fcfe4, base, ptr);
   readData(&unk_435bdfd, base, ptr);
-  readData(&unk_f2dbd17, base, ptr);
+  readData(&tConvPageZoomedType, base, ptr);
   readData(&tVerticalOffset, base, ptr);
   readData(&unk_2a8c4b6, base, ptr);
 }

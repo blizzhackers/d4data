@@ -15,7 +15,7 @@ struct LightDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_1a8964e;
   DT_INT nPriority;
   DT_UINT dwMaxInstances;
-  tb86f8607 unk_a1f5263;
+  tb86f8607 tInstanceData;
   DT_FLOAT unk_383f1ce;
   DT_FLOAT unk_b9c2829;
 

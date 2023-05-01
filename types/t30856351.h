@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t30856351 : public ComplexRead {
-  DT_VARIABLEARRAY<DT_BYTE> unk_531e646;
+  DT_VARIABLEARRAY<DT_BYTE> m_data;
 
   void read(const char* base, char* &ptr);
 };

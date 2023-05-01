@@ -15,7 +15,7 @@ struct InterpolationPathHeader : public ComplexRead {
   DT_FLOAT tLoopPointEnd;
   DT_ENUM<DT_INT> nDistributionFunction;
   DT_ENUM<DT_INT> unk_2312508;
-  DT_VARIABLEARRAY<InterpolationScalar> unk_463fc3b;
+  DT_VARIABLEARRAY<InterpolationScalar> arInterpScalar;
   DT_UINT dwFlags;
 
   void read(const char* base, char* &ptr);

@@ -13,7 +13,7 @@
 struct t81a64b0 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  t3248a683 unk_a1f5263;
+  t3248a683 tInstanceData;
 
   void read(const char* base, char* &ptr);
 };

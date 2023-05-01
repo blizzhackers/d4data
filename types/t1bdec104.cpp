@@ -34,7 +34,7 @@ void t1bdec104::read(const char* base, char* &ptr) {
   readData(&unk_bd02cf7, base, ptr);
   readData(&unk_17a6e83, base, ptr);
   readData(&unk_8815a78, base, ptr);
-  readData(&unk_57168be, base, ptr);
+  readData(&serLevelAreaOverrideForSpawns, base, ptr);
   readData(&unk_9348542, base, ptr);
   readData(&unk_efa9933, base, ptr);
   readData(&unk_6250c06, base, ptr);

@@ -62,5 +62,5 @@ void t1adf4e20::read(const char* base, char* &ptr) {
   readData(&unk_59c2867, base, ptr);
   readData(&unk_6cc5610, base, ptr);
   readData(&unk_4701df7, base, ptr);
-  readData(&unk_a1f5263, base, ptr);
+  readData(&tInstanceData, base, ptr);
 }

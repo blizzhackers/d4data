@@ -19,7 +19,7 @@ struct t4c2dc82 : public ComplexRead {
   DT_FLOAT friction;
   DT_WORD boneIndex;
   DT_BYTE unk_4571c9b;
-  DT_FIXEDARRAY<DT_WORD, 5> unk_7092ef7;
+  DT_FIXEDARRAY<DT_WORD, 5> padding;
 
   void read(const char* base, char* &ptr);
 };

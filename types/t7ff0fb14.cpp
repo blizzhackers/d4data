@@ -12,5 +12,5 @@ void t7ff0fb14::read(const char* base, char* &ptr) {
   readData(&i2, base, ptr);
   readData(&i3, base, ptr);
   readData(&unk_5b98999, base, ptr);
-  readData(&unk_7092ef7, base, ptr);
+  readData(&padding, base, ptr);
 }

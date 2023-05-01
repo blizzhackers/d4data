@@ -7,5 +7,5 @@
 
 void WallDefinition::read(const char* base, char* &ptr) {
   ptr += 8;
-  readData(&unk_a1f5263, base, ptr);
+  readData(&tInstanceData, base, ptr);
 }

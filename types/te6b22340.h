@@ -20,7 +20,7 @@ struct te6b22340 : public ComplexRead {
   DT_INT unk_609e23d;
   DT_INT unk_d8fcfe4;
   DT_INT unk_435bdfd;
-  DT_INT unk_f2dbd17;
+  DT_INT tConvPageZoomedType;
   DT_RANGE<DT_INT> tVerticalOffset;
   DT_FLOAT unk_2a8c4b6;
 

@@ -7,5 +7,5 @@
 
 void ta483c149::read(const char* base, char* &ptr) {
   readData(&tHeader, base, ptr);
-  readData(&usMessage, base, ptr);
+  readData(&vRMessage, base, ptr);
 }

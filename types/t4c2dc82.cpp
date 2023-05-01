@@ -14,5 +14,5 @@ void t4c2dc82::read(const char* base, char* &ptr) {
   readData(&friction, base, ptr);
   readData(&boneIndex, base, ptr);
   readData(&unk_4571c9b, base, ptr);
-  readData(&unk_7092ef7, base, ptr);
+  readData(&padding, base, ptr);
 }

@@ -12,7 +12,7 @@
 
 struct ta483c149 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_CHARARRAY<1024> usMessage;
+  DT_CHARARRAY<1024> vRMessage;
 
   void read(const char* base, char* &ptr);
 };

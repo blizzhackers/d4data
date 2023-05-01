@@ -9,5 +9,5 @@ void t81a64b0::read(const char* base, char* &ptr) {
   ptr += 8;
   readData(&dwType, base, ptr);
   readData(&dwPad, base, ptr);
-  readData(&unk_a1f5263, base, ptr);
+  readData(&tInstanceData, base, ptr);
 }

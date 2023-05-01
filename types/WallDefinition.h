@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct WallDefinition : public ComplexRead {
-  te25fcbdf unk_a1f5263;
+  te25fcbdf tInstanceData;
 
   void read(const char* base, char* &ptr);
 };

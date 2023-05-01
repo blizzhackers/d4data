@@ -13,5 +13,5 @@ void t7fc234c1::read(const char* base, char* &ptr) {
   readData(&height, base, ptr);
   readData(&unk_9c026b5, base, ptr);
   readData(&boneIndex, base, ptr);
-  readData(&unk_7092ef7, base, ptr);
+  readData(&padding, base, ptr);
 }

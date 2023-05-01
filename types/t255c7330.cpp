@@ -10,6 +10,6 @@ void t255c7330::read(const char* base, char* &ptr) {
   readData(&eType, base, ptr);
   readData(&snoAsset, base, ptr);
   readData(&eTeam, base, ptr);
-  readData(&usMessage, base, ptr);
+  readData(&vRMessage, base, ptr);
   readData(&unk_77b6d3, base, ptr);
 }

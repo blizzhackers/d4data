@@ -39,7 +39,7 @@ struct t1bdec104 : public ComplexRead {
   DT_FLOAT unk_bd02cf7;
   DT_SNO<SnoGroup::EffectGroup> unk_17a6e83;
   DT_INT unk_8815a78;
-  DT_INT unk_57168be;
+  DT_INT serLevelAreaOverrideForSpawns;
   DT_INT unk_9348542;
   DT_UINT unk_efa9933;
   DT_INT unk_6250c06;

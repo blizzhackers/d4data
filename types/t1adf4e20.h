@@ -67,7 +67,7 @@ struct t1adf4e20 : public ComplexRead {
   DT_INT unk_59c2867;
   DT_INT unk_6cc5610;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::MonsterAffix>, 4> unk_4701df7;
-  te6346255 unk_a1f5263;
+  te6346255 tInstanceData;
 
   void read(const char* base, char* &ptr);
 };

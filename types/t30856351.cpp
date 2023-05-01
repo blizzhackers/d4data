@@ -6,5 +6,5 @@
 #include "t30856351.h"
 
 void t30856351::read(const char* base, char* &ptr) {
-  readData(&unk_531e646, base, ptr);
+  readData(&m_data, base, ptr);
 }

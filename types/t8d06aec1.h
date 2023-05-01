@@ -17,7 +17,7 @@ struct t8d06aec1 : public ComplexRead {
   DT_WORD i2;
   DT_WORD i3;
   DT_WORD i4;
-  DT_FIXEDARRAY<DT_WORD, 4> unk_7092ef7;
+  DT_FIXEDARRAY<DT_WORD, 4> padding;
 
   void read(const char* base, char* &ptr);
 };

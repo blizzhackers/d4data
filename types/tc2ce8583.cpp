@@ -28,6 +28,6 @@ void tc2ce8583::read(const char* base, char* &ptr) {
   readData(&unk_e7f5729, base, ptr);
   readData(&flags, base, ptr);
   readData(&unk_b6524d, base, ptr);
-  readData(&unk_7092ef7, base, ptr);
+  readData(&padding, base, ptr);
   readData(&unk_b9196fb, base, ptr);
 }

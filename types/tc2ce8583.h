@@ -33,7 +33,7 @@ struct tc2ce8583 : public ComplexRead {
   DT_WORD unk_e7f5729;
   DT_WORD flags;
   DT_FIXEDARRAY<DT_WORD, 4> unk_b6524d;
-  DT_FIXEDARRAY<DT_WORD, 6> unk_7092ef7;
+  DT_FIXEDARRAY<DT_WORD, 6> padding;
   DT_VECTOR4D unk_b9196fb;
 
   void read(const char* base, char* &ptr);

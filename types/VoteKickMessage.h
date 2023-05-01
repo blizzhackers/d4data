@@ -14,7 +14,7 @@ struct VoteKickMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_UINT unk_390da21;
   DT_UINT unk_1d54bcc;
-  DT_CHARARRAY<1024> usMessage;
+  DT_CHARARRAY<1024> vRMessage;
 
   void read(const char* base, char* &ptr);
 };
