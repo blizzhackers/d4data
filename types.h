@@ -292,7 +292,7 @@ struct DT_CHARARRAY : public ComplexRead {
   std::string value;
 
   void read(const char *base, char* &ptr) {
-    char elements[len];
+    char elements[len + 1]{ 0 };
 
     for (int c = 0; c < len; c++) {
       readData(&elements[c], base, ptr);
@@ -307,8 +307,8 @@ struct DT_VARIABLEARRAY : public ComplexRead {
   std::vector<T> elements;
 
   void read(const char *base, char* &ptr) {
-    uint32_t offset;
-    uint32_t size;
+    int32_t offset;
+    int32_t size;
     uint32_t p[4]{ 0 };
     uint32_t typeSize = sizeof(T);
     std::memcpy(p, ptr, sizeof(p));
@@ -316,6 +316,14 @@ struct DT_VARIABLEARRAY : public ComplexRead {
 
     offset = p[2];
     size = p[3];
+
+    if (p[0] != 0 || p[1] != 0) {
+      throw "Something messed up!";
+    }
+
+    if (offset < 0 || size < 0) {
+      return;
+    }
 
     char *pSrc = (char*)base + p[2];
     char *pEnd = (char*)base + p[2] + p[3];
@@ -334,16 +342,16 @@ struct DT_VARIABLEARRAY : public ComplexRead {
 struct DT_POLYMORPHIC_VARIABLEARRAY : public ComplexRead {
   uint32_t unk_a;
   uint32_t unk_b;
-  uint32_t offset;
-  uint32_t size;
+  int32_t offset;
+  int32_t size;
   uint32_t typeHash;
 
   void read(const char *base, char* &ptr) {
     struct {
       uint32_t unk_a;
       uint32_t unk_b;
-      uint32_t offset;
-      uint32_t size;
+      int32_t offset;
+      int32_t size;
       uint32_t unk_c;
       uint32_t unk_d;
     } raw;
