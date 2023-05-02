@@ -346,7 +346,7 @@ struct DT_CSTRING : public ComplexRead {
 
 struct DT_STRING_FORMULA : public ComplexRead {
   std::string value;
-  DT_VARIABLEARRAY<int32_t> extra;
+  std::string binaryFormula;
   void read(const char *base, char* &ptr);
 };
 

@@ -1,11 +1,11 @@
 /**
- * Definition: t5d4bac71
+ * Definition: PolymorphicBase
  * Hash: 5d4bac71
  */
 
-#include "t5d4bac71.h"
+#include "PolymorphicBase.h"
 
-void t5d4bac71::read(const char* base, char* &ptr) {
+void PolymorphicBase::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

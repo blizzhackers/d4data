@@ -1,5 +1,5 @@
 /**
- * Definition: t5d4bac71
+ * Definition: PolymorphicBase
  * Hash: 5d4bac71
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t5d4bac71 : public ComplexRead {
+struct PolymorphicBase : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
 
