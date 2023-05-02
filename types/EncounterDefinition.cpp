@@ -6,6 +6,8 @@
 #include "EncounterDefinition.h"
 
 void EncounterDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&snoSymbol, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&snoSymbol, base, current);
+  ptr += 0xc;
 }

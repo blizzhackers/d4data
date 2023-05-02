@@ -6,13 +6,24 @@
 #include "t76fbf09b.h"
 
 void t76fbf09b::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&unk_f425a28, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&snoReward, base, ptr);
-  readData(&unk_f3772b3, base, ptr);
-  readData(&unk_576b41d, base, ptr);
-  readData(&wpLocation, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x14;
+  readData(&unk_f425a28, base, current);
+  current = ptr + 0x18;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x1c;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x20;
+  readData(&snoReward, base, current);
+  current = ptr + 0x24;
+  readData(&unk_f3772b3, base, current);
+  current = ptr + 0x28;
+  readData(&unk_576b41d, base, current);
+  current = ptr + 0x30;
+  readData(&wpLocation, base, current);
+  ptr += 0x40;
 }

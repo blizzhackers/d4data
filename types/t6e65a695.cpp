@@ -6,7 +6,12 @@
 #include "t6e65a695.h"
 
 void t6e65a695::read(const char* base, char* &ptr) {
-  readData(&snoActor, base, ptr);
-  readData(&unk_39baadf, base, ptr);
-  readData(&tVariant, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoActor, base, current);
+  current = ptr + 0x4;
+  readData(&unk_39baadf, base, current);
+  current = ptr + 0x8;
+  readData(&tVariant, base, current);
+  ptr += 0x10;
 }

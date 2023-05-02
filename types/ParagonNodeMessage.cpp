@@ -6,7 +6,12 @@
 #include "ParagonNodeMessage.h"
 
 void ParagonNodeMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&dwNodeIndex, base, ptr);
-  readData(&unk_5c73d43, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&dwNodeIndex, base, current);
+  current = ptr + 0x14;
+  readData(&unk_5c73d43, base, current);
+  ptr += 0x18;
 }

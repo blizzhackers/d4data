@@ -6,6 +6,10 @@
 #include "t400e4fac.h"
 
 void t400e4fac::read(const char* base, char* &ptr) {
-  readData(&nFrameStart, base, ptr);
-  readData(&nFrameEnd, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nFrameStart, base, current);
+  current = ptr + 0x4;
+  readData(&nFrameEnd, base, current);
+  ptr += 0x8;
 }

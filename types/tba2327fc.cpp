@@ -6,6 +6,10 @@
 #include "tba2327fc.h"
 
 void tba2327fc::read(const char* base, char* &ptr) {
-  readData(&snoWorld, base, ptr);
-  readData(&arQuests, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x8;
+  readData(&arQuests, base, current);
+  ptr += 0x18;
 }

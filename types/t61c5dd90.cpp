@@ -6,8 +6,14 @@
 #include "t61c5dd90.h"
 
 void t61c5dd90::read(const char* base, char* &ptr) {
-  readData(&gbHeroDescription, base, ptr);
-  readData(&IsLinearMessage, base, ptr);
-  readData(&unk_af8195d, base, ptr);
-  readData(&tTriangle, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&gbHeroDescription, base, current);
+  current = ptr + 0x4;
+  readData(&IsLinearMessage, base, current);
+  current = ptr + 0x8;
+  readData(&unk_af8195d, base, current);
+  current = ptr + 0xc;
+  readData(&tTriangle, base, current);
+  ptr += 0x24;
 }

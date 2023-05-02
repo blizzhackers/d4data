@@ -6,14 +6,26 @@
 #include "ComplexEffectAddMessage.h"
 
 void ComplexEffectAddMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&idSComplexEffect, base, ptr);
-  readData(&eType, base, ptr);
-  readData(&snoEffectGroup, base, ptr);
-  readData(&annSource, base, ptr);
-  readData(&annDest, base, ptr);
-  readData(&unk_b883005, base, ptr);
-  readData(&dwParam1, base, ptr);
-  readData(&dwParam2, base, ptr);
-  readData(&bIgnoreOwnerAlpha, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&idSComplexEffect, base, current);
+  current = ptr + 0x14;
+  readData(&eType, base, current);
+  current = ptr + 0x18;
+  readData(&snoEffectGroup, base, current);
+  current = ptr + 0x1c;
+  readData(&annSource, base, current);
+  current = ptr + 0x24;
+  readData(&annDest, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_b883005, base, current);
+  current = ptr + 0x34;
+  readData(&dwParam1, base, current);
+  current = ptr + 0x38;
+  readData(&dwParam2, base, current);
+  current = ptr + 0x3c;
+  readData(&bIgnoreOwnerAlpha, base, current);
+  ptr += 0x40;
 }

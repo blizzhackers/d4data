@@ -6,18 +6,34 @@
 #include "RenderParams.h"
 
 void RenderParams::read(const char* base, char* &ptr) {
-  readData(&unk_e80141f, base, ptr);
-  readData(&eCullMode, base, ptr);
-  readData(&fZBufferWriteEnable, base, ptr);
-  readData(&eZBufferCompareFunc, base, ptr);
-  readData(&flZBias, base, ptr);
-  readData(&flZSlopeScaleBias, base, ptr);
-  readData(&unk_bb82f2a, base, ptr);
-  readData(&fAlphaTestEnable, base, ptr);
-  readData(&eAlphaTestCompareFunc, base, ptr);
-  readData(&bAlphaTestRefValue, base, ptr);
-  readData(&fAlphaMaskEnable, base, ptr);
-  readData(&eFillMode, base, ptr);
-  readData(&unk_7e83826, base, ptr);
-  readData(&unk_2d2237f, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_e80141f, base, current);
+  current = ptr + 0x4;
+  readData(&eCullMode, base, current);
+  current = ptr + 0x8;
+  readData(&fZBufferWriteEnable, base, current);
+  current = ptr + 0xc;
+  readData(&eZBufferCompareFunc, base, current);
+  current = ptr + 0x10;
+  readData(&flZBias, base, current);
+  current = ptr + 0x14;
+  readData(&flZSlopeScaleBias, base, current);
+  current = ptr + 0x18;
+  readData(&unk_bb82f2a, base, current);
+  current = ptr + 0x48;
+  readData(&fAlphaTestEnable, base, current);
+  current = ptr + 0x4c;
+  readData(&eAlphaTestCompareFunc, base, current);
+  current = ptr + 0x50;
+  readData(&bAlphaTestRefValue, base, current);
+  current = ptr + 0x54;
+  readData(&fAlphaMaskEnable, base, current);
+  current = ptr + 0x58;
+  readData(&eFillMode, base, current);
+  current = ptr + 0x5c;
+  readData(&unk_7e83826, base, current);
+  current = ptr + 0x60;
+  readData(&unk_2d2237f, base, current);
+  ptr += 0x180;
 }

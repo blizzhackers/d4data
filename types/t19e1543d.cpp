@@ -6,15 +6,26 @@
 #include "t19e1543d.h"
 
 void t19e1543d::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_8205294, base, ptr);
-  readData(&arCrafters, base, ptr);
-  readData(&unk_f37b35d, base, ptr);
-  readData(&unk_13e0ecf, base, ptr);
-  readData(&unk_c834d7a, base, ptr);
-  readData(&unk_24fcd3d, base, ptr);
-  readData(&unk_6ac8078, base, ptr);
-  readData(&unk_2a2b3f7, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&unk_8205294, base, current);
+  current = ptr + 0x114;
+  readData(&arCrafters, base, current);
+  current = ptr + 0x1a0;
+  readData(&unk_f37b35d, base, current);
+  current = ptr + 0x1f0;
+  readData(&unk_13e0ecf, base, current);
+  current = ptr + 0x1f4;
+  readData(&unk_c834d7a, base, current);
+  current = ptr + 0x1f8;
+  readData(&unk_24fcd3d, base, current);
+  current = ptr + 0x1fc;
+  readData(&unk_6ac8078, base, current);
+  current = ptr + 0x200;
+  readData(&unk_2a2b3f7, base, current);
+  ptr += 0x208;
 }

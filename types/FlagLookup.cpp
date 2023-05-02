@@ -6,7 +6,12 @@
 #include "FlagLookup.h"
 
 void FlagLookup::read(const char* base, char* &ptr) {
-  readData(&nIndex, base, ptr);
-  readData(&szLabel, base, ptr);
-  readData(&szDescription, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nIndex, base, current);
+  current = ptr + 0x4;
+  readData(&szLabel, base, current);
+  current = ptr + 0x84;
+  readData(&szDescription, base, current);
+  ptr += 0x184;
 }

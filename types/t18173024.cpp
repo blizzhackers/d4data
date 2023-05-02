@@ -6,10 +6,18 @@
 #include "t18173024.h"
 
 void t18173024::read(const char* base, char* &ptr) {
-  readData(&dwSeed, base, ptr);
-  readData(&unk_1ea1e86, base, ptr);
-  readData(&unk_451e596, base, ptr);
-  readData(&arTiles, base, ptr);
-  readData(&arDRLGEvents, base, ptr);
-  readData(&unk_5999f73, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&dwSeed, base, current);
+  current = ptr + 0x4;
+  readData(&unk_1ea1e86, base, current);
+  current = ptr + 0x8;
+  readData(&unk_451e596, base, current);
+  current = ptr + 0xc;
+  readData(&arTiles, base, current);
+  current = ptr + 0x3a10;
+  readData(&arDRLGEvents, base, current);
+  current = ptr + 0x3e14;
+  readData(&unk_5999f73, base, current);
+  ptr += 0x4030;
 }

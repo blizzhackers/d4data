@@ -6,9 +6,14 @@
 #include "td4773d8d.h"
 
 void td4773d8d::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_799ca4d, base, ptr);
-  readData(&snoOverridePower, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&unk_799ca4d, base, current);
+  current = ptr + 0x14;
+  readData(&snoOverridePower, base, current);
+  ptr += 0x18;
 }

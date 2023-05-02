@@ -6,11 +6,20 @@
 #include "DPathSinData.h"
 
 void DPathSinData::read(const char* base, char* &ptr) {
-  readData(&flSinIncPerTick, base, ptr);
-  readData(&flSinIncAccel, base, ptr);
-  readData(&flLateralMaxDistance, base, ptr);
-  readData(&flOOLateralDistanceToScale, base, ptr);
-  readData(&flLateralStartDistance, base, ptr);
-  readData(&flSpeed, base, ptr);
-  readData(&annOwner, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&flSinIncPerTick, base, current);
+  current = ptr + 0x4;
+  readData(&flSinIncAccel, base, current);
+  current = ptr + 0x8;
+  readData(&flLateralMaxDistance, base, current);
+  current = ptr + 0xc;
+  readData(&flOOLateralDistanceToScale, base, current);
+  current = ptr + 0x10;
+  readData(&flLateralStartDistance, base, current);
+  current = ptr + 0x14;
+  readData(&flSpeed, base, current);
+  current = ptr + 0x18;
+  readData(&annOwner, base, current);
+  ptr += 0x20;
 }

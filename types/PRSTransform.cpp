@@ -6,7 +6,12 @@
 #include "PRSTransform.h"
 
 void PRSTransform::read(const char* base, char* &ptr) {
-  readData(&q, base, ptr);
-  readData(&wp, base, ptr);
-  readData(&vScale, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&q, base, current);
+  current = ptr + 0x10;
+  readData(&wp, base, current);
+  current = ptr + 0x1c;
+  readData(&vScale, base, current);
+  ptr += 0x28;
 }

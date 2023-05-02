@@ -6,16 +6,30 @@
 #include "tabd62f10.h"
 
 void tabd62f10::read(const char* base, char* &ptr) {
-  readData(&unk_e2389cd, base, ptr);
-  readData(&unk_712de84, base, ptr);
-  readData(&unk_a7d0d98, base, ptr);
-  readData(&unk_7a0fbd1, base, ptr);
-  readData(&flWanderTooLongTime, base, ptr);
-  readData(&unk_cce11aa, base, ptr);
-  readData(&unk_eef4fcc, base, ptr);
-  readData(&unk_b27a162, base, ptr);
-  readData(&unk_7ba0285, base, ptr);
-  readData(&unk_d8c8fc5, base, ptr);
-  readData(&unk_a7dc284, base, ptr);
-  readData(&unk_dc8566b, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_e2389cd, base, current);
+  current = ptr + 0x4;
+  readData(&unk_712de84, base, current);
+  current = ptr + 0x8;
+  readData(&unk_a7d0d98, base, current);
+  current = ptr + 0xc;
+  readData(&unk_7a0fbd1, base, current);
+  current = ptr + 0x14;
+  readData(&flWanderTooLongTime, base, current);
+  current = ptr + 0x18;
+  readData(&unk_cce11aa, base, current);
+  current = ptr + 0x20;
+  readData(&unk_eef4fcc, base, current);
+  current = ptr + 0x24;
+  readData(&unk_b27a162, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_7ba0285, base, current);
+  current = ptr + 0x30;
+  readData(&unk_d8c8fc5, base, current);
+  current = ptr + 0x38;
+  readData(&unk_a7dc284, base, current);
+  current = ptr + 0x3c;
+  readData(&unk_dc8566b, base, current);
+  ptr += 0x40;
 }

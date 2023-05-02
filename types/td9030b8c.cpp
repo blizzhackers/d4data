@@ -6,10 +6,16 @@
 #include "td9030b8c.h"
 
 void td9030b8c::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_5460da3, base, ptr);
-  readData(&unk_297c737, base, ptr);
-  readData(&unk_65250c9, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&unk_5460da3, base, current);
+  current = ptr + 0xd0;
+  readData(&unk_297c737, base, current);
+  current = ptr + 0xd4;
+  readData(&unk_65250c9, base, current);
+  ptr += 0xd8;
 }

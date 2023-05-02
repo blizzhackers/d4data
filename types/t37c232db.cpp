@@ -6,6 +6,10 @@
 #include "t37c232db.h"
 
 void t37c232db::read(const char* base, char* &ptr) {
-  readData(&snoListener, base, ptr);
-  readData(&unk_bcac396, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoListener, base, current);
+  current = ptr + 0x4;
+  readData(&unk_bcac396, base, current);
+  ptr += 0xc;
 }

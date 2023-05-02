@@ -6,11 +6,20 @@
 #include "tcec695fb.h"
 
 void tcec695fb::read(const char* base, char* &ptr) {
-  readData(&ptPositions, base, ptr);
-  readData(&ptColors, base, ptr);
-  readData(&unk_703599f, base, ptr);
-  readData(&unk_72d072a, base, ptr);
-  readData(&ptRotations, base, ptr);
-  readData(&unk_22e26f1, base, ptr);
-  readData(&unk_1666206, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&ptPositions, base, current);
+  current = ptr + 0x10;
+  readData(&ptColors, base, current);
+  current = ptr + 0x20;
+  readData(&unk_703599f, base, current);
+  current = ptr + 0x30;
+  readData(&unk_72d072a, base, current);
+  current = ptr + 0x40;
+  readData(&ptRotations, base, current);
+  current = ptr + 0x50;
+  readData(&unk_22e26f1, base, current);
+  current = ptr + 0x60;
+  readData(&unk_1666206, base, current);
+  ptr += 0x70;
 }

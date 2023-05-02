@@ -6,8 +6,14 @@
 #include "InventoryRequestSocketMessage.h"
 
 void InventoryRequestSocketMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_2d5ac18, base, ptr);
-  readData(&unk_fa7e312, base, ptr);
-  readData(&unk_490e4ef, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_2d5ac18, base, current);
+  current = ptr + 0x18;
+  readData(&unk_fa7e312, base, current);
+  current = ptr + 0x20;
+  readData(&unk_490e4ef, base, current);
+  ptr += 0x28;
 }

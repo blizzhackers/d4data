@@ -6,6 +6,10 @@
 #include "t41ad8904.h"
 
 void t41ad8904::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_d3be7ce, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_d3be7ce, base, current);
+  ptr += 0x14;
 }

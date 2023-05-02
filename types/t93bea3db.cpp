@@ -6,15 +6,28 @@
 #include "t93bea3db.h"
 
 void t93bea3db::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&wpLocation, base, ptr);
-  readData(&snoMarkerSet, base, ptr);
-  readData(&nMarkerIndex, base, ptr);
-  readData(&dwStartTime, base, ptr);
-  readData(&dwEndTime, base, ptr);
-  readData(&unk_eddc1bd, base, ptr);
-  readData(&unk_f9c5be7, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x14;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x18;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x1c;
+  readData(&wpLocation, base, current);
+  current = ptr + 0x28;
+  readData(&snoMarkerSet, base, current);
+  current = ptr + 0x2c;
+  readData(&nMarkerIndex, base, current);
+  current = ptr + 0x30;
+  readData(&dwStartTime, base, current);
+  current = ptr + 0x38;
+  readData(&dwEndTime, base, current);
+  current = ptr + 0x40;
+  readData(&unk_eddc1bd, base, current);
+  current = ptr + 0x44;
+  readData(&unk_f9c5be7, base, current);
+  ptr += 0x48;
 }

@@ -6,6 +6,10 @@
 #include "t513b719a.h"
 
 void t513b719a::read(const char* base, char* &ptr) {
-  readData(&unk_5011647, base, ptr);
-  readData(&bNegate, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_5011647, base, current);
+  current = ptr + 0x4;
+  readData(&bNegate, base, current);
+  ptr += 0x8;
 }

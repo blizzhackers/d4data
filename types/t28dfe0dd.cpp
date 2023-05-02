@@ -6,9 +6,14 @@
 #include "t28dfe0dd.h"
 
 void t28dfe0dd::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_d1e17f4, base, ptr);
-  readData(&pathBoxExtents, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&unk_d1e17f4, base, current);
+  current = ptr + 0x18;
+  readData(&pathBoxExtents, base, current);
+  ptr += 0x50;
 }

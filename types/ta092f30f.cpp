@@ -6,6 +6,10 @@
 #include "ta092f30f.h"
 
 void ta092f30f::read(const char* base, char* &ptr) {
-  readData(&snoQuest, base, ptr);
-  readData(&snoMarkerSet, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x4;
+  readData(&snoMarkerSet, base, current);
+  ptr += 0x8;
 }

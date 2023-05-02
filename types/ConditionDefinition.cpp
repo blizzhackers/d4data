@@ -6,6 +6,8 @@
 #include "ConditionDefinition.h"
 
 void ConditionDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_7e154cf, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_7e154cf, base, current);
+  ptr += 0x20;
 }

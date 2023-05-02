@@ -6,9 +6,14 @@
 #include "tef4e42e5.h"
 
 void tef4e42e5::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_97fcdff, base, ptr);
-  readData(&snoLevelArea, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&unk_97fcdff, base, current);
+  current = ptr + 0x14;
+  readData(&snoLevelArea, base, current);
+  ptr += 0x18;
 }

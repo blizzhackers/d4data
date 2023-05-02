@@ -6,6 +6,8 @@
 #include "MonsterFamilyDefinition.h"
 
 void MonsterFamilyDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_cc6abab, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_cc6abab, base, current);
+  ptr += 0x18;
 }

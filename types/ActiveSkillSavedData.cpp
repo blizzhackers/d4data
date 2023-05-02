@@ -6,5 +6,8 @@
 #include "ActiveSkillSavedData.h"
 
 void ActiveSkillSavedData::read(const char* base, char* &ptr) {
-  readData(&snoSkill, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoSkill, base, current);
+  ptr += 0x8;
 }

@@ -6,6 +6,10 @@
 #include "ActorGroup.h"
 
 void ActorGroup::read(const char* base, char* &ptr) {
-  readData(&uHash, base, ptr);
-  readData(&szName, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&uHash, base, current);
+  current = ptr + 0x4;
+  readData(&szName, base, current);
+  ptr += 0x44;
 }

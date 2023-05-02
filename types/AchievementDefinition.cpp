@@ -6,17 +6,30 @@
 #include "AchievementDefinition.h"
 
 void AchievementDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&uPointsValue, base, ptr);
-  readData(&dwNextID, base, ptr);
-  readData(&uMinRequiredCriteria, base, ptr);
-  readData(&unk_d8ffc53, base, ptr);
-  readData(&uFlags, base, ptr);
-  readData(&unk_aa46967, base, ptr);
-  readData(&unk_8b76c22, base, ptr);
-  readData(&unk_e8e4934, base, ptr);
-  readData(&unk_da26abf, base, ptr);
-  readData(&unk_9c99920, base, ptr);
-  readData(&unk_17fe2c9, base, ptr);
-  readData(&hImage, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&uPointsValue, base, current);
+  current = ptr + 0xc;
+  readData(&dwNextID, base, current);
+  current = ptr + 0x10;
+  readData(&uMinRequiredCriteria, base, current);
+  current = ptr + 0x14;
+  readData(&unk_d8ffc53, base, current);
+  current = ptr + 0x18;
+  readData(&uFlags, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_aa46967, base, current);
+  current = ptr + 0x20;
+  readData(&unk_8b76c22, base, current);
+  current = ptr + 0x30;
+  readData(&unk_e8e4934, base, current);
+  current = ptr + 0x40;
+  readData(&unk_da26abf, base, current);
+  current = ptr + 0x58;
+  readData(&unk_9c99920, base, current);
+  current = ptr + 0x70;
+  readData(&unk_17fe2c9, base, current);
+  current = ptr + 0x88;
+  readData(&hImage, base, current);
+  ptr += 0x90;
 }

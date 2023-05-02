@@ -6,10 +6,18 @@
 #include "t18e49fff.h"
 
 void t18e49fff::read(const char* base, char* &ptr) {
-  readData(&countX, base, ptr);
-  readData(&countY, base, ptr);
-  readData(&cellWidth, base, ptr);
-  readData(&aSamples, base, ptr);
-  readData(&center, base, ptr);
-  readData(&scale, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&countX, base, current);
+  current = ptr + 0x4;
+  readData(&countY, base, current);
+  current = ptr + 0x8;
+  readData(&cellWidth, base, current);
+  current = ptr + 0x10;
+  readData(&aSamples, base, current);
+  current = ptr + 0x18;
+  readData(&center, base, current);
+  current = ptr + 0x1c;
+  readData(&scale, base, current);
+  ptr += 0x20;
 }

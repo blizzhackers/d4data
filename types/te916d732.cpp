@@ -6,7 +6,12 @@
 #include "te916d732.h"
 
 void te916d732::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_e08c2ce, base, ptr);
-  readData(&unk_a48947e, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_e08c2ce, base, current);
+  current = ptr + 0x18;
+  readData(&unk_a48947e, base, current);
+  ptr += 0x20;
 }

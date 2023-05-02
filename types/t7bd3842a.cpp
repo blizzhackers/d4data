@@ -6,5 +6,8 @@
 #include "t7bd3842a.h"
 
 void t7bd3842a::read(const char* base, char* &ptr) {
-  readData(&szTag, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&szTag, base, current);
+  ptr += 0x4;
 }

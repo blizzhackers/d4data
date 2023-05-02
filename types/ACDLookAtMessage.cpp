@@ -6,7 +6,12 @@
 #include "ACDLookAtMessage.h"
 
 void ACDLookAtMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annSrc, base, ptr);
-  readData(&annTarget, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&annSrc, base, current);
+  current = ptr + 0x18;
+  readData(&annTarget, base, current);
+  ptr += 0x20;
 }

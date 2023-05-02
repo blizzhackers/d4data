@@ -6,5 +6,8 @@
 #include "t26d3dba1.h"
 
 void t26d3dba1::read(const char* base, char* &ptr) {
-  readData(&unk_461a1f4, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_461a1f4, base, current);
+  ptr += 0x10;
 }

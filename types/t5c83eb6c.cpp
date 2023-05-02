@@ -6,10 +6,16 @@
 #include "t5c83eb6c.h"
 
 void t5c83eb6c::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&eParamType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&dwHash, base, ptr);
-  readData(&szString, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&eParamType, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&dwHash, base, current);
+  current = ptr + 0x20;
+  readData(&szString, base, current);
+  ptr += 0x30;
 }

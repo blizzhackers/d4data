@@ -6,6 +6,10 @@
 #include "tfd4746f8.h"
 
 void tfd4746f8::read(const char* base, char* &ptr) {
-  readData(&unk_c534f19, base, ptr);
-  readData(&unk_c534e1b, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_c534f19, base, current);
+  current = ptr + 0x4;
+  readData(&unk_c534e1b, base, current);
+  ptr += 0x8;
 }

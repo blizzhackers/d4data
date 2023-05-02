@@ -6,16 +6,28 @@
 #include "ParagonNodeDefinition.h"
 
 void ParagonNodeDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&hIcon, base, ptr);
-  readData(&unk_f8257d, base, ptr);
-  readData(&unk_7714b98, base, ptr);
-  readData(&unk_3556860, base, ptr);
-  readData(&snoPassivePower, base, ptr);
-  readData(&ptAttributes, base, ptr);
-  readData(&unk_8ba8e1e, base, ptr);
-  readData(&unk_2055501, base, ptr);
-  readData(&unk_2133527, base, ptr);
-  readData(&unk_a5d749f, base, ptr);
-  readData(&arSkillTags, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&hIcon, base, current);
+  current = ptr + 0xc;
+  readData(&unk_f8257d, base, current);
+  current = ptr + 0x10;
+  readData(&unk_7714b98, base, current);
+  current = ptr + 0x14;
+  readData(&unk_3556860, base, current);
+  current = ptr + 0x18;
+  readData(&snoPassivePower, base, current);
+  current = ptr + 0x20;
+  readData(&ptAttributes, base, current);
+  current = ptr + 0x30;
+  readData(&unk_8ba8e1e, base, current);
+  current = ptr + 0x40;
+  readData(&unk_2055501, base, current);
+  current = ptr + 0x50;
+  readData(&unk_2133527, base, current);
+  current = ptr + 0x54;
+  readData(&unk_a5d749f, base, current);
+  current = ptr + 0x58;
+  readData(&arSkillTags, base, current);
+  ptr += 0x68;
 }

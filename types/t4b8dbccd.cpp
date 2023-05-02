@@ -6,5 +6,8 @@
 #include "t4b8dbccd.h"
 
 void t4b8dbccd::read(const char* base, char* &ptr) {
-  readData(&flNoSpawnRadius, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&flNoSpawnRadius, base, current);
+  ptr += 0x4;
 }

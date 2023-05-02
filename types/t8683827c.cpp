@@ -6,10 +6,16 @@
 #include "t8683827c.h"
 
 void t8683827c::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bInverse, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&eSubject, base, ptr);
-  readData(&snoItem, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bInverse, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&eSubject, base, current);
+  current = ptr + 0x1c;
+  readData(&snoItem, base, current);
+  ptr += 0x20;
 }

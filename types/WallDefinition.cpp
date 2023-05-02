@@ -6,6 +6,8 @@
 #include "WallDefinition.h"
 
 void WallDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&tInstanceData, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&tInstanceData, base, current);
+  ptr += 0xa0;
 }

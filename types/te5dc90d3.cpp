@@ -6,14 +6,26 @@
 #include "te5dc90d3.h"
 
 void te5dc90d3::read(const char* base, char* &ptr) {
-  readData(&snoFace, base, ptr);
-  readData(&snoHairColor, base, ptr);
-  readData(&snoHairStyle, base, ptr);
-  readData(&snoFacialHair, base, ptr);
-  readData(&snoJewelry, base, ptr);
-  readData(&snoEyeColor, base, ptr);
-  readData(&unk_9363e7a, base, ptr);
-  readData(&snoMakeup, base, ptr);
-  readData(&snoMarkingShape, base, ptr);
-  readData(&snoMarkingColor, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoFace, base, current);
+  current = ptr + 0x4;
+  readData(&snoHairColor, base, current);
+  current = ptr + 0x8;
+  readData(&snoHairStyle, base, current);
+  current = ptr + 0xc;
+  readData(&snoFacialHair, base, current);
+  current = ptr + 0x10;
+  readData(&snoJewelry, base, current);
+  current = ptr + 0x14;
+  readData(&snoEyeColor, base, current);
+  current = ptr + 0x18;
+  readData(&unk_9363e7a, base, current);
+  current = ptr + 0x1c;
+  readData(&snoMakeup, base, current);
+  current = ptr + 0x20;
+  readData(&snoMarkingShape, base, current);
+  current = ptr + 0x24;
+  readData(&snoMarkingColor, base, current);
+  ptr += 0x28;
 }

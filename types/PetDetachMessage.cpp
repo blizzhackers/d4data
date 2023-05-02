@@ -6,8 +6,14 @@
 #include "PetDetachMessage.h"
 
 void PetDetachMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annPet, base, ptr);
-  readData(&bDisplayChatMessage, base, ptr);
-  readData(&unk_70bf7e7, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&annPet, base, current);
+  current = ptr + 0x18;
+  readData(&bDisplayChatMessage, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_70bf7e7, base, current);
+  ptr += 0x20;
 }

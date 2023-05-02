@@ -6,12 +6,20 @@
 #include "t1af4235c.h"
 
 void t1af4235c::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bNegate, base, ptr);
-  readData(&unk_c0222bf, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&flValue, base, ptr);
-  readData(&unk_adc7465, base, ptr);
-  readData(&unk_c7b2b18, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bNegate, base, current);
+  current = ptr + 0x18;
+  readData(&unk_c0222bf, base, current);
+  current = ptr + 0x1c;
+  readData(&dwPad, base, current);
+  current = ptr + 0x20;
+  readData(&flValue, base, current);
+  current = ptr + 0x24;
+  readData(&unk_adc7465, base, current);
+  current = ptr + 0x28;
+  readData(&unk_c7b2b18, base, current);
+  ptr += 0x30;
 }

@@ -6,13 +6,22 @@
 #include "tae75ccfd.h"
 
 void tae75ccfd::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&tConditions, base, ptr);
-  readData(&fGenerated, base, ptr);
-  readData(&unk_6cba752, base, ptr);
-  readData(&unk_e560b0b, base, ptr);
-  readData(&unk_77f81b0, base, ptr);
-  readData(&unk_1af83a1, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&tConditions, base, current);
+  current = ptr + 0x3c;
+  readData(&fGenerated, base, current);
+  current = ptr + 0x40;
+  readData(&unk_6cba752, base, current);
+  current = ptr + 0x44;
+  readData(&unk_e560b0b, base, current);
+  current = ptr + 0x48;
+  readData(&unk_77f81b0, base, current);
+  current = ptr + 0x50;
+  readData(&unk_1af83a1, base, current);
+  ptr += 0x58;
 }

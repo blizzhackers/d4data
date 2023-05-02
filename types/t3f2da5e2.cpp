@@ -6,9 +6,16 @@
 #include "t3f2da5e2.h"
 
 void t3f2da5e2::read(const char* base, char* &ptr) {
-  readData(&unk_cd39b27, base, ptr);
-  readData(&unk_a6c6afd, base, ptr);
-  readData(&unk_2e1ba44, base, ptr);
-  readData(&dwFlags, base, ptr);
-  readData(&unk_d188924, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_cd39b27, base, current);
+  current = ptr + 0x4;
+  readData(&unk_a6c6afd, base, current);
+  current = ptr + 0x8;
+  readData(&unk_2e1ba44, base, current);
+  current = ptr + 0xa;
+  readData(&dwFlags, base, current);
+  current = ptr + 0xb;
+  readData(&unk_d188924, base, current);
+  ptr += 0xc;
 }

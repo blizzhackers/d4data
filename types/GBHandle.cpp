@@ -6,6 +6,10 @@
 #include "GBHandle.h"
 
 void GBHandle::read(const char* base, char* &ptr) {
-  readData(&eType, base, ptr);
-  readData(&gbid, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&eType, base, current);
+  current = ptr + 0x4;
+  readData(&gbid, base, current);
+  ptr += 0x8;
 }

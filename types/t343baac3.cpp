@@ -6,6 +6,10 @@
 #include "t343baac3.h"
 
 void t343baac3::read(const char* base, char* &ptr) {
-  readData(&unk_1fa233b, base, ptr);
-  readData(&unk_76177c6, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_1fa233b, base, current);
+  current = ptr + 0x8;
+  readData(&unk_76177c6, base, current);
+  ptr += 0x18;
 }

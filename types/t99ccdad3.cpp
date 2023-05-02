@@ -6,5 +6,8 @@
 #include "t99ccdad3.h"
 
 void t99ccdad3::read(const char* base, char* &ptr) {
-  readData(&eType, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&eType, base, current);
+  ptr += 0x4;
 }

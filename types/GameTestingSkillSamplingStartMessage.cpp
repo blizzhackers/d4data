@@ -6,7 +6,12 @@
 #include "GameTestingSkillSamplingStartMessage.h"
 
 void GameTestingSkillSamplingStartMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_e99ade5, base, ptr);
-  readData(&snoPower, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_e99ade5, base, current);
+  current = ptr + 0x50;
+  readData(&snoPower, base, current);
+  ptr += 0x54;
 }

@@ -6,5 +6,6 @@
 #include "MaterialValueSetDefinition.h"
 
 void MaterialValueSetDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
+  char *current;
+  ptr += 0x8;
 }

@@ -6,13 +6,22 @@
 #include "t66cdffef.h"
 
 void t66cdffef::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&tConditions, base, ptr);
-  readData(&fGenerated, base, ptr);
-  readData(&unk_6cba752, base, ptr);
-  readData(&unk_e560b0b, base, ptr);
-  readData(&idEffectGroup, base, ptr);
-  readData(&fLoop, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&tConditions, base, current);
+  current = ptr + 0x3c;
+  readData(&fGenerated, base, current);
+  current = ptr + 0x40;
+  readData(&unk_6cba752, base, current);
+  current = ptr + 0x44;
+  readData(&unk_e560b0b, base, current);
+  current = ptr + 0x48;
+  readData(&idEffectGroup, base, current);
+  current = ptr + 0x4c;
+  readData(&fLoop, base, current);
+  ptr += 0x50;
 }

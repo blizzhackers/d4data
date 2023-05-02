@@ -6,7 +6,12 @@
 #include "t23d827c6.h"
 
 void t23d827c6::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&uEntranceGUID, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x14;
+  readData(&uEntranceGUID, base, current);
+  ptr += 0x18;
 }

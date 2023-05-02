@@ -6,6 +6,10 @@
 #include "Sphere.h"
 
 void Sphere::read(const char* base, char* &ptr) {
-  readData(&wpCenter, base, ptr);
-  readData(&wdRadius, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&wpCenter, base, current);
+  current = ptr + 0xc;
+  readData(&wdRadius, base, current);
+  ptr += 0x10;
 }

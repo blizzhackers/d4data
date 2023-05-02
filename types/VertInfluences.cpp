@@ -6,5 +6,8 @@
 #include "VertInfluences.h"
 
 void VertInfluences::read(const char* base, char* &ptr) {
-  readData(&tBoneInfluence, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tBoneInfluence, base, current);
+  ptr += 0x20;
 }

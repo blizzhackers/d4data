@@ -6,7 +6,12 @@
 #include "t4ddd8603.h"
 
 void t4ddd8603::read(const char* base, char* &ptr) {
-  readData(&unk_5ce8bfb, base, ptr);
-  readData(&unk_df09d6a, base, ptr);
-  readData(&unk_6d3dfe6, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_5ce8bfb, base, current);
+  current = ptr + 0x4;
+  readData(&unk_df09d6a, base, current);
+  current = ptr + 0x8;
+  readData(&unk_6d3dfe6, base, current);
+  ptr += 0xc;
 }

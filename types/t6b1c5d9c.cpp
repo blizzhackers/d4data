@@ -6,5 +6,8 @@
 #include "t6b1c5d9c.h"
 
 void t6b1c5d9c::read(const char* base, char* &ptr) {
-  readData(&hImageHandle, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&hImageHandle, base, current);
+  ptr += 0x4;
 }

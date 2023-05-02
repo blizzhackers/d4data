@@ -6,10 +6,18 @@
 #include "ActorLookOverrideChangedMessage.h"
 
 void ActorLookOverrideChangedMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&ann, base, ptr);
-  readData(&nChange, base, ptr);
-  readData(&nLookOverrideHash, base, ptr);
-  readData(&unk_80b4365, base, ptr);
-  readData(&unk_1b57083, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&ann, base, current);
+  current = ptr + 0x18;
+  readData(&nChange, base, current);
+  current = ptr + 0x1c;
+  readData(&nLookOverrideHash, base, current);
+  current = ptr + 0x20;
+  readData(&unk_80b4365, base, current);
+  current = ptr + 0x24;
+  readData(&unk_1b57083, base, current);
+  ptr += 0x28;
 }

@@ -6,6 +6,10 @@
 #include "te050809c.h"
 
 void te050809c::read(const char* base, char* &ptr) {
-  readData(&unk_4fdc522, base, ptr);
-  readData(&unk_2a1f7c8, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_4fdc522, base, current);
+  current = ptr + 0x4;
+  readData(&unk_2a1f7c8, base, current);
+  ptr += 0x10;
 }

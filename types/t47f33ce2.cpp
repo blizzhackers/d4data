@@ -6,6 +6,10 @@
 #include "t47f33ce2.h"
 
 void t47f33ce2::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&arRanks, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x108;
+  readData(&arRanks, base, current);
+  ptr += 0x118;
 }

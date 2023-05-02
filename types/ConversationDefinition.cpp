@@ -6,21 +6,38 @@
 #include "ConversationDefinition.h"
 
 void ConversationDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&eConvType, base, ptr);
-  readData(&unk_1fd072a, base, ptr);
-  readData(&unk_951e771, base, ptr);
-  readData(&unk_aefb1a3, base, ptr);
-  readData(&flCooldownTime, base, ptr);
-  readData(&unk_5031de3, base, ptr);
-  readData(&unk_3587d15, base, ptr);
-  readData(&unk_d35e9de, base, ptr);
-  readData(&unk_8d6f162, base, ptr);
-  readData(&unk_ac91f5d, base, ptr);
-  readData(&unk_e1d8535, base, ptr);
-  readData(&unk_b32ef27, base, ptr);
-  readData(&dwFlags, base, ptr);
-  readData(&unk_a159b10, base, ptr);
-  readData(&szSetPlayerFlag, base, ptr);
-  readData(&unk_bbc67ad, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&eConvType, base, current);
+  current = ptr + 0xc;
+  readData(&unk_1fd072a, base, current);
+  current = ptr + 0x10;
+  readData(&unk_951e771, base, current);
+  current = ptr + 0x14;
+  readData(&unk_aefb1a3, base, current);
+  current = ptr + 0x18;
+  readData(&flCooldownTime, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_5031de3, base, current);
+  current = ptr + 0x20;
+  readData(&unk_3587d15, base, current);
+  current = ptr + 0x24;
+  readData(&unk_d35e9de, base, current);
+  current = ptr + 0x28;
+  readData(&unk_8d6f162, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_ac91f5d, base, current);
+  current = ptr + 0x30;
+  readData(&unk_e1d8535, base, current);
+  current = ptr + 0x34;
+  readData(&unk_b32ef27, base, current);
+  current = ptr + 0x38;
+  readData(&dwFlags, base, current);
+  current = ptr + 0x40;
+  readData(&unk_a159b10, base, current);
+  current = ptr + 0x58;
+  readData(&szSetPlayerFlag, base, current);
+  current = ptr + 0xd8;
+  readData(&unk_bbc67ad, base, current);
+  ptr += 0xe0;
 }

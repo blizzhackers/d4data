@@ -6,9 +6,16 @@
 #include "CurrencyModifiedMessage.h"
 
 void CurrencyModifiedMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&bPlayEffects, base, ptr);
-  readData(&nAmount, base, ptr);
-  readData(&eCurrencyType, base, ptr);
-  readData(&eReason, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&bPlayEffects, base, current);
+  current = ptr + 0x18;
+  readData(&nAmount, base, current);
+  current = ptr + 0x20;
+  readData(&eCurrencyType, base, current);
+  current = ptr + 0x24;
+  readData(&eReason, base, current);
+  ptr += 0x28;
 }

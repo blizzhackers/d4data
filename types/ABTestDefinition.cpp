@@ -6,6 +6,8 @@
 #include "ABTestDefinition.h"
 
 void ABTestDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_eb92604, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_eb92604, base, current);
+  ptr += 0x18;
 }

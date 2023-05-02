@@ -6,7 +6,12 @@
 #include "SoundPlayHistory.h"
 
 void SoundPlayHistory::read(const char* base, char* &ptr) {
-  readData(&nLastPlayedPerm, base, ptr);
-  readData(&unk_6980cd4, base, ptr);
-  readData(&arPlayedFlags, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nLastPlayedPerm, base, current);
+  current = ptr + 0x4;
+  readData(&unk_6980cd4, base, current);
+  current = ptr + 0x8;
+  readData(&arPlayedFlags, base, current);
+  ptr += 0x18;
 }

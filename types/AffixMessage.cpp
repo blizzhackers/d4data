@@ -6,10 +6,18 @@
 #include "AffixMessage.h"
 
 void AffixMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&ann, base, ptr);
-  readData(&fIdentified, base, ptr);
-  readData(&unk_5daa987, base, ptr);
-  readData(&unk_186efea, base, ptr);
-  readData(&unk_be0e086, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&ann, base, current);
+  current = ptr + 0x18;
+  readData(&fIdentified, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_5daa987, base, current);
+  current = ptr + 0x34;
+  readData(&unk_186efea, base, current);
+  current = ptr + 0x60;
+  readData(&unk_be0e086, base, current);
+  ptr += 0x78;
 }

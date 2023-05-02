@@ -6,7 +6,12 @@
 #include "t9bdeeb8c.h"
 
 void t9bdeeb8c::read(const char* base, char* &ptr) {
-  readData(&unk_28d5aa0, base, ptr);
-  readData(&nHairColor, base, ptr);
-  readData(&nSkinColor, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_28d5aa0, base, current);
+  current = ptr + 0x10;
+  readData(&nHairColor, base, current);
+  current = ptr + 0x14;
+  readData(&nSkinColor, base, current);
+  ptr += 0x18;
 }

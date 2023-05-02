@@ -6,11 +6,20 @@
 #include "t898f326e.h"
 
 void t898f326e::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&szMarkerName, base, ptr);
-  readData(&unk_3097c7c, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&snoMonster, base, ptr);
-  readData(&snoAffix, base, ptr);
-  readData(&uCount, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&szMarkerName, base, current);
+  current = ptr + 0x50;
+  readData(&unk_3097c7c, base, current);
+  current = ptr + 0x60;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x64;
+  readData(&snoMonster, base, current);
+  current = ptr + 0x68;
+  readData(&snoAffix, base, current);
+  current = ptr + 0x6c;
+  readData(&uCount, base, current);
+  ptr += 0x70;
 }

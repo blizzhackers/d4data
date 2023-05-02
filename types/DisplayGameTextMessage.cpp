@@ -6,10 +6,18 @@
 #include "DisplayGameTextMessage.h"
 
 void DisplayGameTextMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&szMsg, base, ptr);
-  readData(&flTimeUntilFade, base, ptr);
-  readData(&nParam1, base, ptr);
-  readData(&nParam2, base, ptr);
-  readData(&unk_8e0c078, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&szMsg, base, current);
+  current = ptr + 0x410;
+  readData(&flTimeUntilFade, base, current);
+  current = ptr + 0x418;
+  readData(&nParam1, base, current);
+  current = ptr + 0x420;
+  readData(&nParam2, base, current);
+  current = ptr + 0x428;
+  readData(&unk_8e0c078, base, current);
+  ptr += 0x430;
 }

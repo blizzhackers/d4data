@@ -6,14 +6,26 @@
 #include "t9d494ccc.h"
 
 void t9d494ccc::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_1255128, base, ptr);
-  readData(&unk_965113, base, ptr);
-  readData(&unk_850f3e2, base, ptr);
-  readData(&ann, base, ptr);
-  readData(&unk_1fc05ef, base, ptr);
-  readData(&unk_9e80738, base, ptr);
-  readData(&bounds, base, ptr);
-  readData(&rgbaColor, base, ptr);
-  readData(&unk_8273480, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_1255128, base, current);
+  current = ptr + 0x14;
+  readData(&unk_965113, base, current);
+  current = ptr + 0x18;
+  readData(&unk_850f3e2, base, current);
+  current = ptr + 0x1c;
+  readData(&ann, base, current);
+  current = ptr + 0x24;
+  readData(&unk_1fc05ef, base, current);
+  current = ptr + 0x38;
+  readData(&unk_9e80738, base, current);
+  current = ptr + 0x4c;
+  readData(&bounds, base, current);
+  current = ptr + 0x58;
+  readData(&rgbaColor, base, current);
+  current = ptr + 0x5c;
+  readData(&unk_8273480, base, current);
+  ptr += 0x60;
 }

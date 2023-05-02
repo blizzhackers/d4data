@@ -6,8 +6,14 @@
 #include "t7705c56a.h"
 
 void t7705c56a::read(const char* base, char* &ptr) {
-  readData(&unk_c3af77b, base, ptr);
-  readData(&unk_dd5d06c, base, ptr);
-  readData(&unk_7f93f1d, base, ptr);
-  readData(&snoRecipe, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_c3af77b, base, current);
+  current = ptr + 0x4;
+  readData(&unk_dd5d06c, base, current);
+  current = ptr + 0x8;
+  readData(&unk_7f93f1d, base, current);
+  current = ptr + 0xc;
+  readData(&snoRecipe, base, current);
+  ptr += 0x10;
 }

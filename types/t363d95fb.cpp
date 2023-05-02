@@ -6,12 +6,22 @@
 #include "t363d95fb.h"
 
 void t363d95fb::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_f9c5be7, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&dwStartTime, base, ptr);
-  readData(&dwEndTime, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&wpLocation, base, ptr);
-  readData(&unk_433bf34, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_f9c5be7, base, current);
+  current = ptr + 0x14;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x18;
+  readData(&dwStartTime, base, current);
+  current = ptr + 0x20;
+  readData(&dwEndTime, base, current);
+  current = ptr + 0x28;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x2c;
+  readData(&wpLocation, base, current);
+  current = ptr + 0x38;
+  readData(&unk_433bf34, base, current);
+  ptr += 0x40;
 }

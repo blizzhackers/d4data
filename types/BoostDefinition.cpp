@@ -6,12 +6,20 @@
 #include "BoostDefinition.h"
 
 void BoostDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_37028d5, base, ptr);
-  readData(&unk_2f44d38, base, ptr);
-  readData(&unk_99de476, base, ptr);
-  readData(&nGold, base, ptr);
-  readData(&unk_19a8c24, base, ptr);
-  readData(&unk_fd3ff28, base, ptr);
-  readData(&unk_6de8d26, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_37028d5, base, current);
+  current = ptr + 0x18;
+  readData(&unk_2f44d38, base, current);
+  current = ptr + 0x28;
+  readData(&unk_99de476, base, current);
+  current = ptr + 0x38;
+  readData(&nGold, base, current);
+  current = ptr + 0x40;
+  readData(&unk_19a8c24, base, current);
+  current = ptr + 0x50;
+  readData(&unk_fd3ff28, base, current);
+  current = ptr + 0x60;
+  readData(&unk_6de8d26, base, current);
+  ptr += 0x68;
 }

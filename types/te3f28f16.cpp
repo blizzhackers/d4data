@@ -6,16 +6,30 @@
 #include "te3f28f16.h"
 
 void te3f28f16::read(const char* base, char* &ptr) {
-  readData(&eDamageType, base, ptr);
-  readData(&tDamage, base, ptr);
-  readData(&unk_89dc285, base, ptr);
-  readData(&unk_6331bb5, base, ptr);
-  readData(&unk_f551941, base, ptr);
-  readData(&unk_dd4b5bf, base, ptr);
-  readData(&unk_3d768b7, base, ptr);
-  readData(&unk_b8f2b, base, ptr);
-  readData(&unk_79ce2e1, base, ptr);
-  readData(&unk_ed6df7, base, ptr);
-  readData(&unk_693b6db, base, ptr);
-  readData(&unk_d50fe6e, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&eDamageType, base, current);
+  current = ptr + 0x8;
+  readData(&tDamage, base, current);
+  current = ptr + 0x50;
+  readData(&unk_89dc285, base, current);
+  current = ptr + 0x54;
+  readData(&unk_6331bb5, base, current);
+  current = ptr + 0x58;
+  readData(&unk_f551941, base, current);
+  current = ptr + 0x5c;
+  readData(&unk_dd4b5bf, base, current);
+  current = ptr + 0x60;
+  readData(&unk_3d768b7, base, current);
+  current = ptr + 0x64;
+  readData(&unk_b8f2b, base, current);
+  current = ptr + 0x68;
+  readData(&unk_79ce2e1, base, current);
+  current = ptr + 0x70;
+  readData(&unk_ed6df7, base, current);
+  current = ptr + 0x90;
+  readData(&unk_693b6db, base, current);
+  current = ptr + 0x94;
+  readData(&unk_d50fe6e, base, current);
+  ptr += 0x98;
 }

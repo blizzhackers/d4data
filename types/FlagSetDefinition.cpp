@@ -6,6 +6,8 @@
 #include "FlagSetDefinition.h"
 
 void FlagSetDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&arFlagLookups, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&arFlagLookups, base, current);
+  ptr += 0x18;
 }

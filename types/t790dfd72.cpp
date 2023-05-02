@@ -6,5 +6,6 @@
 #include "t790dfd72.h"
 
 void t790dfd72::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

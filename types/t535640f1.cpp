@@ -6,5 +6,6 @@
 #include "t535640f1.h"
 
 void t535640f1::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

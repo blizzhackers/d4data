@@ -6,15 +6,28 @@
 #include "RevealWorldMessage.h"
 
 void RevealWorldMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&idSWorld, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&unk_2573139, base, ptr);
-  readData(&unk_b4055da, base, ptr);
-  readData(&unk_845cf0b, base, ptr);
-  readData(&unk_66929d7, base, ptr);
-  readData(&unk_fc9049b, base, ptr);
-  readData(&unk_9a2a829, base, ptr);
-  readData(&unk_6966598, base, ptr);
-  readData(&unk_b020582, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&idSWorld, base, current);
+  current = ptr + 0x18;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_2573139, base, current);
+  current = ptr + 0x20;
+  readData(&unk_b4055da, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_845cf0b, base, current);
+  current = ptr + 0x34;
+  readData(&unk_66929d7, base, current);
+  current = ptr + 0xb4;
+  readData(&unk_fc9049b, base, current);
+  current = ptr + 0xb8;
+  readData(&unk_9a2a829, base, current);
+  current = ptr + 0xdc;
+  readData(&unk_6966598, base, current);
+  current = ptr + 0x100;
+  readData(&unk_b020582, base, current);
+  ptr += 0x104;
 }

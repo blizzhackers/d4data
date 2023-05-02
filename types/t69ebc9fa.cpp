@@ -6,5 +6,8 @@
 #include "t69ebc9fa.h"
 
 void t69ebc9fa::read(const char* base, char* &ptr) {
-  readData(&unk_7cb44e7, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_7cb44e7, base, current);
+  ptr += 0x4;
 }

@@ -6,5 +6,6 @@
 #include "t7f66be17.h"
 
 void t7f66be17::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

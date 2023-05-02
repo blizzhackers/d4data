@@ -6,6 +6,10 @@
 #include "te11de1bb.h"
 
 void te11de1bb::read(const char* base, char* &ptr) {
-  readData(&snoActor, base, ptr);
-  readData(&unk_d5e3388, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoActor, base, current);
+  current = ptr + 0x4;
+  readData(&unk_d5e3388, base, current);
+  ptr += 0xc;
 }

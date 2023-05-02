@@ -6,6 +6,10 @@
 #include "t4b2817b7.h"
 
 void t4b2817b7::read(const char* base, char* &ptr) {
-  readData(&unk_272cae5, base, ptr);
-  readData(&unk_4de645f, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_272cae5, base, current);
+  current = ptr + 0x8;
+  readData(&unk_4de645f, base, current);
+  ptr += 0x18;
 }

@@ -6,7 +6,12 @@
 #include "t586d03a.h"
 
 void t586d03a::read(const char* base, char* &ptr) {
-  readData(&unk_73fba37, base, ptr);
-  readData(&snoMarker, base, ptr);
-  readData(&nMarkerIndex, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_73fba37, base, current);
+  current = ptr + 0x4;
+  readData(&snoMarker, base, current);
+  current = ptr + 0x8;
+  readData(&nMarkerIndex, base, current);
+  ptr += 0xc;
 }

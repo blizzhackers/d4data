@@ -6,7 +6,10 @@
 #include "StringListDefinition.h"
 
 void StringListDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&arStrings, base, ptr);
-  readData(&ptMapStringTable, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&arStrings, base, current);
+  current = ptr + 0x18;
+  readData(&ptMapStringTable, base, current);
+  ptr += 0x20;
 }

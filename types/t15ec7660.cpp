@@ -6,13 +6,22 @@
 #include "t15ec7660.h"
 
 void t15ec7660::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bNegate, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&nStepUID, base, ptr);
-  readData(&unk_967491d, base, ptr);
-  readData(&eComp, base, ptr);
-  readData(&nCount, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bNegate, base, current);
+  current = ptr + 0x18;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x1c;
+  readData(&dwPad, base, current);
+  current = ptr + 0x20;
+  readData(&nStepUID, base, current);
+  current = ptr + 0x24;
+  readData(&unk_967491d, base, current);
+  current = ptr + 0x28;
+  readData(&eComp, base, current);
+  current = ptr + 0x2c;
+  readData(&nCount, base, current);
+  ptr += 0x30;
 }

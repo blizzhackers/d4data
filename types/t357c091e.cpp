@@ -6,6 +6,10 @@
 #include "t357c091e.h"
 
 void t357c091e::read(const char* base, char* &ptr) {
-  readData(&unk_20a6d7a, base, ptr);
-  readData(&unk_9fd3bed, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_20a6d7a, base, current);
+  current = ptr + 0xc;
+  readData(&unk_9fd3bed, base, current);
+  ptr += 0x18;
 }

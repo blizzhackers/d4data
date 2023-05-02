@@ -6,11 +6,18 @@
 #include "CrafterDefinition.h"
 
 void CrafterDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwNextID, base, ptr);
-  readData(&eCrafterType, base, ptr);
-  readData(&arTabs, base, ptr);
-  readData(&unk_19e7a72, base, ptr);
-  readData(&unk_3668490, base, ptr);
-  readData(&unk_aa9dad7, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwNextID, base, current);
+  current = ptr + 0xc;
+  readData(&eCrafterType, base, current);
+  current = ptr + 0x10;
+  readData(&arTabs, base, current);
+  current = ptr + 0x20;
+  readData(&unk_19e7a72, base, current);
+  current = ptr + 0x30;
+  readData(&unk_3668490, base, current);
+  current = ptr + 0x40;
+  readData(&unk_aa9dad7, base, current);
+  ptr += 0x50;
 }

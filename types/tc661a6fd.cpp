@@ -6,6 +6,10 @@
 #include "tc661a6fd.h"
 
 void tc661a6fd::read(const char* base, char* &ptr) {
-  readData(&dwID, base, ptr);
-  readData(&unk_c94355b, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&dwID, base, current);
+  current = ptr + 0x8;
+  readData(&unk_c94355b, base, current);
+  ptr += 0x18;
 }

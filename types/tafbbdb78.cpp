@@ -6,5 +6,8 @@
 #include "tafbbdb78.h"
 
 void tafbbdb78::read(const char* base, char* &ptr) {
-  readData(&nBoneIndex, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nBoneIndex, base, current);
+  ptr += 0x4;
 }

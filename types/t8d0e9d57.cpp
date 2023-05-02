@@ -6,5 +6,6 @@
 #include "t8d0e9d57.h"
 
 void t8d0e9d57::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

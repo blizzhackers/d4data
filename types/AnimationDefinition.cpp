@@ -6,18 +6,32 @@
 #include "AnimationDefinition.h"
 
 void AnimationDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwNextID, base, ptr);
-  readData(&dwFlags, base, ptr);
-  readData(&ePlaybackMode, base, ptr);
-  readData(&unk_38fab0d, base, ptr);
-  readData(&unk_c25df07, base, ptr);
-  readData(&unk_ba85a8e, base, ptr);
-  readData(&unk_847be4d, base, ptr);
-  readData(&snoAppearance, base, ptr);
-  readData(&ptPermutations, base, ptr);
-  readData(&unk_78651aa, base, ptr);
-  readData(&unk_2bb50c4, base, ptr);
-  readData(&unk_88ce6d6, base, ptr);
-  readData(&unk_5316586, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwNextID, base, current);
+  current = ptr + 0xc;
+  readData(&dwFlags, base, current);
+  current = ptr + 0x10;
+  readData(&ePlaybackMode, base, current);
+  current = ptr + 0x14;
+  readData(&unk_38fab0d, base, current);
+  current = ptr + 0x18;
+  readData(&unk_c25df07, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_ba85a8e, base, current);
+  current = ptr + 0x20;
+  readData(&unk_847be4d, base, current);
+  current = ptr + 0x24;
+  readData(&snoAppearance, base, current);
+  current = ptr + 0x28;
+  readData(&ptPermutations, base, current);
+  current = ptr + 0x38;
+  readData(&unk_78651aa, base, current);
+  current = ptr + 0x48;
+  readData(&unk_2bb50c4, base, current);
+  current = ptr + 0x58;
+  readData(&unk_88ce6d6, base, current);
+  current = ptr + 0x5c;
+  readData(&unk_5316586, base, current);
+  ptr += 0x60;
 }

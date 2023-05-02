@@ -6,15 +6,28 @@
 #include "GameTestingWorldSamplingStartMessage.h"
 
 void GameTestingWorldSamplingStartMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&snoScene, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&unk_9ffb368, base, ptr);
-  readData(&szLocationName, base, ptr);
-  readData(&unk_7571722, base, ptr);
-  readData(&unk_6999b4f, base, ptr);
-  readData(&gbidLabel, base, ptr);
-  readData(&unk_8d446c9, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x14;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x18;
+  readData(&snoScene, base, current);
+  current = ptr + 0x1c;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x20;
+  readData(&unk_9ffb368, base, current);
+  current = ptr + 0x60;
+  readData(&szLocationName, base, current);
+  current = ptr + 0xa0;
+  readData(&unk_7571722, base, current);
+  current = ptr + 0xa4;
+  readData(&unk_6999b4f, base, current);
+  current = ptr + 0xac;
+  readData(&gbidLabel, base, current);
+  current = ptr + 0xb0;
+  readData(&unk_8d446c9, base, current);
+  ptr += 0xb4;
 }

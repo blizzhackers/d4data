@@ -6,11 +6,18 @@
 #include "t14ef0839.h"
 
 void t14ef0839::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bInverse, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&eSubject, base, ptr);
-  readData(&unk_d8caf57, base, ptr);
-  readData(&arPetType, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bInverse, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&eSubject, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_d8caf57, base, current);
+  current = ptr + 0x20;
+  readData(&arPetType, base, current);
+  ptr += 0x30;
 }

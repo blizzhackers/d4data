@@ -6,7 +6,12 @@
 #include "t8fccfaf2.h"
 
 void t8fccfaf2::read(const char* base, char* &ptr) {
-  readData(&tValueMin, base, ptr);
-  readData(&tValueMax, base, ptr);
-  readData(&tTime, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tValueMin, base, current);
+  current = ptr + 0x4;
+  readData(&tValueMax, base, current);
+  current = ptr + 0x8;
+  readData(&tTime, base, current);
+  ptr += 0xc;
 }

@@ -6,8 +6,14 @@
 #include "VoteKickMessage.h"
 
 void VoteKickMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_390da21, base, ptr);
-  readData(&unk_1d54bcc, base, ptr);
-  readData(&vRMessage, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_390da21, base, current);
+  current = ptr + 0x14;
+  readData(&unk_1d54bcc, base, current);
+  current = ptr + 0x18;
+  readData(&vRMessage, base, current);
+  ptr += 0x418;
 }

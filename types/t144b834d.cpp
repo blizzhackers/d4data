@@ -6,9 +6,16 @@
 #include "t144b834d.h"
 
 void t144b834d::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_3097c7c, base, ptr);
-  readData(&snoMonster, base, ptr);
-  readData(&snoSkill, base, ptr);
-  readData(&uCount, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_3097c7c, base, current);
+  current = ptr + 0x20;
+  readData(&snoMonster, base, current);
+  current = ptr + 0x24;
+  readData(&snoSkill, base, current);
+  current = ptr + 0x28;
+  readData(&uCount, base, current);
+  ptr += 0x2c;
 }

@@ -6,5 +6,8 @@
 #include "t9c65b048.h"
 
 void t9c65b048::read(const char* base, char* &ptr) {
-  readData(&tContent, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tContent, base, current);
+  ptr += 0x10;
 }

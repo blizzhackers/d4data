@@ -6,9 +6,14 @@
 #include "t5e2b5512.h"
 
 void t5e2b5512::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&eParamType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&snoMonsterFamily, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&eParamType, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&snoMonsterFamily, base, current);
+  ptr += 0x20;
 }

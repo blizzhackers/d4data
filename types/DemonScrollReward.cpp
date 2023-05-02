@@ -6,5 +6,8 @@
 #include "DemonScrollReward.h"
 
 void DemonScrollReward::read(const char* base, char* &ptr) {
-  readData(&arItems, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&arItems, base, current);
+  ptr += 0x6c;
 }

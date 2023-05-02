@@ -6,8 +6,14 @@
 #include "t762bcac4.h"
 
 void t762bcac4::read(const char* base, char* &ptr) {
-  readData(&szName, base, ptr);
-  readData(&hLabel, base, ptr);
-  readData(&snoMask, base, ptr);
-  readData(&hIcon, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&szName, base, current);
+  current = ptr + 0x4;
+  readData(&hLabel, base, current);
+  current = ptr + 0xc;
+  readData(&snoMask, base, current);
+  current = ptr + 0x10;
+  readData(&hIcon, base, current);
+  ptr += 0x14;
 }

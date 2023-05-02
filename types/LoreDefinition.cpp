@@ -6,7 +6,10 @@
 #include "LoreDefinition.h"
 
 void LoreDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&nXPTier, base, ptr);
-  readData(&snoConversation, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&nXPTier, base, current);
+  current = ptr + 0xc;
+  readData(&snoConversation, base, current);
+  ptr += 0x10;
 }

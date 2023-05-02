@@ -6,5 +6,8 @@
 #include "HardpointName.h"
 
 void HardpointName::read(const char* base, char* &ptr) {
-  readData(&szName, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&szName, base, current);
+  ptr += 0x40;
 }

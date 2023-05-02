@@ -6,7 +6,12 @@
 #include "AIBroadcast.h"
 
 void AIBroadcast::read(const char* base, char* &ptr) {
-  readData(&snoAIState, base, ptr);
-  readData(&flRadius, base, ptr);
-  readData(&snoCondition, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoAIState, base, current);
+  current = ptr + 0x4;
+  readData(&flRadius, base, current);
+  current = ptr + 0x8;
+  readData(&snoCondition, base, current);
+  ptr += 0xc;
 }

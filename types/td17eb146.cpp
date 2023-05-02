@@ -6,6 +6,10 @@
 #include "td17eb146.h"
 
 void td17eb146::read(const char* base, char* &ptr) {
-  readData(&eVariantType, base, ptr);
-  readData(&unk_fbac894, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&eVariantType, base, current);
+  current = ptr + 0x4;
+  readData(&unk_fbac894, base, current);
+  ptr += 0x8;
 }

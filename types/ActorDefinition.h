@@ -72,7 +72,7 @@ struct ActorDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_17acd26;
   DT_ENUM<DT_INT> unk_8fbba9b;
   DT_POLYMORPHIC_VARIABLEARRAY unk_85f8d24;
-  DT_VARIABLEARRAY<t2f81f05b> unk_98f87e6;
+  DT_VARIABLEARRAY<t2f81f05b> ptMonsterData;
   DT_VARIABLEARRAY<tabd62f10> ptCritterData;
   DT_VARIABLEARRAY<t35abf7a0> ptPlayerData;
   DT_VARIABLEARRAY<t56dd8f42> ptItemData;

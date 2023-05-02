@@ -6,9 +6,14 @@
 #include "HairColorDefinition.h"
 
 void HairColorDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&nSortOrder, base, ptr);
-  readData(&unk_9da2273, base, ptr);
-  readData(&unk_b29fdae, base, ptr);
-  readData(&unk_49f94ee, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&nSortOrder, base, current);
+  current = ptr + 0xc;
+  readData(&unk_9da2273, base, current);
+  current = ptr + 0x20;
+  readData(&unk_b29fdae, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_49f94ee, base, current);
+  ptr += 0x30;
 }

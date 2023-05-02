@@ -6,8 +6,14 @@
 #include "BountyDataMessage.h"
 
 void BountyDataMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoBounty, base, ptr);
-  readData(&snoRewardItem, base, ptr);
-  readData(&dwEndTime, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoBounty, base, current);
+  current = ptr + 0x14;
+  readData(&snoRewardItem, base, current);
+  current = ptr + 0x18;
+  readData(&dwEndTime, base, current);
+  ptr += 0x20;
 }

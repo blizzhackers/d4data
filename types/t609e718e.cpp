@@ -6,12 +6,20 @@
 #include "t609e718e.h"
 
 void t609e718e::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&eFacing, base, ptr);
-  readData(&unk_8a3d22d, base, ptr);
-  readData(&unk_d1e17f4, base, ptr);
-  readData(&pathRadius, base, ptr);
-  readData(&pathHeight, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&eFacing, base, current);
+  current = ptr + 0x14;
+  readData(&unk_8a3d22d, base, current);
+  current = ptr + 0x18;
+  readData(&unk_d1e17f4, base, current);
+  current = ptr + 0x20;
+  readData(&pathRadius, base, current);
+  current = ptr + 0x58;
+  readData(&pathHeight, base, current);
+  ptr += 0x90;
 }

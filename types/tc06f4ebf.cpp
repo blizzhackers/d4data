@@ -6,5 +6,8 @@
 #include "tc06f4ebf.h"
 
 void tc06f4ebf::read(const char* base, char* &ptr) {
-  readData(&unk_7081be1, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_7081be1, base, current);
+  ptr += 0x10;
 }

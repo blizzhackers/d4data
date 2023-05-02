@@ -6,18 +6,34 @@
 #include "AnimTreeLeaf.h"
 
 void AnimTreeLeaf::read(const char* base, char* &ptr) {
-  readData(&dwID, base, ptr);
-  readData(&eNodeType, base, ptr);
-  readData(&snoAnim, base, ptr);
-  readData(&unk_740ce2b, base, ptr);
-  readData(&flPoseFrame, base, ptr);
-  readData(&flPlaySpeed, base, ptr);
-  readData(&nSyncGroupIndex, base, ptr);
-  readData(&bIsDisabled, base, ptr);
-  readData(&unk_4088987, base, ptr);
-  readData(&unk_5d19bee, base, ptr);
-  readData(&eUpdateMode, base, ptr);
-  readData(&eBoneWeightSet, base, ptr);
-  readData(&eAnimLayer, base, ptr);
-  readData(&unk_51765c9, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&dwID, base, current);
+  current = ptr + 0x4;
+  readData(&eNodeType, base, current);
+  current = ptr + 0x8;
+  readData(&snoAnim, base, current);
+  current = ptr + 0xc;
+  readData(&unk_740ce2b, base, current);
+  current = ptr + 0x10;
+  readData(&flPoseFrame, base, current);
+  current = ptr + 0x14;
+  readData(&flPlaySpeed, base, current);
+  current = ptr + 0x18;
+  readData(&nSyncGroupIndex, base, current);
+  current = ptr + 0x1c;
+  readData(&bIsDisabled, base, current);
+  current = ptr + 0x20;
+  readData(&unk_4088987, base, current);
+  current = ptr + 0x24;
+  readData(&unk_5d19bee, base, current);
+  current = ptr + 0x28;
+  readData(&eUpdateMode, base, current);
+  current = ptr + 0x2c;
+  readData(&eBoneWeightSet, base, current);
+  current = ptr + 0x30;
+  readData(&eAnimLayer, base, current);
+  current = ptr + 0x34;
+  readData(&unk_51765c9, base, current);
+  ptr += 0x38;
 }

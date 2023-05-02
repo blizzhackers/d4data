@@ -6,5 +6,6 @@
 #include "tc22163b0.h"
 
 void tc22163b0::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

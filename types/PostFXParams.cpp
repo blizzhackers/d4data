@@ -6,6 +6,10 @@
 #include "PostFXParams.h"
 
 void PostFXParams::read(const char* base, char* &ptr) {
-  readData(&flFilterOffset, base, ptr);
-  readData(&flFilterCoeff, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&flFilterOffset, base, current);
+  current = ptr + 0x10;
+  readData(&flFilterCoeff, base, current);
+  ptr += 0x20;
 }

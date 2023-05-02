@@ -6,5 +6,8 @@
 #include "t405196ec.h"
 
 void t405196ec::read(const char* base, char* &ptr) {
-  readData(&tTexture, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tTexture, base, current);
+  ptr += 0x8;
 }

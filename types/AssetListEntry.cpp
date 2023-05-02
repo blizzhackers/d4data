@@ -6,6 +6,10 @@
 #include "AssetListEntry.h"
 
 void AssetListEntry::read(const char* base, char* &ptr) {
-  readData(&nID, base, ptr);
-  readData(&nIndex, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nID, base, current);
+  current = ptr + 0x4;
+  readData(&nIndex, base, current);
+  ptr += 0x8;
 }

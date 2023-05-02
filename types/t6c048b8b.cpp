@@ -6,6 +6,10 @@
 #include "t6c048b8b.h"
 
 void t6c048b8b::read(const char* base, char* &ptr) {
-  readData(&snoLayer, base, ptr);
-  readData(&ptChunks, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoLayer, base, current);
+  current = ptr + 0x8;
+  readData(&ptChunks, base, current);
+  ptr += 0x18;
 }

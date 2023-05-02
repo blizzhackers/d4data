@@ -6,14 +6,26 @@
 #include "t150d0776.h"
 
 void t150d0776::read(const char* base, char* &ptr) {
-  readData(&snoUI, base, ptr);
-  readData(&unk_4bb155f, base, ptr);
-  readData(&szScreenName, base, ptr);
-  readData(&eGroup, base, ptr);
-  readData(&eLayer, base, ptr);
-  readData(&ePlatform, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&unk_f292059, base, ptr);
-  readData(&eBanner, base, ptr);
-  readData(&unk_b20011c, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoUI, base, current);
+  current = ptr + 0x4;
+  readData(&unk_4bb155f, base, current);
+  current = ptr + 0x104;
+  readData(&szScreenName, base, current);
+  current = ptr + 0x204;
+  readData(&eGroup, base, current);
+  current = ptr + 0x208;
+  readData(&eLayer, base, current);
+  current = ptr + 0x20c;
+  readData(&ePlatform, base, current);
+  current = ptr + 0x210;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x214;
+  readData(&unk_f292059, base, current);
+  current = ptr + 0x294;
+  readData(&eBanner, base, current);
+  current = ptr + 0x298;
+  readData(&unk_b20011c, base, current);
+  ptr += 0x29c;
 }

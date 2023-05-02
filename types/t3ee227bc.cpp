@@ -6,5 +6,8 @@
 #include "t3ee227bc.h"
 
 void t3ee227bc::read(const char* base, char* &ptr) {
-  readData(&unk_4e6c129, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_4e6c129, base, current);
+  ptr += 0x10;
 }

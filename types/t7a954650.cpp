@@ -6,5 +6,8 @@
 #include "t7a954650.h"
 
 void t7a954650::read(const char* base, char* &ptr) {
-  readData(&tComponent, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tComponent, base, current);
+  ptr += 0x8;
 }

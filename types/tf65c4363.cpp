@@ -6,13 +6,22 @@
 #include "tf65c4363.h"
 
 void tf65c4363::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&snoScript, base, ptr);
-  readData(&unk_7316dbf, base, ptr);
-  readData(&arActorGroups, base, ptr);
-  readData(&unk_b5b0f9a, base, ptr);
-  readData(&unk_9af876f, base, ptr);
-  readData(&bIsChild, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&snoScript, base, current);
+  current = ptr + 0x20;
+  readData(&unk_7316dbf, base, current);
+  current = ptr + 0x28;
+  readData(&arActorGroups, base, current);
+  current = ptr + 0x38;
+  readData(&unk_b5b0f9a, base, current);
+  current = ptr + 0x48;
+  readData(&unk_9af876f, base, current);
+  current = ptr + 0x58;
+  readData(&bIsChild, base, current);
+  ptr += 0x60;
 }

@@ -6,7 +6,12 @@
 #include "tc632d25.h"
 
 void tc632d25::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_dce541c, base, ptr);
-  readData(&snoPower, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x14;
+  readData(&unk_dce541c, base, current);
+  current = ptr + 0x18;
+  readData(&snoPower, base, current);
+  ptr += 0x1c;
 }

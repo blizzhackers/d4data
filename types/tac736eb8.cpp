@@ -6,5 +6,8 @@
 #include "tac736eb8.h"
 
 void tac736eb8::read(const char* base, char* &ptr) {
-  readData(&value, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&value, base, current);
+  ptr += 0x4;
 }

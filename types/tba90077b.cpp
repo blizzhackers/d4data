@@ -6,7 +6,12 @@
 #include "tba90077b.h"
 
 void tba90077b::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&tInvLocationData, base, ptr);
-  readData(&annItem, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x18;
+  readData(&tInvLocationData, base, current);
+  current = ptr + 0x2c;
+  readData(&annItem, base, current);
+  ptr += 0x34;
 }

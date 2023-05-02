@@ -6,7 +6,12 @@
 #include "ResolvedPortalDestination.h"
 
 void ResolvedPortalDestination::read(const char* base, char* &ptr) {
-  readData(&snoWorld, base, ptr);
-  readData(&uEntranceGUID, base, ptr);
-  readData(&snoDestLevelArea, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x4;
+  readData(&uEntranceGUID, base, current);
+  current = ptr + 0x8;
+  readData(&snoDestLevelArea, base, current);
+  ptr += 0xc;
 }

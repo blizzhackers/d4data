@@ -6,9 +6,14 @@
 #include "FacialHairDefinition.h"
 
 void FacialHairDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_9da2273, base, ptr);
-  readData(&unk_259d5a4, base, ptr);
-  readData(&unk_259d59d, base, ptr);
-  readData(&unk_2ab2122, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_9da2273, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_259d5a4, base, current);
+  current = ptr + 0x20;
+  readData(&unk_259d59d, base, current);
+  current = ptr + 0x24;
+  readData(&unk_2ab2122, base, current);
+  ptr += 0x28;
 }

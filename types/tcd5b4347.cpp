@@ -6,5 +6,8 @@
 #include "tcd5b4347.h"
 
 void tcd5b4347::read(const char* base, char* &ptr) {
-  readData(&unk_69b6741, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_69b6741, base, current);
+  ptr += 0x10;
 }

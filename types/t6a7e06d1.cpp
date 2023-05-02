@@ -6,5 +6,6 @@
 #include "t6a7e06d1.h"
 
 void t6a7e06d1::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

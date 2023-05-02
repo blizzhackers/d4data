@@ -6,9 +6,14 @@
 #include "tadf79afe.h"
 
 void tadf79afe::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&unk_9b2bc26, base, ptr);
-  readData(&unk_77ed19a, base, ptr);
-  readData(&dwPad, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&unk_9b2bc26, base, current);
+  current = ptr + 0x30;
+  readData(&unk_77ed19a, base, current);
+  current = ptr + 0x34;
+  readData(&dwPad, base, current);
+  ptr += 0x38;
 }

@@ -6,11 +6,20 @@
 #include "t17bd50db.h"
 
 void t17bd50db::read(const char* base, char* &ptr) {
-  readData(&unk_20b45d7, base, ptr);
-  readData(&eType, base, ptr);
-  readData(&flRadius, base, ptr);
-  readData(&flLength, base, ptr);
-  readData(&aPitch, base, ptr);
-  readData(&aYaw, base, ptr);
-  readData(&unk_711980c, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_20b45d7, base, current);
+  current = ptr + 0x4;
+  readData(&eType, base, current);
+  current = ptr + 0x8;
+  readData(&flRadius, base, current);
+  current = ptr + 0xc;
+  readData(&flLength, base, current);
+  current = ptr + 0x10;
+  readData(&aPitch, base, current);
+  current = ptr + 0x14;
+  readData(&aYaw, base, current);
+  current = ptr + 0x18;
+  readData(&unk_711980c, base, current);
+  ptr += 0x24;
 }

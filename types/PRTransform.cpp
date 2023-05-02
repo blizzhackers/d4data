@@ -6,6 +6,10 @@
 #include "PRTransform.h"
 
 void PRTransform::read(const char* base, char* &ptr) {
-  readData(&q, base, ptr);
-  readData(&wp, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&q, base, current);
+  current = ptr + 0x10;
+  readData(&wp, base, current);
+  ptr += 0x1c;
 }

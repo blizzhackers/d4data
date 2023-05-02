@@ -6,13 +6,24 @@
 #include "WorldServerData.h"
 
 void WorldServerData::read(const char* base, char* &ptr) {
-  readData(&ptSceneChunks, base, ptr);
-  readData(&snoScript, base, ptr);
-  readData(&nSeed, base, ptr);
-  readData(&flMinX, base, ptr);
-  readData(&flMinY, base, ptr);
-  readData(&flMaxX, base, ptr);
-  readData(&flMaxY, base, ptr);
-  readData(&arWeatherSNOs, base, ptr);
-  readData(&unk_c9913ac, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&ptSceneChunks, base, current);
+  current = ptr + 0x10;
+  readData(&snoScript, base, current);
+  current = ptr + 0x14;
+  readData(&nSeed, base, current);
+  current = ptr + 0x18;
+  readData(&flMinX, base, current);
+  current = ptr + 0x1c;
+  readData(&flMinY, base, current);
+  current = ptr + 0x20;
+  readData(&flMaxX, base, current);
+  current = ptr + 0x24;
+  readData(&flMaxY, base, current);
+  current = ptr + 0x28;
+  readData(&arWeatherSNOs, base, current);
+  current = ptr + 0x38;
+  readData(&unk_c9913ac, base, current);
+  ptr += 0x48;
 }

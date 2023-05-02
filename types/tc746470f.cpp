@@ -6,9 +6,16 @@
 #include "tc746470f.h"
 
 void tc746470f::read(const char* base, char* &ptr) {
-  readData(&szBoneName, base, ptr);
-  readData(&unk_dc25f93, base, ptr);
-  readData(&unk_a5eb35, base, ptr);
-  readData(&unk_36bc3de, base, ptr);
-  readData(&flDuration, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&szBoneName, base, current);
+  current = ptr + 0x4;
+  readData(&unk_dc25f93, base, current);
+  current = ptr + 0x8;
+  readData(&unk_a5eb35, base, current);
+  current = ptr + 0xc;
+  readData(&unk_36bc3de, base, current);
+  current = ptr + 0x10;
+  readData(&flDuration, base, current);
+  ptr += 0x14;
 }

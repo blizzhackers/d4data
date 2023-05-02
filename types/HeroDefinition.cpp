@@ -6,6 +6,8 @@
 #include "HeroDefinition.h"
 
 void HeroDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&pProtoData, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&pProtoData, base, current);
+  ptr += 0x18;
 }

@@ -6,6 +6,10 @@
 #include "Ray2D.h"
 
 void Ray2D::read(const char* base, char* &ptr) {
-  readData(&wpOrigin, base, ptr);
-  readData(&wvDirection, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&wpOrigin, base, current);
+  current = ptr + 0x8;
+  readData(&wvDirection, base, current);
+  ptr += 0x10;
 }

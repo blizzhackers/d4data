@@ -6,7 +6,12 @@
 #include "InventoryRequestMoveMessage.h"
 
 void InventoryRequestMoveMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annItem, base, ptr);
-  readData(&tLocation, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&annItem, base, current);
+  current = ptr + 0x18;
+  readData(&tLocation, base, current);
+  ptr += 0x2c;
 }

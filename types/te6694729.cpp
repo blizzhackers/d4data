@@ -6,10 +6,18 @@
 #include "te6694729.h"
 
 void te6694729::read(const char* base, char* &ptr) {
-  readData(&transform, base, ptr);
-  readData(&fWater, base, ptr);
-  readData(&unk_b3bf971, base, ptr);
-  readData(&unk_81eccce, base, ptr);
-  readData(&unk_4e7e318, base, ptr);
-  readData(&unk_9275540, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&transform, base, current);
+  current = ptr + 0x1c;
+  readData(&fWater, base, current);
+  current = ptr + 0x20;
+  readData(&unk_b3bf971, base, current);
+  current = ptr + 0x28;
+  readData(&unk_81eccce, base, current);
+  current = ptr + 0x48;
+  readData(&unk_4e7e318, base, current);
+  current = ptr + 0x58;
+  readData(&unk_9275540, base, current);
+  ptr += 0x68;
 }

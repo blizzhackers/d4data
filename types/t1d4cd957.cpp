@@ -6,9 +6,16 @@
 #include "t1d4cd957.h"
 
 void t1d4cd957::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annItem, base, ptr);
-  readData(&unk_7142da1, base, ptr);
-  readData(&eCurrencyType, base, ptr);
-  readData(&nCurrencyAmount, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x14;
+  readData(&annItem, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_7142da1, base, current);
+  current = ptr + 0x20;
+  readData(&eCurrencyType, base, current);
+  current = ptr + 0x28;
+  readData(&nCurrencyAmount, base, current);
+  ptr += 0x30;
 }

@@ -6,6 +6,10 @@
 #include "td0677c85.h"
 
 void td0677c85::read(const char* base, char* &ptr) {
-  readData(&snoWorld, base, ptr);
-  readData(&tCameraState, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x4;
+  readData(&tCameraState, base, current);
+  ptr += 0x44;
 }

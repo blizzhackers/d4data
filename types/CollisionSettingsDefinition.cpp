@@ -6,8 +6,12 @@
 #include "CollisionSettingsDefinition.h"
 
 void CollisionSettingsDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&tCollFlags, base, ptr);
-  readData(&unk_a882afd, base, ptr);
-  readData(&unk_54403ff, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&tCollFlags, base, current);
+  current = ptr + 0x10;
+  readData(&unk_a882afd, base, current);
+  current = ptr + 0x14;
+  readData(&unk_54403ff, base, current);
+  ptr += 0x18;
 }

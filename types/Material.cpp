@@ -6,5 +6,8 @@
 #include "Material.h"
 
 void Material::read(const char* base, char* &ptr) {
-  readData(&nSortPri, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nSortPri, base, current);
+  ptr += 0x4;
 }

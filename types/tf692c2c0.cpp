@@ -6,9 +6,14 @@
 #include "tf692c2c0.h"
 
 void tf692c2c0::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bInverse, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_91a7640, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bInverse, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&unk_91a7640, base, current);
+  ptr += 0x20;
 }

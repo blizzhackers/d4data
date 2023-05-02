@@ -6,18 +6,32 @@
 #include "ParagonGlyphAffixDefinition.h"
 
 void ParagonGlyphAffixDefinition::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&unk_3bfd2fb, base, ptr);
-  readData(&unk_a16a4d8, base, ptr);
-  readData(&unk_e53c570, base, ptr);
-  readData(&unk_2055501, base, ptr);
-  readData(&unk_799339d, base, ptr);
-  readData(&unk_e80c332, base, ptr);
-  readData(&unk_2506574, base, ptr);
-  readData(&unk_680001b, base, ptr);
-  readData(&unk_1135a20, base, ptr);
-  readData(&unk_12a5abd, base, ptr);
-  readData(&unk_7aabf1f, base, ptr);
-  readData(&unk_a4b881, base, ptr);
-  readData(&unk_44ef64f, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&unk_3bfd2fb, base, current);
+  current = ptr + 0x18;
+  readData(&unk_a16a4d8, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_e53c570, base, current);
+  current = ptr + 0x20;
+  readData(&unk_2055501, base, current);
+  current = ptr + 0x30;
+  readData(&unk_799339d, base, current);
+  current = ptr + 0x38;
+  readData(&unk_e80c332, base, current);
+  current = ptr + 0x48;
+  readData(&unk_2506574, base, current);
+  current = ptr + 0x4c;
+  readData(&unk_680001b, base, current);
+  current = ptr + 0x50;
+  readData(&unk_1135a20, base, current);
+  current = ptr + 0x54;
+  readData(&unk_12a5abd, base, current);
+  current = ptr + 0x58;
+  readData(&unk_7aabf1f, base, current);
+  current = ptr + 0x60;
+  readData(&unk_a4b881, base, current);
+  current = ptr + 0x70;
+  readData(&unk_44ef64f, base, current);
+  ptr += 0x80;
 }

@@ -6,5 +6,8 @@
 #include "tf4703db9.h"
 
 void tf4703db9::read(const char* base, char* &ptr) {
-  readData(&tMarker, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tMarker, base, current);
+  ptr += 0xb0;
 }

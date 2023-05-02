@@ -6,7 +6,12 @@
 #include "t34ef6b9c.h"
 
 void t34ef6b9c::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annItem, base, ptr);
-  readData(&unk_af3bfcb, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&annItem, base, current);
+  current = ptr + 0x18;
+  readData(&unk_af3bfcb, base, current);
+  ptr += 0x20;
 }

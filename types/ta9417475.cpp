@@ -6,8 +6,14 @@
 #include "ta9417475.h"
 
 void ta9417475::read(const char* base, char* &ptr) {
-  readData(&unk_43efd8c, base, ptr);
-  readData(&snoQuest, base, ptr);
-  readData(&unk_ed2a98e, base, ptr);
-  readData(&unk_31547ea, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_43efd8c, base, current);
+  current = ptr + 0x4;
+  readData(&snoQuest, base, current);
+  current = ptr + 0x8;
+  readData(&unk_ed2a98e, base, current);
+  current = ptr + 0xc;
+  readData(&unk_31547ea, base, current);
+  ptr += 0x10;
 }

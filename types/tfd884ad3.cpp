@@ -6,6 +6,10 @@
 #include "tfd884ad3.h"
 
 void tfd884ad3::read(const char* base, char* &ptr) {
-  readData(&startIndex, base, ptr);
-  readData(&endIndex, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&startIndex, base, current);
+  current = ptr + 0x2;
+  readData(&endIndex, base, current);
+  ptr += 0x4;
 }

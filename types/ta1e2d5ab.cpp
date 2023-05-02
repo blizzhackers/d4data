@@ -6,8 +6,14 @@
 #include "ta1e2d5ab.h"
 
 void ta1e2d5ab::read(const char* base, char* &ptr) {
-  readData(&unk_7037c81, base, ptr);
-  readData(&unk_24d0615, base, ptr);
-  readData(&unk_8a8ab92, base, ptr);
-  readData(&nXPTier, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_7037c81, base, current);
+  current = ptr + 0x14;
+  readData(&unk_24d0615, base, current);
+  current = ptr + 0x28;
+  readData(&unk_8a8ab92, base, current);
+  current = ptr + 0x2c;
+  readData(&nXPTier, base, current);
+  ptr += 0x30;
 }

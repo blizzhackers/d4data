@@ -6,6 +6,10 @@
 #include "t478eb43b.h"
 
 void t478eb43b::read(const char* base, char* &ptr) {
-  readData(&unk_e0ddd0, base, ptr);
-  readData(&unk_e192692, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_e0ddd0, base, current);
+  current = ptr + 0x4;
+  readData(&unk_e192692, base, current);
+  ptr += 0x8;
 }

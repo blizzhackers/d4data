@@ -6,5 +6,8 @@
 #include "t1688c3da.h"
 
 void t1688c3da::read(const char* base, char* &ptr) {
-  readData(&unk_22f765c, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_22f765c, base, current);
+  ptr += 0x10;
 }

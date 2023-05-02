@@ -6,6 +6,10 @@
 #include "t7766d6f5.h"
 
 void t7766d6f5::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_7cb44e7, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_7cb44e7, base, current);
+  ptr += 0x14;
 }

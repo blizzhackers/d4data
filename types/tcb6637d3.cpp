@@ -6,6 +6,10 @@
 #include "tcb6637d3.h"
 
 void tcb6637d3::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_f0a462f, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_f0a462f, base, current);
+  ptr += 0x50;
 }

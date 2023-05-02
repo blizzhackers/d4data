@@ -6,10 +6,16 @@
 #include "t69d82e6d.h"
 
 void t69d82e6d::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bNegate, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&arConditions, base, ptr);
-  readData(&nMinimum, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bNegate, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&arConditions, base, current);
+  current = ptr + 0x30;
+  readData(&nMinimum, base, current);
+  ptr += 0x38;
 }

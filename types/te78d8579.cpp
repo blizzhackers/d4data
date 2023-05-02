@@ -6,7 +6,12 @@
 #include "te78d8579.h"
 
 void te78d8579::read(const char* base, char* &ptr) {
-  readData(&unk_b3f7acb, base, ptr);
-  readData(&unk_b22ae3c, base, ptr);
-  readData(&tTangents, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_b3f7acb, base, current);
+  current = ptr + 0x4;
+  readData(&unk_b22ae3c, base, current);
+  current = ptr + 0x8;
+  readData(&tTangents, base, current);
+  ptr += 0x38;
 }

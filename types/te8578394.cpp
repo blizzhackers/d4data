@@ -6,5 +6,6 @@
 #include "te8578394.h"
 
 void te8578394::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

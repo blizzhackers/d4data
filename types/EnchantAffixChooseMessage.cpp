@@ -6,7 +6,12 @@
 #include "EnchantAffixChooseMessage.h"
 
 void EnchantAffixChooseMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&annItem, base, ptr);
-  readData(&tEnchantAffixChoices, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&annItem, base, current);
+  current = ptr + 0x18;
+  readData(&tEnchantAffixChoices, base, current);
+  ptr += 0x44;
 }

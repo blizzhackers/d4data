@@ -6,7 +6,12 @@
 #include "te4a9aedd.h"
 
 void te4a9aedd::read(const char* base, char* &ptr) {
-  readData(&unk_2e9817a, base, ptr);
-  readData(&unk_c5ca709, base, ptr);
-  readData(&hNotificationIcon, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_2e9817a, base, current);
+  current = ptr + 0x4;
+  readData(&unk_c5ca709, base, current);
+  current = ptr + 0x8;
+  readData(&hNotificationIcon, base, current);
+  ptr += 0xc;
 }

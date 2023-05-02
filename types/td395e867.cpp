@@ -6,9 +6,16 @@
 #include "td395e867.h"
 
 void td395e867::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&ann, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&unk_9a2a829, base, ptr);
-  readData(&unk_845cf0b, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&ann, base, current);
+  current = ptr + 0x18;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_9a2a829, base, current);
+  current = ptr + 0x40;
+  readData(&unk_845cf0b, base, current);
+  ptr += 0x48;
 }

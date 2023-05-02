@@ -6,12 +6,22 @@
 #include "PowerMod.h"
 
 void PowerMod::read(const char* base, char* &ptr) {
-  readData(&szName, base, ptr);
-  readData(&unk_2e74691, base, ptr);
-  readData(&dwModId, base, ptr);
-  readData(&unk_4a47447, base, ptr);
-  readData(&unk_94cc84e, base, ptr);
-  readData(&unk_939ad1e, base, ptr);
-  readData(&unk_7b47c37, base, ptr);
-  readData(&arSkillTags, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&szName, base, current);
+  current = ptr + 0x4;
+  readData(&unk_2e74691, base, current);
+  current = ptr + 0x8;
+  readData(&dwModId, base, current);
+  current = ptr + 0xc;
+  readData(&unk_4a47447, base, current);
+  current = ptr + 0x10;
+  readData(&unk_94cc84e, base, current);
+  current = ptr + 0x14;
+  readData(&unk_939ad1e, base, current);
+  current = ptr + 0x18;
+  readData(&unk_7b47c37, base, current);
+  current = ptr + 0x20;
+  readData(&arSkillTags, base, current);
+  ptr += 0x30;
 }

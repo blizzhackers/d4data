@@ -6,6 +6,10 @@
 #include "t3bb15785.h"
 
 void t3bb15785::read(const char* base, char* &ptr) {
-  readData(&snoLayer, base, ptr);
-  readData(&tSettings, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoLayer, base, current);
+  current = ptr + 0x4;
+  readData(&tSettings, base, current);
+  ptr += 0x84;
 }

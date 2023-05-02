@@ -6,7 +6,12 @@
 #include "te7307a37.h"
 
 void te7307a37::read(const char* base, char* &ptr) {
-  readData(&unk_89a9405, base, ptr);
-  readData(&unk_8753a3e, base, ptr);
-  readData(&tFormula, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_89a9405, base, current);
+  current = ptr + 0x4;
+  readData(&unk_8753a3e, base, current);
+  current = ptr + 0x10;
+  readData(&tFormula, base, current);
+  ptr += 0x30;
 }

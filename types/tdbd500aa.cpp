@@ -6,13 +6,24 @@
 #include "tdbd500aa.h"
 
 void tdbd500aa::read(const char* base, char* &ptr) {
-  readData(&snoScript, base, ptr);
-  readData(&fCannotBeTargetedByAI, base, ptr);
-  readData(&unk_195410b, base, ptr);
-  readData(&unk_e1b2967, base, ptr);
-  readData(&fInvulnerable, base, ptr);
-  readData(&unk_d27bf99, base, ptr);
-  readData(&fCannotDie, base, ptr);
-  readData(&unk_9ad1b04, base, ptr);
-  readData(&flNoSpawnRadius, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoScript, base, current);
+  current = ptr + 0x4;
+  readData(&fCannotBeTargetedByAI, base, current);
+  current = ptr + 0x8;
+  readData(&unk_195410b, base, current);
+  current = ptr + 0xc;
+  readData(&unk_e1b2967, base, current);
+  current = ptr + 0x10;
+  readData(&fInvulnerable, base, current);
+  current = ptr + 0x14;
+  readData(&unk_d27bf99, base, current);
+  current = ptr + 0x18;
+  readData(&fCannotDie, base, current);
+  current = ptr + 0x1c;
+  readData(&unk_9ad1b04, base, current);
+  current = ptr + 0x20;
+  readData(&flNoSpawnRadius, base, current);
+  ptr += 0x24;
 }

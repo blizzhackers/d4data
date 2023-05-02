@@ -6,5 +6,8 @@
 #include "OctreePrimitive.h"
 
 void OctreePrimitive::read(const char* base, char* &ptr) {
-  readData(&uUserData, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&uUserData, base, current);
+  ptr += 0x8;
 }

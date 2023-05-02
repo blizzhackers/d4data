@@ -6,6 +6,10 @@
 #include "OctreeCube.h"
 
 void OctreeCube::read(const char* base, char* &ptr) {
-  readData(&wpOrigin, base, ptr);
-  readData(&wdSize, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&wpOrigin, base, current);
+  current = ptr + 0xc;
+  readData(&wdSize, base, current);
+  ptr += 0x10;
 }

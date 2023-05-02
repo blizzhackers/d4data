@@ -6,9 +6,14 @@
 #include "t37b71f34.h"
 
 void t37b71f34::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&tInstanceData, base, ptr);
-  readData(&unk_ef69835, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&tInstanceData, base, current);
+  current = ptr + 0x390;
+  readData(&unk_ef69835, base, current);
+  ptr += 0x398;
 }

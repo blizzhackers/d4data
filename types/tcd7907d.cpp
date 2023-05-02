@@ -6,9 +6,14 @@
 #include "tcd7907d.h"
 
 void tcd7907d::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bInverse, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&snoPower, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bInverse, base, current);
+  current = ptr + 0x14;
+  readData(&dwPad, base, current);
+  current = ptr + 0x18;
+  readData(&snoPower, base, current);
+  ptr += 0x20;
 }

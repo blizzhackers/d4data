@@ -6,17 +6,32 @@
 #include "t619110a4.h"
 
 void t619110a4::read(const char* base, char* &ptr) {
-  readData(&nIsFemale, base, ptr);
-  readData(&snoFace, base, ptr);
-  readData(&snoMakeup, base, ptr);
-  readData(&snoMarkingShape, base, ptr);
-  readData(&snoMarkingColor, base, ptr);
-  readData(&snoEyeColor, base, ptr);
-  readData(&unk_1989dcd, base, ptr);
-  readData(&snoHairColor, base, ptr);
-  readData(&snoHairStyle, base, ptr);
-  readData(&snoFacialHair, base, ptr);
-  readData(&snoJewelry, base, ptr);
-  readData(&unk_23f8995, base, ptr);
-  readData(&unk_35e41c8, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&nIsFemale, base, current);
+  current = ptr + 0x4;
+  readData(&snoFace, base, current);
+  current = ptr + 0x8;
+  readData(&snoMakeup, base, current);
+  current = ptr + 0xc;
+  readData(&snoMarkingShape, base, current);
+  current = ptr + 0x10;
+  readData(&snoMarkingColor, base, current);
+  current = ptr + 0x14;
+  readData(&snoEyeColor, base, current);
+  current = ptr + 0x18;
+  readData(&unk_1989dcd, base, current);
+  current = ptr + 0x1c;
+  readData(&snoHairColor, base, current);
+  current = ptr + 0x20;
+  readData(&snoHairStyle, base, current);
+  current = ptr + 0x24;
+  readData(&snoFacialHair, base, current);
+  current = ptr + 0x28;
+  readData(&snoJewelry, base, current);
+  current = ptr + 0x2c;
+  readData(&unk_23f8995, base, current);
+  current = ptr + 0x30;
+  readData(&unk_35e41c8, base, current);
+  ptr += 0x34;
 }

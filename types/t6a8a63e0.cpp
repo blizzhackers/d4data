@@ -6,6 +6,10 @@
 #include "t6a8a63e0.h"
 
 void t6a8a63e0::read(const char* base, char* &ptr) {
-  readData(&unk_1b85e9d, base, ptr);
-  readData(&tSettings, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_1b85e9d, base, current);
+  current = ptr + 0x4;
+  readData(&tSettings, base, current);
+  ptr += 0x84;
 }

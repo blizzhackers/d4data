@@ -6,8 +6,14 @@
 #include "HirelingInfo.h"
 
 void HirelingInfo::read(const char* base, char* &ptr) {
-  readData(&eClass, base, ptr);
-  readData(&gbidName, base, ptr);
-  readData(&fDead, base, ptr);
-  readData(&arnPowerKeyParam, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&eClass, base, current);
+  current = ptr + 0x4;
+  readData(&gbidName, base, current);
+  current = ptr + 0x8;
+  readData(&fDead, base, current);
+  current = ptr + 0xc;
+  readData(&arnPowerKeyParam, base, current);
+  ptr += 0x20;
 }

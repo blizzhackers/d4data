@@ -6,7 +6,12 @@
 #include "ta89e6440.h"
 
 void ta89e6440::read(const char* base, char* &ptr) {
-  readData(&snoActor, base, ptr);
-  readData(&unk_bf4138d, base, ptr);
-  readData(&tSlot, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoActor, base, current);
+  current = ptr + 0x4;
+  readData(&unk_bf4138d, base, current);
+  current = ptr + 0x2c;
+  readData(&tSlot, base, current);
+  ptr += 0x34;
 }

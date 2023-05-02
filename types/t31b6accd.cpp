@@ -6,10 +6,18 @@
 #include "t31b6accd.h"
 
 void t31b6accd::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_336454f, base, ptr);
-  readData(&unk_1bf9922, base, ptr);
-  readData(&snoLevelArea, base, ptr);
-  readData(&snoSubzone, base, ptr);
-  readData(&bDungeon, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_336454f, base, current);
+  current = ptr + 0x14;
+  readData(&unk_1bf9922, base, current);
+  current = ptr + 0x18;
+  readData(&snoLevelArea, base, current);
+  current = ptr + 0x1c;
+  readData(&snoSubzone, base, current);
+  current = ptr + 0x20;
+  readData(&bDungeon, base, current);
+  ptr += 0x24;
 }

@@ -6,6 +6,10 @@
 #include "tfbb7557a.h"
 
 void tfbb7557a::read(const char* base, char* &ptr) {
-  readData(&unk_fc859da, base, ptr);
-  readData(&dwPlaylistIndex, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_fc859da, base, current);
+  current = ptr + 0x4;
+  readData(&dwPlaylistIndex, base, current);
+  ptr += 0x8;
 }

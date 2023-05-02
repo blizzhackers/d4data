@@ -6,11 +6,18 @@
 #include "t63b64572.h"
 
 void t63b64572::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&bNegate, base, ptr);
-  readData(&unk_c0222bf, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&unk_f1da7c5, base, ptr);
-  readData(&unk_740244f, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0x10;
+  readData(&bNegate, base, current);
+  current = ptr + 0x18;
+  readData(&unk_c0222bf, base, current);
+  current = ptr + 0x1c;
+  readData(&dwPad, base, current);
+  current = ptr + 0x20;
+  readData(&unk_f1da7c5, base, current);
+  current = ptr + 0x24;
+  readData(&unk_740244f, base, current);
+  ptr += 0x28;
 }

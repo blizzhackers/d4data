@@ -6,7 +6,12 @@
 #include "tb150855c.h"
 
 void tb150855c::read(const char* base, char* &ptr) {
-  readData(&snoActor, base, ptr);
-  readData(&unk_74ee52d, base, ptr);
-  readData(&arPhases, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&snoActor, base, current);
+  current = ptr + 0x4;
+  readData(&unk_74ee52d, base, current);
+  current = ptr + 0x20;
+  readData(&arPhases, base, current);
+  ptr += 0x30;
 }

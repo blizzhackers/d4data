@@ -6,5 +6,6 @@
 #include "ta9bcdb53.h"
 
 void ta9bcdb53::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

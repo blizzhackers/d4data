@@ -6,7 +6,12 @@
 #include "tf1fed2b7.h"
 
 void tf1fed2b7::read(const char* base, char* &ptr) {
-  readData(&q, base, ptr);
-  readData(&p, base, ptr);
-  readData(&s, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&q, base, current);
+  current = ptr + 0x10;
+  readData(&p, base, current);
+  current = ptr + 0x20;
+  readData(&s, base, current);
+  ptr += 0x30;
 }

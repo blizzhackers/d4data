@@ -6,7 +6,12 @@
 #include "EndOfTickMessage.h"
 
 void EndOfTickMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&dwTickEnding, base, ptr);
-  readData(&dwTickNext, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&dwTickEnding, base, current);
+  current = ptr + 0x14;
+  readData(&dwTickNext, base, current);
+  ptr += 0x18;
 }

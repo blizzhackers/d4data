@@ -6,6 +6,10 @@
 #include "t4ad15c6.h"
 
 void t4ad15c6::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&unk_f898967, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&unk_f898967, base, current);
+  ptr += 0x14;
 }

@@ -6,5 +6,6 @@
 #include "tff787262.h"
 
 void tff787262::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

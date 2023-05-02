@@ -6,7 +6,12 @@
 #include "tbd82039e.h"
 
 void tbd82039e::read(const char* base, char* &ptr) {
-  readData(&tKey, base, ptr);
-  readData(&unk_e1da18d, base, ptr);
-  readData(&unk_67545b, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tKey, base, current);
+  current = ptr + 0x4;
+  readData(&unk_e1da18d, base, current);
+  current = ptr + 0x8;
+  readData(&unk_67545b, base, current);
+  ptr += 0x20;
 }

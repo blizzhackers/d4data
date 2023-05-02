@@ -6,8 +6,14 @@
 #include "HearthPortalInfoMessage.h"
 
 void HearthPortalInfoMessage::read(const char* base, char* &ptr) {
-  readData(&tHeader, base, ptr);
-  readData(&snoLevelArea, base, ptr);
-  readData(&annPortal, base, ptr);
-  readData(&bResetUI, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&tHeader, base, current);
+  current = ptr + 0x10;
+  readData(&snoLevelArea, base, current);
+  current = ptr + 0x14;
+  readData(&annPortal, base, current);
+  current = ptr + 0x1c;
+  readData(&bResetUI, base, current);
+  ptr += 0x20;
 }

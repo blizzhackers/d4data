@@ -6,5 +6,6 @@
 #include "tb0c47c9.h"
 
 void tb0c47c9::read(const char* base, char* &ptr) {
-  ptr += 1;
+  char *current;
+  ptr += 0x1;
 }

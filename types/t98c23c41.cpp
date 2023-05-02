@@ -6,5 +6,8 @@
 #include "t98c23c41.h"
 
 void t98c23c41::read(const char* base, char* &ptr) {
-  readData(&unk_eae7586, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_eae7586, base, current);
+  ptr += 0x10;
 }

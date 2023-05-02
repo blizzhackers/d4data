@@ -6,13 +6,22 @@
 #include "t42e90c26.h"
 
 void t42e90c26::read(const char* base, char* &ptr) {
-  ptr += 8;
-  readData(&dwType, base, ptr);
-  readData(&dwPad, base, ptr);
-  readData(&szName, base, ptr);
-  readData(&snoWorld, base, ptr);
-  readData(&unk_d6d0056, base, ptr);
-  readData(&snoActor, base, ptr);
-  readData(&arrItems, base, ptr);
-  readData(&unk_aff169e, base, ptr);
+  char *current;
+  current = ptr + 0x8;
+  readData(&dwType, base, current);
+  current = ptr + 0xc;
+  readData(&dwPad, base, current);
+  current = ptr + 0x10;
+  readData(&szName, base, current);
+  current = ptr + 0x20;
+  readData(&snoWorld, base, current);
+  current = ptr + 0x24;
+  readData(&unk_d6d0056, base, current);
+  current = ptr + 0x28;
+  readData(&snoActor, base, current);
+  current = ptr + 0x2c;
+  readData(&arrItems, base, current);
+  current = ptr + 0x34;
+  readData(&unk_aff169e, base, current);
+  ptr += 0x38;
 }

@@ -6,5 +6,8 @@
 #include "ted54571c.h"
 
 void ted54571c::read(const char* base, char* &ptr) {
-  readData(&unk_e4d5c3, base, ptr);
+  char *current;
+  current = ptr + 0x0;
+  readData(&unk_e4d5c3, base, current);
+  ptr += 0x10;
 }
