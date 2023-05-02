@@ -206,7 +206,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_36a68ce;
   DT_VARIABLEARRAY<t6f71323a> unk_8a74e60;
   DT_VARIABLEARRAY<PowerBuffDefinition> arBuffs;
-  DT_VARIABLEARRAY<t20e37537> unk_3fd5e42;
+  DT_VARIABLEARRAY<t20e37537> ptScriptFormulas;
   DT_INT nFormulaCount;
   DT_VARIABLEARRAY<t30754ce0> arPayloads;
   DT_VARIABLEARRAY<PowerMod> arMods;

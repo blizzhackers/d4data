@@ -366,7 +366,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xb38;
   readData(&arBuffs, base, current);
   current = ptr + 0xb48;
-  readData(&unk_3fd5e42, base, current);
+  readData(&ptScriptFormulas, base, current);
   current = ptr + 0xb58;
   readData(&nFormulaCount, base, current);
   current = ptr + 0xb60;
