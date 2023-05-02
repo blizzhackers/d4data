@@ -287,21 +287,6 @@ struct DT_FIXEDARRAY : public ComplexRead {
   }
 };
 
-template <int32_t len>
-struct DT_CHARARRAY : public ComplexRead {
-  std::string value;
-
-  void read(const char *base, char* &ptr) {
-    char elements[len + 1]{ 0 };
-
-    for (int c = 0; c < len; c++) {
-      readData(&elements[c], base, ptr);
-    }
-
-    value = elements;
-  }
-};
-
 template <class T>
 struct DT_VARIABLEARRAY : public ComplexRead {
   std::vector<T> elements;
@@ -337,6 +322,32 @@ struct DT_VARIABLEARRAY : public ComplexRead {
       }
     }
   }
+};
+
+template <int32_t len>
+struct DT_CHARARRAY : public ComplexRead {
+  std::string value;
+
+  void read(const char *base, char* &ptr) {
+    char elements[len + 1]{ 0 };
+
+    for (int c = 0; c < len; c++) {
+      readData(&elements[c], base, ptr);
+    }
+
+    value = elements;
+  }
+};
+
+struct DT_CSTRING : public ComplexRead {
+  std::string value;
+  void read(const char *base, char* &ptr);
+};
+
+struct DT_STRING_FORMULA : public ComplexRead {
+  std::string value;
+  DT_VARIABLEARRAY<int32_t> extra;
+  void read(const char *base, char* &ptr);
 };
 
 struct DT_POLYMORPHIC_VARIABLEARRAY : public ComplexRead {
@@ -393,11 +404,9 @@ using DT_UINT64 = uint64_t;
 using DT_WORD = int16_t;
 using DT_FLOAT = float;
 using DT_STARTLOC_NAME = DT_UINT;
-using DT_STRING_FORMULA = DT_CHARARRAY<32>;
 using DT_ACD_NETWORK_NAME = DT_UINT64;
 using DT_SHARED_SERVER_DATA_ID = DT_UINT64;
 using DT_SNO_NAME = DT_FIXEDARRAY<DT_BYTE, 8>;
-using DT_CSTRING = DT_CHARARRAY<16>;
 using DT_BCVEC2I = DT_FIXEDARRAY<DT_UINT, 3>;
 
 struct DT_RGBACOLOR {
