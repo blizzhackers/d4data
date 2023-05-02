@@ -289,12 +289,16 @@ struct DT_FIXEDARRAY : public ComplexRead {
 
 template <int32_t len>
 struct DT_CHARARRAY : public ComplexRead {
-  char elements[len];
+  std::string value;
 
   void read(const char *base, char* &ptr) {
+    char elements[len];
+
     for (int c = 0; c < len; c++) {
       readData(&elements[c], base, ptr);
     }
+
+    value = elements;
   }
 };
 
@@ -318,21 +322,47 @@ struct DT_VARIABLEARRAY : public ComplexRead {
 
     while (pSrc < pEnd) {
       T tmp;
-      readData(&tmp, base, pSrc);
-      elements.push_back(tmp);
+
+      if (pSrc <= pEnd) {
+        readData(&tmp, base, pSrc);
+        elements.push_back(tmp);
+      }
     }
   }
+};
 
-  T operator [](uint32_t index) {
-    if (index < 0 || index >= length()) {
-      throw "Invalid index!";
-    }
+struct DT_POLYMORPHIC_VARIABLEARRAY : public ComplexRead {
+  uint32_t unk_a;
+  uint32_t unk_b;
+  uint32_t offset;
+  uint32_t size;
+  uint32_t typeHash;
 
-    return elements[index];
-  }
+  void read(const char *base, char* &ptr) {
+    struct {
+      uint32_t unk_a;
+      uint32_t unk_b;
+      uint32_t offset;
+      uint32_t size;
+      uint32_t unk_c;
+      uint32_t unk_d;
+    } raw;
 
-  uint32_t length() {
-    return elements.length();
+    struct {
+      uint32_t padding[2];
+      uint32_t dwType;
+      uint32_t dwPad;
+    } typeInfo;
+
+    readData(&raw, base, ptr);
+    char *target = (char *)base + raw.offset;
+    readData(&unk_a, target, target);
+    readData(&unk_b, target, target);
+    readData(&typeInfo, target, target);
+
+    offset = raw.offset + sizeof(unk_a) + sizeof(unk_b);
+    size = raw.size - sizeof(unk_a) - sizeof(unk_b);
+    typeHash = typeInfo.dwType;
   }
 };
 
@@ -360,7 +390,6 @@ using DT_ACD_NETWORK_NAME = DT_UINT64;
 using DT_SHARED_SERVER_DATA_ID = DT_UINT64;
 using DT_SNO_NAME = DT_FIXEDARRAY<DT_BYTE, 8>;
 using DT_CSTRING = DT_CHARARRAY<16>;
-using DT_POLYMORPHIC_VARIABLEARRAY = DT_FIXEDARRAY<DT_UINT, 6>;
 using DT_BCVEC2I = DT_FIXEDARRAY<DT_UINT, 3>;
 
 struct DT_RGBACOLOR {
@@ -424,10 +453,11 @@ struct D4File {
   DT_UINT hash;
   DT_UINT uid;
   T contents;
+  std::string data;
 
   D4File(const char *fileName) {
     std::ifstream file(fileName);
-    std::string data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+    data = std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
     char *base = (char*)data.c_str();
 
     readData(&deadbeef, base, base);
@@ -444,6 +474,15 @@ struct D4File {
     readData(&uid, base, ptr);
     ptr = base;
     readData(&contents, base, ptr);
+  }
+
+  template <class RT>
+  RT read(uint32_t offset) {
+    RT ret;
+    const char *base = data.c_str() + 16;
+    char *ptr = (char *)data.c_str() + 16 + offset;
+    readData(&ret, base, ptr);
+    return ret;
   }
 };
 
