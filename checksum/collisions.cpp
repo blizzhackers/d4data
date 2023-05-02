@@ -13,7 +13,7 @@ uint32_t checksum(std::string str) {
 
   uint32_t hash = 0;
   for (size_t i = 0; i < str.length(); i++) {
-    hash = hash * 33 + (unsigned char)str[i];
+    hash = (hash << 5) + hash + (unsigned char)str[i];
   }
 
   return hash;

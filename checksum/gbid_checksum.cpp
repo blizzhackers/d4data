@@ -1,6 +1,9 @@
 #include <iostream>
+#include <algorithm>
 
 uint32_t checksum(std::string str) {
+  std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
+
   uint32_t hash = 0;
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + str[i];

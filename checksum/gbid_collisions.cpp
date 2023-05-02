@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <unistd.h>
+#include <algorithm>
 
 char tmp[64]{ 0 };
 std::vector<uint32_t> checksumMatch;
@@ -11,12 +12,13 @@ std::string suffix = "";
 uint32_t checksum(std::string str) {
   str = prefix + str + suffix;
 
+  std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
   uint32_t hash = 0;
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
   }
 
-  return hash & 0xFFFFFFF;
+  return hash;
 }
 
 void collisions(long pos) {
