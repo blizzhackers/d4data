@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct ObserverDefinition : public ComplexRead {
-  DT_FLOAT unk_36650c;
+  DT_FLOAT aFOV;
   DT_VECTOR3D wvLookAtOffsetVector;
   DT_VECTOR3D wvCameraOffsetVector;
   DT_INT unk_5a947a6;

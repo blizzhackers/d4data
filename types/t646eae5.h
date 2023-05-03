@@ -12,7 +12,7 @@
 struct t646eae5 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_FLOAT unk_36650c;
+  DT_FLOAT aFOV;
   DT_FLOAT unk_b046307;
   DT_FLOAT unk_cc38bbe;
   DT_FLOAT unk_101b2fc;

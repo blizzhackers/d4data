@@ -13,7 +13,7 @@
 struct t76fbf09b : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_SNO<SnoGroup::Quest> snoQuest;
-  DT_INT unk_f425a28;
+  DT_INT bIsWorldEvent;
   DT_SNO<SnoGroup::World> snoWorld;
   DT_SNO<SnoGroup::SubZone> snoSubzone;
   DT_SNO<SnoGroup::Item> snoReward;

@@ -13,7 +13,7 @@ struct tf692c2c0 : public ComplexRead {
   DT_UINT dwType;
   DT_INT bInverse;
   DT_UINT dwPad;
-  DT_SNO<SnoGroup::ItemRequirement> unk_91a7640;
+  DT_SNO<SnoGroup::ItemRequirement> snoSkillRequirement;
 
   void read(const char* base, char* &ptr);
 };

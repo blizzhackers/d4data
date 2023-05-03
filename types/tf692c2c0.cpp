@@ -14,6 +14,6 @@ void tf692c2c0::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&dwPad, base, current);
   current = ptr + 0x18;
-  readData(&unk_91a7640, base, current);
+  readData(&snoSkillRequirement, base, current);
   ptr += 0x20;
 }

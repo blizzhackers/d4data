@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct t52314c2f : public ComplexRead {
-  DT_VARIABLEARRAY<t6f18c43c> unk_72c20d7;
+  DT_VARIABLEARRAY<t6f18c43c> bones;
 
   void read(const char* base, char* &ptr);
 };

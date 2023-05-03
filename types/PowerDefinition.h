@@ -169,8 +169,8 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_7a416a6;
   DT_FIXEDARRAY<t146f0099, 14> arCCInfo;
   DT_INT unk_6afae78;
-  DT_SNO<SnoGroup::PlayerClass> unk_14e8917;
-  DT_SNO<SnoGroup::ItemRequirement> unk_91a7640;
+  DT_SNO<SnoGroup::PlayerClass> snoClassRequirement;
+  DT_SNO<SnoGroup::ItemRequirement> snoSkillRequirement;
   DT_SNO<SnoGroup::Item> snoItemRequirement;
   DT_SNO<SnoGroup::Condition> unk_1b291d6;
   DT_INT bUsableInTown;

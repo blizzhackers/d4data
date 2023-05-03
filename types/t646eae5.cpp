@@ -12,7 +12,7 @@ void t646eae5::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_36650c, base, current);
+  readData(&aFOV, base, current);
   current = ptr + 0x14;
   readData(&unk_b046307, base, current);
   current = ptr + 0x18;

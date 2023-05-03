@@ -12,7 +12,7 @@ void t76fbf09b::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&snoQuest, base, current);
   current = ptr + 0x14;
-  readData(&unk_f425a28, base, current);
+  readData(&bIsWorldEvent, base, current);
   current = ptr + 0x18;
   readData(&snoWorld, base, current);
   current = ptr + 0x1c;

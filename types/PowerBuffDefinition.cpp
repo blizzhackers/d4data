@@ -58,7 +58,7 @@ void PowerBuffDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x130;
   readData(&tCrowdControl, base, current);
   current = ptr + 0x198;
-  readData(&unk_e4aa036, base, current);
+  readData(&bHasDamageShield, base, current);
   current = ptr + 0x1a0;
   readData(&unk_1e4754c, base, current);
   ptr += 0x1e8;

@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct tb44ae007 : public ComplexRead {
-  DT_CSTRING unk_8f5373;
+  DT_CSTRING component;
   DT_SNO<SnoGroup::Dye> snoDye;
 
   void read(const char* base, char* &ptr);

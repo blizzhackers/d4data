@@ -38,7 +38,7 @@ struct PowerBuffDefinition : public ComplexRead {
   te3f28f16 tDOT;
   DT_INT unk_dcb22bd;
   tf6b21430 tCrowdControl;
-  DT_INT unk_e4aa036;
+  DT_INT bHasDamageShield;
   t46a557e9 unk_1e4754c;
 
   void read(const char* base, char* &ptr);

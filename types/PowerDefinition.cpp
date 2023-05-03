@@ -292,9 +292,9 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa70;
   readData(&unk_6afae78, base, current);
   current = ptr + 0xa74;
-  readData(&unk_14e8917, base, current);
+  readData(&snoClassRequirement, base, current);
   current = ptr + 0xa78;
-  readData(&unk_91a7640, base, current);
+  readData(&snoSkillRequirement, base, current);
   current = ptr + 0xa7c;
   readData(&snoItemRequirement, base, current);
   current = ptr + 0xa80;

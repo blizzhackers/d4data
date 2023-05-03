@@ -8,7 +8,7 @@
 void ObserverDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
-  readData(&unk_36650c, base, current);
+  readData(&aFOV, base, current);
   current = ptr + 0xc;
   readData(&wvLookAtOffsetVector, base, current);
   current = ptr + 0x18;

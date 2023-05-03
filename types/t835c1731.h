@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t835c1731 : public ComplexRead {
-  DT_FIXEDARRAY<DT_VECTOR4D, 3> unk_73e1323;
+  DT_FIXEDARRAY<DT_VECTOR4D, 3> coeff;
 
   void read(const char* base, char* &ptr);
 };
