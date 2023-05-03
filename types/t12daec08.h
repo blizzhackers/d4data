@@ -14,7 +14,7 @@ struct t12daec08 : public ComplexRead {
   DT_FLOAT flFrequency;
   DT_FLOAT unk_3278f1;
   DT_FLOAT unk_d7a231e;
-  DT_FLOAT unk_e7ab959;
+  DT_FLOAT flRadiusRatio;
   DT_SNO<SnoGroup::Sound> unk_77adebf;
   DT_SNO<SnoGroup::Sound> unk_4fe19d7;
   DT_SNO<SnoGroup::AmbientSound> snoAmbientSound;

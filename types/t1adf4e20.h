@@ -55,7 +55,7 @@ struct t1adf4e20 : public ComplexRead {
   DT_INT unk_92ef706;
   DT_INT unk_8131b11;
   DT_INT unk_545c5ca;
-  DT_ENUM<DT_INT> unk_1ae9890;
+  DT_ENUM<DT_INT> eSpawnType;
   DT_SNO<SnoGroup::Actor> unk_c005492;
   DT_SNO<SnoGroup::Encounter> snoSpawnEncounter;
   DT_SNO<SnoGroup::Population> snoPopulation;

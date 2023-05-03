@@ -18,7 +18,7 @@ struct t9153bc3 : public ComplexRead {
   t6b1c5d9c unk_2eb0960;
   t6b1c5d9c unk_9df1c6f;
   DT_INT unk_e184982;
-  DT_FLOAT unk_c58ef7e;
+  DT_FLOAT flThickness;
 
   void read(const char* base, char* &ptr);
 };

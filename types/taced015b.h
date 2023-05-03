@@ -42,7 +42,7 @@ struct taced015b : public ComplexRead {
   DT_FLOAT unk_797e898;
   DT_INT fFlatten;
   DT_INT unk_1e00090;
-  DT_INT unk_6ca780a;
+  DT_INT fIsStatic;
   DT_INT unk_cb063a7;
   DT_INT unk_73a63cf;
   DT_ENUM<DT_INT> unk_9c39320;

@@ -22,7 +22,7 @@ struct PhysicsDefinition : public ComplexRead {
   DT_FLOAT flAirBuoyancy;
   DT_FLOAT flAccelerationMax;
   DT_FLOAT flSpeedMax;
-  DT_FLOAT unk_37dc27f;
+  DT_FLOAT flGravityMultiplier;
   DT_RANGE<DT_INT> unk_b762b7a;
   DT_FLOAT unk_7b327fe;
 

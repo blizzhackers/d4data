@@ -32,7 +32,7 @@ void tc876e5b4::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&dwPad, base, current);
   current = ptr + 0x78;
-  readData(&unk_5c79d9e, base, current);
+  readData(&eObjectType, base, current);
   current = ptr + 0x7c;
   readData(&unk_a1d7e72, base, current);
   current = ptr + 0x84;

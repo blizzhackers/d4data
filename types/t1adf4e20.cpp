@@ -94,7 +94,7 @@ void t1adf4e20::read(const char* base, char* &ptr) {
   current = ptr + 0xb4;
   readData(&unk_545c5ca, base, current);
   current = ptr + 0xb8;
-  readData(&unk_1ae9890, base, current);
+  readData(&eSpawnType, base, current);
   current = ptr + 0xbc;
   readData(&unk_c005492, base, current);
   current = ptr + 0xc0;

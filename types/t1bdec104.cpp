@@ -30,7 +30,7 @@ void t1bdec104::read(const char* base, char* &ptr) {
   current = ptr + 0x2c;
   readData(&unk_5c137e0, base, current);
   current = ptr + 0x34;
-  readData(&unk_37dc27f, base, current);
+  readData(&flGravityMultiplier, base, current);
   current = ptr + 0x38;
   readData(&fHugsGround, base, current);
   current = ptr + 0x3c;

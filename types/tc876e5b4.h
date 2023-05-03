@@ -26,7 +26,7 @@ struct tc876e5b4 : public ComplexRead {
   DT_INT unk_49e9257;
   DT_INT unk_5490979;
   DT_UINT dwPad;
-  DT_ENUM<DT_INT> unk_5c79d9e;
+  DT_ENUM<DT_INT> eObjectType;
   HardpointLink unk_a1d7e72;
   DT_UINT dwObjectID;
   HardpointLink tHardpointLink;

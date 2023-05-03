@@ -72,7 +72,7 @@ void taced015b::read(const char* base, char* &ptr) {
   current = ptr + 0x98;
   readData(&unk_1e00090, base, current);
   current = ptr + 0x9c;
-  readData(&unk_6ca780a, base, current);
+  readData(&fIsStatic, base, current);
   current = ptr + 0xa0;
   readData(&unk_cb063a7, base, current);
   current = ptr + 0xa4;

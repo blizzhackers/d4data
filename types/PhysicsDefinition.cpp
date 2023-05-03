@@ -32,7 +32,7 @@ void PhysicsDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x34;
   readData(&flSpeedMax, base, current);
   current = ptr + 0x38;
-  readData(&unk_37dc27f, base, current);
+  readData(&flGravityMultiplier, base, current);
   current = ptr + 0x3c;
   readData(&unk_b762b7a, base, current);
   current = ptr + 0x44;

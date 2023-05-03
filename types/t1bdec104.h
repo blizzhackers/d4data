@@ -22,7 +22,7 @@ struct t1bdec104 : public ComplexRead {
   DT_INT unk_7c4ac65;
   HardpointLink tHardpointLink;
   HardpointLink unk_5c137e0;
-  DT_FLOAT unk_37dc27f;
+  DT_FLOAT flGravityMultiplier;
   DT_INT fHugsGround;
   DT_INT unk_6ece884;
   DT_INT unk_5d7dcb;

@@ -16,7 +16,7 @@ void t3d4fd272::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&flRotationSpeed, base, current);
   current = ptr + 0x10;
-  readData(&unk_ed952a9, base, current);
+  readData(&flRotationAngle, base, current);
   current = ptr + 0x14;
   readData(&unk_92ce5f2, base, current);
   current = ptr + 0x18;

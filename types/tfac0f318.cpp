@@ -8,7 +8,7 @@
 void tfac0f318::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_c58ef7e, base, current);
+  readData(&flThickness, base, current);
   current = ptr + 0x4;
   readData(&rgbaColor, base, current);
   current = ptr + 0x8;

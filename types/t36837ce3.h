@@ -16,7 +16,7 @@ struct t36837ce3 : public ComplexRead {
   t8b736c4 tTracked;
   t8b736c4 unk_918ddb6;
   DT_FLOAT unk_e253b58;
-  DT_FLOAT unk_c58ef7e;
+  DT_FLOAT flThickness;
   DT_SNO<SnoGroup::Texture> snoPattern;
   DT_FLOAT unk_a6fc3e4;
   DT_FLOAT unk_45e317c;

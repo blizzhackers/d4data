@@ -22,6 +22,6 @@ void t9153bc3::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_e184982, base, current);
   current = ptr + 0x1c;
-  readData(&unk_c58ef7e, base, current);
+  readData(&flThickness, base, current);
   ptr += 0x20;
 }

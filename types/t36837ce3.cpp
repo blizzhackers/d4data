@@ -18,7 +18,7 @@ void t36837ce3::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_e253b58, base, current);
   current = ptr + 0x44;
-  readData(&unk_c58ef7e, base, current);
+  readData(&flThickness, base, current);
   current = ptr + 0x48;
   readData(&snoPattern, base, current);
   current = ptr + 0x4c;

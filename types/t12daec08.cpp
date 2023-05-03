@@ -16,7 +16,7 @@ void t12daec08::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_d7a231e, base, current);
   current = ptr + 0x10;
-  readData(&unk_e7ab959, base, current);
+  readData(&flRadiusRatio, base, current);
   current = ptr + 0x14;
   readData(&unk_77adebf, base, current);
   current = ptr + 0x18;
