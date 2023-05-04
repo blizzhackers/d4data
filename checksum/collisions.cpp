@@ -2,21 +2,31 @@
 #include <sstream>
 #include <vector>
 #include <unistd.h>
+#include <algorithm>
 
 char tmp[64]{ 0 };
 std::vector<uint32_t> checksumMatch;
 std::string prefix = "";
 std::string suffix = "";
+bool useCaps = true, useLowers = true, useDigits = false, useUnderscore = false, capFirst = false;
+bool hashType = 0;
+uint32_t startingHash = 0;
 
 uint32_t checksum(std::string str) {
-  str = prefix + str + suffix;
+  str = str + suffix;
 
-  uint32_t hash = 0;
+  if (hashType == 2) { // gbid strings are lowercased
+    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
+  }
+
+  uint32_t hash = startingHash;
+
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
   }
 
-  return hash;
+  // field names have an additional mask
+  return hashType == 1 ? (hash & 0xfffffff) : hash;
 }
 
 void collisions(long pos) {
@@ -31,24 +41,31 @@ void collisions(long pos) {
     return;
   }
 
-  if (pos > 0) {
+  if (hashType == 2 || useLowers && (pos > 0 || !capFirst)) {
+    for (char c = 'a'; c <= 'z'; c++) {
+      tmp[pos] = c;
+      collisions(pos - 1);
+    }
+  }
+
+  if (hashType != 2 && useCaps) {
+    for (char c = 'A'; c <= 'Z'; c++) {
+      tmp[pos] = c;
+      collisions(pos - 1);
+    }
+  }
+
+  if (useDigits && pos > 0) {
     for (char c = '0'; c <= '9'; c++) {
       tmp[pos] = c;
       collisions(pos - 1);
     }
   }
 
-  for (char c = 'A'; c <= 'Z'; c++) {
-    tmp[pos] = c;
-    collisions(pos - 1);
+  if (useUnderscore && (pos > 0 || !capFirst)) {
+    tmp[pos] = '_';
   }
 
-  for (char c = 'a'; c <= 'z'; c++) {
-    tmp[pos] = c;
-    collisions(pos - 1);
-  }
-
-  tmp[pos] = '_';
   collisions(pos - 1);
 }
 
@@ -61,11 +78,29 @@ int main(int argc, char *argv[]) {
     for (int c = 1; c < argc; c++) {
       std::string arg = argv[c];
 
-      if (arg == "-p" || arg == "--prefix") {
+      if (arg == "--prefix") {
         isPrefix = true;
       }
-      else if(arg == "-s" || arg == "--suffix") {
+      else if(arg == "--suffix") {
         isSuffix = true;
+      }
+      else if(arg == "--field") {
+        hashType = 1;
+      }
+      else if(arg == "--gbid") {
+        hashType = 2;
+      }
+      else if(arg == "--cap-first") {
+        capFirst = true;
+      }
+      else if(arg == "--digits") {
+        useDigits = true;
+      }
+      else if(arg == "--underscore") {
+        useUnderscore = true;
+      }
+      else if(arg[0] == '-') {
+        // discard unknown option
       }
       else if (isPrefix) {
         prefix = arg;
@@ -97,6 +132,8 @@ int main(int argc, char *argv[]) {
       std::cin >> std::hex >> tmp;
     }
   }
+
+  startingHash = checksum(prefix);
   
   if (checksumMatch.size()) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
