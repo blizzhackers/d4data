@@ -12,6 +12,6 @@ void t14c5741::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&szToolTip, base, current);
   current = ptr + 0x20;
-  readData(&unk_479d177, base, current);
+  readData(&arAnimSets, base, current);
   ptr += 0x30;
 }

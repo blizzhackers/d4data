@@ -10,7 +10,7 @@ void SoundPlayHistory::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&nLastPlayedPerm, base, current);
   current = ptr + 0x4;
-  readData(&unk_6980cd4, base, current);
+  readData(&flLastPlayedTime, base, current);
   current = ptr + 0x8;
   readData(&arPlayedFlags, base, current);
   ptr += 0x18;

@@ -49,7 +49,7 @@ struct t3a911960 : public ComplexRead {
   DT_WORD unk_93e1424;
   DT_WORD constraintCount;
   DT_WORD unk_9460e91;
-  DT_WORD unk_5c605e;
+  DT_WORD maxLevel;
   DT_WORD unk_c48fa8d;
   DT_WORD unk_fef3f35;
   DT_WORD unk_30047f6;

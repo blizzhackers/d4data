@@ -43,7 +43,7 @@ struct ActorDefinition : public ComplexRead {
   DT_UINT dwFlagsEx;
   DT_SNO<SnoGroup::Appearance> snoAppearance;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Appearance>> unk_ecc360f;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> unk_479d177;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> arAnimSets;
   DT_SNO<SnoGroup::AnimTree> snoAnimTree;
   tb2f69ab5 unk_db10329;
   DT_ENUM<DT_INT> eVariantType;
@@ -76,12 +76,12 @@ struct ActorDefinition : public ComplexRead {
   DT_VARIABLEARRAY<tabd62f10> ptCritterData;
   DT_VARIABLEARRAY<t35abf7a0> ptPlayerData;
   DT_VARIABLEARRAY<t56dd8f42> ptItemData;
-  DT_VARIABLEARRAY<t7e01ffa9> unk_3a551d4;
+  DT_VARIABLEARRAY<t7e01ffa9> ptCombatData;
   DT_VARIABLEARRAY<tf32c2fd9> ptDeathData;
   DT_VARIABLEARRAY<te3835e40> ptEffectData;
   DT_VARIABLEARRAY<t1bdec104> ptProjData;
   DT_VARIABLEARRAY<t4a3fc7b4> ptPropData;
-  DT_VARIABLEARRAY<t2cfba1c3> unk_29ef3ee;
+  DT_VARIABLEARRAY<t2cfba1c3> ptMovingData;
   DT_VARIABLEARRAY<tf04ef15f> ptBrainData;
   DT_VARIABLEARRAY<tdbd500aa> ptServerData;
   DT_VARIABLEARRAY<tb8942531> ptUIData;

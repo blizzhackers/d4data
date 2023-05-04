@@ -12,7 +12,7 @@
 struct t14c5741 : public ComplexRead {
   DT_CSTRING szName;
   DT_CSTRING szToolTip;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> unk_479d177;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> arAnimSets;
 
   void read(const char* base, char* &ptr);
 };

@@ -18,7 +18,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_ecc360f, base, current);
   current = ptr + 0x28;
-  readData(&unk_479d177, base, current);
+  readData(&arAnimSets, base, current);
   current = ptr + 0x38;
   readData(&snoAnimTree, base, current);
   current = ptr + 0x40;
@@ -84,7 +84,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x170;
   readData(&ptItemData, base, current);
   current = ptr + 0x180;
-  readData(&unk_3a551d4, base, current);
+  readData(&ptCombatData, base, current);
   current = ptr + 0x190;
   readData(&ptDeathData, base, current);
   current = ptr + 0x1a0;
@@ -94,7 +94,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x1c0;
   readData(&ptPropData, base, current);
   current = ptr + 0x1d0;
-  readData(&unk_29ef3ee, base, current);
+  readData(&ptMovingData, base, current);
   current = ptr + 0x1e0;
   readData(&ptBrainData, base, current);
   current = ptr + 0x1f0;

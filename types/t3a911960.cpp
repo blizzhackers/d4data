@@ -86,7 +86,7 @@ void t3a911960::read(const char* base, char* &ptr) {
   current = ptr + 0x10e;
   readData(&unk_9460e91, base, current);
   current = ptr + 0x110;
-  readData(&unk_5c605e, base, current);
+  readData(&maxLevel, base, current);
   current = ptr + 0x112;
   readData(&unk_c48fa8d, base, current);
   current = ptr + 0x114;

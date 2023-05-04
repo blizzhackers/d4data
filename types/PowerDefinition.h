@@ -32,7 +32,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_bd561bf;
   tee739e40 unk_8dd1734;
   DT_VARIABLEARRAY<tee739e40> arSkillTags;
-  DT_ENUM<DT_INT> unk_7d4625c;
+  DT_ENUM<DT_INT> eSkillCat;
   DT_ENUM<DT_INT> eType;
   DT_ENUM<DT_INT> eCategory;
   DT_ENUM<DT_INT> unk_2b4eb99;

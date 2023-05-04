@@ -11,7 +11,7 @@
 
 struct SoundPlayHistory : public ComplexRead {
   DT_INT nLastPlayedPerm;
-  DT_FLOAT unk_6980cd4;
+  DT_FLOAT flLastPlayedTime;
   DT_FIXEDARRAY<DT_BYTE, 16> arPlayedFlags;
 
   void read(const char* base, char* &ptr);

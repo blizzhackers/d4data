@@ -18,7 +18,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x58;
   readData(&arSkillTags, base, current);
   current = ptr + 0x68;
-  readData(&unk_7d4625c, base, current);
+  readData(&eSkillCat, base, current);
   current = ptr + 0x6c;
   readData(&eType, base, current);
   current = ptr + 0x70;
