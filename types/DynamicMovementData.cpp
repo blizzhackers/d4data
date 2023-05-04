@@ -1,11 +1,11 @@
 /**
- * Definition: t1ece15ea
+ * Definition: DynamicMovementData
  * Hash: 1ece15ea
  */
 
-#include "t1ece15ea.h"
+#include "DynamicMovementData.h"
 
-void t1ece15ea::read(const char* base, char* &ptr) {
+void DynamicMovementData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

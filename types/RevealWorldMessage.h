@@ -16,8 +16,8 @@ struct RevealWorldMessage : public ComplexRead {
   DT_SNO<SnoGroup::World> snoWorld;
   DT_UINT unk_2573139;
   DT_OPTIONAL<DT_INT> unk_b4055da;
-  DT_OPTIONAL<DT_INT> unk_845cf0b;
-  DT_FIXEDARRAY<DT_GBID<0x1f>, 32> unk_66929d7;
+  DT_OPTIONAL<DT_INT> uKeyedDungeonTier;
+  DT_FIXEDARRAY<DT_GBID<0x1f>, 32> arDungeonStates;
   DT_INT unk_fc9049b;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::DungeonAffix>, 8> unk_9a2a829;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Quest>, 8> unk_6966598;

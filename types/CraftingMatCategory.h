@@ -1,6 +1,6 @@
 /**
- * Definition: t4dffd2e9
- * Hash: 4dffd2e9
+ * Definition: CraftingMatCategory
+ * Hash: 6a7c9e6e
  */
 
 #pragma once
@@ -10,9 +10,8 @@
 
 #pragma push(pack, 1)
 
-struct t4dffd2e9 : public ComplexRead {
+struct CraftingMatCategory : public ComplexRead {
   GBIDHeader tHeader;
-  DT_ENUM<DT_INT> eCategory;
 
   void read(const char* base, char* &ptr);
 };

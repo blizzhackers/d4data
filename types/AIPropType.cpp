@@ -1,11 +1,11 @@
 /**
- * Definition: t65341e8d
+ * Definition: AIPropType
  * Hash: 65341e8d
  */
 
-#include "t65341e8d.h"
+#include "AIPropType.h"
 
-void t65341e8d::read(const char* base, char* &ptr) {
+void AIPropType::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

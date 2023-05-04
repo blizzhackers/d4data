@@ -18,9 +18,9 @@ void RevealWorldMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_b4055da, base, current);
   current = ptr + 0x2c;
-  readData(&unk_845cf0b, base, current);
+  readData(&uKeyedDungeonTier, base, current);
   current = ptr + 0x34;
-  readData(&unk_66929d7, base, current);
+  readData(&arDungeonStates, base, current);
   current = ptr + 0xb4;
   readData(&unk_fc9049b, base, current);
   current = ptr + 0xb8;

@@ -8,7 +8,7 @@
 void t29aeb8aa::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_7316dbf, base, current);
+  readData(&gbidSpawnLocType, base, current);
   current = ptr + 0x4;
   readData(&unk_74acb9c, base, current);
   ptr += 0x100;

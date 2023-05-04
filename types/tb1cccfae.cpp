@@ -12,7 +12,7 @@ void tb1cccfae::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&arDungeons, base, current);
   current = ptr + 0x20;
-  readData(&unk_2431f29, base, current);
+  readData(&gbidHiddenCaches, base, current);
   current = ptr + 0x30;
   readData(&unk_3d8089d, base, current);
   current = ptr + 0x40;

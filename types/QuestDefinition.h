@@ -37,7 +37,7 @@ struct QuestDefinition : public ComplexRead {
   DT_INT unk_b89b77f;
   DT_INT unk_c18cabd;
   DT_ENUM<DT_INT> unk_79f6e17;
-  DT_GBID<0x3c> unk_f9c5be7;
+  DT_GBID<0x3c> gbidSubzoneModifierTag;
   DT_SNO<SnoGroup::SubZone> unk_6199257;
   DT_ENUM<DT_INT> unk_f322c3a;
   DT_ENUM<DT_INT> eBountyType;
@@ -60,7 +60,7 @@ struct QuestDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::World>> unk_b9ec208;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_2aa5f20;
   DT_VARIABLEARRAY<DT_GBID<0x2d>> unk_b43b442;
-  DT_GBID<0x39> unk_68d2b86;
+  DT_GBID<0x39> gbidSurveyType;
   DT_GBID<0x39> unk_b37e635;
   DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Item>> unk_af3a4c1;

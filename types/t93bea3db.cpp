@@ -28,6 +28,6 @@ void t93bea3db::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_eddc1bd, base, current);
   current = ptr + 0x44;
-  readData(&unk_f9c5be7, base, current);
+  readData(&gbidSubzoneModifierTag, base, current);
   ptr += 0x48;
 }

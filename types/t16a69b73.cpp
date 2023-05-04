@@ -12,6 +12,6 @@ void t16a69b73::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&tSNOName, base, current);
   current = ptr + 0x18;
-  readData(&unk_68d2b86, base, current);
+  readData(&gbidSurveyType, base, current);
   ptr += 0x1c;
 }

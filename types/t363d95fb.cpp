@@ -10,7 +10,7 @@ void t363d95fb::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_f9c5be7, base, current);
+  readData(&gbidSubzoneModifierTag, base, current);
   current = ptr + 0x14;
   readData(&snoSubzone, base, current);
   current = ptr + 0x18;

@@ -50,7 +50,7 @@ struct t7fcde1a0 : public ComplexRead {
   DT_UINT dwPad;
   DT_SNO<SnoGroup::TreasureClass> snoTreasureClass;
   DT_INT nXPTier;
-  DT_GBID<0x1c> unk_65f1ff6;
+  DT_GBID<0x1c> gbidHiddenCache;
 
   void read(const char* base, char* &ptr);
 };

@@ -1,11 +1,11 @@
 /**
- * Definition: t41e42840
+ * Definition: DemonSummoningQuestBucket
  * Hash: 41e42840
  */
 
-#include "t41e42840.h"
+#include "DemonSummoningQuestBucket.h"
 
-void t41e42840::read(const char* base, char* &ptr) {
+void DemonSummoningQuestBucket::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

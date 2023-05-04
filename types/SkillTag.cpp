@@ -1,11 +1,11 @@
 /**
- * Definition: tc2bc153b
+ * Definition: SkillTag
  * Hash: c2bc153b
  */
 
-#include "tc2bc153b.h"
+#include "SkillTag.h"
 
-void tc2bc153b::read(const char* base, char* &ptr) {
+void SkillTag::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

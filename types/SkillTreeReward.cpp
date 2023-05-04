@@ -1,11 +1,11 @@
 /**
- * Definition: tba05ef94
+ * Definition: SkillTreeReward
  * Hash: ba05ef94
  */
 
-#include "tba05ef94.h"
+#include "SkillTreeReward.h"
 
-void tba05ef94::read(const char* base, char* &ptr) {
+void SkillTreeReward::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

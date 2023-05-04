@@ -86,6 +86,6 @@ void t7fcde1a0::read(const char* base, char* &ptr) {
   current = ptr + 0xa4;
   readData(&nXPTier, base, current);
   current = ptr + 0xa8;
-  readData(&unk_65f1ff6, base, current);
+  readData(&gbidHiddenCache, base, current);
   ptr += 0xb0;
 }

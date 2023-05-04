@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct t7247d2c9 : public ComplexRead {
-  DT_VARIABLEARRAY<DT_GBID<0x14>> unk_d5f2612;
+  DT_VARIABLEARRAY<DT_GBID<0x14>> gbidSpawnLocTypes;
   PopGroupHandle unk_37aa815;
   DT_RANGE<DT_INT> unk_93e8f53;
   DT_FLOAT unk_919c515;

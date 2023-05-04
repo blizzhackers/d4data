@@ -6,14 +6,14 @@
 #pragma once
 
 #include "../types.h"
-#include "t4dffd2e9.h"
+#include "SpawnLocType.h"
 
 #pragma push(pack, 1)
 
 struct tca979bb0 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<t4dffd2e9> tEntries;
+  DT_VARIABLEARRAY<SpawnLocType> tEntries;
 
   void read(const char* base, char* &ptr);
 };

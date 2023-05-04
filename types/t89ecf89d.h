@@ -13,7 +13,7 @@
 
 struct t89ecf89d : public ComplexRead {
   DT_VARIABLEARRAY<AIBroadcast> unk_e5e7bd4;
-  DT_GBID<0x15> unk_a750be3;
+  DT_GBID<0x15> gbidAIPropType;
   DT_INT unk_af0baa5;
   DT_VARIABLEARRAY<t674e5442> unk_766f08;
 

@@ -1,19 +1,18 @@
 /**
- * Definition: t41e42840
- * Hash: 41e42840
+ * Definition: SpawnLocType
+ * Hash: 4dffd2e9
  */
 
 #pragma once
 
 #include "../types.h"
 #include "GBIDHeader.h"
-#include "t5a0f90a6.h"
 
 #pragma push(pack, 1)
 
-struct t41e42840 : public ComplexRead {
+struct SpawnLocType : public ComplexRead {
   GBIDHeader tHeader;
-  DT_VARIABLEARRAY<t5a0f90a6> arQuests;
+  DT_ENUM<DT_INT> eCategory;
 
   void read(const char* base, char* &ptr);
 };

@@ -1,5 +1,5 @@
 /**
- * Definition: t1ece15ea
+ * Definition: DynamicMovementData
  * Hash: 1ece15ea
  */
 
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct t1ece15ea : public ComplexRead {
+struct DynamicMovementData : public ComplexRead {
   GBIDHeader tHeader;
   DT_RANGE<DT_INT> unk_e726cf1;
   DT_RANGE<DT_INT> unk_a1e03a6;

@@ -1,11 +1,11 @@
 /**
- * Definition: t2135ea8f
+ * Definition: WeaponExpertiseRank
  * Hash: 2135ea8f
  */
 
-#include "t2135ea8f.h"
+#include "WeaponExpertiseRank.h"
 
-void t2135ea8f::read(const char* base, char* &ptr) {
+void WeaponExpertiseRank::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_5ec4d3d, base, current);

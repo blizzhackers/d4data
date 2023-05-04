@@ -1,5 +1,5 @@
 /**
- * Definition: tba05ef94
+ * Definition: SkillTreeReward
  * Hash: ba05ef94
  */
 
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct tba05ef94 : public ComplexRead {
+struct SkillTreeReward : public ComplexRead {
   GBIDHeader tHeader;
   DT_ENUM<DT_INT> eType;
   DT_SNO<SnoGroup::Power> snoPower;

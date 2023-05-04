@@ -56,7 +56,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&unk_79f6e17, base, current);
   current = ptr + 0x80;
-  readData(&unk_f9c5be7, base, current);
+  readData(&gbidSubzoneModifierTag, base, current);
   current = ptr + 0x84;
   readData(&unk_6199257, base, current);
   current = ptr + 0x88;
@@ -102,7 +102,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x178;
   readData(&unk_b43b442, base, current);
   current = ptr + 0x188;
-  readData(&unk_68d2b86, base, current);
+  readData(&gbidSurveyType, base, current);
   current = ptr + 0x18c;
   readData(&unk_b37e635, base, current);
   current = ptr + 0x190;

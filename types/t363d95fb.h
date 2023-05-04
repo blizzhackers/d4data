@@ -12,7 +12,7 @@
 
 struct t363d95fb : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_GBID<0x3c> unk_f9c5be7;
+  DT_GBID<0x3c> gbidSubzoneModifierTag;
   DT_SNO<SnoGroup::SubZone> snoSubzone;
   DT_INT64 dwStartTime;
   DT_INT64 dwEndTime;

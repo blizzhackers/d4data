@@ -16,6 +16,6 @@ void td395e867::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&unk_9a2a829, base, current);
   current = ptr + 0x40;
-  readData(&unk_845cf0b, base, current);
+  readData(&uKeyedDungeonTier, base, current);
   ptr += 0x48;
 }

@@ -6,14 +6,14 @@
 #pragma once
 
 #include "../types.h"
-#include "t1ece15ea.h"
+#include "DynamicMovementData.h"
 
 #pragma push(pack, 1)
 
 struct t48c65b71 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<t1ece15ea> tEntries;
+  DT_VARIABLEARRAY<DynamicMovementData> tEntries;
 
   void read(const char* base, char* &ptr);
 };

@@ -8,7 +8,7 @@
 void t513b719a::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_5011647, base, current);
+  readData(&gbidDungeonState, base, current);
   current = ptr + 0x4;
   readData(&bNegate, base, current);
   ptr += 0x8;

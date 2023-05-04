@@ -1,11 +1,11 @@
 /**
- * Definition: t4dffd2e9
+ * Definition: SpawnLocType
  * Hash: 4dffd2e9
  */
 
-#include "t4dffd2e9.h"
+#include "SpawnLocType.h"
 
-void t4dffd2e9::read(const char* base, char* &ptr) {
+void SpawnLocType::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

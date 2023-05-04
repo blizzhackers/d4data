@@ -14,7 +14,7 @@ void tf65c4363::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&snoScript, base, current);
   current = ptr + 0x20;
-  readData(&unk_7316dbf, base, current);
+  readData(&gbidSpawnLocType, base, current);
   current = ptr + 0x28;
   readData(&arActorGroups, base, current);
   current = ptr + 0x38;

@@ -13,7 +13,7 @@
 struct tb1cccfae : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> arCamps;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::World>> arDungeons;
-  DT_VARIABLEARRAY<DT_GBID<0x1c>> unk_2431f29;
+  DT_VARIABLEARRAY<DT_GBID<0x1c>> gbidHiddenCaches;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_3d8089d;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arWaypoints;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::FogofWar>> arFogOfWar;

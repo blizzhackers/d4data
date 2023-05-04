@@ -8,6 +8,6 @@
 void ta967fc2::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_65f1ff6, base, current);
+  readData(&gbidHiddenCache, base, current);
   ptr += 0x4;
 }

@@ -42,7 +42,7 @@ void t2f81f05b::read(const char* base, char* &ptr) {
   current = ptr + 0x6c;
   readData(&snoOffHand, base, current);
   current = ptr + 0x70;
-  readData(&unk_dc98b4d, base, current);
+  readData(&tLevelScaling, base, current);
   current = ptr + 0x80;
   readData(&nGoldGranted, base, current);
   current = ptr + 0x84;

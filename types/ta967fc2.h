@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct ta967fc2 : public ComplexRead {
-  DT_GBID<0x1c> unk_65f1ff6;
+  DT_GBID<0x1c> gbidHiddenCache;
 
   void read(const char* base, char* &ptr);
 };

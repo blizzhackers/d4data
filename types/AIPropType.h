@@ -1,5 +1,5 @@
 /**
- * Definition: t65341e8d
+ * Definition: AIPropType
  * Hash: 65341e8d
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct t65341e8d : public ComplexRead {
+struct AIPropType : public ComplexRead {
   GBIDHeader tHeader;
   DT_VARIABLEARRAY<t674e5442> unk_766f08;
 

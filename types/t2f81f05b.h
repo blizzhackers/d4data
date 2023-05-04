@@ -32,7 +32,7 @@ struct t2f81f05b : public ComplexRead {
   DT_ENUM<DT_INT> eBaseElement;
   DT_SNO<SnoGroup::ItemType> snoMainHand;
   DT_SNO<SnoGroup::ItemType> snoOffHand;
-  t8874f713 unk_dc98b4d;
+  t8874f713 tLevelScaling;
   DT_INT nGoldGranted;
   DT_SNO<SnoGroup::TreasureClass> snoTreasureClass;
   DT_SNO<SnoGroup::TreasureClass> unk_fe8fc24;

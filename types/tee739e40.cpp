@@ -8,7 +8,7 @@
 void tee739e40::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_b15b511, base, current);
+  readData(&gbidSkillTag, base, current);
   current = ptr + 0x4;
   readData(&unk_cd99c1a, base, current);
   ptr += 0x8;

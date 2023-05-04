@@ -6,14 +6,14 @@
 #pragma once
 
 #include "../types.h"
-#include "td2f29025.h"
+#include "SchedulerGlobalUniqueCategory.h"
 
 #pragma push(pack, 1)
 
 struct t868a55ec : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<td2f29025> tEntries;
+  DT_VARIABLEARRAY<SchedulerGlobalUniqueCategory> tEntries;
 
   void read(const char* base, char* &ptr);
 };

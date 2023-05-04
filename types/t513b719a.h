@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t513b719a : public ComplexRead {
-  DT_GBID<0x1f> unk_5011647;
+  DT_GBID<0x1f> gbidDungeonState;
   DT_INT bNegate;
 
   void read(const char* base, char* &ptr);

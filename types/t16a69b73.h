@@ -13,7 +13,7 @@
 struct t16a69b73 : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_SNO_NAME tSNOName;
-  DT_GBID<0x39> unk_68d2b86;
+  DT_GBID<0x39> gbidSurveyType;
 
   void read(const char* base, char* &ptr);
 };

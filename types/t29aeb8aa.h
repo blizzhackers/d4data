@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct t29aeb8aa : public ComplexRead {
-  DT_GBID<0x14> unk_7316dbf;
+  DT_GBID<0x14> gbidSpawnLocType;
   DT_FIXEDARRAY<te730cffb, 9> unk_74acb9c;
 
   void read(const char* base, char* &ptr);

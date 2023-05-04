@@ -1,11 +1,11 @@
 /**
- * Definition: t47f33ce2
+ * Definition: WeaponExpertiseRanks
  * Hash: 47f33ce2
  */
 
-#include "t47f33ce2.h"
+#include "WeaponExpertiseRanks.h"
 
-void t47f33ce2::read(const char* base, char* &ptr) {
+void WeaponExpertiseRanks::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

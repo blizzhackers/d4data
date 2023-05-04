@@ -21,7 +21,7 @@ struct t93bea3db : public ComplexRead {
   DT_INT64 dwStartTime;
   DT_INT64 dwEndTime;
   DT_UINT unk_eddc1bd;
-  DT_GBID<0x3c> unk_f9c5be7;
+  DT_GBID<0x3c> gbidSubzoneModifierTag;
 
   void read(const char* base, char* &ptr);
 };

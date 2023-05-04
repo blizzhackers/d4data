@@ -1,5 +1,5 @@
 /**
- * Definition: tc2bc153b
+ * Definition: SkillTag
  * Hash: c2bc153b
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct tc2bc153b : public ComplexRead {
+struct SkillTag : public ComplexRead {
   GBIDHeader tHeader;
   DT_UINT dwTypes;
   DT_ENUM<DT_INT> ePlayerClass;

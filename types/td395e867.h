@@ -15,7 +15,7 @@ struct td395e867 : public ComplexRead {
   DT_ACD_NETWORK_NAME ann;
   DT_SNO<SnoGroup::World> snoWorld;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::DungeonAffix>, 8> unk_9a2a829;
-  DT_OPTIONAL<DT_INT> unk_845cf0b;
+  DT_OPTIONAL<DT_INT> uKeyedDungeonTier;
 
   void read(const char* base, char* &ptr);
 };
