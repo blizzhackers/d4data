@@ -12,7 +12,7 @@ void tccb90a07::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_26b74cf, base, current);
   current = ptr + 0x8;
-  readData(&unk_fb8fc89, base, current);
+  readData(&tBaseData, base, current);
   current = ptr + 0x18;
   readData(&tSlots, base, current);
   ptr += 0x20;

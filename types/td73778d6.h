@@ -7,14 +7,14 @@
 
 #include "../types.h"
 #include "AttributeSpecifier.h"
-#include "t8874f713.h"
+#include "LevelScalingData.h"
 
 #pragma push(pack, 1)
 
 struct td73778d6 : public ComplexRead {
   DT_UINT dwUnlockLevel;
   DT_VARIABLEARRAY<AttributeSpecifier> unk_2281d38;
-  t8874f713 unk_32f5f87;
+  LevelScalingData tLevelScalingData;
   DT_INT unk_2bca372;
   DT_INT unk_b1d243f;
   DT_INT unk_a4f6399;

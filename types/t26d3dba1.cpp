@@ -8,6 +8,6 @@
 void t26d3dba1::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_461a1f4, base, current);
+  readData(&arConditionData, base, current);
   ptr += 0x10;
 }

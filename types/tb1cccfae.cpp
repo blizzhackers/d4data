@@ -20,6 +20,6 @@ void tb1cccfae::read(const char* base, char* &ptr) {
   current = ptr + 0x50;
   readData(&arFogOfWar, base, current);
   current = ptr + 0x60;
-  readData(&unk_e89c432, base, current);
+  readData(&arRewardData, base, current);
   ptr += 0x150;
 }

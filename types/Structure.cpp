@@ -14,9 +14,9 @@ void Structure::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&ptChunks, base, current);
   current = ptr + 0x30;
-  readData(&unk_5c313ac, base, current);
+  readData(&ptSceneData, base, current);
   current = ptr + 0x40;
-  readData(&unk_e5e0262, base, current);
+  readData(&ptBoneData, base, current);
   current = ptr + 0x50;
   readData(&dwFlags, base, current);
   current = ptr + 0x54;

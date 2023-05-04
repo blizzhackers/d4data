@@ -7,11 +7,11 @@
 
 #include "../types.h"
 #include "AABB.h"
+#include "BoneData.h"
 #include "CollisionCapsule.h"
 #include "CollisionMesh.h"
+#include "SceneData.h"
 #include "Sphere.h"
-#include "t515b4f7e.h"
-#include "t886a0448.h"
 #include "tece011d4.h"
 
 #pragma push(pack, 1)
@@ -20,8 +20,8 @@ struct Structure : public ComplexRead {
   DT_VARIABLEARRAY<CollisionMesh> ptCollisionMeshes;
   DT_VARIABLEARRAY<CollisionCapsule> ptCollisionCapsules;
   DT_VARIABLEARRAY<tece011d4> ptChunks;
-  DT_VARIABLEARRAY<t886a0448> unk_5c313ac;
-  DT_VARIABLEARRAY<t515b4f7e> unk_e5e0262;
+  DT_VARIABLEARRAY<SceneData> ptSceneData;
+  DT_VARIABLEARRAY<BoneData> ptBoneData;
   DT_UINT dwFlags;
   DT_FLOAT unk_6bd8898;
   Sphere wsBounds;

@@ -44,7 +44,7 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x84;
   readData(&unk_7b1fc5b, base, current);
   current = ptr + 0x88;
-  readData(&unk_42b26d6, base, current);
+  readData(&tFacingData, base, current);
   current = ptr + 0x94;
   readData(&flAttributesCritPercentBase, base, current);
   current = ptr + 0x98;

@@ -29,7 +29,7 @@ struct tf4bf699c : public ComplexRead {
   DT_SNO<SnoGroup::EffectGroup> unk_18353a0;
   DT_SNO<SnoGroup::EffectGroup> unk_11a3492;
   DT_SNO<SnoGroup::EffectGroup> unk_3e0941e;
-  t9ecf50e7 unk_cd17f15;
+  t9ecf50e7 tConditionData;
   DT_SNO<SnoGroup::Power> unk_bfad8a9;
   DT_SNO<SnoGroup::Power> unk_1552d4d;
   DT_SNO<SnoGroup::Power> unk_2cf2865;

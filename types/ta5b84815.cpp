@@ -34,7 +34,7 @@ void ta5b84815::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&ptServerData, base, current);
   current = ptr + 0x48;
-  readData(&lCriteriaIds, base, current);
+  readData(&ptMonsterActorData, base, current);
   current = ptr + 0x58;
   readData(&unk_9e1a23d, base, current);
   current = ptr + 0x68;

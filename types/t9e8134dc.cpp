@@ -10,6 +10,6 @@ void t9e8134dc::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&szBoneName, base, current);
   current = ptr + 0x8;
-  readData(&unk_bee8487, base, current);
+  readData(&ptOffsetList, base, current);
   ptr += 0x18;
 }

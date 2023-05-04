@@ -12,7 +12,7 @@
 
 struct t9e8134dc : public ComplexRead {
   DT_UINT szBoneName;
-  DT_VARIABLEARRAY<PRTransform> unk_bee8487;
+  DT_VARIABLEARRAY<PRTransform> ptOffsetList;
 
   void read(const char* base, char* &ptr);
 };

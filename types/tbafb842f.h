@@ -39,7 +39,7 @@ struct tbafb842f : public ComplexRead {
   DT_FLOAT unk_fbee832;
   DT_GBID<0x22> unk_39a9625;
   DT_GBID<0x22> unk_194112d;
-  t2900af1b unk_42b26d6;
+  t2900af1b tFacingData;
   DT_SNO<SnoGroup::Power> snoSummonPower;
   DT_SNO<SnoGroup::Power> unk_f73b6d9;
   DT_SNO<SnoGroup::EffectGroup> unk_c2cc767;

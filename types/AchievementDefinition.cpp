@@ -22,7 +22,7 @@ void AchievementDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_8b76c22, base, current);
   current = ptr + 0x30;
-  readData(&unk_e8e4934, base, current);
+  readData(&arRewardList, base, current);
   current = ptr + 0x40;
   readData(&unk_da26abf, base, current);
   current = ptr + 0x58;

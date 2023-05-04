@@ -12,7 +12,7 @@ void td73778d6::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_2281d38, base, current);
   current = ptr + 0x18;
-  readData(&unk_32f5f87, base, current);
+  readData(&tLevelScalingData, base, current);
   current = ptr + 0x28;
   readData(&unk_2bca372, base, current);
   current = ptr + 0x2c;

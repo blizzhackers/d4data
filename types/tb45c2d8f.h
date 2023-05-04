@@ -7,14 +7,14 @@
 
 #include "../types.h"
 #include "RequiredMessageHeader.h"
-#include "tc80e1187.h"
+#include "TransmogSlotData.h"
 
 #pragma push(pack, 1)
 
 struct tb45c2d8f : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_INT unk_9de2896;
-  DT_FIXEDARRAY<tc80e1187, 16> arTransmogs;
+  DT_FIXEDARRAY<TransmogSlotData, 16> arTransmogs;
 
   void read(const char* base, char* &ptr);
 };

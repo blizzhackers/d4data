@@ -28,7 +28,7 @@ void AnimPermutation::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&nBoneCount, base, current);
   current = ptr + 0x30;
-  readData(&unk_1689768, base, current);
+  readData(&ptPayloadData, base, current);
   current = ptr + 0x40;
   readData(&tPhaseName, base, current);
   current = ptr + 0x44;

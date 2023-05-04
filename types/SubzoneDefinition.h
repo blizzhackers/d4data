@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "LevelScalingData.h"
 #include "t4203ae2e.h"
-#include "t8874f713.h"
 
 #pragma push(pack, 1)
 
@@ -26,8 +26,8 @@ struct SubzoneDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::World>> unk_d75e3a6;
   DT_UINT dwFlags;
   DT_INT unk_35fc338;
-  DT_FIXEDARRAY<t8874f713, 4> unk_6f7f585;
-  t8874f713 unk_496a122;
+  DT_FIXEDARRAY<LevelScalingData, 4> unk_6f7f585;
+  LevelScalingData unk_496a122;
 
   void read(const char* base, char* &ptr);
 };

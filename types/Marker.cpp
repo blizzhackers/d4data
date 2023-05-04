@@ -24,7 +24,7 @@ void Marker::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&ptBase, base, current);
   current = ptr + 0x58;
-  readData(&unk_aaaca4b, base, current);
+  readData(&ptGroupData, base, current);
   current = ptr + 0x68;
   readData(&ptMarkerLinks, base, current);
   current = ptr + 0x78;

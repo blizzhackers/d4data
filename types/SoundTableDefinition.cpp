@@ -14,7 +14,7 @@ void SoundTableDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_e482608, base, current);
   current = ptr + 0x24;
-  readData(&unk_c0281ab, base, current);
+  readData(&tDefaultEntry, base, current);
   current = ptr + 0x40;
   readData(&ptPostprocessed, base, current);
   ptr += 0x48;

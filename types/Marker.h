@@ -23,7 +23,7 @@ struct Marker : public ComplexRead {
   DT_UINT unk_3e7936a;
   DT_VECTOR3D vecScale;
   DT_POLYMORPHIC_VARIABLEARRAY ptBase;
-  DT_VARIABLEARRAY<tc575fa49> unk_aaaca4b;
+  DT_VARIABLEARRAY<tc575fa49> ptGroupData;
   DT_VARIABLEARRAY<MarkerLink> ptMarkerLinks;
   DT_INT unk_c339f69;
   DT_UINT dwSeed;

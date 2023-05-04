@@ -22,7 +22,7 @@ struct AchievementDefinition : public ComplexRead {
   DT_UINT uFlags;
   DT_UINT unk_aa46967;
   DT_VARIABLEARRAY<CriteriaDefinition> unk_8b76c22;
-  DT_VARIABLEARRAY<RewardDefinition> unk_e8e4934;
+  DT_VARIABLEARRAY<RewardDefinition> arRewardList;
   t97f642a2 unk_da26abf;
   t602be163 unk_9c99920;
   tb560d7ec unk_17fe2c9;

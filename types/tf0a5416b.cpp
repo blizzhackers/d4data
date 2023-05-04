@@ -44,7 +44,7 @@ void tf0a5416b::read(const char* base, char* &ptr) {
   current = ptr + 0x50;
   readData(&unk_3e0941e, base, current);
   current = ptr + 0x54;
-  readData(&unk_cd17f15, base, current);
+  readData(&tConditionData, base, current);
   current = ptr + 0x58;
   readData(&unk_bfad8a9, base, current);
   current = ptr + 0x5c;

@@ -9,9 +9,9 @@
 #include "ActiveSkillSavedData.h"
 #include "HirelingSavedData.h"
 #include "HotbarButtonData.h"
+#include "SkillTreeNodeEntry.h"
 #include "TransmogSlot.h"
 #include "t30f99fc2.h"
-#include "t73808dc7.h"
 #include "t7bed253b.h"
 #include "t8c2bb16d.h"
 #include "t90de2b1e.h"
@@ -30,7 +30,7 @@ struct PlayerSavedData : public ComplexRead {
   DT_FIXEDARRAY<t8c2bb16d, 6> unk_faa8327;
   t7bed253b unk_68ce6c8;
   DT_FIXEDARRAY<tfeacdb4e, 50> unk_a609782;
-  DT_FIXEDARRAY<t73808dc7, 128> unk_9a1fb9a;
+  DT_FIXEDARRAY<SkillTreeNodeEntry, 128> unk_9a1fb9a;
   DT_UINT unk_4968c70;
   DT_INT unk_a048c51;
   DT_FIXEDARRAY<TransmogSlot, 15> arTransmogSlots;

@@ -14,7 +14,7 @@
 struct tccb90a07 : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActor;
   DT_SNO<SnoGroup::Actor> unk_26b74cf;
-  tf5c4e3ed unk_fb8fc89;
+  tf5c4e3ed tBaseData;
   tb42131c6 tSlots;
 
   void read(const char* base, char* &ptr);

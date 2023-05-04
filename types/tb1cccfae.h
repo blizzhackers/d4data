@@ -17,7 +17,7 @@ struct tb1cccfae : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_3d8089d;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arWaypoints;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::FogofWar>> arFogOfWar;
-  DT_FIXEDARRAY<ta1e2d5ab, 5> unk_e89c432;
+  DT_FIXEDARRAY<ta1e2d5ab, 5> arRewardData;
 
   void read(const char* base, char* &ptr);
 };

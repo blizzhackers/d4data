@@ -27,7 +27,7 @@ struct AnimPermutation : public ComplexRead {
   DT_UINT dwWeight;
   DT_RANGE<DT_INT> unk_f2bdc14;
   DT_INT nBoneCount;
-  DT_VARIABLEARRAY<t89e36869> unk_1689768;
+  DT_VARIABLEARRAY<t89e36869> ptPayloadData;
   DT_UINT tPhaseName;
   DT_ENUM<DT_INT> unk_57e56e2;
   DT_FIXEDARRAY<te050809c, 4> unk_3d9dbd;

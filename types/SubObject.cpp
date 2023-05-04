@@ -12,7 +12,7 @@ void SubObject::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_334eb2d, base, current);
   current = ptr + 0x8;
-  readData(&unk_c481c58, base, current);
+  readData(&ptClothData, base, current);
   current = ptr + 0x18;
   readData(&unk_26f39c1, base, current);
   current = ptr + 0x28;

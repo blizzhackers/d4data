@@ -62,7 +62,7 @@ void tbafb842f::read(const char* base, char* &ptr) {
   current = ptr + 0x88;
   readData(&unk_194112d, base, current);
   current = ptr + 0x8c;
-  readData(&unk_42b26d6, base, current);
+  readData(&tFacingData, base, current);
   current = ptr + 0x98;
   readData(&snoSummonPower, base, current);
   current = ptr + 0x9c;

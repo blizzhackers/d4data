@@ -6,14 +6,14 @@
 #pragma once
 
 #include "../types.h"
-#include "tdd48bb68.h"
+#include "KeyedDungeonTierEntry.h"
 
 #pragma push(pack, 1)
 
 struct ta712a76f : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<tdd48bb68> tEntries;
+  DT_VARIABLEARRAY<KeyedDungeonTierEntry> tEntries;
 
   void read(const char* base, char* &ptr);
 };
