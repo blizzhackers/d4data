@@ -1,5 +1,5 @@
 /**
- * Definition: SkillNodeMaybe
+ * Definition: SkillTreeNode
  * Hash: 7d759f95
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct SkillNodeMaybe : public ComplexRead {
+struct SkillTreeNode : public ComplexRead {
   DT_UINT dwID;
   DT_GBID<0x2b> gbidReward;
   DT_INT unk_6536340;

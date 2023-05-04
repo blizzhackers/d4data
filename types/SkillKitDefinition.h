@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "ActiveSkillEntry.h"
-#include "SkillNodeMaybe.h"
+#include "SkillTreeNode.h"
 #include "te2a05745.h"
 
 #pragma push(pack, 1)
@@ -15,7 +15,7 @@
 struct SkillKitDefinition : public ComplexRead {
   DT_VARIABLEARRAY<ActiveSkillEntry> arActiveSkillEntries;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Power>> unk_a6a18af;
-  DT_VARIABLEARRAY<SkillNodeMaybe> arNodes;
+  DT_VARIABLEARRAY<SkillTreeNode> arNodes;
   DT_VARIABLEARRAY<te2a05745> arConnections;
   DT_UINT dwNextID;
   DT_VECTOR2D vViewboxMinMaybe;

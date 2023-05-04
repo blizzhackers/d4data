@@ -1,11 +1,11 @@
 /**
- * Definition: SkillNodeMaybe
+ * Definition: SkillTreeNode
  * Hash: 7d759f95
  */
 
-#include "SkillNodeMaybe.h"
+#include "SkillTreeNode.h"
 
-void SkillNodeMaybe::read(const char* base, char* &ptr) {
+void SkillTreeNode::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&dwID, base, current);
