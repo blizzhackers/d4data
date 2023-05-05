@@ -1,11 +1,11 @@
 /**
- * Definition: ta8824316
+ * Definition: AnimTreeNodeBase
  * Hash: a8824316
  */
 
-#include "ta8824316.h"
+#include "AnimTreeNodeBase.h"
 
-void ta8824316::read(const char* base, char* &ptr) {
+void AnimTreeNodeBase::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

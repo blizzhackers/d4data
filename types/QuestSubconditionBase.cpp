@@ -1,11 +1,11 @@
 /**
- * Definition: tbae7843e
+ * Definition: QuestSubconditionBase
  * Hash: bae7843e
  */
 
-#include "tbae7843e.h"
+#include "QuestSubconditionBase.h"
 
-void tbae7843e::read(const char* base, char* &ptr) {
+void QuestSubconditionBase::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

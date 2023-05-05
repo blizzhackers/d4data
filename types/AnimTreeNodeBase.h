@@ -1,5 +1,5 @@
 /**
- * Definition: ta8824316
+ * Definition: AnimTreeNodeBase
  * Hash: a8824316
  */
 
@@ -12,7 +12,7 @@
 
 #pragma push(pack, 1)
 
-struct ta8824316 : public ComplexRead {
+struct AnimTreeNodeBase : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_UINT dwID;

@@ -351,37 +351,17 @@ struct DT_STRING_FORMULA : public ComplexRead {
 };
 
 struct DT_POLYMORPHIC_VARIABLEARRAY : public ComplexRead {
-  uint32_t unk_a;
-  uint32_t unk_b;
-  int32_t offset;
-  int32_t size;
-  uint32_t typeHash;
-
-  void read(const char *base, char* &ptr) {
     struct {
       uint32_t unk_a;
       uint32_t unk_b;
       int32_t offset;
       int32_t size;
-      uint32_t unk_c;
+      uint32_t count;
       uint32_t unk_d;
     } raw;
 
-    struct {
-      uint32_t padding[2];
-      uint32_t dwType;
-      uint32_t dwPad;
-    } typeInfo;
-
+  void read(const char *base, char* &ptr) {
     readData(&raw, base, ptr);
-    char *target = (char *)base + raw.offset;
-    readData(&unk_a, target, target);
-    readData(&unk_b, target, target);
-    readData(&typeInfo, target, target);
-
-    offset = raw.offset + sizeof(unk_a) + sizeof(unk_b);
-    size = raw.size - sizeof(unk_a) - sizeof(unk_b);
-    typeHash = typeInfo.dwType;
   }
 };
 
@@ -414,7 +394,7 @@ struct DT_RGBACOLOR {
 };
 
 struct DT_RGBACOLORVALUE {
-  DT_UINT r, g, b, a;
+  float r, g, b, a;
 };
 
 template <class T>
@@ -494,12 +474,11 @@ struct D4File {
   }
 
   template <class RT>
-  RT read(uint32_t offset) {
-    RT ret;
+  uint32_t read(RT *ret, uint32_t offset) {
     const char *base = data.c_str() + 16;
     char *ptr = (char *)data.c_str() + 16 + offset;
-    readData(&ret, base, ptr);
-    return ret;
+    readData(ret, base, ptr);
+    return ptr - base;
   }
 };
 

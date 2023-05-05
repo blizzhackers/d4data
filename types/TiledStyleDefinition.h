@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tc5a830ec.h"
+#include "WindowPiecesBase.h"
 
 #pragma push(pack, 1)
 

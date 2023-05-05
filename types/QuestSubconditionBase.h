@@ -1,5 +1,5 @@
 /**
- * Definition: tbae7843e
+ * Definition: QuestSubconditionBase
  * Hash: bae7843e
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct tbae7843e : public ComplexRead {
+struct QuestSubconditionBase : public ComplexRead {
   DT_UINT dwType;
   DT_INT bNegate;
   DT_SNO<SnoGroup::Quest> snoQuest;
