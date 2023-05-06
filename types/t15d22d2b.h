@@ -6,6 +6,7 @@
 #pragma once
 
 #include "../types.h"
+#include "ActorEffectData.h"
 #include "AssetList.h"
 #include "StartLocationName.h"
 #include "t14a42c17.h"
@@ -18,7 +19,6 @@
 #include "tb9be6132.h"
 #include "td73778d6.h"
 #include "tdff70e83.h"
-#include "te3835e40.h"
 
 #pragma push(pack, 1)
 
@@ -452,7 +452,7 @@ struct t15d22d2b : public ComplexRead {
   DT_FLOAT unk_56d4995;
   DT_FIXEDARRAY<DT_INT64, 28> unk_3f91785;
   t3b00e8b9 unk_606852d;
-  DT_VARIABLEARRAY<te3835e40> unk_bf59715;
+  DT_VARIABLEARRAY<ActorEffectData> unk_bf59715;
   DT_FLOAT unk_2bb7f27;
   DT_FLOAT unk_50c5dba;
   DT_FLOAT unk_a19cbf3;

@@ -7,33 +7,33 @@
 
 #include "../types.h"
 #include "AABB.h"
+#include "ActorAIData.h"
+#include "ActorBrainData.h"
 #include "ActorCollisionData.h"
+#include "ActorCombatData.h"
+#include "ActorCritterData.h"
+#include "ActorDeathData.h"
+#include "ActorEffectData.h"
+#include "ActorGizmoData.h"
+#include "ActorItemData.h"
 #include "ActorMonsterData.h"
+#include "ActorMountData.h"
+#include "ActorMovingData.h"
+#include "ActorNPCData.h"
+#include "ActorPlayerData.h"
+#include "ActorProjectileData.h"
+#include "ActorPropData.h"
+#include "ActorServerData.h"
+#include "ActorUIData.h"
+#include "ActorVOData.h"
 #include "AxialCylinder.h"
 #include "LookLink.h"
 #include "MsgTriggeredEvent.h"
 #include "Sphere.h"
-#include "t1bdec104.h"
-#include "t2cfba1c3.h"
-#include "t35abf7a0.h"
-#include "t3c856b06.h"
 #include "t4174a154.h"
-#include "t4a3fc7b4.h"
 #include "t514e1e36.h"
-#include "t56dd8f42.h"
-#include "t76435459.h"
-#include "t7e01ffa9.h"
-#include "t89ecf89d.h"
 #include "t9f99b084.h"
-#include "tabd62f10.h"
 #include "tb2f69ab5.h"
-#include "tb8942531.h"
-#include "tbb55e0d8.h"
-#include "tc072f0f4.h"
-#include "tdbd500aa.h"
-#include "te3835e40.h"
-#include "tf04ef15f.h"
-#include "tf32c2fd9.h"
 
 #pragma push(pack, 1)
 
@@ -73,23 +73,23 @@ struct ActorDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_8fbba9b;
   DT_POLYMORPHIC_VARIABLEARRAY ptGizmoData;
   DT_VARIABLEARRAY<ActorMonsterData> ptMonsterData;
-  DT_VARIABLEARRAY<tabd62f10> ptCritterData;
-  DT_VARIABLEARRAY<t35abf7a0> ptPlayerData;
-  DT_VARIABLEARRAY<t56dd8f42> ptItemData;
-  DT_VARIABLEARRAY<t7e01ffa9> ptCombatData;
-  DT_VARIABLEARRAY<tf32c2fd9> ptDeathData;
-  DT_VARIABLEARRAY<te3835e40> ptEffectData;
-  DT_VARIABLEARRAY<t1bdec104> ptProjData;
-  DT_VARIABLEARRAY<t4a3fc7b4> ptPropData;
-  DT_VARIABLEARRAY<t2cfba1c3> ptMovingData;
-  DT_VARIABLEARRAY<tf04ef15f> ptBrainData;
-  DT_VARIABLEARRAY<tdbd500aa> ptServerData;
-  DT_VARIABLEARRAY<tb8942531> ptUIData;
-  DT_VARIABLEARRAY<t89ecf89d> ptAIData;
-  DT_VARIABLEARRAY<tbb55e0d8> ptVOData;
-  DT_VARIABLEARRAY<tc072f0f4> ptNPCData;
+  DT_VARIABLEARRAY<ActorCritterData> ptCritterData;
+  DT_VARIABLEARRAY<ActorPlayerData> ptPlayerData;
+  DT_VARIABLEARRAY<ActorItemData> ptItemData;
+  DT_VARIABLEARRAY<ActorCombatData> ptCombatData;
+  DT_VARIABLEARRAY<ActorDeathData> ptDeathData;
+  DT_VARIABLEARRAY<ActorEffectData> ptEffectData;
+  DT_VARIABLEARRAY<ActorProjectileData> ptProjData;
+  DT_VARIABLEARRAY<ActorPropData> ptPropData;
+  DT_VARIABLEARRAY<ActorMovingData> ptMovingData;
+  DT_VARIABLEARRAY<ActorBrainData> ptBrainData;
+  DT_VARIABLEARRAY<ActorServerData> ptServerData;
+  DT_VARIABLEARRAY<ActorUIData> ptUIData;
+  DT_VARIABLEARRAY<ActorAIData> ptAIData;
+  DT_VARIABLEARRAY<ActorVOData> ptVOData;
+  DT_VARIABLEARRAY<ActorNPCData> ptNPCData;
   DT_VARIABLEARRAY<t9f99b084> unk_da0202f;
-  DT_VARIABLEARRAY<t3c856b06> ptMountData;
+  DT_VARIABLEARRAY<ActorMountData> ptMountData;
   DT_INT64 ptPostprocessed;
   DT_SNO<SnoGroup::MarkerSet> unk_2a84dc9;
   DT_FLOAT unk_d2b5e35;

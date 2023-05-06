@@ -30,7 +30,7 @@ struct ta5b84815 : public ComplexRead {
   DT_ENUM<DT_INT> unk_940ff8e;
   DT_VARIABLEARRAY<tb5a98293> ptServerData;
   DT_VARIABLEARRAY<t679c5c9d> ptMonsterActorData;
-  DT_VARIABLEARRAY<tce8080fb> unk_9e1a23d;
+  DT_VARIABLEARRAY<tce8080fb> ptActorGizmoData;
   DT_VARIABLEARRAY<t2bdcb856> unk_6a0a118;
   DT_VARIABLEARRAY<ted096762> unk_df84c5d;
   DT_ENUM<DT_INT> unk_ff96acb;
