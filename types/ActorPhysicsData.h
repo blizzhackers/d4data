@@ -1,5 +1,5 @@
 /**
- * Definition: t514e1e36
+ * Definition: ActorPhysicsData
  * Hash: 514e1e36
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t514e1e36 : public ComplexRead {
+struct ActorPhysicsData : public ComplexRead {
   DT_SNO<SnoGroup::Physics> snoPhysics;
   DT_SNO<SnoGroup::Physics> unk_49cf485;
   DT_ENUM<DT_INT> eMaterial;

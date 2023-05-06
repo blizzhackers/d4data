@@ -20,6 +20,7 @@
 #include "ActorMountData.h"
 #include "ActorMovingData.h"
 #include "ActorNPCData.h"
+#include "ActorPhysicsData.h"
 #include "ActorPlayerData.h"
 #include "ActorProjectileData.h"
 #include "ActorPropData.h"
@@ -32,7 +33,6 @@
 #include "MsgTriggeredEvent.h"
 #include "Sphere.h"
 #include "t4174a154.h"
-#include "t514e1e36.h"
 #include "tb2f69ab5.h"
 
 #pragma push(pack, 1)
@@ -67,7 +67,7 @@ struct ActorDefinition : public ComplexRead {
   DT_FLOAT unk_9d78021;
   DT_ENUM<DT_INT> eTopology;
   DT_VARIABLEARRAY<MsgTriggeredEvent> ptMsgTriggeredEvents;
-  DT_VARIABLEARRAY<t514e1e36> ptPhysData;
+  DT_VARIABLEARRAY<ActorPhysicsData> ptPhysData;
   DT_VARIABLEARRAY<ActorCollisionData> ptCollData;
   DT_ENUM<DT_INT> unk_17acd26;
   DT_ENUM<DT_INT> unk_8fbba9b;

@@ -1,11 +1,11 @@
 /**
- * Definition: t514e1e36
+ * Definition: ActorPhysicsData
  * Hash: 514e1e36
  */
 
-#include "t514e1e36.h"
+#include "ActorPhysicsData.h"
 
-void t514e1e36::read(const char* base, char* &ptr) {
+void ActorPhysicsData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&snoPhysics, base, current);
