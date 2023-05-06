@@ -6,6 +6,7 @@
 #pragma once
 
 #include "../types.h"
+#include "GizmoConditionData.h"
 #include "t104e4efd.h"
 #include "t1121a259.h"
 #include "t23a7215d.h"
@@ -17,7 +18,6 @@
 #include "t7b11e164.h"
 #include "t8d3deb43.h"
 #include "t8ecad956.h"
-#include "t9ecf50e7.h"
 #include "ta967fc2.h"
 #include "tb2ef091a.h"
 #include "tbf0c5b22.h"
@@ -41,7 +41,7 @@ struct tce8080fb : public ComplexRead {
   DT_VARIABLEARRAY<t478eb43b> unk_542a67d;
   DT_POLYMORPHIC_VARIABLEARRAY ptProxData;
   DT_VARIABLEARRAY<t8d3deb43> unk_604a84d;
-  DT_VARIABLEARRAY<t9ecf50e7> unk_2e9f0cb;
+  DT_VARIABLEARRAY<GizmoConditionData> ptGizmoConditionData;
   DT_VARIABLEARRAY<t23a7215d> unk_b15bdc1;
   DT_VARIABLEARRAY<t7324c6f7> unk_ebfdb39;
   DT_VARIABLEARRAY<t104e4efd> unk_e4c00ff;

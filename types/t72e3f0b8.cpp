@@ -34,7 +34,7 @@ void t72e3f0b8::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_ba8fd29, base, current);
   current = ptr + 0x3c;
-  readData(&unk_e17307d, base, current);
+  readData(&snoGizmoCondition, base, current);
   current = ptr + 0x40;
   readData(&unk_8acbebf, base, current);
   current = ptr + 0x44;

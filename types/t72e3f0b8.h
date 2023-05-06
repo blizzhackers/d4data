@@ -23,7 +23,7 @@ struct t72e3f0b8 : public ComplexRead {
   DT_ENUM<DT_INT> unk_720f501;
   DT_SNO<SnoGroup::LevelArea> unk_268c683;
   DT_SNO<SnoGroup::Condition> unk_ba8fd29;
-  DT_SNO<SnoGroup::Condition> unk_e17307d;
+  DT_SNO<SnoGroup::Condition> snoGizmoCondition;
   DT_SNO<SnoGroup::Quest> unk_8acbebf;
   DT_SNO<SnoGroup::Item> unk_8755612;
   DT_SNO<SnoGroup::TrackedReward> unk_4908570;

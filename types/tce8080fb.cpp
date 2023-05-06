@@ -34,7 +34,7 @@ void tce8080fb::read(const char* base, char* &ptr) {
   current = ptr + 0xc8;
   readData(&unk_604a84d, base, current);
   current = ptr + 0xd8;
-  readData(&unk_2e9f0cb, base, current);
+  readData(&ptGizmoConditionData, base, current);
   current = ptr + 0xe8;
   readData(&unk_b15bdc1, base, current);
   current = ptr + 0xf8;
