@@ -1,11 +1,11 @@
 /**
- * Definition: t2900af1b
+ * Definition: ActorFacingData
  * Hash: 2900af1b
  */
 
-#include "t2900af1b.h"
+#include "ActorFacingData.h"
 
-void t2900af1b::read(const char* base, char* &ptr) {
+void ActorFacingData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_8746b6c, base, current);

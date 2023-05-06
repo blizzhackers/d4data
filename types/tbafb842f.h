@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "ActorFacingData.h"
 #include "MonsterAwarenessInfo.h"
-#include "t2900af1b.h"
 
 #pragma push(pack, 1)
 
@@ -39,7 +39,7 @@ struct tbafb842f : public ComplexRead {
   DT_FLOAT unk_fbee832;
   DT_GBID<0x22> unk_39a9625;
   DT_GBID<0x22> unk_194112d;
-  t2900af1b tFacingData;
+  ActorFacingData tFacingData;
   DT_SNO<SnoGroup::Power> snoSummonPower;
   DT_SNO<SnoGroup::Power> unk_f73b6d9;
   DT_SNO<SnoGroup::EffectGroup> unk_c2cc767;

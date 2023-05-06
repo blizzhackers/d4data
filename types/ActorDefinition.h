@@ -24,6 +24,7 @@
 #include "ActorProjectileData.h"
 #include "ActorPropData.h"
 #include "ActorServerData.h"
+#include "ActorSoundTableData.h"
 #include "ActorUIData.h"
 #include "ActorVOData.h"
 #include "AxialCylinder.h"
@@ -32,7 +33,6 @@
 #include "Sphere.h"
 #include "t4174a154.h"
 #include "t514e1e36.h"
-#include "t9f99b084.h"
 #include "tb2f69ab5.h"
 
 #pragma push(pack, 1)
@@ -88,7 +88,7 @@ struct ActorDefinition : public ComplexRead {
   DT_VARIABLEARRAY<ActorAIData> ptAIData;
   DT_VARIABLEARRAY<ActorVOData> ptVOData;
   DT_VARIABLEARRAY<ActorNPCData> ptNPCData;
-  DT_VARIABLEARRAY<t9f99b084> unk_da0202f;
+  DT_VARIABLEARRAY<ActorSoundTableData> ptSoundTableData;
   DT_VARIABLEARRAY<ActorMountData> ptMountData;
   DT_INT64 ptPostprocessed;
   DT_SNO<SnoGroup::MarkerSet> unk_2a84dc9;

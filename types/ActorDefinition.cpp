@@ -108,7 +108,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x230;
   readData(&ptNPCData, base, current);
   current = ptr + 0x240;
-  readData(&unk_da0202f, base, current);
+  readData(&ptSoundTableData, base, current);
   current = ptr + 0x250;
   readData(&ptMountData, base, current);
   current = ptr + 0x260;

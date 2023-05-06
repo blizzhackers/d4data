@@ -1,5 +1,5 @@
 /**
- * Definition: t2900af1b
+ * Definition: ActorFacingData
  * Hash: 2900af1b
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t2900af1b : public ComplexRead {
+struct ActorFacingData : public ComplexRead {
   DT_FLOAT unk_8746b6c;
   DT_FLOAT unk_69b0e21;
   DT_FLOAT unk_3d9b929;

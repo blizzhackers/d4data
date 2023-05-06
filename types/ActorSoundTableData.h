@@ -1,5 +1,5 @@
 /**
- * Definition: t9f99b084
+ * Definition: ActorSoundTableData
  * Hash: 9f99b084
  */
 
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct t9f99b084 : public ComplexRead {
+struct ActorSoundTableData : public ComplexRead {
   DT_UINT unk_a4a83b3;
   DT_INT unk_6190c70;
   DT_INT unk_fc3dcfc;

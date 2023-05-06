@@ -1,11 +1,11 @@
 /**
- * Definition: t9f99b084
+ * Definition: ActorSoundTableData
  * Hash: 9f99b084
  */
 
-#include "t9f99b084.h"
+#include "ActorSoundTableData.h"
 
-void t9f99b084::read(const char* base, char* &ptr) {
+void ActorSoundTableData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_a4a83b3, base, current);

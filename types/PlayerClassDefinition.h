@@ -6,10 +6,10 @@
 #pragma once
 
 #include "../types.h"
+#include "ActorFacingData.h"
 #include "ItemTier.h"
 #include "t1bcc547f.h"
 #include "t22ec1295.h"
-#include "t2900af1b.h"
 #include "t2b27b554.h"
 #include "t5c9de2d4.h"
 #include "t78eea585.h"
@@ -38,7 +38,7 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_FLOAT flAttributesRunSpeed;
   DT_FLOAT unk_4d59331;
   DT_FLOAT unk_7b1fc5b;
-  t2900af1b tFacingData;
+  ActorFacingData tFacingData;
   DT_FLOAT flAttributesCritPercentBase;
   DT_FLOAT unk_2ab0a5f;
   DT_FLOAT flAttributesResistFire;
