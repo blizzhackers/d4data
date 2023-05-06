@@ -30,7 +30,7 @@ void t3a911960::read(const char* base, char* &ptr) {
   current = ptr + 0x50;
   readData(&unk_bb3ab10, base, current);
   current = ptr + 0x58;
-  readData(&unk_b9196fb, base, current);
+  readData(&weights, base, current);
   current = ptr + 0x60;
   readData(&unk_999e338, base, current);
   current = ptr + 0x68;

@@ -11,7 +11,7 @@
 
 struct t1b611d12 : public ComplexRead {
   DT_INT64 m_id;
-  DT_ENUM<DT_INT> unk_3bdd3b1;
+  DT_ENUM<DT_INT> m_platform;
 
   void read(const char* base, char* &ptr);
 };

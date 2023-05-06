@@ -16,7 +16,7 @@ void tb76a31b5::read(const char* base, char* &ptr) {
   current = ptr + 0x60;
   readData(&m_normal, base, current);
   current = ptr + 0x70;
-  readData(&unk_2252ea1, base, current);
+  readData(&m_stiffness, base, current);
   current = ptr + 0x74;
   readData(&m_friction, base, current);
   current = ptr + 0x78;

@@ -4,7 +4,10 @@ const prefix = {
   'm_': 'm_',
 };
 
-const dict = {};
+const dict = {
+  'x': 'x',
+  'y': 'y',
+};
 
 let names = {};
 let newnames = {};
@@ -95,6 +98,19 @@ Object.keys(names).forEach(name => {
   matches.forEach(subname => {
     if (subname.length > 1 && !/^[^a-z]+$/gi.test(subname)) {
       newnames[subname] = names[name];
+    }
+  });
+});
+
+names = newnames;
+newnames = {};
+
+Object.keys(names).forEach(name => {
+  let matches = name.split(/([a-z]+[0-9]*)/g).filter(Boolean);
+
+  matches.forEach(subname => {
+    if (subname.length > 1 && !/^[^a-z]+$/gi.test(subname)) {
+      dict[subname] = names[name];
     }
   });
 });

@@ -10,7 +10,7 @@ void tda38fe05::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&localTransform, base, current);
   current = ptr + 0x20;
-  readData(&unk_9c026b5, base, current);
+  readData(&stiffness, base, current);
   current = ptr + 0x24;
   readData(&friction, base, current);
   current = ptr + 0x28;

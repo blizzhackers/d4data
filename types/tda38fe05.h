@@ -12,7 +12,7 @@
 
 struct tda38fe05 : public ComplexRead {
   t5f527528 localTransform;
-  DT_FLOAT unk_9c026b5;
+  DT_FLOAT stiffness;
   DT_FLOAT friction;
   DT_WORD boneIndex;
   DT_FIXEDARRAY<DT_WORD, 3> padding;

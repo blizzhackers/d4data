@@ -18,7 +18,7 @@ void t7fc234c1::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&height, base, current);
   current = ptr + 0x3c;
-  readData(&unk_9c026b5, base, current);
+  readData(&stiffness, base, current);
   current = ptr + 0x40;
   readData(&boneIndex, base, current);
   current = ptr + 0x42;

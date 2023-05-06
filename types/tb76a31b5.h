@@ -15,7 +15,7 @@ struct tb76a31b5 : public ComplexRead {
   t5f527528 m_transform2;
   t5f527528 m_localFrame;
   DT_VECTOR4D m_normal;
-  DT_FLOAT unk_2252ea1;
+  DT_FLOAT m_stiffness;
   DT_FLOAT m_friction;
   DT_WORD m_boneIndex;
   DT_FIXEDARRAY<DT_WORD, 3> m_padding;

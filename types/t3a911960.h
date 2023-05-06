@@ -21,7 +21,7 @@ struct t3a911960 : public ComplexRead {
   DT_INT64 unk_7cb2889;
   DT_INT64 unk_10ff14c;
   DT_INT64 unk_bb3ab10;
-  DT_INT64 unk_b9196fb;
+  DT_INT64 weights;
   DT_INT64 unk_999e338;
   DT_INT64 unk_bd72f29;
   DT_INT64 triangles;
