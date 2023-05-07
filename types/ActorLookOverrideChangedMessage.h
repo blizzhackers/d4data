@@ -16,7 +16,7 @@ struct ActorLookOverrideChangedMessage : public ComplexRead {
   DT_INT nChange;
   DT_UINT nLookOverrideHash;
   DT_INT unk_80b4365;
-  DT_INT unk_1b57083;
+  DT_INT bRenderArmor;
 
   void read(const char* base, char* &ptr);
 };

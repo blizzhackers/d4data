@@ -18,6 +18,6 @@ void ActorLookOverrideChangedMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_80b4365, base, current);
   current = ptr + 0x24;
-  readData(&unk_1b57083, base, current);
+  readData(&bRenderArmor, base, current);
   ptr += 0x28;
 }

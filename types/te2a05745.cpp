@@ -12,9 +12,9 @@ void te2a05745::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_8700a4e, base, current);
   current = ptr + 0x8;
-  readData(&unk_d0410f9, base, current);
+  readData(&dwSourceId, base, current);
   current = ptr + 0xc;
-  readData(&unk_1d93eca, base, current);
+  readData(&dwDestinationId, base, current);
   current = ptr + 0x10;
   readData(&unk_4555763, base, current);
   ptr += 0x20;

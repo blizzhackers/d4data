@@ -20,7 +20,7 @@ struct tcec837f6 : public ComplexRead {
   DT_INT unk_6a8ab2;
   DT_INT unk_5078500;
   DT_INT unk_128669f;
-  DT_FLOAT unk_1bb6ffe;
+  DT_FLOAT fAlignmentHeight;
   DT_POLYMORPHIC_VARIABLEARRAY arConditions;
   DT_INT bAnimated;
   DT_INT unk_3ee89a;

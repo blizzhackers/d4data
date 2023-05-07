@@ -12,7 +12,7 @@ void t273a9eee::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&eRestrictionType, base, current);
   current = ptr + 0x8;
-  readData(&unk_1d75793, base, current);
+  readData(&nCountActive, base, current);
   current = ptr + 0xc;
   readData(&unk_8497b9f, base, current);
   current = ptr + 0x10;

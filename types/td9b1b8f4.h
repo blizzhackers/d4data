@@ -54,7 +54,7 @@ struct td9b1b8f4 : public ComplexRead {
   DT_INT unk_82a430f;
   DT_INT unk_41a0826;
   DT_INT unk_af999c8;
-  DT_FLOAT unk_1df004a;
+  DT_FLOAT flOpenDuration;
   DT_FLOAT unk_6561d12;
   DT_FLOAT unk_1d7bcd2;
   DT_INT unk_e9859fe;

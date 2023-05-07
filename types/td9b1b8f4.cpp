@@ -92,7 +92,7 @@ void td9b1b8f4::read(const char* base, char* &ptr) {
   current = ptr + 0xd0;
   readData(&unk_af999c8, base, current);
   current = ptr + 0xd4;
-  readData(&unk_1df004a, base, current);
+  readData(&flOpenDuration, base, current);
   current = ptr + 0xd8;
   readData(&unk_6561d12, base, current);
   current = ptr + 0xdc;

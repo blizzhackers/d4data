@@ -28,7 +28,7 @@ void tcec837f6::read(const char* base, char* &ptr) {
   current = ptr + 0xb0;
   readData(&unk_128669f, base, current);
   current = ptr + 0xb4;
-  readData(&unk_1bb6ffe, base, current);
+  readData(&fAlignmentHeight, base, current);
   current = ptr + 0xb8;
   readData(&arConditions, base, current);
   current = ptr + 0xd0;

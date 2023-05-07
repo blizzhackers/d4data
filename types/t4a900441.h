@@ -12,7 +12,7 @@
 struct t4a900441 : public ComplexRead {
   DT_FLOAT unk_f4522ab;
   DT_FLOAT unk_d494c2d;
-  DT_FLOAT unk_1d532f6;
+  DT_FLOAT flAmplitudeRatio;
   DT_FLOAT unk_12070ce;
 
   void read(const char* base, char* &ptr);

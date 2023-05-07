@@ -16,7 +16,7 @@
 struct SceneData : public ComplexRead {
   DT_VARIABLEARRAY<te6694729> unk_1197220;
   DT_INT unk_b3a0ae7;
-  DT_VARIABLEARRAY<Octree> unk_1c11c0f;
+  DT_VARIABLEARRAY<Octree> ptSurfaceOctree;
   DT_VARIABLEARRAY<SurfaceGrid> ptSurfaceGrid;
   DT_VARIABLEARRAY<t65cf645d> unk_da9dcc1;
 

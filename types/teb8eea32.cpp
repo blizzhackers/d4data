@@ -20,6 +20,6 @@ void teb8eea32::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_f2a10c4, base, current);
   current = ptr + 0x24;
-  readData(&unk_1d44a06, base, current);
+  readData(&eOptionalRarity, base, current);
   ptr += 0x28;
 }

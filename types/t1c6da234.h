@@ -12,7 +12,7 @@
 struct t1c6da234 : public ComplexRead {
   DT_GBID<0x14> gbidSpawnLocType;
   DT_ENUM<DT_INT> eRestrictionType;
-  DT_INT unk_1d75793;
+  DT_INT nCountActive;
   DT_FLOAT unk_8497b9f;
   DT_FLOAT flDuration;
 

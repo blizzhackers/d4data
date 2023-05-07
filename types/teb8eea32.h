@@ -16,7 +16,7 @@ struct teb8eea32 : public ComplexRead {
   DT_SNO<SnoGroup::MonsterFamily> snoMonsterFamily;
   DT_UINT szArchetype;
   DT_UINT unk_f2a10c4;
-  DT_ENUM<DT_INT> unk_1d44a06;
+  DT_ENUM<DT_INT> eOptionalRarity;
 
   void read(const char* base, char* &ptr);
 };
