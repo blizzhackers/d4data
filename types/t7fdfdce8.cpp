@@ -74,7 +74,7 @@ void t7fdfdce8::read(const char* base, char* &ptr) {
   current = ptr + 0xd4;
   readData(&unk_e27112b, base, current);
   current = ptr + 0xd8;
-  readData(&unk_5b85276, base, current);
+  readData(&eOrientationMode, base, current);
   current = ptr + 0xdc;
   readData(&unk_daebe18, base, current);
   current = ptr + 0xe0;

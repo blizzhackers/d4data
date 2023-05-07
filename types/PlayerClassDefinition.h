@@ -36,7 +36,7 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_FLOAT unk_b34fba9;
   DT_FLOAT flAttributesWalkSpeed;
   DT_FLOAT flAttributesRunSpeed;
-  DT_FLOAT unk_4d59331;
+  DT_FLOAT flVelRule;
   DT_FLOAT unk_7b1fc5b;
   ActorFacingData tFacingData;
   DT_FLOAT flAttributesCritPercentBase;

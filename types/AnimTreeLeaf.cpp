@@ -26,7 +26,7 @@ void AnimTreeLeaf::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_4088987, base, current);
   current = ptr + 0x24;
-  readData(&unk_5d19bee, base, current);
+  readData(&eScaleMethod, base, current);
   current = ptr + 0x28;
   readData(&eUpdateMode, base, current);
   current = ptr + 0x2c;

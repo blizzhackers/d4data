@@ -62,7 +62,7 @@ void te7ddd2fd::read(const char* base, char* &ptr) {
   current = ptr + 0xb8;
   readData(&unk_e27112b, base, current);
   current = ptr + 0xbc;
-  readData(&unk_5b85276, base, current);
+  readData(&eOrientationMode, base, current);
   current = ptr + 0xc0;
   readData(&unk_cf03a43, base, current);
   current = ptr + 0xdc;

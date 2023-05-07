@@ -27,7 +27,7 @@ struct t4808f804 : public ComplexRead {
   DT_UINT dwPad;
   DT_UINT szCameraMarker;
   DT_INT unk_8f65c3f;
-  DT_ENUM<DT_INT> unk_5b85276;
+  DT_ENUM<DT_INT> eOrientationMode;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;
   HardpointLink unk_8470ffc;

@@ -12,7 +12,7 @@
 struct t51b6be94 : public ComplexRead {
   DT_VARIABLEARRAY<DT_INT> pBoneIDs;
   DT_INT nVertCount;
-  DT_INT unk_4e6be76;
+  DT_INT nVertOffset;
   DT_INT nIndexCount;
   DT_INT nIndexOffset;
 

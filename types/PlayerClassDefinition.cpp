@@ -40,7 +40,7 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&flAttributesRunSpeed, base, current);
   current = ptr + 0x80;
-  readData(&unk_4d59331, base, current);
+  readData(&flVelRule, base, current);
   current = ptr + 0x84;
   readData(&unk_7b1fc5b, base, current);
   current = ptr + 0x88;

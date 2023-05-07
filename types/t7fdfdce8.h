@@ -46,7 +46,7 @@ struct t7fdfdce8 : public ComplexRead {
   DT_FLOAT unk_215cc14;
   DT_INT unk_802b7b;
   DT_SNO<SnoGroup::Observer> unk_e27112b;
-  DT_ENUM<DT_INT> unk_5b85276;
+  DT_ENUM<DT_INT> eOrientationMode;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;
   HardpointLink unk_8470ffc;

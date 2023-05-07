@@ -19,7 +19,7 @@ struct AnimTreeLeaf : public ComplexRead {
   DT_INT nSyncGroupIndex;
   DT_INT bIsDisabled;
   DT_INT unk_4088987;
-  DT_ENUM<DT_INT> unk_5d19bee;
+  DT_ENUM<DT_INT> eScaleMethod;
   DT_ENUM<DT_INT> eUpdateMode;
   DT_ENUM<DT_INT> eBoneWeightSet;
   DT_ENUM<DT_INT> eAnimLayer;

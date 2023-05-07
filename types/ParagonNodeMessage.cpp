@@ -12,6 +12,6 @@ void ParagonNodeMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&dwNodeIndex, base, current);
   current = ptr + 0x14;
-  readData(&unk_5c73d43, base, current);
+  readData(&bIsCheat, base, current);
   ptr += 0x18;
 }

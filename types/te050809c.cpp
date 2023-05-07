@@ -8,7 +8,7 @@
 void te050809c::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_4fdc522, base, current);
+  readData(&nFrameNumber, base, current);
   current = ptr + 0x4;
   readData(&vLocalOffset, base, current);
   ptr += 0x10;

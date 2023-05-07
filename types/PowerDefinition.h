@@ -51,7 +51,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_30531f7;
   DT_INT unk_1229e8f;
   DT_INT unk_1f1fcc;
-  DT_ENUM<DT_INT> unk_5d52382;
+  DT_ENUM<DT_INT> ePowerFallback;
   DT_ENUM<DT_INT> unk_49572b0;
   DT_ENUM<DT_INT> unk_c989719;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Power>> unk_d8567e5;

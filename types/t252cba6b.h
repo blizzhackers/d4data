@@ -11,7 +11,7 @@
 
 struct t252cba6b : public ComplexRead {
   DT_FLOAT flTime;
-  DT_FLOAT unk_5bff46c;
+  DT_FLOAT flSpin;
 
   void read(const char* base, char* &ptr);
 };

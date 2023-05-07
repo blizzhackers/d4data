@@ -60,7 +60,7 @@ void tea6c310b::read(const char* base, char* &ptr) {
   current = ptr + 0xac;
   readData(&unk_7da6e33, base, current);
   current = ptr + 0xb8;
-  readData(&unk_5b85276, base, current);
+  readData(&eOrientationMode, base, current);
   current = ptr + 0xbc;
   readData(&unk_cf03a43, base, current);
   current = ptr + 0xd8;

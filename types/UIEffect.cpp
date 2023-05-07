@@ -12,7 +12,7 @@ void UIEffect::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_25f3563, base, current);
   current = ptr + 0x18;
-  readData(&unk_5d19bee, base, current);
+  readData(&eScaleMethod, base, current);
   current = ptr + 0x1c;
   readData(&vecScale, base, current);
   ptr += 0x28;

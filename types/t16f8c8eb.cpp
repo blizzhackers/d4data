@@ -22,7 +22,7 @@ void t16f8c8eb::read(const char* base, char* &ptr) {
   current = ptr + 0x44;
   readData(&unk_be8c5f6, base, current);
   current = ptr + 0x48;
-  readData(&unk_4e7576b, base, current);
+  readData(&flProjectileRadius, base, current);
   current = ptr + 0x4c;
   readData(&unk_dab04b2, base, current);
   current = ptr + 0x50;

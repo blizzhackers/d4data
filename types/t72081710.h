@@ -61,7 +61,7 @@ struct t72081710 : public ComplexRead {
   DT_FLOAT unk_426ab57;
   DT_FLOAT flPad0;
   DT_FLOAT flPad1;
-  DT_FLOAT unk_5be0e99;
+  DT_FLOAT flPad2;
 
   void read(const char* base, char* &ptr);
 };

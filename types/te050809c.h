@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct te050809c : public ComplexRead {
-  DT_INT unk_4fdc522;
+  DT_INT nFrameNumber;
   DT_VECTOR3D vLocalOffset;
 
   void read(const char* base, char* &ptr);

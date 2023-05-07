@@ -19,7 +19,7 @@ struct t8d2297e4 : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::HairColor>> unk_ce00a34;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::MarkingShape>> unk_4f6f7ab;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::MarkingColor>> unk_299b139;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Jewelry>> unk_4dd0653;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Jewelry>> arJewelryChoices;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::EyeColor>> unk_71d6df3;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Makeup>> unk_c3897b4;
   DT_SNO<SnoGroup::Face> unk_730d00f;

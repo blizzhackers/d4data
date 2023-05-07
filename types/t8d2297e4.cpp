@@ -26,7 +26,7 @@ void t8d2297e4::read(const char* base, char* &ptr) {
   current = ptr + 0x70;
   readData(&unk_299b139, base, current);
   current = ptr + 0x80;
-  readData(&unk_4dd0653, base, current);
+  readData(&arJewelryChoices, base, current);
   current = ptr + 0x90;
   readData(&unk_71d6df3, base, current);
   current = ptr + 0xa0;

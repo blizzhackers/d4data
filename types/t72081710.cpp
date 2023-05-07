@@ -110,6 +110,6 @@ void t72081710::read(const char* base, char* &ptr) {
   current = ptr + 0xc8;
   readData(&flPad1, base, current);
   current = ptr + 0xcc;
-  readData(&unk_5be0e99, base, current);
+  readData(&flPad2, base, current);
   ptr += 0xd0;
 }

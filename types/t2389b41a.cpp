@@ -38,7 +38,7 @@ void t2389b41a::read(const char* base, char* &ptr) {
   current = ptr + 0x80;
   readData(&unk_7c25701, base, current);
   current = ptr + 0x84;
-  readData(&unk_5b85276, base, current);
+  readData(&eOrientationMode, base, current);
   current = ptr + 0x88;
   readData(&unk_daebe18, base, current);
   current = ptr + 0x8c;

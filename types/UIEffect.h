@@ -12,7 +12,7 @@
 struct UIEffect : public ComplexRead {
   DT_SNO<SnoGroup::EffectGroup> snoEffectGroup;
   DT_CSTRING unk_25f3563;
-  DT_ENUM<DT_INT> unk_5d19bee;
+  DT_ENUM<DT_INT> eScaleMethod;
   DT_VECTOR2D vecScale;
 
   void read(const char* base, char* &ptr);

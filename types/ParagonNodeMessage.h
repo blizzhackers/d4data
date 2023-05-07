@@ -13,7 +13,7 @@
 struct ParagonNodeMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_UINT dwNodeIndex;
-  DT_INT unk_5c73d43;
+  DT_INT bIsCheat;
 
   void read(const char* base, char* &ptr);
 };

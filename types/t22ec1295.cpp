@@ -12,6 +12,6 @@ void t22ec1295::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_fec1a8e, base, current);
   current = ptr + 0x8;
-  readData(&unk_5e79c49, base, current);
+  readData(&tPassiveData, base, current);
   ptr += 0x28;
 }

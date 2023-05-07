@@ -29,7 +29,7 @@ struct tdcffd47e : public ComplexRead {
   DT_INT unk_17909b9;
   HardpointLink unk_a1d7e72;
   DT_UINT unk_bd1644f;
-  DT_ENUM<DT_INT> unk_5b85276;
+  DT_ENUM<DT_INT> eOrientationMode;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;
   HardpointLink unk_8470ffc;

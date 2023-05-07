@@ -36,7 +36,7 @@ void t4808f804::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&unk_8f65c3f, base, current);
   current = ptr + 0x80;
-  readData(&unk_5b85276, base, current);
+  readData(&eOrientationMode, base, current);
   current = ptr + 0x84;
   readData(&unk_daebe18, base, current);
   current = ptr + 0x88;

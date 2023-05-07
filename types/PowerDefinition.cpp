@@ -56,7 +56,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xcc;
   readData(&unk_1f1fcc, base, current);
   current = ptr + 0xd0;
-  readData(&unk_5d52382, base, current);
+  readData(&ePowerFallback, base, current);
   current = ptr + 0xd4;
   readData(&unk_49572b0, base, current);
   current = ptr + 0xd8;

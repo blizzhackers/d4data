@@ -41,7 +41,7 @@ struct tea6c310b : public ComplexRead {
   DT_INT unk_325b1ab;
   DT_ENUM<DT_INT> unk_6ca113c;
   tf619930a unk_7da6e33;
-  DT_ENUM<DT_INT> unk_5b85276;
+  DT_ENUM<DT_INT> eOrientationMode;
   PRTransform unk_cf03a43;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;

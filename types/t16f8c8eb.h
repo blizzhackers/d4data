@@ -20,7 +20,7 @@ struct t16f8c8eb : public ComplexRead {
   DT_VECTOR3D vVelocity;
   DT_VECTOR3D unk_5aa0d1f;
   DT_INT unk_be8c5f6;
-  DT_FLOAT unk_4e7576b;
+  DT_FLOAT flProjectileRadius;
   DT_FLOAT unk_dab04b2;
   DT_OPTIONAL<DT_INT> unk_efca38;
   DT_FIXEDARRAY<t7ae253c2, 4> unk_64595d0;

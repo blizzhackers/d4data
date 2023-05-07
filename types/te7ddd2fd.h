@@ -42,7 +42,7 @@ struct te7ddd2fd : public ComplexRead {
   tf619930a unk_7da6e33;
   DT_INT unk_802b7b;
   DT_SNO<SnoGroup::Observer> unk_e27112b;
-  DT_ENUM<DT_INT> unk_5b85276;
+  DT_ENUM<DT_INT> eOrientationMode;
   PRTransform unk_cf03a43;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;
