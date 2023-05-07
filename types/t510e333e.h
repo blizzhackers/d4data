@@ -16,7 +16,7 @@ struct t510e333e : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME ann;
   DT_SNO<SnoGroup::Power> snoPower;
-  DT_UINT unk_1bdcc9f;
+  DT_UINT uCommandFrame;
   DT_VECTOR3D unk_f4fb70;
   DT_INT unk_c208491;
   DT_OPTIONAL<DT_INT> eInterruptReason;

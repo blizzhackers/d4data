@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct BountyIcons : public ComplexRead {
-  DT_UINT unk_2e9817a;
+  DT_UINT hIconNormal;
   DT_UINT unk_c5ca709;
   DT_UINT hNotificationIcon;
 

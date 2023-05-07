@@ -46,6 +46,6 @@ void t3248a683::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&unk_5838de5, base, current);
   current = ptr + 0x80;
-  readData(&unk_3da7a7b, base, current);
+  readData(&bUseMask, base, current);
   ptr += 0x88;
 }

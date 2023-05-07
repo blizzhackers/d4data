@@ -36,7 +36,7 @@ void t81807f39::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&unk_2c69731, base, current);
   current = ptr + 0x80;
-  readData(&unk_3c38a23, base, current);
+  readData(&aEndFOV, base, current);
   current = ptr + 0x84;
   readData(&unk_991ae81, base, current);
   ptr += 0x88;

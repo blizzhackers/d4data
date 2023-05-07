@@ -13,7 +13,7 @@ struct t7946bdbb : public ComplexRead {
   DT_UINT dwType;
   DT_ENUM<DT_INT> eParamType;
   DT_UINT dwPad;
-  DT_UINT unk_1edc9f1;
+  DT_UINT dwQuestHash;
   DT_CSTRING szQuest;
 
   void read(const char* base, char* &ptr);

@@ -42,7 +42,7 @@ void tac30acdf::read(const char* base, char* &ptr) {
   current = ptr + 0x80;
   readData(&unk_5f25c6, base, current);
   current = ptr + 0x84;
-  readData(&unk_4ae0279, base, current);
+  readData(&m_boneCount, base, current);
   current = ptr + 0x88;
   readData(&unk_b7a310, base, current);
   current = ptr + 0x8c;

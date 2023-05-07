@@ -14,7 +14,7 @@ void t510e333e::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&snoPower, base, current);
   current = ptr + 0x1c;
-  readData(&unk_1bdcc9f, base, current);
+  readData(&uCommandFrame, base, current);
   current = ptr + 0x20;
   readData(&unk_f4fb70, base, current);
   current = ptr + 0x2c;

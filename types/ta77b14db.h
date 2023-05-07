@@ -15,7 +15,7 @@ struct ta77b14db : public ComplexRead {
   DT_UINT hClassTitle;
   DT_UINT unk_a210c9f;
   DT_UINT hResource;
-  DT_VARIABLEARRAY<tc6d4c449> unk_2af459a;
+  DT_VARIABLEARRAY<tc6d4c449> arPlayStyle;
 
   void read(const char* base, char* &ptr);
 };

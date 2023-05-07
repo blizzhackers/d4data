@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t82e4d816 : public ComplexRead {
-  DT_WORD unk_3ced7e7;
+  DT_WORD dwParticleIndex;
   DT_WORD dwType;
   DT_FLOAT unk_8c59f26;
 

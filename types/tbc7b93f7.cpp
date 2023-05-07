@@ -12,6 +12,6 @@ void tbc7b93f7::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&idSWorld, base, current);
   current = ptr + 0x18;
-  readData(&unk_3eb1d34, base, current);
+  readData(&arPreloadData, base, current);
   ptr += 0x4cc;
 }

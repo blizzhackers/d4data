@@ -12,7 +12,7 @@
 
 struct tdf12c188 : public ComplexRead {
   DT_SNO<SnoGroup::Condition> snoCondition;
-  DT_POLYMORPHIC_VARIABLEARRAY unk_3ddddaa;
+  DT_POLYMORPHIC_VARIABLEARRAY ptInlineCondition;
 
   void read(const char* base, char* &ptr);
 };

@@ -18,7 +18,7 @@ void Marker::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&snoname, base, current);
   current = ptr + 0x30;
-  readData(&unk_3e7936a, base, current);
+  readData(&dwMarkerFlags, base, current);
   current = ptr + 0x34;
   readData(&vecScale, base, current);
   current = ptr + 0x40;

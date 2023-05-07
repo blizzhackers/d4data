@@ -26,7 +26,7 @@ void RenderPass::read(const char* base, char* &ptr) {
   current = ptr + 0x1b0;
   readData(&unk_295833, base, current);
   current = ptr + 0x1c0;
-  readData(&unk_1f1fb6b, base, current);
+  readData(&ptPerms, base, current);
   current = ptr + 0x1d0;
   readData(&unk_e39f53a, base, current);
   current = ptr + 0x1e0;

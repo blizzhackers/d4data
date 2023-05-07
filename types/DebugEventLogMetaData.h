@@ -17,7 +17,7 @@ struct DebugEventLogMetaData : public ComplexRead {
   DT_INT unk_965113;
   DT_FLOAT unk_850f3e2;
   DT_ACD_NETWORK_NAME ann;
-  SharedServerWorldPlace unk_1fc05ef;
+  SharedServerWorldPlace wpStartData;
   SharedServerWorldPlace unk_9e80738;
   DT_VECTOR3D bounds;
   DT_RGBACOLOR rgbaColor;

@@ -32,7 +32,7 @@ struct StoreProductDefinition : public ComplexRead {
   DT_UINT unk_7b588be;
   DT_UINT unk_a65c016;
   DT_UINT unk_9b75db9;
-  DT_UINT unk_1f0b92f;
+  DT_UINT hCategoryIcon;
   DT_UINT unk_eb16f59;
   DT_INT unk_9a0855f;
   DT_UINT unk_8c37b97;

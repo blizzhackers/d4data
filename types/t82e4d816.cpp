@@ -8,7 +8,7 @@
 void t82e4d816::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_3ced7e7, base, current);
+  readData(&dwParticleIndex, base, current);
   current = ptr + 0x2;
   readData(&dwType, base, current);
   current = ptr + 0x4;

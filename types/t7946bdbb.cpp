@@ -14,7 +14,7 @@ void t7946bdbb::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&dwPad, base, current);
   current = ptr + 0x18;
-  readData(&unk_1edc9f1, base, current);
+  readData(&dwQuestHash, base, current);
   current = ptr + 0x20;
   readData(&szQuest, base, current);
   ptr += 0x30;

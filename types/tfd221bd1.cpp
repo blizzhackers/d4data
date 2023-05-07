@@ -10,7 +10,7 @@ void tfd221bd1::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_44213a, base, current);
   current = ptr + 0x4;
-  readData(&unk_2e9817a, base, current);
+  readData(&hIconNormal, base, current);
   current = ptr + 0x8;
   readData(&unk_c5ca709, base, current);
   ptr += 0xc;

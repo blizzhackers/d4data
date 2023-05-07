@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct tb99f8947 : public ComplexRead {
-  DT_ENUM<DT_INT> unk_4b57088;
+  DT_ENUM<DT_INT> eScrollbarAlignment;
   DT_ENUM<DT_INT> eScrollbarVisibility;
   DT_FLOAT flScrollbarWidth;
   DT_INT unk_5443ce9;

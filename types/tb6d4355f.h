@@ -27,7 +27,7 @@ struct tb6d4355f : public ComplexRead {
   DT_SNO<SnoGroup::Conversation> unk_e879cce;
   DT_CSTRING unk_28bc3c5;
   DT_INT unk_53ba3a1;
-  tabe97783 unk_1ee0a5d;
+  tabe97783 tRegionDefault;
   DT_VARIABLEARRAY<tabe97783> unk_debbaea;
   DT_INT unk_6a71535;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;

@@ -20,7 +20,7 @@ struct Marker : public ComplexRead {
   DT_ENUM<DT_INT> eType;
   PRTransform transform;
   DT_SNO_NAME snoname;
-  DT_UINT unk_3e7936a;
+  DT_UINT dwMarkerFlags;
   DT_VECTOR3D vecScale;
   DT_POLYMORPHIC_VARIABLEARRAY ptBase;
   DT_VARIABLEARRAY<tc575fa49> ptGroupData;

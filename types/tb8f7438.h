@@ -13,7 +13,7 @@
 struct tb8f7438 : public ComplexRead {
   t72bd65f8 tHeader;
   DT_ENUM<DT_INT> eCurrencyType;
-  DT_INT64 unk_2d67281;
+  DT_INT64 nOpAmount;
 
   void read(const char* base, char* &ptr);
 };

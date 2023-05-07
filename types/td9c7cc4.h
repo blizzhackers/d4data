@@ -13,7 +13,7 @@
 struct td9c7cc4 : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME unk_1fe6e13;
-  DT_INT unk_3dd9525;
+  DT_INT bFromItem;
   DT_ACD_NETWORK_NAME unk_ed3262c;
   DT_SNO<SnoGroup::Aspect> snoAspect;
 

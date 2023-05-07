@@ -60,7 +60,7 @@ void te6346255::read(const char* base, char* &ptr) {
   current = ptr + 0xa4;
   readData(&unk_b043709, base, current);
   current = ptr + 0xa8;
-  readData(&unk_2ee62a3, base, current);
+  readData(&tOffsetRadius, base, current);
   current = ptr + 0xb0;
   readData(&eFacingType, base, current);
   current = ptr + 0xb4;

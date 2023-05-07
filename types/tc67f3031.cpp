@@ -32,7 +32,7 @@ void tc67f3031::read(const char* base, char* &ptr) {
   current = ptr + 0x60;
   readData(&unk_5d619c6, base, current);
   current = ptr + 0x70;
-  readData(&unk_2b88f71, base, current);
+  readData(&flImpactDirection, base, current);
   current = ptr + 0x78;
   readData(&flImpactPitch, base, current);
   current = ptr + 0x80;

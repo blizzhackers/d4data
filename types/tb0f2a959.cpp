@@ -10,6 +10,6 @@ void tb0f2a959::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_1bdcc9f, base, current);
+  readData(&uCommandFrame, base, current);
   ptr += 0x14;
 }

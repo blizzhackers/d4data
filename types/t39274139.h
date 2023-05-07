@@ -26,7 +26,7 @@ struct t39274139 : public ComplexRead {
   DT_FLOAT unk_25ea50e;
   DT_INT fDirection;
   DT_FLOAT unk_fd4e16f;
-  DT_FLOAT unk_4bb48b5;
+  DT_FLOAT flDirectionAzimuth;
   DT_FLOAT unk_31d6a90;
   DT_FLOAT unk_57c2f26;
   DT_INT fNoise;

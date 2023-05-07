@@ -10,7 +10,7 @@ void te25fcbdf::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_e246d5a, base, current);
   current = ptr + 0x10;
-  readData(&unk_3cb63f6, base, current);
+  readData(&tCornerPieces, base, current);
   current = ptr + 0x78;
   readData(&unk_7b78b21, base, current);
   current = ptr + 0x88;

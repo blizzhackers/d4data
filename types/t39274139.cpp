@@ -40,7 +40,7 @@ void t39274139::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&unk_fd4e16f, base, current);
   current = ptr + 0x40;
-  readData(&unk_4bb48b5, base, current);
+  readData(&flDirectionAzimuth, base, current);
   current = ptr + 0x44;
   readData(&unk_31d6a90, base, current);
   current = ptr + 0x48;

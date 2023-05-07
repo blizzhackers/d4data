@@ -26,7 +26,7 @@ struct t81807f39 : public ComplexRead {
   DT_UINT dwPad;
   DT_INT unk_7903775;
   DT_FLOAT unk_2c69731;
-  DT_FLOAT unk_3c38a23;
+  DT_FLOAT aEndFOV;
   DT_ENUM<DT_INT> unk_991ae81;
 
   void read(const char* base, char* &ptr);

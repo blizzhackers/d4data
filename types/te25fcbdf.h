@@ -14,7 +14,7 @@
 
 struct te25fcbdf : public ComplexRead {
   DT_VARIABLEARRAY<te6b22340> unk_e246d5a;
-  t3c0bdd72 unk_3cb63f6;
+  t3c0bdd72 tCornerPieces;
   DT_VARIABLEARRAY<tbc07d3c7> unk_7b78b21;
   DT_VARIABLEARRAY<tbc07d3c7> unk_3bd1636;
 

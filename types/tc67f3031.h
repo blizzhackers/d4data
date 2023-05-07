@@ -24,7 +24,7 @@ struct tc67f3031 : public ComplexRead {
   DT_OPTIONAL<DT_INT> unk_4d7691e;
   DT_OPTIONAL<DT_INT> unk_5692531;
   DT_OPTIONAL<DT_INT> unk_5d619c6;
-  DT_OPTIONAL<DT_INT> unk_2b88f71;
+  DT_OPTIONAL<DT_INT> flImpactDirection;
   DT_OPTIONAL<DT_INT> flImpactPitch;
   DT_OPTIONAL<DT_INT> unk_94ab101;
   DT_OPTIONAL<DT_INT> unk_78c21b7;

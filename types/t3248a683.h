@@ -30,7 +30,7 @@ struct t3248a683 : public ComplexRead {
   DT_ENUM<DT_INT> unk_56127ed;
   DT_FLOAT unk_69cc0f4;
   t560ae4cf unk_5838de5;
-  DT_INT unk_3da7a7b;
+  DT_INT bUseMask;
 
   void read(const char* base, char* &ptr);
 };

@@ -30,7 +30,7 @@ struct AnimPermutation : public ComplexRead {
   DT_VARIABLEARRAY<t89e36869> ptPayloadData;
   DT_UINT tPhaseName;
   DT_ENUM<DT_INT> unk_57e56e2;
-  DT_FIXEDARRAY<te050809c, 4> unk_3d9dbd;
+  DT_FIXEDARRAY<te050809c, 4> arContactFrames;
   DT_VARIABLEARRAY<tec5df525> unk_df9a366;
   DT_VARIABLEARRAY<t97a49412> unk_f0fe405;
   DT_FLOAT unk_c61b9d1;

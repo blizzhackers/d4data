@@ -27,7 +27,7 @@ struct tac30acdf : public ComplexRead {
   DT_INT unk_e4594b1;
   DT_INT unk_4c2d410;
   DT_INT unk_5f25c6;
-  DT_INT unk_4ae0279;
+  DT_INT m_boneCount;
   DT_INT unk_b7a310;
   DT_INT unk_19d5862;
   DT_INT m_planeCount;

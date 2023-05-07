@@ -12,7 +12,7 @@ void t9bf9054e::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&tMinRequired, base, current);
   current = ptr + 0x28;
-  readData(&unk_3cf7677, base, current);
+  readData(&tInitialCost, base, current);
   current = ptr + 0x48;
   readData(&unk_26286d0, base, current);
   ptr += 0x68;

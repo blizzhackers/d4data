@@ -10,6 +10,6 @@ void te050809c::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_4fdc522, base, current);
   current = ptr + 0x4;
-  readData(&unk_2a1f7c8, base, current);
+  readData(&vLocalOffset, base, current);
   ptr += 0x10;
 }

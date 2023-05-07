@@ -12,7 +12,7 @@ void t3f2da5e2::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_a6c6afd, base, current);
   current = ptr + 0x8;
-  readData(&unk_2e1ba44, base, current);
+  readData(&nHeightValue, base, current);
   current = ptr + 0xa;
   readData(&dwFlags, base, current);
   current = ptr + 0xb;

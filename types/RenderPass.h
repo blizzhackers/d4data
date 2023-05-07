@@ -27,7 +27,7 @@ struct RenderPass : public ComplexRead {
   DT_ENUM<DT_INT> unk_c23801f;
   DT_INT64 ptPostprocessed;
   DT_VARIABLEARRAY<DT_UINT> unk_295833;
-  DT_VARIABLEARRAY<ShaderPermutation> unk_1f1fb6b;
+  DT_VARIABLEARRAY<ShaderPermutation> ptPerms;
   DT_VARIABLEARRAY<teb98da06> unk_e39f53a;
   DT_VARIABLEARRAY<tf58f01c3> unk_247b377;
   DT_VARIABLEARRAY<td7ee8f26> unk_1484b5a;

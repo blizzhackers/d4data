@@ -18,7 +18,7 @@ void te6f4bbd7::read(const char* base, char* &ptr) {
   current = ptr + 0x110;
   readData(&unk_9e4e90a, base, current);
   current = ptr + 0x114;
-  readData(&unk_3ca5a82, base, current);
+  readData(&eGameReset, base, current);
   current = ptr + 0x118;
   readData(&unk_e616755, base, current);
   current = ptr + 0x11c;

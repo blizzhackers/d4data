@@ -19,7 +19,7 @@ struct te67bed05 : public ComplexRead {
   DT_FLOAT flVTransInitial;
   DT_RANGE<DT_INT> unk_42b1708;
   DT_ENUM<DT_INT> ePinTranslation;
-  DT_ENUM<DT_INT> unk_4a1b252;
+  DT_ENUM<DT_INT> eOrderOperation;
   DT_UINT unk_96b1a52;
   DT_UINT unk_ec7cf93;
   DT_UINT dwAnimFlags;

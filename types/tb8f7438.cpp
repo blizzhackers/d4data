@@ -12,6 +12,6 @@ void tb8f7438::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&eCurrencyType, base, current);
   current = ptr + 0x18;
-  readData(&unk_2d67281, base, current);
+  readData(&nOpAmount, base, current);
   ptr += 0x20;
 }

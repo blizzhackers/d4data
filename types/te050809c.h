@@ -11,7 +11,7 @@
 
 struct te050809c : public ComplexRead {
   DT_INT unk_4fdc522;
-  DT_VECTOR3D unk_2a1f7c8;
+  DT_VECTOR3D vLocalOffset;
 
   void read(const char* base, char* &ptr);
 };

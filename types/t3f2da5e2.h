@@ -12,7 +12,7 @@
 struct t3f2da5e2 : public ComplexRead {
   DT_FIXEDARRAY<DT_BYTE, 4> unk_cd39b27;
   DT_FIXEDARRAY<DT_BYTE, 4> unk_a6c6afd;
-  DT_WORD unk_2e1ba44;
+  DT_WORD nHeightValue;
   DT_BYTE dwFlags;
   DT_BYTE unk_d188924;
 

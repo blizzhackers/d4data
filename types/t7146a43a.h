@@ -13,7 +13,7 @@
 struct t7146a43a : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_FLOAT unk_601d5c7;
-  DT_UINT unk_1bdcc9f;
+  DT_UINT uCommandFrame;
 
   void read(const char* base, char* &ptr);
 };

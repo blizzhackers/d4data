@@ -11,9 +11,9 @@
 
 struct PowerMod : public ComplexRead {
   DT_UINT szName;
-  DT_INT unk_2e74691;
+  DT_INT nMaxPoints;
   DT_UINT dwModId;
-  DT_UINT unk_4a47447;
+  DT_UINT dwModMask;
   DT_UINT unk_94cc84e;
   DT_INT unk_939ad1e;
   DT_INT unk_7b47c37;

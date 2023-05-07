@@ -16,7 +16,7 @@ struct t56c52df : public ComplexRead {
   DT_ACD_NETWORK_NAME annAttacker;
   DT_OPTIONAL<DT_INT> unk_5692531;
   DT_OPTIONAL<DT_INT> unk_5d619c6;
-  DT_OPTIONAL<DT_INT> unk_2b88f71;
+  DT_OPTIONAL<DT_INT> flImpactDirection;
   DT_OPTIONAL<DT_INT> flImpactPitch;
 
   void read(const char* base, char* &ptr);

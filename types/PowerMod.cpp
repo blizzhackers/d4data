@@ -10,11 +10,11 @@ void PowerMod::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&szName, base, current);
   current = ptr + 0x4;
-  readData(&unk_2e74691, base, current);
+  readData(&nMaxPoints, base, current);
   current = ptr + 0x8;
   readData(&dwModId, base, current);
   current = ptr + 0xc;
-  readData(&unk_4a47447, base, current);
+  readData(&dwModMask, base, current);
   current = ptr + 0x10;
   readData(&unk_94cc84e, base, current);
   current = ptr + 0x14;

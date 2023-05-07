@@ -18,7 +18,7 @@ void DebugEventLogMetaData::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&ann, base, current);
   current = ptr + 0x24;
-  readData(&unk_1fc05ef, base, current);
+  readData(&wpStartData, base, current);
   current = ptr + 0x38;
   readData(&unk_9e80738, base, current);
   current = ptr + 0x4c;

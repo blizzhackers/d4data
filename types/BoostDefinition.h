@@ -12,7 +12,7 @@
 
 struct BoostDefinition : public ComplexRead {
   DT_CSTRING unk_37028d5;
-  DT_CSTRING unk_2f44d38;
+  DT_CSTRING szBoostDescription;
   DT_CSTRING unk_99de476;
   DT_INT64 nGold;
   DT_VARIABLEARRAY<t749eb37e> unk_19a8c24;

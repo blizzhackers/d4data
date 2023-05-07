@@ -191,7 +191,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_fc20c9f;
   DT_INT unk_a75e08a;
   DT_INT unk_89134c5;
-  DT_UINT unk_2e9817a;
+  DT_UINT hIconNormal;
   DT_UINT unk_e060ad6;
   DT_UINT unk_800dd5a;
   DT_UINT unk_ba2924;

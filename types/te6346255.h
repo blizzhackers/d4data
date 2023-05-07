@@ -37,7 +37,7 @@ struct te6346255 : public ComplexRead {
   DT_INT unk_53b6c5f;
   DT_INT unk_915258d;
   DT_INT unk_b043709;
-  DT_RANGE<DT_INT> unk_2ee62a3;
+  DT_RANGE<DT_INT> tOffsetRadius;
   DT_ENUM<DT_INT> eFacingType;
   DT_FLOAT unk_9a103a0;
   DT_INT unk_c9a925d;

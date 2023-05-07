@@ -14,7 +14,7 @@
 
 struct t18173024 : public ComplexRead {
   DT_UINT dwSeed;
-  DT_UINT unk_1ea1e86;
+  DT_UINT dwSeedInitial;
   DT_SNO<SnoGroup::Quest> unk_451e596;
   DT_FIXEDARRAY<t8462796a, 128> arTiles;
   DT_FIXEDARRAY<te83323fe, 16> arDRLGEvents;

@@ -10,7 +10,7 @@ void t18173024::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&dwSeed, base, current);
   current = ptr + 0x4;
-  readData(&unk_1ea1e86, base, current);
+  readData(&dwSeedInitial, base, current);
   current = ptr + 0x8;
   readData(&unk_451e596, base, current);
   current = ptr + 0xc;

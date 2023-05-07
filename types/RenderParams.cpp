@@ -34,6 +34,6 @@ void RenderParams::read(const char* base, char* &ptr) {
   current = ptr + 0x5c;
   readData(&unk_7e83826, base, current);
   current = ptr + 0x60;
-  readData(&unk_2d2237f, base, current);
+  readData(&tAlphaBlend, base, current);
   ptr += 0x180;
 }

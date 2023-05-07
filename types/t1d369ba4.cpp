@@ -14,7 +14,7 @@ void t1d369ba4::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&gbidType, base, current);
   current = ptr + 0x18;
-  readData(&unk_2b95c58, base, current);
+  readData(&idSpawnMarker, base, current);
   current = ptr + 0x1c;
   readData(&nGroupIndex, base, current);
   current = ptr + 0x20;

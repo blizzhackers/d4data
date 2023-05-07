@@ -26,7 +26,7 @@ void te67bed05::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&ePinTranslation, base, current);
   current = ptr + 0x34;
-  readData(&unk_4a1b252, base, current);
+  readData(&eOrderOperation, base, current);
   current = ptr + 0x38;
   readData(&unk_96b1a52, base, current);
   current = ptr + 0x3c;

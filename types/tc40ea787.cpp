@@ -28,7 +28,7 @@ void tc40ea787::read(const char* base, char* &ptr) {
   current = ptr + 0x44;
   readData(&unk_5d619c6, base, current);
   current = ptr + 0x54;
-  readData(&unk_2b88f71, base, current);
+  readData(&flImpactDirection, base, current);
   current = ptr + 0x5c;
   readData(&flImpactPitch, base, current);
   ptr += 0x64;

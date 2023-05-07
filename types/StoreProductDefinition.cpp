@@ -48,7 +48,7 @@ void StoreProductDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&unk_9b75db9, base, current);
   current = ptr + 0xa4;
-  readData(&unk_1f0b92f, base, current);
+  readData(&hCategoryIcon, base, current);
   current = ptr + 0xa8;
   readData(&unk_eb16f59, base, current);
   current = ptr + 0xac;

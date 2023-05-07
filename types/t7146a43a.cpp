@@ -12,6 +12,6 @@ void t7146a43a::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_601d5c7, base, current);
   current = ptr + 0x14;
-  readData(&unk_1bdcc9f, base, current);
+  readData(&uCommandFrame, base, current);
   ptr += 0x18;
 }

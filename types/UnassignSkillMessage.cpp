@@ -12,7 +12,7 @@ void UnassignSkillMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&nSlot, base, current);
   current = ptr + 0x14;
-  readData(&unk_1c27791, base, current);
+  readData(&nEnchantSlot, base, current);
   current = ptr + 0x18;
   readData(&unk_c5e6abf, base, current);
   ptr += 0x1c;

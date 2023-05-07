@@ -336,7 +336,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xaec;
   readData(&unk_89134c5, base, current);
   current = ptr + 0xaf0;
-  readData(&unk_2e9817a, base, current);
+  readData(&hIconNormal, base, current);
   current = ptr + 0xaf4;
   readData(&unk_e060ad6, base, current);
   current = ptr + 0xaf8;

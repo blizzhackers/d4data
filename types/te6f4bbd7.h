@@ -16,7 +16,7 @@ struct te6f4bbd7 : public ComplexRead {
   DT_ENUM<DT_INT> eType;
   DT_INT nDefaultValue;
   DT_UINT unk_9e4e90a;
-  DT_ENUM<DT_INT> unk_3ca5a82;
+  DT_ENUM<DT_INT> eGameReset;
   DT_ENUM<DT_INT> unk_e616755;
   DT_INT unk_c24a257;
   DT_INT unk_387f176;

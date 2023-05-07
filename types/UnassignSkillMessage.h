@@ -13,7 +13,7 @@
 struct UnassignSkillMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_INT nSlot;
-  DT_INT unk_1c27791;
+  DT_INT nEnchantSlot;
   DT_INT unk_c5e6abf;
 
   void read(const char* base, char* &ptr);

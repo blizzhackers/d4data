@@ -14,7 +14,7 @@ struct t1d369ba4 : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_INT idLevelArea;
   DT_GBID<0x14> gbidType;
-  DT_INT unk_2b95c58;
+  DT_INT idSpawnMarker;
   DT_INT nGroupIndex;
   DT_INT eGroupType;
 

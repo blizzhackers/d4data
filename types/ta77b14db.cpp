@@ -16,6 +16,6 @@ void ta77b14db::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&hResource, base, current);
   current = ptr + 0x10;
-  readData(&unk_2af459a, base, current);
+  readData(&arPlayStyle, base, current);
   ptr += 0x20;
 }

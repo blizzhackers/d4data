@@ -14,7 +14,7 @@ void t3a7acb07::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&unk_5692531, base, current);
   current = ptr + 0x2c;
-  readData(&unk_2b88f71, base, current);
+  readData(&flImpactDirection, base, current);
   current = ptr + 0x34;
   readData(&unk_a6fef34, base, current);
   ptr += 0x44;

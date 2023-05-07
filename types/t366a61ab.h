@@ -12,7 +12,7 @@
 
 struct t366a61ab : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_UINT unk_1bdcc9f;
+  DT_UINT uCommandFrame;
   DT_UINT unk_b0fd968;
   DT_BYTE uFlags;
 

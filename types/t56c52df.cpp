@@ -18,7 +18,7 @@ void t56c52df::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_5d619c6, base, current);
   current = ptr + 0x40;
-  readData(&unk_2b88f71, base, current);
+  readData(&flImpactDirection, base, current);
   current = ptr + 0x48;
   readData(&flImpactPitch, base, current);
   ptr += 0x50;

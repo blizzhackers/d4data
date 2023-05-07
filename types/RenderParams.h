@@ -25,7 +25,7 @@ struct RenderParams : public ComplexRead {
   DT_INT fAlphaMaskEnable;
   DT_ENUM<DT_INT> eFillMode;
   DT_INT unk_7e83826;
-  DT_FIXEDARRAY<tcb3fe69d, 6> unk_2d2237f;
+  DT_FIXEDARRAY<tcb3fe69d, 6> tAlphaBlend;
 
   void read(const char* base, char* &ptr);
 };

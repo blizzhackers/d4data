@@ -12,7 +12,7 @@
 struct t9bf9054e : public ComplexRead {
   DT_ENUM<DT_INT> eType;
   DT_STRING_FORMULA tMinRequired;
-  DT_STRING_FORMULA unk_3cf7677;
+  DT_STRING_FORMULA tInitialCost;
   DT_STRING_FORMULA unk_26286d0;
 
   void read(const char* base, char* &ptr);
