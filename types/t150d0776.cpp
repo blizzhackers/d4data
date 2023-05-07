@@ -10,7 +10,7 @@ void t150d0776::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&snoUI, base, current);
   current = ptr + 0x4;
-  readData(&unk_4bb155f, base, current);
+  readData(&szCutoffWrite, base, current);
   current = ptr + 0x104;
   readData(&szScreenName, base, current);
   current = ptr + 0x204;

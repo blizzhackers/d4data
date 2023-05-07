@@ -44,7 +44,7 @@ void ItemDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x58;
   readData(&unk_440d049, base, current);
   current = ptr + 0x5c;
-  readData(&unk_8e8ea20, base, current);
+  readData(&ePreferredZone, base, current);
   current = ptr + 0x60;
   readData(&snoBaseItem, base, current);
   current = ptr + 0x64;

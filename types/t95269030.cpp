@@ -22,7 +22,7 @@ void t95269030::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_395f1b4, base, current);
   current = ptr + 0x1c;
-  readData(&unk_346cedc, base, current);
+  readData(&tValidWindow, base, current);
   current = ptr + 0x24;
   readData(&unk_6ec4d4, base, current);
   current = ptr + 0x28;

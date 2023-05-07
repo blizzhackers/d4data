@@ -1,11 +1,11 @@
 /**
- * Definition: t2f8a81aa
+ * Definition: MaterialEnumValueDefinition
  * Hash: 2f8a81aa
  */
 
-#include "t2f8a81aa.h"
+#include "MaterialEnumValueDefinition.h"
 
-void t2f8a81aa::read(const char* base, char* &ptr) {
+void MaterialEnumValueDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

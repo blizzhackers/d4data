@@ -16,7 +16,7 @@ void SubzoneDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&eType, base, current);
   current = ptr + 0x24;
-  readData(&unk_110432b, base, current);
+  readData(&eParentZone, base, current);
   current = ptr + 0x28;
   readData(&snoTerritory, base, current);
   current = ptr + 0x2c;

@@ -32,7 +32,7 @@ struct ItemDefinition : public ComplexRead {
   DT_INT unk_c3b966f;
   DT_ENUM<DT_INT> unk_8875e7a;
   DT_INT unk_440d049;
-  DT_ENUM<DT_INT> unk_8e8ea20;
+  DT_ENUM<DT_INT> ePreferredZone;
   DT_SNO<SnoGroup::Item> snoBaseItem;
   DT_SNO<SnoGroup::TreasureClass> snoRandomItemTreasureClass;
   DT_SNO<SnoGroup::TreasureClass> snoSalvageTreasureClassNormal;

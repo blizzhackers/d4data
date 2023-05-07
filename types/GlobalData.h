@@ -280,7 +280,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_f14295;
   DT_FLOAT unk_4639a17;
   DT_FLOAT unk_7d8ae03;
-  DT_FLOAT unk_13e7c92;
+  DT_FLOAT wpGridZoom;
   DT_FLOAT unk_c8eb270;
   DT_FLOAT unk_dac13bc;
   DT_FLOAT unk_73807f8;

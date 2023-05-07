@@ -17,7 +17,7 @@ struct t95269030 : public ComplexRead {
   DT_INT unk_8680393;
   DT_INT unk_8337d1e;
   DT_INT unk_395f1b4;
-  DT_RANGE<DT_INT> unk_346cedc;
+  DT_RANGE<DT_INT> tValidWindow;
   DT_INT unk_6ec4d4;
   DT_FLOAT unk_1281fc2;
   DT_FLOAT unk_6fb4c8e;

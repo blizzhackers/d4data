@@ -16,7 +16,7 @@ struct SubzoneDefinition : public ComplexRead {
   DT_STARTLOC_NAME uEntranceGUID;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;
   DT_ENUM<DT_INT> eType;
-  DT_ENUM<DT_INT> unk_110432b;
+  DT_ENUM<DT_INT> eParentZone;
   DT_SNO<SnoGroup::Territory> snoTerritory;
   DT_ENUM<DT_INT> unk_d447cfd;
   DT_SNO<SnoGroup::World> unk_f34c43f;

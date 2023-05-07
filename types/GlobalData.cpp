@@ -522,7 +522,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0x800;
   readData(&unk_7d8ae03, base, current);
   current = ptr + 0x804;
-  readData(&unk_13e7c92, base, current);
+  readData(&wpGridZoom, base, current);
   current = ptr + 0x808;
   readData(&unk_c8eb270, base, current);
   current = ptr + 0x80c;

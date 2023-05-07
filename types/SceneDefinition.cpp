@@ -26,9 +26,9 @@ void SceneDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x6c;
   readData(&snoAudioContext, base, current);
   current = ptr + 0x70;
-  readData(&unk_dcccfb8, base, current);
+  readData(&flTileX, base, current);
   current = ptr + 0x74;
-  readData(&unk_dcccfb9, base, current);
+  readData(&flTileY, base, current);
   current = ptr + 0x78;
   readData(&unk_c20ed15, base, current);
   current = ptr + 0x88;

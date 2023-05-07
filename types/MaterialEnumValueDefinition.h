@@ -1,5 +1,5 @@
 /**
- * Definition: t2f8a81aa
+ * Definition: MaterialEnumValueDefinition
  * Hash: 2f8a81aa
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t2f8a81aa : public ComplexRead {
+struct MaterialEnumValueDefinition : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_VECTOR4D vValue;
