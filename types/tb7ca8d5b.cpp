@@ -1,11 +1,11 @@
 /**
- * Definition: PRTransformValue
+ * Definition: tb7ca8d5b
  * Hash: b7ca8d5b
  */
 
-#include "PRTransformValue.h"
+#include "tb7ca8d5b.h"
 
-void PRTransformValue::read(const char* base, char* &ptr) {
+void tb7ca8d5b::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

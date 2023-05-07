@@ -11,7 +11,7 @@
 
 struct Plane : public ComplexRead {
   DT_VECTOR3D wvNormal;
-  DT_FLOAT wce;
+  DT_FLOAT wdD;
 
   void read(const char* base, char* &ptr);
 };

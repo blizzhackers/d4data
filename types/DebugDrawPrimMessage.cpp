@@ -32,6 +32,6 @@ void DebugDrawPrimMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x118;
   readData(&unk_7fff437, base, current);
   current = ptr + 0x11c;
-  readData(&bONZ, base, current);
+  readData(&bNoZ, base, current);
   ptr += 0x120;
 }

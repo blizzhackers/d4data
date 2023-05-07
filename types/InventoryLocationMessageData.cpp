@@ -12,6 +12,6 @@ void InventoryLocationMessageData::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&eSlot, base, current);
   current = ptr + 0xc;
-  readData(&r2, base, current);
+  readData(&pt, base, current);
   ptr += 0x14;
 }

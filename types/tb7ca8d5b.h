@@ -1,5 +1,5 @@
 /**
- * Definition: PRTransformValue
+ * Definition: tb7ca8d5b
  * Hash: b7ca8d5b
  */
 
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct PRTransformValue : public ComplexRead {
+struct tb7ca8d5b : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME unk_ddfb7d6;
   DT_INT bEnabled;

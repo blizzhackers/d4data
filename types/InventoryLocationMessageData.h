@@ -12,7 +12,7 @@
 struct InventoryLocationMessageData : public ComplexRead {
   DT_ACD_NETWORK_NAME annContainer;
   DT_ENUM<DT_INT> eSlot;
-  DT_BCVEC2I r2;
+  DT_BCVEC2I pt;
 
   void read(const char* base, char* &ptr);
 };

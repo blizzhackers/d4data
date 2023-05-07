@@ -23,7 +23,7 @@ struct DebugDrawPrimMessage : public ComplexRead {
   DT_RGBACOLOR rgbaColor;
   DT_CHARARRAY<128> szText;
   DT_INT unk_7fff437;
-  DT_INT bONZ;
+  DT_INT bNoZ;
 
   void read(const char* base, char* &ptr);
 };
