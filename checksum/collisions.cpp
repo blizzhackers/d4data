@@ -3,23 +3,22 @@
 #include <vector>
 #include <unistd.h>
 #include <algorithm>
+#include "../dict.h"
 
-char tmp[64]{ 0 };
+uint32_t tmp[64]{ 0 };
 std::vector<uint32_t> checksumMatch;
-std::string prefix = "";
-std::string suffix = "";
-bool useCaps = true, useLowers = true, useDigits = false, useUnderscore = false, capFirst = false;
 bool hashType = 0;
-uint32_t startingHash = 0;
+
+std::vector<std::string> prefix;
+auto customPrefix = false;
+std::vector<std::string> dict;
 
 uint32_t checksum(std::string str) {
-  str = str + suffix;
-
   if (hashType == 2) { // gbid strings are lowercased
     std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
   }
 
-  uint32_t hash = startingHash;
+  uint32_t hash = 0;
 
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
@@ -29,13 +28,46 @@ uint32_t checksum(std::string str) {
   return hashType == 1 ? (hash & 0xfffffff) : hash;
 }
 
-void collisions(long pos) {
+std::string getWord(int32_t max) {
+  std::string ret = prefix[tmp[0]];
+
+  for (int32_t c = 1; c < max; c++) {
+    ret = ret + dict[tmp[c]];
+  }
+
+  return ret;
+}
+
+bool hasCaps(std::string word) {
+  for (uint32_t c = 0; c < word.size(); c++) {
+    if (word[c] >= 'A' && word[c] <= 'Z') {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+void collisions(long pos, long max) {
   if (pos == -1) {
-    uint32_t tmpChecksum = checksum(tmp);
+    int32_t sum = 1;
+
+    for (int32_t c = 1; c < max; c++) {
+      if (tmp[c]) {
+        sum++;
+      }
+    }
+
+    if (sum < max) {
+      return;
+    }
+
+    std::string word = getWord(max);
+    uint32_t wordChecksum = checksum(word);
 
     for (int c = 0; c < checksumMatch.size(); c++) {
-      if(tmpChecksum == checksumMatch[c]) {
-        std::cout << "  " << std::hex << checksumMatch[c] << ": " << (prefix + tmp + suffix) << std::endl;
+      if(wordChecksum == checksumMatch[c]) {
+        std::cout << "  " << std::hex << checksumMatch[c] << ": " << (word) << std::endl;
         break;
       }
     }
@@ -43,76 +75,43 @@ void collisions(long pos) {
     return;
   }
 
-  if (hashType == 2 || useLowers && (pos > 0 || !capFirst)) {
-    for (char c = 'a'; c <= 'z'; c++) {
+  if (pos) {
+    for (uint32_t c = 1; c < dict.size(); c++) {
       tmp[pos] = c;
-      collisions(pos - 1);
+      collisions(pos - 1, max);
     }
   }
-
-  if (hashType != 2 && useCaps) {
-    for (char c = 'A'; c <= 'Z'; c++) {
+  else if (hashType == 1) {
+    for (uint32_t c = 0; c < prefix.size(); c++) {
       tmp[pos] = c;
-      collisions(pos - 1);
+      collisions(pos - 1, max);
     }
   }
-
-  if (useDigits && pos > 0) {
-    for (char c = '0'; c <= '9'; c++) {
-      tmp[pos] = c;
-      collisions(pos - 1);
-    }
-  }
-
-  if (useUnderscore && (pos > 0 || !capFirst)) {
-    tmp[pos] = '_';
-  }
-
-  collisions(pos - 1);
 }
 
 int main(int argc, char *argv[]) {
-  if (argc > 1) {
-    unsigned int x;
-    bool isPrefix = false;
-    bool isSuffix = false;
+  bool gettingPrefix = false;
 
+  if (argc > 1) {
     for (int c = 1; c < argc; c++) {
       std::string arg = argv[c];
 
-      if (arg == "--prefix") {
-        isPrefix = true;
-      }
-      else if(arg == "--suffix") {
-        isSuffix = true;
-      }
-      else if(arg == "--field") {
+      if(arg == "--field") {
         hashType = 1;
       }
       else if(arg == "--gbid") {
         hashType = 2;
       }
-      else if(arg == "--cap-first") {
-        capFirst = true;
-      }
-      else if(arg == "--digits") {
-        useDigits = true;
-      }
-      else if(arg == "--underscore") {
-        useUnderscore = true;
+      else if(arg == "--prefix") {
+        gettingPrefix = true;
       }
       else if(arg[0] == '-') {
         // discard unknown option
       }
-      else if (isPrefix) {
-        prefix = arg;
-        std::cerr << "Using prefix: " << prefix << std::endl;
-        isPrefix = false;
-      }
-      else if (isSuffix) {
-        suffix = arg;
-        std::cerr << "Using suffix: " << suffix << std::endl;
-        isSuffix = false;
+      else if(gettingPrefix) {
+        prefix.push_back(arg);
+        gettingPrefix = false;
+        customPrefix = true;
       }
       else {
         uint32_t tmp = 0;
@@ -135,13 +134,47 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  startingHash = checksum(prefix);
-  
+  int32_t dictmax = dict.size();
+  std::unordered_map<std::string, bool> dictmap;
+
+  for (const auto baseelem : getDict()) {
+    if (baseelem.length()) {
+      std::string elem = baseelem;
+      std::string newelem = elem;
+      std::string newelem2 = elem;
+
+      std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
+      std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
+
+      if (hashType == 1) {
+        dictmap[elem] = true;
+      }
+
+      if (hashType != 0) {
+        dictmap[newelem2] = true;
+      }
+
+      if (hashType != 2) {
+        newelem2 = newelem.substr(0, 1) + newelem2.substr(1);
+        dictmap[newelem] = true;
+        dictmap[newelem2] = true;
+      }
+    }
+  }
+
+  for (const auto elem : dictmap) {
+    dict.push_back(elem.first);
+  }
+
+  if (hashType == 1 && !customPrefix) {
+    prefix = getPrefixes();
+  }
+
   if (checksumMatch.size()) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
-    for (uint32_t c = 0; c < sizeof(tmp); c++) {
+    for (uint32_t c = 1; c < sizeof(tmp) / sizeof(uint32_t); c++) {
       std::cerr << "Length: " << (c + 1) << std::endl;
-      collisions(c);
+      collisions(c, c + 1);
     }
   }
 
