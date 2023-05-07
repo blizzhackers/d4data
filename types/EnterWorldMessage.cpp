@@ -14,6 +14,6 @@ void EnterWorldMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&snoWorld, base, current);
   current = ptr + 0x1c;
-  readData(&bSPlayers, base, current);
+  readData(&unk_23ac715, base, current);
   ptr += 0xe0;
 }

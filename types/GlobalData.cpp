@@ -328,7 +328,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0x5e4;
   readData(&unk_c19e188, base, current);
   current = ptr + 0x5e8;
-  readData(&m_FalloffVec, base, current);
+  readData(&unk_2c3c144, base, current);
   current = ptr + 0x5ec;
   readData(&unk_e82db97, base, current);
   current = ptr + 0x5f0;
@@ -726,7 +726,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0xa9c;
   readData(&unk_47ab791, base, current);
   current = ptr + 0xaa0;
-  readData(&wrEyeVisibility, base, current);
+  readData(&unk_1152bf4, base, current);
   current = ptr + 0xaa4;
   readData(&unk_fbf84b1, base, current);
   current = ptr + 0xaa8;

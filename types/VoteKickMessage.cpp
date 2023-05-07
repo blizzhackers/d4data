@@ -14,6 +14,6 @@ void VoteKickMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_1d54bcc, base, current);
   current = ptr + 0x18;
-  readData(&vRMessage, base, current);
+  readData(&usMessage, base, current);
   ptr += 0x418;
 }

@@ -10,6 +10,6 @@ void TryChatMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&vRMessage, base, current);
+  readData(&usMessage, base, current);
   ptr += 0x410;
 }

@@ -15,7 +15,7 @@ struct TryConsoleCommand : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_UINT unk_dce541c;
   DT_OPTIONAL<DT_INT> unk_243faa3;
-  DT_CHARARRAY<1024> vRMessage;
+  DT_CHARARRAY<1024> usMessage;
   SharedServerWorldPlace tPlaceTarget;
   DT_ACD_NETWORK_NAME annTarget;
   DT_UINT dwFlags;

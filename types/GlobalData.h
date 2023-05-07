@@ -183,7 +183,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_3debe95;
   DT_FLOAT unk_e8e5c04;
   DT_FLOAT unk_c19e188;
-  DT_FLOAT m_FalloffVec;
+  DT_FLOAT unk_2c3c144;
   DT_FLOAT unk_e82db97;
   DT_FLOAT unk_c097750;
   DT_FLOAT unk_90f2fe1;
@@ -382,7 +382,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_db530e;
   DT_FIXEDARRAY<DT_FLOAT, 14> unk_2a2e4fd;
   DT_FLOAT unk_47ab791;
-  DT_FLOAT wrEyeVisibility;
+  DT_FLOAT unk_1152bf4;
   DT_FLOAT unk_fbf84b1;
   DT_FIXEDARRAY<DT_FLOAT, 3> unk_47f08e2;
   DT_INT unk_74d0fea;

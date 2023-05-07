@@ -14,7 +14,7 @@ void TryConsoleCommand::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_243faa3, base, current);
   current = ptr + 0x1c;
-  readData(&vRMessage, base, current);
+  readData(&usMessage, base, current);
   current = ptr + 0x41c;
   readData(&tPlaceTarget, base, current);
   current = ptr + 0x430;

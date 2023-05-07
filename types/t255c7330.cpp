@@ -16,7 +16,7 @@ void t255c7330::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&eTeam, base, current);
   current = ptr + 0x20;
-  readData(&vRMessage, base, current);
+  readData(&usMessage, base, current);
   current = ptr + 0x420;
   readData(&unk_77b6d3, base, current);
   ptr += 0x460;

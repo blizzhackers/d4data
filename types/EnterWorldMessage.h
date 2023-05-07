@@ -15,7 +15,7 @@ struct EnterWorldMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_SHARED_SERVER_DATA_ID idSWorld;
   DT_SNO<SnoGroup::World> snoWorld;
-  DT_FIXEDARRAY<tdb797d73, 2> bSPlayers;
+  DT_FIXEDARRAY<tdb797d73, 2> unk_23ac715;
 
   void read(const char* base, char* &ptr);
 };

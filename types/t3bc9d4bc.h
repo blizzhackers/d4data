@@ -13,7 +13,7 @@
 struct t3bc9d4bc : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_UINT unk_dce541c;
-  DT_CHARARRAY<49> vRHeroName;
+  DT_CHARARRAY<49> usHeroName;
   DT_ENUM<DT_INT> eClass;
 
   void read(const char* base, char* &ptr);

@@ -12,7 +12,7 @@ void t3bc9d4bc::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_dce541c, base, current);
   current = ptr + 0x14;
-  readData(&vRHeroName, base, current);
+  readData(&usHeroName, base, current);
   current = ptr + 0x48;
   readData(&eClass, base, current);
   ptr += 0x4c;

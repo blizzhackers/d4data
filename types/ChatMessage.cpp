@@ -12,6 +12,6 @@ void ChatMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_dce541c, base, current);
   current = ptr + 0x14;
-  readData(&vRMessage, base, current);
+  readData(&usMessage, base, current);
   ptr += 0x414;
 }

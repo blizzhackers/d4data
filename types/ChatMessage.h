@@ -13,7 +13,7 @@
 struct ChatMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_UINT unk_dce541c;
-  DT_CHARARRAY<1024> vRMessage;
+  DT_CHARARRAY<1024> usMessage;
 
   void read(const char* base, char* &ptr);
 };
