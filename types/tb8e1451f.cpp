@@ -12,7 +12,7 @@ void tb8e1451f::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_ce9c870, base, current);
   current = ptr + 0x8;
-  readData(&wWorldEntry, base, current);
+  readData(&unk_ce9c871, base, current);
   current = ptr + 0xc;
   readData(&unk_1f677f2, base, current);
   current = ptr + 0x10;

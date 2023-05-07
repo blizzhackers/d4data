@@ -13,7 +13,7 @@
 struct tdfc16fd : public ComplexRead {
   HardpointLink unk_cf6449d;
   DT_VECTOR3D unk_64456dc;
-  DT_ENUM<DT_INT> unk_ac782ba;
+  DT_ENUM<DT_INT> eComponentType;
   DT_UINT szComponent;
 
   void read(const char* base, char* &ptr);

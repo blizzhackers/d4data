@@ -10,6 +10,6 @@ void t96f079c::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&iConsoleQuest, base, current);
+  readData(&unk_d01a9ae, base, current);
   ptr += 0x50;
 }

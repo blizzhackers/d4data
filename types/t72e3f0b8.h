@@ -15,7 +15,7 @@ struct t72e3f0b8 : public ComplexRead {
   DT_ENUM<DT_INT> unk_57f1731;
   DT_SNO<SnoGroup::World> unk_c420444;
   DT_STARTLOC_NAME unk_33d53d0;
-  DT_UINT unk_336454f;
+  DT_UINT dwPortalType;
   DT_SNO<SnoGroup::SubZone> unk_a89ad98;
   DT_ENUM<DT_INT> unk_7e152af;
   DT_UINT unk_9fe8af0;

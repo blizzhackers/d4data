@@ -42,7 +42,7 @@ void t11a18e87::read(const char* base, char* &ptr) {
   current = ptr + 0x54;
   readData(&unk_f68f8f5, base, current);
   current = ptr + 0x58;
-  readData(&unk_f12b219, base, current);
+  readData(&nTooltipWidth, base, current);
   current = ptr + 0x5c;
   readData(&unk_bffade6, base, current);
   current = ptr + 0x60;

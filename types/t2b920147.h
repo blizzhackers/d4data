@@ -11,7 +11,7 @@
 
 struct t2b920147 : public ComplexRead {
   DT_UINT unk_d17aff0;
-  DT_ENUM<DT_INT> unk_39e87d5;
+  DT_ENUM<DT_INT> eLinkType;
 
   void read(const char* base, char* &ptr);
 };

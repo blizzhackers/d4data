@@ -16,7 +16,7 @@ struct t1d369ba4 : public ComplexRead {
   DT_GBID<0x14> gbidType;
   DT_INT unk_2b95c58;
   DT_INT nGroupIndex;
-  DT_INT unk_5862894;
+  DT_INT eGroupType;
 
   void read(const char* base, char* &ptr);
 };

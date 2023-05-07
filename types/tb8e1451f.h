@@ -12,7 +12,7 @@
 struct tb8e1451f : public ComplexRead {
   DT_FLOAT unk_ce9c86f;
   DT_FLOAT unk_ce9c870;
-  DT_FLOAT wWorldEntry;
+  DT_FLOAT unk_ce9c871;
   DT_FLOAT unk_1f677f2;
   DT_FLOAT unk_1f677f3;
   DT_FLOAT unk_1f677f4;

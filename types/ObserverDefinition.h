@@ -18,7 +18,7 @@ struct ObserverDefinition : public ComplexRead {
   DT_FLOAT unk_9dab378;
   DT_FLOAT unk_3fe5936;
   DT_FLOAT unk_c9a32ec;
-  DT_FLOAT tQuestStackInfoMessage;
+  DT_FLOAT unk_3ac51ed;
   DT_INT fOrthographic;
   DT_FLOAT unk_b046307;
   DT_FLOAT unk_cc38bbe;

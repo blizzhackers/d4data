@@ -26,7 +26,7 @@ void RopeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&fTextureRepeatCount, base, current);
   current = ptr + 0x2c;
-  readData(&unk_7a4a8e6, base, current);
+  readData(&nRopeType, base, current);
   current = ptr + 0x30;
   readData(&unk_faa043c, base, current);
   current = ptr + 0x34;
@@ -98,7 +98,7 @@ void RopeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x5f0;
   readData(&pathYAmpOverLength, base, current);
   current = ptr + 0x628;
-  readData(&hUI_Dye, base, current);
+  readData(&unk_14d71e7, base, current);
   current = ptr + 0x660;
   readData(&unk_3e97148, base, current);
   current = ptr + 0x698;

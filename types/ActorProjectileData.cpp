@@ -64,7 +64,7 @@ void ActorProjectileData::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&unk_8815a78, base, current);
   current = ptr + 0x78;
-  readData(&serLevelAreaOverrideForSpawns, base, current);
+  readData(&unk_57168be, base, current);
   current = ptr + 0x7c;
   readData(&unk_9348542, base, current);
   current = ptr + 0x80;

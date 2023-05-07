@@ -8,9 +8,9 @@
 void t61c5dd90::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&gbHeroDescription, base, current);
+  readData(&unk_af8195b, base, current);
   current = ptr + 0x4;
-  readData(&IsLinearMessage, base, current);
+  readData(&unk_af8195c, base, current);
   current = ptr + 0x8;
   readData(&unk_af8195d, base, current);
   current = ptr + 0xc;

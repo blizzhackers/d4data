@@ -30,7 +30,7 @@ struct tf49e9532 : public ComplexRead {
   tcbfdd2ea unk_b9a067e;
   tcbfdd2ea unk_2f13301;
   DT_FLOAT unk_caea994;
-  DT_FLOAT TileSetExit;
+  DT_FLOAT unk_e4f6034;
   tcbfdd2ea unk_924ac95;
   DT_VECTOR3D unk_de5453f;
   tcbfdd2ea unk_ab0e39e;

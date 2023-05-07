@@ -24,7 +24,7 @@ void tfe183d60::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&unk_bd37345, base, current);
   current = ptr + 0x20;
-  readData(&nWalking_Rate, base, current);
+  readData(&unk_bd37346, base, current);
   current = ptr + 0x24;
   readData(&unk_bd37347, base, current);
   current = ptr + 0x28;

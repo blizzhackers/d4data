@@ -18,7 +18,7 @@ void td95af7ec::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&wEid, base, current);
   current = ptr + 0x30;
-  readData(&unk_35f022, base, current);
+  readData(&ptChunkVertices, base, current);
   current = ptr + 0x40;
   readData(&wAid, base, current);
   current = ptr + 0x44;

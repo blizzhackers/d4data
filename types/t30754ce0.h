@@ -27,7 +27,7 @@ struct t30754ce0 : public ComplexRead {
   DT_ENUM<DT_INT> unk_e659b0f;
   t46a557e9 tHeal;
   DT_ENUM<DT_INT> eHealType;
-  DT_INT isSubStr;
+  DT_INT unk_58227bf;
   DT_INT unk_8bc45f2;
   DT_INT unk_15c6c03;
   DT_INT unk_e842c84;

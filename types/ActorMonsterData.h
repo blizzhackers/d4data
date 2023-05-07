@@ -80,7 +80,7 @@ struct ActorMonsterData : public ComplexRead {
   DT_FLOAT unk_16266ca;
   DT_FLOAT unk_5428a5e;
   DT_FLOAT unk_3b9132c;
-  DT_FLOAT lOverkill;
+  DT_FLOAT unk_c0cc954;
   DT_FLOAT unk_d5178b2;
   DT_FLOAT unk_e08f0df;
 

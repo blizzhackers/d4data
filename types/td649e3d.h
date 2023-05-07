@@ -12,7 +12,7 @@
 
 struct td649e3d : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_UINT unk_336454f;
+  DT_UINT dwPortalType;
 
   void read(const char* base, char* &ptr);
 };

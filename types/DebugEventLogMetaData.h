@@ -1,5 +1,5 @@
 /**
- * Definition: t9d494ccc
+ * Definition: DebugEventLogMetaData
  * Hash: 9d494ccc
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct t9d494ccc : public ComplexRead {
+struct DebugEventLogMetaData : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_INT unk_1255128;
   DT_INT unk_965113;

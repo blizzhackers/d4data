@@ -172,7 +172,7 @@ struct tf8ed47a9 : public ComplexRead {
   DT_FLOAT unk_e3de54d;
   DT_UINT unk_2bdd3a2;
   DT_FLOAT unk_6d92ca8;
-  DT_FLOAT pGameGetPlayerHandicapValues;
+  DT_FLOAT unk_124d5ff;
   DT_FLOAT unk_99df291;
   DT_FLOAT unk_ecfa0a0;
   DT_FLOAT unk_599fb20;

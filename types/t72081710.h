@@ -27,7 +27,7 @@ struct t72081710 : public ComplexRead {
   DT_FLOAT unk_754b0f5;
   DT_FLOAT unk_4ce8a9b;
   DT_FLOAT unk_cbaf386;
-  DT_FLOAT gbSigmaTimingInitialize;
+  DT_FLOAT unk_e7daef4;
   DT_FLOAT unk_497f7bf;
   DT_FLOAT unk_d19c35c;
   DT_FLOAT unk_5456aec;

@@ -16,7 +16,7 @@ void tc542fab4::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_268c683, base, current);
   current = ptr + 0x10;
-  readData(&unk_336454f, base, current);
+  readData(&dwPortalType, base, current);
   current = ptr + 0x14;
   readData(&unk_af5815a, base, current);
   current = ptr + 0x18;

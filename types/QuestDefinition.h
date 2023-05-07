@@ -17,7 +17,7 @@ struct QuestDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_f88ee86;
   DT_ENUM<DT_INT> unk_4c4339b;
   DT_ENUM<DT_INT> unk_f522ece;
-  DT_ENUM<DT_INT> unk_43d5008;
+  DT_ENUM<DT_INT> eRepeatType;
   DT_ENUM<DT_INT> unk_46224d;
   DT_INT unk_43f3849;
   DT_INT unk_48a2b16;
@@ -33,7 +33,7 @@ struct QuestDefinition : public ComplexRead {
   DT_INT unk_14dee1b;
   DT_FLOAT unk_c694251;
   DT_FLOAT unk_8881b0e;
-  DT_UINT unk_bca2efc;
+  DT_UINT dwNextUID;
   DT_INT unk_b89b77f;
   DT_INT unk_c18cabd;
   DT_ENUM<DT_INT> unk_79f6e17;

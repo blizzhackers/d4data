@@ -41,6 +41,7 @@ let dict = {
   '7': '7',
   '8': '8',
   '9': '9',
+  '_': '_',
 };
 
 let names = {};
@@ -51,14 +52,14 @@ fs.readFileSync('names.txt').toString().split(/\s+/gi).forEach(name => {
 });
 
 Object.keys(names).forEach(name => {
-  let matches = name.split(/^((?:fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gb|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)(?=[0-9A-Z_]))/g).filter(Boolean);
+  let matches = name.split(/^((?:fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gbid|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)(?=[0-9A-Z_]))/g).filter(Boolean);
 
   matches.forEach(subname => {
     if (/^[^a-zA-Z]+$/.test(subname)) {
       return;
     }
 
-    if (/^(fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gb|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)$/g.test(subname)) {
+    if (/^(fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gbid|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)$/g.test(subname)) {
       prefix[subname.toLowerCase()] = names[name];
     } else {
       newnames[subname] = names[name];

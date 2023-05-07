@@ -36,7 +36,7 @@ struct taced015b : public ComplexRead {
   DT_FLOAT unk_f0ffa30;
   DT_FLOAT unk_914f7cd;
   DT_FLOAT unk_b5ff484;
-  DT_FLOAT ptAttackersPerPlayerThrottlingThreshold;
+  DT_FLOAT unk_55daa16;
   DT_FLOAT unk_602c192;
   DT_FLOAT flDensity;
   DT_FLOAT unk_797e898;

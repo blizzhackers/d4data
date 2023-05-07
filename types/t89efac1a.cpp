@@ -16,6 +16,6 @@ void t89efac1a::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_ab8c232, base, current);
   current = ptr + 0x10;
-  readData(&pSkuTransaction, base, current);
+  readData(&unk_58450e9, base, current);
   ptr += 0x14;
 }

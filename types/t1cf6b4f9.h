@@ -82,7 +82,7 @@ struct t1cf6b4f9 : public ComplexRead {
   DT_FLOAT unk_fb56b70;
   DT_FLOAT unk_9e754d5;
   DT_INT unk_aa224d7;
-  DT_FLOAT arMonsterPutInPack;
+  DT_FLOAT unk_dd0d1ca;
   DT_FLOAT unk_a7d19b0;
   DT_FLOAT unk_daea413;
   tcbfdd2ea unk_2935034;
@@ -122,14 +122,14 @@ struct t1cf6b4f9 : public ComplexRead {
   DT_FLOAT flBlendApproachSpeed;
   t4a900441 unk_2f42898;
   DT_SNO<SnoGroup::Material> unk_580b325;
-  DT_SNO<SnoGroup::Material> iHotfixSLOFilename;
+  DT_SNO<SnoGroup::Material> unk_9f4feca;
   tcbfdd2ea unk_26d2ca2;
   tcbfdd2ea unk_832195e;
   tcbfdd2ea unk_d9ac5a8;
   DT_FLOAT flSSAOOcclusionRadius;
   DT_FLOAT unk_ca026c6;
   DT_FLOAT unk_6356b81;
-  DT_FLOAT eAccountData_114_115_reflection_;
+  DT_FLOAT unk_c1c86a0;
   DT_FLOAT unk_cc9331e;
   DT_FLOAT unk_58f490;
   DT_FLOAT unk_92befa;

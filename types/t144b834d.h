@@ -12,7 +12,7 @@
 
 struct t144b834d : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_CHARARRAY<16> unk_3097c7c;
+  DT_CHARARRAY<16> szGroupType;
   DT_SNO<SnoGroup::Actor> snoMonster;
   DT_SNO<SnoGroup::Power> snoSkill;
   DT_UINT uCount;

@@ -12,7 +12,7 @@ void tdfc16fd::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_64456dc, base, current);
   current = ptr + 0x14;
-  readData(&unk_ac782ba, base, current);
+  readData(&eComponentType, base, current);
   current = ptr + 0x18;
   readData(&szComponent, base, current);
   ptr += 0x1c;

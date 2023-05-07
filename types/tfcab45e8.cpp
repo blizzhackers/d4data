@@ -10,7 +10,7 @@ void tfcab45e8::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_7cb44e7, base, current);
+  readData(&eUnitType, base, current);
   current = ptr + 0x14;
   readData(&unk_b0a3524, base, current);
   current = ptr + 0x18;

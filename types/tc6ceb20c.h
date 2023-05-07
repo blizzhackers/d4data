@@ -11,7 +11,7 @@
 
 struct tc6ceb20c : public ComplexRead {
   DT_ENUM<DT_INT> eServiceType;
-  DT_ENUM<DT_INT> unk_f6db5d5;
+  DT_ENUM<DT_INT> eVendorType;
   DT_ENUM<DT_INT> eCrafterType;
   DT_FLOAT unk_e28f315;
   DT_ENUM<DT_INT> eCurrencyType;

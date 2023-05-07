@@ -14,7 +14,7 @@ void InterpolationScalar::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_2424d91, base, current);
   current = ptr + 0x10;
-  readData(&BtnMedium_SelectedDefinition, base, current);
+  readData(&unk_c9a8e76, base, current);
   current = ptr + 0x18;
   readData(&unk_3599c51, base, current);
   current = ptr + 0x1c;

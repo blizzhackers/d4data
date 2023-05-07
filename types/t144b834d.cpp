@@ -10,7 +10,7 @@ void t144b834d::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_3097c7c, base, current);
+  readData(&szGroupType, base, current);
   current = ptr + 0x20;
   readData(&snoMonster, base, current);
   current = ptr + 0x24;

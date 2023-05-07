@@ -56,7 +56,7 @@ void t24a8a9be::read(const char* base, char* &ptr) {
   current = ptr + 0x5c;
   readData(&unk_279eec9, base, current);
   current = ptr + 0x60;
-  readData(&outputGpuBinaries, base, current);
+  readData(&unk_f742b8a, base, current);
   current = ptr + 0x64;
   readData(&unk_259e646, base, current);
   current = ptr + 0x68;

@@ -14,7 +14,7 @@ void t2b0b488::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&wpLocation, base, current);
   current = ptr + 0x20;
-  readData(&unk_336454f, base, current);
+  readData(&dwPortalType, base, current);
   current = ptr + 0x24;
   readData(&unk_164ef1e, base, current);
   ptr += 0x28;

@@ -64,7 +64,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x160;
   readData(&unk_475af70, base, current);
   current = ptr + 0x170;
-  readData(&lAntiCheat, base, current);
+  readData(&unk_79fc11d, base, current);
   current = ptr + 0x180;
   readData(&unk_24aa41d, base, current);
   current = ptr + 0x190;
@@ -198,7 +198,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x454;
   readData(&unk_16aecc9, base, current);
   current = ptr + 0x458;
-  readData(&m_ItemBlacklistFlags, base, current);
+  readData(&unk_8f7c9c1, base, current);
   current = ptr + 0x468;
   readData(&unk_cddc4fd, base, current);
   current = ptr + 0x478;

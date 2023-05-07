@@ -16,7 +16,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_f522ece, base, current);
   current = ptr + 0x18;
-  readData(&unk_43d5008, base, current);
+  readData(&eRepeatType, base, current);
   current = ptr + 0x1c;
   readData(&unk_46224d, base, current);
   current = ptr + 0x20;
@@ -48,7 +48,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x6c;
   readData(&unk_8881b0e, base, current);
   current = ptr + 0x70;
-  readData(&unk_bca2efc, base, current);
+  readData(&dwNextUID, base, current);
   current = ptr + 0x74;
   readData(&unk_b89b77f, base, current);
   current = ptr + 0x78;

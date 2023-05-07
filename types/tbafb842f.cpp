@@ -44,7 +44,7 @@ void tbafb842f::read(const char* base, char* &ptr) {
   current = ptr + 0x60;
   readData(&unk_773ad4d, base, current);
   current = ptr + 0x64;
-  readData(&unk_94e6590, base, current);
+  readData(&flSpeedWalking, base, current);
   current = ptr + 0x68;
   readData(&unk_7383884, base, current);
   current = ptr + 0x6c;
@@ -94,7 +94,7 @@ void tbafb842f::read(const char* base, char* &ptr) {
   current = ptr + 0xe0;
   readData(&unk_3b9132c, base, current);
   current = ptr + 0xe4;
-  readData(&lOverkill, base, current);
+  readData(&unk_c0cc954, base, current);
   current = ptr + 0xe8;
   readData(&unk_d5178b2, base, current);
   current = ptr + 0xec;

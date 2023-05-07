@@ -18,6 +18,6 @@ void t1d369ba4::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&nGroupIndex, base, current);
   current = ptr + 0x20;
-  readData(&unk_5862894, base, current);
+  readData(&eGroupType, base, current);
   ptr += 0x24;
 }

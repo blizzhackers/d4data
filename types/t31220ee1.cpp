@@ -40,6 +40,6 @@ void t31220ee1::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&unk_a19ea25, base, current);
   current = ptr + 0x40;
-  readData(&tMessageQueueUsedMessage, base, current);
+  readData(&unk_9c74994, base, current);
   ptr += 0x44;
 }

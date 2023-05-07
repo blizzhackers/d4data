@@ -26,7 +26,7 @@ struct t31220ee1 : public ComplexRead {
   DT_FLOAT unk_fde953b;
   DT_FLOAT unk_cc72c59;
   DT_INT unk_a19ea25;
-  DT_FLOAT tMessageQueueUsedMessage;
+  DT_FLOAT unk_9c74994;
 
   void read(const char* base, char* &ptr);
 };

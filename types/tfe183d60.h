@@ -18,7 +18,7 @@ struct tfe183d60 : public ComplexRead {
   DT_FLOAT unk_651228;
   DT_RGBACOLOR unk_bd37344;
   DT_RGBACOLOR unk_bd37345;
-  DT_RGBACOLOR nWalking_Rate;
+  DT_RGBACOLOR unk_bd37346;
   DT_RGBACOLOR unk_bd37347;
   DT_RGBACOLOR unk_bd37348;
   DT_RGBACOLOR unk_bd37349;

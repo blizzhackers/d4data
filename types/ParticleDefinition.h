@@ -46,7 +46,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_VARIABLEARRAY<tcbfdd2ea> unk_5e70a3d;
   DT_VARIABLEARRAY<tcbfdd2ea> unk_f627bde;
   DT_VARIABLEARRAY<tcbfdd2ea> unk_475af70;
-  DT_VARIABLEARRAY<VectorPath> lAntiCheat;
+  DT_VARIABLEARRAY<VectorPath> unk_79fc11d;
   DT_VARIABLEARRAY<tcbfdd2ea> unk_24aa41d;
   DT_SNO<SnoGroup::Material> snoMaterial;
   DT_SNO<SnoGroup::HoudiniParticleSim> unk_8e9800;
@@ -113,7 +113,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_VECTOR3D unk_a4cad4f;
   DT_ENUM<DT_INT> unk_817d767;
   DT_FLOAT unk_16aecc9;
-  DT_VARIABLEARRAY<tcbfdd2ea> m_ItemBlacklistFlags;
+  DT_VARIABLEARRAY<tcbfdd2ea> unk_8f7c9c1;
   DT_VARIABLEARRAY<VectorPath> unk_cddc4fd;
   DT_VARIABLEARRAY<VectorPath> unk_b4a20d4;
   DT_FLOAT unk_da1d404;

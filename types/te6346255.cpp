@@ -62,7 +62,7 @@ void te6346255::read(const char* base, char* &ptr) {
   current = ptr + 0xa8;
   readData(&unk_2ee62a3, base, current);
   current = ptr + 0xb0;
-  readData(&unk_3c5b3af, base, current);
+  readData(&eFacingType, base, current);
   current = ptr + 0xb4;
   readData(&unk_9a103a0, base, current);
   current = ptr + 0xb8;

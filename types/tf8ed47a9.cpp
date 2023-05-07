@@ -300,7 +300,7 @@ void tf8ed47a9::read(const char* base, char* &ptr) {
   current = ptr + 0x608;
   readData(&unk_6d92ca8, base, current);
   current = ptr + 0x60c;
-  readData(&pGameGetPlayerHandicapValues, base, current);
+  readData(&unk_124d5ff, base, current);
   current = ptr + 0x610;
   readData(&unk_99df291, base, current);
   current = ptr + 0x614;

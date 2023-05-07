@@ -32,7 +32,7 @@ struct tcec837f6 : public ComplexRead {
   DT_ENUM<DT_INT> unk_77bdba8;
   DT_UINT unk_8f61ea4;
   DT_VECTOR3D unk_3e59e14;
-  DT_ENUM<DT_INT> tDropAllMessage;
+  DT_ENUM<DT_INT> unk_6076d47;
   DT_ENUM<DT_INT> unk_8d18eb6;
   DT_INT unk_67060f1;
   DT_STRING_FORMULA unk_3999d6e;

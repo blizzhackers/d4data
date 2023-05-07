@@ -85,7 +85,7 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_UINT unk_ac2a184;
   DT_UINT unk_f9a8bfb;
   DT_UINT unk_c68960d;
-  DT_UINT szNewDamageReduction;
+  DT_UINT unk_f4db603;
   DT_UINT unk_f4401b8;
   DT_UINT unk_f38a271;
   DT_UINT unk_71458eb;

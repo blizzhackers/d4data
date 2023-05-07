@@ -10,7 +10,7 @@ void t2b27b554::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&dwUnlockLevel, base, current);
   current = ptr + 0x4;
-  readData(&tPVPGameIsOverDefinition, base, current);
+  readData(&unk_8b0c045, base, current);
   current = ptr + 0x8;
   readData(&unk_b7d2154, base, current);
   current = ptr + 0x10;

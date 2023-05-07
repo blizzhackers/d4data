@@ -10,7 +10,7 @@ void taf6bc267::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_5b9ae9a, base, current);
   current = ptr + 0x4;
-  readData(&iAllocType, base, current);
+  readData(&unk_b61e136, base, current);
   current = ptr + 0x8;
   readData(&unk_6fc9e50, base, current);
   current = ptr + 0xc;

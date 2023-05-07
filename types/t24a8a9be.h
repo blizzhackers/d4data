@@ -34,7 +34,7 @@ struct t24a8a9be : public ComplexRead {
   DT_SNO<SnoGroup::Shader> unk_8857547;
   DT_SNO<SnoGroup::Shader> unk_57fb208;
   DT_SNO<SnoGroup::Shader> unk_279eec9;
-  DT_SNO<SnoGroup::Shader> outputGpuBinaries;
+  DT_SNO<SnoGroup::Shader> unk_f742b8a;
   DT_SNO<SnoGroup::Shader> unk_259e646;
   DT_SNO<SnoGroup::Shader> unk_a90ec3a;
   DT_SNO<SnoGroup::Shader> unk_78b28fb;

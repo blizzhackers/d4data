@@ -38,7 +38,7 @@ void t30754ce0::read(const char* base, char* &ptr) {
   current = ptr + 0x180;
   readData(&eHealType, base, current);
   current = ptr + 0x184;
-  readData(&isSubStr, base, current);
+  readData(&unk_58227bf, base, current);
   current = ptr + 0x188;
   readData(&unk_8bc45f2, base, current);
   current = ptr + 0x18c;

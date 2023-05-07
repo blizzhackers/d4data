@@ -1,11 +1,11 @@
 /**
- * Definition: t9d494ccc
+ * Definition: DebugEventLogMetaData
  * Hash: 9d494ccc
  */
 
-#include "t9d494ccc.h"
+#include "DebugEventLogMetaData.h"
 
-void t9d494ccc::read(const char* base, char* &ptr) {
+void DebugEventLogMetaData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);

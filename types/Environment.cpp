@@ -22,7 +22,7 @@ void Environment::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_580b325, base, current);
   current = ptr + 0x44;
-  readData(&iHotfixSLOFilename, base, current);
+  readData(&unk_9f4feca, base, current);
   current = ptr + 0x48;
   readData(&flFarPlaneCap, base, current);
   current = ptr + 0x4c;

@@ -13,7 +13,7 @@
 #pragma push(pack, 1)
 
 struct PolytopeData : public ComplexRead {
-  te81e59e2 nAppearanceAttributeGlobalSNOMap;
+  te81e59e2 unk_e96f671;
   DT_VARIABLEARRAY<DT_VECTOR3D> ptVertices;
   DT_VARIABLEARRAY<tfba0555c> ptPlanes;
   DT_VARIABLEARRAY<teabc2b2b> ptSubEdges;

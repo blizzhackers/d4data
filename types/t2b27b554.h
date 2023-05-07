@@ -12,7 +12,7 @@
 
 struct t2b27b554 : public ComplexRead {
   DT_UINT dwUnlockLevel;
-  DT_UINT tPVPGameIsOverDefinition;
+  DT_UINT unk_8b0c045;
   DT_SNO<SnoGroup::Quest> unk_b7d2154;
   DT_VARIABLEARRAY<t7110c154> unk_8bd010;
 

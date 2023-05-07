@@ -26,7 +26,7 @@ void te6b22340::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&unk_435bdfd, base, current);
   current = ptr + 0x40;
-  readData(&tConvPageZoomedType, base, current);
+  readData(&unk_f2dbd17, base, current);
   current = ptr + 0x44;
   readData(&tVerticalOffset, base, current);
   current = ptr + 0x4c;

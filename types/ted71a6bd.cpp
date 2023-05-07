@@ -28,7 +28,7 @@ void ted71a6bd::read(const char* base, char* &ptr) {
   current = ptr + 0x5f8;
   readData(&unk_5d1c931, base, current);
   current = ptr + 0x6f8;
-  readData(&unk_721003a, base, current);
+  readData(&arPortalTypes, base, current);
   current = ptr + 0x708;
   readData(&unk_b42ac97, base, current);
   current = ptr + 0x70c;

@@ -24,7 +24,7 @@ struct RopeDefinition : public ComplexRead {
   DT_FLOAT flMassTaperFactor;
   DT_FLOAT flMassEnd;
   DT_FLOAT fTextureRepeatCount;
-  DT_ENUM<DT_INT> unk_7a4a8e6;
+  DT_ENUM<DT_INT> nRopeType;
   DT_INT unk_faa043c;
   DT_FLOAT unk_daaa964;
   DT_FLOAT flStiffness;
@@ -60,7 +60,7 @@ struct RopeDefinition : public ComplexRead {
   tcbfdd2ea pathSeparation;
   tcbfdd2ea pathXAmpOverLength;
   tcbfdd2ea pathYAmpOverLength;
-  tcbfdd2ea hUI_Dye;
+  tcbfdd2ea unk_14d71e7;
   tcbfdd2ea unk_3e97148;
   tcbfdd2ea pathFreqOverTime;
   tcbfdd2ea pathPhaseSpeedOverTime;

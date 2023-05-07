@@ -14,7 +14,7 @@ struct t89efac1a : public ComplexRead {
   DT_FLOAT unk_853fbfe;
   DT_FLOAT unk_147fba4;
   DT_INT unk_ab8c232;
-  DT_INT pSkuTransaction;
+  DT_INT unk_58450e9;
 
   void read(const char* base, char* &ptr);
 };

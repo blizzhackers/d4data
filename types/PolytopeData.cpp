@@ -8,7 +8,7 @@
 void PolytopeData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&nAppearanceAttributeGlobalSNOMap, base, current);
+  readData(&unk_e96f671, base, current);
   current = ptr + 0x40;
   readData(&ptVertices, base, current);
   current = ptr + 0x50;

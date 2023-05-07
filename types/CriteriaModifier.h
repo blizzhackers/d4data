@@ -11,7 +11,7 @@
 
 struct CriteriaModifier : public ComplexRead {
   DT_ENUM<DT_INT> unk_43805b9;
-  DT_ENUM<DT_INT> unk_952d470;
+  DT_ENUM<DT_INT> eOperandType;
   DT_SNO_NAME snoname;
   DT_ENUM<DT_INT> unk_33d39d0;
   DT_ENUM<DT_INT> eSlot;

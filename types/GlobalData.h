@@ -25,7 +25,7 @@
 struct GlobalData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<LookVariant> unk_2304b90;
+  DT_VARIABLEARRAY<LookVariant> arLookVariants;
   DT_VARIABLEARRAY<ta526fcd5> unk_620b39b;
   DT_VARIABLEARRAY<DT_INT> unk_156a14c;
   DT_VARIABLEARRAY<DT_INT> unk_6759f02;
@@ -183,7 +183,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_3debe95;
   DT_FLOAT unk_e8e5c04;
   DT_FLOAT unk_c19e188;
-  DT_FLOAT unk_2c3c144;
+  DT_FLOAT m_FalloffVec;
   DT_FLOAT unk_e82db97;
   DT_FLOAT unk_c097750;
   DT_FLOAT unk_90f2fe1;
@@ -280,7 +280,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_f14295;
   DT_FLOAT unk_4639a17;
   DT_FLOAT unk_7d8ae03;
-  DT_FLOAT wpGridZoom;
+  DT_FLOAT unk_13e7c92;
   DT_FLOAT unk_c8eb270;
   DT_FLOAT unk_dac13bc;
   DT_FLOAT unk_73807f8;
@@ -382,7 +382,7 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_db530e;
   DT_FIXEDARRAY<DT_FLOAT, 14> unk_2a2e4fd;
   DT_FLOAT unk_47ab791;
-  DT_FLOAT unk_1152bf4;
+  DT_FLOAT wrEyeVisibility;
   DT_FLOAT unk_fbf84b1;
   DT_FIXEDARRAY<DT_FLOAT, 3> unk_47f08e2;
   DT_INT unk_74d0fea;

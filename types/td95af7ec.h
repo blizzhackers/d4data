@@ -16,7 +16,7 @@ struct td95af7ec : public ComplexRead {
   DT_VARIABLEARRAY<t5b95dd21> unk_62bfa18;
   DT_VARIABLEARRAY<DT_BYTE> unk_aea647a;
   DT_INT wEid;
-  DT_VARIABLEARRAY<DT_BYTE> unk_35f022;
+  DT_VARIABLEARRAY<DT_BYTE> ptChunkVertices;
   DT_INT wAid;
   DT_INT baid;
   DT_UINT unk_4c43adc;

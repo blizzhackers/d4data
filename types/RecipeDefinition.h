@@ -18,7 +18,7 @@ struct RecipeDefinition : public ComplexRead {
   DT_RANGE<DT_INT> unk_80fd44d;
   DT_SNO<SnoGroup::Item> snoItem;
   DT_ENUM<DT_INT> eCrafterType;
-  DT_ENUM<DT_INT> unk_abc657f;
+  DT_ENUM<DT_INT> eRecipeType;
   DT_UINT dwFlags;
   DT_INT unk_2fa5b31;
   DT_UINT nCost;

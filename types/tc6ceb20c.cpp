@@ -10,7 +10,7 @@ void tc6ceb20c::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&eServiceType, base, current);
   current = ptr + 0x4;
-  readData(&unk_f6db5d5, base, current);
+  readData(&eVendorType, base, current);
   current = ptr + 0x8;
   readData(&eCrafterType, base, current);
   current = ptr + 0xc;

@@ -14,7 +14,7 @@ struct tc542fab4 : public ComplexRead {
   DT_SNO<SnoGroup::World> unk_c420444;
   DT_STARTLOC_NAME unk_33d53d0;
   DT_SNO<SnoGroup::LevelArea> unk_268c683;
-  DT_UINT unk_336454f;
+  DT_UINT dwPortalType;
   DT_INT unk_af5815a;
   DT_INT unk_1f57cf2;
   DT_INT unk_9799a99;

@@ -60,7 +60,7 @@ void taced015b::read(const char* base, char* &ptr) {
   current = ptr + 0x80;
   readData(&unk_b5ff484, base, current);
   current = ptr + 0x84;
-  readData(&ptAttackersPerPlayerThrottlingThreshold, base, current);
+  readData(&unk_55daa16, base, current);
   current = ptr + 0x88;
   readData(&unk_602c192, base, current);
   current = ptr + 0x8c;

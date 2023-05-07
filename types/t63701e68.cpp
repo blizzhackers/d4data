@@ -14,6 +14,6 @@ void t63701e68::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&dwEntranceName, base, current);
   current = ptr + 0x14;
-  readData(&unk_336454f, base, current);
+  readData(&dwPortalType, base, current);
   ptr += 0x18;
 }

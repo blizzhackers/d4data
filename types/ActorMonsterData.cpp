@@ -138,7 +138,7 @@ void ActorMonsterData::read(const char* base, char* &ptr) {
   current = ptr + 0x21c;
   readData(&unk_3b9132c, base, current);
   current = ptr + 0x220;
-  readData(&lOverkill, base, current);
+  readData(&unk_c0cc954, base, current);
   current = ptr + 0x224;
   readData(&unk_d5178b2, base, current);
   current = ptr + 0x228;

@@ -16,6 +16,6 @@ void PetType::read(const char* base, char* &ptr) {
   current = ptr + 0x10c;
   readData(&unk_a9f95f3, base, current);
   current = ptr + 0x110;
-  readData(&ptTPitchDown, base, current);
+  readData(&unk_9a99f28, base, current);
   ptr += 0x114;
 }

@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t69ebc9fa : public ComplexRead {
-  DT_ENUM<DT_INT> unk_7cb44e7;
+  DT_ENUM<DT_INT> eUnitType;
 
   void read(const char* base, char* &ptr);
 };

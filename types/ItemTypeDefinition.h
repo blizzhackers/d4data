@@ -22,7 +22,7 @@ struct ItemTypeDefinition : public ComplexRead {
   DT_FLOAT unk_cc5ef53;
   DT_INT unk_9981e08;
   DT_INT unk_9e2e500;
-  DT_INT lUpdatePrivileges;
+  DT_INT unk_69d0449;
   DT_INT unk_f03343a;
   DT_INT unk_9d54616;
   DT_INT unk_b5a1c2b;

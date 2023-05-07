@@ -11,7 +11,7 @@
 
 struct taf6bc267 : public ComplexRead {
   DT_FLOAT unk_5b9ae9a;
-  DT_FLOAT iAllocType;
+  DT_FLOAT unk_b61e136;
   DT_RGBACOLOR unk_6fc9e50;
   DT_RGBACOLOR unk_3a37ef6;
   DT_INT unk_bbf28fc;

@@ -24,7 +24,7 @@ struct ActorSoundTableData : public ComplexRead {
   DT_SNO<SnoGroup::SoundTable> unk_87b2493;
   DT_SNO<SnoGroup::SoundTable> unk_f1b3d91;
   DT_SNO<SnoGroup::SoundTable> unk_608d70b;
-  DT_SNO<SnoGroup::SoundTable> vInputMsg;
+  DT_SNO<SnoGroup::SoundTable> unk_16fd1ad;
   DT_SNO<SnoGroup::SoundTable> unk_6a4231b;
   DT_SNO<SnoGroup::SoundTable> unk_10a92fc;
   DT_SNO<SnoGroup::SoundTable> unk_5e2d9d6;

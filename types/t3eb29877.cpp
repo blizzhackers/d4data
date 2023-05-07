@@ -12,7 +12,7 @@ void t3eb29877::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&unk_7f97996, base, current);
   current = ptr + 0x8;
-  readData(&ToOrbitMessage, base, current);
+  readData(&unk_5d3f708, base, current);
   current = ptr + 0xc;
   readData(&unk_f62de34, base, current);
   current = ptr + 0x10;
@@ -42,7 +42,7 @@ void t3eb29877::read(const char* base, char* &ptr) {
   current = ptr + 0x4f8;
   readData(&unk_ba61ab4, base, current);
   current = ptr + 0x4fc;
-  readData(&tagBaseTileHeight, base, current);
+  readData(&unk_567053e, base, current);
   current = ptr + 0x500;
   readData(&unk_c08eb6c, base, current);
   current = ptr + 0x504;
@@ -52,7 +52,7 @@ void t3eb29877::read(const char* base, char* &ptr) {
   current = ptr + 0x50c;
   readData(&unk_94608ec, base, current);
   current = ptr + 0x510;
-  readData(&tagGameGetClientGameConnectionID, base, current);
+  readData(&unk_210514c, base, current);
   current = ptr + 0x514;
   readData(&unk_b06b705, base, current);
   current = ptr + 0x518;

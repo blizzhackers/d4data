@@ -138,7 +138,7 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x59c;
   readData(&unk_c68960d, base, current);
   current = ptr + 0x5a0;
-  readData(&szNewDamageReduction, base, current);
+  readData(&unk_f4db603, base, current);
   current = ptr + 0x5a4;
   readData(&unk_f4401b8, base, current);
   current = ptr + 0x5a8;

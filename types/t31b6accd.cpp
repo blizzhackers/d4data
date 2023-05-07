@@ -10,7 +10,7 @@ void t31b6accd::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_336454f, base, current);
+  readData(&dwPortalType, base, current);
   current = ptr + 0x14;
   readData(&unk_1bf9922, base, current);
   current = ptr + 0x18;

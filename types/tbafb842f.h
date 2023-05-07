@@ -30,7 +30,7 @@ struct tbafb842f : public ComplexRead {
   DT_ENUM<DT_INT> unk_ccbd7c6;
   DT_ENUM<DT_INT> unk_a5b8d03;
   DT_ENUM<DT_INT> unk_773ad4d;
-  DT_FLOAT unk_94e6590;
+  DT_FLOAT flSpeedWalking;
   DT_FLOAT unk_7383884;
   DT_FLOAT unk_5f8b5e1;
   DT_FLOAT unk_5ee8c01;
@@ -55,7 +55,7 @@ struct tbafb842f : public ComplexRead {
   DT_FLOAT unk_121fc92;
   DT_FLOAT unk_5428a5e;
   DT_FLOAT unk_3b9132c;
-  DT_FLOAT lOverkill;
+  DT_FLOAT unk_c0cc954;
   DT_FLOAT unk_d5178b2;
   DT_FLOAT unk_e08f0df;
   DT_INT unk_c86d0b9;

@@ -12,7 +12,7 @@
 
 struct t31b6accd : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_UINT unk_336454f;
+  DT_UINT dwPortalType;
   DT_INT unk_1bf9922;
   DT_SNO<SnoGroup::LevelArea> snoLevelArea;
   DT_SNO<SnoGroup::SubZone> snoSubzone;

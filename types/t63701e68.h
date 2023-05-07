@@ -13,7 +13,7 @@ struct t63701e68 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_STARTLOC_NAME dwEntranceName;
-  DT_UINT unk_336454f;
+  DT_UINT dwPortalType;
 
   void read(const char* base, char* &ptr);
 };

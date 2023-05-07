@@ -13,7 +13,7 @@
 struct t898f326e : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_CHARARRAY<64> szMarkerName;
-  DT_CHARARRAY<16> unk_3097c7c;
+  DT_CHARARRAY<16> szGroupType;
   DT_SNO<SnoGroup::World> snoWorld;
   DT_SNO<SnoGroup::Actor> snoMonster;
   DT_SNO<SnoGroup::MonsterAffix> snoAffix;

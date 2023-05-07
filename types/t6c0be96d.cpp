@@ -12,6 +12,6 @@ void t6c0be96d::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&snoScroll, base, current);
   current = ptr + 0x14;
-  readData(&unk_2bf0136, base, current);
+  readData(&nNodeUID, base, current);
   ptr += 0x18;
 }

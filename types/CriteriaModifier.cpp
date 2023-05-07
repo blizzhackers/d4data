@@ -10,7 +10,7 @@ void CriteriaModifier::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_43805b9, base, current);
   current = ptr + 0x4;
-  readData(&unk_952d470, base, current);
+  readData(&eOperandType, base, current);
   current = ptr + 0x8;
   readData(&snoname, base, current);
   current = ptr + 0x10;

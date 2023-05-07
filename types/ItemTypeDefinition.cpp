@@ -30,7 +30,7 @@ void ItemTypeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&unk_9e2e500, base, current);
   current = ptr + 0x4c;
-  readData(&lUpdatePrivileges, base, current);
+  readData(&unk_69d0449, base, current);
   current = ptr + 0x50;
   readData(&unk_f03343a, base, current);
   current = ptr + 0x54;

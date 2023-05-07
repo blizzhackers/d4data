@@ -140,7 +140,7 @@ void t1cf6b4f9::read(const char* base, char* &ptr) {
   current = ptr + 0x5d0;
   readData(&unk_aa224d7, base, current);
   current = ptr + 0x5d4;
-  readData(&arMonsterPutInPack, base, current);
+  readData(&unk_dd0d1ca, base, current);
   current = ptr + 0x5d8;
   readData(&unk_a7d19b0, base, current);
   current = ptr + 0x5dc;
@@ -220,7 +220,7 @@ void t1cf6b4f9::read(const char* base, char* &ptr) {
   current = ptr + 0xac0;
   readData(&unk_580b325, base, current);
   current = ptr + 0xac4;
-  readData(&iHotfixSLOFilename, base, current);
+  readData(&unk_9f4feca, base, current);
   current = ptr + 0xac8;
   readData(&unk_26d2ca2, base, current);
   current = ptr + 0xb00;
@@ -234,7 +234,7 @@ void t1cf6b4f9::read(const char* base, char* &ptr) {
   current = ptr + 0xb78;
   readData(&unk_6356b81, base, current);
   current = ptr + 0xb7c;
-  readData(&eAccountData_114_115_reflection_, base, current);
+  readData(&unk_c1c86a0, base, current);
   current = ptr + 0xb80;
   readData(&unk_cc9331e, base, current);
   current = ptr + 0xb84;

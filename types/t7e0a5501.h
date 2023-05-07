@@ -17,7 +17,7 @@ struct t7e0a5501 : public ComplexRead {
   DT_INT64 unk_e1de6e4;
   DT_INT64 unk_35d179b;
   DT_UINT unk_eb81e70;
-  DT_INT bcBehavior;
+  DT_INT unk_9946895;
   DT_CHARARRAY<256> unk_15c229b;
   DT_INT unk_fc823cf;
 

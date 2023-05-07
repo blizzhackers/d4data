@@ -12,7 +12,7 @@ void t898f326e::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&szMarkerName, base, current);
   current = ptr + 0x50;
-  readData(&unk_3097c7c, base, current);
+  readData(&szGroupType, base, current);
   current = ptr + 0x60;
   readData(&snoWorld, base, current);
   current = ptr + 0x64;

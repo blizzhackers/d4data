@@ -30,7 +30,7 @@ struct t11a18e87 : public ComplexRead {
   DT_INT nTooltipOffsetY;
   DT_ENUM<DT_INT> unk_b9b10c5;
   DT_ENUM<DT_INT> unk_f68f8f5;
-  DT_INT unk_f12b219;
+  DT_INT nTooltipWidth;
   DT_FLOAT unk_bffade6;
   DT_BYTE dwAlpha;
   DT_ENUM<DT_INT> unk_cdd5397;

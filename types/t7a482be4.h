@@ -17,7 +17,7 @@ struct t7a482be4 : public ComplexRead {
   DT_UINT szLookName;
   DT_UINT unk_6c0cb90;
   DT_ENUM<DT_INT> unk_ce65d4b;
-  DT_ENUM<DT_INT> unk_396ef7c;
+  DT_ENUM<DT_INT> eInstanceType;
   DT_VARIABLEARRAY<t8b32a937> ptInstances;
   t2d02bd94 unk_7934bc2;
   DT_UINT dwFlags;

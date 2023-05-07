@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t840bd0e3 : public ComplexRead {
-  DT_UINT SoundPermDefinition;
+  DT_UINT unk_52cb266;
 
   void read(const char* base, char* &ptr);
 };

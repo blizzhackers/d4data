@@ -14,7 +14,7 @@ void ScriptMessageMap::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&snoCondition, base, current);
   current = ptr + 0xc;
-  readData(&uGameIterate, base, current);
+  readData(&unk_c3ba01d, base, current);
   current = ptr + 0x10;
   readData(&unk_18defa6, base, current);
   current = ptr + 0x18;

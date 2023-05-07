@@ -1,11 +1,11 @@
 /**
- * Definition: t23c42d70
+ * Definition: DebugEventLogMessage
  * Hash: 23c42d70
  */
 
-#include "t23c42d70.h"
+#include "DebugEventLogMessage.h"
 
-void t23c42d70::read(const char* base, char* &ptr) {
+void DebugEventLogMessage::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&tHeader, base, current);
@@ -16,7 +16,7 @@ void t23c42d70::read(const char* base, char* &ptr) {
   current = ptr + 0x400;
   readData(&unk_6248a18, base, current);
   current = ptr + 0x404;
-  readData(&uACDInSameWorld, base, current);
+  readData(&aMetaData, base, current);
   current = ptr + 0x3408;
   readData(&ann, base, current);
   ptr += 0x3418;

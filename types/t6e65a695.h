@@ -12,7 +12,7 @@
 
 struct t6e65a695 : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActor;
-  DT_ENUM<DT_INT> unk_39baadf;
+  DT_ENUM<DT_INT> eDefaultVariant;
   tb42131c6 tVariant;
 
   void read(const char* base, char* &ptr);

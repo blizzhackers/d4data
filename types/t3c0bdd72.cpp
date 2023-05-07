@@ -28,7 +28,7 @@ void t3c0bdd72::read(const char* base, char* &ptr) {
   current = ptr + 0x54;
   readData(&unk_435bdfd, base, current);
   current = ptr + 0x58;
-  readData(&tConvPageZoomedType, base, current);
+  readData(&unk_f2dbd17, base, current);
   current = ptr + 0x5c;
   readData(&tVerticalOffset, base, current);
   current = ptr + 0x64;

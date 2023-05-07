@@ -42,7 +42,7 @@ void t72081710::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_cbaf386, base, current);
   current = ptr + 0x44;
-  readData(&gbSigmaTimingInitialize, base, current);
+  readData(&unk_e7daef4, base, current);
   current = ptr + 0x48;
   readData(&unk_497f7bf, base, current);
   current = ptr + 0x4c;

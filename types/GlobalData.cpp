@@ -12,7 +12,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_2304b90, base, current);
+  readData(&arLookVariants, base, current);
   current = ptr + 0x20;
   readData(&unk_620b39b, base, current);
   current = ptr + 0x30;
@@ -328,7 +328,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0x5e4;
   readData(&unk_c19e188, base, current);
   current = ptr + 0x5e8;
-  readData(&unk_2c3c144, base, current);
+  readData(&m_FalloffVec, base, current);
   current = ptr + 0x5ec;
   readData(&unk_e82db97, base, current);
   current = ptr + 0x5f0;
@@ -522,7 +522,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0x800;
   readData(&unk_7d8ae03, base, current);
   current = ptr + 0x804;
-  readData(&wpGridZoom, base, current);
+  readData(&unk_13e7c92, base, current);
   current = ptr + 0x808;
   readData(&unk_c8eb270, base, current);
   current = ptr + 0x80c;
@@ -726,7 +726,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0xa9c;
   readData(&unk_47ab791, base, current);
   current = ptr + 0xaa0;
-  readData(&unk_1152bf4, base, current);
+  readData(&wrEyeVisibility, base, current);
   current = ptr + 0xaa4;
   readData(&unk_fbf84b1, base, current);
   current = ptr + 0xaa8;

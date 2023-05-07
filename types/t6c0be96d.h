@@ -13,7 +13,7 @@
 struct t6c0be96d : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_SNO<SnoGroup::DemonScroll> snoScroll;
-  DT_INT unk_2bf0136;
+  DT_INT nNodeUID;
 
   void read(const char* base, char* &ptr);
 };

@@ -24,7 +24,7 @@ void ObserverDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&unk_c9a32ec, base, current);
   current = ptr + 0x40;
-  readData(&tQuestStackInfoMessage, base, current);
+  readData(&unk_3ac51ed, base, current);
   current = ptr + 0x44;
   readData(&fOrthographic, base, current);
   current = ptr + 0x48;

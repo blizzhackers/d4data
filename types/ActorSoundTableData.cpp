@@ -34,7 +34,7 @@ void ActorSoundTableData::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_608d70b, base, current);
   current = ptr + 0x34;
-  readData(&vInputMsg, base, current);
+  readData(&unk_16fd1ad, base, current);
   current = ptr + 0x38;
   readData(&unk_6a4231b, base, current);
   current = ptr + 0x3c;

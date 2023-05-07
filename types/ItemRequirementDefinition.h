@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct ItemRequirementDefinition : public ComplexRead {
-  DT_INT unk_8800554;
+  DT_INT bAnyWeapon;
   DT_INT bDualWielding;
   DT_INT unk_901b272;
   DT_INT unk_24a783;

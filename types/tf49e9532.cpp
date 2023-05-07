@@ -46,7 +46,7 @@ void tf49e9532::read(const char* base, char* &ptr) {
   current = ptr + 0x200;
   readData(&unk_caea994, base, current);
   current = ptr + 0x204;
-  readData(&TileSetExit, base, current);
+  readData(&unk_e4f6034, base, current);
   current = ptr + 0x208;
   readData(&unk_924ac95, base, current);
   current = ptr + 0x240;

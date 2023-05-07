@@ -12,7 +12,7 @@ void ta9417475::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&snoQuest, base, current);
   current = ptr + 0x8;
-  readData(&unk_ed2a98e, base, current);
+  readData(&dwPhaseUID, base, current);
   current = ptr + 0xc;
   readData(&unk_31547ea, base, current);
   ptr += 0x10;

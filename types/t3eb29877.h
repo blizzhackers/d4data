@@ -14,7 +14,7 @@
 struct t3eb29877 : public ComplexRead {
   DT_FLOAT unk_ff313c4;
   DT_FLOAT unk_7f97996;
-  DT_FLOAT ToOrbitMessage;
+  DT_FLOAT unk_5d3f708;
   DT_FLOAT unk_f62de34;
   DT_FIXEDARRAY<DT_FLOAT, 100> unk_824f481;
   DT_FLOAT unk_c871110;
@@ -29,12 +29,12 @@ struct t3eb29877 : public ComplexRead {
   DT_FLOAT unk_9938ef6;
   DT_FLOAT unk_c1eed76;
   DT_FLOAT unk_ba61ab4;
-  DT_FLOAT tagBaseTileHeight;
+  DT_FLOAT unk_567053e;
   DT_FLOAT unk_c08eb6c;
   DT_FLOAT unk_233b257;
   DT_FLOAT unk_ddcd73;
   DT_FLOAT unk_94608ec;
-  DT_FLOAT tagGameGetClientGameConnectionID;
+  DT_FLOAT unk_210514c;
   DT_FLOAT unk_b06b705;
   DT_FLOAT unk_f7ea482;
   DT_FLOAT unk_9c2857b;

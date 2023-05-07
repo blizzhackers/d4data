@@ -52,7 +52,7 @@ void tcec837f6::read(const char* base, char* &ptr) {
   current = ptr + 0xf4;
   readData(&unk_3e59e14, base, current);
   current = ptr + 0x100;
-  readData(&tDropAllMessage, base, current);
+  readData(&unk_6076d47, base, current);
   current = ptr + 0x104;
   readData(&unk_8d18eb6, base, current);
   current = ptr + 0x108;

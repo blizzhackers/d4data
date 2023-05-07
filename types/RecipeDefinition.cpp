@@ -18,7 +18,7 @@ void RecipeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&eCrafterType, base, current);
   current = ptr + 0x40;
-  readData(&unk_abc657f, base, current);
+  readData(&eRecipeType, base, current);
   current = ptr + 0x44;
   readData(&dwFlags, base, current);
   current = ptr + 0x48;

@@ -15,7 +15,7 @@ struct PetType : public ComplexRead {
   DT_ENUM<DT_INT> unk_887ea65;
   DT_INT unk_17d5315;
   DT_INT unk_a9f95f3;
-  DT_INT ptTPitchDown;
+  DT_INT unk_9a99f28;
 
   void read(const char* base, char* &ptr);
 };

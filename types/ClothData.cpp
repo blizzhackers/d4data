@@ -16,7 +16,7 @@ void ClothData::read(const char* base, char* &ptr) {
   current = ptr + 0x140;
   readData(&unk_f3049dd, base, current);
   current = ptr + 0x150;
-  readData(&unk_a90684, base, current);
+  readData(&ptBlendWeights, base, current);
   current = ptr + 0x160;
   readData(&unk_6b5f617, base, current);
   current = ptr + 0x170;

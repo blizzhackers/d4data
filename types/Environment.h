@@ -19,7 +19,7 @@ struct Environment : public ComplexRead {
   DT_SNO<SnoGroup::Texture> unk_4c76230;
   bcQuat unk_afd6821;
   DT_SNO<SnoGroup::Material> unk_580b325;
-  DT_SNO<SnoGroup::Material> iHotfixSLOFilename;
+  DT_SNO<SnoGroup::Material> unk_9f4feca;
   DT_FLOAT flFarPlaneCap;
   DT_SNO<SnoGroup::AmbientSound> unk_7680ff6;
   DT_SNO<SnoGroup::AmbientSound> unk_31e7772;

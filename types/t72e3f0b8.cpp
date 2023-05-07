@@ -18,7 +18,7 @@ void t72e3f0b8::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_33d53d0, base, current);
   current = ptr + 0x1c;
-  readData(&unk_336454f, base, current);
+  readData(&dwPortalType, base, current);
   current = ptr + 0x20;
   readData(&unk_a89ad98, base, current);
   current = ptr + 0x24;
