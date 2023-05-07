@@ -744,7 +744,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0xac8;
   readData(&unk_463f23c, base, current);
   current = ptr + 0xad8;
-  readData(&unk_f5d11c2, base, current);
+  readData(&arWorldTiers, base, current);
   current = ptr + 0xe38;
   readData(&unk_acf9234, base, current);
   current = ptr + 0xe4c;

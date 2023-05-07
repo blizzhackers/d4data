@@ -18,6 +18,6 @@ void td25b948e::read(const char* base, char* &ptr) {
   current = ptr + 0x34;
   readData(&dwPad, base, current);
   current = ptr + 0x38;
-  readData(&unk_3c9c8ca, base, current);
+  readData(&flDistanceThreshold, base, current);
   ptr += 0x40;
 }

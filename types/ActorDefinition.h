@@ -57,7 +57,7 @@ struct ActorDefinition : public ComplexRead {
   DT_VECTOR3D wpLocationPowerSrc;
   DT_ENUM<DT_INT> ePickStyle;
   DT_FLOAT flAttachmentScaleFactor;
-  DT_ENUM<DT_INT> unk_603bb31;
+  DT_ENUM<DT_INT> eDefaultTeam;
   DT_ENUM<DT_INT> unk_ce65d4b;
   DT_FLOAT unk_c794c59;
   DT_FLOAT unk_99ee15d;

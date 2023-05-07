@@ -10,6 +10,6 @@ void ConditionData::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&snoCondition, base, current);
   current = ptr + 0x4;
-  readData(&unk_5d7a334, base, current);
+  readData(&hConditionText, base, current);
   ptr += 0xc;
 }

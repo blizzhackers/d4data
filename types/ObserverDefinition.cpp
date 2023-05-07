@@ -30,7 +30,7 @@ void ObserverDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&unk_b046307, base, current);
   current = ptr + 0x4c;
-  readData(&unk_cc38bbe, base, current);
+  readData(&flFStop, base, current);
   current = ptr + 0x50;
   readData(&unk_101b2fc, base, current);
   current = ptr + 0x54;

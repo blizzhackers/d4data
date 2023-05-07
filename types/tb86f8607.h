@@ -21,7 +21,7 @@ struct tb86f8607 : public ComplexRead {
   MaterialTexture tMatTexProjected;
   LightStateParams tStateA;
   DT_RANGE<DT_INT> unk_3dc76e8;
-  DT_RANGE<DT_INT> unk_e5f4f23;
+  DT_RANGE<DT_INT> fFirstTexels;
   DT_FLOAT unk_b2d1b35;
   DT_RANGE<DT_INT> unk_da73b5e;
   DT_FLOAT unk_159b591;

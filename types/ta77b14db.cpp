@@ -10,7 +10,7 @@ void ta77b14db::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_db96ab2, base, current);
   current = ptr + 0x4;
-  readData(&unk_cb518a0, base, current);
+  readData(&hClassTitle, base, current);
   current = ptr + 0x8;
   readData(&unk_a210c9f, base, current);
   current = ptr + 0xc;

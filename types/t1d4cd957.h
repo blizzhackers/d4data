@@ -13,7 +13,7 @@
 struct t1d4cd957 : public ComplexRead {
   t72bd65f8 tHeader;
   DT_ACD_NETWORK_NAME annItem;
-  DT_INT unk_7142da1;
+  DT_INT nBankTab;
   DT_ENUM<DT_INT> eCurrencyType;
   DT_INT64 nCurrencyAmount;
 

@@ -16,7 +16,7 @@ struct ActorProjectileData : public ComplexRead {
   DT_INT unk_769dc7;
   DT_INT unk_a6a9aae;
   DT_INT unk_1db2e79;
-  DT_INT unk_5cd8b5e;
+  DT_INT bAmountStatic;
   DT_INT unk_e456a7e;
   DT_INT unk_bac5791;
   DT_INT unk_7c4ac65;

@@ -86,7 +86,7 @@ void t21e30636::read(const char* base, char* &ptr) {
   current = ptr + 0xf0;
   readData(&unk_9967c81, base, current);
   current = ptr + 0x100;
-  readData(&unk_61399d, base, current);
+  readData(&dwSegmentsStep, base, current);
   current = ptr + 0x104;
   readData(&unk_6c0cb90, base, current);
   current = ptr + 0x108;

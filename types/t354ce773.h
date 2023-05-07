@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t354ce773 : public ComplexRead {
-  DT_FLOAT unk_cc38bbe;
+  DT_FLOAT flFStop;
   DT_FLOAT unk_335c6c2;
 
   void read(const char* base, char* &ptr);

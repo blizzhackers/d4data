@@ -168,7 +168,7 @@ struct tf8ed47a9 : public ComplexRead {
   DT_UINT unk_ba98f17;
   DT_FIXEDARRAY<taec481b3, 6> unk_8c77381;
   DT_FLOAT unk_934d708;
-  DT_FLOAT unk_77a9a02;
+  DT_FLOAT fCreatedTangents;
   DT_FLOAT unk_e3de54d;
   DT_UINT unk_2bdd3a2;
   DT_FLOAT unk_6d92ca8;

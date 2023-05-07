@@ -8,6 +8,6 @@
 void t10bd6c90::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_b3ad390, base, current);
+  readData(&arCameraStates, base, current);
   ptr += 0x10;
 }

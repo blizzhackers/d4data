@@ -12,7 +12,7 @@
 
 struct ConditionData : public ComplexRead {
   DT_SNO<SnoGroup::Condition> snoCondition;
-  StringLabelHandleEx unk_5d7a334;
+  StringLabelHandleEx hConditionText;
 
   void read(const char* base, char* &ptr);
 };

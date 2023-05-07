@@ -56,7 +56,7 @@ struct AnimPermutation : public ComplexRead {
   DT_INT unk_b4c58a6;
   DT_VARIABLEARRAY<t9e8134dc> unk_4b39bee;
   DT_VECTOR3D wvAvgVel;
-  PRTransform bDrlgTranslate;
+  PRTransform unk_57d4879;
   HardpointLink tHardpointLink;
   DT_FLOAT unk_bd4a157;
   DT_UINT unk_a3acec8;

@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct t10bd6c90 : public ComplexRead {
-  DT_VARIABLEARRAY<td0677c85> unk_b3ad390;
+  DT_VARIABLEARRAY<td0677c85> arCameraStates;
 
   void read(const char* base, char* &ptr);
 };

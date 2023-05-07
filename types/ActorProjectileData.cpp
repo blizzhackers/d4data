@@ -18,7 +18,7 @@ void ActorProjectileData::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_1db2e79, base, current);
   current = ptr + 0x14;
-  readData(&unk_5cd8b5e, base, current);
+  readData(&bAmountStatic, base, current);
   current = ptr + 0x18;
   readData(&unk_e456a7e, base, current);
   current = ptr + 0x1c;

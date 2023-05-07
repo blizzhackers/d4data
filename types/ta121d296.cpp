@@ -38,7 +38,7 @@ void ta121d296::read(const char* base, char* &ptr) {
   current = ptr + 0x78;
   readData(&unk_6b8bffc, base, current);
   current = ptr + 0x7c;
-  readData(&unk_61399d, base, current);
+  readData(&dwSegmentsStep, base, current);
   current = ptr + 0x80;
   readData(&unk_6c0cb90, base, current);
   current = ptr + 0x84;

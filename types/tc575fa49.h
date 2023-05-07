@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct tc575fa49 : public ComplexRead {
-  PRTransform unk_a402cfb;
+  PRTransform tLocalTransform;
   DT_VECTOR3D unk_80dc871;
 
   void read(const char* base, char* &ptr);

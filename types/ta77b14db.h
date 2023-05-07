@@ -12,7 +12,7 @@
 
 struct ta77b14db : public ComplexRead {
   DT_INT unk_db96ab2;
-  DT_UINT unk_cb518a0;
+  DT_UINT hClassTitle;
   DT_UINT unk_a210c9f;
   DT_UINT hResource;
   DT_VARIABLEARRAY<tc6d4c449> unk_2af459a;

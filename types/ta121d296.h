@@ -31,7 +31,7 @@ struct ta121d296 : public ComplexRead {
   LookLink tLookLink;
   DT_INT unk_48fd494;
   DT_ENUM<DT_INT> unk_6b8bffc;
-  DT_UINT unk_61399d;
+  DT_UINT dwSegmentsStep;
   DT_UINT unk_6c0cb90;
   DT_FLOAT flScale;
   DT_UINT dwSeed;

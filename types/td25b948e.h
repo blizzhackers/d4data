@@ -15,7 +15,7 @@ struct td25b948e : public ComplexRead {
   DT_POLYMORPHIC_VARIABLEARRAY arConditions;
   DT_INT bEnd;
   DT_UINT dwPad;
-  DT_FLOAT unk_3c9c8ca;
+  DT_FLOAT flDistanceThreshold;
 
   void read(const char* base, char* &ptr);
 };

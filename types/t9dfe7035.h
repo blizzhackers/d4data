@@ -14,7 +14,7 @@ struct t9dfe7035 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_UINT unk_1e3c3c3;
-  DT_FLOAT unk_19dfce6;
+  DT_FLOAT flAngleThreshold;
   DT_INT unk_18f0908;
   DT_INT unk_ec8f2d4;
   DT_VARIABLEARRAY<t4d7ce083> unk_b0425e7;

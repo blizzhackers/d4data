@@ -19,7 +19,7 @@ struct tc65eab2c : public ComplexRead {
   DT_ENUM<DT_INT> eActorType;
   DT_ENUM<DT_INT> eGizmoType;
   DT_SNO<SnoGroup::World> snoWorld;
-  PRTransform unk_eec6058;
+  PRTransform tWorldTransform;
   DT_SNO<SnoGroup::Condition> unk_677237e;
   DT_SNO<SnoGroup::LevelArea> snoLevelArea;
   DT_SNO<SnoGroup::FogofWar> snoFogOfWar;

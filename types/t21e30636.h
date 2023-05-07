@@ -57,7 +57,7 @@ struct t21e30636 : public ComplexRead {
   DT_ENUM<DT_INT> unk_6b8bffc;
   DT_SNO<SnoGroup::AnimSet> unk_e1f5441;
   DT_VARIABLEARRAY<ta4f1387e> unk_9967c81;
-  DT_UINT unk_61399d;
+  DT_UINT dwSegmentsStep;
   DT_UINT unk_6c0cb90;
   DT_INT nLocalPlayerIndex;
   DT_FLOAT flScale;

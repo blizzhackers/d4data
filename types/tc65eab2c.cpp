@@ -22,7 +22,7 @@ void tc65eab2c::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&snoWorld, base, current);
   current = ptr + 0x1c;
-  readData(&unk_eec6058, base, current);
+  readData(&tWorldTransform, base, current);
   current = ptr + 0x38;
   readData(&unk_677237e, base, current);
   current = ptr + 0x3c;

@@ -30,7 +30,7 @@ void tbff7ab89::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&ePlayerClass, base, current);
   current = ptr + 0x4c;
-  readData(&unk_8ee998c, base, current);
+  readData(&tDisplayTimes, base, current);
   current = ptr + 0x344;
   readData(&unk_2d60579, base, current);
   ptr += 0x348;

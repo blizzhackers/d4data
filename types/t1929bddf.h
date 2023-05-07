@@ -13,7 +13,7 @@
 struct t1929bddf : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ENUM<DT_INT> idQuest;
-  DT_INT unk_2f41f03;
+  DT_INT nMinSubcondition;
 
   void read(const char* base, char* &ptr);
 };

@@ -14,7 +14,7 @@ void t9dfe7035::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_1e3c3c3, base, current);
   current = ptr + 0x14;
-  readData(&unk_19dfce6, base, current);
+  readData(&flAngleThreshold, base, current);
   current = ptr + 0x18;
   readData(&unk_18f0908, base, current);
   current = ptr + 0x1c;

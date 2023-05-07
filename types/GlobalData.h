@@ -391,7 +391,7 @@ struct GlobalData : public ComplexRead {
   DT_INT unk_c5cd637;
   DT_INT unk_d85b358;
   DT_FIXEDARRAY<DT_INT, 3> unk_463f23c;
-  DT_FIXEDARRAY<td73778d6, 4> unk_f5d11c2;
+  DT_FIXEDARRAY<td73778d6, 4> arWorldTiers;
   DT_FIXEDARRAY<DT_FLOAT, 5> unk_acf9234;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Particle>, 5> unk_c9c1b78;
   DT_FLOAT unk_765a638;

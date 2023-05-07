@@ -12,7 +12,7 @@ void t1d4cd957::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&annItem, base, current);
   current = ptr + 0x1c;
-  readData(&unk_7142da1, base, current);
+  readData(&nBankTab, base, current);
   current = ptr + 0x20;
   readData(&eCurrencyType, base, current);
   current = ptr + 0x28;

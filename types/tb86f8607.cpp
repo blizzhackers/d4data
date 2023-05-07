@@ -24,7 +24,7 @@ void tb86f8607::read(const char* base, char* &ptr) {
   current = ptr + 0x320;
   readData(&unk_3dc76e8, base, current);
   current = ptr + 0x328;
-  readData(&unk_e5f4f23, base, current);
+  readData(&fFirstTexels, base, current);
   current = ptr + 0x330;
   readData(&unk_b2d1b35, base, current);
   current = ptr + 0x334;
