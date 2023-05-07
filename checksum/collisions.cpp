@@ -193,7 +193,6 @@ int main(int argc, char *argv[]) {
 
       if (hashType != 2) {
         newelem2 = newelem.substr(0, 1) + newelem2.substr(1);
-        dictmap[newelem] = true;
         dictmap[newelem2] = true;
       }
     }

@@ -42,16 +42,16 @@ let dict = {
   '8': '8',
   '9': '9',
   '_': '_',
-  'script': 'Script',
-  'event': 'Event',
-  'param': 'Param',
-  'power': 'Power',
-  'condition': 'Condition',
-  'trigger': 'Trigger',
-  'phase': 'Phase',
-  'callback': 'Callback',
-  'gizmo': 'Gizmo',
-  'data': 'Data',
+  'script': 'script',
+  'event': 'event',
+  'param': 'param',
+  'power': 'power',
+  'condition': 'condition',
+  'trigger': 'trigger',
+  'phase': 'phase',
+  'callback': 'callback',
+  'gizmo': 'gizmo',
+  'data': 'data',
   'definition': 'definition',
   'table': 'table',
   'list': 'list',
@@ -214,7 +214,7 @@ Object.keys(names).forEach(name => {
     }
 
     if (/^(fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gbid|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)$/g.test(subname)) {
-      prefix[subname.toLowerCase()] = names[name];
+      prefix[subname] = names[name];
     } else {
       newnames[subname] = names[name];
     }
@@ -233,7 +233,7 @@ Object.keys(names).forEach(name => {
     }
 
     if (/^(3x3|4x4|BCVEC2I|IDs(?![a-z])|By(?![a-z])|To(?![a-z])|In(?![a-z])|Is(?![a-z])|On(?![a-z])|No(?![a-z])|(?<![0-9])2D|(?<![0-9])3D|(?<![0-9])4D)$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      dict[subname.toLowerCase()] = names[name];
+      dict[subname] = names[name];
     } else {
       newnames[subname] = names[name];
     }
@@ -252,7 +252,7 @@ Object.keys(names).forEach(name => {
     }
 
     if (/^([A-Z][a-z]+)$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      dict[subname.toLowerCase()] = names[name];
+      dict[subname] = names[name];
     } else {
       newnames[subname] = names[name];
     }
@@ -271,7 +271,7 @@ Object.keys(names).forEach(name => {
     }
 
     if (/^([A-Z]{2,})$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      dict[subname.toLowerCase()] = names[name];
+      dict[subname] = names[name];
     } else {
       newnames[subname] = names[name];
     }
