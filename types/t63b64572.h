@@ -15,7 +15,7 @@ struct t63b64572 : public ComplexRead {
   DT_ENUM<DT_INT> unk_c0222bf;
   DT_UINT dwPad;
   DT_SNO<SnoGroup::Power> unk_f1da7c5;
-  DT_UINT unk_740244f;
+  DT_UINT dwTalentRank;
 
   void read(const char* base, char* &ptr);
 };

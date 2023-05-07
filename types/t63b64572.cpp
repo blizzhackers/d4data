@@ -18,6 +18,6 @@ void t63b64572::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_f1da7c5, base, current);
   current = ptr + 0x24;
-  readData(&unk_740244f, base, current);
+  readData(&dwTalentRank, base, current);
   ptr += 0x28;
 }

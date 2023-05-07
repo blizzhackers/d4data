@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct TiledStyleDefinition : public ComplexRead {
-  DT_POLYMORPHIC_VARIABLEARRAY unk_5da7fc2;
+  DT_POLYMORPHIC_VARIABLEARRAY ptWindowPiece;
   DT_TAGMAP<DT_INT> unk_b66d648;
 
   void read(const char* base, char* &ptr);

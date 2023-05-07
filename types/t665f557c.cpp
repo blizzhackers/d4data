@@ -10,9 +10,9 @@ void t665f557c::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_2b67d31, base, current);
   current = ptr + 0x4;
-  readData(&unk_caac0a7, base, current);
+  readData(&wpStartPos, base, current);
   current = ptr + 0x10;
-  readData(&unk_f958de0, base, current);
+  readData(&wpTargetPos, base, current);
   current = ptr + 0x1c;
   readData(&aOriginalYaw, base, current);
   current = ptr + 0x20;

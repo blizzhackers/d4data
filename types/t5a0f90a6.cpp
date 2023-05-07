@@ -10,7 +10,7 @@ void t5a0f90a6::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&snoStartQuest, base, current);
   current = ptr + 0x8;
-  readData(&unk_dc30525, base, current);
+  readData(&arActivityQuests, base, current);
   current = ptr + 0x18;
   readData(&unk_6cc9ab2, base, current);
   current = ptr + 0x28;

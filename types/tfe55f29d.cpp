@@ -14,6 +14,6 @@ void tfe55f29d::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&flTetherRadius, base, current);
   current = ptr + 0x1c;
-  readData(&unk_beb141d, base, current);
+  readData(&wpTetherPoint, base, current);
   ptr += 0x30;
 }

@@ -46,7 +46,7 @@ struct QuestDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_b83e7b1;
   DT_INT unk_942bcdb;
   DT_UINT dwFlags;
-  DT_POLYMORPHIC_VARIABLEARRAY unk_4c868c9;
+  DT_POLYMORPHIC_VARIABLEARRAY arQuestPhases;
   DT_VARIABLEARRAY<tab2d8e94> unk_1755172;
   DT_VARIABLEARRAY<tab2d8e94> unk_3367716;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_46e3956;

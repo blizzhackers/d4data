@@ -11,7 +11,7 @@
 
 struct t5a0f90a6 : public ComplexRead {
   DT_SNO<SnoGroup::Quest> snoStartQuest;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_dc30525;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> arActivityQuests;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_6cc9ab2;
   DT_SNO<SnoGroup::Item> unk_c25c9f0;
   DT_FIXEDARRAY<DT_UINT, 3> unk_9f4512f;

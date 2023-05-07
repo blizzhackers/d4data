@@ -42,6 +42,16 @@ let dict = {
   '8': '8',
   '9': '9',
   '_': '_',
+  'script': 'Script',
+  'event': 'Event',
+  'param': 'Param',
+  'power': 'Power',
+  'condition': 'Condition',
+  'trigger': 'Trigger',
+  'phase': 'Phase',
+  'callback': 'Callback',
+  'gizmo': 'Gizmo',
+  'data': 'Data',
 };
 
 let names = {};

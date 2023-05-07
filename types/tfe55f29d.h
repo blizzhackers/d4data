@@ -15,7 +15,7 @@ struct tfe55f29d : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME annPlayer;
   DT_FLOAT flTetherRadius;
-  SharedServerWorldPlace unk_beb141d;
+  SharedServerWorldPlace wpTetherPoint;
 
   void read(const char* base, char* &ptr);
 };

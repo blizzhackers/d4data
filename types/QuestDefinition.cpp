@@ -74,7 +74,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&dwFlags, base, current);
   current = ptr + 0xa8;
-  readData(&unk_4c868c9, base, current);
+  readData(&arQuestPhases, base, current);
   current = ptr + 0xc0;
   readData(&unk_1755172, base, current);
   current = ptr + 0xd0;

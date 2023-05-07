@@ -20,7 +20,7 @@ void t4be0ee1::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_2b88f71, base, current);
   current = ptr + 0x48;
-  readData(&unk_b1ae0e8, base, current);
+  readData(&flImpactPitch, base, current);
   current = ptr + 0x50;
   readData(&snoEffectGroup, base, current);
   ptr += 0x54;

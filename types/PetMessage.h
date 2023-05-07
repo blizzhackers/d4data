@@ -17,7 +17,7 @@ struct PetMessage : public ComplexRead {
   DT_INT nIndex;
   DT_ACD_NETWORK_NAME annPet;
   DT_GBID<0x17> gbidPetType;
-  DT_OPTIONAL<DT_INT> unk_267e8b4;
+  DT_OPTIONAL<DT_INT> tNecroPet;
   DT_OPTIONAL<DT_INT> unk_9e938b5;
 
   void read(const char* base, char* &ptr);
