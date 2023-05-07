@@ -1,9 +1,13 @@
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include <vector>
 #include <unistd.h>
 #include <algorithm>
+#include <filesystem>
 #include "../dict.h"
+
+std::string rootPath = "";
 
 uint32_t tmp[64]{ 0 };
 std::vector<uint32_t> checksumMatch;
@@ -12,6 +16,7 @@ bool hashType = 0;
 std::vector<std::string> prefix;
 auto customPrefix = false;
 std::vector<std::string> dict;
+std::unordered_map<std::string, bool> stringUsed;
 
 uint32_t checksum(std::string str) {
   if (hashType == 2) { // gbid strings are lowercased
@@ -66,8 +71,27 @@ void collisions(long pos, long max) {
     uint32_t wordChecksum = checksum(word);
 
     for (int c = 0; c < checksumMatch.size(); c++) {
-      if(wordChecksum == checksumMatch[c]) {
-        std::cout << "  " << std::hex << checksumMatch[c] << ": " << (word) << std::endl;
+      if(wordChecksum == checksumMatch[c] && !stringUsed[word]) {
+        std::cout << "  " << std::hex << checksumMatch[c] << ": " << word << std::endl;
+        stringUsed[word] = true;
+
+        std::stringstream outfilePath;
+
+        if (hashType == 0) {
+          outfilePath << "type/";
+        }
+        else if (hashType == 1) {
+          outfilePath << "field/";
+        }
+        else if (hashType == 1) {
+          outfilePath << "gbid/";
+        }
+
+        outfilePath << std::hex << wordChecksum << ".yml";
+
+        std::ofstream outfile(outfilePath.str(), std::ios::app);
+        outfile << std::hex << checksumMatch[c] << ": " << word << std::endl;
+        outfile.close();
         break;
       }
     }
@@ -91,6 +115,19 @@ void collisions(long pos, long max) {
 
 int main(int argc, char *argv[]) {
   bool gettingPrefix = false;
+
+  int pos = 0;
+
+  for (int c = 0; argv[0][c] && c < 128; c++) {
+    if (argv[0][c] == '/') {
+      pos = c;
+    }
+  }
+
+  if (pos > 0) {
+    rootPath = std::string(argv[0], pos);
+    std::filesystem::current_path(rootPath);
+  }
 
   if (argc > 1) {
     for (int c = 1; c < argc; c++) {
