@@ -18,7 +18,7 @@ struct LightStateParams : public ComplexRead {
   tcbfdd2ea unk_d2a3cb0;
   tcbfdd2ea unk_1ee68c6;
   tcbfdd2ea unk_500fe1e;
-  tcbfdd2ea unk_5c0c2ed;
+  tcbfdd2ea pathWidth;
   tcbfdd2ea pathHotspot;
   tcbfdd2ea pathFalloff;
   t560ae4cf pathColor;

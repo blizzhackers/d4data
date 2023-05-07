@@ -10,7 +10,7 @@ void TrailDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&dwTrailDefFlags, base, current);
   current = ptr + 0xc;
-  readData(&unk_ad02fed, base, current);
+  readData(&flBaseWidth, base, current);
   current = ptr + 0x10;
   readData(&fTextureRepeatCount, base, current);
   current = ptr + 0x14;

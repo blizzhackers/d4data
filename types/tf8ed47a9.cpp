@@ -112,7 +112,7 @@ void tf8ed47a9::read(const char* base, char* &ptr) {
   current = ptr + 0x104;
   readData(&unk_72dd8a6, base, current);
   current = ptr + 0x108;
-  readData(&unk_12e00f0, base, current);
+  readData(&flBorderWidth, base, current);
   current = ptr + 0x10c;
   readData(&unk_848bcbf, base, current);
   current = ptr + 0x110;

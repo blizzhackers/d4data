@@ -16,7 +16,7 @@ void t1d308425::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_fafa236, base, current);
   current = ptr + 0x10;
-  readData(&unk_8d8113a, base, current);
+  readData(&flLineWidth, base, current);
   current = ptr + 0x14;
   readData(&unk_d8d6cc9, base, current);
   current = ptr + 0x18;

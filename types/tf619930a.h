@@ -10,9 +10,9 @@
 #pragma push(pack, 1)
 
 struct tf619930a : public ComplexRead {
-  DT_FLOAT unk_ae89102;
+  DT_FLOAT flFirstWeight;
   DT_FLOAT unk_574d429;
-  DT_FLOAT unk_fa38d2e;
+  DT_FLOAT flLastWeight;
 
   void read(const char* base, char* &ptr);
 };

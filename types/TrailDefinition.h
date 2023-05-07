@@ -15,7 +15,7 @@
 
 struct TrailDefinition : public ComplexRead {
   DT_UINT dwTrailDefFlags;
-  DT_FLOAT unk_ad02fed;
+  DT_FLOAT flBaseWidth;
   DT_FLOAT fTextureRepeatCount;
   DT_INT unk_faa043c;
   DT_INT unk_d9e290a;

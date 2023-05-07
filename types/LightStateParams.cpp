@@ -18,7 +18,7 @@ void LightStateParams::read(const char* base, char* &ptr) {
   current = ptr + 0xe0;
   readData(&unk_500fe1e, base, current);
   current = ptr + 0x118;
-  readData(&unk_5c0c2ed, base, current);
+  readData(&pathWidth, base, current);
   current = ptr + 0x150;
   readData(&pathHotspot, base, current);
   current = ptr + 0x188;

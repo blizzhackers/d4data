@@ -12,7 +12,7 @@ void tb99f8947::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&eScrollbarVisibility, base, current);
   current = ptr + 0x8;
-  readData(&unk_bbc0f36, base, current);
+  readData(&flScrollbarWidth, base, current);
   current = ptr + 0xc;
   readData(&unk_5443ce9, base, current);
   current = ptr + 0x10;

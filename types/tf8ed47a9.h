@@ -78,7 +78,7 @@ struct tf8ed47a9 : public ComplexRead {
   DT_RGBACOLOR unk_435bf79;
   DT_RGBACOLOR unk_ac1d2c7;
   DT_RGBACOLOR unk_72dd8a6;
-  DT_FLOAT unk_12e00f0;
+  DT_FLOAT flBorderWidth;
   DT_FLOAT unk_848bcbf;
   DT_FLOAT unk_8086880;
   DT_FLOAT unk_c4559fc;

@@ -12,7 +12,7 @@
 struct tb99f8947 : public ComplexRead {
   DT_ENUM<DT_INT> unk_4b57088;
   DT_ENUM<DT_INT> eScrollbarVisibility;
-  DT_FLOAT unk_bbc0f36;
+  DT_FLOAT flScrollbarWidth;
   DT_INT unk_5443ce9;
   DT_FLOAT unk_ff388bb;
   DT_FLOAT unk_58496c;
