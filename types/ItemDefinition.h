@@ -74,7 +74,7 @@ struct ItemDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Power> snoPowerPassive;
   DT_ENUM<DT_INT> eGemType;
   DT_SNO<SnoGroup::Power> snoPotionPower;
-  DT_INT unk_fbc4ae9;
+  DT_INT bIsTransmog;
 
   void read(const char* base, char* &ptr);
 };

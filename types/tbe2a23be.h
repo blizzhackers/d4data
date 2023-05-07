@@ -15,7 +15,7 @@ struct tbe2a23be : public ComplexRead {
   DT_SNO<SnoGroup::Quest> snoQuest;
   DT_UINT dwPad;
   DT_INT nStepUID;
-  DT_UINT unk_967491d;
+  DT_UINT nCallbackUID;
   DT_ENUM<DT_INT> eComp;
   DT_UINT nCount;
 

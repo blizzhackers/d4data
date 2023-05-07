@@ -13,7 +13,7 @@ struct ta9417475 : public ComplexRead {
   DT_ENUM<DT_INT> unk_43efd8c;
   DT_SNO<SnoGroup::Quest> snoQuest;
   DT_UINT dwPhaseUID;
-  DT_UINT unk_31547ea;
+  DT_UINT dwCallbackUID;
 
   void read(const char* base, char* &ptr);
 };

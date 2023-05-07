@@ -86,7 +86,7 @@ void AnimPermutation::read(const char* base, char* &ptr) {
   current = ptr + 0x120;
   readData(&wvAvgVel, base, current);
   current = ptr + 0x12c;
-  readData(&unk_57d4879, base, current);
+  readData(&bDrlgTranslate, base, current);
   current = ptr + 0x148;
   readData(&tHardpointLink, base, current);
   current = ptr + 0x150;

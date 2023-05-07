@@ -18,7 +18,7 @@ void t15ec7660::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&nStepUID, base, current);
   current = ptr + 0x24;
-  readData(&unk_967491d, base, current);
+  readData(&nCallbackUID, base, current);
   current = ptr + 0x28;
   readData(&eComp, base, current);
   current = ptr + 0x2c;

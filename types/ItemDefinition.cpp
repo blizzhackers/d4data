@@ -128,6 +128,6 @@ void ItemDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x1a0;
   readData(&snoPotionPower, base, current);
   current = ptr + 0x1a4;
-  readData(&unk_fbc4ae9, base, current);
+  readData(&bIsTransmog, base, current);
   ptr += 0x1a8;
 }
