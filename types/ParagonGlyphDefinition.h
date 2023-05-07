@@ -11,7 +11,7 @@
 
 struct ParagonGlyphDefinition : public ComplexRead {
   DT_UINT hIcon;
-  DT_UINT unk_7b0d1b5;
+  DT_UINT nStartingSize;
   DT_VARIABLEARRAY<DT_UINT> unk_5bc7861;
   DT_UINT nMaxLevel;
   DT_ENUM<DT_INT> eRarity;

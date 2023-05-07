@@ -12,6 +12,6 @@ void t34ef6b9c::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&annItem, base, current);
   current = ptr + 0x18;
-  readData(&unk_af3bfcb, base, current);
+  readData(&annVendor, base, current);
   ptr += 0x20;
 }

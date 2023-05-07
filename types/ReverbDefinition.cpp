@@ -12,7 +12,7 @@ void ReverbDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_836cb29, base, current);
   current = ptr + 0x10;
-  readData(&unk_91c65f5, base, current);
+  readData(&ptStateValues, base, current);
   current = ptr + 0x20;
   readData(&unk_3b3f006, base, current);
   current = ptr + 0x30;

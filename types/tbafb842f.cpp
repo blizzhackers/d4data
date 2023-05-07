@@ -22,7 +22,7 @@ void tbafb842f::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_8495b04, base, current);
   current = ptr + 0x34;
-  readData(&unk_b2f47b0, base, current);
+  readData(&flExperienceScalar, base, current);
   current = ptr + 0x38;
   readData(&flHPScalar, base, current);
   current = ptr + 0x3c;

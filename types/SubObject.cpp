@@ -22,7 +22,7 @@ void SubObject::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_d28c748, base, current);
   current = ptr + 0x34;
-  readData(&unk_c56a19, base, current);
+  readData(&dwAbSize, base, current);
   current = ptr + 0x38;
   readData(&tNameInfo, base, current);
   current = ptr + 0x60;

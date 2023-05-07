@@ -16,8 +16,8 @@ struct tc1762b19 : public ComplexRead {
   DT_INT unk_60998e0;
   DT_INT unk_92fec32;
   UIMargins tMargins;
-  DT_INT unk_8cf4c5d;
-  DT_INT unk_3445dcd;
+  DT_INT nHorizontalSpacing;
+  DT_INT nVerticalSpacing;
 
   void read(const char* base, char* &ptr);
 };

@@ -13,7 +13,7 @@
 struct tb915a4ef : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<ConversationSample> unk_3ee4554;
+  DT_VARIABLEARRAY<ConversationSample> ptConversationSamples;
 
   void read(const char* base, char* &ptr);
 };

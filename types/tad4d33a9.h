@@ -13,7 +13,7 @@ struct tad4d33a9 : public ComplexRead {
   DT_INT nWidth;
   DT_INT nHeight;
   DT_INT nDepth;
-  DT_FLOAT unk_a952693;
+  DT_FLOAT flGridSize;
   DT_VECTOR3D wpOrigin;
   DT_VARIABLEARRAY<DT_WORD> unk_aa0958e;
   DT_VARIABLEARRAY<DT_WORD> unk_aa09583;

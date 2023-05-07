@@ -11,7 +11,7 @@
 
 struct ActorCritterData : public ComplexRead {
   DT_INT unk_e2389cd;
-  DT_FLOAT unk_712de84;
+  DT_FLOAT flSpeedWander;
   DT_FLOAT unk_a7d0d98;
   DT_RANGE<DT_INT> unk_7a0fbd1;
   DT_FLOAT flWanderTooLongTime;

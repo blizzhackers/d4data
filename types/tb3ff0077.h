@@ -17,7 +17,7 @@ struct tb3ff0077 : public ComplexRead {
   DT_INT fGenerated;
   DT_INT unk_6cba752;
   DT_UINT unk_e560b0b;
-  DT_INT unk_9058b77;
+  DT_INT bOverridePosition;
   DT_VECTOR2D vecPosition;
   DT_CSTRING szText;
 

@@ -36,7 +36,7 @@ void AffixDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x78;
   readData(&unk_2a52848, base, current);
   current = ptr + 0x88;
-  readData(&unk_46fa14b, base, current);
+  readData(&arStaticValues, base, current);
   current = ptr + 0x98;
   readData(&snoPassivePower, base, current);
   current = ptr + 0x9c;

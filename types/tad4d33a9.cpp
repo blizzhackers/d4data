@@ -14,7 +14,7 @@ void tad4d33a9::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&nDepth, base, current);
   current = ptr + 0xc;
-  readData(&unk_a952693, base, current);
+  readData(&flGridSize, base, current);
   current = ptr + 0x10;
   readData(&wpOrigin, base, current);
   current = ptr + 0x20;

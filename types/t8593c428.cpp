@@ -16,7 +16,7 @@ void t8593c428::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_6e07592, base, current);
   current = ptr + 0x30;
-  readData(&unk_91c65f5, base, current);
+  readData(&ptStateValues, base, current);
   current = ptr + 0x40;
   readData(&unk_7d0510b, base, current);
   current = ptr + 0x50;

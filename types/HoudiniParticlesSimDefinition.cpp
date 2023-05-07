@@ -20,7 +20,7 @@ void HoudiniParticlesSimDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&unk_e6e1d4e, base, current);
   current = ptr + 0x20;
-  readData(&unk_77234fb, base, current);
+  readData(&flGPR, base, current);
   current = ptr + 0x24;
   readData(&flCompression, base, current);
   current = ptr + 0x28;

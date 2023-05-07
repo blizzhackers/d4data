@@ -19,7 +19,7 @@ struct tbafb842f : public ComplexRead {
   DT_UINT dwFlags;
   DT_INT unk_b291cd3;
   DT_INT unk_8495b04;
-  DT_FLOAT unk_b2f47b0;
+  DT_FLOAT flExperienceScalar;
   DT_FLOAT flHPScalar;
   DT_FLOAT flDamageScalar;
   DT_RANGE<DT_INT> tDamageRange;

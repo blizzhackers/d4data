@@ -20,7 +20,7 @@ void t510e333e::read(const char* base, char* &ptr) {
   current = ptr + 0x2c;
   readData(&unk_c208491, base, current);
   current = ptr + 0x30;
-  readData(&unk_eb2a4da, base, current);
+  readData(&eInterruptReason, base, current);
   current = ptr + 0x38;
   readData(&dwFlags, base, current);
   current = ptr + 0x40;

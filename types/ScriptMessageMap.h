@@ -15,7 +15,7 @@ struct ScriptMessageMap : public ComplexRead {
   DT_UINT dwListenerFlags;
   DT_SNO<SnoGroup::Condition> snoCondition;
   DT_INT unk_c3ba01d;
-  DT_FLOAT unk_18defa6;
+  DT_FLOAT flCooldownSeconds;
   DT_VARIABLEARRAY<tbd82039e> unk_2b204ee;
   DT_POLYMORPHIC_VARIABLEARRAY unk_492729e;
   DT_UINT unk_9927fd3;

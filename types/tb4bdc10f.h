@@ -26,7 +26,7 @@ struct tb4bdc10f : public ComplexRead {
   DT_FLOAT unk_6fd6265;
   DT_VECTOR3D unk_af351b9;
   DT_VECTOR3D unk_af350bb;
-  DT_FLOAT unk_1e4abbd;
+  DT_FLOAT fRefreshSecondary;
   DT_FLOAT unk_fbebc6e;
   DT_FLOAT unk_6009911;
   DT_FLOAT unk_19eb4fb;

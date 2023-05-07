@@ -23,7 +23,7 @@ struct SubObject : public ComplexRead {
   DT_UINT unk_e32b9c5;
   DT_UINT unk_87b4c64;
   DT_UINT unk_d28c748;
-  DT_UINT unk_c56a19;
+  DT_UINT dwAbSize;
   SubObjectNameInfo tNameInfo;
   DT_INT nMaterialIndex;
   DT_UINT dwSubObjectHash;

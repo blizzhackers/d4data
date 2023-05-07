@@ -15,7 +15,7 @@ struct tc8d78ce7 : public ComplexRead {
   DT_INT nDepth;
   DT_UINT dwPitch;
   DT_UINT dwSlicePitch;
-  DT_FLOAT unk_a952693;
+  DT_FLOAT flGridSize;
   DT_VECTOR3D wpOrigin;
   DT_INT64 unk_4b236f4;
   DT_VARIABLEARRAY<DT_WORD> unk_aa0958e;

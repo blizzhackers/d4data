@@ -11,7 +11,7 @@
 
 struct t44293b37 : public ComplexRead {
   DT_ENUM<DT_INT> unk_a64fa3e;
-  DT_CSTRING unk_9f2e0be;
+  DT_CSTRING szIDScrollbar;
 
   void read(const char* base, char* &ptr);
 };

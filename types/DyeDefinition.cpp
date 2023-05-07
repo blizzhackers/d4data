@@ -10,7 +10,7 @@ void DyeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_1290fc4, base, current);
   current = ptr + 0xc;
-  readData(&unk_9a0e867, base, current);
+  readData(&arColorSamples, base, current);
   current = ptr + 0x18c;
   readData(&unk_e0611b0, base, current);
   current = ptr + 0x1ac;

@@ -27,7 +27,7 @@ struct PlayerSavedData : public ComplexRead {
   DT_FIXEDARRAY<DT_SNO<SnoGroup::LevelArea>, 64> unk_4a24596;
   DT_UINT uTimeLastLevel;
   DT_FIXEDARRAY<ActiveSkillSavedData, 6> tActiveSkills;
-  DT_FIXEDARRAY<t8c2bb16d, 6> unk_faa8327;
+  DT_FIXEDARRAY<t8c2bb16d, 6> tEnchantSkills;
   t7bed253b unk_68ce6c8;
   DT_FIXEDARRAY<tfeacdb4e, 50> unk_a609782;
   DT_FIXEDARRAY<SkillTreeNodeEntry, 128> unk_9a1fb9a;

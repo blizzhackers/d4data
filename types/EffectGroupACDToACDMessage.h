@@ -17,8 +17,8 @@ struct EffectGroupACDToACDMessage : public ComplexRead {
   DT_ACD_NETWORK_NAME annFrom;
   DT_ACD_NETWORK_NAME annTo;
   DT_ACD_NETWORK_NAME unk_b883005;
-  HardpointInfo unk_3f8ef50;
-  HardpointInfo unk_50e9159;
+  HardpointInfo tLinkStart;
+  HardpointInfo tLinkEnd;
 
   void read(const char* base, char* &ptr);
 };

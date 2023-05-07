@@ -16,7 +16,7 @@ struct tfb1b44b9 : public ComplexRead {
   DT_SNO<SnoGroup::TiledStyle> unk_e66a388;
   DT_SNO<SnoGroup::Sound> unk_309438d;
   DT_ENUM<DT_INT> eSmoothing;
-  DT_FLOAT unk_58fbb1b;
+  DT_FLOAT flSmoothingSpeed;
 
   void read(const char* base, char* &ptr);
 };

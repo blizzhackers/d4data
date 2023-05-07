@@ -28,6 +28,6 @@ void t801e77f4::read(const char* base, char* &ptr) {
   current = ptr + 0x54;
   readData(&unk_4bec6d2, base, current);
   current = ptr + 0x58;
-  readData(&unk_4c9ec22, base, current);
+  readData(&bHideSheathed, base, current);
   ptr += 0x60;
 }

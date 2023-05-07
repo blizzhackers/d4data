@@ -20,7 +20,7 @@ void tb3ff0077::read(const char* base, char* &ptr) {
   current = ptr + 0x44;
   readData(&unk_e560b0b, base, current);
   current = ptr + 0x48;
-  readData(&unk_9058b77, base, current);
+  readData(&bOverridePosition, base, current);
   current = ptr + 0x4c;
   readData(&vecPosition, base, current);
   current = ptr + 0x58;

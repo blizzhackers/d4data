@@ -180,7 +180,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x428;
   readData(&unk_daaa964, base, current);
   current = ptr + 0x42c;
-  readData(&unk_75de2ba, base, current);
+  readData(&dwMinSize, base, current);
   current = ptr + 0x430;
   readData(&dwMaxSize, base, current);
   current = ptr + 0x434;

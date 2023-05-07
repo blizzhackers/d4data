@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t42378b43 : public ComplexRead {
-  DT_FLOAT unk_a952693;
+  DT_FLOAT flGridSize;
   DT_VECTOR3D vecGridOffset;
   DT_INT unk_1e8e20d;
 

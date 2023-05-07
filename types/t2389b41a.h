@@ -34,7 +34,7 @@ struct t2389b41a : public ComplexRead {
   HardpointLink unk_8470ffc;
   DT_UINT unk_46c8459;
   DT_ENUM<DT_INT> unk_991ae81;
-  DT_ENUM<DT_INT> unk_ff8fce8;
+  DT_ENUM<DT_INT> eMoveRate;
   DT_ENUM<DT_INT> unk_3c71266;
   DT_INT unk_c751343;
   DT_INT unk_17909b9;

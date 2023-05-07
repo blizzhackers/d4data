@@ -18,8 +18,8 @@ void EffectGroupACDToACDMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x24;
   readData(&unk_b883005, base, current);
   current = ptr + 0x2c;
-  readData(&unk_3f8ef50, base, current);
+  readData(&tLinkStart, base, current);
   current = ptr + 0x34;
-  readData(&unk_50e9159, base, current);
+  readData(&tLinkEnd, base, current);
   ptr += 0x3c;
 }

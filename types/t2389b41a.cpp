@@ -50,7 +50,7 @@ void t2389b41a::read(const char* base, char* &ptr) {
   current = ptr + 0x9c;
   readData(&unk_991ae81, base, current);
   current = ptr + 0xa0;
-  readData(&unk_ff8fce8, base, current);
+  readData(&eMoveRate, base, current);
   current = ptr + 0xa4;
   readData(&unk_3c71266, base, current);
   current = ptr + 0xa8;

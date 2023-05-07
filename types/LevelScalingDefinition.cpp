@@ -12,7 +12,7 @@ void LevelScalingDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&flHPScalar, base, current);
   current = ptr + 0x8;
-  readData(&unk_e5c5870, base, current);
+  readData(&flXPScalar, base, current);
   current = ptr + 0xc;
   readData(&unk_9592c2b, base, current);
   current = ptr + 0x10;

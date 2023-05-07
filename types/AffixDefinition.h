@@ -25,7 +25,7 @@ struct AffixDefinition : public ComplexRead {
   DT_UINT dwAllowedQualityLevels;
   DT_ENUM<DT_INT> eAffixType;
   DT_VARIABLEARRAY<t1dea6151> unk_2a52848;
-  DT_VARIABLEARRAY<DT_FLOAT> unk_46fa14b;
+  DT_VARIABLEARRAY<DT_FLOAT> arStaticValues;
   DT_SNO<SnoGroup::Power> snoPassivePower;
   DT_SNO<SnoGroup::PlayerClass> snoClassRequirement;
   DT_VARIABLEARRAY<DT_GBID<0x38>> unk_44ef64f;

@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct ActorFacingData : public ComplexRead {
-  DT_FLOAT unk_8746b6c;
+  DT_FLOAT flTurnSpeed;
   DT_FLOAT unk_69b0e21;
   DT_FLOAT unk_3d9b929;
 

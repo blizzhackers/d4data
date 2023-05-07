@@ -15,7 +15,7 @@
 struct ReverbDefinition : public ComplexRead {
   tf18a2f0 unk_18b010c;
   DT_FLOAT unk_836cb29;
-  DT_VARIABLEARRAY<t1d0f43e> unk_91c65f5;
+  DT_VARIABLEARRAY<t1d0f43e> ptStateValues;
   DT_VARIABLEARRAY<t1d0f43e> unk_3b3f006;
   DT_VARIABLEARRAY<TestDefinitionMusic> unk_6e07592;
 

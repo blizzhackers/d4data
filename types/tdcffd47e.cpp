@@ -52,7 +52,7 @@ void tdcffd47e::read(const char* base, char* &ptr) {
   current = ptr + 0xa4;
   readData(&unk_991ae81, base, current);
   current = ptr + 0xa8;
-  readData(&unk_ff8fce8, base, current);
+  readData(&eMoveRate, base, current);
   current = ptr + 0xac;
   readData(&unk_3c71266, base, current);
   current = ptr + 0xb0;

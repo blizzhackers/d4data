@@ -17,7 +17,7 @@ struct MusicDefinition : public ComplexRead {
   DT_UINT dwFlags;
   DT_FLOAT unk_d17a11d;
   DT_FLOAT unk_ce3c7b4;
-  DT_VARIABLEARRAY<t1d0f43e> unk_91c65f5;
+  DT_VARIABLEARRAY<t1d0f43e> ptStateValues;
   DT_VARIABLEARRAY<TestDefinitionMusic> unk_6e07592;
   MusicTransition unk_6e07e26;
 

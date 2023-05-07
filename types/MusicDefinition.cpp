@@ -16,7 +16,7 @@ void MusicDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_ce3c7b4, base, current);
   current = ptr + 0x18;
-  readData(&unk_91c65f5, base, current);
+  readData(&ptStateValues, base, current);
   current = ptr + 0x28;
   readData(&unk_6e07592, base, current);
   current = ptr + 0x38;

@@ -14,7 +14,7 @@ void SceneDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x24;
   readData(&unk_ec132ae, base, current);
   current = ptr + 0x3c;
-  readData(&unk_a952693, base, current);
+  readData(&flGridSize, base, current);
   current = ptr + 0x40;
   readData(&arLayers, base, current);
   current = ptr + 0x50;

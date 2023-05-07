@@ -28,7 +28,7 @@ struct t9e2445da : public ComplexRead {
   DT_UINT dwActorID;
   DT_INT unk_a8ee95c;
   DT_INT unk_4bec6d2;
-  DT_INT unk_4c9ec22;
+  DT_INT bHideSheathed;
 
   void read(const char* base, char* &ptr);
 };

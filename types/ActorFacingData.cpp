@@ -8,7 +8,7 @@
 void ActorFacingData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_8746b6c, base, current);
+  readData(&flTurnSpeed, base, current);
   current = ptr + 0x4;
   readData(&unk_69b0e21, base, current);
   current = ptr + 0x8;

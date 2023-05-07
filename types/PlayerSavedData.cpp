@@ -22,7 +22,7 @@ void PlayerSavedData::read(const char* base, char* &ptr) {
   current = ptr + 0x1e4;
   readData(&tActiveSkills, base, current);
   current = ptr + 0x214;
-  readData(&unk_faa8327, base, current);
+  readData(&tEnchantSkills, base, current);
   current = ptr + 0x22c;
   readData(&unk_68ce6c8, base, current);
   current = ptr + 0x240;

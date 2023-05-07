@@ -104,7 +104,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_FLOAT wdBoundingRadius;
   DT_FLOAT unk_a79a409;
   DT_FLOAT unk_daaa964;
-  DT_UINT unk_75de2ba;
+  DT_UINT dwMinSize;
   DT_UINT dwMaxSize;
   DT_FLOAT unk_3e0459a;
   DT_FLOAT unk_a0877a9;

@@ -40,6 +40,6 @@ void t9e2445da::read(const char* base, char* &ptr) {
   current = ptr + 0x84;
   readData(&unk_4bec6d2, base, current);
   current = ptr + 0x88;
-  readData(&unk_4c9ec22, base, current);
+  readData(&bHideSheathed, base, current);
   ptr += 0x90;
 }

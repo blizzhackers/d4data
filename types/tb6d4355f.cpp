@@ -20,7 +20,7 @@ void tb6d4355f::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&tScriptMessageMap, base, current);
   current = ptr + 0x60;
-  readData(&unk_b88445, base, current);
+  readData(&dwLinesSeconds, base, current);
   current = ptr + 0x64;
   readData(&unk_47705e2, base, current);
   current = ptr + 0x68;

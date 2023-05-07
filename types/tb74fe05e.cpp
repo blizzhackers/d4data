@@ -12,7 +12,7 @@ void tb74fe05e::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&idQuest, base, current);
   current = ptr + 0x14;
-  readData(&unk_d0089db, base, current);
+  readData(&nMonstersSpawned, base, current);
   current = ptr + 0x18;
   readData(&nMonstersKilled, base, current);
   current = ptr + 0x1c;

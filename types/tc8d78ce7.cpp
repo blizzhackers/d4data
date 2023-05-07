@@ -18,7 +18,7 @@ void tc8d78ce7::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&dwSlicePitch, base, current);
   current = ptr + 0x14;
-  readData(&unk_a952693, base, current);
+  readData(&flGridSize, base, current);
   current = ptr + 0x18;
   readData(&wpOrigin, base, current);
   current = ptr + 0x28;

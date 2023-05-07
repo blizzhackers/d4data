@@ -17,7 +17,7 @@ struct t76fbf09b : public ComplexRead {
   DT_SNO<SnoGroup::World> snoWorld;
   DT_SNO<SnoGroup::SubZone> snoSubzone;
   DT_SNO<SnoGroup::Item> snoReward;
-  DT_ENUM<DT_INT> unk_f3772b3;
+  DT_ENUM<DT_INT> eRewardQuality;
   DT_INT64 unk_576b41d;
   DT_VECTOR3D wpLocation;
 

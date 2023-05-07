@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct tc06f4ebf : public ComplexRead {
-  DT_CSTRING unk_7081be1;
+  DT_CSTRING szTreeScrollbar;
 
   void read(const char* base, char* &ptr);
 };

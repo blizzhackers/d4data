@@ -13,7 +13,7 @@
 struct t34ef6b9c : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME annItem;
-  DT_ACD_NETWORK_NAME unk_af3bfcb;
+  DT_ACD_NETWORK_NAME annVendor;
 
   void read(const char* base, char* &ptr);
 };

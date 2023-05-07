@@ -24,7 +24,7 @@ void t5e641340::read(const char* base, char* &ptr) {
   current = ptr + 0xd0;
   readData(&unk_3167e4b, base, current);
   current = ptr + 0xd4;
-  readData(&unk_8392fb0, base, current);
+  readData(&fRollSpeed, base, current);
   current = ptr + 0xd8;
   readData(&unk_a31c055, base, current);
   current = ptr + 0xdc;

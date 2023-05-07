@@ -20,7 +20,7 @@ void t76fbf09b::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&snoReward, base, current);
   current = ptr + 0x24;
-  readData(&unk_f3772b3, base, current);
+  readData(&eRewardQuality, base, current);
   current = ptr + 0x28;
   readData(&unk_576b41d, base, current);
   current = ptr + 0x30;

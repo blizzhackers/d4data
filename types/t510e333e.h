@@ -19,7 +19,7 @@ struct t510e333e : public ComplexRead {
   DT_UINT unk_1bdcc9f;
   DT_VECTOR3D unk_f4fb70;
   DT_INT unk_c208491;
-  DT_OPTIONAL<DT_INT> unk_eb2a4da;
+  DT_OPTIONAL<DT_INT> eInterruptReason;
   DT_OPTIONAL<DT_INT> dwFlags;
   DT_OPTIONAL<DT_INT> unk_200dc25;
   DT_OPTIONAL<DT_INT> wpTarget;

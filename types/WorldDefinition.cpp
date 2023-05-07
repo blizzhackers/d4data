@@ -12,7 +12,7 @@ void WorldDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_8ca2d45, base, current);
   current = ptr + 0x1c;
-  readData(&unk_a952693, base, current);
+  readData(&flGridSize, base, current);
   current = ptr + 0x20;
   readData(&tEnvironment, base, current);
   current = ptr + 0x8c;

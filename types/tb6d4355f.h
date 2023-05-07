@@ -19,7 +19,7 @@ struct tb6d4355f : public ComplexRead {
   DT_UINT dwFlags;
   DT_UINT nNeeded;
   ScriptMessageMap tScriptMessageMap;
-  DT_INT unk_b88445;
+  DT_INT dwLinesSeconds;
   DT_INT unk_47705e2;
   DT_ENUM<DT_INT> unk_92f72a4;
   DT_UINT unk_9c1ea4f;

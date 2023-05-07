@@ -19,7 +19,7 @@ struct SceneDefinition : public ComplexRead {
   DT_UINT dwFlags;
   AABB aabbBounds;
   AABB unk_ec132ae;
-  DT_FLOAT unk_a952693;
+  DT_FLOAT flGridSize;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::MarkerSet>> arLayers;
   LookLink tLookLink;
   DT_VARIABLEARRAY<t9109ba33> unk_f60a9cd;

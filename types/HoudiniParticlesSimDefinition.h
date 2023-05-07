@@ -18,7 +18,7 @@ struct HoudiniParticlesSimDefinition : public ComplexRead {
   DT_UINT unk_728cb31;
   DT_FLOAT flRadius;
   DT_INT unk_e6e1d4e;
-  DT_FLOAT unk_77234fb;
+  DT_FLOAT flGPR;
   DT_FLOAT flCompression;
   DT_VARIABLEARRAY<t82e4d816> unk_ab79e60;
   DT_VARIABLEARRAY<tcec695fb> unk_e9be652;

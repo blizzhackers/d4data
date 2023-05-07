@@ -36,7 +36,7 @@ void tb4bdc10f::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&unk_af350bb, base, current);
   current = ptr + 0x48;
-  readData(&unk_1e4abbd, base, current);
+  readData(&fRefreshSecondary, base, current);
   current = ptr + 0x4c;
   readData(&unk_fbebc6e, base, current);
   current = ptr + 0x50;

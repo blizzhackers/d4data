@@ -8,7 +8,7 @@
 void t42378b43::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_a952693, base, current);
+  readData(&flGridSize, base, current);
   current = ptr + 0x4;
   readData(&vecGridOffset, base, current);
   current = ptr + 0x10;

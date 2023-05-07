@@ -60,6 +60,6 @@ void PowerBuffDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x198;
   readData(&bHasDamageShield, base, current);
   current = ptr + 0x1a0;
-  readData(&unk_1e4754c, base, current);
+  readData(&tDamageShield, base, current);
   ptr += 0x1e8;
 }

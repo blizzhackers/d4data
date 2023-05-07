@@ -18,7 +18,7 @@ struct t5e641340 : public ComplexRead {
   DT_FLOAT unk_adb2ad0;
   DT_FLOAT unk_2982e8d;
   DT_FLOAT unk_3167e4b;
-  DT_FLOAT unk_8392fb0;
+  DT_FLOAT fRollSpeed;
   DT_FLOAT unk_a31c055;
   DT_FLOAT unk_d58a0e0;
 

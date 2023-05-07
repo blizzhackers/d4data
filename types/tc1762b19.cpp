@@ -18,8 +18,8 @@ void tc1762b19::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&tMargins, base, current);
   current = ptr + 0x20;
-  readData(&unk_8cf4c5d, base, current);
+  readData(&nHorizontalSpacing, base, current);
   current = ptr + 0x24;
-  readData(&unk_3445dcd, base, current);
+  readData(&nVerticalSpacing, base, current);
   ptr += 0x28;
 }

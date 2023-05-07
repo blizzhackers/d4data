@@ -12,7 +12,7 @@
 struct LevelScalingDefinition : public ComplexRead {
   DT_INT nLevel;
   DT_FLOAT flHPScalar;
-  DT_FLOAT unk_e5c5870;
+  DT_FLOAT flXPScalar;
   DT_FLOAT unk_9592c2b;
   DT_INT unk_9b9d09c;
   DT_INT unk_31907b4;

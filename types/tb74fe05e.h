@@ -13,7 +13,7 @@
 struct tb74fe05e : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ENUM<DT_INT> idQuest;
-  DT_INT unk_d0089db;
+  DT_INT nMonstersSpawned;
   DT_INT nMonstersKilled;
   DT_INT unk_736a201;
 

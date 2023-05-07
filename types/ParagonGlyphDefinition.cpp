@@ -10,7 +10,7 @@ void ParagonGlyphDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&hIcon, base, current);
   current = ptr + 0xc;
-  readData(&unk_7b0d1b5, base, current);
+  readData(&nStartingSize, base, current);
   current = ptr + 0x10;
   readData(&unk_5bc7861, base, current);
   current = ptr + 0x20;
