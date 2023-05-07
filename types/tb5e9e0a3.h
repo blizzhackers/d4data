@@ -14,7 +14,7 @@ struct tb5e9e0a3 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_ENUM<DT_INT> eFacing;
-  DT_FLOAT unk_701ed06;
+  DT_FLOAT aCone;
   tcbfdd2ea pathRadius;
 
   void read(const char* base, char* &ptr);

@@ -50,7 +50,7 @@ void tc2ce8583::read(const char* base, char* &ptr) {
   current = ptr + 0x15a;
   readData(&flags, base, current);
   current = ptr + 0x15c;
-  readData(&unk_b6524d, base, current);
+  readData(&aInfluences, base, current);
   current = ptr + 0x164;
   readData(&padding, base, current);
   current = ptr + 0x170;

@@ -26,7 +26,7 @@ void CriteriaEvent::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&eCurrencyType, base, current);
   current = ptr + 0x44;
-  readData(&unk_756ebc1, base, current);
+  readData(&eZone, base, current);
   current = ptr + 0x48;
   readData(&uVal, base, current);
   current = ptr + 0x4c;

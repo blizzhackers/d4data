@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "tdc622f50.h"
+#include "HardpointOffset.h"
 
 #pragma push(pack, 1)
 
 struct t68a819c3 : public ComplexRead {
-  DT_VARIABLEARRAY<tdc622f50> unk_55bda0c;
-  DT_VARIABLEARRAY<tdc622f50> unk_63b0377;
+  DT_VARIABLEARRAY<HardpointOffset> unk_55bda0c;
+  DT_VARIABLEARRAY<HardpointOffset> unk_63b0377;
 
   void read(const char* base, char* &ptr);
 };

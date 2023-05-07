@@ -32,7 +32,7 @@ struct tc2ce8583 : public ComplexRead {
   DT_FLOAT unk_87816fd;
   DT_WORD unk_e7f5729;
   DT_WORD flags;
-  DT_FIXEDARRAY<DT_WORD, 4> unk_b6524d;
+  DT_FIXEDARRAY<DT_WORD, 4> aInfluences;
   DT_FIXEDARRAY<DT_WORD, 6> padding;
   DT_VECTOR4D weights;
 

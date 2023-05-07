@@ -148,7 +148,7 @@ void t11a18e87::read(const char* base, char* &ptr) {
   current = ptr + 0x230;
   readData(&unk_341729d, base, current);
   current = ptr + 0x240;
-  readData(&unk_3ff2282, base, current);
+  readData(&flRotation, base, current);
   current = ptr + 0x244;
   readData(&vecPivot, base, current);
   current = ptr + 0x24c;

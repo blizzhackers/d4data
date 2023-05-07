@@ -14,7 +14,7 @@ void t95269030::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_13fdbf, base, current);
   current = ptr + 0xc;
-  readData(&unk_1d7c790, base, current);
+  readData(&sLayer, base, current);
   current = ptr + 0x10;
   readData(&unk_8680393, base, current);
   current = ptr + 0x14;

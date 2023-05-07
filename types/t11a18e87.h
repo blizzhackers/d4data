@@ -83,7 +83,7 @@ struct t11a18e87 : public ComplexRead {
   DT_CSTRING szOnContextMenu;
   DT_INT unk_d31cd22;
   DT_CSTRING unk_341729d;
-  DT_FLOAT unk_3ff2282;
+  DT_FLOAT flRotation;
   DT_VECTOR2D vecPivot;
   DT_INT bMirrorX;
   DT_INT bMirrorY;

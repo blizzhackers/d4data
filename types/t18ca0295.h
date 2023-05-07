@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t1de9164f.h"
+#include "UIMargins.h"
 
 #pragma push(pack, 1)
 
@@ -18,7 +18,7 @@ struct t18ca0295 : public ComplexRead {
   DT_INT unk_3a57c53;
   DT_INT nStackSpacing;
   DT_ENUM<DT_INT> unk_e1c6bf3;
-  t1de9164f tMargins;
+  UIMargins tMargins;
 
   void read(const char* base, char* &ptr);
 };

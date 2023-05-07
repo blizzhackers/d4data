@@ -36,7 +36,7 @@ void CriteriaModifier::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_b0a7ee9, base, current);
   current = ptr + 0x3c;
-  readData(&unk_756ebc1, base, current);
+  readData(&eZone, base, current);
   current = ptr + 0x40;
   readData(&unk_99e9721, base, current);
   current = ptr + 0x44;

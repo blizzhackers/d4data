@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct tbc07d3c7 : public ComplexRead {
-  DT_VARIABLEARRAY<t3ddf9693> unk_ea28b4c;
+  DT_VARIABLEARRAY<t3ddf9693> arPieces;
   DT_VARIABLEARRAY<t3ddf9693> unk_85db88e;
   DT_VARIABLEARRAY<t3ddf9693> unk_767477;
   DT_RANGE<DT_INT> unk_755f012;

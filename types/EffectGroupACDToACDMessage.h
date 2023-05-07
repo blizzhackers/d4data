@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "HardpointInfo.h"
 #include "RequiredMessageHeader.h"
-#include "td8ee97d5.h"
 
 #pragma push(pack, 1)
 
@@ -17,8 +17,8 @@ struct EffectGroupACDToACDMessage : public ComplexRead {
   DT_ACD_NETWORK_NAME annFrom;
   DT_ACD_NETWORK_NAME annTo;
   DT_ACD_NETWORK_NAME unk_b883005;
-  td8ee97d5 unk_3f8ef50;
-  td8ee97d5 unk_50e9159;
+  HardpointInfo unk_3f8ef50;
+  HardpointInfo unk_50e9159;
 
   void read(const char* base, char* &ptr);
 };

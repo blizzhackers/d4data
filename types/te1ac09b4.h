@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "tdc622f50.h"
+#include "HardpointOffset.h"
 
 #pragma push(pack, 1)
 
 struct te1ac09b4 : public ComplexRead {
-  tdc622f50 offset;
+  HardpointOffset offset;
   DT_SNO<SnoGroup::ItemType> snoItemType;
 
   void read(const char* base, char* &ptr);

@@ -30,7 +30,7 @@ struct tb4bdc10f : public ComplexRead {
   DT_FLOAT unk_fbebc6e;
   DT_FLOAT unk_6009911;
   DT_FLOAT unk_19eb4fb;
-  tcc139f31 unk_d968e6a;
+  tcc139f31 sShared;
   tcc139f31 unk_6a3bf81;
   te562d892 unk_b5bb05f;
   DT_FLOAT unk_71c5fe2;

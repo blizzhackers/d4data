@@ -13,7 +13,7 @@
 struct ACDGroupMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME ann;
-  DT_FIXEDARRAY<DT_GBID<0x18>, 8> unk_8bd11e1;
+  DT_FIXEDARRAY<DT_GBID<0x18>, 8> aGroups;
 
   void read(const char* base, char* &ptr);
 };

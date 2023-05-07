@@ -6,22 +6,22 @@
 #pragma once
 
 #include "../types.h"
+#include "PortalInfo.h"
 #include "t23d0a29c.h"
 #include "t9b2fb163.h"
-#include "tc60751fe.h"
 
 #pragma push(pack, 1)
 
 struct ted71a6bd : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  tc60751fe unk_94ef354;
-  tc60751fe unk_17b3d69;
-  tc60751fe unk_40a7880;
-  tc60751fe unk_5b9ef28;
-  tc60751fe unk_70c33;
-  tc60751fe unk_aab21d0;
-  tc60751fe unk_7cf3237;
+  PortalInfo unk_94ef354;
+  PortalInfo unk_17b3d69;
+  PortalInfo unk_40a7880;
+  PortalInfo unk_5b9ef28;
+  PortalInfo unk_70c33;
+  PortalInfo unk_aab21d0;
+  PortalInfo unk_7cf3237;
   DT_FIXEDARRAY<t23d0a29c, 8> unk_5d1c931;
   DT_VARIABLEARRAY<t9b2fb163> unk_721003a;
   DT_UINT unk_b42ac97;

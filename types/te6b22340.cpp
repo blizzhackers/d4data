@@ -8,7 +8,7 @@
 void te6b22340::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_ea28b4c, base, current);
+  readData(&arPieces, base, current);
   current = ptr + 0x10;
   readData(&unk_f2499b0, base, current);
   current = ptr + 0x14;

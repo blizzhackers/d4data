@@ -7,12 +7,12 @@
 
 #include "../types.h"
 #include "HardpointLink.h"
+#include "HardpointOffset.h"
 #include "t4bd0bef6.h"
 #include "t68a819c3.h"
 #include "t7bd3842a.h"
 #include "t84cde9fd.h"
 #include "tbdef6175.h"
-#include "tdc622f50.h"
 
 #pragma push(pack, 1)
 
@@ -54,7 +54,7 @@ struct ActorItemData : public ComplexRead {
   DT_SNO<SnoGroup::LevelArea> unk_4bfa38e;
   DT_FIXEDARRAY<t68a819c3, 5> unk_3628237;
   DT_FIXEDARRAY<t68a819c3, 5> unk_c0b773;
-  DT_VARIABLEARRAY<tdc622f50> unk_def7f43;
+  DT_VARIABLEARRAY<HardpointOffset> unk_def7f43;
   t84cde9fd unk_ff861b8;
   tbdef6175 unk_3b0050f;
   DT_INT unk_e133e62;

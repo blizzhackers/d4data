@@ -15,7 +15,7 @@ struct AffixMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME ann;
   DT_INT fIdentified;
-  DT_FIXEDARRAY<DT_SNO<SnoGroup::Affix>, 5> unk_5daa987;
+  DT_FIXEDARRAY<DT_SNO<SnoGroup::Affix>, 5> aAffixes;
   DT_FIXEDARRAY<t82008b02, 5> unk_186efea;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Affix>, 5> unk_be0e086;
 

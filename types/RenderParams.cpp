@@ -20,7 +20,7 @@ void RenderParams::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&flZSlopeScaleBias, base, current);
   current = ptr + 0x18;
-  readData(&unk_bb82f2a, base, current);
+  readData(&tStencilParams, base, current);
   current = ptr + 0x48;
   readData(&fAlphaTestEnable, base, current);
   current = ptr + 0x4c;

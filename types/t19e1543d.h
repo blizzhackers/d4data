@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t26d3dba1.h"
+#include "CrafterConditions.h"
 #include "t59c87ced.h"
 #include "t65da5a34.h"
 #include "ted531777.h"
@@ -18,7 +18,7 @@ struct t19e1543d : public ComplexRead {
   DT_UINT dwPad;
   DT_FIXEDARRAY<t65da5a34, 13> unk_8205294;
   DT_FIXEDARRAY<t59c87ced, 5> arCrafters;
-  DT_FIXEDARRAY<t26d3dba1, 5> unk_f37b35d;
+  DT_FIXEDARRAY<CrafterConditions, 5> unk_f37b35d;
   DT_FLOAT unk_13e0ecf;
   ted531777 unk_c834d7a;
   DT_SNO<SnoGroup::Power> unk_24fcd3d;

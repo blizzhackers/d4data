@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "BlendSettings.h"
 #include "t61c5dd90.h"
-#include "t6fcd156.h"
 #include "tb8e06bbf.h"
 
 #pragma push(pack, 1)
@@ -24,8 +24,8 @@ struct AnimTreeNode : public ComplexRead {
   DT_VARIABLEARRAY<t61c5dd90> unk_5733828;
   DT_VECTOR2D unk_51e2dd;
   DT_VECTOR2D unk_fd3931f;
-  t6fcd156 unk_9a6f370;
-  t6fcd156 unk_e857c51;
+  BlendSettings unk_9a6f370;
+  BlendSettings unk_e857c51;
   DT_INT unk_dd1cd6f;
   DT_INT nSyncGroupIndex;
 

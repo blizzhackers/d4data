@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "ta96996c3.h"
+#include "ValidComponent.h"
 
 #pragma push(pack, 1)
 
 struct t92249466 : public ComplexRead {
   DT_INT bAny;
-  DT_VARIABLEARRAY<ta96996c3> unk_e0479fa;
+  DT_VARIABLEARRAY<ValidComponent> ptValidComponents;
 
   void read(const char* base, char* &ptr);
 };

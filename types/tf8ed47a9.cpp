@@ -458,7 +458,7 @@ void tf8ed47a9::read(const char* base, char* &ptr) {
   current = ptr + 0x95c;
   readData(&unk_e931d19, base, current);
   current = ptr + 0x9b8;
-  readData(&unk_40bddf0, base, current);
+  readData(&arBountyIcons, base, current);
   current = ptr + 0xa30;
   readData(&unk_15b9c64, base, current);
   current = ptr + 0xa54;

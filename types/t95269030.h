@@ -13,7 +13,7 @@ struct t95269030 : public ComplexRead {
   DT_FLOAT flDist;
   DT_INT nSlots;
   DT_INT unk_13fdbf;
-  DT_UINT unk_1d7c790;
+  DT_UINT sLayer;
   DT_INT unk_8680393;
   DT_INT unk_8337d1e;
   DT_INT unk_395f1b4;

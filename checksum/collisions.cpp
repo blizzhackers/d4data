@@ -31,8 +31,10 @@ uint32_t checksum(std::string str) {
 
 void collisions(long pos) {
   if (pos == -1) {
+    uint32_t tmpChecksum = checksum(tmp);
+
     for (int c = 0; c < checksumMatch.size(); c++) {
-      if(checksum(tmp) == checksumMatch[c]) {
+      if(tmpChecksum == checksumMatch[c]) {
         std::cout << "  " << std::hex << checksumMatch[c] << ": " << (prefix + tmp + suffix) << std::endl;
         break;
       }

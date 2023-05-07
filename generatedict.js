@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-const prefix = {
+let prefix = {
   'm_': 'm_',
 };
 
-const dict = {
+let dict = {
   'x': 'x',
   'y': 'y',
 };
@@ -118,5 +118,28 @@ Object.keys(names).forEach(name => {
 names = newnames;
 newnames = {};
 
-fs.writeFileSync('prefix.txt', Object.keys(prefix).sort().join('\n'));
-fs.writeFileSync('dict.txt', Object.keys(dict).sort().join('\n'));
+prefix = Object.keys(prefix).sort();
+dict = Object.keys(dict).sort();
+
+fs.writeFileSync('prefix.txt', prefix.join('\n'));
+fs.writeFileSync('dict.txt', dict.join('\n'));
+
+fs.writeFileSync('dict.h', [
+  '#include <string>',
+  '#include <vector>',
+  '',
+  'std::vector<std::string> getPrefixes() {',
+  '  std::vector<std::string> ret;',
+  '  ret.push_back(""); // 0',
+  ...prefix.map((v, i) => '  ret.push_back(' + JSON.stringify(v) + '); // ' + (i + 1)),
+  '  return ret;',
+  '};',
+  '',
+  'std::vector<std::string> getDict() {',
+  '  std::vector<std::string> ret;',
+  '  ret.push_back(""); // 0',
+  ...dict.map((v, i) => '  ret.push_back(' + JSON.stringify(v) + '); // ' + (i + 1)),
+  '  return ret;',
+  '};',
+  '',
+].join('\n'));

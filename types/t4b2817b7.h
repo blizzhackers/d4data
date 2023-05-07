@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct t4b2817b7 : public ComplexRead {
-  DT_UINT unk_272cae5;
+  DT_UINT dwLookVariant;
   DT_VARIABLEARRAY<ted5fa159> unk_4de645f;
 
   void read(const char* base, char* &ptr);

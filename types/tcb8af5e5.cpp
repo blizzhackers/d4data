@@ -12,7 +12,7 @@ void tcb8af5e5::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&wpPlace, base, current);
   current = ptr + 0x24;
-  readData(&unk_756ebc1, base, current);
+  readData(&eZone, base, current);
   current = ptr + 0x28;
   readData(&unk_e4390f7, base, current);
   current = ptr + 0x2c;

@@ -14,7 +14,7 @@
 struct tcb8af5e5 : public ComplexRead {
   RequiredMessageHeader tHeader;
   SharedServerWorldPlace wpPlace;
-  DT_ENUM<DT_INT> unk_756ebc1;
+  DT_ENUM<DT_INT> eZone;
   DT_INT unk_e4390f7;
   DT_INT unk_40f5b6;
   DT_ENUM<DT_INT> unk_71c18eb;

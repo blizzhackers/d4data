@@ -10,6 +10,6 @@ void tea88ceec::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_461add4, base, current);
   current = ptr + 0x8;
-  readData(&unk_e0479fa, base, current);
+  readData(&ptValidComponents, base, current);
   ptr += 0x48;
 }

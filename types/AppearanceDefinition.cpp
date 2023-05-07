@@ -20,7 +20,7 @@ void AppearanceDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc8;
   readData(&unk_f70dadb, base, current);
   current = ptr + 0xd8;
-  readData(&unk_272cae5, base, current);
+  readData(&dwLookVariant, base, current);
   current = ptr + 0xdc;
   readData(&unk_af015fc, base, current);
   current = ptr + 0x108;

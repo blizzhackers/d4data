@@ -10,7 +10,7 @@ void t3c136761::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&unk_6ca113c, base, current);
   current = ptr + 0x4;
-  readData(&unk_268b4a1, base, current);
+  readData(&wdDuration, base, current);
   current = ptr + 0x8;
   readData(&wdOffset, base, current);
   current = ptr + 0xc;

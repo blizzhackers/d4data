@@ -6,6 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "BannerColor.h"
+#include "BannerIcon.h"
 #include "ClanLabel.h"
 #include "IconScale.h"
 #include "t1259dca8.h"
@@ -13,9 +15,7 @@
 #include "t6f9c1887.h"
 #include "t762bcac4.h"
 #include "taa55cd98.h"
-#include "tb9817bff.h"
 #include "tb987c332.h"
-#include "te94af135.h"
 #include "tedab1b66.h"
 #include "tfc41276e.h"
 
@@ -30,8 +30,8 @@ struct t1769c269 : public ComplexRead {
   DT_VARIABLEARRAY<tedab1b66> unk_c1b3e76;
   DT_VARIABLEARRAY<t762bcac4> unk_5055c2d;
   DT_VARIABLEARRAY<tb987c332> unk_aed7782;
-  DT_VARIABLEARRAY<tb9817bff> arIcons;
-  DT_VARIABLEARRAY<te94af135> arColors;
+  DT_VARIABLEARRAY<BannerIcon> arIcons;
+  DT_VARIABLEARRAY<BannerColor> arColors;
   DT_VARIABLEARRAY<tfc41276e> unk_fcfa894;
   DT_VARIABLEARRAY<t6f9c1887> unk_28158ed;
   DT_VARIABLEARRAY<t5f766a3> unk_a8d4641;

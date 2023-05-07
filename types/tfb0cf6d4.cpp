@@ -82,6 +82,6 @@ void tfb0cf6d4::read(const char* base, char* &ptr) {
   current = ptr + 0x9c;
   readData(&dwPad, base, current);
   current = ptr + 0xa0;
-  readData(&unk_f6ac242, base, current);
+  readData(&tTriggerData, base, current);
   ptr += 0xf0;
 }

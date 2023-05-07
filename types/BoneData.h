@@ -10,11 +10,11 @@
 #include "ConstraintParameters.h"
 #include "Hardpoint.h"
 #include "HardpointLink.h"
+#include "HardpointOffset.h"
 #include "LookAtData.h"
 #include "t4b7fb4ab.h"
 #include "tafbcb96e.h"
 #include "tdbcb04f3.h"
-#include "tdc622f50.h"
 #include "tdfc16fd.h"
 #include "te1ac09b4.h"
 #include "tf5cd87eb.h"
@@ -38,7 +38,7 @@ struct BoneData : public ComplexRead {
   DT_VARIABLEARRAY<ConstraintParameters> ptLoopConstraints;
   DT_VARIABLEARRAY<HardpointLink> unk_eb48138;
   DT_VARIABLEARRAY<tdfc16fd> unk_248cf4;
-  DT_VARIABLEARRAY<tdc622f50> unk_b6507e3;
+  DT_VARIABLEARRAY<HardpointOffset> unk_b6507e3;
   DT_VARIABLEARRAY<te1ac09b4> unk_214010b;
   DT_INT unk_b98787b;
   DT_UINT uRagdollDegrade;

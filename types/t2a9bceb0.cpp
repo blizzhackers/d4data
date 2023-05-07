@@ -14,6 +14,6 @@ void t2a9bceb0::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&dwPad, base, current);
   current = ptr + 0x18;
-  readData(&unk_756ebc1, base, current);
+  readData(&eZone, base, current);
   ptr += 0x20;
 }

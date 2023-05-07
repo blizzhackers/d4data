@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "GizmoConditionData.h"
-#include "t5124724e.h"
+#include "TriggerData.h"
 
 #pragma push(pack, 1)
 
@@ -49,7 +49,7 @@ struct tfb0cf6d4 : public ComplexRead {
   DT_UINT unk_25312e5;
   DT_INT unk_4be4371;
   DT_UINT dwPad;
-  t5124724e unk_f6ac242;
+  TriggerData tTriggerData;
 
   void read(const char* base, char* &ptr);
 };

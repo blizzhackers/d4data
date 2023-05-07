@@ -6,9 +6,9 @@
 #pragma once
 
 #include "../types.h"
+#include "HardpointInfo.h"
 #include "RequiredMessageHeader.h"
 #include "t3940c0fe.h"
-#include "td8ee97d5.h"
 
 #pragma push(pack, 1)
 

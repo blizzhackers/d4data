@@ -6,6 +6,7 @@
 #pragma once
 
 #include "../types.h"
+#include "BountyIcons.h"
 #include "ScrollbarStyle.h"
 #include "t1d865fc7.h"
 #include "t22d9402d.h"
@@ -19,7 +20,6 @@
 #include "taec481b3.h"
 #include "tc36fb4b8.h"
 #include "te3bec795.h"
-#include "te4a9aedd.h"
 #include "tfac0f318.h"
 #include "tfd221bd1.h"
 
@@ -251,7 +251,7 @@ struct tf8ed47a9 : public ComplexRead {
   DT_UINT unk_187125e;
   DT_UINT unk_b5d02e2;
   DT_FIXEDARRAY<DT_UINT, 23> unk_e931d19;
-  DT_FIXEDARRAY<te4a9aedd, 10> unk_40bddf0;
+  DT_FIXEDARRAY<BountyIcons, 10> arBountyIcons;
   DT_FIXEDARRAY<tfd221bd1, 3> unk_15b9c64;
   DT_UINT unk_aa34698;
   DT_FIXEDARRAY<ta77b14db, 5> tClassInfo;

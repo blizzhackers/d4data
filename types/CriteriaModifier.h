@@ -24,7 +24,7 @@ struct CriteriaModifier : public ComplexRead {
   DT_ENUM<DT_INT> unk_41f8768;
   DT_ENUM<DT_INT> unk_720f501;
   DT_ENUM<DT_INT> unk_b0a7ee9;
-  DT_ENUM<DT_INT> unk_756ebc1;
+  DT_ENUM<DT_INT> eZone;
   DT_ENUM<DT_INT> unk_99e9721;
   DT_ENUM<DT_INT> unk_eb34eae;
   DT_UINT uVal;

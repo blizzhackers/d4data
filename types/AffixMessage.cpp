@@ -14,7 +14,7 @@ void AffixMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&fIdentified, base, current);
   current = ptr + 0x1c;
-  readData(&unk_5daa987, base, current);
+  readData(&aAffixes, base, current);
   current = ptr + 0x34;
   readData(&unk_186efea, base, current);
   current = ptr + 0x60;

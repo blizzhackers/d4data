@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "HardpointLink.h"
-#include "tdd2a5307.h"
+#include "SlopeBone.h"
 #include "tf2334a8e.h"
 
 #pragma push(pack, 1)
@@ -16,7 +16,7 @@ struct LookAtData : public ComplexRead {
   DT_FLOAT flRange;
   DT_FLOAT unk_5115351;
   DT_VARIABLEARRAY<tf2334a8e> arBones;
-  tdd2a5307 unk_1f415fb;
+  SlopeBone tSlopeBone;
   HardpointLink unk_8470ffc;
 
   void read(const char* base, char* &ptr);

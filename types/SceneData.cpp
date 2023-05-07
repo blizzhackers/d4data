@@ -14,7 +14,7 @@ void SceneData::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_1c11c0f, base, current);
   current = ptr + 0x28;
-  readData(&unk_86efcb3, base, current);
+  readData(&ptSurfaceGrid, base, current);
   current = ptr + 0x38;
   readData(&unk_da9dcc1, base, current);
   ptr += 0x48;

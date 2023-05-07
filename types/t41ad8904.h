@@ -12,7 +12,7 @@
 
 struct t41ad8904 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_INT unk_d3be7ce;
+  DT_INT isOpen;
 
   void read(const char* base, char* &ptr);
 };

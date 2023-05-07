@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t729e1236.h"
+#include "StencilParams.h"
 #include "tcb3fe69d.h"
 
 #pragma push(pack, 1)
@@ -18,7 +18,7 @@ struct RenderParams : public ComplexRead {
   DT_ENUM<DT_INT> eZBufferCompareFunc;
   DT_FLOAT flZBias;
   DT_FLOAT flZSlopeScaleBias;
-  t729e1236 unk_bb82f2a;
+  StencilParams tStencilParams;
   DT_INT fAlphaTestEnable;
   DT_ENUM<DT_INT> eAlphaTestCompareFunc;
   DT_BYTE bAlphaTestRefValue;

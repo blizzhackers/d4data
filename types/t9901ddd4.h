@@ -12,7 +12,7 @@
 
 struct t9901ddd4 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_ENUM<DT_INT> unk_756ebc1;
+  DT_ENUM<DT_INT> eZone;
   DT_INT unk_953936b;
 
   void read(const char* base, char* &ptr);

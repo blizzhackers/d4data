@@ -7,10 +7,10 @@
 
 #include "../types.h"
 #include "TestDefinitionMusic.h"
+#include "UIMargins.h"
 #include "t11e7e638.h"
 #include "t19c611ca.h"
 #include "t1d308425.h"
-#include "t1de9164f.h"
 #include "t220eeabc.h"
 #include "t2d18fb5c.h"
 #include "t39952607.h"
@@ -191,10 +191,10 @@ struct tcb3159a2 : public ComplexRead {
   tcd121122 unk_55e0096;
   DT_VARIABLEARRAY<t85177256> unk_edffb30;
   DT_VARIABLEARRAY<t39952607> unk_a90a48d;
-  t1de9164f unk_77afde8;
-  t1de9164f unk_6c7ea27;
-  t1de9164f unk_23d823e;
-  t1de9164f unk_e54f346;
+  UIMargins unk_77afde8;
+  UIMargins unk_6c7ea27;
+  UIMargins unk_23d823e;
+  UIMargins unk_e54f346;
   DT_FLOAT unk_a412bc0;
   DT_FLOAT unk_e0c0343;
   DT_FLOAT unk_9dd7abd;

@@ -12,7 +12,7 @@
 struct t13006658 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VECTOR3D unk_8ab7180;
+  DT_VECTOR3D wvOBB;
 
   void read(const char* base, char* &ptr);
 };

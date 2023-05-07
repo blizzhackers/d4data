@@ -13,7 +13,7 @@ struct t2a9bceb0 : public ComplexRead {
   DT_UINT dwType;
   DT_INT bNegate;
   DT_UINT dwPad;
-  DT_ENUM<DT_INT> unk_756ebc1;
+  DT_ENUM<DT_INT> eZone;
 
   void read(const char* base, char* &ptr);
 };

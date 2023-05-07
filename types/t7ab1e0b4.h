@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "UIControlHandle.h"
-#include "t1de9164f.h"
+#include "UIMargins.h"
 
 #pragma push(pack, 1)
 
@@ -17,7 +17,7 @@ struct t7ab1e0b4 : public ComplexRead {
   DT_SNO<SnoGroup::Animation2D> unk_e6e5019;
   DT_INT unk_62dd471;
   DT_INT unk_8aa16e;
-  t1de9164f tMargins;
+  UIMargins tMargins;
   UIControlHandle unk_4ce228f;
   DT_INT unk_3cdcaea;
   DT_CSTRING unk_ccb7997;

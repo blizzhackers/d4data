@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "td8ee97d5.h"
+#include "HardpointInfo.h"
 
 #pragma push(pack, 1)
 
 struct HardpointLink : public ComplexRead {
-  td8ee97d5 tInfo;
+  HardpointInfo tInfo;
 
   void read(const char* base, char* &ptr);
 };

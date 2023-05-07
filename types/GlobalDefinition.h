@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t15d1144c.h"
+#include "GlobalBase.h"
 
 #pragma push(pack, 1)
 

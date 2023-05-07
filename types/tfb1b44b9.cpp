@@ -18,7 +18,7 @@ void tfb1b44b9::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&unk_309438d, base, current);
   current = ptr + 0x2c;
-  readData(&unk_666dbd, base, current);
+  readData(&eSmoothing, base, current);
   current = ptr + 0x30;
   readData(&unk_58fbb1b, base, current);
   ptr += 0x38;

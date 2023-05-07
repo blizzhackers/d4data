@@ -12,7 +12,7 @@
 
 struct t3c136761 : public ComplexRead {
   DT_ENUM<DT_INT> unk_6ca113c;
-  DT_FLOAT unk_268b4a1;
+  DT_FLOAT wdDuration;
   DT_FLOAT wdOffset;
   PRTransform unk_2c71308;
 

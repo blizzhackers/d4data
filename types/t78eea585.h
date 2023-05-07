@@ -12,7 +12,7 @@
 struct t78eea585 : public ComplexRead {
   DT_ENUM<DT_INT> eType;
   DT_FLOAT flBase;
-  DT_FLOAT unk_da65803;
+  DT_FLOAT flRegen;
   DT_FLOAT unk_640b8ef;
   DT_FLOAT unk_171732b;
   DT_FLOAT unk_8694d05;

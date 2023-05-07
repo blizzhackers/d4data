@@ -20,7 +20,7 @@ struct CriteriaEvent : public ComplexRead {
   DT_ENUM<DT_INT> eSlot;
   DT_ENUM<DT_INT> eHealType;
   DT_ENUM<DT_INT> eCurrencyType;
-  DT_ENUM<DT_INT> unk_756ebc1;
+  DT_ENUM<DT_INT> eZone;
   DT_UINT uVal;
   DT_GBID<0x3e> gbidAchievementEvent;
   DT_INT64 uOperand;

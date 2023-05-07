@@ -8,7 +8,7 @@
 void te5e3de90::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_756ebc1, base, current);
+  readData(&eZone, base, current);
   current = ptr + 0x4;
   readData(&snoCondition, base, current);
   current = ptr + 0x8;

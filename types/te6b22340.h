@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t969dccd6.h"
+#include "WallPiece.h"
 
 #pragma push(pack, 1)
 
 struct te6b22340 : public ComplexRead {
-  DT_VARIABLEARRAY<t969dccd6> unk_ea28b4c;
+  DT_VARIABLEARRAY<WallPiece> arPieces;
   DT_ENUM<DT_INT> unk_f2499b0;
   DT_RANGE<DT_INT> unk_755f012;
   DT_RANGE<DT_INT> tHorizontalOffset;

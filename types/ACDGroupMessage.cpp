@@ -12,6 +12,6 @@ void ACDGroupMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&ann, base, current);
   current = ptr + 0x18;
-  readData(&unk_8bd11e1, base, current);
+  readData(&aGroups, base, current);
   ptr += 0x3c;
 }

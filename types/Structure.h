@@ -10,16 +10,16 @@
 #include "BoneData.h"
 #include "CollisionCapsule.h"
 #include "CollisionMesh.h"
+#include "GeoChunk.h"
 #include "SceneData.h"
 #include "Sphere.h"
-#include "tece011d4.h"
 
 #pragma push(pack, 1)
 
 struct Structure : public ComplexRead {
   DT_VARIABLEARRAY<CollisionMesh> ptCollisionMeshes;
   DT_VARIABLEARRAY<CollisionCapsule> ptCollisionCapsules;
-  DT_VARIABLEARRAY<tece011d4> ptChunks;
+  DT_VARIABLEARRAY<GeoChunk> ptChunks;
   DT_VARIABLEARRAY<SceneData> ptSceneData;
   DT_VARIABLEARRAY<BoneData> ptBoneData;
   DT_UINT dwFlags;
