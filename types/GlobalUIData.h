@@ -1,5 +1,5 @@
 /**
- * Definition: tf8ed47a9
+ * Definition: GlobalUIData
  * Hash: f8ed47a9
  */
 
@@ -25,7 +25,7 @@
 
 #pragma push(pack, 1)
 
-struct tf8ed47a9 : public ComplexRead {
+struct GlobalUIData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_FIXEDARRAY<tc36fb4b8, 3> unk_9468809;

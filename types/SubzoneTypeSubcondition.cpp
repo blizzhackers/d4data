@@ -1,11 +1,11 @@
 /**
- * Definition: tda2f1fb9
+ * Definition: SubzoneTypeSubcondition
  * Hash: da2f1fb9
  */
 
-#include "tda2f1fb9.h"
+#include "SubzoneTypeSubcondition.h"
 
-void tda2f1fb9::read(const char* base, char* &ptr) {
+void SubzoneTypeSubcondition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

@@ -1,11 +1,11 @@
 /**
- * Definition: t653f75b6
+ * Definition: UIControlFont
  * Hash: 653f75b6
  */
 
-#include "t653f75b6.h"
+#include "UIControlFont.h"
 
-void t653f75b6::read(const char* base, char* &ptr) {
+void UIControlFont::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_86d67b, base, current);

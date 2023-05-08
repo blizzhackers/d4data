@@ -1,5 +1,5 @@
 /**
- * Definition: tda2f1fb9
+ * Definition: SubzoneTypeSubcondition
  * Hash: da2f1fb9
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct tda2f1fb9 : public ComplexRead {
+struct SubzoneTypeSubcondition : public ComplexRead {
   DT_UINT dwType;
   DT_INT bNegate;
   DT_UINT dwPad;

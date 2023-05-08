@@ -1,11 +1,11 @@
 /**
- * Definition: t1aa682eb
+ * Definition: MarkerItemData
  * Hash: 1aa682eb
  */
 
-#include "t1aa682eb.h"
+#include "MarkerItemData.h"
 
-void t1aa682eb::read(const char* base, char* &ptr) {
+void MarkerItemData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

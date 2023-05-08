@@ -1,11 +1,11 @@
 /**
- * Definition: tf8ed47a9
+ * Definition: GlobalUIData
  * Hash: f8ed47a9
  */
 
-#include "tf8ed47a9.h"
+#include "GlobalUIData.h"
 
-void tf8ed47a9::read(const char* base, char* &ptr) {
+void GlobalUIData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

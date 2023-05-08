@@ -1,5 +1,5 @@
 /**
- * Definition: t1aa682eb
+ * Definition: MarkerItemData
  * Hash: 1aa682eb
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t1aa682eb : public ComplexRead {
+struct MarkerItemData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_ENUM<DT_INT> eCurrencyType;

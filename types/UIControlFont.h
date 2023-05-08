@@ -1,5 +1,5 @@
 /**
- * Definition: t653f75b6
+ * Definition: UIControlFont
  * Hash: 653f75b6
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t653f75b6 : public ComplexRead {
+struct UIControlFont : public ComplexRead {
   DT_TAGMAP<DT_INT> unk_86d67b;
 
   void read(const char* base, char* &ptr);
