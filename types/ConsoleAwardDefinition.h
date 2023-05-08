@@ -1,5 +1,5 @@
 /**
- * Definition: tfc6882b
+ * Definition: ConsoleAwardDefinition
  * Hash: fc6882b
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct tfc6882b : public ComplexRead {
+struct ConsoleAwardDefinition : public ComplexRead {
   DT_UINT dwType;
   DT_UINT uProfileAwardId;
   DT_UINT dwPad;

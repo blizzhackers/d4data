@@ -76,11 +76,11 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x104;
   readData(&unk_7ed23dd, base, current);
   current = ptr + 0x108;
-  readData(&unk_f6cde9f, base, current);
+  readData(&bPreplayAnimation, base, current);
   current = ptr + 0x10c;
   readData(&unk_99e0ced, base, current);
   current = ptr + 0x110;
-  readData(&unk_bb05442, base, current);
+  readData(&eAnimationLayer, base, current);
   current = ptr + 0x114;
   readData(&unk_3616d3, base, current);
   current = ptr + 0x118;
@@ -242,7 +242,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x45c;
   readData(&unk_49a1799, base, current);
   current = ptr + 0x460;
-  readData(&unk_a114e2b, base, current);
+  readData(&snoPowerApproach, base, current);
   current = ptr + 0x464;
   readData(&unk_f70b0d, base, current);
   current = ptr + 0x468;
@@ -274,7 +274,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x510;
   readData(&bInvisibleDuring, base, current);
   current = ptr + 0x514;
-  readData(&unk_31e452, base, current);
+  readData(&bInvulnerableDuring, base, current);
   current = ptr + 0x518;
   readData(&unk_1de20c9, base, current);
   current = ptr + 0x51c;

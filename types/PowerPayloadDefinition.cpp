@@ -1,11 +1,11 @@
 /**
- * Definition: t30754ce0
+ * Definition: PowerPayloadDefinition
  * Hash: 30754ce0
  */
 
-#include "t30754ce0.h"
+#include "PowerPayloadDefinition.h"
 
-void t30754ce0::read(const char* base, char* &ptr) {
+void PowerPayloadDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_84473c1, base, current);

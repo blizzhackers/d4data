@@ -10,9 +10,9 @@
 #include "HardpointLink.h"
 #include "PowerBuffDefinition.h"
 #include "PowerMod.h"
+#include "PowerPayloadDefinition.h"
 #include "t146f0099.h"
 #include "t20e37537.h"
-#include "t30754ce0.h"
 #include "t3940c0fe.h"
 #include "t5f5e88ad.h"
 #include "t6f71323a.h"
@@ -61,9 +61,9 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_fca3b69;
   DT_INT unk_bf24;
   DT_SNO<SnoGroup::Power> unk_7ed23dd;
-  DT_INT unk_f6cde9f;
+  DT_INT bPreplayAnimation;
   DT_INT unk_99e0ced;
-  DT_ENUM<DT_INT> unk_bb05442;
+  DT_ENUM<DT_INT> eAnimationLayer;
   DT_ENUM<DT_INT> unk_3616d3;
   DT_INT unk_41a3d22;
   DT_INT unk_2df4181;
@@ -144,7 +144,7 @@ struct PowerDefinition : public ComplexRead {
   DT_STRING_FORMULA tAttackRadius;
   DT_INT unk_3587b29;
   DT_INT unk_49a1799;
-  DT_SNO<SnoGroup::Power> unk_a114e2b;
+  DT_SNO<SnoGroup::Power> snoPowerApproach;
   DT_ENUM<DT_INT> unk_f70b0d;
   DT_GBID<0x22> unk_e65d245;
   DT_INT unk_17dddfd;
@@ -160,7 +160,7 @@ struct PowerDefinition : public ComplexRead {
   DT_FLOAT unk_692752d;
   DT_INT unk_eb84fbe;
   DT_INT bInvisibleDuring;
-  DT_INT unk_31e452;
+  DT_INT bInvulnerableDuring;
   DT_INT unk_1de20c9;
   DT_INT bCannotDieDuring;
   DT_INT unk_636a66b;
@@ -208,7 +208,7 @@ struct PowerDefinition : public ComplexRead {
   DT_VARIABLEARRAY<PowerBuffDefinition> arBuffs;
   DT_VARIABLEARRAY<t20e37537> ptScriptFormulas;
   DT_INT nFormulaCount;
-  DT_VARIABLEARRAY<t30754ce0> arPayloads;
+  DT_VARIABLEARRAY<PowerPayloadDefinition> arPayloads;
   DT_VARIABLEARRAY<PowerMod> arMods;
   DT_SNO<SnoGroup::EffectGroup> unk_d6e35f3;
   DT_SNO<SnoGroup::EffectGroup> unk_cb067ec;

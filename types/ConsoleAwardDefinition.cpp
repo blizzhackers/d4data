@@ -1,11 +1,11 @@
 /**
- * Definition: tfc6882b
+ * Definition: ConsoleAwardDefinition
  * Hash: fc6882b
  */
 
-#include "tfc6882b.h"
+#include "ConsoleAwardDefinition.h"
 
-void tfc6882b::read(const char* base, char* &ptr) {
+void ConsoleAwardDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

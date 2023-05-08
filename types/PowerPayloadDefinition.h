@@ -1,5 +1,5 @@
 /**
- * Definition: t30754ce0
+ * Definition: PowerPayloadDefinition
  * Hash: 30754ce0
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct t30754ce0 : public ComplexRead {
+struct PowerPayloadDefinition : public ComplexRead {
   DT_SNO<SnoGroup::ItemType> unk_84473c1;
   DT_SNO<SnoGroup::ItemType> unk_2c0d1b7;
   DT_UINT dwID;
