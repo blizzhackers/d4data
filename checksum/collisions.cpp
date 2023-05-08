@@ -11,13 +11,12 @@ std::string rootPath = "";
 
 uint32_t tmp[64]{ 0 };
 uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
-uint32_t minPos = 1;
+uint32_t minPos = 0;
 
 std::vector<uint32_t> checksumMatch;
 bool hashType = 0;
 
 std::vector<std::string> prefix;
-auto customPrefix = false;
 std::vector<std::string> dict;
 std::unordered_map<std::string, bool> stringUsed;
 
@@ -37,10 +36,10 @@ uint32_t checksum(std::string str) {
 }
 
 std::string getWord(int32_t max) {
-  std::string ret = prefix[tmp[0]];
+  std::string ret = "";
 
-  for (int32_t c = 1; c < max; c++) {
-    ret = ret + dict[tmp[c]];
+  for (int32_t c = 0; c < max; c++) {
+    ret = ret + ((c || prefix.size() < 1) ? dict[tmp[c]] : prefix[tmp[0]]);
   }
 
   return ret;
@@ -102,13 +101,13 @@ void collisions(long pos, long max) {
     return;
   }
 
-  if (pos) {
+  if (pos || prefix.size() < 1) {
     for (uint32_t c = 1; c < dict.size(); c++) {
       tmp[pos] = c;
       collisions(pos - 1, max);
     }
   }
-  else if (hashType == 1) {
+  else {
     for (uint32_t c = 0; c < prefix.size(); c++) {
       tmp[pos] = c;
       collisions(pos - 1, max);
@@ -159,7 +158,6 @@ int main(int argc, char *argv[]) {
       else if(gettingPrefix) {
         prefix.push_back(arg);
         gettingPrefix = false;
-        customPrefix = true;
       }
       else if(gettingMin) {
         uint32_t uTmp = 0;
@@ -222,13 +220,11 @@ int main(int argc, char *argv[]) {
       std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
       std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
 
-      if (hashType == 1) {
+      if (hashType != 2) {
         dictmap[elem] = true;
       }
 
-      if (hashType != 0) {
-        dictmap[newelem2] = true;
-      }
+      dictmap[newelem2] = true;
 
       if (hashType != 2) {
         newelem2 = newelem.substr(0, 1) + newelem2.substr(1);
@@ -241,7 +237,7 @@ int main(int argc, char *argv[]) {
     dict.push_back(elem.first);
   }
 
-  if (hashType == 1 && !customPrefix) {
+  if (hashType == 1 && prefix.size() < 1) {
     prefix = getPrefixes();
   }
 
