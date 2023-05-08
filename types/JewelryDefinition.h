@@ -13,7 +13,7 @@ struct JewelryDefinition : public ComplexRead {
   DT_ENUM<DT_INT> eClassRestriction;
   DT_UINT unk_305622d;
   DT_INT unk_59b49ef;
-  DT_UINT unk_fbabaf4;
+  DT_UINT hIconImage;
 
   void read(const char* base, char* &ptr);
 };

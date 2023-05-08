@@ -12,7 +12,7 @@
 
 struct t48f5e019 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_SNO<SnoGroup::ParagonBoard> unk_cee34d8;
+  DT_SNO<SnoGroup::ParagonBoard> snoBoard;
   DT_ENUM<DT_INT> eRotation;
   DT_UINT unk_9b6955a;
 

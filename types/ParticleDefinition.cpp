@@ -70,7 +70,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x190;
   readData(&snoMaterial, base, current);
   current = ptr + 0x194;
-  readData(&unk_8e9800, base, current);
+  readData(&snoHoudini, base, current);
   current = ptr + 0x198;
   readData(&snoPhysics, base, current);
   current = ptr + 0x19c;

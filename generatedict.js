@@ -2,6 +2,7 @@ const fs = require('fs');
 
 let prefix = {
   'm_': 'm_',
+  'sno': 'sno',
 };
 
 let dict = {
@@ -196,6 +197,10 @@ let dict = {
   'activity': 'activity',
   'facial': 'facial',
   'face': 'face',
+  'normal': 'normal',
+  'MouseOver': 'MouseOver',
+  'pushed': 'pushed',
+  'inactive': 'inactive',
 };
 
 let names = {};

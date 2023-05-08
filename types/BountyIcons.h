@@ -11,7 +11,7 @@
 
 struct BountyIcons : public ComplexRead {
   DT_UINT hIconNormal;
-  DT_UINT unk_c5ca709;
+  DT_UINT hIconDisabled;
   DT_UINT hNotificationIcon;
 
   void read(const char* base, char* &ptr);

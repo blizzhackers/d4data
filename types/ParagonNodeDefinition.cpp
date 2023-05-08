@@ -10,7 +10,7 @@ void ParagonNodeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&hIcon, base, current);
   current = ptr + 0xc;
-  readData(&unk_f8257d, base, current);
+  readData(&hIconMask, base, current);
   current = ptr + 0x10;
   readData(&unk_7714b98, base, current);
   current = ptr + 0x14;

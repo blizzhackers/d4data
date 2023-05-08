@@ -10,7 +10,7 @@ void t48f5e019::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_cee34d8, base, current);
+  readData(&snoBoard, base, current);
   current = ptr + 0x14;
   readData(&eRotation, base, current);
   current = ptr + 0x18;

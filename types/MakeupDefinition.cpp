@@ -18,6 +18,6 @@ void MakeupDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&unk_254bd5e, base, current);
   current = ptr + 0x2c;
-  readData(&unk_fbabaf4, base, current);
+  readData(&hIconImage, base, current);
   ptr += 0x30;
 }

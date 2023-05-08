@@ -15,7 +15,7 @@ struct MakeupDefinition : public ComplexRead {
   DT_FLOAT flIntensity;
   DT_FLOAT unk_e0611b0;
   DT_FLOAT unk_254bd5e;
-  DT_UINT unk_fbabaf4;
+  DT_UINT hIconImage;
 
   void read(const char* base, char* &ptr);
 };

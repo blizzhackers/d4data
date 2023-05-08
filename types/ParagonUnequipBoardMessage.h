@@ -12,7 +12,7 @@
 
 struct ParagonUnequipBoardMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_SNO<SnoGroup::ParagonBoard> unk_cee34d8;
+  DT_SNO<SnoGroup::ParagonBoard> snoBoard;
 
   void read(const char* base, char* &ptr);
 };

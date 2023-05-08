@@ -49,7 +49,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_VARIABLEARRAY<VectorPath> unk_79fc11d;
   DT_VARIABLEARRAY<tcbfdd2ea> unk_24aa41d;
   DT_SNO<SnoGroup::Material> snoMaterial;
-  DT_SNO<SnoGroup::HoudiniParticleSim> unk_8e9800;
+  DT_SNO<SnoGroup::HoudiniParticleSim> snoHoudini;
   DT_SNO<SnoGroup::Physics> snoPhysics;
   DT_SNO<SnoGroup::EffectGroup> unk_172022;
   DT_FLOAT unk_72a45fa;

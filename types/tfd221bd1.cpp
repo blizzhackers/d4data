@@ -12,6 +12,6 @@ void tfd221bd1::read(const char* base, char* &ptr) {
   current = ptr + 0x4;
   readData(&hIconNormal, base, current);
   current = ptr + 0x8;
-  readData(&unk_c5ca709, base, current);
+  readData(&hIconDisabled, base, current);
   ptr += 0xc;
 }

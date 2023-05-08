@@ -14,7 +14,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x4c;
   readData(&unk_bd561bf, base, current);
   current = ptr + 0x50;
-  readData(&unk_8dd1734, base, current);
+  readData(&tPrimaryTag, base, current);
   current = ptr + 0x58;
   readData(&arSkillTags, base, current);
   current = ptr + 0x68;
@@ -338,15 +338,15 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xaf0;
   readData(&hIconNormal, base, current);
   current = ptr + 0xaf4;
-  readData(&unk_e060ad6, base, current);
+  readData(&hIconMouseover, base, current);
   current = ptr + 0xaf8;
-  readData(&unk_800dd5a, base, current);
+  readData(&hIconPushed, base, current);
   current = ptr + 0xafc;
-  readData(&unk_ba2924, base, current);
+  readData(&hIconInactive, base, current);
   current = ptr + 0xb00;
   readData(&unk_af8d69, base, current);
   current = ptr + 0xb04;
-  readData(&unk_5f0639, base, current);
+  readData(&hIconRound, base, current);
   current = ptr + 0xb08;
   readData(&unk_ca85a0a, base, current);
   current = ptr + 0xb0c;

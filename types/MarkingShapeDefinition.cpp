@@ -12,7 +12,7 @@ void MarkingShapeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&unk_3dcf566, base, current);
   current = ptr + 0x10;
-  readData(&unk_fbabaf4, base, current);
+  readData(&hIconImage, base, current);
   current = ptr + 0x14;
   readData(&unk_5bc5f2b, base, current);
   current = ptr + 0x18;

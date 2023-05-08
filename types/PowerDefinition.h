@@ -30,7 +30,7 @@ struct PowerDefinition : public ComplexRead {
   DT_CHARARRAY<64> szInternalName;
   DT_INT bDefensive;
   DT_INT unk_bd561bf;
-  tee739e40 unk_8dd1734;
+  tee739e40 tPrimaryTag;
   DT_VARIABLEARRAY<tee739e40> arSkillTags;
   DT_ENUM<DT_INT> eSkillCat;
   DT_ENUM<DT_INT> eType;
@@ -192,11 +192,11 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_a75e08a;
   DT_INT unk_89134c5;
   DT_UINT hIconNormal;
-  DT_UINT unk_e060ad6;
-  DT_UINT unk_800dd5a;
-  DT_UINT unk_ba2924;
+  DT_UINT hIconMouseover;
+  DT_UINT hIconPushed;
+  DT_UINT hIconInactive;
   DT_UINT unk_af8d69;
-  DT_UINT unk_5f0639;
+  DT_UINT hIconRound;
   DT_GBID<0x17> unk_ca85a0a;
   DT_UINT unk_159fc50;
   DT_INT unk_cecdfc8;

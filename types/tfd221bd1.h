@@ -12,7 +12,7 @@
 struct tfd221bd1 : public ComplexRead {
   DT_UINT unk_44213a;
   DT_UINT hIconNormal;
-  DT_UINT unk_c5ca709;
+  DT_UINT hIconDisabled;
 
   void read(const char* base, char* &ptr);
 };
