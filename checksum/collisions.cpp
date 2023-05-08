@@ -2,6 +2,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <unordered_set>
 #include <unistd.h>
 #include <algorithm>
 #include <filesystem>
@@ -13,7 +14,7 @@ uint32_t tmp[64]{ 0 };
 uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
 uint32_t minPos = 0;
 
-std::vector<uint32_t> checksumMatch;
+std::unordered_set<uint32_t> checksumMatch;
 bool hashType = 0;
 
 std::vector<std::string> prefix;
@@ -72,30 +73,27 @@ void collisions(long pos, long max) {
     std::string word = getWord(max);
     uint32_t wordChecksum = checksum(word);
 
-    for (int c = 0; c < checksumMatch.size(); c++) {
-      if(wordChecksum == checksumMatch[c] && !stringUsed[word]) {
-        std::cout << "  " << std::hex << checksumMatch[c] << ": " << word << std::endl;
-        stringUsed[word] = true;
+    if(checksumMatch.count(wordChecksum) > 0 && !stringUsed[word]) {
+      std::cout << "  " << std::hex << wordChecksum << ": " << word << std::endl;
+      stringUsed[word] = true;
 
-        std::stringstream outfilePath;
+      std::stringstream outfilePath;
 
-        if (hashType == 0) {
-          outfilePath << "type/";
-        }
-        else if (hashType == 1) {
-          outfilePath << "field/";
-        }
-        else if (hashType == 1) {
-          outfilePath << "gbid/";
-        }
-
-        outfilePath << std::hex << wordChecksum << ".yml";
-
-        std::ofstream outfile(outfilePath.str(), std::ios::app);
-        outfile << std::hex << checksumMatch[c] << ": " << word << std::endl;
-        outfile.close();
-        break;
+      if (hashType == 0) {
+        outfilePath << "type/";
       }
+      else if (hashType == 1) {
+        outfilePath << "field/";
+      }
+      else if (hashType == 1) {
+        outfilePath << "gbid/";
+      }
+
+      outfilePath << std::hex << wordChecksum << ".yml";
+
+      std::ofstream outfile(outfilePath.str(), std::ios::app);
+      outfile << std::hex << wordChecksum << ": " << word << std::endl;
+      outfile.close();
     }
 
     return;
@@ -193,7 +191,7 @@ int main(int argc, char *argv[]) {
 
         ss << std::hex << arg;
         ss >> uTmp;
-        checksumMatch.push_back(uTmp);
+        checksumMatch.insert(uTmp);
       }
     }
   }
@@ -203,7 +201,7 @@ int main(int argc, char *argv[]) {
     std::cin >> std::hex >> uTmp;
 
     while (std::cin) {
-      checksumMatch.push_back(uTmp);
+      checksumMatch.insert(uTmp);
       std::cin >> std::hex >> uTmp;
     }
   }
