@@ -15,7 +15,7 @@ uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
 uint32_t minPos = 0;
 
 std::unordered_set<uint32_t> checksumMatch;
-bool hashType = 0;
+bool hashType = 0, outputLog = true;
 
 std::vector<std::string> prefix;
 std::vector<std::string> dict;
@@ -77,23 +77,25 @@ void collisions(long pos, long max) {
       std::cout << "  " << std::hex << wordChecksum << ": " << word << std::endl;
       stringUsed[word] = true;
 
-      std::stringstream outfilePath;
+      if (outputLog) {
+        std::stringstream outfilePath;
 
-      if (hashType == 0) {
-        outfilePath << "type/";
-      }
-      else if (hashType == 1) {
-        outfilePath << "field/";
-      }
-      else if (hashType == 1) {
-        outfilePath << "gbid/";
-      }
+        if (hashType == 0) {
+          outfilePath << "type/";
+        }
+        else if (hashType == 1) {
+          outfilePath << "field/";
+        }
+        else if (hashType == 1) {
+          outfilePath << "gbid/";
+        }
 
-      outfilePath << std::hex << wordChecksum << ".yml";
+        outfilePath << std::hex << wordChecksum << ".yml";
 
-      std::ofstream outfile(outfilePath.str(), std::ios::app);
-      outfile << std::hex << wordChecksum << ": " << word << std::endl;
-      outfile.close();
+        std::ofstream outfile(outfilePath.str(), std::ios::app);
+        outfile << std::hex << wordChecksum << ": " << word << std::endl;
+        outfile.close();
+      }
     }
 
     return;
@@ -113,10 +115,54 @@ void collisions(long pos, long max) {
   }
 }
 
+std::vector<std::string> getDefaultDict() {
+    std::vector<std::string> ret;
+    ret.push_back("");
+    ret.push_back("0");
+    ret.push_back("1");
+    ret.push_back("2");
+    ret.push_back("3");
+    ret.push_back("4");
+    ret.push_back("5");
+    ret.push_back("6");
+    ret.push_back("7");
+    ret.push_back("8");
+    ret.push_back("9");
+    ret.push_back("_");
+    ret.push_back("a");
+    ret.push_back("b");
+    ret.push_back("c");
+    ret.push_back("d");
+    ret.push_back("e");
+    ret.push_back("f");
+    ret.push_back("g");
+    ret.push_back("h");
+    ret.push_back("i");
+    ret.push_back("j");
+    ret.push_back("k");
+    ret.push_back("l");
+    ret.push_back("m");
+    ret.push_back("n");
+    ret.push_back("o");
+    ret.push_back("p");
+    ret.push_back("q");
+    ret.push_back("r");
+    ret.push_back("s");
+    ret.push_back("t");
+    ret.push_back("u");
+    ret.push_back("v");
+    ret.push_back("w");
+    ret.push_back("x");
+    ret.push_back("y");
+    ret.push_back("z");
+    return ret;
+}
+
 int main(int argc, char *argv[]) {
   bool gettingPrefix = false;
   bool gettingMin = false;
   bool gettingMax = false;
+  bool useDict = true;
 
   int pos = 0;
 
@@ -144,11 +190,21 @@ int main(int argc, char *argv[]) {
       else if(arg == "--prefix") {
         gettingPrefix = true;
       }
+      else if(arg == "--no-prefix") {
+        prefix.clear();
+        prefix.push_back("");
+      }
       else if(arg == "--min") {
         gettingMin = true;
       }
       else if(arg == "--max") {
         gettingMax = true;
+      }
+      else if(arg == "--no-log") {
+        outputLog = false;
+      }
+      else if(arg == "--no-dict") {
+        useDict = false;
       }
       else if(arg[0] == '-') {
         // discard unknown option
@@ -209,7 +265,7 @@ int main(int argc, char *argv[]) {
   int32_t dictmax = dict.size();
   std::unordered_map<std::string, bool> dictmap;
 
-  for (const auto baseelem : getDict()) {
+  for (const auto baseelem : (useDict ? getDict() : getDefaultDict())) {
     if (baseelem.length()) {
       std::string elem = baseelem;
       std::string newelem = elem;
