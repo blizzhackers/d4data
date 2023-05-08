@@ -10,6 +10,9 @@
 std::string rootPath = "";
 
 uint32_t tmp[64]{ 0 };
+uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
+uint32_t minPos = 1;
+
 std::vector<uint32_t> checksumMatch;
 bool hashType = 0;
 
@@ -115,6 +118,8 @@ void collisions(long pos, long max) {
 
 int main(int argc, char *argv[]) {
   bool gettingPrefix = false;
+  bool gettingMin = false;
+  bool gettingMax = false;
 
   int pos = 0;
 
@@ -142,6 +147,12 @@ int main(int argc, char *argv[]) {
       else if(arg == "--prefix") {
         gettingPrefix = true;
       }
+      else if(arg == "--min") {
+        gettingMin = true;
+      }
+      else if(arg == "--max") {
+        gettingMax = true;
+      }
       else if(arg[0] == '-') {
         // discard unknown option
       }
@@ -150,24 +161,52 @@ int main(int argc, char *argv[]) {
         gettingPrefix = false;
         customPrefix = true;
       }
+      else if(gettingMin) {
+        uint32_t uTmp = 0;
+        std::stringstream ss;
+
+        ss << arg;
+        ss >> uTmp;
+
+        if (uTmp >= 1 && uTmp < sizeof(tmp) / sizeof(uint32_t)) {
+          minPos = uTmp - 1;
+          std::cerr << "Using min of " << minPos << std::endl;
+        }
+
+        gettingMin = false;
+      }
+      else if(gettingMax) {
+        uint32_t uTmp = 0;
+        std::stringstream ss;
+
+        ss << arg;
+        ss >> uTmp;
+
+        if (uTmp >= 1 && uTmp < sizeof(tmp) / sizeof(uint32_t)) {
+          maxPos = uTmp;
+          std::cerr << "Using max of " << maxPos << std::endl;
+        }
+
+        gettingMax = false;
+      }
       else {
-        uint32_t tmp = 0;
+        uint32_t uTmp = 0;
         std::stringstream ss;
 
         ss << std::hex << arg;
-        ss >> tmp;
-        checksumMatch.push_back(tmp);
+        ss >> uTmp;
+        checksumMatch.push_back(uTmp);
       }
     }
   }
 
   if (!isatty(0)) {
-    size_t tmp;
-    std::cin >> std::hex >> tmp;
+    size_t uTmp;
+    std::cin >> std::hex >> uTmp;
 
     while (std::cin) {
-      checksumMatch.push_back(tmp);
-      std::cin >> std::hex >> tmp;
+      checksumMatch.push_back(uTmp);
+      std::cin >> std::hex >> uTmp;
     }
   }
 
@@ -208,7 +247,7 @@ int main(int argc, char *argv[]) {
 
   if (checksumMatch.size()) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
-    for (uint32_t c = 1; c < sizeof(tmp) / sizeof(uint32_t); c++) {
+    for (uint32_t c = minPos; c < maxPos; c++) {
       std::cerr << "Length: " << (c + 1) << std::endl;
       collisions(c, c + 1);
     }
