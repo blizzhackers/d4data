@@ -1,5 +1,5 @@
 /**
- * Definition: t2070413b
+ * Definition: SharedChildFile
  * Hash: 2070413b
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t2070413b : public ComplexRead {
+struct SharedChildFile : public ComplexRead {
   DT_CHARARRAY<50> szMD5;
 
   void read(const char* base, char* &ptr);
