@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t4824e5e3.h"
+#include "ScriptEventParamBase.h"
 
 #pragma push(pack, 1)
 

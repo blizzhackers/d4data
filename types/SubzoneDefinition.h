@@ -12,7 +12,7 @@
 #pragma push(pack, 1)
 
 struct SubzoneDefinition : public ComplexRead {
-  DT_SNO<SnoGroup::World> unk_691c97c;
+  DT_SNO<SnoGroup::World> snoPrimaryWorld;
   DT_STARTLOC_NAME uEntranceGUID;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;
   DT_ENUM<DT_INT> eType;

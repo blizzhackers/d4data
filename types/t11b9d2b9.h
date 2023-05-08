@@ -6,16 +6,16 @@
 #pragma once
 
 #include "../types.h"
+#include "QuestCallback.h"
 #include "QuestReward.h"
 #include "t2b920147.h"
-#include "tb6d4355f.h"
 
 #pragma push(pack, 1)
 
 struct t11b9d2b9 : public ComplexRead {
   DT_UINT dwUID;
   DT_VARIABLEARRAY<t2b920147> ptLink;
-  DT_VARIABLEARRAY<tb6d4355f> arCallbacks;
+  DT_VARIABLEARRAY<QuestCallback> arCallbacks;
   DT_INT unk_a845fa9;
   DT_SNO<SnoGroup::Item> unk_89d02b1;
   QuestReward unk_68d4eb0;

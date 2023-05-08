@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t1dea6151.h"
+#include "ItemAffixAttribute.h"
 
 #pragma push(pack, 1)
 
@@ -24,7 +24,7 @@ struct AffixDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_ENUM<DT_INT>> unk_d03ebfd;
   DT_UINT dwAllowedQualityLevels;
   DT_ENUM<DT_INT> eAffixType;
-  DT_VARIABLEARRAY<t1dea6151> unk_2a52848;
+  DT_VARIABLEARRAY<ItemAffixAttribute> unk_2a52848;
   DT_VARIABLEARRAY<DT_FLOAT> arStaticValues;
   DT_SNO<SnoGroup::Power> snoPassivePower;
   DT_SNO<SnoGroup::PlayerClass> snoClassRequirement;

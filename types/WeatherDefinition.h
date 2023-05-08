@@ -18,7 +18,7 @@
 
 struct WeatherDefinition : public ComplexRead {
   DT_INT64 ptPostprocessed;
-  DT_SNO<SnoGroup::Weather> unk_1d4db0a;
+  DT_SNO<SnoGroup::Weather> snoParentWeather;
   DT_INT unk_45703df;
   DT_FIXEDARRAY<t3f7811d2, 3> unk_5989069;
   WeatherStateParams tParamsNotRaining;

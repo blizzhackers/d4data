@@ -10,7 +10,7 @@ void WeatherDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&ptPostprocessed, base, current);
   current = ptr + 0x10;
-  readData(&unk_1d4db0a, base, current);
+  readData(&snoParentWeather, base, current);
   current = ptr + 0x14;
   readData(&unk_45703df, base, current);
   current = ptr + 0x18;

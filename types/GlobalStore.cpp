@@ -34,7 +34,7 @@ void GlobalStore::read(const char* base, char* &ptr) {
   current = ptr + 0x100;
   readData(&unk_357aca5, base, current);
   current = ptr + 0x110;
-  readData(&unk_f86e686, base, current);
+  readData(&snoVendorWorld, base, current);
   current = ptr + 0x114;
   readData(&unk_8fc9524, base, current);
   current = ptr + 0x118;

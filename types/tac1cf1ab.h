@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "te1c5710.h"
+#include "UIControlStyle.h"
 
 #pragma push(pack, 1)
 

@@ -28,7 +28,7 @@ struct GlobalStore : public ComplexRead {
   DT_FIXEDARRAY<t3c136761, 5> unk_a64749a;
   DT_SNO<SnoGroup::World> unk_d679087;
   DT_CSTRING unk_357aca5;
-  DT_SNO<SnoGroup::World> unk_f86e686;
+  DT_SNO<SnoGroup::World> snoVendorWorld;
   DT_UINT unk_8fc9524;
   DT_FIXEDARRAY<tb3f69894, 3> unk_d7df52d;
   DT_ENUM<DT_INT> unk_107fe73;
