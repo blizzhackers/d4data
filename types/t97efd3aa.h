@@ -6,6 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "DeathLookTemplate.h"
+#include "DeathMaterialTemplate.h"
 #include "DeathTemplate.h"
 #include "GizmoTemplate.h"
 #include "NpcTemplate.h"
@@ -13,8 +15,6 @@
 #include "t14c5741.h"
 #include "t17306730.h"
 #include "t3ae42c67.h"
-#include "t6a7e06d1.h"
-#include "t7f66be17.h"
 #include "t8f5adb75.h"
 #include "tc1ccb782.h"
 
@@ -32,8 +32,8 @@ struct t97efd3aa : public ComplexRead {
   DT_VARIABLEARRAY<t8f5adb75> unk_a884bb;
   DT_VARIABLEARRAY<GizmoTemplate> unk_23aedc8;
   DT_VARIABLEARRAY<DeathTemplate> unk_478f948;
-  DT_VARIABLEARRAY<t7f66be17> unk_8589d1d;
-  DT_VARIABLEARRAY<t6a7e06d1> unk_8959e97;
+  DT_VARIABLEARRAY<DeathLookTemplate> unk_8589d1d;
+  DT_VARIABLEARRAY<DeathMaterialTemplate> unk_8959e97;
 
   void read(const char* base, char* &ptr);
 };

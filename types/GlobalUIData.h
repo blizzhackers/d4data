@@ -7,8 +7,9 @@
 
 #include "../types.h"
 #include "BountyIcons.h"
+#include "BountyTierIcons.h"
+#include "GlobalFontColor.h"
 #include "ScrollbarStyle.h"
-#include "t1d865fc7.h"
 #include "t22d9402d.h"
 #include "t31220ee1.h"
 #include "t36837ce3.h"
@@ -21,7 +22,6 @@
 #include "tc36fb4b8.h"
 #include "te3bec795.h"
 #include "tfac0f318.h"
-#include "tfd221bd1.h"
 
 #pragma push(pack, 1)
 
@@ -252,7 +252,7 @@ struct GlobalUIData : public ComplexRead {
   DT_UINT unk_b5d02e2;
   DT_FIXEDARRAY<DT_UINT, 23> unk_e931d19;
   DT_FIXEDARRAY<BountyIcons, 10> arBountyIcons;
-  DT_FIXEDARRAY<tfd221bd1, 3> unk_15b9c64;
+  DT_FIXEDARRAY<BountyTierIcons, 3> unk_15b9c64;
   DT_UINT unk_aa34698;
   DT_FIXEDARRAY<ta77b14db, 5> tClassInfo;
   DT_VARIABLEARRAY<t7a02a8d6> unk_51e3091;
@@ -273,7 +273,7 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_29f26f5;
   DT_FLOAT flMinimapRevealRadius;
   DT_UINT unk_b8c638c;
-  DT_VARIABLEARRAY<t1d865fc7> unk_2b6498d;
+  DT_VARIABLEARRAY<GlobalFontColor> unk_2b6498d;
   DT_FLOAT unk_7b6861c;
   DT_FLOAT unk_c56ad90;
   DT_FLOAT unk_1f7cfee;

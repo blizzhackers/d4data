@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
+#include "ConditionWrapper.h"
 #include "t1d0f43e.h"
-#include "tdf12c188.h"
 
 #pragma push(pack, 1)
 
 struct t5e32bd3e : public ComplexRead {
-  tdf12c188 tCondition;
+  ConditionWrapper tCondition;
   DT_INT unk_dd101c8;
   t1d0f43e unk_6f68ae7;
   DT_FLOAT unk_ce3c7b4;

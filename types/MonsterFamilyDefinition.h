@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "tbafb842f.h"
+#include "MonsterFamilyArchetype.h"
 
 #pragma push(pack, 1)
 
 struct MonsterFamilyDefinition : public ComplexRead {
-  DT_VARIABLEARRAY<tbafb842f> unk_cc6abab;
+  DT_VARIABLEARRAY<MonsterFamilyArchetype> unk_cc6abab;
 
   void read(const char* base, char* &ptr);
 };

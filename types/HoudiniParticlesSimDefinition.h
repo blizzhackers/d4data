@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "ParticleKeyFrames.h"
 #include "t82e4d816.h"
-#include "tcec695fb.h"
 
 #pragma push(pack, 1)
 
@@ -21,7 +21,7 @@ struct HoudiniParticlesSimDefinition : public ComplexRead {
   DT_FLOAT flGPR;
   DT_FLOAT flCompression;
   DT_VARIABLEARRAY<t82e4d816> unk_ab79e60;
-  DT_VARIABLEARRAY<tcec695fb> unk_e9be652;
+  DT_VARIABLEARRAY<ParticleKeyFrames> unk_e9be652;
 
   void read(const char* base, char* &ptr);
 };

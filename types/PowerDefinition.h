@@ -11,15 +11,15 @@
 #include "PowerBuffDefinition.h"
 #include "PowerMod.h"
 #include "PowerPayloadDefinition.h"
+#include "PowerPetSpawn.h"
+#include "PowerResourceCost.h"
+#include "ScriptFormulaInfo.h"
 #include "t146f0099.h"
-#include "t20e37537.h"
 #include "t3940c0fe.h"
 #include "t5f5e88ad.h"
 #include "t6f71323a.h"
 #include "t791899bb.h"
 #include "t9794644b.h"
-#include "t9bf9054e.h"
-#include "tc4e63b1f.h"
 #include "tde01263.h"
 #include "te24901c6.h"
 #include "tee739e40.h"
@@ -95,7 +95,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_5e1a52d;
   DT_INT unk_3f1f0ff;
   DT_ENUM<DT_INT> unk_41f8768;
-  DT_VARIABLEARRAY<t9bf9054e> unk_de3b427;
+  DT_VARIABLEARRAY<PowerResourceCost> unk_de3b427;
   DT_STRING_FORMULA tHealthCost;
   DT_STRING_FORMULA tChargeCost;
   DT_STRING_FORMULA tMaxCharges;
@@ -206,7 +206,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_36a68ce;
   DT_VARIABLEARRAY<t6f71323a> unk_8a74e60;
   DT_VARIABLEARRAY<PowerBuffDefinition> arBuffs;
-  DT_VARIABLEARRAY<t20e37537> ptScriptFormulas;
+  DT_VARIABLEARRAY<ScriptFormulaInfo> ptScriptFormulas;
   DT_INT nFormulaCount;
   DT_VARIABLEARRAY<PowerPayloadDefinition> arPayloads;
   DT_VARIABLEARRAY<PowerMod> arMods;
@@ -215,7 +215,7 @@ struct PowerDefinition : public ComplexRead {
   HardpointLink unk_c5a8e20;
   DT_FLOAT unk_3ff871b;
   DT_VARIABLEARRAY<tde01263> unk_90afe9c;
-  DT_VARIABLEARRAY<tc4e63b1f> unk_cd34118;
+  DT_VARIABLEARRAY<PowerPetSpawn> unk_cd34118;
 
   void read(const char* base, char* &ptr);
 };

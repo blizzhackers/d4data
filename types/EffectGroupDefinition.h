@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "EffectGroupHardpoint.h"
 #include "EffectItem.h"
-#include "t38bb2e83.h"
 
 #pragma push(pack, 1)
 
@@ -28,7 +28,7 @@ struct EffectGroupDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_e7c25e0;
   DT_RANGE<DT_INT> unk_51077dd;
   DT_FIXEDARRAY<DT_UINT, 16> fPlayedBit;
-  DT_VARIABLEARRAY<t38bb2e83> ptHardpoints;
+  DT_VARIABLEARRAY<EffectGroupHardpoint> ptHardpoints;
   DT_UINT unk_4f7a18a;
   DT_ENUM<DT_INT> unk_adf7def;
 

@@ -6,9 +6,9 @@
 #pragma once
 
 #include "../types.h"
+#include "QuestCallbackRegion.h"
 #include "ScriptMessageMap.h"
 #include "tab2d8e94.h"
-#include "tabe97783.h"
 
 #pragma push(pack, 1)
 
@@ -27,8 +27,8 @@ struct QuestCallback : public ComplexRead {
   DT_SNO<SnoGroup::Conversation> unk_e879cce;
   DT_CSTRING unk_28bc3c5;
   DT_INT unk_53ba3a1;
-  tabe97783 tRegionDefault;
-  DT_VARIABLEARRAY<tabe97783> unk_debbaea;
+  QuestCallbackRegion tRegionDefault;
+  DT_VARIABLEARRAY<QuestCallbackRegion> unk_debbaea;
   DT_INT unk_6a71535;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::SubZone>> unk_c9913ac;

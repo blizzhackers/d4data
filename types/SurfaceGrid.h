@@ -7,13 +7,13 @@
 
 #include "../types.h"
 #include "AABB.h"
-#include "tfdf29888.h"
+#include "SurfaceGridPrimitive.h"
 
 #pragma push(pack, 1)
 
 struct SurfaceGrid : public ComplexRead {
   DT_VARIABLEARRAY<DT_WORD> grid;
-  DT_VARIABLEARRAY<tfdf29888> arPrimitives;
+  DT_VARIABLEARRAY<SurfaceGridPrimitive> arPrimitives;
   AABB aabbBounds;
   DT_UINT dwRows;
   DT_UINT dwColumns;

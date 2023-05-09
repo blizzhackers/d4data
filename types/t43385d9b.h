@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t2ffe9f61.h"
+#include "BoneStructureInfo.h"
 
 #pragma push(pack, 1)
 
 struct t43385d9b : public ComplexRead {
-  DT_VARIABLEARRAY<t2ffe9f61> unk_192d2c5;
+  DT_VARIABLEARRAY<BoneStructureInfo> unk_192d2c5;
 
   void read(const char* base, char* &ptr);
 };

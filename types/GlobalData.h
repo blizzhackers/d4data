@@ -9,6 +9,7 @@
 #include "ActorEffectData.h"
 #include "AssetList.h"
 #include "LookVariant.h"
+#include "ShaderMapOverride.h"
 #include "StartLocationName.h"
 #include "WorldTierData.h"
 #include "t14a42c17.h"
@@ -16,7 +17,6 @@
 #include "t7535b2ad.h"
 #include "t7de8fcbd.h"
 #include "t81efbdc0.h"
-#include "ta526fcd5.h"
 #include "tb9be6132.h"
 #include "tdff70e83.h"
 
@@ -26,7 +26,7 @@ struct GlobalData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_VARIABLEARRAY<LookVariant> arLookVariants;
-  DT_VARIABLEARRAY<ta526fcd5> unk_620b39b;
+  DT_VARIABLEARRAY<ShaderMapOverride> unk_620b39b;
   DT_VARIABLEARRAY<DT_INT> unk_156a14c;
   DT_VARIABLEARRAY<DT_INT> unk_6759f02;
   DT_FLOAT unk_e2e2917;

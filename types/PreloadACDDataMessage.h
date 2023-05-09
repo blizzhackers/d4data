@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
+#include "MonsterACDInfo.h"
+#include "MountACDInfo.h"
+#include "PlayerACDInfo.h"
 #include "RequiredMessageHeader.h"
-#include "t3cb27fa1.h"
-#include "t59bc9f5c.h"
 #include "ta092f30f.h"
 #include "ta421b9d5.h"
-#include "tad528067.h"
 
 #pragma push(pack, 1)
 

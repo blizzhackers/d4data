@@ -6,14 +6,14 @@
 #pragma once
 
 #include "../types.h"
-#include "t1068f794.h"
+#include "ParagonGlyphExperience.h"
 
 #pragma push(pack, 1)
 
 struct t9372549b : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<t1068f794> tEntries;
+  DT_VARIABLEARRAY<ParagonGlyphExperience> tEntries;
 
   void read(const char* base, char* &ptr);
 };

@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "tdf12c188.h"
+#include "ConditionWrapper.h"
 
 #pragma push(pack, 1)
 
 struct t58fbb94c : public ComplexRead {
-  tdf12c188 unk_edbef87;
+  ConditionWrapper unk_edbef87;
 
   void read(const char* base, char* &ptr);
 };

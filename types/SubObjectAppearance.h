@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tbd83769a.h"
+#include "AnimationClothOverride.h"
 
 #pragma push(pack, 1)
 
@@ -18,7 +18,7 @@ struct SubObjectAppearance : public ComplexRead {
   DT_SNO<SnoGroup::Cloth> unk_3ca0753;
   DT_SNO<SnoGroup::Cloth> unk_1f70f66;
   DT_SNO<SnoGroup::EffectGroup> snoEffectGroup;
-  DT_VARIABLEARRAY<tbd83769a> unk_3f71565;
+  DT_VARIABLEARRAY<AnimationClothOverride> unk_3f71565;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Material>> unk_665d6aa;
 
   void read(const char* base, char* &ptr);

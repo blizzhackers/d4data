@@ -6,6 +6,7 @@
 #pragma once
 
 #include "../types.h"
+#include "LightInfluenceSettings.h"
 #include "TestDefinitionMusic.h"
 #include "UIMargins.h"
 #include "t11e7e638.h"
@@ -18,7 +19,6 @@
 #include "t85177256.h"
 #include "t8f2bc52f.h"
 #include "t9934af2e.h"
-#include "tcd121122.h"
 #include "tdd0bf409.h"
 #include "te8e345d9.h"
 #include "tfd4746f8.h"
@@ -188,7 +188,7 @@ struct tcb3159a2 : public ComplexRead {
   tfd4746f8 unk_f084aec;
   t8f2bc52f unk_53d9623;
   t2d18fb5c unk_32acc50;
-  tcd121122 unk_55e0096;
+  LightInfluenceSettings unk_55e0096;
   DT_VARIABLEARRAY<t85177256> unk_edffb30;
   DT_VARIABLEARRAY<t39952607> unk_a90a48d;
   UIMargins unk_77afde8;

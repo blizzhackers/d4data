@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tb09c636b.h"
+#include "DungeonAffixRange.h"
 
 #pragma push(pack, 1)
 
@@ -15,7 +15,7 @@ struct DungeonAffixDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_40a4411;
   DT_INT unk_6e1d9b8;
   DT_GBID<0x1e> gbidAffixFamily;
-  DT_VARIABLEARRAY<tb09c636b> unk_7f8b6b7;
+  DT_VARIABLEARRAY<DungeonAffixRange> unk_7f8b6b7;
 
   void read(const char* base, char* &ptr);
 };

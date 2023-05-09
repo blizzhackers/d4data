@@ -6,9 +6,9 @@
 #pragma once
 
 #include "../types.h"
+#include "DynamicPortalInfo.h"
 #include "PortalInfo.h"
 #include "t23d0a29c.h"
-#include "t9b2fb163.h"
 
 #pragma push(pack, 1)
 
@@ -23,7 +23,7 @@ struct GlobalPortalData : public ComplexRead {
   PortalInfo unk_aab21d0;
   PortalInfo unk_7cf3237;
   DT_FIXEDARRAY<t23d0a29c, 8> unk_5d1c931;
-  DT_VARIABLEARRAY<t9b2fb163> arPortalTypes;
+  DT_VARIABLEARRAY<DynamicPortalInfo> arPortalTypes;
   DT_UINT unk_b42ac97;
   DT_UINT unk_f3c5748;
   DT_UINT unk_2b9b577;

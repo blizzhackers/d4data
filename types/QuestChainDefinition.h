@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "MarkerHandle.h"
-#include "tb2395df1.h"
+#include "QuestChainStep.h"
 
 #pragma push(pack, 1)
 
@@ -29,7 +29,7 @@ struct QuestChainDefinition : public ComplexRead {
   DT_SNO<SnoGroup::EffectGroup> unk_8da547c;
   DT_SNO<SnoGroup::EffectGroup> unk_10a039b;
   DT_SNO<SnoGroup::EffectGroup> unk_62b3134;
-  DT_VARIABLEARRAY<tb2395df1> unk_adc6722;
+  DT_VARIABLEARRAY<QuestChainStep> unk_adc6722;
 
   void read(const char* base, char* &ptr);
 };

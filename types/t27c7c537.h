@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "tdf12c188.h"
+#include "ConditionWrapper.h"
 
 #pragma push(pack, 1)
 
 struct t27c7c537 : public ComplexRead {
   DT_SNO<SnoGroup::Power> snoPassivePower;
-  tdf12c188 unk_edbef87;
+  ConditionWrapper unk_edbef87;
 
   void read(const char* base, char* &ptr);
 };

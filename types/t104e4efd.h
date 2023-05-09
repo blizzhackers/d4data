@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t6889f334.h"
+#include "WaypointEffectInfo.h"
 
 #pragma push(pack, 1)
 
 struct t104e4efd : public ComplexRead {
-  DT_FIXEDARRAY<t6889f334, 4> unk_ede880e;
+  DT_FIXEDARRAY<WaypointEffectInfo, 4> unk_ede880e;
   DT_SNO<SnoGroup::Quest> unk_92edf50;
   DT_UINT hZoneLabel;
   DT_STARTLOC_NAME uEntranceGUID;

@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tdf12c188.h"
+#include "ConditionWrapper.h"
 
 #pragma push(pack, 1)
 
@@ -21,7 +21,7 @@ struct ActorUIData : public ComplexRead {
   DT_FLOAT unk_fab46e5;
   DT_FLOAT unk_cf8f262;
   DT_FLOAT unk_6aad51d;
-  tdf12c188 unk_c6ec070;
+  ConditionWrapper unk_c6ec070;
 
   void read(const char* base, char* &ptr);
 };

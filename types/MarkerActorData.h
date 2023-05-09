@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
+#include "MarkerBoneTransform.h"
 #include "t2bdcb856.h"
 #include "t4d7ce083.h"
 #include "t679c5c9d.h"
 #include "tb5a98293.h"
 #include "tce8080fb.h"
-#include "ted096762.h"
 
 #pragma push(pack, 1)
 
@@ -32,7 +32,7 @@ struct MarkerActorData : public ComplexRead {
   DT_VARIABLEARRAY<t679c5c9d> ptMonsterActorData;
   DT_VARIABLEARRAY<tce8080fb> ptActorGizmoData;
   DT_VARIABLEARRAY<t2bdcb856> unk_6a0a118;
-  DT_VARIABLEARRAY<ted096762> unk_df84c5d;
+  DT_VARIABLEARRAY<MarkerBoneTransform> unk_df84c5d;
   DT_ENUM<DT_INT> unk_ff96acb;
   DT_VARIABLEARRAY<t4d7ce083> unk_b0425e7;
   DT_INT unk_c627b16;

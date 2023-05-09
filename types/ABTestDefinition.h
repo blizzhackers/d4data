@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t4bbb31b8.h"
+#include "StringWrapper.h"
 
 #pragma push(pack, 1)
 
 struct ABTestDefinition : public ComplexRead {
-  DT_VARIABLEARRAY<t4bbb31b8> unk_eb92604;
+  DT_VARIABLEARRAY<StringWrapper> unk_eb92604;
 
   void read(const char* base, char* &ptr);
 };

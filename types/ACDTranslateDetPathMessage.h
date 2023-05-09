@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "RandomNumberGenerator.h"
 #include "RequiredMessageHeader.h"
-#include "t818076d1.h"
 
 #pragma push(pack, 1)
 
@@ -15,7 +15,7 @@ struct ACDTranslateDetPathMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME ann;
   DT_ENUM<DT_INT> eDPath;
-  t818076d1 tSeed;
+  RandomNumberGenerator tSeed;
   DT_VECTOR3D wvVelocity;
   DT_FLOAT aOriginalYaw;
   DT_VECTOR3D vStartPos;
