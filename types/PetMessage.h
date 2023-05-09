@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "NecroPetData.h"
 #include "RequiredMessageHeader.h"
-#include "t69ebc9fa.h"
 
 #pragma push(pack, 1)
 

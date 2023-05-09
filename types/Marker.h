@@ -6,10 +6,10 @@
 #pragma once
 
 #include "../types.h"
+#include "MarkerDataBase.h"
+#include "MarkerGroupData.h"
 #include "MarkerLink.h"
 #include "PRTransform.h"
-#include "tc575fa49.h"
-#include "te8edfab7.h"
 #include "tedbd9a8a.h"
 
 #pragma push(pack, 1)
@@ -23,7 +23,7 @@ struct Marker : public ComplexRead {
   DT_UINT dwMarkerFlags;
   DT_VECTOR3D vecScale;
   DT_POLYMORPHIC_VARIABLEARRAY ptBase;
-  DT_VARIABLEARRAY<tc575fa49> ptGroupData;
+  DT_VARIABLEARRAY<MarkerGroupData> ptGroupData;
   DT_VARIABLEARRAY<MarkerLink> ptMarkerLinks;
   DT_INT unk_c339f69;
   DT_UINT dwSeed;

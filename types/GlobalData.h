@@ -10,6 +10,7 @@
 #include "AssetList.h"
 #include "LookVariant.h"
 #include "StartLocationName.h"
+#include "WorldTierData.h"
 #include "t14a42c17.h"
 #include "t3b00e8b9.h"
 #include "t7535b2ad.h"
@@ -17,7 +18,6 @@
 #include "t81efbdc0.h"
 #include "ta526fcd5.h"
 #include "tb9be6132.h"
-#include "td73778d6.h"
 #include "tdff70e83.h"
 
 #pragma push(pack, 1)
@@ -391,7 +391,7 @@ struct GlobalData : public ComplexRead {
   DT_INT unk_c5cd637;
   DT_INT unk_d85b358;
   DT_FIXEDARRAY<DT_INT, 3> unk_463f23c;
-  DT_FIXEDARRAY<td73778d6, 4> arWorldTiers;
+  DT_FIXEDARRAY<WorldTierData, 4> arWorldTiers;
   DT_FIXEDARRAY<DT_FLOAT, 5> unk_acf9234;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Particle>, 5> unk_c9c1b78;
   DT_FLOAT unk_765a638;

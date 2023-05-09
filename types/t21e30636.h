@@ -7,12 +7,12 @@
 
 #include "../types.h"
 #include "HardpointLink.h"
+#include "LightInstanceData.h"
 #include "LookLink.h"
 #include "PRTransform.h"
 #include "TriggerCleanup.h"
 #include "TriggerConditions.h"
 #include "ta4f1387e.h"
-#include "tb86f8607.h"
 #include "tf74028c3.h"
 
 #pragma push(pack, 1)
@@ -75,7 +75,7 @@ struct t21e30636 : public ComplexRead {
   DT_FLOAT unk_36bc3de;
   DT_INT nPriority;
   tf74028c3 unk_245c537;
-  DT_VARIABLEARRAY<tb86f8607> unk_a03b96b;
+  DT_VARIABLEARRAY<LightInstanceData> unk_a03b96b;
 
   void read(const char* base, char* &ptr);
 };

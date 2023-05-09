@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "te25fcbdf.h"
+#include "WallInstanceData.h"
 
 #pragma push(pack, 1)
 
 struct WallDefinition : public ComplexRead {
-  te25fcbdf tInstanceData;
+  WallInstanceData tInstanceData;
 
   void read(const char* base, char* &ptr);
 };

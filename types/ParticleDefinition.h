@@ -6,6 +6,7 @@
 #pragma once
 
 #include "../types.h"
+#include "EmitterDataBase.h"
 #include "InterpolationScalar.h"
 #include "LookLink.h"
 #include "VectorPath.h"
@@ -13,7 +14,6 @@
 #include "t560ae4cf.h"
 #include "tcbfdd2ea.h"
 #include "tcc354444.h"
-#include "te05729ef.h"
 
 #pragma push(pack, 1)
 

@@ -6,8 +6,8 @@
 #pragma once
 
 #include "../types.h"
+#include "AttackerEnemiesParam.h"
 #include "SoundPlayHistory.h"
-#include "t38007346.h"
 
 #pragma push(pack, 1)
 
@@ -19,7 +19,7 @@ struct SoundDefinition : public ComplexRead {
   DT_UINT unk_fec55de;
   DT_UINT unk_ecacdd7;
   DT_FLOAT flMaxRange;
-  DT_VARIABLEARRAY<t38007346> unk_5757423;
+  DT_VARIABLEARRAY<AttackerEnemiesParam> unk_5757423;
   DT_SNO<SnoGroup::Sound> unk_9c9c95f;
   DT_FLOAT unk_d17a11d;
   DT_INT unk_dc0bc5b;

@@ -7,9 +7,9 @@
 
 #include "../types.h"
 #include "AABB.h"
+#include "AIPathData.h"
 #include "FogMask.h"
 #include "LookLink.h"
-#include "t53a5f131.h"
 #include "t9109ba33.h"
 #include "tff4098b9.h"
 
@@ -27,7 +27,7 @@ struct SceneDefinition : public ComplexRead {
   DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_FLOAT flTileX;
   DT_FLOAT flTileY;
-  DT_VARIABLEARRAY<t53a5f131> unk_c20ed15;
+  DT_VARIABLEARRAY<AIPathData> unk_c20ed15;
   tff4098b9 unk_57e8e2b;
   DT_ENUM<DT_INT> eDRLGTileType;
   tff4098b9 unk_29b7731;

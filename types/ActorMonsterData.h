@@ -7,10 +7,10 @@
 
 #include "../types.h"
 #include "LevelScalingData.h"
+#include "NPCServiceData.h"
 #include "SummonActorEntry.h"
 #include "t2d9968c0.h"
 #include "t5c44ae48.h"
-#include "tc6ceb20c.h"
 
 #pragma push(pack, 1)
 
@@ -22,7 +22,7 @@ struct ActorMonsterData : public ComplexRead {
   DT_SNO<SnoGroup::Sound> unk_59a87ea;
   DT_SNO<SnoGroup::Power> unk_ac1cb2e;
   DT_FLOAT unk_765a638;
-  tc6ceb20c unk_32c6d80;
+  NPCServiceData unk_32c6d80;
   DT_ENUM<DT_INT> eHirelingClass;
   DT_INT unk_91ce34f;
   DT_VARIABLEARRAY<t5c44ae48> unk_6bce993;

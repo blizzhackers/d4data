@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tb86f8607.h"
+#include "LightInstanceData.h"
 
 #pragma push(pack, 1)
 
@@ -15,7 +15,7 @@ struct LightDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_1a8964e;
   DT_INT nPriority;
   DT_UINT dwMaxInstances;
-  tb86f8607 tInstanceData;
+  LightInstanceData tInstanceData;
   DT_FLOAT unk_383f1ce;
   DT_FLOAT unk_b9c2829;
 
