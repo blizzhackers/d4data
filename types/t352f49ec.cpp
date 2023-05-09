@@ -14,7 +14,7 @@ void t352f49ec::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&dwPad, base, current);
   current = ptr + 0x18;
-  readData(&unk_ebf9bb4, base, current);
+  readData(&szVariableName, base, current);
   current = ptr + 0x1c;
   readData(&flValue, base, current);
   ptr += 0x20;

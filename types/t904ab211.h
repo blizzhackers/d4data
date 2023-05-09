@@ -13,7 +13,7 @@ struct t904ab211 : public ComplexRead {
   DT_UINT dwType;
   DT_INT bInverse;
   DT_UINT dwPad;
-  DT_UINT unk_ebf9bb4;
+  DT_UINT szVariableName;
   DT_FLOAT flValue;
 
   void read(const char* base, char* &ptr);

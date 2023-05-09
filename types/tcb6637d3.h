@@ -12,7 +12,7 @@
 
 struct tcb6637d3 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_CHARARRAY<64> unk_f0a462f;
+  DT_CHARARRAY<64> szNPCName;
 
   void read(const char* base, char* &ptr);
 };

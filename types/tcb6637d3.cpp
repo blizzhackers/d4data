@@ -10,6 +10,6 @@ void tcb6637d3::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_f0a462f, base, current);
+  readData(&szNPCName, base, current);
   ptr += 0x50;
 }

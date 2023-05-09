@@ -8,7 +8,7 @@
 void t146588b2::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_7fb8d12, base, current);
+  readData(&szRegionName, base, current);
   current = ptr + 0x10;
   readData(&eZone, base, current);
   current = ptr + 0x18;

@@ -175,7 +175,7 @@ struct PowerDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Condition> unk_1b291d6;
   DT_INT bUsableInTown;
   DT_INT unk_f49838b;
-  DT_INT unk_c2c995e;
+  DT_INT bIsCraftItemName;
   DT_INT unk_744a4fd;
   DT_INT unk_a8611dd;
   DT_INT unk_365e3c2;

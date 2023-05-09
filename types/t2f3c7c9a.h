@@ -15,7 +15,7 @@ struct t2f3c7c9a : public ComplexRead {
   DT_ENUM<DT_INT> unk_c0222bf;
   DT_UINT dwPad;
   DT_SNO<SnoGroup::Power> snoSkillPower;
-  DT_UINT unk_cb51d8e;
+  DT_UINT szModName;
   DT_INT unk_5099eca;
 
   void read(const char* base, char* &ptr);

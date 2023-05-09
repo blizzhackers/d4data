@@ -27,7 +27,7 @@ struct PortalInfo : public ComplexRead {
   DT_SNO<SnoGroup::EffectGroup> unk_93d7196;
   DT_SNO<SnoGroup::EffectGroup> unk_6584ca6;
   DT_SNO<SnoGroup::World> unk_c8bc6b0;
-  DT_CHARARRAY<128> unk_f292059;
+  DT_CHARARRAY<128> szCameraMarkerName;
   DT_INT unk_bdd12d;
   DT_FLOAT unk_f8d8170;
   DT_FLOAT unk_188141b;

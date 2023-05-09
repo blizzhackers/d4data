@@ -18,7 +18,7 @@ void t2f3c7c9a::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&snoSkillPower, base, current);
   current = ptr + 0x24;
-  readData(&unk_cb51d8e, base, current);
+  readData(&szModName, base, current);
   current = ptr + 0x28;
   readData(&unk_5099eca, base, current);
   ptr += 0x30;

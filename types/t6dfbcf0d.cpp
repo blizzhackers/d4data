@@ -16,6 +16,6 @@ void t6dfbcf0d::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&snoPower, base, current);
   current = ptr + 0x1c;
-  readData(&unk_53f5f18, base, current);
+  readData(&szPayloadName, base, current);
   ptr += 0x20;
 }

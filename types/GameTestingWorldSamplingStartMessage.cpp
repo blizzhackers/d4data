@@ -18,7 +18,7 @@ void GameTestingWorldSamplingStartMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&snoQuest, base, current);
   current = ptr + 0x20;
-  readData(&unk_9ffb368, base, current);
+  readData(&szTileSetName, base, current);
   current = ptr + 0x60;
   readData(&szLocationName, base, current);
   current = ptr + 0xa0;

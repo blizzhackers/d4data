@@ -8,7 +8,7 @@
 void tbafb842f::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_21d7573, base, current);
+  readData(&szArchetypeName, base, current);
   current = ptr + 0x4;
   readData(&unk_81459e3, base, current);
   current = ptr + 0x8;

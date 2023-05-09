@@ -1,11 +1,11 @@
 /**
- * Definition: t7946bdbb
+ * Definition: ScriptEventParamQuestName
  * Hash: 7946bdbb
  */
 
-#include "t7946bdbb.h"
+#include "ScriptEventParamQuestName.h"
 
-void t7946bdbb::read(const char* base, char* &ptr) {
+void ScriptEventParamQuestName::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

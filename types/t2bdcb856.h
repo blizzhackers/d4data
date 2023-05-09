@@ -17,7 +17,7 @@ struct t2bdcb856 : public ComplexRead {
   t9bdeeb8c tColorSet;
   NPCItems tItems;
   DT_FIXEDARRAY<ValidComponent, 4> ptComponents;
-  DT_UINT unk_29b9a49;
+  DT_UINT sLookName;
 
   void read(const char* base, char* &ptr);
 };

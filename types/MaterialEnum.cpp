@@ -10,6 +10,6 @@ void MaterialEnum::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&dwValue, base, current);
   current = ptr + 0x8;
-  readData(&unk_e1df903, base, current);
+  readData(&szEnumName, base, current);
   ptr += 0x18;
 }

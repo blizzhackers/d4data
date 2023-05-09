@@ -25,7 +25,7 @@ struct t6889f334 : public ComplexRead {
   DT_INT unk_69b2ec7;
   DT_INT unk_449111f;
   DT_SNO<SnoGroup::World> unk_c8bc6b0;
-  DT_CHARARRAY<128> unk_f292059;
+  DT_CHARARRAY<128> szCameraMarkerName;
   DT_SNO<SnoGroup::EffectGroup> unk_93d7196;
   DT_SNO<SnoGroup::EffectGroup> unk_6584ca6;
   DT_INT unk_bdd12d;

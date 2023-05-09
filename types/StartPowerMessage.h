@@ -18,7 +18,7 @@ struct StartPowerMessage : public ComplexRead {
   DT_OPTIONAL<DT_INT> unk_f1dd66f;
   DT_OPTIONAL<DT_INT> tAnimPreplayData;
   DT_OPTIONAL<DT_INT> unk_2468977;
-  DT_OPTIONAL<DT_INT> unk_200dc25;
+  DT_OPTIONAL<DT_INT> annTargetName;
   DT_OPTIONAL<DT_INT> wpTarget;
   DT_OPTIONAL<DT_INT> wpTargetOffset;
 

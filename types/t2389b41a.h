@@ -25,7 +25,7 @@ struct t2389b41a : public ComplexRead {
   DT_INT unk_49e9257;
   DT_INT unk_5490979;
   DT_UINT dwPad;
-  DT_UINT unk_1635dc2;
+  DT_UINT szLocatorName;
   DT_UINT dwActorID;
   DT_ENUM<DT_INT> unk_7c25701;
   DT_ENUM<DT_INT> eOrientationMode;

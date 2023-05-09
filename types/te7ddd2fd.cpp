@@ -34,7 +34,7 @@ void te7ddd2fd::read(const char* base, char* &ptr) {
   current = ptr + 0x78;
   readData(&flBlendTime, base, current);
   current = ptr + 0x7c;
-  readData(&unk_7b01c79, base, current);
+  readData(&szSplineName, base, current);
   current = ptr + 0x80;
   readData(&unk_30b49c2, base, current);
   current = ptr + 0x84;

@@ -8,7 +8,7 @@
 void td8a9e2b7::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_d5fa5df, base, current);
+  readData(&szStyleName, base, current);
   current = ptr + 0x10;
   readData(&nKey, base, current);
   current = ptr + 0x18;

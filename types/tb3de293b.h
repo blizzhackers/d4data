@@ -26,7 +26,7 @@ struct tb3de293b : public ComplexRead {
   DT_INT unk_5490979;
   DT_UINT dwPad;
   DT_UINT dwObjectID;
-  DT_UINT unk_1635dc2;
+  DT_UINT szLocatorName;
   DT_ENUM<DT_INT> eOrientationMode;
   DT_ENUM<DT_INT> unk_daebe18;
   DT_UINT unk_6101673;

@@ -1,5 +1,5 @@
 /**
- * Definition: t7946bdbb
+ * Definition: ScriptEventParamQuestName
  * Hash: 7946bdbb
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t7946bdbb : public ComplexRead {
+struct ScriptEventParamQuestName : public ComplexRead {
   DT_UINT dwType;
   DT_ENUM<DT_INT> eParamType;
   DT_UINT dwPad;

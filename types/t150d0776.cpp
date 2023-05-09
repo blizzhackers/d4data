@@ -22,7 +22,7 @@ void t150d0776::read(const char* base, char* &ptr) {
   current = ptr + 0x210;
   readData(&snoWorld, base, current);
   current = ptr + 0x214;
-  readData(&unk_f292059, base, current);
+  readData(&szCameraMarkerName, base, current);
   current = ptr + 0x294;
   readData(&eBanner, base, current);
   current = ptr + 0x298;

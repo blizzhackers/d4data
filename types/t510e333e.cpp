@@ -24,7 +24,7 @@ void t510e333e::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&dwFlags, base, current);
   current = ptr + 0x40;
-  readData(&unk_200dc25, base, current);
+  readData(&annTargetName, base, current);
   current = ptr + 0x4c;
   readData(&wpTarget, base, current);
   current = ptr + 0x64;

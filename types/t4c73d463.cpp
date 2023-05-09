@@ -10,7 +10,7 @@ void t4c73d463::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_8789586, base, current);
+  readData(&annMonsterName, base, current);
   current = ptr + 0x18;
   readData(&snoMonster, base, current);
   current = ptr + 0x1c;

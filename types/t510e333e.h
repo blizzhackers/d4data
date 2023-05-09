@@ -21,7 +21,7 @@ struct t510e333e : public ComplexRead {
   DT_INT unk_c208491;
   DT_OPTIONAL<DT_INT> eInterruptReason;
   DT_OPTIONAL<DT_INT> dwFlags;
-  DT_OPTIONAL<DT_INT> unk_200dc25;
+  DT_OPTIONAL<DT_INT> annTargetName;
   DT_OPTIONAL<DT_INT> wpTarget;
   DT_OPTIONAL<DT_INT> wpTargetOffset;
   DT_OPTIONAL<DT_INT> unk_81cd99f;

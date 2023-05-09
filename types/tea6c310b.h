@@ -29,7 +29,7 @@ struct tea6c310b : public ComplexRead {
   DT_UINT dwPad;
   DT_UINT dwObjectID;
   DT_FLOAT flBlendTime;
-  DT_UINT unk_7b01c79;
+  DT_UINT szSplineName;
   DT_ENUM<DT_INT> unk_30b49c2;
   DT_UINT unk_8781d26;
   DT_UINT unk_9a31592;

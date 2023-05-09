@@ -45,7 +45,7 @@ struct t58ae46c5 : public ComplexRead {
   DT_FLOAT unk_c86af88;
   DT_FLOAT unk_396c7d1;
   DT_INT unk_515279b;
-  DT_UINT unk_1635dc2;
+  DT_UINT szLocatorName;
   DT_FLOAT unk_386656b;
 
   void read(const char* base, char* &ptr);

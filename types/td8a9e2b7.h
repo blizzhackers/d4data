@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct td8a9e2b7 : public ComplexRead {
-  DT_CSTRING unk_d5fa5df;
+  DT_CSTRING szStyleName;
   DT_UINT nKey;
   DT_POLYMORPHIC_VARIABLEARRAY ptStyle;
 

@@ -32,7 +32,7 @@ void t2389b41a::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&dwPad, base, current);
   current = ptr + 0x78;
-  readData(&unk_1635dc2, base, current);
+  readData(&szLocatorName, base, current);
   current = ptr + 0x7c;
   readData(&dwActorID, base, current);
   current = ptr + 0x80;

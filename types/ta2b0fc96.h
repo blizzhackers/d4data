@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct ta2b0fc96 : public ComplexRead {
-  DT_CHARARRAY<64> unk_ebf9bb4;
+  DT_CHARARRAY<64> szVariableName;
   DT_INT unk_9e7b180;
   DT_ENUM<DT_INT> unk_e1da18d;
   MarkerHandle tMarkerHandle;

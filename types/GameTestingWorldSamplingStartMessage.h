@@ -16,7 +16,7 @@ struct GameTestingWorldSamplingStartMessage : public ComplexRead {
   DT_SNO<SnoGroup::SubZone> snoSubzone;
   DT_SNO<SnoGroup::Scene> snoScene;
   DT_SNO<SnoGroup::Quest> snoQuest;
-  DT_CHARARRAY<64> unk_9ffb368;
+  DT_CHARARRAY<64> szTileSetName;
   DT_CHARARRAY<64> szLocationName;
   DT_FLOAT unk_7571722;
   DT_BCVEC2I unk_6999b4f;

@@ -42,7 +42,7 @@ void PortalInfo::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_c8bc6b0, base, current);
   current = ptr + 0x44;
-  readData(&unk_f292059, base, current);
+  readData(&szCameraMarkerName, base, current);
   current = ptr + 0xc4;
   readData(&unk_bdd12d, base, current);
   current = ptr + 0xc8;

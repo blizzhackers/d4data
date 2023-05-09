@@ -38,7 +38,7 @@ void t6889f334::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_c8bc6b0, base, current);
   current = ptr + 0x3c;
-  readData(&unk_f292059, base, current);
+  readData(&szCameraMarkerName, base, current);
   current = ptr + 0xbc;
   readData(&unk_93d7196, base, current);
   current = ptr + 0xc0;

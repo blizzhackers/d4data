@@ -16,6 +16,6 @@ void t2bdcb856::read(const char* base, char* &ptr) {
   current = ptr + 0x24;
   readData(&ptComponents, base, current);
   current = ptr + 0x34;
-  readData(&unk_29b9a49, base, current);
+  readData(&sLookName, base, current);
   ptr += 0x38;
 }

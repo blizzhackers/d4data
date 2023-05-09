@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct ta526fcd5 : public ComplexRead {
-  DT_UINT unk_5170dee;
+  DT_UINT szOverrideName;
   DT_INT unk_b0ff7b8;
   DT_INT unk_d39db42;
   DT_UINT dwValue;

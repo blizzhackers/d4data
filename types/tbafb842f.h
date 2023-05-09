@@ -12,7 +12,7 @@
 #pragma push(pack, 1)
 
 struct tbafb842f : public ComplexRead {
-  DT_UINT unk_21d7573;
+  DT_UINT szArchetypeName;
   DT_SNO<SnoGroup::AiAwareness> unk_81459e3;
   MonsterAwarenessInfo tAwareness;
   DT_UINT unk_301c43c;

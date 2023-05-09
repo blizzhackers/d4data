@@ -8,7 +8,7 @@
 void ta2b0fc96::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_ebf9bb4, base, current);
+  readData(&szVariableName, base, current);
   current = ptr + 0x40;
   readData(&unk_9e7b180, base, current);
   current = ptr + 0x44;

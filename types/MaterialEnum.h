@@ -11,7 +11,7 @@
 
 struct MaterialEnum : public ComplexRead {
   DT_UINT dwValue;
-  DT_CSTRING unk_e1df903;
+  DT_CSTRING szEnumName;
 
   void read(const char* base, char* &ptr);
 };

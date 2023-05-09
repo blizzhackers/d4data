@@ -74,7 +74,7 @@ void t58ae46c5::read(const char* base, char* &ptr) {
   current = ptr + 0xcc;
   readData(&unk_515279b, base, current);
   current = ptr + 0xd0;
-  readData(&unk_1635dc2, base, current);
+  readData(&szLocatorName, base, current);
   current = ptr + 0xd4;
   readData(&unk_386656b, base, current);
   ptr += 0xd8;

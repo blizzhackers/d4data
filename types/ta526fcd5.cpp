@@ -8,7 +8,7 @@
 void ta526fcd5::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_5170dee, base, current);
+  readData(&szOverrideName, base, current);
   current = ptr + 0x4;
   readData(&unk_b0ff7b8, base, current);
   current = ptr + 0x8;

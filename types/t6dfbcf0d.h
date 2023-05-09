@@ -14,7 +14,7 @@ struct t6dfbcf0d : public ComplexRead {
   DT_INT bInverse;
   DT_UINT dwPad;
   DT_SNO<SnoGroup::Power> snoPower;
-  DT_UINT unk_53f5f18;
+  DT_UINT szPayloadName;
 
   void read(const char* base, char* &ptr);
 };

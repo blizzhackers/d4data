@@ -28,7 +28,7 @@ struct te7ddd2fd : public ComplexRead {
   DT_INT unk_5490979;
   DT_UINT dwPad;
   DT_FLOAT flBlendTime;
-  DT_UINT unk_7b01c79;
+  DT_UINT szSplineName;
   DT_ENUM<DT_INT> unk_30b49c2;
   DT_UINT unk_8781d26;
   DT_UINT unk_9a31592;

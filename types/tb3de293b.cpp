@@ -34,7 +34,7 @@ void tb3de293b::read(const char* base, char* &ptr) {
   current = ptr + 0x78;
   readData(&dwObjectID, base, current);
   current = ptr + 0x7c;
-  readData(&unk_1635dc2, base, current);
+  readData(&szLocatorName, base, current);
   current = ptr + 0x80;
   readData(&eOrientationMode, base, current);
   current = ptr + 0x84;

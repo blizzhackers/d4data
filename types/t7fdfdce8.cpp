@@ -32,7 +32,7 @@ void t7fdfdce8::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&dwPad, base, current);
   current = ptr + 0x78;
-  readData(&unk_7b01c79, base, current);
+  readData(&szSplineName, base, current);
   current = ptr + 0x7c;
   readData(&unk_30b49c2, base, current);
   current = ptr + 0x80;

@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct BoostDefinition : public ComplexRead {
-  DT_CSTRING unk_37028d5;
+  DT_CSTRING szBoostName;
   DT_CSTRING szBoostDescription;
   DT_CSTRING unk_99de476;
   DT_INT64 nGold;

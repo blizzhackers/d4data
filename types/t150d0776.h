@@ -17,7 +17,7 @@ struct t150d0776 : public ComplexRead {
   DT_ENUM<DT_INT> eLayer;
   DT_ENUM<DT_INT> ePlatform;
   DT_SNO<SnoGroup::World> snoWorld;
-  DT_CHARARRAY<128> unk_f292059;
+  DT_CHARARRAY<128> szCameraMarkerName;
   DT_ENUM<DT_INT> eBanner;
   DT_UINT unk_b20011c;
 

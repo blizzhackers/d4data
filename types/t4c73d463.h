@@ -12,7 +12,7 @@
 
 struct t4c73d463 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_ACD_NETWORK_NAME unk_8789586;
+  DT_ACD_NETWORK_NAME annMonsterName;
   DT_SNO<SnoGroup::Actor> snoMonster;
   DT_VECTOR3D wpLocation;
   DT_INT bRemove;

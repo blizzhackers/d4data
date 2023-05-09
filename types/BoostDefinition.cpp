@@ -8,7 +8,7 @@
 void BoostDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
-  readData(&unk_37028d5, base, current);
+  readData(&szBoostName, base, current);
   current = ptr + 0x18;
   readData(&szBoostDescription, base, current);
   current = ptr + 0x28;

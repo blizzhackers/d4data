@@ -36,7 +36,7 @@ void tea6c310b::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&flBlendTime, base, current);
   current = ptr + 0x80;
-  readData(&unk_7b01c79, base, current);
+  readData(&szSplineName, base, current);
   current = ptr + 0x84;
   readData(&unk_30b49c2, base, current);
   current = ptr + 0x88;
