@@ -161,6 +161,32 @@ std::vector<std::string> getDefaultDict() {
     ret.push_back("x");
     ret.push_back("y");
     ret.push_back("z");
+    ret.push_back("A");
+    ret.push_back("B");
+    ret.push_back("C");
+    ret.push_back("D");
+    ret.push_back("E");
+    ret.push_back("F");
+    ret.push_back("G");
+    ret.push_back("H");
+    ret.push_back("I");
+    ret.push_back("J");
+    ret.push_back("K");
+    ret.push_back("L");
+    ret.push_back("M");
+    ret.push_back("N");
+    ret.push_back("O");
+    ret.push_back("P");
+    ret.push_back("Q");
+    ret.push_back("R");
+    ret.push_back("S");
+    ret.push_back("T");
+    ret.push_back("U");
+    ret.push_back("V");
+    ret.push_back("W");
+    ret.push_back("X");
+    ret.push_back("Y");
+    ret.push_back("Z");
     return ret;
 }
 
@@ -284,24 +310,34 @@ int main(int argc, char *argv[]) {
   int32_t dictmax = dict.size();
   std::unordered_map<std::string, bool> dictmap;
 
-  for (const auto baseelem : (useDict ? getDict() : getDefaultDict())) {
-    if (baseelem.length() > (useDict && wordsOnly ? 1 : 0)) {
-      std::string elem = baseelem;
-      std::string newelem = elem;
-      std::string newelem2 = elem;
-
-      std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
-      std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
-
-      if (hashType != 2) {
-        dictmap[elem] = true;
+  if (!wordsOnly) {
+    for (const auto baseelem : getDefaultDict()) {
+      if (baseelem[0] < 'A' || baseelem[0] < 'Z') {
+        dictmap[baseelem] = true;
       }
+    }
+  }
 
-      dictmap[newelem2] = true;
+  if (useDict) {
+    for (const auto baseelem : (useDict ? getDict() : getDefaultDict())) {
+      if (baseelem.length() > 1) {
+        std::string elem = baseelem;
+        std::string newelem = elem;
+        std::string newelem2 = elem;
 
-      if (hashType != 2) {
-        newelem2 = newelem.substr(0, 1) + newelem2.substr(1);
-        dictmap[newelem2] = true;
+        std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
+        std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
+
+        if (hashType == 2) {
+          dictmap[newelem2] = true;
+          continue;
+        }
+
+        if (elem == newelem2) {
+          elem = newelem.substr(0, 1) + newelem2.substr(1);
+        }
+
+        dictmap[elem] = true;
       }
     }
   }
