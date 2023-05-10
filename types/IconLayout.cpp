@@ -1,11 +1,11 @@
 /**
- * Definition: t6f9c1887
+ * Definition: IconLayout
  * Hash: 6f9c1887
  */
 
-#include "t6f9c1887.h"
+#include "IconLayout.h"
 
-void t6f9c1887::read(const char* base, char* &ptr) {
+void IconLayout::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&szName, base, current);

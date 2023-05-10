@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t1688c3da.h"
+#include "CampaignData.h"
 #include "tfac0f318.h"
 
 #pragma push(pack, 1)
@@ -26,7 +26,7 @@ struct GlobalQuestData : public ComplexRead {
   DT_UINT unk_e318094;
   DT_UINT unk_a49964c;
   DT_SNO<SnoGroup::Quest> snoStartingQuest;
-  t1688c3da unk_d99124e;
+  CampaignData unk_d99124e;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_36bc0dc;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> unk_b419a05;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::FogofWar>> unk_a70acb6;

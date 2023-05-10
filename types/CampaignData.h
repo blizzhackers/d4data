@@ -1,5 +1,5 @@
 /**
- * Definition: t1688c3da
+ * Definition: CampaignData
  * Hash: 1688c3da
  */
 
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct t1688c3da : public ComplexRead {
+struct CampaignData : public ComplexRead {
   DT_VARIABLEARRAY<t8c51adb6> unk_22f765c;
 
   void read(const char* base, char* &ptr);

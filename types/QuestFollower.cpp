@@ -1,11 +1,11 @@
 /**
- * Definition: tb150855c
+ * Definition: QuestFollower
  * Hash: b150855c
  */
 
-#include "tb150855c.h"
+#include "QuestFollower.h"
 
-void tb150855c::read(const char* base, char* &ptr) {
+void QuestFollower::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&snoActor, base, current);

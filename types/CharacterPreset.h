@@ -1,5 +1,5 @@
 /**
- * Definition: tce125340
+ * Definition: CharacterPreset
  * Hash: ce125340
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct tce125340 : public ComplexRead {
+struct CharacterPreset : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_CSTRING szName;

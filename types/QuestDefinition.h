@@ -7,8 +7,8 @@
 
 #include "../types.h"
 #include "MarkerHandle.h"
+#include "QuestFollower.h"
 #include "tab2d8e94.h"
-#include "tb150855c.h"
 
 #pragma push(pack, 1)
 
@@ -55,7 +55,7 @@ struct QuestDefinition : public ComplexRead {
   DT_CSTRING unk_993f312;
   DT_CSTRING unk_39af3bb;
   DT_CSTRING unk_857ebd2;
-  DT_VARIABLEARRAY<tb150855c> arFollowers;
+  DT_VARIABLEARRAY<QuestFollower> arFollowers;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Item>> unk_219aee7;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::World>> unk_b9ec208;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_2aa5f20;

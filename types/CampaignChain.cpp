@@ -1,11 +1,11 @@
 /**
- * Definition: te792ade3
+ * Definition: CampaignChain
  * Hash: e792ade3
  */
 
-#include "te792ade3.h"
+#include "CampaignChain.h"
 
-void te792ade3::read(const char* base, char* &ptr) {
+void CampaignChain::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&dwID, base, current);

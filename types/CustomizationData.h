@@ -1,5 +1,5 @@
 /**
- * Definition: te5dc90d3
+ * Definition: CustomizationData
  * Hash: e5dc90d3
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct te5dc90d3 : public ComplexRead {
+struct CustomizationData : public ComplexRead {
   DT_SNO<SnoGroup::Face> snoFace;
   DT_SNO<SnoGroup::HairColor> snoHairColor;
   DT_SNO<SnoGroup::HairStyle> snoHairStyle;

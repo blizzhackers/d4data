@@ -1,11 +1,11 @@
 /**
- * Definition: tce125340
+ * Definition: CharacterPreset
  * Hash: ce125340
  */
 
-#include "tce125340.h"
+#include "CharacterPreset.h"
 
-void tce125340::read(const char* base, char* &ptr) {
+void CharacterPreset::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

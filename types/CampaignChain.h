@@ -1,5 +1,5 @@
 /**
- * Definition: te792ade3
+ * Definition: CampaignChain
  * Hash: e792ade3
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct te792ade3 : public ComplexRead {
+struct CampaignChain : public ComplexRead {
   DT_UINT dwID;
   DT_SNO<SnoGroup::QuestChain> snoQuestChain;
 

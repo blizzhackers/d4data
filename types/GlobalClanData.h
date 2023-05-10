@@ -9,10 +9,10 @@
 #include "BannerColor.h"
 #include "BannerIcon.h"
 #include "ClanLabel.h"
+#include "IconLayout.h"
 #include "IconScale.h"
 #include "PresetBannerData.h"
 #include "t1259dca8.h"
-#include "t6f9c1887.h"
 #include "t762bcac4.h"
 #include "taa55cd98.h"
 #include "tb987c332.h"
@@ -33,7 +33,7 @@ struct GlobalClanData : public ComplexRead {
   DT_VARIABLEARRAY<BannerIcon> arIcons;
   DT_VARIABLEARRAY<BannerColor> arColors;
   DT_VARIABLEARRAY<tfc41276e> unk_fcfa894;
-  DT_VARIABLEARRAY<t6f9c1887> unk_28158ed;
+  DT_VARIABLEARRAY<IconLayout> unk_28158ed;
   DT_VARIABLEARRAY<PresetBannerData> unk_a8d4641;
   taa55cd98 unk_38a6145;
   t1259dca8 unk_109949c;

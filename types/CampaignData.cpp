@@ -1,11 +1,11 @@
 /**
- * Definition: t1688c3da
+ * Definition: CampaignData
  * Hash: 1688c3da
  */
 
-#include "t1688c3da.h"
+#include "CampaignData.h"
 
-void t1688c3da::read(const char* base, char* &ptr) {
+void CampaignData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&unk_22f765c, base, current);

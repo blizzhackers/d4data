@@ -1,5 +1,5 @@
 /**
- * Definition: tb150855c
+ * Definition: QuestFollower
  * Hash: b150855c
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct tb150855c : public ComplexRead {
+struct QuestFollower : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActor;
   tda8a2315 unk_74ee52d;
   DT_VARIABLEARRAY<tbc83f219> arPhases;

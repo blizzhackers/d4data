@@ -1,11 +1,11 @@
 /**
- * Definition: te5dc90d3
+ * Definition: CustomizationData
  * Hash: e5dc90d3
  */
 
-#include "te5dc90d3.h"
+#include "CustomizationData.h"
 
-void te5dc90d3::read(const char* base, char* &ptr) {
+void CustomizationData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&snoFace, base, current);

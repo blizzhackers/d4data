@@ -1,5 +1,5 @@
 /**
- * Definition: t6f9c1887
+ * Definition: IconLayout
  * Hash: 6f9c1887
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t6f9c1887 : public ComplexRead {
+struct IconLayout : public ComplexRead {
   DT_UINT szName;
   DT_VARIABLEARRAY<DT_UINT> unk_e6f1de0;
   DT_CSTRING unk_9b8c777;
