@@ -1,5 +1,5 @@
 /**
- * Definition: UIDefinitionF
+ * Definition: t112661d5
  * Hash: 112661d5
  */
 
@@ -11,7 +11,7 @@
 
 #pragma push(pack, 1)
 
-struct UIDefinitionF : public ComplexRead {
+struct t112661d5 : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   UIControlHandle unk_5770323;

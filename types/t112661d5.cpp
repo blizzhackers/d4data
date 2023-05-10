@@ -1,11 +1,11 @@
 /**
- * Definition: UIDefinitionH
- * Hash: b0c0d2cc
+ * Definition: t112661d5
+ * Hash: 112661d5
  */
 
-#include "UIDefinitionH.h"
+#include "t112661d5.h"
 
-void UIDefinitionH::read(const char* base, char* &ptr) {
+void t112661d5::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);
@@ -22,6 +22,6 @@ void UIDefinitionH::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_b4f614c, base, current);
   current = ptr + 0x50;
-  readData(&unk_6f50cd1, base, current);
+  readData(&unk_8e594da, base, current);
   ptr += 0x60;
 }

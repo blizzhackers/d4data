@@ -1,11 +1,11 @@
 /**
- * Definition: UIDefinitionE
- * Hash: 4873be59
+ * Definition: t6a402f89
+ * Hash: 6a402f89
  */
 
-#include "UIDefinitionE.h"
+#include "t6a402f89.h"
 
-void UIDefinitionE::read(const char* base, char* &ptr) {
+void t6a402f89::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);
@@ -22,6 +22,6 @@ void UIDefinitionE::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_b4f614c, base, current);
   current = ptr + 0x50;
-  readData(&unk_725129e, base, current);
+  readData(&unk_8e594da, base, current);
   ptr += 0x60;
 }

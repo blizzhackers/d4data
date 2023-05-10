@@ -1,11 +1,11 @@
 /**
- * Definition: UIDefinitionF
- * Hash: 112661d5
+ * Definition: t98d4e83a
+ * Hash: 98d4e83a
  */
 
-#include "UIDefinitionF.h"
+#include "t98d4e83a.h"
 
-void UIDefinitionF::read(const char* base, char* &ptr) {
+void t98d4e83a::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);
@@ -22,6 +22,6 @@ void UIDefinitionF::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_b4f614c, base, current);
   current = ptr + 0x50;
-  readData(&unk_8e594da, base, current);
+  readData(&unk_ff11bff, base, current);
   ptr += 0x60;
 }

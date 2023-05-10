@@ -1,11 +1,11 @@
 /**
- * Definition: UIDefinitionB
- * Hash: 6a402f89
+ * Definition: tb0c0d2cc
+ * Hash: b0c0d2cc
  */
 
-#include "UIDefinitionB.h"
+#include "tb0c0d2cc.h"
 
-void UIDefinitionB::read(const char* base, char* &ptr) {
+void tb0c0d2cc::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);
@@ -22,6 +22,6 @@ void UIDefinitionB::read(const char* base, char* &ptr) {
   current = ptr + 0x40;
   readData(&unk_b4f614c, base, current);
   current = ptr + 0x50;
-  readData(&unk_8e594da, base, current);
+  readData(&unk_6f50cd1, base, current);
   ptr += 0x60;
 }

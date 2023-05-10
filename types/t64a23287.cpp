@@ -1,11 +1,11 @@
 /**
- * Definition: UIDefinitionC
+ * Definition: t64a23287
  * Hash: 64a23287
  */
 
-#include "UIDefinitionC.h"
+#include "t64a23287.h"
 
-void UIDefinitionC::read(const char* base, char* &ptr) {
+void t64a23287::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);
