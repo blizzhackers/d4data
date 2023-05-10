@@ -19,6 +19,7 @@ bool hashType = 0, outputLog = true;
 
 std::vector<std::string> prefix;
 std::vector<std::string> dict;
+std::vector<std::string> suffix;
 std::unordered_map<std::string, bool> stringUsed;
 
 uint32_t checksum(std::string str) {
@@ -36,11 +37,35 @@ uint32_t checksum(std::string str) {
   return hashType == 1 ? (hash & 0xfffffff) : hash;
 }
 
+auto getDictSize(long pos, long max) {
+  if (pos == 0 && prefix.size() > 0) {
+    return prefix.size();
+  }
+
+  if (pos == max - 1 && suffix.size() > 0) {
+    return suffix.size();
+  }
+
+  return dict.size();
+}
+
+std::string getDictEntry(long index, long pos, long max) {
+  if (pos == 0 && prefix.size() > 0) {
+    return prefix[index];
+  }
+
+  if (pos == max - 1 && suffix.size() > 0) {
+    return suffix[index];
+  }
+
+  return dict[index];
+}
+
 std::string getWord(int32_t max) {
   std::string ret = "";
 
-  for (int32_t c = 0; c < max; c++) {
-    ret = ret + ((c || prefix.size() < 1) ? dict[tmp[c]] : prefix[tmp[0]]);
+  for (int32_t pos = 0; pos < max; pos++) {
+    ret = ret + getDictEntry(tmp[pos], pos, max);
   }
 
   return ret;
@@ -58,18 +83,6 @@ bool hasCaps(std::string word) {
 
 void collisions(long pos, long max) {
   if (pos == -1) {
-    int32_t sum = 1;
-
-    for (int32_t c = 1; c < max; c++) {
-      if (tmp[c]) {
-        sum++;
-      }
-    }
-
-    if (sum < max) {
-      return;
-    }
-
     std::string word = getWord(max);
     uint32_t wordChecksum = checksum(word);
 
@@ -101,23 +114,16 @@ void collisions(long pos, long max) {
     return;
   }
 
-  if (pos || prefix.size() < 1) {
-    for (uint32_t c = 1; c < dict.size(); c++) {
-      tmp[pos] = c;
-      collisions(pos - 1, max);
-    }
-  }
-  else {
-    for (uint32_t c = 0; c < prefix.size(); c++) {
-      tmp[pos] = c;
-      collisions(pos - 1, max);
-    }
+  long cmax = getDictSize(pos, max);
+
+  for (long c = 0; c < cmax; c++) {
+    tmp[pos] = c;
+    collisions(pos - 1, max);
   }
 }
 
 std::vector<std::string> getDefaultDict() {
     std::vector<std::string> ret;
-    ret.push_back("");
     ret.push_back("0");
     ret.push_back("1");
     ret.push_back("2");
@@ -160,9 +166,12 @@ std::vector<std::string> getDefaultDict() {
 
 int main(int argc, char *argv[]) {
   bool gettingPrefix = false;
+  bool gettingSuffix = false;
   bool gettingMin = false;
   bool gettingMax = false;
   bool useDict = true;
+  bool wordsOnly = false;
+  bool noPrefix = false;
 
   int pos = 0;
 
@@ -190,9 +199,15 @@ int main(int argc, char *argv[]) {
       else if(arg == "--prefix") {
         gettingPrefix = true;
       }
+      else if(arg == "--suffix") {
+        gettingSuffix = true;
+      }
       else if(arg == "--no-prefix") {
         prefix.clear();
-        prefix.push_back("");
+        noPrefix = true;
+      }
+      else if(arg == "--words-only") {
+        wordsOnly = true;
       }
       else if(arg == "--min") {
         gettingMin = true;
@@ -212,6 +227,10 @@ int main(int argc, char *argv[]) {
       else if(gettingPrefix) {
         prefix.push_back(arg);
         gettingPrefix = false;
+      }
+      else if(gettingSuffix) {
+        suffix.push_back(arg);
+        gettingSuffix = false;
       }
       else if(gettingMin) {
         uint32_t uTmp = 0;
@@ -266,7 +285,7 @@ int main(int argc, char *argv[]) {
   std::unordered_map<std::string, bool> dictmap;
 
   for (const auto baseelem : (useDict ? getDict() : getDefaultDict())) {
-    if (baseelem.length()) {
+    if (baseelem.length() > (useDict && wordsOnly ? 1 : 0)) {
       std::string elem = baseelem;
       std::string newelem = elem;
       std::string newelem2 = elem;
@@ -291,8 +310,9 @@ int main(int argc, char *argv[]) {
     dict.push_back(elem.first);
   }
 
-  if (hashType == 1 && prefix.size() < 1) {
+  if (hashType == 1 && !noPrefix && prefix.size() < 1) {
     prefix = getPrefixes();
+    prefix.push_back("");
   }
 
   if (checksumMatch.size()) {
