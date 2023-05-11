@@ -391,6 +391,7 @@ let dict = {
   'Overlay': 'Overlay',
   'Over': 'Over',
   'OW': 'OW',
+  'PR': 'PR',
   'Panel': 'Panel',
   'paragon': 'paragon',
   'Paragon': 'Paragon',
@@ -624,6 +625,12 @@ let dict = {
   'Zone': 'Zone',
 };
 
+let orig = Object.assign({}, dict);
+
+let banned = {
+  'wcyl': true,
+};
+
 let names = {};
 let newnames = {};
 
@@ -734,7 +741,10 @@ names = newnames;
 newnames = {};
 
 prefix = Object.keys(prefix).sort();
-dict = Object.keys(dict).filter(v => v.length > 1).sort();
+
+dict = Object.keys(dict).filter(v => {
+  return orig[v] || (v.length >= 3 && !banned[v.toLowerCase()]);
+}).sort();
 
 fs.writeFileSync('prefix.txt', prefix.join('\n'));
 fs.writeFileSync('dict.txt', dict.join('\n'));
