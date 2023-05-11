@@ -27,7 +27,7 @@ struct SceneDefinition : public ComplexRead {
   DT_SNO<SnoGroup::AudioContext> snoAudioContext;
   DT_FLOAT flTileX;
   DT_FLOAT flTileY;
-  DT_VARIABLEARRAY<AIPathData> unk_c20ed15;
+  DT_VARIABLEARRAY<AIPathData> ptAIPathData;
   tff4098b9 unk_57e8e2b;
   DT_ENUM<DT_INT> eDRLGTileType;
   tff4098b9 unk_29b7731;

@@ -1,18 +1,19 @@
 /**
- * Definition: te2304c7a
- * Hash: e2304c7a
+ * Definition: tf1ddf15d
+ * Hash: f1ddf15d
  */
 
 #pragma once
 
 #include "../types.h"
 #include "RequiredMessageHeader.h"
+#include "t587c11d4.h"
 
 #pragma push(pack, 1)
 
-struct te2304c7a : public ComplexRead {
+struct tf1ddf15d : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_UINT unk_7e00c4d;
+  t587c11d4 unk_4c6a043;
 
   void read(const char* base, char* &ptr);
 };

@@ -16,6 +16,7 @@ struct tedbd9a8a : public ComplexRead {
   DT_ENUM<DT_INT> unk_f116b76;
   DT_INT nFadeGroup;
   DT_ENUM<DT_INT> unk_d094b9a;
+  DT_ENUM<DT_INT> unk_ce65d4b;
   DT_UINT unk_4bfd602;
   DT_UINT unk_6c0cb90;
   DT_SNO<SnoGroup::Surface> unk_dc9436d;

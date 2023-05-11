@@ -12,7 +12,7 @@ void GlobalBountyData::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_5460da3, base, current);
+  readData(&arBountyZones, base, current);
   current = ptr + 0xd0;
   readData(&unk_297c737, base, current);
   current = ptr + 0xd4;

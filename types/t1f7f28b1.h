@@ -14,6 +14,7 @@
 
 struct t1f7f28b1 : public ComplexRead {
   DT_UINT dwType;
+  DT_UINT dwPad;
   DT_INT fDisableNonFriendlyOperation;
   DT_INT fWalkToCenter;
   DT_INT unk_2387505;
@@ -38,6 +39,7 @@ struct t1f7f28b1 : public ComplexRead {
   DT_SNO<SnoGroup::Power> unk_fe76809;
   DT_INT unk_359810e;
   DT_UINT nCooldown;
+  DT_UINT unk_9c8478e;
   DT_INT unk_d45ed2d;
   DT_INT unk_f6b20b7;
   DT_INT unk_54513b8;
@@ -49,7 +51,6 @@ struct t1f7f28b1 : public ComplexRead {
   DT_UINT unk_91a3966;
   DT_UINT unk_25312e5;
   DT_INT unk_4be4371;
-  DT_UINT dwPad;
   DT_ENUM<DT_INT> unk_94d8718;
   DT_SNO<SnoGroup::Sound> unk_4181633;
   MarkerHandle tDestination;

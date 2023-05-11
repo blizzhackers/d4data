@@ -17,7 +17,7 @@ struct t93bea3db : public ComplexRead {
   DT_SNO<SnoGroup::Quest> snoQuest;
   DT_VECTOR3D wpLocation;
   DT_SNO<SnoGroup::MarkerSet> snoMarkerSet;
-  DT_INT nMarkerIndex;
+  DT_INT nMarkerID;
   DT_INT64 dwStartTime;
   DT_INT64 dwEndTime;
   DT_UINT unk_eddc1bd;

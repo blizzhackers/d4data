@@ -11,7 +11,7 @@ void PlayerSavedDataMessage::read(const char* base, char* &ptr) {
   readData(&tHeader, base, current);
   current = ptr + 0x10;
   readData(&tSavedData, base, current);
-  current = ptr + 0xe68;
+  current = ptr + 0xe60;
   readData(&unk_dce541c, base, current);
-  ptr += 0xe70;
+  ptr += 0xe68;
 }

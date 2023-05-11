@@ -13,5 +13,7 @@ void ConnectionEstablishedMessage::read(const char* base, char* &ptr) {
   readData(&dwGameAccountId, base, current);
   current = ptr + 0x14;
   readData(&dwAnimSyncedSeed, base, current);
-  ptr += 0x18;
+  current = ptr + 0x18;
+  readData(&unk_4c6a043, base, current);
+  ptr += 0x68;
 }

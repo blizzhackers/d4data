@@ -9,6 +9,8 @@ void WorldTierData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&dwUnlockLevel, base, current);
+  current = ptr + 0x4;
+  readData(&unk_db9e2c, base, current);
   current = ptr + 0x8;
   readData(&unk_2281d38, base, current);
   current = ptr + 0x18;

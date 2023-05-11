@@ -13,5 +13,7 @@ void BountyTierIcons::read(const char* base, char* &ptr) {
   readData(&hIconNormal, base, current);
   current = ptr + 0x8;
   readData(&hIconDisabled, base, current);
-  ptr += 0xc;
+  current = ptr + 0xc;
+  readData(&unk_9ceb052, base, current);
+  ptr += 0x10;
 }

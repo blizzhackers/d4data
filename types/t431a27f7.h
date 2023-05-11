@@ -31,6 +31,7 @@ struct t431a27f7 : public ComplexRead {
   DT_INT unk_85c6e8f;
   DT_INT unk_4474d8f;
   DT_INT unk_ccf1401;
+  DT_INT unk_ea5fbdd;
   DT_INT unk_bf1747b;
   DT_INT unk_fe04400;
   DT_ENUM<DT_INT> unk_1d1c5f5;
@@ -47,6 +48,7 @@ struct t431a27f7 : public ComplexRead {
   DT_INT unk_d731da9;
   DT_INT unk_fab7790;
   DT_INT unk_49dc685;
+  DT_INT unk_4ab8fbb;
   DT_INT unk_a3587ec;
   DT_INT unk_bc87fa3;
   DT_INT unk_3e22e69;

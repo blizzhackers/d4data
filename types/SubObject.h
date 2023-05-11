@@ -29,6 +29,7 @@ struct SubObject : public ComplexRead {
   DT_UINT dwSubObjectHash;
   DT_INT unk_79283f;
   DT_INT unk_45c6981;
+  DT_INT unk_9b916d8;
   DT_INT unk_a758781;
   DT_INT unk_a1b71f5;
   DT_INT unk_95f2e14;

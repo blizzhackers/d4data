@@ -14,6 +14,8 @@ void PlayConvLineMessage::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&tParams, base, current);
   current = ptr + 0x70;
+  readData(&eContext, base, current);
+  current = ptr + 0x74;
   readData(&unk_659589a, base, current);
-  ptr += 0x74;
+  ptr += 0x78;
 }

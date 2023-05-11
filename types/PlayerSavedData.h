@@ -35,7 +35,7 @@ struct PlayerSavedData : public ComplexRead {
   DT_INT unk_a048c51;
   DT_FIXEDARRAY<TransmogSlot, 15> arTransmogSlots;
   DT_FIXEDARRAY<SavedTransmog, 5> unk_295c984;
-  SavedPlayerTitle unk_bb40836;
+  SavedPlayerTitle tSavedPlayerTitle;
 
   void read(const char* base, char* &ptr);
 };

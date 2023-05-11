@@ -33,5 +33,9 @@ void tbff7ab89::read(const char* base, char* &ptr) {
   readData(&tDisplayTimes, base, current);
   current = ptr + 0x344;
   readData(&unk_2d60579, base, current);
-  ptr += 0x348;
+  current = ptr + 0x348;
+  readData(&unk_2813b6e, base, current);
+  current = ptr + 0x34c;
+  readData(&unk_357a6f3, base, current);
+  ptr += 0x350;
 }

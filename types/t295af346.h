@@ -1,6 +1,6 @@
 /**
- * Definition: td3c73333
- * Hash: d3c73333
+ * Definition: t295af346
+ * Hash: 295af346
  */
 
 #pragma once
@@ -10,7 +10,7 @@
 
 #pragma push(pack, 1)
 
-struct td3c73333 : public ComplexRead {
+struct t295af346 : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActor;
   DT_UINT dwTag;
   tb42131c6 unk_c063965;

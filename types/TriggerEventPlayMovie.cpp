@@ -37,5 +37,7 @@ void TriggerEventPlayMovie::read(const char* base, char* &ptr) {
   readData(&unk_54c8b32, base, current);
   current = ptr + 0x80;
   readData(&unk_295ed9d, base, current);
+  current = ptr + 0x84;
+  readData(&unk_26e6b7e, base, current);
   ptr += 0x88;
 }

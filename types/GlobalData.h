@@ -40,6 +40,8 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_ecd99ed;
   DT_FLOAT unk_51c95d8;
   DT_FLOAT unk_6032a24;
+  DT_INT unk_d247cf8;
+  DT_INT unk_eea9f7c;
   DT_FLOAT unk_8472630;
   DT_FLOAT unk_8f17798;
   DT_FLOAT unk_7954efd;
@@ -80,6 +82,8 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_8835be2;
   DT_FLOAT unk_a70ae94;
   DT_FLOAT unk_43addd1;
+  DT_UINT unk_6a55fc4;
+  DT_UINT unk_f1891b9;
   DT_UINT nUIBusyTime;
   DT_INT nTrialVersionLevelCap;
   DT_FLOAT unk_579747d;
@@ -466,6 +470,8 @@ struct GlobalData : public ComplexRead {
   DT_FLOAT unk_38b5fed;
   DT_UINT unk_dbc6f0d;
   DT_UINT unk_9ea22ec;
+  DT_INT unk_9155d6b;
+  DT_INT unk_b1d46f8;
   DT_FLOAT unk_9f4060e;
   DT_FLOAT unk_2cbcb69;
   DT_FLOAT unk_603d082;

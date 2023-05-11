@@ -19,6 +19,7 @@ struct t363d95fb : public ComplexRead {
   DT_SNO<SnoGroup::Quest> snoQuest;
   DT_VECTOR3D wpLocation;
   DT_INT unk_433bf34;
+  DT_INT unk_7f9128a;
 
   void read(const char* base, char* &ptr);
 };

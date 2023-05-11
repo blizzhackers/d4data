@@ -11,6 +11,8 @@
 #pragma push(pack, 1)
 
 struct td305aa32 : public ComplexRead {
+  tb42131c6 unk_6c44779;
+  tb42131c6 unk_550eb8a;
   tb42131c6 tFace;
   tb42131c6 tMakeup;
   tb42131c6 tJewelry;

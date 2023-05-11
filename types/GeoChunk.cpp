@@ -14,10 +14,8 @@ void GeoChunk::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&unk_4137988, base, current);
   current = ptr + 0x38;
-  readData(&unk_7ef82a3, base, current);
+  readData(&unk_457dee2, base, current);
   current = ptr + 0x48;
   readData(&unk_8c8b576, base, current);
-  current = ptr + 0x58;
-  readData(&ibid, base, current);
-  ptr += 0x60;
+  ptr += 0x58;
 }

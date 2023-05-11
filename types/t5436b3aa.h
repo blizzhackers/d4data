@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t5436b3aa : public ComplexRead {
-  DT_FIXEDARRAY<DT_INT, 13> fVendor;
+  DT_FIXEDARRAY<DT_INT, 12> fVendor;
   DT_FIXEDARRAY<DT_INT, 5> fCrafter;
   DT_INT unk_2922760;
   DT_INT unk_8ff5457;

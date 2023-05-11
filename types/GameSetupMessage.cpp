@@ -13,5 +13,9 @@ void GameSetupMessage::read(const char* base, char* &ptr) {
   readData(&dwFirstHeartbeat, base, current);
   current = ptr + 0x18;
   readData(&unk_35f9686, base, current);
-  ptr += 0x20;
+  current = ptr + 0x20;
+  readData(&unk_387b0e, base, current);
+  current = ptr + 0x28;
+  readData(&unk_4c6a043, base, current);
+  ptr += 0x78;
 }

@@ -41,5 +41,5 @@ void WorldDefinition::read(const char* base, char* &ptr) {
   readData(&unk_59a2b11, base, current);
   current = ptr + 0x128;
   readData(&unk_d9c79d2, base, current);
-  ptr += 0x190;
+  ptr += 0x198;
 }

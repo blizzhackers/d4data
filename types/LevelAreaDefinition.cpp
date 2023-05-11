@@ -29,5 +29,5 @@ void LevelAreaDefinition::read(const char* base, char* &ptr) {
   readData(&unk_4e56acb, base, current);
   current = ptr + 0x78;
   readData(&tServices, base, current);
-  ptr += 0xd4;
+  ptr += 0xd0;
 }

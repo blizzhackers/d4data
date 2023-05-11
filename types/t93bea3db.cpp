@@ -20,7 +20,7 @@ void t93bea3db::read(const char* base, char* &ptr) {
   current = ptr + 0x28;
   readData(&snoMarkerSet, base, current);
   current = ptr + 0x2c;
-  readData(&nMarkerIndex, base, current);
+  readData(&nMarkerID, base, current);
   current = ptr + 0x30;
   readData(&dwStartTime, base, current);
   current = ptr + 0x38;

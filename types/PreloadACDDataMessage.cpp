@@ -20,12 +20,12 @@ void PreloadACDDataMessage::read(const char* base, char* &ptr) {
   current = ptr + 0xa4;
   readData(&unk_ed94303, base, current);
   current = ptr + 0xb0;
-  readData(&unk_5cc9c95, base, current);
-  current = ptr + 0x41c;
-  readData(&unk_462cedb, base, current);
-  current = ptr + 0x42c;
-  readData(&unk_61a5ad0, base, current);
-  current = ptr + 0x468;
+  readData(&tPlayerACDInfo, base, current);
+  current = ptr + 0x424;
+  readData(&tMountACDInfo, base, current);
+  current = ptr + 0x434;
+  readData(&tMonsterACDInfo, base, current);
+  current = ptr + 0x470;
   readData(&unk_223db49, base, current);
-  ptr += 0x484;
+  ptr += 0x48c;
 }

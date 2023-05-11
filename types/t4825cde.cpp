@@ -36,8 +36,10 @@ void t4825cde::read(const char* base, char* &ptr) {
   current = ptr + 0x44;
   readData(&unk_c60b9b0, base, current);
   current = ptr + 0x48;
+  readData(&unk_754c08a, base, current);
+  current = ptr + 0x50;
   readData(&arFogOfWar, base, current);
-  current = ptr + 0x58;
+  current = ptr + 0x60;
   readData(&unk_ff16ba3, base, current);
-  ptr += 0x68;
+  ptr += 0x70;
 }

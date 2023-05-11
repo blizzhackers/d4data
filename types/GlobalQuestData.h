@@ -26,7 +26,7 @@ struct GlobalQuestData : public ComplexRead {
   DT_UINT unk_e318094;
   DT_UINT unk_a49964c;
   DT_SNO<SnoGroup::Quest> snoStartingQuest;
-  CampaignData unk_d99124e;
+  CampaignData tCampaignData;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_36bc0dc;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> unk_b419a05;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::FogofWar>> unk_a70acb6;

@@ -23,5 +23,7 @@ void t15695a85::read(const char* base, char* &ptr) {
   readData(&unk_8a404eb, base, current);
   current = ptr + 0x24;
   readData(&unk_e354a1f, base, current);
-  ptr += 0x28;
+  current = ptr + 0x28;
+  readData(&unk_4a4ab0e, base, current);
+  ptr += 0x38;
 }

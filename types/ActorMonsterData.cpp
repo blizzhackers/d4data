@@ -22,7 +22,7 @@ void ActorMonsterData::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_765a638, base, current);
   current = ptr + 0x1c;
-  readData(&unk_32c6d80, base, current);
+  readData(&tNPCServiceData, base, current);
   current = ptr + 0x40;
   readData(&eHirelingClass, base, current);
   current = ptr + 0x44;

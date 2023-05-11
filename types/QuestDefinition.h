@@ -55,6 +55,7 @@ struct QuestDefinition : public ComplexRead {
   DT_CSTRING unk_993f312;
   DT_CSTRING unk_39af3bb;
   DT_CSTRING unk_857ebd2;
+  DT_CSTRING unk_556de93;
   DT_VARIABLEARRAY<QuestFollower> arFollowers;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Item>> unk_219aee7;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::World>> unk_b9ec208;

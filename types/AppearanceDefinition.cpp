@@ -18,7 +18,7 @@ void AppearanceDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc0;
   readData(&unk_e79217, base, current);
   current = ptr + 0xc8;
-  readData(&unk_f70dadb, base, current);
+  readData(&arLookVariantMap, base, current);
   current = ptr + 0xd8;
   readData(&dwLookVariant, base, current);
   current = ptr + 0xdc;

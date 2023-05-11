@@ -19,7 +19,7 @@ struct t7e0a5501 : public ComplexRead {
   DT_UINT unk_eb81e70;
   DT_INT unk_9946895;
   DT_CHARARRAY<256> unk_15c229b;
-  DT_INT unk_fc823cf;
+  DT_UINT dwFlags;
 
   void read(const char* base, char* &ptr);
 };

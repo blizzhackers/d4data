@@ -19,5 +19,7 @@ void t11399dba::read(const char* base, char* &ptr) {
   readData(&uProtocolHash, base, current);
   current = ptr + 0x20;
   readData(&unk_23ac715, base, current);
-  ptr += 0x158;
+  current = ptr + 0x158;
+  readData(&unk_4c6a043, base, current);
+  ptr += 0x1a8;
 }

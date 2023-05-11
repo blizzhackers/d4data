@@ -65,6 +65,7 @@ struct MonsterFamilyArchetype : public ComplexRead {
   DT_FLOAT unk_2401865;
   DT_FLOAT unk_94abb4e;
   DT_FLOAT unk_f50871;
+  DT_FLOAT unk_aca81bc;
   DT_INT unk_38d1c6b;
   DT_INT unk_63732a6;
   DT_INT unk_904bb00;

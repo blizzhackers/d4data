@@ -30,8 +30,10 @@ void ConversationDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_e1d8535, base, current);
   current = ptr + 0x34;
-  readData(&unk_b32ef27, base, current);
+  readData(&unk_50dfbdf, base, current);
   current = ptr + 0x38;
+  readData(&unk_b32ef27, base, current);
+  current = ptr + 0x3c;
   readData(&dwFlags, base, current);
   current = ptr + 0x40;
   readData(&unk_a159b10, base, current);

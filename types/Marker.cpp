@@ -33,5 +33,5 @@ void Marker::read(const char* base, char* &ptr) {
   readData(&dwSeed, base, current);
   current = ptr + 0x80;
   readData(&unk_bbfbbfe, base, current);
-  ptr += 0xb0;
+  ptr += 0xb8;
 }

@@ -13,6 +13,7 @@
 
 struct WorldTierData : public ComplexRead {
   DT_UINT dwUnlockLevel;
+  DT_INT unk_db9e2c;
   DT_VARIABLEARRAY<AttributeSpecifier> unk_2281d38;
   LevelScalingData tLevelScalingData;
   DT_INT unk_2bca372;

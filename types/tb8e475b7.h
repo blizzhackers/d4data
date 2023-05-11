@@ -37,6 +37,7 @@ struct tb8e475b7 : public ComplexRead {
   DT_SNO<SnoGroup::Power> unk_fe76809;
   DT_INT unk_359810e;
   DT_UINT nCooldown;
+  DT_UINT unk_9c8478e;
   DT_INT unk_d45ed2d;
   DT_INT unk_f6b20b7;
   DT_INT unk_54513b8;

@@ -15,8 +15,8 @@
 struct AmbientSoundDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Sound> snoBackground;
   DT_VARIABLEARRAY<RandomAmbientSoundParams> tRandomSounds;
-  DynamicGameParameter unk_58f94;
-  DynamicAudioState unk_243fcc;
+  DynamicGameParameter tDynamicGameParameter;
+  DynamicAudioState tDynamicAudioState;
 
   void read(const char* base, char* &ptr);
 };

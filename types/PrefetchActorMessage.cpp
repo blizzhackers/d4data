@@ -18,12 +18,12 @@ void PrefetchActorMessage::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&unk_ed94303, base, current);
   current = ptr + 0xac;
-  readData(&unk_5cc9c95, base, current);
-  current = ptr + 0x418;
-  readData(&unk_462cedb, base, current);
-  current = ptr + 0x428;
-  readData(&unk_61a5ad0, base, current);
-  current = ptr + 0x464;
+  readData(&tPlayerACDInfo, base, current);
+  current = ptr + 0x420;
+  readData(&tMountACDInfo, base, current);
+  current = ptr + 0x430;
+  readData(&tMonsterACDInfo, base, current);
+  current = ptr + 0x46c;
   readData(&unk_223db49, base, current);
-  ptr += 0x480;
+  ptr += 0x488;
 }

@@ -18,6 +18,7 @@ struct t15695a85 : public ComplexRead {
   DT_FLOAT flCapsuleLength;
   DT_INT unk_8a404eb;
   DT_SNO<SnoGroup::Condition> unk_e354a1f;
+  DT_VARIABLEARRAY<DT_VECTOR3D> unk_4a4ab0e;
 
   void read(const char* base, char* &ptr);
 };

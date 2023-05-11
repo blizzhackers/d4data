@@ -14,6 +14,7 @@ struct ConversationSample : public ComplexRead {
   DT_UINT szLabel;
   DT_SNO<SnoGroup::Speaker> snoSpeaker;
   DT_FLOAT flDuration;
+  DT_ENUM<DT_INT> unk_aae9d18;
   tbac3964d unk_1d3e4c1;
 
   void read(const char* base, char* &ptr);

@@ -15,6 +15,7 @@ struct PlayConvLineMessage : public ComplexRead {
   RequiredMessageHeader tHeader;
   DT_ACD_NETWORK_NAME annSpeaker;
   PlayLineParams tParams;
+  DT_ENUM<DT_INT> eContext;
   DT_FLOAT unk_659589a;
 
   void read(const char* base, char* &ptr);

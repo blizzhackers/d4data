@@ -15,6 +15,7 @@ struct t991d0313 : public ComplexRead {
   DT_INT unk_5360c2;
   DT_CSTRING unk_bdf8b74;
   DT_SNO<SnoGroup::Sound> unk_3f3a302;
+  DT_SNO<SnoGroup::Sound> unk_7404c83;
   DT_ENUM<DT_INT> eScrollbarVisibility;
   DT_FLOAT unk_58496c;
   DT_FLOAT unk_26fb7aa;

@@ -24,6 +24,7 @@ struct tcd36f214 : public ComplexRead {
   DT_ENUM<DT_INT> eTextJustify;
   DT_ENUM<DT_INT> eTextJustifyVertical;
   DT_FLOAT unk_4cfc33f;
+  DT_FLOAT unk_103d77a;
   DT_INT unk_f293927;
   DT_INT unk_9bfa5c8;
   DT_INT bWordWrap;

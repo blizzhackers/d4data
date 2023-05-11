@@ -21,6 +21,7 @@ struct ConversationDefinition : public ComplexRead {
   DT_INT unk_8d6f162;
   DT_INT unk_ac91f5d;
   DT_INT unk_e1d8535;
+  DT_INT unk_50dfbdf;
   DT_INT unk_b32ef27;
   DT_UINT dwFlags;
   DT_POLYMORPHIC_VARIABLEARRAY unk_a159b10;

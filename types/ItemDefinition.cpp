@@ -118,16 +118,18 @@ void ItemDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x18c;
   readData(&unk_4bfa38e, base, current);
   current = ptr + 0x190;
-  readData(&eDisplayedQualityLevel, base, current);
+  readData(&unk_f772ea, base, current);
   current = ptr + 0x194;
-  readData(&unk_4a49da6, base, current);
+  readData(&eDisplayedQualityLevel, base, current);
   current = ptr + 0x198;
-  readData(&snoPowerPassive, base, current);
+  readData(&unk_4a49da6, base, current);
   current = ptr + 0x19c;
-  readData(&eGemType, base, current);
+  readData(&snoPowerPassive, base, current);
   current = ptr + 0x1a0;
-  readData(&snoPotionPower, base, current);
+  readData(&eGemType, base, current);
   current = ptr + 0x1a4;
+  readData(&snoPotionPower, base, current);
+  current = ptr + 0x1a8;
   readData(&bIsTransmog, base, current);
-  ptr += 0x1a8;
+  ptr += 0x1b0;
 }

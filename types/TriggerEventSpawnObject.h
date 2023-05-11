@@ -43,7 +43,7 @@ struct TriggerEventSpawnObject : public ComplexRead {
   DT_SNO<SnoGroup::Power> unk_760871b;
   DT_FLOAT dwSpawnedActorLife;
   tf74028c3 unk_245c537;
-  DT_VARIABLEARRAY<LightInstanceData> unk_a03b96b;
+  DT_VARIABLEARRAY<LightInstanceData> ptLightInstanceData;
 
   void read(const char* base, char* &ptr);
 };

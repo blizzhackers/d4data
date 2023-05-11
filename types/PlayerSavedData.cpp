@@ -38,6 +38,6 @@ void PlayerSavedData::read(const char* base, char* &ptr) {
   current = ptr + 0x8d0;
   readData(&unk_295c984, base, current);
   current = ptr + 0xda8;
-  readData(&unk_bb40836, base, current);
-  ptr += 0xe58;
+  readData(&tSavedPlayerTitle, base, current);
+  ptr += 0xe50;
 }

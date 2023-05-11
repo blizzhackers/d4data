@@ -1,11 +1,11 @@
 /**
- * Definition: td3c73333
- * Hash: d3c73333
+ * Definition: t295af346
+ * Hash: 295af346
  */
 
-#include "td3c73333.h"
+#include "t295af346.h"
 
-void td3c73333::read(const char* base, char* &ptr) {
+void t295af346::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&snoActor, base, current);

@@ -16,7 +16,7 @@
 struct t19e1543d : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_FIXEDARRAY<t65da5a34, 13> unk_8205294;
+  DT_FIXEDARRAY<t65da5a34, 12> unk_8205294;
   DT_FIXEDARRAY<t59c87ced, 5> arCrafters;
   DT_FIXEDARRAY<CrafterConditions, 5> unk_f37b35d;
   DT_FLOAT unk_13e0ecf;

@@ -10,6 +10,7 @@
 #pragma push(pack, 1)
 
 struct EyeColorDefinition : public ComplexRead {
+  DT_RGBACOLOR unk_509016f;
   DT_INT nSortOrder;
   DT_FIXEDARRAY<DT_INT, 5> unk_9da2273;
   DT_RGBACOLOR unk_d38eaf;

@@ -24,6 +24,8 @@ struct tbff7ab89 : public ComplexRead {
   DT_ENUM<DT_INT> ePlayerClass;
   DT_FIXEDARRAY<ConvLocaleDisplayTimes, 19> tDisplayTimes;
   DT_SNO<SnoGroup::Sound> unk_2d60579;
+  DT_FLOAT unk_2813b6e;
+  DT_INT unk_357a6f3;
 
   void read(const char* base, char* &ptr);
 };

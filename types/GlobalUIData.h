@@ -84,6 +84,7 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_c4559fc;
   DT_FLOAT unk_786fe3d;
   DT_FLOAT unk_1b8406b;
+  DT_FLOAT unk_a2ff294;
   DT_FLOAT unk_8badfc2;
   DT_FLOAT unk_d55c009;
   DT_FLOAT unk_d0f26d6;
@@ -114,7 +115,7 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_5c6981e;
   DT_INT unk_62b69ec;
   DT_FLOAT unk_3a17c48;
-  DT_FIXEDARRAY<t36837ce3, 4> unk_91849cb;
+  DT_FIXEDARRAY<t36837ce3, 5> unk_91849cb;
   t5960905c unk_88f4ecc;
   DT_FLOAT unk_2c3270;
   DT_FLOAT unk_ec0001f;
@@ -252,7 +253,7 @@ struct GlobalUIData : public ComplexRead {
   DT_UINT unk_b5d02e2;
   DT_FIXEDARRAY<DT_UINT, 23> unk_e931d19;
   DT_FIXEDARRAY<BountyIcons, 10> arBountyIcons;
-  DT_FIXEDARRAY<BountyTierIcons, 3> unk_15b9c64;
+  DT_FIXEDARRAY<BountyTierIcons, 3> arBountyTierIcons;
   DT_UINT unk_aa34698;
   DT_FIXEDARRAY<ta77b14db, 5> tClassInfo;
   DT_VARIABLEARRAY<t7a02a8d6> unk_51e3091;
@@ -268,6 +269,7 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_ef2cbab;
   DT_FLOAT unk_4f23516;
   DT_FLOAT unk_d3ef4e8;
+  DT_FLOAT unk_618bf22;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Texture>> unk_199897;
   DT_FLOAT unk_17dc82;
   DT_FLOAT unk_29f26f5;

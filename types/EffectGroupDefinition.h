@@ -17,6 +17,10 @@ struct EffectGroupDefinition : public ComplexRead {
   DT_FLOAT unk_4327903;
   DT_FLOAT unk_9cf7635;
   DT_FLOAT unk_30364bd;
+  DT_FLOAT unk_e8602d3;
+  DT_FLOAT unk_7d5553e;
+  DT_FLOAT unk_19bdc57;
+  DT_FLOAT unk_7c79fc2;
   DT_ENUM<DT_INT> unk_43960c1;
   EffectItem unk_e5a6bb1;
   DT_VARIABLEARRAY<EffectItem> ptEffects;

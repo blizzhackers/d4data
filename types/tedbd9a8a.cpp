@@ -18,12 +18,14 @@ void tedbd9a8a::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_d094b9a, base, current);
   current = ptr + 0x14;
-  readData(&unk_4bfd602, base, current);
+  readData(&unk_ce65d4b, base, current);
   current = ptr + 0x18;
-  readData(&unk_6c0cb90, base, current);
+  readData(&unk_4bfd602, base, current);
   current = ptr + 0x1c;
-  readData(&unk_dc9436d, base, current);
+  readData(&unk_6c0cb90, base, current);
   current = ptr + 0x20;
+  readData(&unk_dc9436d, base, current);
+  current = ptr + 0x28;
   readData(&unk_b0425e7, base, current);
-  ptr += 0x30;
+  ptr += 0x38;
 }

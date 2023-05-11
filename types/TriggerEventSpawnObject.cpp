@@ -62,6 +62,6 @@ void TriggerEventSpawnObject::read(const char* base, char* &ptr) {
   current = ptr + 0xcc;
   readData(&unk_245c537, base, current);
   current = ptr + 0xf8;
-  readData(&unk_a03b96b, base, current);
+  readData(&ptLightInstanceData, base, current);
   ptr += 0x108;
 }

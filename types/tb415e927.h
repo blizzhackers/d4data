@@ -7,6 +7,7 @@
 
 #include "../types.h"
 #include "TextureContent.h"
+#include "t295af346.h"
 #include "t29d35c79.h"
 #include "t2e7b70b1.h"
 #include "t4335f281.h"
@@ -15,12 +16,12 @@
 #include "t680773db.h"
 #include "t6e65a695.h"
 #include "t7a954650.h"
+#include "t8636d92f.h"
 #include "t9c65b048.h"
 #include "ta89e6440.h"
 #include "tb1791eea.h"
 #include "tc1d35c16.h"
 #include "tccb90a07.h"
-#include "td3c73333.h"
 #include "td4235100.h"
 #include "tdb8a98c8.h"
 #include "te11de1bb.h"
@@ -36,6 +37,7 @@ struct tb415e927 : public ComplexRead {
   DT_VARIABLEARRAY<t49c4ada9> unk_4c7bb4f;
   DT_VARIABLEARRAY<t680773db> unk_45f82a1;
   DT_VARIABLEARRAY<t9c65b048> unk_4854cae;
+  DT_VARIABLEARRAY<t8636d92f> unk_71df495;
   DT_VARIABLEARRAY<tf5c4e3ed> unk_b3ee7d3;
   DT_VARIABLEARRAY<TextureContent> unk_ebdf572;
   DT_VARIABLEARRAY<t4335f281> unk_849d767;
@@ -47,7 +49,8 @@ struct tb415e927 : public ComplexRead {
   DT_VARIABLEARRAY<tb1791eea> unk_f97d290;
   DT_VARIABLEARRAY<tccb90a07> unk_b7d12d;
   DT_VARIABLEARRAY<t7a954650> unk_7ef3a56;
-  DT_VARIABLEARRAY<td3c73333> unk_5afd159;
+  DT_VARIABLEARRAY<t295af346> unk_ec5518c;
+  DT_VARIABLEARRAY<DT_BYTE> unk_ddc0c8b;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::None>> arSNOs;
   DT_VARIABLEARRAY<DT_SNO_NAME> arSNONames;
 

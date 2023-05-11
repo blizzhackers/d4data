@@ -13,7 +13,7 @@
 
 struct t288a8c0b : public ComplexRead {
   RequiredMessageHeader tHeader;
-  CustomizationData unk_7e407c7;
+  CustomizationData tCustomizationData;
   DT_UINT unk_dce541c;
 
   void read(const char* base, char* &ptr);

@@ -30,7 +30,7 @@ void SceneDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&flTileY, base, current);
   current = ptr + 0x78;
-  readData(&unk_c20ed15, base, current);
+  readData(&ptAIPathData, base, current);
   current = ptr + 0x88;
   readData(&unk_57e8e2b, base, current);
   current = ptr + 0xb0;

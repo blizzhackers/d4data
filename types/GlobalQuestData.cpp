@@ -36,7 +36,7 @@ void GlobalQuestData::read(const char* base, char* &ptr) {
   current = ptr + 0x5c;
   readData(&snoStartingQuest, base, current);
   current = ptr + 0x60;
-  readData(&unk_d99124e, base, current);
+  readData(&tCampaignData, base, current);
   current = ptr + 0x70;
   readData(&unk_36bc0dc, base, current);
   current = ptr + 0x80;

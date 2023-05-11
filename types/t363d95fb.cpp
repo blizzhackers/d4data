@@ -23,5 +23,7 @@ void t363d95fb::read(const char* base, char* &ptr) {
   readData(&wpLocation, base, current);
   current = ptr + 0x38;
   readData(&unk_433bf34, base, current);
+  current = ptr + 0x3c;
+  readData(&unk_7f9128a, base, current);
   ptr += 0x40;
 }

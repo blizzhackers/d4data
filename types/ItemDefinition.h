@@ -69,6 +69,7 @@ struct ItemDefinition : public ComplexRead {
   DT_ENUM<DT_INT> eItemUseType;
   DT_SNO<SnoGroup::Power> unk_db54dcf;
   DT_SNO<SnoGroup::LevelArea> unk_4bfa38e;
+  DT_UINT unk_f772ea;
   DT_ENUM<DT_INT> eDisplayedQualityLevel;
   DT_INT unk_4a49da6;
   DT_SNO<SnoGroup::Power> snoPowerPassive;

@@ -13,6 +13,7 @@ struct BountyTierIcons : public ComplexRead {
   DT_UINT unk_44213a;
   DT_UINT hIconNormal;
   DT_UINT hIconDisabled;
+  DT_UINT unk_9ceb052;
 
   void read(const char* base, char* &ptr);
 };

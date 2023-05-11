@@ -16,6 +16,7 @@ struct AudioContextDefinition : public ComplexRead {
   DT_SNO<SnoGroup::AmbientSound> snoAmbient;
   DT_SNO<SnoGroup::Reverb> snoReverb;
   DT_INT unk_2d0db3d;
+  DT_INT unk_e197f62;
   tfa97e5b9 unk_d110c10;
   DT_VARIABLEARRAY<tb593e3c8> unk_245a799;
 

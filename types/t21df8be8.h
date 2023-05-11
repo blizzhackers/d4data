@@ -1,6 +1,6 @@
 /**
- * Definition: AchievementProgressXboxOneMessage
- * Hash: 36fef466
+ * Definition: t21df8be8
+ * Hash: 21df8be8
  */
 
 #pragma once
@@ -10,11 +10,9 @@
 
 #pragma push(pack, 1)
 
-struct AchievementProgressXboxOneMessage : public ComplexRead {
+struct t21df8be8 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_UINT unk_dce541c;
-  DT_UINT nProfileAwardId;
-  DT_UINT nProgress;
+  DT_INT unk_3c84bdb;
 
   void read(const char* base, char* &ptr);
 };

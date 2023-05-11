@@ -22,7 +22,7 @@ struct AppearanceDefinition : public ComplexRead {
   DT_VARIABLEARRAY<AppearanceLook> ptAppearanceLooks;
   DT_VARIABLEARRAY<AppearanceMaterial> ptAppearanceMaterials;
   DT_SNO<SnoGroup::MarkerSet> unk_e79217;
-  DT_VARIABLEARRAY<LookVariantMap> unk_f70dadb;
+  DT_VARIABLEARRAY<LookVariantMap> arLookVariantMap;
   DT_UINT dwLookVariant;
   t12daec08 unk_af015fc;
   DT_POLYMORPHIC_VARIABLEARRAY unk_4f51617;

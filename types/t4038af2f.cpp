@@ -57,5 +57,7 @@ void t4038af2f::read(const char* base, char* &ptr) {
   readData(&unk_b765a7, base, current);
   current = ptr + 0xa8;
   readData(&unk_17f7deb, base, current);
+  current = ptr + 0xac;
+  readData(&unk_b19da4b, base, current);
   ptr += 0xb0;
 }

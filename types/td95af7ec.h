@@ -20,6 +20,7 @@ struct td95af7ec : public ComplexRead {
   DT_INT wAid;
   DT_INT baid;
   DT_UINT unk_4c43adc;
+  DT_INT unk_5a1810c;
 
   void read(const char* base, char* &ptr);
 };

@@ -51,6 +51,7 @@ struct TriggerEventAddObject : public ComplexRead {
   DT_SNO<SnoGroup::StringList> unk_83bdc8f;
   DT_SNO<SnoGroup::StringList> unk_944e28b;
   DT_FLOAT unk_1426000;
+  DT_INT unk_cb43646;
   DT_INT unk_24f5a5c;
   LookLink tLookLink;
   DT_INT unk_48fd494;
@@ -75,7 +76,7 @@ struct TriggerEventAddObject : public ComplexRead {
   DT_FLOAT unk_36bc3de;
   DT_INT nPriority;
   tf74028c3 unk_245c537;
-  DT_VARIABLEARRAY<LightInstanceData> unk_a03b96b;
+  DT_VARIABLEARRAY<LightInstanceData> ptLightInstanceData;
 
   void read(const char* base, char* &ptr);
 };

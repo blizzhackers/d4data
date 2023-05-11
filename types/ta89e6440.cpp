@@ -11,7 +11,7 @@ void ta89e6440::read(const char* base, char* &ptr) {
   readData(&snoActor, base, current);
   current = ptr + 0x4;
   readData(&unk_bf4138d, base, current);
-  current = ptr + 0x2c;
+  current = ptr + 0x3c;
   readData(&tSlot, base, current);
-  ptr += 0x34;
+  ptr += 0x44;
 }

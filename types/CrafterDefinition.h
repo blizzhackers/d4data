@@ -15,6 +15,7 @@
 struct CrafterDefinition : public ComplexRead {
   DT_UINT dwNextID;
   DT_ENUM<DT_INT> eCrafterType;
+  DT_SNO<SnoGroup::Condition> unk_a34d0af;
   DT_VARIABLEARRAY<tc661a6fd> arTabs;
   DT_VARIABLEARRAY<RecipeTier> unk_19e7a72;
   DT_VARIABLEARRAY<t7705c56a> unk_3668490;

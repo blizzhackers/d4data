@@ -58,14 +58,20 @@ void StoreProductDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xb4;
   readData(&unk_54578ff, base, current);
   current = ptr + 0xb8;
-  readData(&unk_a08a2f4, base, current);
+  readData(&unk_5ff5733, base, current);
   current = ptr + 0xbc;
-  readData(&unk_aa674fe, base, current);
+  readData(&unk_a26c284, base, current);
   current = ptr + 0xc0;
-  readData(&unk_68af238, base, current);
+  readData(&unk_a08a2f4, base, current);
   current = ptr + 0xc4;
+  readData(&unk_aa674fe, base, current);
+  current = ptr + 0xc8;
+  readData(&unk_68af238, base, current);
+  current = ptr + 0xcc;
   readData(&unk_7c0b75d, base, current);
-  current = ptr + 0xf8;
+  current = ptr + 0x100;
   readData(&unk_e5d7f3, base, current);
-  ptr += 0x110;
+  current = ptr + 0x114;
+  readData(&unk_3b60fa7, base, current);
+  ptr += 0x118;
 }

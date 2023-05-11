@@ -27,6 +27,7 @@ struct TriggerEventPlayMovie : public ComplexRead {
   DT_SNO<SnoGroup::Movie> snoMovie;
   DT_INT unk_54c8b32;
   DT_INT unk_295ed9d;
+  DT_INT unk_26e6b7e;
 
   void read(const char* base, char* &ptr);
 };

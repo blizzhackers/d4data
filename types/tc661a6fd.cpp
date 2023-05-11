@@ -11,5 +11,7 @@ void tc661a6fd::read(const char* base, char* &ptr) {
   readData(&dwID, base, current);
   current = ptr + 0x8;
   readData(&unk_c94355b, base, current);
-  ptr += 0x18;
+  current = ptr + 0x18;
+  readData(&unk_b76f230, base, current);
+  ptr += 0x20;
 }

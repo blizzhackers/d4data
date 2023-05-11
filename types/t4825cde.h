@@ -26,6 +26,7 @@ struct t4825cde : public ComplexRead {
   DT_SNO<SnoGroup::Texture> unk_34b452;
   DT_INT unk_3620f37;
   DT_INT unk_c60b9b0;
+  DT_SNO<SnoGroup::Texture> unk_754c08a;
   DT_VARIABLEARRAY<tc329b4be> arFogOfWar;
   DT_VARIABLEARRAY<tbef5a4a> unk_ff16ba3;
 

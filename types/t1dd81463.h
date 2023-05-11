@@ -19,6 +19,7 @@ struct t1dd81463 : public ComplexRead {
   DT_CSTRING szOnController;
   DT_CSTRING unk_587374f;
   DT_CSTRING unk_42b05a7;
+  DT_SNO<SnoGroup::Sound> unk_f887f54;
   DT_INT unk_e0c6a45;
   DT_FLOAT unk_9a8825c;
 

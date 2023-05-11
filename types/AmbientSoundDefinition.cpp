@@ -12,8 +12,8 @@ void AmbientSoundDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&tRandomSounds, base, current);
   current = ptr + 0x20;
-  readData(&unk_58f94, base, current);
+  readData(&tDynamicGameParameter, base, current);
   current = ptr + 0x30;
-  readData(&unk_243fcc, base, current);
+  readData(&tDynamicAudioState, base, current);
   ptr += 0x48;
 }

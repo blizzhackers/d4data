@@ -26,6 +26,6 @@ void t7e0a5501::read(const char* base, char* &ptr) {
   current = ptr + 0x88;
   readData(&unk_15c229b, base, current);
   current = ptr + 0x188;
-  readData(&unk_fc823cf, base, current);
+  readData(&dwFlags, base, current);
   ptr += 0x190;
 }

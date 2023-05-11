@@ -37,6 +37,7 @@ struct t4038af2f : public ComplexRead {
   DT_UINT dwID;
   DT_UINT unk_b765a7;
   DT_INT unk_17f7deb;
+  DT_INT unk_b19da4b;
 
   void read(const char* base, char* &ptr);
 };

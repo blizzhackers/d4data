@@ -18,6 +18,7 @@ struct t8d639c63 : public ComplexRead {
   DT_INT unk_6cba752;
   DT_UINT unk_e560b0b;
   DT_SNO<SnoGroup::UI> snoUI;
+  DT_TAGMAP<DT_INT> unk_6316fe8;
 
   void read(const char* base, char* &ptr);
 };

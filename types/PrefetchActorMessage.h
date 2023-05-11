@@ -21,9 +21,9 @@ struct PrefetchActorMessage : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActor;
   DT_FIXEDARRAY<DT_SNO_NAME, 16> unk_39ae9c2;
   DT_OPTIONAL<DT_INT> unk_ed94303;
-  DT_OPTIONAL<DT_INT> unk_5cc9c95;
-  DT_OPTIONAL<DT_INT> unk_462cedb;
-  DT_OPTIONAL<DT_INT> unk_61a5ad0;
+  DT_OPTIONAL<DT_INT> tPlayerACDInfo;
+  DT_OPTIONAL<DT_INT> tMountACDInfo;
+  DT_OPTIONAL<DT_INT> tMonsterACDInfo;
   DT_OPTIONAL<DT_INT> unk_223db49;
 
   void read(const char* base, char* &ptr);

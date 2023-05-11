@@ -28,7 +28,7 @@
 #pragma push(pack, 1)
 
 struct MarkerActorGizmoData : public ComplexRead {
-  DT_VARIABLEARRAY<MarkerDoorGizmoData> unk_20bda58;
+  DT_VARIABLEARRAY<MarkerDoorGizmoData> ptDoorGizmoData;
   DT_VARIABLEARRAY<t6f3d2867> unk_fb42747;
   DT_VARIABLEARRAY<tbf0c5b22> unk_70d0dc0;
   DT_VARIABLEARRAY<t2d410740> unk_ac84ca4;
@@ -36,16 +36,16 @@ struct MarkerActorGizmoData : public ComplexRead {
   DT_VARIABLEARRAY<tb2ef091a> unk_83131fe;
   DT_VARIABLEARRAY<t1121a259> unk_c82c39b;
   DT_VARIABLEARRAY<te6346255> unk_f48a504;
-  DT_VARIABLEARRAY<MarkerPortalGizmoData> unk_cc84436;
+  DT_VARIABLEARRAY<MarkerPortalGizmoData> ptPortalGizmoData;
   DT_VARIABLEARRAY<t7b11e164> unk_f441be6;
   DT_VARIABLEARRAY<t478eb43b> unk_542a67d;
   DT_POLYMORPHIC_VARIABLEARRAY ptProxData;
   DT_VARIABLEARRAY<t8d3deb43> unk_604a84d;
   DT_VARIABLEARRAY<GizmoConditionData> ptGizmoConditionData;
-  DT_VARIABLEARRAY<MarkerBaseGizmoData> unk_b15bdc1;
+  DT_VARIABLEARRAY<MarkerBaseGizmoData> ptMarkerBaseGizmoData;
   DT_VARIABLEARRAY<t7324c6f7> unk_ebfdb39;
-  DT_VARIABLEARRAY<MarkerWaypointGizmoData> unk_e4c00ff;
-  DT_VARIABLEARRAY<ta967fc2> unk_5100a84;
+  DT_VARIABLEARRAY<MarkerWaypointGizmoData> ptWaypointGizmoData;
+  DT_VARIABLEARRAY<ta967fc2> ptHiddenCacheGizmoData;
 
   void read(const char* base, char* &ptr);
 };

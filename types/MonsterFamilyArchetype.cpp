@@ -114,12 +114,14 @@ void MonsterFamilyArchetype::read(const char* base, char* &ptr) {
   current = ptr + 0x108;
   readData(&unk_f50871, base, current);
   current = ptr + 0x10c;
-  readData(&unk_38d1c6b, base, current);
+  readData(&unk_aca81bc, base, current);
   current = ptr + 0x110;
-  readData(&unk_63732a6, base, current);
+  readData(&unk_38d1c6b, base, current);
   current = ptr + 0x114;
-  readData(&unk_904bb00, base, current);
+  readData(&unk_63732a6, base, current);
   current = ptr + 0x118;
+  readData(&unk_904bb00, base, current);
+  current = ptr + 0x11c;
   readData(&unk_28c7e7c, base, current);
   current = ptr + 0x120;
   readData(&snoDisallowedAffixes, base, current);

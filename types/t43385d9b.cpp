@@ -8,6 +8,6 @@
 void t43385d9b::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_192d2c5, base, current);
+  readData(&ptBoneStructureInfo, base, current);
   ptr += 0x10;
 }

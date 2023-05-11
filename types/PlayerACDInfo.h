@@ -12,6 +12,7 @@
 struct PlayerACDInfo : public ComplexRead {
   DT_INT fFemale;
   DT_ENUM<DT_INT> ePlayerClass;
+  DT_INT unk_9363e7a;
   DT_SNO<SnoGroup::Face> snoFace;
   DT_SNO<SnoGroup::Makeup> snoMakeup;
   DT_SNO<SnoGroup::MarkingShape> snoMarkingShape;
@@ -22,6 +23,7 @@ struct PlayerACDInfo : public ComplexRead {
   DT_SNO<SnoGroup::FacialHair> snoFacialHair;
   DT_SNO<SnoGroup::Jewelry> snoJewelry;
   DT_SNO<SnoGroup::Actor> snoMount;
+  DT_SNO<SnoGroup::Actor> snoHeadstone;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Item>, 18> snoItems;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Power>, 128> snoPowers;
   DT_FIXEDARRAY<DT_SNO<SnoGroup::Power>, 24> unk_dedd90a;

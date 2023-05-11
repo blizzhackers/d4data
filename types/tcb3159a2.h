@@ -19,6 +19,7 @@
 #include "t85177256.h"
 #include "t8f2bc52f.h"
 #include "t9934af2e.h"
+#include "tabec9f65.h"
 #include "tdd0bf409.h"
 #include "te8e345d9.h"
 #include "tfd4746f8.h"
@@ -38,6 +39,7 @@ struct tcb3159a2 : public ComplexRead {
   DT_FLOAT unk_f1fb37b;
   DT_FLOAT unk_a24f195;
   te8e345d9 unk_de216d0;
+  tabec9f65 unk_ee2f4d9;
   DT_INT unk_aab60e9;
   DT_INT unk_5e1713;
   DT_INT unk_4889712;
@@ -188,7 +190,7 @@ struct tcb3159a2 : public ComplexRead {
   tfd4746f8 unk_f084aec;
   t8f2bc52f unk_53d9623;
   t2d18fb5c unk_32acc50;
-  LightInfluenceSettings unk_55e0096;
+  LightInfluenceSettings tLightInfluenceSettings;
   DT_VARIABLEARRAY<t85177256> unk_edffb30;
   DT_VARIABLEARRAY<t39952607> unk_a90a48d;
   UIMargins unk_77afde8;

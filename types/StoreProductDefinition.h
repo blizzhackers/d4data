@@ -37,11 +37,14 @@ struct StoreProductDefinition : public ComplexRead {
   DT_INT unk_9a0855f;
   DT_UINT unk_8c37b97;
   DT_INT unk_54578ff;
+  DT_INT unk_5ff5733;
+  DT_UINT unk_a26c284;
   DT_UINT unk_a08a2f4;
   DT_UINT unk_aa674fe;
   DT_INT unk_68af238;
   t619110a4 unk_7c0b75d;
   DT_FIXEDARRAY<DT_INT, 5> unk_e5d7f3;
+  DT_UINT unk_3b60fa7;
 
   void read(const char* base, char* &ptr);
 };
