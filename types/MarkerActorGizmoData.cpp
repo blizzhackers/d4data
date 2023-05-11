@@ -20,7 +20,7 @@ void MarkerActorGizmoData::read(const char* base, char* &ptr) {
   current = ptr + 0x50;
   readData(&unk_83131fe, base, current);
   current = ptr + 0x60;
-  readData(&unk_c82c39b, base, current);
+  readData(&ptChestGizmoData, base, current);
   current = ptr + 0x70;
   readData(&unk_f48a504, base, current);
   current = ptr + 0x80;

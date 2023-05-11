@@ -20,6 +20,6 @@ void PowerStartVariant::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_fca3b69, base, current);
   current = ptr + 0x18;
-  readData(&unk_c0426f9, base, current);
+  readData(&arPowerScriptParams, base, current);
   ptr += 0x28;
 }

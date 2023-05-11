@@ -26,7 +26,7 @@ struct GlobalData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_VARIABLEARRAY<LookVariant> arLookVariants;
-  DT_VARIABLEARRAY<ShaderMapOverride> unk_620b39b;
+  DT_VARIABLEARRAY<ShaderMapOverride> arShaderMapOverrides;
   DT_VARIABLEARRAY<DT_INT> unk_156a14c;
   DT_VARIABLEARRAY<DT_INT> unk_6759f02;
   DT_FLOAT unk_e2e2917;

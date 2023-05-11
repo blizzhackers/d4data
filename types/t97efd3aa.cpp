@@ -14,7 +14,7 @@ void t97efd3aa::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_ceba35b, base, current);
   current = ptr + 0x38;
-  readData(&unk_e92903, base, current);
+  readData(&arNpcTemplates, base, current);
   current = ptr + 0x48;
   readData(&unk_86e0b08, base, current);
   current = ptr + 0x58;
@@ -26,12 +26,12 @@ void t97efd3aa::read(const char* base, char* &ptr) {
   current = ptr + 0x88;
   readData(&unk_a884bb, base, current);
   current = ptr + 0x98;
-  readData(&unk_23aedc8, base, current);
+  readData(&arGizmoTemplates, base, current);
   current = ptr + 0xa8;
-  readData(&unk_478f948, base, current);
+  readData(&arDeathTemplates, base, current);
   current = ptr + 0xb8;
-  readData(&unk_8589d1d, base, current);
+  readData(&arDeathLookTemplates, base, current);
   current = ptr + 0xc8;
-  readData(&unk_8959e97, base, current);
+  readData(&arDeathMaterialTemplates, base, current);
   ptr += 0xd8;
 }

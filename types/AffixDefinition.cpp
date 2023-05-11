@@ -34,7 +34,7 @@ void AffixDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x74;
   readData(&eAffixType, base, current);
   current = ptr + 0x78;
-  readData(&unk_2a52848, base, current);
+  readData(&ptItemAffixAttributes, base, current);
   current = ptr + 0x88;
   readData(&arStaticValues, base, current);
   current = ptr + 0x98;

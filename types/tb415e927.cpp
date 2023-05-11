@@ -26,7 +26,7 @@ void tb415e927::read(const char* base, char* &ptr) {
   current = ptr + 0x80;
   readData(&unk_b3ee7d3, base, current);
   current = ptr + 0x90;
-  readData(&unk_ebdf572, base, current);
+  readData(&arTextureContents, base, current);
   current = ptr + 0xa0;
   readData(&unk_849d767, base, current);
   current = ptr + 0xb0;

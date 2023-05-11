@@ -9,6 +9,7 @@
 #include "BountyIcons.h"
 #include "BountyTierIcons.h"
 #include "GlobalFontColor.h"
+#include "HeroDetailsArray.h"
 #include "ScrollbarStyle.h"
 #include "t22d9402d.h"
 #include "t31220ee1.h"
@@ -18,7 +19,6 @@
 #include "t7a02a8d6.h"
 #include "t894bd255.h"
 #include "ta77b14db.h"
-#include "taec481b3.h"
 #include "tc36fb4b8.h"
 #include "te3bec795.h"
 #include "tfac0f318.h"
@@ -167,7 +167,7 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_7c3f20c;
   DT_UINT unk_f993efd;
   DT_UINT unk_ba98f17;
-  DT_FIXEDARRAY<taec481b3, 6> unk_8c77381;
+  DT_FIXEDARRAY<HeroDetailsArray, 6> unk_8c77381;
   DT_FLOAT unk_934d708;
   DT_FLOAT fCreatedTangents;
   DT_FLOAT unk_e3de54d;

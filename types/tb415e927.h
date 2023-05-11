@@ -39,7 +39,7 @@ struct tb415e927 : public ComplexRead {
   DT_VARIABLEARRAY<t9c65b048> unk_4854cae;
   DT_VARIABLEARRAY<t8636d92f> unk_71df495;
   DT_VARIABLEARRAY<tf5c4e3ed> unk_b3ee7d3;
-  DT_VARIABLEARRAY<TextureContent> unk_ebdf572;
+  DT_VARIABLEARRAY<TextureContent> arTextureContents;
   DT_VARIABLEARRAY<t4335f281> unk_849d767;
   DT_VARIABLEARRAY<tdb8a98c8> unk_bd8882e;
   DT_VARIABLEARRAY<t2e7b70b1> unk_6f1a5f7;

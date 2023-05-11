@@ -17,7 +17,7 @@ struct PowerStartVariant : public ComplexRead {
   DT_INT bIgnoreRange;
   DT_INT bForceCast;
   DT_INT unk_fca3b69;
-  DT_VARIABLEARRAY<PowerScriptParam> unk_c0426f9;
+  DT_VARIABLEARRAY<PowerScriptParam> arPowerScriptParams;
 
   void read(const char* base, char* &ptr);
 };

@@ -13,7 +13,7 @@
 struct GlobalWaypointData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_VARIABLEARRAY<GlobalMarkerActor> unk_e4e2cd2;
+  DT_VARIABLEARRAY<GlobalMarkerActor> arGlobalMarkerActors;
 
   void read(const char* base, char* &ptr);
 };

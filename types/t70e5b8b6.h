@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "tedbd9a8a.h"
+#include "PrefabData.h"
 
 #pragma push(pack, 1)
 
 struct t70e5b8b6 : public ComplexRead {
   DT_UINT unk_770f3b7;
-  tedbd9a8a unk_bbfbbfe;
+  PrefabData tPrefabData;
 
   void read(const char* base, char* &ptr);
 };

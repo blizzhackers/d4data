@@ -8,7 +8,7 @@
 void ActorAIData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_e5e7bd4, base, current);
+  readData(&ptAIBroadcasts, base, current);
   current = ptr + 0x10;
   readData(&gbidAIPropType, base, current);
   current = ptr + 0x14;

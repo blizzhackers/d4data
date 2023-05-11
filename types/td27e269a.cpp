@@ -12,7 +12,7 @@ void td27e269a::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_6f325d2, base, current);
+  readData(&arDungeonLists, base, current);
   current = ptr + 0x30;
   readData(&unk_6ccc3cf, base, current);
   current = ptr + 0x40;

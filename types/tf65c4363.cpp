@@ -20,7 +20,7 @@ void tf65c4363::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_b5b0f9a, base, current);
   current = ptr + 0x48;
-  readData(&unk_9af876f, base, current);
+  readData(&arPrefabCustomizations, base, current);
   current = ptr + 0x58;
   readData(&bIsChild, base, current);
   ptr += 0x60;

@@ -15,7 +15,7 @@ struct ShaderMapDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Shader> unk_71e61d;
   DT_SNO<SnoGroup::Shader> unk_24ebc07;
   DT_SNO<SnoGroup::Shader> unk_34304af;
-  DT_VARIABLEARRAY<ShaderOverride> unk_c83f99d;
+  DT_VARIABLEARRAY<ShaderOverride> arShaderOverrides;
   DT_TAGMAP<DT_INT> unk_54bea5a;
 
   void read(const char* base, char* &ptr);

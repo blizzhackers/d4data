@@ -12,7 +12,7 @@
 
 struct LookVariantMap : public ComplexRead {
   DT_UINT dwLookVariant;
-  DT_VARIABLEARRAY<LookVariantOverride> unk_3135b10;
+  DT_VARIABLEARRAY<LookVariantOverride> arLookVariantOverrides;
 
   void read(const char* base, char* &ptr);
 };

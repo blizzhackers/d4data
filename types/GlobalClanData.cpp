@@ -30,7 +30,7 @@ void GlobalClanData::read(const char* base, char* &ptr) {
   current = ptr + 0x90;
   readData(&unk_fcfa894, base, current);
   current = ptr + 0xa0;
-  readData(&unk_28158ed, base, current);
+  readData(&arIconLayouts, base, current);
   current = ptr + 0xb0;
   readData(&unk_a8d4641, base, current);
   current = ptr + 0xc0;

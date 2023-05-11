@@ -8,10 +8,11 @@
 #include "../types.h"
 #include "GizmoConditionData.h"
 #include "MarkerBaseGizmoData.h"
+#include "MarkerChestGizmoData.h"
 #include "MarkerDoorGizmoData.h"
+#include "MarkerHiddenCacheGizmoData.h"
 #include "MarkerPortalGizmoData.h"
 #include "MarkerWaypointGizmoData.h"
-#include "t1121a259.h"
 #include "t2d410740.h"
 #include "t478eb43b.h"
 #include "t4ddd8603.h"
@@ -19,7 +20,6 @@
 #include "t7324c6f7.h"
 #include "t7b11e164.h"
 #include "t8d3deb43.h"
-#include "ta967fc2.h"
 #include "tb2ef091a.h"
 #include "tbf0c5b22.h"
 #include "te3f5648a.h"
@@ -34,7 +34,7 @@ struct MarkerActorGizmoData : public ComplexRead {
   DT_VARIABLEARRAY<t2d410740> unk_ac84ca4;
   DT_VARIABLEARRAY<t4ddd8603> unk_b64cb67;
   DT_VARIABLEARRAY<tb2ef091a> unk_83131fe;
-  DT_VARIABLEARRAY<t1121a259> unk_c82c39b;
+  DT_VARIABLEARRAY<MarkerChestGizmoData> ptChestGizmoData;
   DT_VARIABLEARRAY<te6346255> unk_f48a504;
   DT_VARIABLEARRAY<MarkerPortalGizmoData> ptPortalGizmoData;
   DT_VARIABLEARRAY<t7b11e164> unk_f441be6;
@@ -45,7 +45,7 @@ struct MarkerActorGizmoData : public ComplexRead {
   DT_VARIABLEARRAY<MarkerBaseGizmoData> ptMarkerBaseGizmoData;
   DT_VARIABLEARRAY<t7324c6f7> unk_ebfdb39;
   DT_VARIABLEARRAY<MarkerWaypointGizmoData> ptWaypointGizmoData;
-  DT_VARIABLEARRAY<ta967fc2> ptHiddenCacheGizmoData;
+  DT_VARIABLEARRAY<MarkerHiddenCacheGizmoData> ptHiddenCacheGizmoData;
 
   void read(const char* base, char* &ptr);
 };

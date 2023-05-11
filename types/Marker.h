@@ -10,7 +10,7 @@
 #include "MarkerGroupData.h"
 #include "MarkerLink.h"
 #include "PRTransform.h"
-#include "tedbd9a8a.h"
+#include "PrefabData.h"
 
 #pragma push(pack, 1)
 
@@ -27,7 +27,7 @@ struct Marker : public ComplexRead {
   DT_VARIABLEARRAY<MarkerLink> ptMarkerLinks;
   DT_INT unk_c339f69;
   DT_UINT dwSeed;
-  tedbd9a8a unk_bbfbbfe;
+  PrefabData tPrefabData;
 
   void read(const char* base, char* &ptr);
 };

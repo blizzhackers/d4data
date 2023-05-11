@@ -16,7 +16,7 @@ void CrafterDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&arTabs, base, current);
   current = ptr + 0x28;
-  readData(&unk_19e7a72, base, current);
+  readData(&arRecipeTiers, base, current);
   current = ptr + 0x38;
   readData(&unk_3668490, base, current);
   current = ptr + 0x48;

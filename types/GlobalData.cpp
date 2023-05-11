@@ -14,7 +14,7 @@ void GlobalData::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&arLookVariants, base, current);
   current = ptr + 0x20;
-  readData(&unk_620b39b, base, current);
+  readData(&arShaderMapOverrides, base, current);
   current = ptr + 0x30;
   readData(&unk_156a14c, base, current);
   current = ptr + 0x40;

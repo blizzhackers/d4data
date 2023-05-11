@@ -36,7 +36,7 @@ void PlayerSavedData::read(const char* base, char* &ptr) {
   current = ptr + 0x7dc;
   readData(&arTransmogSlots, base, current);
   current = ptr + 0x8d0;
-  readData(&unk_295c984, base, current);
+  readData(&arSavedTransmogs, base, current);
   current = ptr + 0xda8;
   readData(&tSavedPlayerTitle, base, current);
   ptr += 0xe50;

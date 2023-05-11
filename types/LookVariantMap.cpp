@@ -10,6 +10,6 @@ void LookVariantMap::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&dwLookVariant, base, current);
   current = ptr + 0x8;
-  readData(&unk_3135b10, base, current);
+  readData(&arLookVariantOverrides, base, current);
   ptr += 0x18;
 }

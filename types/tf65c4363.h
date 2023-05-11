@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t56bf0569.h"
+#include "PrefabCustomization.h"
 
 #pragma push(pack, 1)
 
@@ -17,7 +17,7 @@ struct tf65c4363 : public ComplexRead {
   DT_GBID<0x14> gbidSpawnLocType;
   DT_VARIABLEARRAY<DT_GBID<0x18>> arActorGroups;
   DT_VARIABLEARRAY<DT_GBID<0x33>> unk_b5b0f9a;
-  DT_VARIABLEARRAY<t56bf0569> unk_9af876f;
+  DT_VARIABLEARRAY<PrefabCustomization> arPrefabCustomizations;
   DT_INT bIsChild;
 
   void read(const char* base, char* &ptr);

@@ -33,7 +33,7 @@ struct GlobalClanData : public ComplexRead {
   DT_VARIABLEARRAY<BannerIcon> arIcons;
   DT_VARIABLEARRAY<BannerColor> arColors;
   DT_VARIABLEARRAY<tfc41276e> unk_fcfa894;
-  DT_VARIABLEARRAY<IconLayout> unk_28158ed;
+  DT_VARIABLEARRAY<IconLayout> arIconLayouts;
   DT_VARIABLEARRAY<PresetBannerData> unk_a8d4641;
   taa55cd98 unk_38a6145;
   t1259dca8 unk_109949c;
