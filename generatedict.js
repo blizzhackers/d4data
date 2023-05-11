@@ -734,7 +734,7 @@ names = newnames;
 newnames = {};
 
 prefix = Object.keys(prefix).sort();
-dict = Object.keys(dict).sort();
+dict = Object.keys(dict).filter(v => v.length > 1).sort();
 
 fs.writeFileSync('prefix.txt', prefix.join('\n'));
 fs.writeFileSync('dict.txt', dict.join('\n'));
