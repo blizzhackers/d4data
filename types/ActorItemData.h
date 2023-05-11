@@ -55,7 +55,7 @@ struct ActorItemData : public ComplexRead {
   DT_FIXEDARRAY<t68a819c3, 5> unk_3628237;
   DT_FIXEDARRAY<t68a819c3, 5> unk_c0b773;
   DT_VARIABLEARRAY<HardpointOffset> unk_def7f43;
-  ActorWeaponData unk_ff861b8;
+  ActorWeaponData tWeaponData;
   tbdef6175 unk_3b0050f;
   DT_INT unk_e133e62;
 

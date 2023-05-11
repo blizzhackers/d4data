@@ -11,8 +11,8 @@
 #pragma push(pack, 1)
 
 struct CollisionCapsule : public ComplexRead {
-  DT_FLOAT unk_713d71b;
-  DT_FLOAT unk_713d71c;
+  DT_FLOAT flRadiusA;
+  DT_FLOAT flRadiusB;
   DT_FLOAT flLength;
   Hardpoint tHardpoint;
   DT_UINT unk_2588cf9;

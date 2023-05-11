@@ -8,9 +8,9 @@
 void CollisionCapsule::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_713d71b, base, current);
+  readData(&flRadiusA, base, current);
   current = ptr + 0x4;
-  readData(&unk_713d71c, base, current);
+  readData(&flRadiusB, base, current);
   current = ptr + 0x8;
   readData(&flLength, base, current);
   current = ptr + 0xc;

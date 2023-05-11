@@ -84,7 +84,7 @@ void ActorItemData::read(const char* base, char* &ptr) {
   current = ptr + 0x220;
   readData(&unk_def7f43, base, current);
   current = ptr + 0x230;
-  readData(&unk_ff861b8, base, current);
+  readData(&tWeaponData, base, current);
   current = ptr + 0x240;
   readData(&unk_3b0050f, base, current);
   current = ptr + 0x294;
