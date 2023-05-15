@@ -8,6 +8,7 @@
 #include "../types.h"
 #include "BountyIcons.h"
 #include "BountyTierIcons.h"
+#include "ConnectorProperties.h"
 #include "GlobalFontColor.h"
 #include "HeroDetailsArray.h"
 #include "ScrollbarStyle.h"
@@ -21,7 +22,6 @@
 #include "ta77b14db.h"
 #include "tc36fb4b8.h"
 #include "te3bec795.h"
-#include "tfac0f318.h"
 
 #pragma push(pack, 1)
 
@@ -141,13 +141,13 @@ struct GlobalUIData : public ComplexRead {
   DT_FLOAT unk_10c7eaa;
   DT_FLOAT unk_a61c4bf;
   t55ee8277 unk_e058ac2;
-  tfac0f318 unk_abdc576;
-  tfac0f318 unk_55e00d8;
-  tfac0f318 unk_3ba9d7b;
-  tfac0f318 unk_575246e;
-  tfac0f318 unk_155fd0;
-  tfac0f318 unk_9c59a73;
-  tfac0f318 unk_88a6181;
+  ConnectorProperties unk_abdc576;
+  ConnectorProperties unk_55e00d8;
+  ConnectorProperties unk_3ba9d7b;
+  ConnectorProperties unk_575246e;
+  ConnectorProperties unk_155fd0;
+  ConnectorProperties unk_9c59a73;
+  ConnectorProperties unk_88a6181;
   DT_RGBACOLOR unk_cfbdf91;
   DT_RGBACOLOR unk_62538b3;
   DT_RGBACOLOR unk_988bcb0;

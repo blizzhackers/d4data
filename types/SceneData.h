@@ -6,9 +6,9 @@
 #pragma once
 
 #include "../types.h"
+#include "FoliageGrid.h"
 #include "Octree.h"
 #include "SurfaceGrid.h"
-#include "t65cf645d.h"
 #include "te6694729.h"
 
 #pragma push(pack, 1)
@@ -18,7 +18,7 @@ struct SceneData : public ComplexRead {
   DT_INT unk_b3a0ae7;
   DT_VARIABLEARRAY<Octree> ptSurfaceOctree;
   DT_VARIABLEARRAY<SurfaceGrid> ptSurfaceGrid;
-  DT_VARIABLEARRAY<t65cf645d> unk_da9dcc1;
+  DT_VARIABLEARRAY<FoliageGrid> ptFoliageGrid;
 
   void read(const char* base, char* &ptr);
 };

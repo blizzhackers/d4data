@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "RequiredMessageHeader.h"
-#include "t587c11d4.h"
+#include "TraceMessage.h"
 #include "t74952762.h"
 
 #pragma push(pack, 1)
@@ -19,7 +19,7 @@ struct t11399dba : public ComplexRead {
   DT_FLOAT flAspectRatio;
   DT_UINT uProtocolHash;
   DT_FIXEDARRAY<t74952762, 2> unk_23ac715;
-  t587c11d4 unk_4c6a043;
+  TraceMessage unk_4c6a043;
 
   void read(const char* base, char* &ptr);
 };

@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t8c51adb6.h"
+#include "CampaignArc.h"
 
 #pragma push(pack, 1)
 
 struct CampaignData : public ComplexRead {
-  DT_VARIABLEARRAY<t8c51adb6> unk_22f765c;
+  DT_VARIABLEARRAY<CampaignArc> arCampaignArcs;
 
   void read(const char* base, char* &ptr);
 };

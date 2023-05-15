@@ -9,8 +9,8 @@
 #include "ActorWeaponData.h"
 #include "HardpointLink.h"
 #include "HardpointOffset.h"
+#include "HardpointOffsets.h"
 #include "t4bd0bef6.h"
-#include "t68a819c3.h"
 #include "t7bd3842a.h"
 #include "tbdef6175.h"
 
@@ -52,8 +52,8 @@ struct ActorItemData : public ComplexRead {
   DT_ENUM<DT_INT> eItemUseType;
   DT_SNO<SnoGroup::Power> unk_db54dcf;
   DT_SNO<SnoGroup::LevelArea> unk_4bfa38e;
-  DT_FIXEDARRAY<t68a819c3, 5> unk_3628237;
-  DT_FIXEDARRAY<t68a819c3, 5> unk_c0b773;
+  DT_FIXEDARRAY<HardpointOffsets, 5> tHardpointOffsets;
+  DT_FIXEDARRAY<HardpointOffsets, 5> unk_c0b773;
   DT_VARIABLEARRAY<HardpointOffset> unk_def7f43;
   ActorWeaponData tWeaponData;
   tbdef6175 unk_3b0050f;

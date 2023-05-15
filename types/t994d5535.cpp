@@ -42,7 +42,7 @@ void t994d5535::read(const char* base, char* &ptr) {
   current = ptr + 0x78;
   readData(&unk_8fd92f7, base, current);
   current = ptr + 0x80;
-  readData(&unk_8a48001, base, current);
+  readData(&arListenerReactions, base, current);
   current = ptr + 0x90;
   readData(&unk_aae0113, base, current);
   current = ptr + 0xa0;

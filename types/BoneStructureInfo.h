@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
-#include "t98dc03a5.h"
+#include "AppBone.h"
 
 #pragma push(pack, 1)
 
 struct BoneStructureInfo : public ComplexRead {
-  t98dc03a5 tBoneName;
-  t98dc03a5 tParentBoneName;
+  AppBone tBoneName;
+  AppBone tParentBoneName;
   DT_INT unk_2e1e27;
 
   void read(const char* base, char* &ptr);

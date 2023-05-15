@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "LevelScalingData.h"
-#include "t5436b3aa.h"
+#include "SupportedServices.h"
 
 #pragma push(pack, 1)
 
@@ -22,7 +22,7 @@ struct LevelAreaDefinition : public ComplexRead {
   DT_SNO<SnoGroup::FogofWar> snoFogOfWar;
   LevelScalingData unk_61c02e8;
   DT_FIXEDARRAY<LevelScalingData, 4> unk_4e56acb;
-  t5436b3aa tServices;
+  SupportedServices tServices;
 
   void read(const char* base, char* &ptr);
 };

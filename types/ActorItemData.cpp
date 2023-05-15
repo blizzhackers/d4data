@@ -78,7 +78,7 @@ void ActorItemData::read(const char* base, char* &ptr) {
   current = ptr + 0xdc;
   readData(&unk_4bfa38e, base, current);
   current = ptr + 0xe0;
-  readData(&unk_3628237, base, current);
+  readData(&tHardpointOffsets, base, current);
   current = ptr + 0x180;
   readData(&unk_c0b773, base, current);
   current = ptr + 0x220;

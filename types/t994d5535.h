@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t37c232db.h"
+#include "ListenerReaction.h"
 
 #pragma push(pack, 1)
 
@@ -28,7 +28,7 @@ struct t994d5535 : public ComplexRead {
   DT_INT unk_2e54e3c;
   DT_SNO_NAME unk_bcac396;
   DT_FLOAT unk_8fd92f7;
-  DT_VARIABLEARRAY<t37c232db> unk_8a48001;
+  DT_VARIABLEARRAY<ListenerReaction> arListenerReactions;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Speaker>> unk_aae0113;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Speaker>> unk_f95422b;
   DT_SNO_NAME unk_8cbb06b;

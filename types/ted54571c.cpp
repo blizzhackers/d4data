@@ -8,6 +8,6 @@
 void ted54571c::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_e4d5c3, base, current);
+  readData(&ptRestrictedComponents, base, current);
   ptr += 0x10;
 }

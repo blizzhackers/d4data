@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "t98dc03a5.h"
+#include "AppBone.h"
 
 #pragma push(pack, 1)
 
 struct tfbdf1440 : public ComplexRead {
-  DT_VARIABLEARRAY<t98dc03a5> arBones;
+  DT_VARIABLEARRAY<AppBone> arBones;
 
   void read(const char* base, char* &ptr);
 };

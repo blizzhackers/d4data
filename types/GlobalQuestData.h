@@ -7,7 +7,7 @@
 
 #include "../types.h"
 #include "CampaignData.h"
-#include "tfac0f318.h"
+#include "ConnectorProperties.h"
 
 #pragma push(pack, 1)
 
@@ -31,8 +31,8 @@ struct GlobalQuestData : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> unk_b419a05;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::FogofWar>> unk_a70acb6;
   DT_UINT unk_68fb226;
-  tfac0f318 unk_3286df3;
-  tfac0f318 unk_dd4bd56;
+  ConnectorProperties unk_3286df3;
+  ConnectorProperties unk_dd4bd56;
   DT_UINT unk_195043d;
 
   void read(const char* base, char* &ptr);

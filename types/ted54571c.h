@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "tea88ceec.h"
+#include "RestrictedComponent.h"
 
 #pragma push(pack, 1)
 
 struct ted54571c : public ComplexRead {
-  DT_VARIABLEARRAY<tea88ceec> unk_e4d5c3;
+  DT_VARIABLEARRAY<RestrictedComponent> ptRestrictedComponents;
 
   void read(const char* base, char* &ptr);
 };
