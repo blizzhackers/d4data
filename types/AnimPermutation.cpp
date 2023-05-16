@@ -36,7 +36,7 @@ void AnimPermutation::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&arContactFrames, base, current);
   current = ptr + 0x88;
-  readData(&unk_df9a366, base, current);
+  readData(&arFacingWindows, base, current);
   current = ptr + 0x98;
   readData(&unk_f0fe405, base, current);
   current = ptr + 0xa8;

@@ -15,9 +15,9 @@
 0x78: unk_9a3836e # DT_ENUM (32 bits used)
 0x7c: unk_49c0222 # DT_ENUM (32 bits used)
 0x80: unk_1450715 # DT_INT (1 bits used)
-0x84: unk_f3f3cf0 # DT_INT (1 bits used)
-0x88: unk_85472fb # DT_INT (1 bits used)
-0x8c: unk_650bee9 # DT_INT (1 bits used)
+0x84: bChannelled # DT_INT (1 bits used)
+0x88: bChannelledMovement # DT_INT (1 bits used)
+0x8c: bAutoChannelled # DT_INT (1 bits used)
 0x90: unk_3837f2a # DT_INT (1 bits used)
 0x94: unk_6c6eb6b # DT_INT (1 bits used)
 0x98: unk_c19db61 # DT_STRING_FORMULA
@@ -31,7 +31,7 @@
 0xd4: unk_49572b0 # DT_ENUM (32 bits used)
 0xd8: unk_c989719 # DT_ENUM (32 bits used)
 0xe0: unk_d8567e5 # DT_VARIABLEARRAY (32 bits used) {group 0x1d "Power"} => DT_SNO
-0xf0: unk_d5c4ed2 # DT_SNO (32 bits used) {group 0x1d "Power"}
+0xf0: snoEnchantmentPower # DT_SNO (32 bits used) {group 0x1d "Power"}
 0xf4: unk_4d873ef # DT_SNO (32 bits used) {group 0x1d "Power"}
 0xf8: unk_fead6c5 # DT_INT (1 bits used)
 0xfc: unk_fca3b69 # DT_INT (1 bits used)
@@ -46,17 +46,17 @@
 0x120: unk_91a127f # DT_INT (1 bits used)
 0x124: unk_9e108ae # DT_INT (1 bits used)
 0x128: unk_48531b6 # DT_INT (1 bits used)
-0x130: unk_723948e # DT_POLYMORPHIC_VARIABLEARRAY => PowerPhasePreplay
+0x130: arEndingPreplayed # DT_POLYMORPHIC_VARIABLEARRAY => PowerPhasePreplay
 0x148: unk_fda753d # DT_POLYMORPHIC_VARIABLEARRAY => unknown 0xe24901c6
 0x160: arPhases # DT_POLYMORPHIC_VARIABLEARRAY => DT_INT64
 0x178: unk_92fea1c # DT_INT (1 bits used)
 0x17c: unk_8cdde38 # DT_INT (1 bits used)
-0x180: unk_df9a366 # DT_VARIABLEARRAY => unknown 0x5f5e88ad
+0x180: arFacingWindows # DT_VARIABLEARRAY => unknown 0x5f5e88ad
 0x190: unk_4bf03ff # DT_INT (1 bits used)
 0x198: tAttackSpeed # DT_STRING_FORMULA
 0x1b8: unk_6deb090 # DT_INT (1 bits used)
 0x1bc: unk_ed2bdad # DT_INT (1 bits used)
-0x1c0: unk_d028a89 # DT_INT (1 bits used)
+0x1c0: bOverkillStacked # DT_INT (1 bits used)
 0x1c4: unk_7a86b64 # DT_INT (1 bits used)
 0x1c8: eDamageType # DT_ENUM (32 bits used)
 0x1cc: unk_752edeb # DT_INT (1 bits used)
@@ -71,7 +71,7 @@
 0x230: unk_5e1a52d # DT_INT (1 bits used)
 0x234: unk_3f1f0ff # DT_INT (1 bits used)
 0x238: unk_41f8768 # DT_ENUM (32 bits used)
-0x240: unk_de3b427 # DT_VARIABLEARRAY => PowerResourceCost
+0x240: arResourceCosts # DT_VARIABLEARRAY => PowerResourceCost
 0x250: tHealthCost # DT_STRING_FORMULA
 0x270: tChargeCost # DT_STRING_FORMULA
 0x290: tMaxCharges # DT_STRING_FORMULA
@@ -82,7 +82,7 @@
 0x330: bTargetGroundOnly # DT_INT (1 bits used)
 0x334: unk_fc01065 # DT_ENUM (32 bits used)
 0x338: unk_2ce4eb5 # DT_INT (1 bits used)
-0x33c: unk_e65bc77 # DT_INT (1 bits used)
+0x33c: bCanSteer # DT_INT (1 bits used)
 0x340: unk_67b65e9 # DT_INT (1 bits used)
 0x344: unk_a00c5eb # DT_INT (1 bits used)
 0x348: unk_42057f3 # DT_INT (1 bits used)
@@ -137,11 +137,11 @@
 0x50c: unk_eb84fbe # DT_INT (1 bits used)
 0x510: bInvisibleDuring # DT_INT (1 bits used)
 0x514: bInvulnerableDuring # DT_INT (1 bits used)
-0x518: unk_1de20c9 # DT_INT (1 bits used)
+0x518: bUntargetableDuring # DT_INT (1 bits used)
 0x51c: bCannotDieDuring # DT_INT (1 bits used)
 0x520: unk_636a66b # DT_INT (1 bits used)
 0x524: unk_160bc26 # DT_INT (1 bits used)
-0x528: unk_e0369f5 # DT_INT (1 bits used)
+0x528: bIgnoreGravityDuring # DT_INT (1 bits used)
 0x52c: unk_7a416a6 # DT_INT (1 bits used)
 0x530: arCCInfo # DT_FIXEDARRAY [14 array size] => unknown 0x146f0099
 0xa70: unk_6afae78 # DT_INT (1 bits used)
@@ -191,5 +191,5 @@
 0xb88: unk_c5a8e20 # HardpointLink
 0xb90: unk_3ff871b # DT_FLOAT (32 bits used)
 0xb98: unk_90afe9c # DT_VARIABLEARRAY => unknown 0xde01263
-0xba8: unk_cd34118 # DT_VARIABLEARRAY => PowerPetSpawn
+0xba8: arPetSpawns # DT_VARIABLEARRAY => PowerPetSpawn
 0xbb8: null or eof # DT_NULL

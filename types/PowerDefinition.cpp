@@ -32,11 +32,11 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x80;
   readData(&unk_1450715, base, current);
   current = ptr + 0x84;
-  readData(&unk_f3f3cf0, base, current);
+  readData(&bChannelled, base, current);
   current = ptr + 0x88;
-  readData(&unk_85472fb, base, current);
+  readData(&bChannelledMovement, base, current);
   current = ptr + 0x8c;
-  readData(&unk_650bee9, base, current);
+  readData(&bAutoChannelled, base, current);
   current = ptr + 0x90;
   readData(&unk_3837f2a, base, current);
   current = ptr + 0x94;
@@ -64,7 +64,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xe0;
   readData(&unk_d8567e5, base, current);
   current = ptr + 0xf0;
-  readData(&unk_d5c4ed2, base, current);
+  readData(&snoEnchantmentPower, base, current);
   current = ptr + 0xf4;
   readData(&unk_4d873ef, base, current);
   current = ptr + 0xf8;
@@ -94,7 +94,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x128;
   readData(&unk_48531b6, base, current);
   current = ptr + 0x130;
-  readData(&unk_723948e, base, current);
+  readData(&arEndingPreplayed, base, current);
   current = ptr + 0x148;
   readData(&unk_fda753d, base, current);
   current = ptr + 0x160;
@@ -104,7 +104,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x17c;
   readData(&unk_8cdde38, base, current);
   current = ptr + 0x180;
-  readData(&unk_df9a366, base, current);
+  readData(&arFacingWindows, base, current);
   current = ptr + 0x190;
   readData(&unk_4bf03ff, base, current);
   current = ptr + 0x198;
@@ -114,7 +114,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x1bc;
   readData(&unk_ed2bdad, base, current);
   current = ptr + 0x1c0;
-  readData(&unk_d028a89, base, current);
+  readData(&bOverkillStacked, base, current);
   current = ptr + 0x1c4;
   readData(&unk_7a86b64, base, current);
   current = ptr + 0x1c8;
@@ -144,7 +144,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x238;
   readData(&unk_41f8768, base, current);
   current = ptr + 0x240;
-  readData(&unk_de3b427, base, current);
+  readData(&arResourceCosts, base, current);
   current = ptr + 0x250;
   readData(&tHealthCost, base, current);
   current = ptr + 0x270;
@@ -166,7 +166,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x338;
   readData(&unk_2ce4eb5, base, current);
   current = ptr + 0x33c;
-  readData(&unk_e65bc77, base, current);
+  readData(&bCanSteer, base, current);
   current = ptr + 0x340;
   readData(&unk_67b65e9, base, current);
   current = ptr + 0x344;
@@ -276,7 +276,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x514;
   readData(&bInvulnerableDuring, base, current);
   current = ptr + 0x518;
-  readData(&unk_1de20c9, base, current);
+  readData(&bUntargetableDuring, base, current);
   current = ptr + 0x51c;
   readData(&bCannotDieDuring, base, current);
   current = ptr + 0x520;
@@ -284,7 +284,7 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x524;
   readData(&unk_160bc26, base, current);
   current = ptr + 0x528;
-  readData(&unk_e0369f5, base, current);
+  readData(&bIgnoreGravityDuring, base, current);
   current = ptr + 0x52c;
   readData(&unk_7a416a6, base, current);
   current = ptr + 0x530;
@@ -384,6 +384,6 @@ void PowerDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xb98;
   readData(&unk_90afe9c, base, current);
   current = ptr + 0xba8;
-  readData(&unk_cd34118, base, current);
+  readData(&arPetSpawns, base, current);
   ptr += 0xbb8;
 }

@@ -39,9 +39,9 @@ struct PowerDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_9a3836e;
   DT_ENUM<DT_INT> unk_49c0222;
   DT_INT unk_1450715;
-  DT_INT unk_f3f3cf0;
-  DT_INT unk_85472fb;
-  DT_INT unk_650bee9;
+  DT_INT bChannelled;
+  DT_INT bChannelledMovement;
+  DT_INT bAutoChannelled;
   DT_INT unk_3837f2a;
   DT_INT unk_6c6eb6b;
   DT_STRING_FORMULA unk_c19db61;
@@ -55,7 +55,7 @@ struct PowerDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_49572b0;
   DT_ENUM<DT_INT> unk_c989719;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Power>> unk_d8567e5;
-  DT_SNO<SnoGroup::Power> unk_d5c4ed2;
+  DT_SNO<SnoGroup::Power> snoEnchantmentPower;
   DT_SNO<SnoGroup::Power> unk_4d873ef;
   DT_INT unk_fead6c5;
   DT_INT unk_fca3b69;
@@ -70,17 +70,17 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_91a127f;
   DT_INT unk_9e108ae;
   DT_INT unk_48531b6;
-  DT_POLYMORPHIC_VARIABLEARRAY unk_723948e;
+  DT_POLYMORPHIC_VARIABLEARRAY arEndingPreplayed;
   DT_POLYMORPHIC_VARIABLEARRAY unk_fda753d;
   DT_POLYMORPHIC_VARIABLEARRAY arPhases;
   DT_INT unk_92fea1c;
   DT_INT unk_8cdde38;
-  DT_VARIABLEARRAY<t5f5e88ad> unk_df9a366;
+  DT_VARIABLEARRAY<t5f5e88ad> arFacingWindows;
   DT_INT unk_4bf03ff;
   DT_STRING_FORMULA tAttackSpeed;
   DT_INT unk_6deb090;
   DT_INT unk_ed2bdad;
-  DT_INT unk_d028a89;
+  DT_INT bOverkillStacked;
   DT_INT unk_7a86b64;
   DT_ENUM<DT_INT> eDamageType;
   DT_INT unk_752edeb;
@@ -95,7 +95,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_5e1a52d;
   DT_INT unk_3f1f0ff;
   DT_ENUM<DT_INT> unk_41f8768;
-  DT_VARIABLEARRAY<PowerResourceCost> unk_de3b427;
+  DT_VARIABLEARRAY<PowerResourceCost> arResourceCosts;
   DT_STRING_FORMULA tHealthCost;
   DT_STRING_FORMULA tChargeCost;
   DT_STRING_FORMULA tMaxCharges;
@@ -106,7 +106,7 @@ struct PowerDefinition : public ComplexRead {
   DT_INT bTargetGroundOnly;
   DT_ENUM<DT_INT> unk_fc01065;
   DT_INT unk_2ce4eb5;
-  DT_INT unk_e65bc77;
+  DT_INT bCanSteer;
   DT_INT unk_67b65e9;
   DT_INT unk_a00c5eb;
   DT_INT unk_42057f3;
@@ -161,11 +161,11 @@ struct PowerDefinition : public ComplexRead {
   DT_INT unk_eb84fbe;
   DT_INT bInvisibleDuring;
   DT_INT bInvulnerableDuring;
-  DT_INT unk_1de20c9;
+  DT_INT bUntargetableDuring;
   DT_INT bCannotDieDuring;
   DT_INT unk_636a66b;
   DT_INT unk_160bc26;
-  DT_INT unk_e0369f5;
+  DT_INT bIgnoreGravityDuring;
   DT_INT unk_7a416a6;
   DT_FIXEDARRAY<t146f0099, 14> arCCInfo;
   DT_INT unk_6afae78;
@@ -215,7 +215,7 @@ struct PowerDefinition : public ComplexRead {
   HardpointLink unk_c5a8e20;
   DT_FLOAT unk_3ff871b;
   DT_VARIABLEARRAY<tde01263> unk_90afe9c;
-  DT_VARIABLEARRAY<PowerPetSpawn> unk_cd34118;
+  DT_VARIABLEARRAY<PowerPetSpawn> arPetSpawns;
 
   void read(const char* base, char* &ptr);
 };
