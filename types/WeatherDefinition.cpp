@@ -22,7 +22,7 @@ void WeatherDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x68;
   readData(&tColorCorrection, base, current);
   current = ptr + 0x78;
-  readData(&unk_1c3741b, base, current);
+  readData(&tDomainEpoch, base, current);
   current = ptr + 0x88;
   readData(&unk_b038972, base, current);
   current = ptr + 0x98;

@@ -12,7 +12,7 @@ void ClothDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwFlags, base, current);
   current = ptr + 0x10;
-  readData(&unk_2a6986f, base, current);
+  readData(&nPurchaseGizmo, base, current);
   current = ptr + 0x14;
   readData(&unk_be5c463, base, current);
   current = ptr + 0xcc;

@@ -114,7 +114,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x260;
   readData(&ptPostprocessed, base, current);
   current = ptr + 0x268;
-  readData(&unk_2a84dc9, base, current);
+  readData(&snoPrefabAttachment, base, current);
   current = ptr + 0x26c;
   readData(&unk_d2b5e35, base, current);
   current = ptr + 0x270;

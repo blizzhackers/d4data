@@ -13,7 +13,7 @@
 struct ClothDefinition : public ComplexRead {
   DT_SNO<SnoGroup::AmbientSound> snoAmbientSound;
   DT_UINT dwFlags;
-  DT_INT unk_2a6986f;
+  DT_INT nPurchaseGizmo;
   taced015b unk_be5c463;
   DT_FLOAT unk_570fcff;
   DT_FLOAT unk_b8886b;

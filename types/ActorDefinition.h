@@ -91,7 +91,7 @@ struct ActorDefinition : public ComplexRead {
   DT_VARIABLEARRAY<ActorSoundTableData> ptSoundTableData;
   DT_VARIABLEARRAY<ActorMountData> ptMountData;
   DT_INT64 ptPostprocessed;
-  DT_SNO<SnoGroup::MarkerSet> unk_2a84dc9;
+  DT_SNO<SnoGroup::MarkerSet> snoPrefabAttachment;
   DT_FLOAT unk_d2b5e35;
   DT_UINT unk_2607092;
   DT_UINT unk_79da2a0;

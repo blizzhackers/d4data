@@ -24,7 +24,7 @@ struct WeatherDefinition : public ComplexRead {
   WeatherStateParams tParamsNotRaining;
   WeatherStateParams tParamsWhenRaining;
   ColorCorrectionParams tColorCorrection;
-  t27090ba7 unk_1c3741b;
+  t27090ba7 tDomainEpoch;
   ta1e96c7e unk_b038972;
   t3a9f0d72 unk_c68eb66;
   tca1fcba0 unk_319c94;

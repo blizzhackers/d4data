@@ -28,7 +28,7 @@ void AnimationDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_78651aa, base, current);
   current = ptr + 0x48;
-  readData(&unk_2bb50c4, base, current);
+  readData(&ptRepeatablePermutations, base, current);
   current = ptr + 0x58;
   readData(&unk_88ce6d6, base, current);
   current = ptr + 0x5c;
