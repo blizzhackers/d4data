@@ -1,5 +1,5 @@
 /**
- * Definition: SkillNodeConnectionMaybe
+ * Definition: SkillTreeNodePersonalConnection
  * Hash: e35b4849
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct SkillNodeConnectionMaybe : public ComplexRead {
+struct SkillTreeNodePersonalConnection : public ComplexRead {
   DT_INT unk_e50f88c;
 
   void read(const char* base, char* &ptr);
