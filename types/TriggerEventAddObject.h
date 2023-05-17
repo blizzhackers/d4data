@@ -48,7 +48,7 @@ struct TriggerEventAddObject : public ComplexRead {
   DT_INT unk_fcc32b8;
   DT_INT unk_773852b;
   DT_INT unk_62ab747;
-  DT_SNO<SnoGroup::StringList> unk_83bdc8f;
+  DT_SNO<SnoGroup::StringList> snoSubtitles;
   DT_SNO<SnoGroup::StringList> unk_944e28b;
   DT_FLOAT unk_1426000;
   DT_INT unk_cb43646;

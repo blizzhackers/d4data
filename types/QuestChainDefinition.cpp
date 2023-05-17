@@ -42,6 +42,6 @@ void QuestChainDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x7c;
   readData(&unk_62b3134, base, current);
   current = ptr + 0x80;
-  readData(&unk_adc6722, base, current);
+  readData(&arSteps, base, current);
   ptr += 0x90;
 }

@@ -14,7 +14,7 @@ void AchievementDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&uMinRequiredCriteria, base, current);
   current = ptr + 0x14;
-  readData(&unk_d8ffc53, base, current);
+  readData(&snoSupersedes, base, current);
   current = ptr + 0x18;
   readData(&uFlags, base, current);
   current = ptr + 0x1c;

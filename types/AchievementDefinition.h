@@ -18,7 +18,7 @@ struct AchievementDefinition : public ComplexRead {
   DT_UINT uPointsValue;
   DT_UINT dwNextID;
   DT_UINT uMinRequiredCriteria;
-  DT_SNO<SnoGroup::Achievement> unk_d8ffc53;
+  DT_SNO<SnoGroup::Achievement> snoSupersedes;
   DT_UINT uFlags;
   DT_UINT unk_aa46967;
   DT_VARIABLEARRAY<CriteriaDefinition> unk_8b76c22;

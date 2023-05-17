@@ -10,7 +10,7 @@ void MovieDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&snoAudioTrack, base, current);
   current = ptr + 0xc;
-  readData(&unk_83bdc8f, base, current);
+  readData(&snoSubtitles, base, current);
   current = ptr + 0x10;
   readData(&unk_944e28b, base, current);
   current = ptr + 0x14;

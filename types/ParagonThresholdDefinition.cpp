@@ -8,7 +8,7 @@
 void ParagonThresholdDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
-  readData(&unk_6653304, base, current);
+  readData(&ptThresholds, base, current);
   current = ptr + 0x18;
   readData(&unk_eed6c20, base, current);
   ptr += 0x30;

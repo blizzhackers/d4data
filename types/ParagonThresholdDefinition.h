@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct ParagonThresholdDefinition : public ComplexRead {
-  DT_VARIABLEARRAY<ParagonThresholdEntry> unk_6653304;
+  DT_VARIABLEARRAY<ParagonThresholdEntry> ptThresholds;
   DT_FIXEDARRAY<DT_INT, 5> unk_eed6c20;
 
   void read(const char* base, char* &ptr);

@@ -68,7 +68,7 @@ void TriggerEventAddObject::read(const char* base, char* &ptr) {
   current = ptr + 0xcc;
   readData(&unk_62ab747, base, current);
   current = ptr + 0xd0;
-  readData(&unk_83bdc8f, base, current);
+  readData(&snoSubtitles, base, current);
   current = ptr + 0xd4;
   readData(&unk_944e28b, base, current);
   current = ptr + 0xd8;

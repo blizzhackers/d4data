@@ -29,7 +29,7 @@ struct QuestChainDefinition : public ComplexRead {
   DT_SNO<SnoGroup::EffectGroup> unk_8da547c;
   DT_SNO<SnoGroup::EffectGroup> unk_10a039b;
   DT_SNO<SnoGroup::EffectGroup> unk_62b3134;
-  DT_VARIABLEARRAY<QuestChainStep> unk_adc6722;
+  DT_VARIABLEARRAY<QuestChainStep> arSteps;
 
   void read(const char* base, char* &ptr);
 };

@@ -11,7 +11,7 @@
 
 struct MovieDefinition : public ComplexRead {
   DT_SNO<SnoGroup::wWiseSoundBank> snoAudioTrack;
-  DT_SNO<SnoGroup::StringList> unk_83bdc8f;
+  DT_SNO<SnoGroup::StringList> snoSubtitles;
   DT_SNO<SnoGroup::StringList> unk_944e28b;
   DT_UINT unk_19d005e;
   DT_FLOAT unk_1426000;

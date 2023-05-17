@@ -13,7 +13,7 @@
 
 struct UIDialogDefinition : public ComplexRead {
   UIControlTemplate unk_d01dfb6;
-  DT_VARIABLEARRAY<UIControlTemplate> unk_73efac3;
+  DT_VARIABLEARRAY<UIControlTemplate> tTemplates;
   DT_VARIABLEARRAY<td8a9e2b7> ptStyles;
 
   void read(const char* base, char* &ptr);
