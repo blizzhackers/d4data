@@ -190,6 +190,20 @@ std::vector<std::string> getDefaultDict() {
     return ret;
 }
 
+bool isAllCaps(std::string elem) {
+  if (elem.length() < 2) {
+    return false;
+  }
+
+  for (int i = 0; i < elem.length(); i++) {
+    if (elem[i] >= 'a' && elem[i] <= 'z') {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 int main(int argc, char *argv[]) {
   bool gettingPrefix = false;
   bool gettingSuffix = false;
@@ -198,6 +212,7 @@ int main(int argc, char *argv[]) {
   bool useDict = true;
   bool wordsOnly = false;
   bool noPrefix = false;
+  bool ignoreAllCaps = true;
 
   int pos = 0;
 
@@ -234,6 +249,9 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--words-only") {
         wordsOnly = true;
+      }
+      else if(arg == "--allow-all-caps") {
+        ignoreAllCaps = false;
       }
       else if(arg == "--min") {
         gettingMin = true;
@@ -327,6 +345,10 @@ int main(int argc, char *argv[]) {
 
         std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
         std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
+
+        if (ignoreAllCaps && isAllCaps(elem)) {
+          continue;
+        }
 
         if (hashType == 2) {
           dictmap[newelem2] = true;
