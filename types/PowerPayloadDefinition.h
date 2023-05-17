@@ -18,7 +18,7 @@ struct PowerPayloadDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_f7143f9;
   t46a557e9 tDamage;
   DT_INT unk_16bcce1;
-  DT_STRING_FORMULA unk_c05ccdc;
+  DT_STRING_FORMULA tDamageVariance;
   DT_INT unk_c1c7b04;
   DT_STRING_FORMULA unk_907cc39;
   t46a557e9 unk_25c1506;
@@ -33,7 +33,7 @@ struct PowerPayloadDefinition : public ComplexRead {
   DT_INT unk_e842c84;
   DT_ENUM<DT_INT> unk_b8f2b;
   DT_INT unk_79ce2e1;
-  DT_STRING_FORMULA unk_ed6df7;
+  DT_STRING_FORMULA tCombatEffectOverride;
   DT_ENUM<DT_INT> unk_ddcd868;
   DT_SNO<SnoGroup::EffectGroup> unk_8fac698;
   DT_SNO<SnoGroup::EffectGroup> snoTargetImpactEffectGroup;

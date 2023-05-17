@@ -12,7 +12,7 @@
 
 struct t21df8be8 : public ComplexRead {
   RequiredMessageHeader tHeader;
-  DT_INT unk_3c84bdb;
+  DT_INT bComplete;
 
   void read(const char* base, char* &ptr);
 };

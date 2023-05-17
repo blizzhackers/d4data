@@ -10,6 +10,6 @@ void t21df8be8::read(const char* base, char* &ptr) {
   current = ptr + 0x0;
   readData(&tHeader, base, current);
   current = ptr + 0x10;
-  readData(&unk_3c84bdb, base, current);
+  readData(&bComplete, base, current);
   ptr += 0x14;
 }

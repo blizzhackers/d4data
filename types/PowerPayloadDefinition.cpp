@@ -20,7 +20,7 @@ void PowerPayloadDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x58;
   readData(&unk_16bcce1, base, current);
   current = ptr + 0x60;
-  readData(&unk_c05ccdc, base, current);
+  readData(&tDamageVariance, base, current);
   current = ptr + 0x80;
   readData(&unk_c1c7b04, base, current);
   current = ptr + 0x88;
@@ -50,7 +50,7 @@ void PowerPayloadDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x198;
   readData(&unk_79ce2e1, base, current);
   current = ptr + 0x1a0;
-  readData(&unk_ed6df7, base, current);
+  readData(&tCombatEffectOverride, base, current);
   current = ptr + 0x1c0;
   readData(&unk_ddcd868, base, current);
   current = ptr + 0x1c4;

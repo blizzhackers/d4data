@@ -26,7 +26,7 @@ void te3f28f16::read(const char* base, char* &ptr) {
   current = ptr + 0x68;
   readData(&unk_79ce2e1, base, current);
   current = ptr + 0x70;
-  readData(&unk_ed6df7, base, current);
+  readData(&tCombatEffectOverride, base, current);
   current = ptr + 0x90;
   readData(&unk_693b6db, base, current);
   current = ptr + 0x94;

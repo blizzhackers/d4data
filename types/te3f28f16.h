@@ -20,7 +20,7 @@ struct te3f28f16 : public ComplexRead {
   DT_INT unk_3d768b7;
   DT_ENUM<DT_INT> unk_b8f2b;
   DT_INT unk_79ce2e1;
-  DT_STRING_FORMULA unk_ed6df7;
+  DT_STRING_FORMULA tCombatEffectOverride;
   DT_INT unk_693b6db;
   DT_INT unk_d50fe6e;
 
