@@ -18,9 +18,9 @@ void SkillKitDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x48;
   readData(&dwNextID, base, current);
   current = ptr + 0x4c;
-  readData(&vViewboxMinMaybe, base, current);
+  readData(&vNodeMinPositions, base, current);
   current = ptr + 0x54;
-  readData(&vViewboxMaxMaybe, base, current);
+  readData(&vNodeMaxPositions, base, current);
   current = ptr + 0x5c;
   readData(&unk_11ce0b6, base, current);
   current = ptr + 0x64;

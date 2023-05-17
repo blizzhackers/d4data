@@ -18,8 +18,8 @@ struct SkillKitDefinition : public ComplexRead {
   DT_VARIABLEARRAY<SkillTreeNode> arNodes;
   DT_VARIABLEARRAY<te2a05745> arConnections;
   DT_UINT dwNextID;
-  DT_VECTOR2D vViewboxMinMaybe;
-  DT_VECTOR2D vViewboxMaxMaybe;
+  DT_VECTOR2D vNodeMinPositions;
+  DT_VECTOR2D vNodeMaxPositions;
   DT_VECTOR2D unk_11ce0b6;
   DT_VECTOR2D unk_99647ce;
 
