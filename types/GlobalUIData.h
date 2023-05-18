@@ -12,6 +12,7 @@
 #include "GlobalFontColor.h"
 #include "HeroDetailsArray.h"
 #include "ScrollbarStyle.h"
+#include "UILayoutList.h"
 #include "t22d9402d.h"
 #include "t31220ee1.h"
 #include "t36837ce3.h"
@@ -20,7 +21,6 @@
 #include "t7a02a8d6.h"
 #include "t894bd255.h"
 #include "ta77b14db.h"
-#include "tc36fb4b8.h"
 #include "te3bec795.h"
 
 #pragma push(pack, 1)
@@ -28,7 +28,7 @@
 struct GlobalUIData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  DT_FIXEDARRAY<tc36fb4b8, 3> unk_9468809;
+  DT_FIXEDARRAY<UILayoutList, 3> arUILayoutEntries;
   DT_FLOAT unk_7e4617a;
   DT_FLOAT unk_1598718;
   DT_FLOAT unk_2c2d08c;

@@ -16,6 +16,6 @@ void t20316496::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_c3afaa0, base, current);
   current = ptr + 0x18;
-  readData(&unk_b7d314f, base, current);
+  readData(&ptIKBones, base, current);
   ptr += 0x28;
 }

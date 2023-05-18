@@ -22,7 +22,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&snoAnimTree, base, current);
   current = ptr + 0x40;
-  readData(&unk_db10329, base, current);
+  readData(&tAnimTreeOverride, base, current);
   current = ptr + 0x50;
   readData(&eVariantType, base, current);
   current = ptr + 0x54;

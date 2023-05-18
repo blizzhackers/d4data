@@ -6,9 +6,9 @@
 #pragma once
 
 #include "../types.h"
+#include "AnimSyncGroup.h"
 #include "AnimTreeLeaf.h"
 #include "AnimTreeNode.h"
-#include "ta69f5af.h"
 
 #pragma push(pack, 1)
 
@@ -18,7 +18,7 @@ struct AnimTreeDefinition : public ComplexRead {
   DT_VARIABLEARRAY<AnimTreeLeaf> ptLeaf;
   DT_VARIABLEARRAY<AnimTreeNode> ptNode;
   DT_VARIABLEARRAY<DT_INT> ptSyncGroup;
-  DT_VARIABLEARRAY<ta69f5af> unk_db47721;
+  DT_VARIABLEARRAY<AnimSyncGroup> unk_db47721;
   DT_UINT dwRootNode;
   DT_UINT dwNextID;
   DT_ENUM<DT_INT> unk_a7fd7f7;

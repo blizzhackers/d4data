@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tafbbdb78.h"
+#include "IKBone.h"
 
 #pragma push(pack, 1)
 
@@ -15,7 +15,7 @@ struct t20316496 : public ComplexRead {
   DT_UINT dwPad;
   DT_ENUM<DT_INT> unk_e7b35bd;
   DT_ENUM<DT_INT> unk_c3afaa0;
-  DT_VARIABLEARRAY<tafbbdb78> unk_b7d314f;
+  DT_VARIABLEARRAY<IKBone> ptIKBones;
 
   void read(const char* base, char* &ptr);
 };

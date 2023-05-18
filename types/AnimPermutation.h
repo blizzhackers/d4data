@@ -6,13 +6,13 @@
 #pragma once
 
 #include "../types.h"
+#include "AnimContactFrame.h"
+#include "AnimFacingWindow.h"
 #include "AnimPayloadData.h"
 #include "HardpointLink.h"
+#include "IKFrames.h"
 #include "PRTransform.h"
-#include "t97a49412.h"
 #include "t9e8134dc.h"
-#include "te050809c.h"
-#include "tec5df525.h"
 
 #pragma push(pack, 1)
 
@@ -30,9 +30,9 @@ struct AnimPermutation : public ComplexRead {
   DT_VARIABLEARRAY<AnimPayloadData> ptPayloadData;
   DT_UINT tPhaseName;
   DT_ENUM<DT_INT> unk_57e56e2;
-  DT_FIXEDARRAY<te050809c, 4> arContactFrames;
-  DT_VARIABLEARRAY<tec5df525> arFacingWindows;
-  DT_VARIABLEARRAY<t97a49412> unk_f0fe405;
+  DT_FIXEDARRAY<AnimContactFrame, 4> arContactFrames;
+  DT_VARIABLEARRAY<AnimFacingWindow> arFacingWindows;
+  DT_VARIABLEARRAY<IKFrames> arIKFrames;
   DT_FLOAT unk_c61b9d1;
   DT_FIXEDARRAY<DT_INT, 4> unk_6e16fde;
   DT_RANGE<DT_INT> unk_75e1ebe;

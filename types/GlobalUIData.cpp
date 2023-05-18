@@ -12,7 +12,7 @@ void GlobalUIData::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_9468809, base, current);
+  readData(&arUILayoutEntries, base, current);
   current = ptr + 0x40;
   readData(&unk_7e4617a, base, current);
   current = ptr + 0x44;

@@ -24,7 +24,7 @@ void BoneData::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&tLookAtData, base, current);
   current = ptr + 0xd0;
-  readData(&unk_12040e2, base, current);
+  readData(&tIKData, base, current);
   current = ptr + 0x110;
   readData(&unk_42b03b4, base, current);
   current = ptr + 0x120;

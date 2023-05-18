@@ -28,12 +28,12 @@
 #include "ActorSoundTableData.h"
 #include "ActorUIData.h"
 #include "ActorVOData.h"
+#include "AnimTreeOverride.h"
 #include "AxialCylinder.h"
 #include "LookLink.h"
 #include "MsgTriggeredEvent.h"
 #include "Sphere.h"
 #include "t4174a154.h"
-#include "tb2f69ab5.h"
 
 #pragma push(pack, 1)
 
@@ -45,7 +45,7 @@ struct ActorDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Appearance>> arCustomizationAppearances;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> arAnimSets;
   DT_SNO<SnoGroup::AnimTree> snoAnimTree;
-  tb2f69ab5 unk_db10329;
+  AnimTreeOverride tAnimTreeOverride;
   DT_ENUM<DT_INT> eVariantType;
   LookLink unk_441fd2e;
   DT_UINT unk_3d234d5;

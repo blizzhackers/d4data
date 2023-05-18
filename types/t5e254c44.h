@@ -6,12 +6,12 @@
 #pragma once
 
 #include "../types.h"
-#include "tafbbdb78.h"
+#include "IKBone.h"
 
 #pragma push(pack, 1)
 
 struct t5e254c44 : public ComplexRead {
-  tafbbdb78 tBone;
+  IKBone tBone;
   DT_VECTOR3D unk_e46daa0;
   DT_FLOAT unk_947540c;
 

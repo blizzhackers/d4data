@@ -11,9 +11,9 @@
 #include "Hardpoint.h"
 #include "HardpointLink.h"
 #include "HardpointOffset.h"
+#include "IKData.h"
 #include "LookAtData.h"
 #include "t4b7fb4ab.h"
-#include "tafbcb96e.h"
 #include "tdbcb04f3.h"
 #include "tdfc16fd.h"
 #include "te1ac09b4.h"
@@ -31,7 +31,7 @@ struct BoneData : public ComplexRead {
   DT_FIXEDARRAY<tdbcb04f3, 7> unk_4118a82;
   DT_VARIABLEARRAY<tf5cd87eb> unk_73d52a2;
   LookAtData tLookAtData;
-  tafbcb96e unk_12040e2;
+  IKData tIKData;
   tfbdf1440 unk_42b03b4;
   t4b7fb4ab unk_d872b9f;
   DT_VARIABLEARRAY<Hardpoint> ptHardpoints;
