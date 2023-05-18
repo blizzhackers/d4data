@@ -7,11 +7,11 @@
 
 #include "../types.h"
 #include "ColorCorrectionParams.h"
+#include "StarsSettings.h"
 #include "WeatherStateParams.h"
 #include "t27090ba7.h"
 #include "t3a9f0d72.h"
 #include "t3f7811d2.h"
-#include "ta1e96c7e.h"
 #include "tca1fcba0.h"
 
 #pragma push(pack, 1)
@@ -25,7 +25,7 @@ struct WeatherDefinition : public ComplexRead {
   WeatherStateParams tParamsWhenRaining;
   ColorCorrectionParams tColorCorrection;
   t27090ba7 tDomainEpoch;
-  ta1e96c7e unk_b038972;
+  StarsSettings tStarsSettings;
   t3a9f0d72 unk_c68eb66;
   tca1fcba0 unk_319c94;
   DT_TAGMAP<DT_INT> unk_dc54395;

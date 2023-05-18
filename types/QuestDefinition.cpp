@@ -78,7 +78,7 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xc0;
   readData(&unk_1755172, base, current);
   current = ptr + 0xd0;
-  readData(&unk_3367716, base, current);
+  readData(&arReputationRewards, base, current);
   current = ptr + 0xe0;
   readData(&unk_46e3956, base, current);
   current = ptr + 0xf0;

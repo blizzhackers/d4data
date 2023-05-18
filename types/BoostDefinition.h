@@ -17,7 +17,7 @@ struct BoostDefinition : public ComplexRead {
   DT_INT64 nGold;
   DT_VARIABLEARRAY<t749eb37e> unk_19a8c24;
   DT_VARIABLEARRAY<DT_BYTE> unk_fd3ff28;
-  DT_UINT unk_6de8d26;
+  DT_UINT dwBoostHash;
 
   void read(const char* base, char* &ptr);
 };

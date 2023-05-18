@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "tab2d8e94.h"
+#include "ReputationValuePair.h"
 
 #pragma push(pack, 1)
 
@@ -14,7 +14,7 @@ struct ReputationSubcondition : public ComplexRead {
   DT_UINT dwType;
   DT_INT bNegate;
   DT_UINT dwPad;
-  tab2d8e94 tPair;
+  ReputationValuePair tPair;
 
   void read(const char* base, char* &ptr);
 };

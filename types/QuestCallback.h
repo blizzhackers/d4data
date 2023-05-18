@@ -7,8 +7,8 @@
 
 #include "../types.h"
 #include "QuestCallbackRegion.h"
+#include "ReputationValuePair.h"
 #include "ScriptMessageMap.h"
-#include "tab2d8e94.h"
 
 #pragma push(pack, 1)
 
@@ -33,7 +33,7 @@ struct QuestCallback : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> arLevelAreas;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::SubZone>> unk_c9913ac;
   DT_VARIABLEARRAY<DT_SNO_NAME> unk_ab83298;
-  tab2d8e94 unk_a71fd1a;
+  ReputationValuePair unk_a71fd1a;
 
   void read(const char* base, char* &ptr);
 };

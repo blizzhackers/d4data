@@ -20,6 +20,6 @@ void BoostDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x50;
   readData(&unk_fd3ff28, base, current);
   current = ptr + 0x60;
-  readData(&unk_6de8d26, base, current);
+  readData(&dwBoostHash, base, current);
   ptr += 0x68;
 }

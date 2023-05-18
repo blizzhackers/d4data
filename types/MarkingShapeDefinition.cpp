@@ -14,7 +14,7 @@ void MarkingShapeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&hIconImage, base, current);
   current = ptr + 0x14;
-  readData(&unk_5bc5f2b, base, current);
+  readData(&snoMaskFace, base, current);
   current = ptr + 0x18;
   readData(&unk_5ba696a, base, current);
   current = ptr + 0x1c;

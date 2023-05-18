@@ -8,8 +8,8 @@
 #include "../types.h"
 #include "AttributeSpecifier.h"
 #include "InventoryImages.h"
+#include "ReputationValuePair.h"
 #include "SocketedEffects.h"
-#include "tab2d8e94.h"
 
 #pragma push(pack, 1)
 
@@ -61,7 +61,7 @@ struct ItemDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoMount;
   DT_SNO<SnoGroup::ParagonGlyph> snoParagonGlyph;
   DT_VARIABLEARRAY<DT_GBID<0x12>> unk_3202773;
-  DT_VARIABLEARRAY<tab2d8e94> arReputation;
+  DT_VARIABLEARRAY<ReputationValuePair> arReputation;
   DT_FIXEDARRAY<InventoryImages, 5> tInvImages;
   DT_UINT unk_75d565b;
   DT_INT unk_954d4f9;

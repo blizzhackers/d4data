@@ -8,7 +8,7 @@
 #include "../types.h"
 #include "MarkerHandle.h"
 #include "QuestFollower.h"
-#include "tab2d8e94.h"
+#include "ReputationValuePair.h"
 
 #pragma push(pack, 1)
 
@@ -47,8 +47,8 @@ struct QuestDefinition : public ComplexRead {
   DT_INT unk_942bcdb;
   DT_UINT dwFlags;
   DT_POLYMORPHIC_VARIABLEARRAY arQuestPhases;
-  DT_VARIABLEARRAY<tab2d8e94> unk_1755172;
-  DT_VARIABLEARRAY<tab2d8e94> unk_3367716;
+  DT_VARIABLEARRAY<ReputationValuePair> unk_1755172;
+  DT_VARIABLEARRAY<ReputationValuePair> arReputationRewards;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Quest>> unk_46e3956;
   DT_SNO<SnoGroup::Condition> unk_56f8e05;
   DT_CSTRING unk_c47e01a;
