@@ -82,7 +82,7 @@ bool hasCaps(std::string word) {
 }
 
 void collisions(long pos, long max) {
-  if (pos == -1) {
+  if (pos >= max) {
     std::string word = getWord(max);
     uint32_t wordChecksum = checksum(word);
 
@@ -118,7 +118,7 @@ void collisions(long pos, long max) {
 
   for (long c = 0; c < cmax; c++) {
     tmp[pos] = c;
-    collisions(pos - 1, max);
+    collisions(pos + 1, max);
   }
 }
 
@@ -377,7 +377,7 @@ int main(int argc, char *argv[]) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
     for (uint32_t c = minPos; c < maxPos; c++) {
       std::cerr << "Length: " << (c + 1) << std::endl;
-      collisions(c, c + 1);
+      collisions(0, c + 1);
     }
   }
 
