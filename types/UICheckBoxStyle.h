@@ -6,11 +6,11 @@
 #pragma once
 
 #include "../types.h"
+#include "UIControlConsoleInput.h"
 #include "UIControlFont.h"
 #include "UIControlHandle.h"
 #include "UIControlIcon.h"
 #include "t98c23c41.h"
-#include "tb8237382.h"
 
 #pragma push(pack, 1)
 
@@ -20,7 +20,7 @@ struct UICheckBoxStyle : public ComplexRead {
   UIControlHandle hParentStyle;
   DT_INT64 unk_441f783;
   DT_TAGMAP<DT_INT> unk_b835d15;
-  tb8237382 tConsoleInput;
+  UIControlConsoleInput tConsoleInput;
   DT_TAGMAP<DT_INT> unk_b4f614c;
   UIControlFont tFont;
   DT_TAGMAP<DT_INT> unk_4741819;

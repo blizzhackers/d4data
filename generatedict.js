@@ -15,14 +15,14 @@ fs.readFileSync('names.txt').toString().split(/\s+/gi).forEach(name => {
 });
 
 Object.keys(names).forEach(name => {
-  let matches = name.split(/^((?:fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gbid|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)(?=[0-9A-Z_]))/g).filter(Boolean);
+  let matches = name.split(/^((?:m_|a|ar|arn|arr|b|bc|dw|e|f|fl|gbid|h|i|id|rgba|is|inv|wcyl|m|n|p|pn|pt|pgbid|q|s|ser|sz|t|tag|u|v|vec|pwv|sno|pdw|vw|wd|wvp|rgbaval|wp|wr|ws|wv|bone|cell|constraint|end|game|kinematic|local|max|parent|path|plane|sample|start|triangle|twin|vertex|count|l)(?=[0-9A-Z_]))/g).filter(Boolean);
 
   matches.forEach(subname => {
     if (/^[^a-zA-Z]+$/.test(subname)) {
       return;
     }
 
-    if (/^(fl|u|n|s|sz|pt|t|m|a|ar|b|bc|dw|e|f|gbid|h|i|is|id|l|p|pn|q|v|vw|wd|wp|wr|ws|wv)$/g.test(subname)) {
+    if (/^(m_|a|ar|arn|arr|b|bc|dw|e|f|fl|gbid|h|i|id|rgba|is|inv|wcyl|m|n|p|pn|pt|pgbid|q|s|ser|sz|t|tag|u|v|vec|pwv|sno|pdw|vw|wd|wvp|rgbaval|wp|wr|ws|wv|bone|cell|constraint|end|game|kinematic|local|max|parent|path|plane|sample|start|triangle|twin|vertex|count|l)$/g.test(subname)) {
       if (!prefix[subname]) {
         prefix[subname] = names[name];
       }

@@ -1,5 +1,5 @@
 /**
- * Definition: tb8237382
+ * Definition: UIControlConsoleInput
  * Hash: b8237382
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct tb8237382 : public ComplexRead {
+struct UIControlConsoleInput : public ComplexRead {
   DT_TAGMAP<DT_INT> unk_8536b47;
 
   void read(const char* base, char* &ptr);
