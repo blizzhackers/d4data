@@ -12,7 +12,7 @@
 
 struct DungeonAffixDefinition : public ComplexRead {
   DT_INT nWeight;
-  DT_ENUM<DT_INT> unk_40a4411;
+  DT_ENUM<DT_INT> eAffixCategory;
   DT_INT unk_6e1d9b8;
   DT_GBID<0x1e> gbidAffixFamily;
   DT_VARIABLEARRAY<DungeonAffixRange> unk_7f8b6b7;

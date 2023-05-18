@@ -14,7 +14,7 @@ struct ParagonNodeDefinition : public ComplexRead {
   DT_UINT hIcon;
   DT_UINT hIconMask;
   DT_ENUM<DT_INT> unk_7714b98;
-  DT_ENUM<DT_INT> unk_3556860;
+  DT_ENUM<DT_INT> eRarityOverride;
   DT_SNO<SnoGroup::Power> snoPassivePower;
   DT_VARIABLEARRAY<AttributeSpecifier> ptAttributes;
   DT_VARIABLEARRAY<DT_INT> unk_8ba8e1e;

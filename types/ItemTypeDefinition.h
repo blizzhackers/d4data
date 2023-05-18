@@ -12,7 +12,7 @@
 
 struct ItemTypeDefinition : public ComplexRead {
   DT_UINT dwFlags;
-  DT_ENUM<DT_INT> unk_32a72a6;
+  DT_ENUM<DT_INT> ePackSlot;
   DT_VARIABLEARRAY<DT_ENUM<DT_INT>> arBodySlots;
   DT_VARIABLEARRAY<DT_ENUM<DT_INT>> arItemLabels;
   DT_ENUM<DT_INT> eWeaponClass;

@@ -10,7 +10,7 @@ void WorldDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&ptServerData, base, current);
   current = ptr + 0x18;
-  readData(&unk_8ca2d45, base, current);
+  readData(&eLayoutType, base, current);
   current = ptr + 0x1c;
   readData(&flGridSize, base, current);
   current = ptr + 0x20;

@@ -14,7 +14,7 @@ void t7a482be4::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_6c0cb90, base, current);
   current = ptr + 0xc;
-  readData(&unk_ce65d4b, base, current);
+  readData(&eCullingLevel, base, current);
   current = ptr + 0x10;
   readData(&eInstanceType, base, current);
   current = ptr + 0x18;

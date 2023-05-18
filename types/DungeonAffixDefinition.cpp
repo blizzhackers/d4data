@@ -10,7 +10,7 @@ void DungeonAffixDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&nWeight, base, current);
   current = ptr + 0xc;
-  readData(&unk_40a4411, base, current);
+  readData(&eAffixCategory, base, current);
   current = ptr + 0x10;
   readData(&unk_6e1d9b8, base, current);
   current = ptr + 0x14;

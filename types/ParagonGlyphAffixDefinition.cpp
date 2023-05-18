@@ -16,7 +16,7 @@ void ParagonGlyphAffixDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&arThresholdSelector, base, current);
   current = ptr + 0x30;
-  readData(&unk_799339d, base, current);
+  readData(&eBonusOperation, base, current);
   current = ptr + 0x38;
   readData(&unk_e80c332, base, current);
   current = ptr + 0x48;

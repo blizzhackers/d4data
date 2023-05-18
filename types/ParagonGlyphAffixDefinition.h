@@ -16,7 +16,7 @@ struct ParagonGlyphAffixDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_a16a4d8;
   DT_ENUM<DT_INT> unk_e53c570;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::ParagonThreshold>> arThresholdSelector;
-  DT_ENUM<DT_INT> unk_799339d;
+  DT_ENUM<DT_INT> eBonusOperation;
   DT_VARIABLEARRAY<t3f44d2ec> unk_e80c332;
   DT_GBID<0x16> unk_2506574;
   DT_FLOAT unk_680001b;

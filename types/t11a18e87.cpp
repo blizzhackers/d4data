@@ -100,7 +100,7 @@ void t11a18e87::read(const char* base, char* &ptr) {
   current = ptr + 0x138;
   readData(&nInputFocusOrder, base, current);
   current = ptr + 0x13c;
-  readData(&unk_cc2b674, base, current);
+  readData(&eVisibilityCondition, base, current);
   current = ptr + 0x140;
   readData(&snoTiledStyle, base, current);
   current = ptr + 0x144;

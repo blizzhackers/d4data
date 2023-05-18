@@ -25,7 +25,7 @@ struct ParticleDefinition : public ComplexRead {
   DT_FLOAT tSystemDuration;
   DT_FLOAT tOutroDuration;
   DT_FLOAT tPrepumpDuration;
-  DT_ENUM<DT_INT> unk_768e7b0;
+  DT_ENUM<DT_INT> eRenderDistance;
   DT_ENUM<DT_INT> unk_d59152e;
   InterpolationScalar tSystemDurationScalar;
   DT_VARIABLEARRAY<tcbfdd2ea> pathSystemScale;

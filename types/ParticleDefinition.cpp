@@ -22,7 +22,7 @@ void ParticleDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&tPrepumpDuration, base, current);
   current = ptr + 0x24;
-  readData(&unk_768e7b0, base, current);
+  readData(&eRenderDistance, base, current);
   current = ptr + 0x28;
   readData(&unk_d59152e, base, current);
   current = ptr + 0x2c;

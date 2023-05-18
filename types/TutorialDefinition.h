@@ -15,7 +15,7 @@ struct TutorialDefinition : public ComplexRead {
   DT_ENUM<DT_INT> eType;
   DT_UINT dwFlags;
   DT_VARIABLEARRAY<TutorialScreen> unk_5da8477;
-  DT_ENUM<DT_INT> unk_cc2b674;
+  DT_ENUM<DT_INT> eVisibilityCondition;
   DT_FLOAT unk_e34e19d;
   DT_ENUM<DT_INT> eAlignHorizontal;
   DT_ENUM<DT_INT> eAlignVertical;

@@ -47,7 +47,7 @@ struct TrailDefinition : public ComplexRead {
   DT_ENUM<DT_INT> nTrailType;
   DT_ENUM<DT_INT> unk_1c8bb4c;
   DT_SNO<SnoGroup::Material> snoMaterial;
-  DT_ENUM<DT_INT> unk_a9d103;
+  DT_ENUM<DT_INT> eNormalAxis;
   DT_RANGE<DT_INT> unk_c0b6075;
   DT_RANGE<DT_INT> unk_a968362;
   DT_RANGE<DT_INT> unk_293081;

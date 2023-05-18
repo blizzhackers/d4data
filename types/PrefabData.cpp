@@ -18,7 +18,7 @@ void PrefabData::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_d094b9a, base, current);
   current = ptr + 0x14;
-  readData(&unk_ce65d4b, base, current);
+  readData(&eCullingLevel, base, current);
   current = ptr + 0x18;
   readData(&unk_4bfd602, base, current);
   current = ptr + 0x1c;

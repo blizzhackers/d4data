@@ -15,7 +15,7 @@ struct AnimationDefinition : public ComplexRead {
   DT_UINT dwFlags;
   DT_ENUM<DT_INT> ePlaybackMode;
   DT_ENUM<DT_INT> unk_38fab0d;
-  DT_ENUM<DT_INT> unk_c25df07;
+  DT_ENUM<DT_INT> eSelectionOrder;
   DT_INT unk_ba85a8e;
   DT_INT unk_847be4d;
   DT_SNO<SnoGroup::Appearance> snoAppearance;

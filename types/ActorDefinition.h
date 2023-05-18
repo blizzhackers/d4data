@@ -58,7 +58,7 @@ struct ActorDefinition : public ComplexRead {
   DT_ENUM<DT_INT> ePickStyle;
   DT_FLOAT flAttachmentScaleFactor;
   DT_ENUM<DT_INT> eDefaultTeam;
-  DT_ENUM<DT_INT> unk_ce65d4b;
+  DT_ENUM<DT_INT> eCullingLevel;
   DT_FLOAT unk_c794c59;
   DT_FLOAT unk_99ee15d;
   DT_FLOAT unk_1cf72ac;

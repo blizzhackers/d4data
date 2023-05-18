@@ -74,7 +74,7 @@ void TrailDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x490;
   readData(&snoMaterial, base, current);
   current = ptr + 0x494;
-  readData(&unk_a9d103, base, current);
+  readData(&eNormalAxis, base, current);
   current = ptr + 0x498;
   readData(&unk_c0b6075, base, current);
   current = ptr + 0x4a0;

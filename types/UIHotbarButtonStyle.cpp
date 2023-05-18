@@ -12,7 +12,7 @@ void UIHotbarButtonStyle::read(const char* base, char* &ptr) {
   current = ptr + 0xc;
   readData(&dwPad, base, current);
   current = ptr + 0x10;
-  readData(&unk_5770323, base, current);
+  readData(&hParentStyle, base, current);
   current = ptr + 0x18;
   readData(&unk_441f783, base, current);
   current = ptr + 0x20;

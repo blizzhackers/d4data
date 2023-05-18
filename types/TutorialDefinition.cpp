@@ -16,7 +16,7 @@ void TutorialDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x18;
   readData(&unk_5da8477, base, current);
   current = ptr + 0x28;
-  readData(&unk_cc2b674, base, current);
+  readData(&eVisibilityCondition, base, current);
   current = ptr + 0x2c;
   readData(&unk_e34e19d, base, current);
   current = ptr + 0x30;

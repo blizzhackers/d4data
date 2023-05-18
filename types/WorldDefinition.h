@@ -16,7 +16,7 @@
 
 struct WorldDefinition : public ComplexRead {
   DT_VARIABLEARRAY<WorldServerData> ptServerData;
-  DT_ENUM<DT_INT> unk_8ca2d45;
+  DT_ENUM<DT_INT> eLayoutType;
   DT_FLOAT flGridSize;
   Environment tEnvironment;
   DT_FLOAT flDeformationScale;

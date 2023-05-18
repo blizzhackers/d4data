@@ -48,7 +48,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xcc;
   readData(&eDefaultTeam, base, current);
   current = ptr + 0xd0;
-  readData(&unk_ce65d4b, base, current);
+  readData(&eCullingLevel, base, current);
   current = ptr + 0xd4;
   readData(&unk_c794c59, base, current);
   current = ptr + 0xd8;

@@ -59,7 +59,7 @@ struct t11a18e87 : public ComplexRead {
   DT_INT unk_28714d;
   DT_INT unk_81bc013;
   DT_INT nInputFocusOrder;
-  DT_ENUM<DT_INT> unk_cc2b674;
+  DT_ENUM<DT_INT> eVisibilityCondition;
   DT_SNO<SnoGroup::TiledStyle> snoTiledStyle;
   DT_SNO<SnoGroup::TiledStyle> unk_d04e8cf;
   DT_INT unk_3dc9f06;

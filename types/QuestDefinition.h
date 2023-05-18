@@ -18,7 +18,7 @@ struct QuestDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_4c4339b;
   DT_ENUM<DT_INT> unk_f522ece;
   DT_ENUM<DT_INT> eRepeatType;
-  DT_ENUM<DT_INT> unk_46224d;
+  DT_ENUM<DT_INT> eVignetteType;
   DT_INT unk_43f3849;
   DT_INT unk_48a2b16;
   MarkerHandle unk_d060a69;
@@ -39,7 +39,7 @@ struct QuestDefinition : public ComplexRead {
   DT_ENUM<DT_INT> unk_79f6e17;
   DT_GBID<0x3c> gbidSubzoneModifierTag;
   DT_SNO<SnoGroup::SubZone> unk_6199257;
-  DT_ENUM<DT_INT> unk_f322c3a;
+  DT_ENUM<DT_INT> eBountyTier;
   DT_ENUM<DT_INT> eBountyType;
   DT_INT unk_313dbf6;
   DT_UINT unk_834fdbf;

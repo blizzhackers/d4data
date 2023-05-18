@@ -10,7 +10,7 @@ void ItemTypeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&dwFlags, base, current);
   current = ptr + 0xc;
-  readData(&unk_32a72a6, base, current);
+  readData(&ePackSlot, base, current);
   current = ptr + 0x10;
   readData(&arBodySlots, base, current);
   current = ptr + 0x20;

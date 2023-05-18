@@ -16,7 +16,7 @@ void AnimationDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&unk_38fab0d, base, current);
   current = ptr + 0x18;
-  readData(&unk_c25df07, base, current);
+  readData(&eSelectionOrder, base, current);
   current = ptr + 0x1c;
   readData(&unk_ba85a8e, base, current);
   current = ptr + 0x20;

@@ -14,7 +14,7 @@ void ParagonNodeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&unk_7714b98, base, current);
   current = ptr + 0x14;
-  readData(&unk_3556860, base, current);
+  readData(&eRarityOverride, base, current);
   current = ptr + 0x18;
   readData(&snoPassivePower, base, current);
   current = ptr + 0x20;

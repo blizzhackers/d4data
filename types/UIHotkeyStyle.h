@@ -13,7 +13,7 @@
 struct UIHotkeyStyle : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
-  UIControlHandle unk_5770323;
+  UIControlHandle hParentStyle;
   DT_INT64 unk_441f783;
   DT_TAGMAP<DT_INT> unk_b835d15;
   DT_TAGMAP<DT_INT> unk_4688828;
