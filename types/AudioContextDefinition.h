@@ -18,7 +18,7 @@ struct AudioContextDefinition : public ComplexRead {
   DT_INT unk_2d0db3d;
   DT_INT unk_e197f62;
   tfa97e5b9 unk_d110c10;
-  DT_VARIABLEARRAY<tb593e3c8> unk_245a799;
+  DT_VARIABLEARRAY<tb593e3c8> arRainSounds;
 
   void read(const char* base, char* &ptr);
 };

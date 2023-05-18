@@ -19,8 +19,8 @@ struct ExplosionDefinition : public ComplexRead {
   DT_RANGE<DT_INT> unk_bebfab2;
   DT_RANGE<DT_INT> unk_6a15ca2;
   DT_FLOAT flCutoffRadius;
-  DT_FLOAT unk_edb8832;
-  DT_FLOAT unk_56d7ce2;
+  DT_FLOAT aHorizontalAngle;
+  DT_FLOAT aVerticalAngle;
   DT_FLOAT flDuration;
   DT_FLOAT flChance;
   DT_FLOAT flFrequency;

@@ -10,11 +10,11 @@ void NPCComponentSetDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&arAppearances, base, current);
   current = ptr + 0x18;
-  readData(&unk_dd52f5a, base, current);
+  readData(&arSkinColors, base, current);
   current = ptr + 0x28;
-  readData(&unk_86d7be9, base, current);
+  readData(&arHairColors, base, current);
   current = ptr + 0x38;
-  readData(&unk_28d5aa0, base, current);
+  readData(&arEquipmentDyes, base, current);
   current = ptr + 0x48;
   readData(&unk_e8ad810, base, current);
   current = ptr + 0x58;

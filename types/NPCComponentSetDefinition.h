@@ -17,9 +17,9 @@
 
 struct NPCComponentSetDefinition : public ComplexRead {
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::Appearance>> arAppearances;
-  DT_VARIABLEARRAY<DT_INT> unk_dd52f5a;
-  DT_VARIABLEARRAY<DT_INT> unk_86d7be9;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Dye>> unk_28d5aa0;
+  DT_VARIABLEARRAY<DT_INT> arSkinColors;
+  DT_VARIABLEARRAY<DT_INT> arHairColors;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Dye>> arEquipmentDyes;
   DT_VARIABLEARRAY<t1b652647> unk_e8ad810;
   DT_VARIABLEARRAY<t993e31cf> unk_be478b4;
   DT_FIXEDARRAY<DT_VARIABLEARRAY, 4> unk_7cdd390;

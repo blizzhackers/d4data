@@ -23,10 +23,10 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Actor> snoActorMale;
   DT_SNO<SnoGroup::Actor> snoActorFemale;
   DT_SNO<SnoGroup::TreasureClass> snoInventory;
-  DT_FLOAT unk_5efe7cd;
-  DT_FLOAT unk_54e3531;
-  DT_FLOAT unk_1a9d083;
-  DT_FLOAT unk_9049600;
+  DT_FLOAT flStartingStrength;
+  DT_FLOAT flStartingIntelligence;
+  DT_FLOAT flStartingWillpower;
+  DT_FLOAT flStartingDexterity;
   DT_FLOAT flAttributesHitPoints;
   DT_FLOAT unk_81247b7;
   DT_FLOAT unk_9ae1b37;
@@ -45,7 +45,7 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_FLOAT flAttributesResistLightning;
   DT_FLOAT flAttributesResistCold;
   DT_FLOAT flAttributesResistPoison;
-  DT_FLOAT unk_8e812f9;
+  DT_FLOAT flAttributesResistShadow;
   DT_FLOAT flAttributesResistChill;
   DT_FLOAT unk_3b3eb32;
   DT_FIXEDARRAY<t1bcc547f, 4> unk_80a72d5;
@@ -96,8 +96,8 @@ struct PlayerClassDefinition : public ComplexRead {
   DT_UINT unk_1052b5d;
   DT_UINT unk_a43c1cd;
   DT_UINT unk_448f16c;
-  DT_SNO<SnoGroup::StringList> unk_90ba523;
-  DT_SNO<SnoGroup::StringList> unk_a7e492e;
+  DT_SNO<SnoGroup::StringList> snoNamesMale;
+  DT_SNO<SnoGroup::StringList> snoNamesFemale;
   DT_UINT unk_a0254bb;
 
   void read(const char* base, char* &ptr);

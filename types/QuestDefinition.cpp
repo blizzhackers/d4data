@@ -96,9 +96,9 @@ void QuestDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x148;
   readData(&arFollowers, base, current);
   current = ptr + 0x158;
-  readData(&unk_219aee7, base, current);
+  readData(&arQuestItems, base, current);
   current = ptr + 0x168;
-  readData(&unk_b9ec208, base, current);
+  readData(&arQuestDungeons, base, current);
   current = ptr + 0x178;
   readData(&unk_2aa5f20, base, current);
   current = ptr + 0x188;

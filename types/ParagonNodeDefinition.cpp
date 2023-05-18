@@ -22,7 +22,7 @@ void ParagonNodeDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x30;
   readData(&unk_8ba8e1e, base, current);
   current = ptr + 0x40;
-  readData(&unk_2055501, base, current);
+  readData(&arThresholdSelector, base, current);
   current = ptr + 0x50;
   readData(&unk_2133527, base, current);
   current = ptr + 0x54;

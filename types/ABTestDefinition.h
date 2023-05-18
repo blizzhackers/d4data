@@ -11,7 +11,7 @@
 #pragma push(pack, 1)
 
 struct ABTestDefinition : public ComplexRead {
-  DT_VARIABLEARRAY<StringWrapper> unk_eb92604;
+  DT_VARIABLEARRAY<StringWrapper> arVariantKeys;
 
   void read(const char* base, char* &ptr);
 };

@@ -24,9 +24,9 @@ void ExplosionDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&flCutoffRadius, base, current);
   current = ptr + 0xa4;
-  readData(&unk_edb8832, base, current);
+  readData(&aHorizontalAngle, base, current);
   current = ptr + 0xa8;
-  readData(&unk_56d7ce2, base, current);
+  readData(&aVerticalAngle, base, current);
   current = ptr + 0xac;
   readData(&flDuration, base, current);
   current = ptr + 0xb0;

@@ -8,7 +8,7 @@
 void t9bdeeb8c::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
-  readData(&unk_28d5aa0, base, current);
+  readData(&arEquipmentDyes, base, current);
   current = ptr + 0x10;
   readData(&nHairColor, base, current);
   current = ptr + 0x14;

@@ -36,7 +36,7 @@ void ConversationDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x3c;
   readData(&dwFlags, base, current);
   current = ptr + 0x40;
-  readData(&unk_a159b10, base, current);
+  readData(&arRootNodes, base, current);
   current = ptr + 0x58;
   readData(&szSetPlayerFlag, base, current);
   current = ptr + 0xd8;

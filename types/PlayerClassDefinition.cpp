@@ -14,13 +14,13 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x10;
   readData(&snoInventory, base, current);
   current = ptr + 0x14;
-  readData(&unk_5efe7cd, base, current);
+  readData(&flStartingStrength, base, current);
   current = ptr + 0x18;
-  readData(&unk_54e3531, base, current);
+  readData(&flStartingIntelligence, base, current);
   current = ptr + 0x1c;
-  readData(&unk_1a9d083, base, current);
+  readData(&flStartingWillpower, base, current);
   current = ptr + 0x20;
-  readData(&unk_9049600, base, current);
+  readData(&flStartingDexterity, base, current);
   current = ptr + 0x24;
   readData(&flAttributesHitPoints, base, current);
   current = ptr + 0x28;
@@ -58,7 +58,7 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa8;
   readData(&flAttributesResistPoison, base, current);
   current = ptr + 0xac;
-  readData(&unk_8e812f9, base, current);
+  readData(&flAttributesResistShadow, base, current);
   current = ptr + 0xb0;
   readData(&flAttributesResistChill, base, current);
   current = ptr + 0xb4;
@@ -160,9 +160,9 @@ void PlayerClassDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x5c8;
   readData(&unk_448f16c, base, current);
   current = ptr + 0x5cc;
-  readData(&unk_90ba523, base, current);
+  readData(&snoNamesMale, base, current);
   current = ptr + 0x5d0;
-  readData(&unk_a7e492e, base, current);
+  readData(&snoNamesFemale, base, current);
   current = ptr + 0x5d4;
   readData(&unk_a0254bb, base, current);
   ptr += 0x5d8;

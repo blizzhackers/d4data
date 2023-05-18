@@ -78,9 +78,9 @@ void ItemDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xa0;
   readData(&ptAttributes, base, current);
   current = ptr + 0xb0;
-  readData(&unk_f7a4116, base, current);
+  readData(&arInherentAffixes, base, current);
   current = ptr + 0xc0;
-  readData(&unk_143ea6c, base, current);
+  readData(&arForcedAffixes, base, current);
   current = ptr + 0xd0;
   readData(&unk_e6191d6, base, current);
   current = ptr + 0xe0;

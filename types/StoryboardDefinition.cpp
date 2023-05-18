@@ -10,7 +10,7 @@ void StoryboardDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x8;
   readData(&unk_97f94e0, base, current);
   current = ptr + 0x20;
-  readData(&unk_4569eb, base, current);
+  readData(&arChildControls, base, current);
   current = ptr + 0x30;
   readData(&unk_1722198, base, current);
   ptr += 0x48;

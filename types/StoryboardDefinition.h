@@ -13,7 +13,7 @@
 
 struct StoryboardDefinition : public ComplexRead {
   t36030d2d unk_97f94e0;
-  DT_VARIABLEARRAY<t87385a6d> unk_4569eb;
+  DT_VARIABLEARRAY<t87385a6d> arChildControls;
   DT_POLYMORPHIC_VARIABLEARRAY unk_1722198;
 
   void read(const char* base, char* &ptr);

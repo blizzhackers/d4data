@@ -18,7 +18,7 @@ struct ParagonNodeDefinition : public ComplexRead {
   DT_SNO<SnoGroup::Power> snoPassivePower;
   DT_VARIABLEARRAY<AttributeSpecifier> ptAttributes;
   DT_VARIABLEARRAY<DT_INT> unk_8ba8e1e;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::ParagonThreshold>> unk_2055501;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::ParagonThreshold>> arThresholdSelector;
   DT_INT unk_2133527;
   DT_INT unk_a5d749f;
   DT_VARIABLEARRAY<DT_GBID<0x38>> arSkillTags;

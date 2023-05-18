@@ -42,7 +42,7 @@ struct ActorDefinition : public ComplexRead {
   DT_UINT dwFlags;
   DT_UINT dwFlagsEx;
   DT_SNO<SnoGroup::Appearance> snoAppearance;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Appearance>> unk_ecc360f;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Appearance>> arCustomizationAppearances;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::AnimSet>> arAnimSets;
   DT_SNO<SnoGroup::AnimTree> snoAnimTree;
   tb2f69ab5 unk_db10329;

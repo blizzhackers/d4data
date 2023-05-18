@@ -10,7 +10,7 @@
 #pragma push(pack, 1)
 
 struct t9bdeeb8c : public ComplexRead {
-  DT_FIXEDARRAY<DT_SNO<SnoGroup::Dye>, 4> unk_28d5aa0;
+  DT_FIXEDARRAY<DT_SNO<SnoGroup::Dye>, 4> arEquipmentDyes;
   DT_INT nHairColor;
   DT_INT nSkinColor;
 

@@ -20,6 +20,6 @@ void AudioContextDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x1c;
   readData(&unk_d110c10, base, current);
   current = ptr + 0x30;
-  readData(&unk_245a799, base, current);
+  readData(&arRainSounds, base, current);
   ptr += 0x40;
 }

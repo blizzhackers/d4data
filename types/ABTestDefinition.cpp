@@ -8,6 +8,6 @@
 void ABTestDefinition::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
-  readData(&unk_eb92604, base, current);
+  readData(&arVariantKeys, base, current);
   ptr += 0x18;
 }

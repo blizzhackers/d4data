@@ -16,7 +16,7 @@ void ActorDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0x14;
   readData(&snoAppearance, base, current);
   current = ptr + 0x18;
-  readData(&unk_ecc360f, base, current);
+  readData(&arCustomizationAppearances, base, current);
   current = ptr + 0x28;
   readData(&arAnimSets, base, current);
   current = ptr + 0x38;

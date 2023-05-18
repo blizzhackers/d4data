@@ -49,8 +49,8 @@ struct ItemDefinition : public ComplexRead {
   DT_INT unk_ba8730c;
   DT_ENUM<DT_INT> unk_ae0eeff;
   DT_VARIABLEARRAY<AttributeSpecifier> ptAttributes;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Affix>> unk_f7a4116;
-  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Affix>> unk_143ea6c;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Affix>> arInherentAffixes;
+  DT_VARIABLEARRAY<DT_SNO<SnoGroup::Affix>> arForcedAffixes;
   DT_VARIABLEARRAY<DT_GBID<0x12>> unk_e6191d6;
   DT_VARIABLEARRAY<DT_GBID<0x12>> unk_192312c;
   DT_FIXEDARRAY<DT_INT, 5> unk_9da2273;

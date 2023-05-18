@@ -20,7 +20,7 @@ struct AnimationDefinition : public ComplexRead {
   DT_INT unk_847be4d;
   DT_SNO<SnoGroup::Appearance> snoAppearance;
   DT_VARIABLEARRAY<AnimPermutation> ptPermutations;
-  DT_VARIABLEARRAY<DT_INT> unk_78651aa;
+  DT_VARIABLEARRAY<DT_INT> arPermutationIndices;
   DT_VARIABLEARRAY<DT_BYTE> ptRepeatablePermutations;
   DT_INT unk_88ce6d6;
   DT_INT unk_5316586;
