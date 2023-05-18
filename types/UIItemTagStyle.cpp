@@ -18,7 +18,7 @@ void UIItemTagStyle::read(const char* base, char* &ptr) {
   current = ptr + 0x20;
   readData(&unk_b835d15, base, current);
   current = ptr + 0x30;
-  readData(&unk_582a697, base, current);
+  readData(&tConsoleInput, base, current);
   current = ptr + 0x40;
   readData(&unk_b4f614c, base, current);
   current = ptr + 0x50;

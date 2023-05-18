@@ -18,7 +18,7 @@ struct UIConsoleEditStyle : public ComplexRead {
   UIControlHandle hParentStyle;
   DT_INT64 unk_441f783;
   DT_TAGMAP<DT_INT> unk_b835d15;
-  tb8237382 unk_582a697;
+  tb8237382 tConsoleInput;
   DT_TAGMAP<DT_INT> unk_b4f614c;
   UIControlFont tFont;
   DT_TAGMAP<DT_INT> unk_4741819;
