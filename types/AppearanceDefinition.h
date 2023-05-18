@@ -8,9 +8,9 @@
 #include "../types.h"
 #include "AppearanceLook.h"
 #include "AppearanceMaterial.h"
+#include "FoliageSettings.h"
 #include "LookVariantMap.h"
 #include "Structure.h"
-#include "t12daec08.h"
 #include "t6c048b8b.h"
 #include "ta5c1f30e.h"
 
@@ -24,7 +24,7 @@ struct AppearanceDefinition : public ComplexRead {
   DT_SNO<SnoGroup::MarkerSet> unk_e79217;
   DT_VARIABLEARRAY<LookVariantMap> arLookVariantMap;
   DT_UINT dwLookVariant;
-  t12daec08 unk_af015fc;
+  FoliageSettings tFoliageSettings;
   DT_POLYMORPHIC_VARIABLEARRAY unk_4f51617;
   DT_VARIABLEARRAY<t6c048b8b> unk_6c10d1;
   DT_FLOAT unk_9a6abe3;

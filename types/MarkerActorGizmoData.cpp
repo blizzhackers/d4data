@@ -22,7 +22,7 @@ void MarkerActorGizmoData::read(const char* base, char* &ptr) {
   current = ptr + 0x60;
   readData(&ptChestGizmoData, base, current);
   current = ptr + 0x70;
-  readData(&unk_f48a504, base, current);
+  readData(&ptSpawnerGizmoData, base, current);
   current = ptr + 0x80;
   readData(&ptPortalGizmoData, base, current);
   current = ptr + 0x90;

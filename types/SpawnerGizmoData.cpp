@@ -1,11 +1,11 @@
 /**
- * Definition: t1adf4e20
+ * Definition: SpawnerGizmoData
  * Hash: 1adf4e20
  */
 
-#include "t1adf4e20.h"
+#include "SpawnerGizmoData.h"
 
-void t1adf4e20::read(const char* base, char* &ptr) {
+void SpawnerGizmoData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

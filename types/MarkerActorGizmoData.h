@@ -35,7 +35,7 @@ struct MarkerActorGizmoData : public ComplexRead {
   DT_VARIABLEARRAY<t4ddd8603> unk_b64cb67;
   DT_VARIABLEARRAY<tb2ef091a> unk_83131fe;
   DT_VARIABLEARRAY<MarkerChestGizmoData> ptChestGizmoData;
-  DT_VARIABLEARRAY<te6346255> unk_f48a504;
+  DT_VARIABLEARRAY<te6346255> ptSpawnerGizmoData;
   DT_VARIABLEARRAY<MarkerPortalGizmoData> ptPortalGizmoData;
   DT_VARIABLEARRAY<t7b11e164> unk_f441be6;
   DT_VARIABLEARRAY<t478eb43b> unk_542a67d;

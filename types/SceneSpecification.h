@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t4e8e96e4.h"
+#include "StartingAllowedWeather.h"
 
 #pragma push(pack, 1)
 
@@ -21,7 +21,7 @@ struct SceneSpecification : public ComplexRead {
   DT_SNO<SnoGroup::Weather> snoWeather;
   DT_SNO<SnoGroup::World> snoPresetWorld;
   DT_INT nSceneChunk;
-  DT_VARIABLEARRAY<t4e8e96e4> unk_c9913ac;
+  DT_VARIABLEARRAY<StartingAllowedWeather> unk_c9913ac;
 
   void read(const char* base, char* &ptr);
 };

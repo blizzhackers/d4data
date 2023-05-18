@@ -17,7 +17,7 @@ struct t9d7affe : public ComplexRead {
   DT_INT unk_b5ce76e;
   DT_INT unk_74544d1;
   DT_INT unk_9e5b233;
-  DT_VARIABLEARRAY<DT_FLOAT> unk_d694fd3;
+  DT_VARIABLEARRAY<DT_FLOAT> arThresholds;
 
   void read(const char* base, char* &ptr);
 };

@@ -6,7 +6,7 @@
 #pragma once
 
 #include "../types.h"
-#include "t4e8e96e4.h"
+#include "StartingAllowedWeather.h"
 #include "t78854e88.h"
 #include "t95119e98.h"
 
@@ -26,7 +26,7 @@ struct t5d0fa598 : public ComplexRead {
   DT_SNO<SnoGroup::World> snoPresetWorld;
   DT_INT nSceneChunk;
   DT_OPTIONAL<DT_INT> unk_1e9ef9d;
-  DT_FIXEDARRAY<t4e8e96e4, 16> unk_bcb06ca;
+  DT_FIXEDARRAY<StartingAllowedWeather, 16> unk_bcb06ca;
   DT_FIXEDARRAY<DT_GBID<0x14>, 16> unk_5215067;
   DT_OPTIONAL<DT_INT> tDRLGCreationInfo;
 

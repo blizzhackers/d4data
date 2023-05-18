@@ -22,6 +22,6 @@ void t9d7affe::read(const char* base, char* &ptr) {
   current = ptr + 0x38;
   readData(&unk_9e5b233, base, current);
   current = ptr + 0x40;
-  readData(&unk_d694fd3, base, current);
+  readData(&arThresholds, base, current);
   ptr += 0x50;
 }

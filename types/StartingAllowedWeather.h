@@ -1,5 +1,5 @@
 /**
- * Definition: t4e8e96e4
+ * Definition: StartingAllowedWeather
  * Hash: 4e8e96e4
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t4e8e96e4 : public ComplexRead {
+struct StartingAllowedWeather : public ComplexRead {
   DT_SNO<SnoGroup::SubZone> snoSubzone;
   DT_ENUM<DT_INT> unk_efcdea5;
 

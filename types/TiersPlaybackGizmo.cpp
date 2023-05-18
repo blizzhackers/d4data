@@ -1,11 +1,11 @@
 /**
- * Definition: t44f21854
+ * Definition: TiersPlaybackGizmo
  * Hash: 44f21854
  */
 
-#include "t44f21854.h"
+#include "TiersPlaybackGizmo.h"
 
-void t44f21854::read(const char* base, char* &ptr) {
+void TiersPlaybackGizmo::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x8;
   readData(&dwType, base, current);

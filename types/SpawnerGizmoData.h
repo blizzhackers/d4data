@@ -1,17 +1,17 @@
 /**
- * Definition: t44f21854
- * Hash: 44f21854
+ * Definition: SpawnerGizmoData
+ * Hash: 1adf4e20
  */
 
 #pragma once
 
 #include "../types.h"
 #include "GizmoConditionData.h"
-#include "t4ddd8603.h"
+#include "te6346255.h"
 
 #pragma push(pack, 1)
 
-struct t44f21854 : public ComplexRead {
+struct SpawnerGizmoData : public ComplexRead {
   DT_UINT dwType;
   DT_UINT dwPad;
   DT_INT fDisableNonFriendlyOperation;
@@ -50,9 +50,25 @@ struct t44f21854 : public ComplexRead {
   DT_UINT unk_91a3966;
   DT_UINT unk_25312e5;
   DT_INT unk_4be4371;
-  t4ddd8603 unk_e88c0c2;
-  DT_INT unk_ccdfb1c;
-  DT_FLOAT unk_33bc35b;
+  DT_INT unk_812c9e9;
+  DT_INT unk_e91141a;
+  DT_INT unk_c2ce9c;
+  DT_INT unk_92ef706;
+  DT_INT unk_8131b11;
+  DT_INT unk_545c5ca;
+  DT_ENUM<DT_INT> eSpawnType;
+  DT_SNO<SnoGroup::Actor> unk_c005492;
+  DT_SNO<SnoGroup::Encounter> snoSpawnEncounter;
+  DT_SNO<SnoGroup::Population> snoPopulation;
+  DT_SNO<SnoGroup::EffectGroup> snoSpawnEffect;
+  DT_SNO<SnoGroup::EffectGroup> unk_d32ee25;
+  DT_SNO<SnoGroup::EffectGroup> unk_2820068;
+  DT_SNO<SnoGroup::Power> unk_50d7e54;
+  DT_SNO<SnoGroup::Item> snoSpawnItem;
+  DT_INT unk_59c2867;
+  DT_INT unk_6cc5610;
+  DT_FIXEDARRAY<DT_SNO<SnoGroup::MonsterAffix>, 4> unk_4701df7;
+  te6346255 tInstanceData;
 
   void read(const char* base, char* &ptr);
 };

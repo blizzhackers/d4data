@@ -1,11 +1,11 @@
 /**
- * Definition: t4e8e96e4
+ * Definition: StartingAllowedWeather
  * Hash: 4e8e96e4
  */
 
-#include "t4e8e96e4.h"
+#include "StartingAllowedWeather.h"
 
-void t4e8e96e4::read(const char* base, char* &ptr) {
+void StartingAllowedWeather::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&snoSubzone, base, current);

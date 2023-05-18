@@ -22,7 +22,7 @@ void AppearanceDefinition::read(const char* base, char* &ptr) {
   current = ptr + 0xd8;
   readData(&dwLookVariant, base, current);
   current = ptr + 0xdc;
-  readData(&unk_af015fc, base, current);
+  readData(&tFoliageSettings, base, current);
   current = ptr + 0x108;
   readData(&unk_4f51617, base, current);
   current = ptr + 0x120;

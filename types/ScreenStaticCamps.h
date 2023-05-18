@@ -1,5 +1,5 @@
 /**
- * Definition: t85c1513c
+ * Definition: ScreenStaticCamps
  * Hash: 85c1513c
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t85c1513c : public ComplexRead {
+struct ScreenStaticCamps : public ComplexRead {
   DT_SNO<SnoGroup::Territory> snoTerritory;
   DT_VARIABLEARRAY<DT_VECTOR2D> arPoints;
 

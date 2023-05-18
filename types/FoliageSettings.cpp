@@ -1,11 +1,11 @@
 /**
- * Definition: t12daec08
+ * Definition: FoliageSettings
  * Hash: 12daec08
  */
 
-#include "t12daec08.h"
+#include "FoliageSettings.h"
 
-void t12daec08::read(const char* base, char* &ptr) {
+void FoliageSettings::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&flExplosionFactor, base, current);

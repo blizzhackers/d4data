@@ -1,11 +1,11 @@
 /**
- * Definition: t1c6da234
+ * Definition: TimedSpawningData
  * Hash: 1c6da234
  */
 
-#include "t1c6da234.h"
+#include "TimedSpawningData.h"
 
-void t1c6da234::read(const char* base, char* &ptr) {
+void TimedSpawningData::read(const char* base, char* &ptr) {
   char *current;
   current = ptr + 0x0;
   readData(&gbidSpawnLocType, base, current);

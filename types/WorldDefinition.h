@@ -8,9 +8,9 @@
 #include "../types.h"
 #include "Environment.h"
 #include "MaterialTexture.h"
+#include "ScreenStaticCamps.h"
 #include "WorldServerData.h"
 #include "t4825cde.h"
-#include "t85c1513c.h"
 
 #pragma push(pack, 1)
 
@@ -25,7 +25,7 @@ struct WorldDefinition : public ComplexRead {
   DT_SNO<SnoGroup::SubZone> unk_3ce229b;
   DT_VARIABLEARRAY<DT_SNO<SnoGroup::LevelArea>> unk_27befa0;
   DT_INT unk_587b37c;
-  DT_VARIABLEARRAY<t85c1513c> unk_675bda3;
+  DT_VARIABLEARRAY<ScreenStaticCamps> unk_675bda3;
   DT_UINT unk_678ad38;
   DT_ENUM<DT_INT> unk_720f501;
   MaterialTexture unk_cc56e3e;

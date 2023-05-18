@@ -1,5 +1,5 @@
 /**
- * Definition: t12daec08
+ * Definition: FoliageSettings
  * Hash: 12daec08
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t12daec08 : public ComplexRead {
+struct FoliageSettings : public ComplexRead {
   DT_FLOAT flExplosionFactor;
   DT_FLOAT flFrequency;
   DT_FLOAT unk_3278f1;

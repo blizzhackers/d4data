@@ -1,5 +1,5 @@
 /**
- * Definition: t1c6da234
+ * Definition: TimedSpawningData
  * Hash: 1c6da234
  */
 
@@ -9,7 +9,7 @@
 
 #pragma push(pack, 1)
 
-struct t1c6da234 : public ComplexRead {
+struct TimedSpawningData : public ComplexRead {
   DT_GBID<0x14> gbidSpawnLocType;
   DT_ENUM<DT_INT> eRestrictionType;
   DT_INT nCountActive;
