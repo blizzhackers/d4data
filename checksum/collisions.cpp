@@ -122,73 +122,71 @@ void collisions(long pos, long max) {
   }
 }
 
-std::vector<std::string> getDefaultDict() {
-    std::vector<std::string> ret;
-    ret.push_back("0");
-    ret.push_back("1");
-    ret.push_back("2");
-    ret.push_back("3");
-    ret.push_back("4");
-    ret.push_back("5");
-    ret.push_back("6");
-    ret.push_back("7");
-    ret.push_back("8");
-    ret.push_back("9");
-    ret.push_back("_");
-    ret.push_back("a");
-    ret.push_back("b");
-    ret.push_back("c");
-    ret.push_back("d");
-    ret.push_back("e");
-    ret.push_back("f");
-    ret.push_back("g");
-    ret.push_back("h");
-    ret.push_back("i");
-    ret.push_back("j");
-    ret.push_back("k");
-    ret.push_back("l");
-    ret.push_back("m");
-    ret.push_back("n");
-    ret.push_back("o");
-    ret.push_back("p");
-    ret.push_back("q");
-    ret.push_back("r");
-    ret.push_back("s");
-    ret.push_back("t");
-    ret.push_back("u");
-    ret.push_back("v");
-    ret.push_back("w");
-    ret.push_back("x");
-    ret.push_back("y");
-    ret.push_back("z");
-    ret.push_back("A");
-    ret.push_back("B");
-    ret.push_back("C");
-    ret.push_back("D");
-    ret.push_back("E");
-    ret.push_back("F");
-    ret.push_back("G");
-    ret.push_back("H");
-    ret.push_back("I");
-    ret.push_back("J");
-    ret.push_back("K");
-    ret.push_back("L");
-    ret.push_back("M");
-    ret.push_back("N");
-    ret.push_back("O");
-    ret.push_back("P");
-    ret.push_back("Q");
-    ret.push_back("R");
-    ret.push_back("S");
-    ret.push_back("T");
-    ret.push_back("U");
-    ret.push_back("V");
-    ret.push_back("W");
-    ret.push_back("X");
-    ret.push_back("Y");
-    ret.push_back("Z");
-    return ret;
-}
+std::vector<std::string> defaultDict {
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "_",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+};
 
 bool isAllCaps(std::string elem) {
   if (elem.length() < 2) {
@@ -329,7 +327,7 @@ int main(int argc, char *argv[]) {
   std::unordered_map<std::string, bool> dictmap;
 
   if (!wordsOnly) {
-    for (const auto baseelem : getDefaultDict()) {
+    for (const auto baseelem : defaultDict) {
       if (baseelem[0] < 'A' || baseelem[0] < 'Z') {
         dictmap[baseelem] = true;
       }
@@ -337,7 +335,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (useDict) {
-    for (const auto baseelem : (useDict ? getDict() : getDefaultDict())) {
+    for (const auto baseelem : (useDict ? getDict() : defaultDict)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
         std::string newelem = elem;
@@ -372,6 +370,8 @@ int main(int argc, char *argv[]) {
     prefix = getPrefixes();
     prefix.push_back("");
   }
+
+  std::cerr << "Dictionary size: " << dict.size() << std::endl;
 
   if (checksumMatch.size()) {
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
