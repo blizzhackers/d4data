@@ -138,21 +138,3 @@ dict = Object.keys(dict).sort();
 
 fs.writeFileSync('prefix.txt', prefix.join('\n'));
 fs.writeFileSync('dict.txt', dict.join('\n'));
-
-fs.writeFileSync('dict.h', [
-  '#include <string>',
-  '#include <vector>',
-  '',
-  'std::vector<std::string> getPrefixes() {',
-  '  return {',
-  ...prefix.map((v, i) => '    ' + JSON.stringify(v) + ','),
-  '  };',
-  '};',
-  '',
-  'std::vector<std::string> getDict() {',
-  '  return {',
-  ...dict.map((v, i) => '    ' + JSON.stringify(v) + ','),
-  '  };',
-  '};',
-  '',
-].join('\n'));

@@ -6,7 +6,6 @@
 #include <unistd.h>
 #include <algorithm>
 #include <filesystem>
-#include "../dict.h"
 
 std::string rootPath = "";
 
@@ -15,7 +14,9 @@ uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
 uint32_t minPos = 0;
 
 std::unordered_set<uint32_t> checksumMatch;
+std::unordered_set<uint32_t> checksumMatchSecondary;
 bool hashType = 0, outputLog = true;
+bool paired = false;
 
 std::vector<std::string> prefix;
 std::vector<std::string> dict;
@@ -81,13 +82,63 @@ bool hasCaps(std::string word) {
   return false;
 }
 
+bool checkPaired(std::string word) {
+  if (!paired) {
+    return true;
+  }
+
+  if (hashType == 0) {
+    uint32_t wordChecksum = checksum("t" + word);
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("pt" + word);
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("ar" + word);
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("t" + word + "s");
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("pt" + word + "s");
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("ar" + word + "s");
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+  }
+
+
+  return false;
+}
+
 void collisions(long pos, long max) {
   if (pos >= max) {
     std::string word = getWord(max);
     uint32_t wordChecksum = checksum(word);
 
-    if(checksumMatch.count(wordChecksum) > 0 && !stringUsed[word]) {
-      std::cout << "  " << std::hex << wordChecksum << ": " << word << std::endl;
+    if(checksumMatch.count(wordChecksum) > 0 && checkPaired(word) && !stringUsed[word]) {
+      if (paired) {
+        std::cout << "  " << std::hex << wordChecksum << ": " << word << " (paired)" << std::endl;
+      } else {
+        std::cout << "  " << std::hex << wordChecksum << ": " << word << std::endl;
+      }
       stringUsed[word] = true;
 
       if (outputLog) {
@@ -188,6 +239,48 @@ std::vector<std::string> defaultDict {
   "Z",
 };
 
+std::vector<std::string> getDict(bool english = false) {
+  std::vector<std::string> ret;
+
+  {
+    std::ifstream dict("../dict.txt");
+    std::string tmp;
+
+    dict >> tmp;
+    while (dict) {
+      ret.push_back(tmp);
+      dict >> tmp;
+    }
+  }
+
+  if (english) {
+    std::ifstream dict("../english_dict.txt");
+    std::string tmp;
+
+    dict >> tmp;
+    while (dict) {
+      ret.push_back(tmp);
+      dict >> tmp;
+    }
+  }
+
+  return ret;
+}
+
+std::vector<std::string> getPrefixes() {
+  std::ifstream prefixes("../prefix.txt");
+  std::string tmp;
+  std::vector<std::string> ret;
+
+  prefixes >> tmp;
+  while (prefixes) {
+    ret.push_back(tmp);
+    prefixes >> tmp;
+  }
+
+  return ret;
+}
+
 bool isAllCaps(std::string elem) {
   if (elem.length() < 2) {
     return false;
@@ -211,6 +304,7 @@ int main(int argc, char *argv[]) {
   bool wordsOnly = false;
   bool noPrefix = false;
   bool ignoreAllCaps = true;
+  bool useEnglish = false;
 
   int pos = 0;
 
@@ -262,6 +356,12 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--no-dict") {
         useDict = false;
+      }
+      else if(arg == "--paired") {
+        paired = true;
+      }
+      else if(arg == "--english") {
+        useEnglish = true;
       }
       else if(arg[0] == '-') {
         // discard unknown option
@@ -323,19 +423,50 @@ int main(int argc, char *argv[]) {
     }
   }
 
+  if (hashType == 0 && checksumMatch.size() == 0) {
+    std::ifstream hashes("../unfound_hashes.txt");
+    size_t uTmp;
+    hashes >> std::hex >> uTmp;
+
+    while (hashes) {
+      checksumMatch.insert(uTmp);
+      hashes >> std::hex >> uTmp;
+    }
+  } else if(hashType == 1 && checksumMatch.size() == 0) {
+    std::ifstream hashes("../unfound_field_hashes.txt");
+    size_t uTmp;
+
+    hashes >> std::hex >> uTmp;
+    while (hashes) {
+      checksumMatch.insert(uTmp);
+      hashes >> std::hex >> uTmp;
+    }
+  }
+
+  if (paired && hashType == 0) {
+    std::ifstream hashes("../unfound_field_hashes.txt");
+    size_t uTmp;
+
+    hashes >> std::hex >> uTmp;
+    while (hashes) {
+      checksumMatchSecondary.insert(uTmp);
+      hashes >> std::hex >> uTmp;
+    }
+  } else {
+    paired = false;
+  }
+
   int32_t dictmax = dict.size();
   std::unordered_map<std::string, bool> dictmap;
 
   if (!wordsOnly) {
     for (const auto baseelem : defaultDict) {
-      if (baseelem[0] < 'A' || baseelem[0] < 'Z') {
-        dictmap[baseelem] = true;
-      }
+      dictmap[baseelem] = true;
     }
   }
 
   if (useDict) {
-    for (const auto baseelem : (useDict ? getDict() : defaultDict)) {
+    for (const auto baseelem : (useDict ? getDict(useEnglish) : defaultDict)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
         std::string newelem = elem;
@@ -371,9 +502,10 @@ int main(int argc, char *argv[]) {
     prefix.push_back("");
   }
 
-  std::cerr << "Dictionary size: " << dict.size() << std::endl;
-
   if (checksumMatch.size()) {
+    std::cerr << "Prefix size: " << prefix.size() << std::endl;
+    std::cerr << "Dictionary size: " << dict.size() << std::endl;
+    std::cerr << "Suffix size: " << suffix.size() << std::endl;
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
     for (uint32_t c = minPos; c < maxPos; c++) {
       std::cerr << "Length: " << (c + 1) << std::endl;
