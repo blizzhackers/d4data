@@ -302,7 +302,7 @@ int main(int argc, char *argv[]) {
   int pos = 0;
 
   for (int c = 0; argv[0][c] && c < 128; c++) {
-    if (argv[0][c] == '/') {
+    if (argv[0][c] == '/' || argv[0][c] == '\\') {
       pos = c;
     }
   }
