@@ -23,12 +23,10 @@ std::vector<std::string> dict;
 std::vector<std::string> suffix;
 std::unordered_map<std::string, bool> stringUsed;
 
-uint32_t checksum(std::string str) {
+uint32_t checksum(std::string str, uint32_t hash = 0) {
   if (hashType == 2) { // gbid strings are lowercased
     std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
   }
-
-  uint32_t hash = 0;
 
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
@@ -82,12 +80,13 @@ bool hasCaps(std::string word) {
   return false;
 }
 
-bool checkPaired(std::string word) {
+bool checkPaired(int32_t max) {
   if (!paired) {
     return true;
   }
 
   if (hashType == 0) {
+    std::string word = getWord(max);
     uint32_t wordChecksum = checksum("t" + word);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
@@ -128,18 +127,11 @@ bool checkPaired(std::string word) {
   return false;
 }
 
-void collisions(long pos, long max) {
+void collisions(long pos, long max, uint32_t currentChecksum = 0) {
   if (pos >= max) {
-    std::string word = getWord(max);
-    uint32_t wordChecksum = checksum(word);
-
-    if(checksumMatch.count(wordChecksum) > 0 && checkPaired(word) && !stringUsed[word]) {
-      if (paired) {
-        std::cout << "  " << std::hex << wordChecksum << ": " << word << " (paired)" << std::endl;
-      } else {
-        std::cout << "  " << std::hex << wordChecksum << ": " << word << std::endl;
-      }
-      stringUsed[word] = true;
+    if(checksumMatch.count(currentChecksum) > 0 && checkPaired(max)) {
+      std::string word = getWord(max);
+      std::cout << "  " << std::hex << currentChecksum << ": " << word << std::endl;
 
       if (outputLog) {
         std::stringstream outfilePath;
@@ -154,10 +146,10 @@ void collisions(long pos, long max) {
           outfilePath << "gbid/";
         }
 
-        outfilePath << std::hex << wordChecksum << ".yml";
+        outfilePath << std::hex << currentChecksum << ".yml";
 
         std::ofstream outfile(outfilePath.str(), std::ios::app);
-        outfile << std::hex << wordChecksum << ": " << word << std::endl;
+        outfile << std::hex << currentChecksum << ": " << word << std::endl;
         outfile.close();
       }
     }
@@ -169,7 +161,8 @@ void collisions(long pos, long max) {
 
   for (long c = 0; c < cmax; c++) {
     tmp[pos] = c;
-    collisions(pos + 1, max);
+    uint32_t newChecksum = checksum(getDictEntry(c, pos, max), currentChecksum);
+    collisions(pos + 1, max, newChecksum);
   }
 }
 
