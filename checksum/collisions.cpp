@@ -496,6 +496,8 @@ void loadFieldTypeMap () {
   typePrefixes[0].insert("m_t"); // ?, DT_ENUM
   typePrefixes[checksum("DT_ENUM")].insert("t"); // ?, DT_ENUM
   typePrefixes[checksum("DT_ENUM")].insert("m_t"); // ?, DT_ENUM
+  typePrefixes[checksum("DT_STRING_FORMULA")].insert("t"); // ?, DT_ENUM
+  typePrefixes[checksum("DT_STRING_FORMULA")].insert("m_t"); // ?, DT_ENUM
   typePrefixes[checksum("DT_TAGMAP")].insert("tag"); // DT_TAGMAP
   typePrefixes[checksum("DT_TAGMAP")].insert("m_tag"); // DT_TAGMAP
   typePrefixes[checksum("DT_BYTE")].insert("twin"); // DT_BYTE
