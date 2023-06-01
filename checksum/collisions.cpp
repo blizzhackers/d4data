@@ -89,36 +89,36 @@ bool checkPaired(int32_t max) {
 
   if (hashType == 0) {
     std::string word = getWord(max);
-    uint32_t wordChecksum = checksum("t" + word, hashType);
+    uint32_t wordChecksum = checksum("t" + word, 0, 1);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("pt" + word, hashType);
+    wordChecksum = checksum("pt" + word, 0, 1);
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("ar" + word, hashType);
-
-    if (checksumMatchSecondary.count(wordChecksum) > 0) {
-      return true;
-    }
-
-    wordChecksum = checksum("t" + word + "s", hashType);
+    wordChecksum = checksum("ar" + word, 0, 1);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("pt" + word + "s", hashType);
+    wordChecksum = checksum("t" + word + "s", 0, 1);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("ar" + word + "s", hashType);
+    wordChecksum = checksum("pt" + word + "s", 0, 1);
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = checksum("ar" + word + "s", 0, 1);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
