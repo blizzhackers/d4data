@@ -136,5 +136,5 @@ fs.writeFileSync('dict.json', JSON.stringify(dict, null, ' '));
 prefix = Object.keys(prefix).sort();
 dict = Object.keys(dict).sort();
 
-fs.writeFileSync('prefix.txt', prefix.join('\n'));
-fs.writeFileSync('dict.txt', dict.join('\n'));
+fs.writeFileSync('prefix.txt', prefix.sort().join('\n'));
+fs.writeFileSync('dict.txt', dict.sort().join('\n'));
