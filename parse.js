@@ -105,8 +105,8 @@ let basicTypes = {
   },
   "DT_RANGE": function (ret, file, typeHashes, offset, field) {
     let typeSize = getTypeSize(typeHashes.slice(1));
-    ret.value = readStructure(file, typeHashes.slice(1), offset, field);
-    ret.end_value = readStructure(file, typeHashes.slice(1), offset + typeSize, field);
+    ret.value = readStructure(file, typeHashes.slice(1), offset + typeSize, field);
+    ret.end_value = readStructure(file, typeHashes.slice(1), offset, field);
   },
   "DT_FIXEDARRAY": function (ret, file, typeHashes, offset, field) {
     ret.value = [];
