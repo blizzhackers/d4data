@@ -11,8 +11,9 @@ const devAttributes = DEV_INFO;
 
 process.chdir(__dirname);
 
+let toc = {};
+
 if (fs.existsSync('data/base/CoreTOC.dat')) {
-  let toc = {};
   let file = fs.readFileSync('data/base/CoreTOC.dat');
   let snoGroupsCount = file.readUInt32LE(0);
   let entryCounts = new Uint32Array(file.buffer.slice(4, 4 + 4 * snoGroupsCount));
@@ -40,6 +41,9 @@ if (fs.existsSync('data/base/CoreTOC.dat')) {
   }
 
   fs.writeFileSync('json/base/CoreTOC.dat.json', JSON.stringify(toc, null, ' '));
+}
+else {
+  toc = JSON.parse(fs.readFileSync('json/base/CoreTOC.dat.json'));
 }
 
 function devCombine(normal, dev, verbose) {
@@ -111,13 +115,22 @@ let basicTypes = {
 
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
-      ret.groupName = snoGroups[field.group];  
+      ret.groupName = snoGroups[field.group];
+      if (toc[ret.group] && toc[ret.group][ret.value]) {
+        ret.name = toc[ret.group][ret.value];
+      }
     }
   },
   "DT_SNO_NAME": function (ret, file, typeHashes, offset, field) {
     ret.value = file.readInt32LE(offset + 4);
     ret.group = file.readInt32LE(offset);
     ret.groupName = snoGroups[ret.group];
+
+    if (devAttributes >= DEV_INFO) {
+      if (toc[ret.group] && toc[ret.group][ret.value]) {
+        ret.name = toc[ret.group][ret.value];
+      }
+    }
   },
   "DT_GBID": function (ret, file, typeHashes, offset, field) {
     ret.value = file.readUInt32LE(offset);
