@@ -97,10 +97,10 @@ function readStructure(file, typeHashes, offset, field) {
     ret.value = file.readUInt32LE(offset);
   }
   else if (type.name === "DT_ACD_NETWORK_NAME" || type.name === "DT_SHARED_SERVER_DATA_ID") {
-    ret.value = file.readUInt64LE(offset);
+    ret.value = file.readBigUInt64LE(offset).toString(16);
   }
   else if (type.name === "DT_INT64") {
-    ret.value = file.readInt64LE(offset);
+    ret.value = file.readBigInt64LE(offset).toString(16);
   }
   else if (type.name === "DT_RANGE") {
     let typeSize = getTypeSize(typeHashes.slice(1));
@@ -151,8 +151,11 @@ function readStructure(file, typeHashes, offset, field) {
       ret.compiled.push(file.readUInt8(c));
     }  
   }
-  else if (type.name === "DT_INT64") {
-    ret.value = file.readInt64LE(offset);
+  else if (type.name === "DT_CSTRING") {
+    let stringOffset = file.readInt32LE(offset + 8);
+    let stringSize = file.readInt32LE(offset + 12);
+
+    ret.value = file.subarray(stringOffset, stringOffset + stringSize - 1).toString();
   }
   else {
     ret.unhandledType = true;
@@ -165,11 +168,38 @@ function readStructure(file, typeHashes, offset, field) {
   return ret;
 }
 
-for (let c = 2; c < process.argv.length; c++) {
-  const fileName = process.argv[c];
+let fileNames = [];
 
-  if (fs.existsSync(fileName)) {
-    let file = fs.readFileSync(fileName);
+let success = 0;
+let total = 0;
+
+function getAllFiles(path) {
+  if (fs.existsSync(path)) {
+    if (fs.statSync(path).isDirectory()) {
+      while (path.slice(-1) === '/') {
+        path = path.slice(0, -1);
+      }
+  
+      fs.readdirSync(path).forEach((file) => {
+        getAllFiles(path + '/' + file);
+      })
+    }
+    else {
+      fileNames.push(path);
+    }
+  }
+}
+
+for (let c = 2; c < process.argv.length; c++) {
+  getAllFiles(process.argv[c]);
+}
+
+fileNames.forEach((fileName, index) => {
+  total++;
+
+  let file = fs.readFileSync(fileName);
+
+  if (file.length >= 16) {
     let header = file.subarray(0, 16);
 
     file = file.subarray(16);
@@ -179,20 +209,23 @@ for (let c = 2; c < process.argv.length; c++) {
     if (dwSignature === 0xdeadbeef) {
       let data = readStructure(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0);
       let newFileName = fileName.split('/');
+      let snoID = file.readUInt32LE(0);
 
       if (newFileName[0] === 'data') {
         newFileName[0] = 'json';
       }
-  
+
       newFileName = newFileName.join('/') + '.json';
-      console.log(newFileName);
+      console.log('#' + index, newFileName);
 
       fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
         __fileName__: fileName,
-      }), null, ' '));
-    }
-    else {
-      console.log(fileName, ' is not readable!');
+        __snoID__: snoID,
+      }), null, ' ') + '\n');
+
+      success++;
     }
   }
-}
+});
+
+console.log('Processed', success, 'of', total, 'files.');
