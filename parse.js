@@ -151,12 +151,12 @@ let basicTypes = {
       // Skip 8 bytes per entry at the start.
       dataOffset += dataCount * 8;
       dataSize -= dataCount * 8;
-
-      for (let c = 0; c < dataCount; c++) {
+    
+      for (let c = 0; c < dataCount && dataSize; c++) {
         let polyBase = readStructure(file, [0x5d4bac71], dataOffset, field);
         let polySize = getTypeSize(polyBase.dwType);
 
-        ret.value.push(readStructure(file, [polyBase.dwType], dataOffset, field));
+        ret.value.push(readStructure(file, [polyBase.dwType, ...typeHashes.slice(1)], dataOffset, field));
 
         dataOffset += polySize;
         dataSize -= polySize;
