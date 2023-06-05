@@ -1,0 +1,351 @@
+{
+ "__fileName__": "data/base/meta/Quest/Dungeon_Affix_DriftingShade.qst",
+ "__snoID__": 573824,
+ "__type__": "QuestDefinition",
+ "__typeHash__": 1053929211,
+ "eQuestType": 2,
+ "unk_f88ee86": -1,
+ "unk_4c4339b": 0,
+ "unk_f522ece": 1,
+ "eRepeatType": 0,
+ "eVignetteType": 0,
+ "unk_43f3849": 0,
+ "unk_48a2b16": -1,
+ "unk_d060a69": {
+  "__type__": "MarkerHandle",
+  "__typeHash__": 3934284334,
+  "snoMarkerSet": {
+   "value": -1,
+   "group": 24,
+   "groupName": "MarkerSet"
+  },
+  "nID": -1
+ },
+ "vecStartLocation": {
+  "x": 0,
+  "y": 0,
+  "z": 0
+ },
+ "unk_6a4ec7f": {
+  "value": -1,
+  "group": 48,
+  "groupName": "World"
+ },
+ "unk_c2e8448": {
+  "__type__": "MarkerHandle",
+  "__typeHash__": 3934284334,
+  "snoMarkerSet": {
+   "value": -1,
+   "group": 24,
+   "groupName": "MarkerSet"
+  },
+  "nID": -1
+ },
+ "unk_ff5c704": {
+  "x": 0,
+  "y": 0,
+  "z": 0
+ },
+ "unk_506369e": {
+  "value": -1,
+  "group": 48,
+  "groupName": "World"
+ },
+ "unk_d2181f0": 4294967295,
+ "snoLevelArea": {
+  "value": -1,
+  "group": 22,
+  "groupName": "LevelArea"
+ },
+ "unk_f956a05": 1,
+ "unk_14dee1b": 0,
+ "flParticipationRadius": 12,
+ "unk_8881b0e": 20,
+ "dwNextUID": 34,
+ "unk_b89b77f": 0,
+ "unk_c18cabd": 0,
+ "unk_79f6e17": 0,
+ "gbidSubzoneModifierTag": {
+  "value": 4294967295,
+  "group": 60
+ },
+ "snoBountySubzone": {
+  "value": -1,
+  "group": 80,
+  "groupName": "SubZone"
+ },
+ "eBountyTier": -1,
+ "eBountyType": -1,
+ "unk_313dbf6": 0,
+ "unk_834fdbf": 4294967295,
+ "unk_b83e7b1": 0,
+ "unk_942bcdb": 1,
+ "dwFlags": 4,
+ "arQuestPhases": [
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 12,
+   "dwFlags": 6,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 23,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 24,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 65,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [],
+        "unk_492729e": [],
+        "unk_9927fd3": 58
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start()\r\n\t--initial delay before affix takes effects\r\n\tHydra.Wait(FL_DUNGEONAFFIX_COOLUP);\r\n\t\r\n\t--keep looping to spawn shades\r\n\twhile (true) do\r\n\t\t--=====STOP CONDITION: region is not dungeon====--\r\n\t\t--If the area somehow is NOT a dungeon, stop this loop. It must be some errors, or a misuseage since affixes are only supposed to be in a dungeon\r\n\t\tif not Hydra.SubzoneIsDungeon() then\r\n\t\t\tbreak;\r\n\t\tend\r\n\t\t--=====STOP CONDITION====--\r\n\t\t\r\n\t\t--get player actors\r\n\t\t--local idPlayerValid = Hydra.ACDID_INVALID;\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tlocal tViableTargets = {}\r\n\t\t\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer)\r\n\t\t\t\tand Hydra.ActorIsAlive(idPlayer)\r\n\t\t\t\tand Hydra.ActorIsInCombat(idPlayer)\r\n\t\t\t\tand not Hydra.BuffIsOnActor(SNO_POWER_TARAGETED, \"BUFF_TARGETED\", idPlayer) then\r\n\t\t\t\t\r\n\t\t\t\ttable.insert(tViableTargets, idPlayer)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\t--=====STOP CONDITION: no valid player====--\r\n\t\t--[[ Comment this part of stop condition out, since for now we allow players to exit and re-enter ND. If this logic is active, in a single player game, player can exit then come back to stop the affix quest and cheese the ND.\r\n\t\t--if there's no valid player, break the loop\r\n\t\tif not Hydra.ActorIsValid(idPlayerValid) then\r\n\t\t\t--break;\r\n\t\tend]]--\r\n\t\t--=====STOP CONDITION====--\r\n\t\t\r\n\t\t--Hydra.Trace(\"combat players: {c_blue}\"..#tViableTargets..\"{/c} || Shades: {c_blue}\"..#tTargetedPlayers..\"{/c}\");\r\n\t\t--====SPAWN LOGIC====--\t\t\r\n\t\tif #tViableTargets == 1 then\r\n\t\t\t--User Function: spawn the shade here, mark the player with buff tag, and force it to be the target of the shade\r\n\t\t\tUF_Spawn_Shade(tViableTargets[1]);\r\n\t\t\tHydra.Wait(FL_NOSHADETIME_MIN + (FL_NOSHADETIME_OFFSET * Hydra.GetRandomFloat())); --offset is 0~3s, total no shade time is 10~13s ,set in OnStartup\r\n\t\t\t\r\n\t\telseif #tViableTargets > 1 then\r\n\t\t\t\t\r\n\t\t\tShuffleTable(tViableTargets);\r\n\t\t\t--find the first player that is not chased by a shade (can tell by the buff), and spawn a shade for this player\r\n\t\t\tfor i, idPlayer in ipairs (tViableTargets) do\r\n\t\t\t\tif not Hydra.BuffIsOnActor(SNO_POWER_TARAGETED, \"BUFF_TARGETED\", idPlayer) then\r\n\t\t\t\t\t--User Function: spawn the shade here, mark the player with buff tag, and force it to be the target of the shade\r\n\t\t\t\t\tUF_Spawn_Shade(idPlayer);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tend\t\r\n\t\t\tend\r\n\t\t\t--for each shade spawn, wait for a small time, and make sure the interval is large enough so they don't spawn the same time\r\n\t\t\tHydra.Wait(FL_DIFFTIME + FL_DIFFTIME_OFFSET * Hydra.GetRandomFloat()); --offset is 0~2s, total interval time is 1~3s, set in OnStartup\r\n\t\telse\r\n\t\t\t--if there are already enough shades, then enter cooldown. Also take a break, if no combat player then no cores. Cool down time scale with player number, scale has diminishing return on more players\r\n\t\t\t--if the player leaves the dungeon, tPlayers will become null, so use math.max to default to 1 if the player(s) is no longer present.\r\n\t\t\t--Hydra.Trace(\"Enter shade cool down, \"..#tPlayer..\" players exist, rest for \"..FL_NOSHADETIME_MIN * GROUP_SCALAR[#tPlayer] + (FL_NOSHADETIME_OFFSET * math.min( Hydra.GetRandomFloat(), 0.33 ))..\" seconds\");\r\n\t\t\tHydra.Wait(FL_NOSHADETIME_MIN * GROUP_SCALAR[math.max(1,#tPlayer)] + (FL_NOSHADETIME_OFFSET * Hydra.GetRandomFloat())); --offset is 0~3s, total no shade time is 10~13s, also multiplied by the group number scalar, set in OnStartup\r\n\t\tend\r\n\t\t--====SPAWN LOGIC====--\r\n\t\t\r\n\t\t--give while loop a global cooldown\r\n\t\tHydra.Wait(0.5)\r\n\tend -- while loop\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 0,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": -1
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  }
+ ],
+ "unk_1755172": [],
+ "arReputationRewards": [],
+ "unk_46e3956": [],
+ "snoStartCondition": {
+  "value": -1,
+  "group": 51,
+  "groupName": "Condition"
+ },
+ "unk_c47e01a": "function UF_Spawn_Shade(idTargetPlayer)\r\n\t--get a random location that fits requirements around the player, and check LOS. Only spawn at a point that player LOS check is successful\r\n\tlocal ptTargetLoc = Hydra.ActorGetPosition(idTargetPlayer);\r\n\t--validate player position on navmesh, if not, like a bar is leaping in the air, then get the most closed position on navmesh\r\n\tif not Hydra.PositionIsOnValidNavmesh(ptTargetLoc) then \r\n\t\tptTargetLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, 0, 0.5, true);\r\n\tend\r\n\t\r\n\tlocal idShade = Hydra.ACDID_INVALID;\r\n\tlocal ptSpawnLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, flMinDisFromTarget, flMaxDisFromTarget);\r\n\tlocal ptFacing = Hydra.PositionGetFacingToPosition(ptSpawnLoc, ptTargetLoc);\t\r\n\t\r\n\t--Spawn the shade any have it use the targeting power, which handles all warning and initialization for the shade and target.\r\n\tidShade = Hydra.ActorSpawnActor(S_SHADE_CORE_ACTOR, ptSpawnLoc, ptFacing, false, 0, 0);\r\n\tif not Hydra.ActorIsValid(idShade) then\r\n\t\treturn;\r\n\tend\r\n\r\n\tHydra.ActorTriggerPowerAtTarget(idShade, idTargetPlayer, SNO_POWER_TARAGETED);\r\nend",
+ "unk_993f312": "--generic affix properties\r\nS_DUNGEON_AFFIX_NAME = \"Drifting Shade\";\r\nFL_DUNGEONAFFIX_COOLUP = 24;\r\nFL_NOSHADETIME_MIN = 10;\r\nFL_NOSHADETIME_OFFSET = 3;\r\nFL_DIFFTIME = 1;\r\nFL_DIFFTIME_OFFSET = 2;\r\n\r\n--BALANCE KNOB: cool down scalar for 1 to 4 players, index is the player number\r\nGROUP_SCALAR = {1, 1, 0.84, 0.75};\r\n\r\n--the shade spawn range, how far away from the targeted player\r\nflMinDisFromTarget = 6;\r\nflMaxDisFromTarget = 9;\r\n",
+ "unk_39af3bb": "",
+ "unk_857ebd2": "",
+ "unk_556de93": "",
+ "arFollowers": [],
+ "arQuestItems": [],
+ "arQuestDungeons": [],
+ "unk_2aa5f20": [],
+ "unk_b43b442": [],
+ "gbidSurveyType": {
+  "value": 4294967295,
+  "group": 57
+ },
+ "unk_b37e635": {
+  "value": 4294967295,
+  "group": 57
+ },
+ "snoAudioContext": {
+  "value": -1,
+  "group": 93,
+  "groupName": "AudioContext"
+ },
+ "unk_af3a4c1": []
+}

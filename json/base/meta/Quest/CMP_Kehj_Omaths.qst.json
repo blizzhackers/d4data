@@ -1,0 +1,4857 @@
+{
+ "__fileName__": "data/base/meta/Quest/CMP_Kehj_Omaths.qst",
+ "__snoID__": 466298,
+ "__type__": "QuestDefinition",
+ "__typeHash__": 1053929211,
+ "eQuestType": 2,
+ "unk_f88ee86": -1,
+ "unk_4c4339b": 0,
+ "unk_f522ece": 2,
+ "eRepeatType": 0,
+ "eVignetteType": 0,
+ "unk_43f3849": 0,
+ "unk_48a2b16": -1,
+ "unk_d060a69": {
+  "__type__": "MarkerHandle",
+  "__typeHash__": 3934284334,
+  "snoMarkerSet": {
+   "value": 471158,
+   "group": 24,
+   "groupName": "MarkerSet"
+  },
+  "nID": 29
+ },
+ "vecStartLocation": {
+  "x": 422.510009765625,
+  "y": -132.0050048828125,
+  "z": 8.036569595336914
+ },
+ "unk_6a4ec7f": {
+  "value": 69068,
+  "group": 48,
+  "groupName": "World"
+ },
+ "unk_c2e8448": {
+  "__type__": "MarkerHandle",
+  "__typeHash__": 3934284334,
+  "snoMarkerSet": {
+   "value": 117486,
+   "group": 24,
+   "groupName": "MarkerSet"
+  },
+  "nID": 18
+ },
+ "unk_ff5c704": {
+  "x": 0,
+  "y": 0,
+  "z": 0
+ },
+ "unk_506369e": {
+  "value": -1,
+  "group": 48,
+  "groupName": "World"
+ },
+ "unk_d2181f0": 4294967295,
+ "snoLevelArea": {
+  "value": -1,
+  "group": 22,
+  "groupName": "LevelArea"
+ },
+ "unk_f956a05": 1,
+ "unk_14dee1b": 0,
+ "flParticipationRadius": 12,
+ "unk_8881b0e": 20,
+ "dwNextUID": 165,
+ "unk_b89b77f": 0,
+ "unk_c18cabd": 0,
+ "unk_79f6e17": 0,
+ "gbidSubzoneModifierTag": {
+  "value": 4294967295,
+  "group": 60
+ },
+ "snoBountySubzone": {
+  "value": -1,
+  "group": 80,
+  "groupName": "SubZone"
+ },
+ "eBountyTier": -1,
+ "eBountyType": -1,
+ "unk_313dbf6": 0,
+ "unk_834fdbf": 4294967295,
+ "unk_b83e7b1": 0,
+ "unk_942bcdb": 1,
+ "dwFlags": 4,
+ "arQuestPhases": [
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 13,
+   "dwFlags": 0,
+   "eType": 2,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 11,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 12,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 5,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2590039640,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
+            "dwPad": 0,
+            "gbidActorGroup": {
+             "value": 764509265,
+             "group": 24
+            }
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2590039654,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 2162003826
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\tHydra.QActorWait(idActorSpawned, 5);\t\r\n\t\r\n\tif Hydra.ActorIsValid(idActorSpawned) then\r\n\t\tHydra.ActorClearAITether(idActorSpawned);\r\n\t\ttPlayers = Hydra.PlayerActors();\r\n--\t\tHydra.ActorMergeAIState(idActorSpawned, S_AI_LEASH, idActorSpawned, 0);\r\n\t\tHydra.ActorAddAITarget(idActorSpawned, tPlayers[Hydra.GetRandomInt(1, #tPlayers)], true);\r\n\t\tHydra.ActorTriggerBrainStancePowerAtTarget(idActorSpawned, ID_MARKER_LEASH, S_PWR_WALKTO);\r\n\tend\r\n\t\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": ""
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 79,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 80,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 66,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 4215937142,
+          "eVariableType": 21,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamSubzone",
+            "__typeHash__": 3453107854,
+            "dwType": 3453107854,
+            "eParamType": 39,
+            "dwPad": 0,
+            "snoSubzone": {
+             "value": 444237,
+             "group": 80,
+             "groupName": "SubZone"
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 2775095677
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, snoSubzone)\r\n\r\n--\tCamps.PlayIntroConv(idActorPlayer, CONV_INTRO, S_GBID_PV_HAS_PLAYED_INTRO)\r\n--\tidPlayer = idActorPlayer\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 159,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 45,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 4130614259,
+          "eVariableType": 3,
+          "unk_67545b": [
+           {
+            "__type__": "Type_a84b96e7",
+            "__typeHash__": 2823526119,
+            "dwType": 2823526119,
+            "eParamType": 21,
+            "dwPad": 0,
+            "flRange": 6
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
+            "dwPad": 0,
+            "gbidActorGroup": {
+             "value": 2832872231,
+             "group": 24
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3532970791
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, fRange, idActorDetector)\r\n\tlocal flTotalGetUpDurationMin = 1\r\n\tlocal flTotalGetUpDurationDelta = 0.5;\r\n\tlocal flTotalGetUpDuration = flTotalGetUpDurationMin + flTotalGetUpDurationDelta * Hydra.GetRandomFloat();\r\n\tlocal snoPrimaryPower = Hydra.ActorGetPrimaryPower(idActorDetector);\r\n\tif (Hydra.ActorIsValid(idActorDetector) and (snoPrimaryPower == 745581 or snoPrimaryPower == 745976)) then\r\n\t\tHydra.ActorTriggerPhaseJump(idActorDetector);\r\n\tend\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 161,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 45,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 4130614259,
+          "eVariableType": 3,
+          "unk_67545b": [
+           {
+            "__type__": "Type_a84b96e7",
+            "__typeHash__": 2823526119,
+            "dwType": 2823526119,
+            "eParamType": 21,
+            "dwPad": 0,
+            "flRange": 6
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 41
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3532970791
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, fRange, idActorDetector)\r\n\tif bExplosionSeen == false then\r\n\t\tbExplosionSeen = true\r\n\t\tidPlayer = idActor\r\n\t\tHydra.ActorPlayConversation(CONV_INTRO, idPlayer)\r\n\tend\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 0,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": -1
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 23,
+   "dwFlags": 0,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 21,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 51,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 24,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 0,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1189140265,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1189140251,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamActor",
+            "__typeHash__": 1286645889,
+            "dwType": 1286645889,
+            "eParamType": 4,
+            "dwPad": 0,
+            "snoActor": {
+             "value": 466180,
+             "group": 1,
+             "groupName": "Actor"
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1776065304
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 2,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\t\r\n\tHydra.Wait(0.25);\r\n\t\r\n\ttMonstersAll = Hydra.ActorsInGroup(\"Camp_FalconsRidge_Monsters\");\r\n\tfor i, actorID in ipairs(tMonstersAll) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID);\r\n\t\tend\r\n\tend\r\n\t\r\n\t--Hydra.WeatherOverride(Hydra.ActorGetWorld(idActorKiller), \"weather_Kehjistan_physical\")\r\n\tHydra.ActorPlayConversation(CONV_PreClaim, idActorKiller)\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n     \r\n    for i, idPlayer in ipairs(tAllPlayers) do\r\n        -- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n        -- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n        Hydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Stronghold_OmathsRedoubt\", idPlayer)\r\n         \r\n        -- Set the variable, to mark that this player has recieved a reward\r\n        Hydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Stronghold_OmathsRedoubt\")\r\n    end\r\n\t\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Kehjistan_Omath_Victory\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [
+        {
+         "value": 466180,
+         "group": 1,
+         "groupName": "Actor"
+        }
+       ],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 120,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 121,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 7,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamActor",
+            "__typeHash__": 1286645889,
+            "dwType": 1286645889,
+            "eParamType": 4,
+            "dwPad": 0,
+            "snoActor": {
+             "value": 466180,
+             "group": 1,
+             "groupName": "Actor"
+            }
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1426171770,
+          "eVariableType": 2,
+          "unk_67545b": [
+           {
+            "__type__": "Type_7de5a3b2",
+            "__typeHash__": 2112201650,
+            "dwType": 2112201650,
+            "eParamType": 3,
+            "dwPad": 0,
+            "flMinValue": 1.5,
+            "flMaxValue": 30
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 927407252
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, flPrevHP, flHp)\r\n\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActor), SNO_WEATHER_LIGHTNING)\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [
+        {
+         "value": 466180,
+         "group": 1,
+         "groupName": "Actor"
+        }
+       ],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": ""
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 136,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 63,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 137,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 63,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2983118812,
+          "eVariableType": 13,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1584348101,
+          "eVariableType": 6,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1243023061
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(sWorldName, sLevelAreaName)\r\n\t\r\n\tlocal boss = Hydra.ActorsInGroup(\"CAMP_Omath_Boss\");\r\n\t\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorFadeAndDelete(bossID, 2);\r\n\tend\r\n\t\r\n\t--reenable staff and teleport locations\r\n\tHydra.ActorEnable(idSword);\r\n\tHydra.ActorEnable(TELEPORT_LOC_1);\r\n\tHydra.ActorEnable(TELEPORT_LOC_2);\r\n\tHydra.ActorEnable(TELEPORT_LOC_3);\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()"
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 153,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 154,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 30,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 334654326,
+          "eVariableType": 7,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2344914334,
+          "eVariableType": 11,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1212553832
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 155,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 156,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 51,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 4092861249,
+          "eVariableType": 14,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPower",
+            "__typeHash__": 1304868885,
+            "dwType": 1304868885,
+            "eParamType": 26,
+            "dwPad": 0,
+            "snoPower": {
+             "value": 852314,
+             "group": 29,
+             "groupName": "Power"
+            }
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 242353236,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 2883428425
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, sPowerName, idTarget)\r\n\r\n\tHydra.Wait(0.5);\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idActor, idTarget, WAVE_SUMMON_POWER);\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idActor, idTarget, RANGED_EXPLOSION_POWER);\r\n\tHydra.ActorSetAIState(idActor, \"channel\");\r\n\r\n\r\n\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 0,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "local tIntroVGNs = Hydra.ActorsInGroup(\"CMP_Kehj_Omath_Clues\")\r\nfor i, idGizmo in pairs(tIntroVGNs) do\r\n\tif Hydra.ActorIsValid(idGizmo) then\r\n\t\tHydra.ActorGizmoSetDisabled(idGizmo, true)\r\n\tend\r\nend\r\n\r\nlocal tIntroVGNMonsters = Hydra.ActorsInGroup(\"CAMP_Step_Omaths_IntroVGN_Monsters\")\r\nfor i, idMonster in pairs(tIntroVGNMonsters) do\r\n\tif Hydra.ActorIsValid(idMonster) then\r\n\t\tHydra.ActorFadeAndDelete(idMonster, 1)\r\n\tend\r\nend\r\n\r\n\r\nlocal boss = Hydra.ActorsInGroup(\"CAMP_Omath_Boss\");\r\n\t\r\nfor i, bossID in ipairs(boss) do\r\n\r\n\t-- Enable Boss\r\n--\tHydra.ActorEnable(bossID);\r\n\tHydra.BuffApplyToTarget(P_GHOST_FADEIN_POWER, \"TRANS_IN\", bossID)\r\n--\tHydra.QActorFadeAndDelete(INTRO_PRIESTESS, .5);\t\r\n\tHydra.ActorDisable(INTRO_PRIESTESS)\r\n\tHydra.ActorTriggerPowerAtFeet(bossID, bansheeIntroPower);\r\n\tHydra.ActorDisable(idSword);\r\n\t--Hydra.ActorSetDamageCap(idBanshee, 0.8);\r\n\r\n\t-- User Event for Intro Callout \r\n\tHydra.EventSend(\"CAMP_FALCONSRIDGE_START\", bossID);\r\n\r\nend\r\n\r\nHydra.BossEncounterManuallyQueueStart(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Kehjistan_Omath_Boss\")\r\n\r\n--Turn off traversals\r\nfor i, actorID in pairs(T_TRAVERSAL) do\r\n\tSetTraversalEnabled(actorID, false)\r\nend",
+   "unk_c820299": "--Turn on traversals\r\nfor i, actorID in pairs(T_TRAVERSAL) do\r\n\tSetTraversalEnabled(actorID, true)\r\nend",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": 0
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 51,
+   "dwFlags": 4,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 54,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 55,
+       "dwFlags": 128,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 815
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 2,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\tCamps.ClaimCamera(idActorPlayer, idActorGizmo);\r\n\tHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\nend",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 6,
+      "nGoldTier": 6,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 0,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "Hydra.ActorGizmoSetDisabled(ClaimSwitch, false)\r\nHydra.ActorGizmoSetDisabled(CLAIM_DOOR, false)\r\nHydra.ActorGizmoOperate(CLAIM_DOOR)",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": 0
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 63,
+   "dwFlags": 0,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 61,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 23,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 62,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 41
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 2,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\tpriestessIntro(idActorPlayer, idActorGizmo)\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 20,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "local tAreaSpawners = Hydra.ActorsInGroup(\"CMP_Kehj_Omath_AreaSpawners\")\r\nfor i, idSpawner in pairs(tAreaSpawners) do\r\n\tHydra.ActorDisable(idSpawner)\r\nend\r\nHydra.ActorGizmoSetDisabled(CURSED_WEAPON, false)",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": 0
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 66,
+   "dwFlags": 2,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 64,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 140,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 65,
+       "dwFlags": 288,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 46,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
+            "dwPad": 0,
+            "gbidActorGroup": {
+             "value": 2621961486,
+             "group": 24
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3442249050
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Kehjistan_Omath_Hostile\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 421.760009765625,
+          "y": -141.1439971923828
+         },
+         "flRadius": 28.234638214111328,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 83,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 140,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 84,
+       "dwFlags": 256,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 46,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 821
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3442249050
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Kehjistan_Omath_Hostile\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 20,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "--Hydra.ActorGizmoSetDisabled(idSword, true);\r\n\r\nfor i, actorID in ipairs(tPhalanxAll) do\r\n\tHydra.BuffApplyToTarget(S_PWR_ROOTFOREVER, \"PERMA_ROOT\", actorID);\r\n\tHydra.ActorDisable(actorID);\r\nend\r\n",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": 0
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 0,
+   "dwFlags": 0,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 1,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 63,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 2,
+       "dwFlags": 32,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 45,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 4130614259,
+          "eVariableType": 3,
+          "unk_67545b": [
+           {
+            "__type__": "Type_a84b96e7",
+            "__typeHash__": 2823526119,
+            "dwType": 2823526119,
+            "eParamType": 21,
+            "dwPad": 0,
+            "flRange": 8
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 41
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3532970791
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorGizmoSetDisabled(idSword, false);\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 423.697998046875,
+          "y": -146.56100463867188
+         },
+         "flRadius": 11.422131538391113,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 0,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "",
+   "unk_c820299": "",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": 0
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 140,
+   "dwFlags": 0,
+   "eType": 0,
+   "arCallbackSets": [
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 138,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 0,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 139,
+       "dwFlags": 0,
+       "nNeeded": 4,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 30,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 334654326,
+          "eVariableType": 7,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamString",
+            "__typeHash__": 234160671,
+            "dwType": 234160671,
+            "eParamType": 6,
+            "dwPad": 0,
+            "dwStringHash": 1483236483,
+            "szString": "Explored"
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 2344914334,
+          "eVariableType": 11,
+          "unk_67545b": [
+           {
+            "__type__": "Type_4d3d23af",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1212553832
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [
+        {
+         "value": 886948,
+         "group": 22,
+         "groupName": "LevelArea"
+        }
+       ],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 141,
+     "ptLink": [],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 142,
+       "dwFlags": 34,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1564
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.EventSend(\"Explored\")\r\n--\tHydra.ActorGizmoSetDisabled(ID_CLUE_01, true)\r\n\tidPlayer = idActorPlayer\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [
+        {
+         "value": 886948,
+         "group": 22,
+         "groupName": "LevelArea"
+        }
+       ],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 143,
+       "dwFlags": 34,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 72,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3026392983,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1345
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1585551518
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorSign)\r\n\t--steppes blade inspect, conv about dead steppes natives\r\n--\tlocal idSpawned = Hydra.ActorSpawnActor(SNO_ZOMBIE, idActorSign, false, 0, 0)\r\n--\tHydra.ActorAddToGroup(idSpawned, \"CAMP_Step_Omaths_ZombieSign_Left\")\r\n--\tHydra.ActorTriggerPowerAtFeet(idSpawned, P_ZOMBIE_DEADPOSE)\r\n--\tHydra.ActorDelete(idActorSign)\r\n\t\r\n--\t--get up\r\n--\tlocal flTotalGetUpDurationMin = 0.75\r\n--\tlocal flTotalGetUpDurationDelta = 0.75;\r\n\t\r\n--\tlocal flTotalGetUpDuration = flTotalGetUpDurationMin + flTotalGetUpDurationDelta * Hydra.GetRandomFloat();\r\n--\tlocal snoPrimaryPower = Hydra.ActorGetPrimaryPower(idSpawned);\r\n--\tif (Hydra.ActorIsValid(idSpawned) and (snoPrimaryPower == 745581 or snoPrimaryPower == 745976)) then\r\n--\t\tHydra.ActorTriggerPhaseJump(idSpawned);\r\n\r\n--\tend\r\n\t\r\n--\tlocal tZombies = Hydra.ActorsInGroup(\"CAMP_Step_Omaths_ZombieSign_Left\");\r\n\t\r\n--\tif (#tZombies > 0) then\r\n--\t\tShuffleTable(tZombies)\r\n\t\r\n--\t\tlocal flTotalGetUpDurationMin = 0.75\r\n--\t\tlocal flTotalGetUpDurationDelta = 0.75;\r\n\t\t\r\n--\t\tlocal flTotalGetUpDuration = flTotalGetUpDurationMin + flTotalGetUpDurationDelta * Hydra.GetRandomFloat();\r\n--\t\tfor i, idZombie in ipairs(tZombies) do\r\n--\t\t\tlocal snoPrimaryPower = Hydra.ActorGetPrimaryPower(idZombie);\r\n--\t\t\tif (Hydra.ActorIsValid(idZombie) and (snoPrimaryPower == 745581 or snoPrimaryPower == 745976)) then\r\n--\t\t\t\tHydra.ActorTriggerPhaseJump(idZombie);\r\n\t\t\t\t\r\n--\t\t\t\tHydra.Wait(flTotalGetUpDuration/#tZombies)\r\n--\t\t\tend\r\n--\t\tend\r\n--\tend\r\n\t\r\n\tHydra.EventSend(\"Explored\")\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorSign)\r\n\tHydra.ActorGizmoSetDisabled(ID_CLUE_02, true)\r\n\tidPlayer = idActorPlayer\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [
+        {
+         "value": 886948,
+         "group": 22,
+         "groupName": "LevelArea"
+        }
+       ],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 145,
+       "dwFlags": 34,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 72,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3026392983,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1592
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1585551518
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorSign)\r\n\t--conv about charred bodies\r\n\t\r\n--\tlocal idSpawned = nil\r\n\t\r\n--\tnMonsterFam = Hydra.GetRandomInt(1, 2)\r\n--\tif nMonsterFam == 1 then\r\n--\t\tidSpawned = Hydra.ActorSpawnActor(SNO_GHOST, idActorGizmo, false, 0, 0)\r\n--\t\tHydra.ActorTriggerPowerAtFeet(idSpawned, P_SUMMONED_MAGICAL)\r\n--\telse\r\n--\t\tidSpawned = Hydra.ActorSpawnActor(SNO_ZOMBIE, idActorGizmo, false, 0, 0)\r\n--\t\tHydra.ActorTriggerPowerAtFeet(idSpawned, P_SUMMONED)\r\n--\tend\r\n\t\r\n\tHydra.EventSend(\"Explored\")\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorSign)\r\n\tHydra.ActorGizmoSetDisabled(ID_CLUE_04, true)\r\n\tidPlayer = idActorPlayer\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [
+        {
+         "value": 886948,
+         "group": 22,
+         "groupName": "LevelArea"
+        }
+       ],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 152,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 72,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 3026392983,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1387
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 1585551518
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorSign)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorSign)\r\n\tlocal idSpawned = Hydra.ActorSpawnActor(SNO_ZOMBIE, idActorSign, false, 0, 0)\r\n\tHydra.ActorAddToGroup(idSpawned, \"CAMP_Step_Omaths_ZombieSign\")\r\n\tHydra.ActorTriggerPowerAtFeet(idSpawned, P_ZOMBIE_DEADPOSE)\r\n\tHydra.ActorDelete(idActorSign)\r\n\t\r\n\t--get up\r\n\tlocal flTotalGetUpDurationMin = 0.75\r\n\tlocal flTotalGetUpDurationDelta = 0.75;\r\n\t\r\n\tlocal flTotalGetUpDuration = flTotalGetUpDurationMin + flTotalGetUpDurationDelta * Hydra.GetRandomFloat();\r\n\tlocal snoPrimaryPower = Hydra.ActorGetPrimaryPower(idSpawned);\r\n\tif (Hydra.ActorIsValid(idSpawned) and (snoPrimaryPower == 745581 or snoPrimaryPower == 745976)) then\r\n\t\tHydra.ActorTriggerPhaseJump(idSpawned);\r\n\r\n\tend\r\n\t\r\n\tlocal tZombies = Hydra.ActorsInGroup(\"CAMP_Step_Omaths_ZombieSign\");\r\n\t\r\n\tif (#tZombies > 0) then\r\n\t\tShuffleTable(tZombies)\r\n\t\r\n\t\tlocal flTotalGetUpDurationMin = 0.75\r\n\t\tlocal flTotalGetUpDurationDelta = 0.75;\r\n\t\t\r\n\t\tlocal flTotalGetUpDuration = flTotalGetUpDurationMin + flTotalGetUpDurationDelta * Hydra.GetRandomFloat();\r\n\t\tfor i, idZombie in ipairs(tZombies) do\r\n\t\t\tlocal snoPrimaryPower = Hydra.ActorGetPrimaryPower(idZombie);\r\n\t\t\tif (Hydra.ActorIsValid(idZombie) and (snoPrimaryPower == 745581 or snoPrimaryPower == 745976)) then\r\n\t\t\t\tHydra.ActorTriggerPhaseJump(idZombie);\r\n\t\t\t\t\r\n\t\t\t\tHydra.Wait(flTotalGetUpDuration/#tZombies)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.EventSend(\"Explored\")\r\n--\tHydra.ActorGizmoSetDisabled(ID_ZOMBIE_SIGN, true)\r\n\tidPlayer = idActorPlayer\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": ""
+    },
+    {
+     "__type__": "Type_11b9d2b9",
+     "__typeHash__": 297390777,
+     "dwUID": 157,
+     "ptLink": [
+      {
+       "__type__": "Type_2b920147",
+       "__typeHash__": 730988871,
+       "unk_d17aff0": 23,
+       "eLinkType": 1
+      }
+     ],
+     "arCallbacks": [
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 158,
+       "dwFlags": 0,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 41
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": {
+        "value": -1,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\tpriestessIntro(idActorPlayer, idActorGizmo)\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [],
+       "unk_6a71535": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 160,
+       "dwFlags": 2,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1564
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n--\tHydra.ActorRemoveFromGroup(idActorGizmo, \"CMP_Kehj_Omath_Clues\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 411.906005859375,
+          "y": -154.27099609375
+         },
+         "flRadius": 11.422131538391113,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 162,
+       "dwFlags": 2,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1345
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n--\tHydra.ActorRemoveFromGroup(idActorGizmo, \"CMP_Kehj_Omath_Clues\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 435.9179992675781,
+          "y": -153.2989959716797
+         },
+         "flRadius": 11.547775268554688,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 163,
+       "dwFlags": 2,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1387
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n--\tHydra.ActorRemoveFromGroup(idActorGizmo, \"CMP_Kehj_Omath_Clues\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 432.6300048828125,
+          "y": -128.281005859375
+         },
+         "flRadius": 10.144891738891602,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "unk_5342cc0": 0,
+       "dwUID": 164,
+       "dwFlags": 2,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 27,
+        "dwListenerFlags": 0,
+        "snoCondition": {
+         "value": -1,
+         "group": 51,
+         "groupName": "Condition"
+        },
+        "unk_c3ba01d": 0,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1387993843,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": 1
+           }
+          ]
+         },
+         {
+          "__type__": "Type_bd82039e",
+          "__typeHash__": 3179414430,
+          "tKey": 1072510348,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "value": 468084,
+              "group": 24,
+              "groupName": "MarkerSet"
+             },
+             "nID": 1592
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "unk_9927fd3": 3926636179
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 1,
+       "unk_9c1ea4f": 139,
+       "snoWorld": {
+        "value": 69068,
+        "group": 48,
+        "groupName": "World"
+       },
+       "unk_e879cce": {
+        "value": -1,
+        "group": 12,
+        "groupName": "Conversation"
+       },
+       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n--\tHydra.ActorRemoveFromGroup(idActorGizmo, \"CMP_Kehj_Omath_Clues\")\r\nend\r\n",
+       "fDebugDisable": 0,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": 0,
+        "unk_16e2f51": 0
+       },
+       "arRegionOverrides": [
+        {
+         "__type__": "QuestCallbackRegion",
+         "__typeHash__": 2884204419,
+         "eType": 1,
+         "vPolygonPoints": [],
+         "vCenterPos": {
+          "x": 415.18798828125,
+          "y": -131.18299865722656
+         },
+         "flRadius": 11.422131538391113,
+         "bValid": 1,
+         "unk_16e2f51": 1
+        }
+       ],
+       "unk_6a71535": 1,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "arSnonameTokens": [],
+       "unk_a71fd1a": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": {
+         "value": -1,
+         "group": 105,
+         "groupName": "Reputation"
+        },
+        "nValue": 0
+       }
+      }
+     ],
+     "unk_a845fa9": 0,
+     "unk_89d02b1": {
+      "value": -1,
+      "group": 73,
+      "groupName": "Item"
+     },
+     "unk_68d4eb0": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "tReward": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_b3249db": {
+      "__type__": "QuestReward",
+      "__typeHash__": 3387295447,
+      "snoTreasureClass": {
+       "value": -1,
+       "group": 52,
+       "groupName": "TreasureClass"
+      },
+      "nXPTier": 0,
+      "nGoldTier": 0,
+      "snoTrackedReward": {
+       "value": -1,
+       "group": 126,
+       "groupName": "TrackedReward"
+      },
+      "unk_b0fd814": 0,
+      "unk_186d5e6": {
+       "__type__": "Type_e12242af",
+       "__typeHash__": 3777118895,
+       "unk_cea351b": -1
+      },
+      "unk_f8ed991": []
+     },
+     "unk_8c63f3c": 0,
+     "unk_e903c4e": {
+      "value": -1,
+      "group": 12,
+      "groupName": "Conversation"
+     },
+     "unk_8f432f8": [],
+     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+    }
+   ],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": {
+    "value": -1,
+    "group": 51,
+    "groupName": "Condition"
+   },
+   "snoReward": {
+    "value": -1,
+    "group": 52,
+    "groupName": "TreasureClass"
+   },
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 20,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_9c63f9d": "",
+   "unk_c820299": "if bExplosionSeen == false then\r\n\tbExplosionSeen = true\r\n\tHydra.ActorPlayConversation(CONV_INTRO, idPlayer)\r\n\tHydra.WaitForConversationFinished(CONV_INTRO)\r\nend\r\nHydra.ActorDisable(GHOST_BLOCKER)",
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": {
+     "value": -1,
+     "group": 24,
+     "groupName": "MarkerSet"
+    },
+    "nID": -1
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": {
+    "value": -1,
+    "group": 48,
+    "groupName": "World"
+   },
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": {
+    "value": -1,
+    "group": 93,
+    "groupName": "AudioContext"
+   }
+  }
+ ],
+ "unk_1755172": [],
+ "arReputationRewards": [],
+ "unk_46e3956": [],
+ "snoStartCondition": {
+  "value": -1,
+  "group": 51,
+  "groupName": "Condition"
+ },
+ "unk_c47e01a": "local function UpdateSpawnTier()\r\n\tif nSpawnTier < nSpawnTierMax then \r\n\t\tnSpawnTier = nSpawnTier+1 \r\n\tend\r\nend\r\n\r\nlocal function GetNewLane()\r\n\r\n\tlocal nRandIndex = Hydra.GetRandomInt(1, #tLaneKeyTemp);\r\n\tlocal sReturn = tLaneKeyTemp[nRandIndex];\r\n\ttable.remove(tLaneKeyTemp, nRandIndex);\r\n\t\r\n\tif #tLaneKeyTemp <= 0 then \r\n\t\tfor i=1, #tSpawnLaneKeyValues do\r\n\t\t\ttable.insert(tLaneKeyTemp, tSpawnLaneKeyValues[i]);\r\n\t\tend\r\n\tend\r\n\t\r\n\treturn sReturn;\r\nend\r\n\r\nlocal function SpawnWave(nWaveCount)\r\n\r\n\tlocal idTeleport\r\n\tlocal sLaneKey = GetNewLane()\r\n\r\n\tfor i2=1, #tSpawnTypeKeyValues do\r\n\t\tif Hydra.ActorIsValid(tSpawners[sLaneKey][tSpawnTypeKeyValues[i2]]) then\r\n\t\t\t--Teleport to area\r\n\t\t\tif i2==1 then \r\n\t\t\t\tlocal idTeleport = tSpawners[sLaneKey][tSpawnTypeKeyValues[i2]] \r\n\t\t\t\tHydra.ActorTriggerPowerAtTargetsFeet(idBanshee, idTeleport, S_PWR_TELEPORT);\r\n\t\t\t\tHydra.ActorSetAIState(idBanshee, \"WaveSpawn\");\r\n\t\t\t\t-- User Event for Callout\r\n\t\t\t\tHydra.EventSend(\"CAMP_FALCONSRIDGE_WAVESPAWN\", idBanshee);\r\n\t\t\tend\t\r\n\t\t\t--Get spawn counts from wave composition table and spawn the wave\t\r\n\t\t\tlocal nSpawnCount = Hydra.GetRandomInt(tSpawnTierCombos[nSpawnTier][tSpawnTypeKeyValues[i2]][1],tSpawnTierCombos[nSpawnTier][tSpawnTypeKeyValues[i2]][2])\r\n\t\t\tif nSpawnCount > 0 then\r\n\t\t\t\tfor i3=1, nSpawnCount do\r\n\t\t\t\t\tHydra.ActorTriggerSpawnerUpdate(tSpawners[sLaneKey][tSpawnTypeKeyValues[i2]])\r\n\t\t\t\tend\r\n\t\t\t\tHydra.Wait(Hydra.GetRandomFloat());\r\n\t\t\tend\r\n\t\tend\r\n\t\t--Enable trickle spawners in that area\r\n\t\tif Hydra.ActorIsValid(tTrickleSpawners[sLaneKey][i2]) then\r\n\t\t\tHydra.ActorEnable(tTrickleSpawners[sLaneKey][i2]);\r\n\t\tend\r\n\t\t--Enable phalanx in that area\r\n\t\tif Hydra.ActorIsValid(tPhalanx[sLaneKey][i2]) then\r\n\t\t\tHydra.ActorEnable(tPhalanx[sLaneKey][i2]);\r\n\t\tend\r\n\tend \r\n\t\r\n--\tHydra.TraceScreen(sLaneKey,\"wave spawned\")\t\r\n\tUpdateSpawnTier();\r\n\t\t\r\nend\r\n\r\nlocal function priestessIntro(idActorPlayer, idActorGizmo)\r\n\tif firstTimeStaffTrigger then\r\n\t\r\n\t\tlocal idWarlord = Hydra.ActorsLinkedByActorInGroup(ID_VGN_TRIGGER, \"Warlord\")[1];\r\n\t\tlocal tCorpses = Hydra.ActorsLinkedByActorInGroup(ID_VGN_TRIGGER, \"Corpses\");\r\n\t\tlocal idMarker_WalkTo = Hydra.ActorsLinkedByActorInGroup(ID_VGN_TRIGGER, \"MARKER_WALKTO\")[1];\r\n\t\tHydra.Wait(1)\r\n\t\tfor i, idCorpse in pairs(tCorpses) do\r\n\t\t\tHydra.BuffApplyToTarget(P_GHOST_FADEIN_POWER, \"TRANS_IN\", idCorpse)\r\n\t\tend\r\n\t\tHydra.BuffApplyToTarget(P_GHOST_FADEIN_POWER, \"TRANS_IN\", idWarlord)\r\n\t\tHydra.ActorSetCollidable(idWarlord, false)\r\n\t\tHydra.ActorSetTargetable(idWarlord, false)\r\n\t\t\r\n\t\tHydra.Wait(1.5)\r\n\t\tHydra.ActorPlayConversation(CONV_INSPECT, idActorPlayer)\r\n\t\tHydra.Wait(2);\r\n\t\t\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONV_SCENE_04A, idWarlord, idSword);\r\n\t\tHydra.WaitForConversationFinished(S_CONV_SCENE_04A);\r\n\t\tHydra.Wait(0.5);\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONV_SCENE_04B, idWarlord);\r\n--\t\tHydra.WaitForConversationFinished(S_CONV_SCENE_04B);\t\r\n\t\tHydra.Wait(0.5)\r\n--\t\tHydra.ActorClearAnimSetOverride(idWarlord)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idWarlord, idMarker_WalkTo, \"NPC_Walk\", true);\r\n\t\tidWarningFX = Hydra.QActorPlayEffectGroup(idWarlord, \"fxKit_harmless_persistentCylindrical_spirits\", true)\r\n\t\tHydra.QActorPhasedAnimLoop(idWarlord, \"camp_omath_boss_explosion_ranged\", 2)\r\n\t\t\r\n\t\tHydra.ActorClearAnimSetOverride(idWarlord)\r\n\t\tHydra.ActorSetPowerEffectSize(idWarlord, 5)\r\n\t\tHydra.Wait(5)\r\n\t\tHydra.QActorRemoveComplexEffectByEffectGroupSNO(idWarlord, \"fxKit_harmless_persistentCylindrical_spirits\")\r\n\t\tHydra.QActorPhasedAnimLoop(idWarlord, \"knight_caster_holyFlash_loop\", 5)\r\n--\t\tHydra.QActorFadeAndDelete(idWarlord, 3);\r\n\t\tHydra.Wait(2)\r\n\t\tHydra.ActorPlayEffectGroup(idWarlord, \"global_monster_weaponDeathNoRagdoll\", true)\r\n\t\tHydra.ActorPlayEffectGroup(idActorGizmo, FX_SPIRIT)\r\n\t\tHydra.ActorSetPowerEffectSize(idActorGizmo, 15)\r\n\t\tHydra.ActorPlayEffectGroup(idActorGizmo, FX_SPIRIT_EXPLODE)\r\n\t\tHydra.ActorSetPowerEffectSize(idActorGizmo, 10)\r\n\t\tHydra.ActorTriggerPowerAtFeet(idWarlord, \"CAMP_Step_Omaths_Knockback\")\r\n\t\tHydra.ActorSetPowerEffectSize(idWarlord, 8)\r\n\t\tHydra.Wait(0.5)\r\n\r\n\r\n\t\tfor i, actorID in ipairs(tCorpses) do\r\n\t\t\tHydra.ActorPlayEffectGroup(actorID, \"ghost_nonfamily_death_FX\")\r\n\t\t\tHydra.QActorFadeAndDelete(actorID, 0.5);\r\n\t\tend\r\n--\t\tHydra.Wait(1.0);\r\n\t--\tHydra.ActorPlayEffectGroup(idSword, S_VFX_EXPLOSION);\r\n\t\tHydra.ActorSetPowerEffectSize(idSword, 5)\r\n--\t\tHydra.Wait(0.5);\r\n\t--\tHydra.ActorGizmoSetDisabled(idSword, false);\r\n\t--\tHydra.QActorPlayConversation(CONV_INSPECT, idPlayer)\r\n\t--\tHydra.Wait(0.5);\r\n\t--\tHydra.ActorPlayEffectGroup(idActorGizmo, S_VFX_EXPLOSION);\r\n\t\t\r\n\t\tT_RUBBLE = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"Rubble\")\r\n\t\tfor i, idRubble in pairs(T_RUBBLE) do\r\n\t\t\tHydra.ActorKill(idRubble)\r\n\t\tend\r\n\t\tfirstTimeStaffTrigger = false;\r\n\tend\r\n\t\r\n\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActorGizmo), SNO_WEATHER)\r\n\tHydra.Wait(2)\r\nend\r\n",
+ "unk_993f312": "SNO_WEATHER = Hydra.ReferenceWeather(\"weather_Kehjistan_Omaths\")\r\nSNO_WEATHER_LIGHTNING = Hydra.ReferenceWeather(\"weather_Kehjistan_Omaths\")\r\n\r\nidPlayer = nil\r\nbExplosionSeen = false\r\n\r\nfirstTimeStaffTrigger = true;\r\n\r\n--Hydra.ActorSetInvulnerable(ID_RUBBLE, true)\r\n--Hydra.ActorSetTargetable(ID_RUBBLE, false)\r\n\r\nT_RUBBLE = Hydra.ActorsLinkedByActorInGroup(idSword, \"Rubble\")\r\nfor i, idRubble in pairs(T_RUBBLE) do\r\n\tHydra.ActorSetInvulnerable(idRubble, true)\r\n\tHydra.ActorSetTargetable(idRubble, false)\r\nend\r\n\r\ntIntroSpawners = Hydra.ActorsLinkedByActorInGroup(ID_MARKER_LINKHOST, \"IntroSkeletons\");\r\ntPhalanxAll = Hydra.ActorsLinkedByActorInGroup(ID_MARKER_LINKHOST, \"Phalanx_All\");\r\n\r\ntSpawnLaneKeyValues = {\"Area1\", \"Area2\", \"Area3\", \"Area4\"};\r\ntSpawnTypeKeyValues = {\"Zombie\", \"Exploder\", \"Melee\", \"Shield\", \"Ranged\", \"TwoHand\", \"Ballista\"};\r\ntSpawners = {};\r\ntTrickleSpawners = {};\r\ntPhalanx = {};\r\nnSpawnTier = 1;\r\nnSpawnTierMax = 4;\r\n\r\nfor i=1, #tSpawnLaneKeyValues do\r\n\t--Build table of wave spawners in an area\r\n\ttSpawners[tSpawnLaneKeyValues[i]] = {};\r\n\tfor i2=1, #tSpawnTypeKeyValues do\r\n\t\ttSpawners[tSpawnLaneKeyValues[i]][tSpawnTypeKeyValues[i2]] = Hydra.ActorsLinkedByActorInGroup(ID_MARKER_LINKHOST,tSpawnLaneKeyValues[i]..tSpawnTypeKeyValues[i2])[1];\r\n\tend\r\n\t-- Trickle spawners\r\n\ttTrickleSpawners[tSpawnLaneKeyValues[i]] = Hydra.ActorsLinkedByActorInGroup(ID_MARKER_LINKHOST,tSpawnLaneKeyValues[i]..\"Trickle\");\r\n\t-- Phalanx\r\n\ttPhalanx[tSpawnLaneKeyValues[i]] = Hydra.ActorsLinkedByActorInGroup(ID_MARKER_LINKHOST,tSpawnLaneKeyValues[i]..\"Phalanx\");\r\nend\r\n\r\ntSpawnTierCombos = {}\r\n\r\nfor i=1, nSpawnTierMax do\r\n\ttSpawnTierCombos[i] = {};\r\n\tfor i2=1, #tSpawnTypeKeyValues do\r\n\t\ttSpawnTierCombos[i][tSpawnTypeKeyValues[i2]] = 0;\r\n\tend\r\nend\r\n\r\ntLaneKeyTemp = {}\r\n\r\nfor i=1, #tSpawnLaneKeyValues do\r\n\ttable.insert(tLaneKeyTemp, tSpawnLaneKeyValues[i])\r\nend\r\n\r\ntSpawnTierCombos[1][\"Zombie\"] = {4,5};\r\ntSpawnTierCombos[1][\"Exploder\"] = {0,0};\r\ntSpawnTierCombos[1][\"Melee\"] = {2,3};\r\ntSpawnTierCombos[1][\"Shield\"] = {0,0};\r\ntSpawnTierCombos[1][\"Ranged\"] = {3,4};\r\ntSpawnTierCombos[1][\"TwoHand\"] = {0,0};\r\ntSpawnTierCombos[1][\"Ballista\"] = {0,0};\r\n\r\ntSpawnTierCombos[2][\"Zombie\"] = {5,6};\r\ntSpawnTierCombos[2][\"Exploder\"] = {0,0};\r\ntSpawnTierCombos[2][\"Melee\"] = {3,4};\r\ntSpawnTierCombos[2][\"Shield\"] = {0,0};\r\ntSpawnTierCombos[2][\"Ranged\"] = {3,4};\r\ntSpawnTierCombos[2][\"TwoHand\"] = {1,1};\r\ntSpawnTierCombos[2][\"Ballista\"] = {0,0};\r\n\r\ntSpawnTierCombos[3][\"Zombie\"] = {5,6};\r\ntSpawnTierCombos[3][\"Exploder\"] = {0,0};\r\ntSpawnTierCombos[3][\"Melee\"] = {3,4};\r\ntSpawnTierCombos[3][\"Shield\"] = {0,0};\r\ntSpawnTierCombos[3][\"Ranged\"] = {4,5};\r\ntSpawnTierCombos[3][\"TwoHand\"] = {1,1};\r\ntSpawnTierCombos[3][\"Ballista\"] = {1,1};\r\n\r\ntSpawnTierCombos[4][\"Zombie\"] = {6,7};\r\ntSpawnTierCombos[4][\"Exploder\"] = {0,0};\r\ntSpawnTierCombos[4][\"Melee\"] = {3,4};\r\ntSpawnTierCombos[4][\"Shield\"] = {0,0};\r\ntSpawnTierCombos[4][\"Ranged\"] = {4,5};\r\ntSpawnTierCombos[4][\"TwoHand\"] = {2,2};\r\ntSpawnTierCombos[4][\"Ballista\"] = {2,2};\r\n\r\nT_PLAYERS_INTROCOMPLETE = {}\r\nT_TRAVERSAL = {ID_TRAVERSAL_LOC1, ID_TRAVERSAL_LOC2, ID_TRAVERSAL_LOC3, ID_TRAVERSAL_LOC4, ID_TRAVERSAL_LOC5}\r\n\r\nHydra.ActorGizmoSetDisabled(ClaimSwitch, true)\r\nS_GBID_PV_HAS_PLAYED_INTRO = \"CAMP_Step_OmathsStronghold_Has_Played_Intro_VO\"",
+ "unk_39af3bb": "",
+ "unk_857ebd2": "",
+ "unk_556de93": "",
+ "arFollowers": [],
+ "arQuestItems": [],
+ "arQuestDungeons": [],
+ "unk_2aa5f20": [],
+ "unk_b43b442": [],
+ "gbidSurveyType": {
+  "value": 923650340,
+  "group": 57
+ },
+ "unk_b37e635": {
+  "value": 4294967295,
+  "group": 57
+ },
+ "snoAudioContext": {
+  "value": -1,
+  "group": 93,
+  "groupName": "AudioContext"
+ },
+ "unk_af3a4c1": []
+}
