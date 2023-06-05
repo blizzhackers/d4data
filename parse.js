@@ -379,7 +379,7 @@ fileNames.forEach((fileName, index) => {
       newFileName = newFileName.join('/') + '.json';
       console.log('#' + index, newFileName);
 
-      if (data.eGameBalanceType !== null) {
+      if (data.eGameBalanceType !== null && data.eGameBalanceType !== undefined) {
         gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
         gbMap[data.eGameBalanceType].push(newFileName);
       }
