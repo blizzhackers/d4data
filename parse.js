@@ -88,7 +88,7 @@ function readStructure(file, typeHashes, offset, field) {
     }
   }
   else if (type.name === "DT_GBID") {
-    ret.value = file.readUInt32LE(offset);
+    ret.value = file.readInt32LE(offset);
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
     }
