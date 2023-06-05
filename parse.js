@@ -82,7 +82,8 @@ let basicTypes = {
     }
   },
   "DT_GBID": function (ret, file, typeHashes, offset, field) {
-    ret.value = file.readInt32LE(offset);
+    ret.value = file.readUInt32LE(offset);
+
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
     }
@@ -247,6 +248,38 @@ let basicTypes = {
   },
 };
 
+function gbidHash(str) {
+  let hash = new Uint32Array(1);
+
+  str = str.toLowerCase();
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0];
+}
+
+function typeHash(str) {
+  let hash = new Uint32Array(1);
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0];
+}
+
+function fieldHash(str) {
+  let hash = new Uint32Array(1);
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0] & 0xFFFFFFF;
+}
+
 function readStructure(file, typeHashes, offset, field) {
   let type = getType(typeHashes[0]), ret = devCombine(type.type === "complex" ? {
     __type__: type.name,
@@ -259,6 +292,10 @@ function readStructure(file, typeHashes, offset, field) {
     type.fields.forEach(field => {
       ret[field.name] = readStructure(file, field.type, offset + field.offset, field);
     });
+
+    if (type.name === 'GBIDHeader') {
+      ret.szNameGBIDHash = gbidHash(ret.szName);
+    }
   }
   else if (type.type === "basic" && basicTypes[type.name]) {
     basicTypes[type.name](ret, file, typeHashes, offset, field);
