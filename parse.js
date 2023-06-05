@@ -11,6 +11,37 @@ const devAttributes = DEV_INFO;
 
 process.chdir(__dirname);
 
+if (fs.existsSync('data/base/CoreTOC.dat')) {
+  let toc = {};
+  let file = fs.readFileSync('data/base/CoreTOC.dat');
+  let snoGroupsCount = file.readUInt32LE(0);
+  let entryCounts = new Uint32Array(file.buffer.slice(4, 4 + 4 * snoGroupsCount));
+  let entryOffsets = new Uint32Array(file.buffer.slice(4 + 4 * snoGroupsCount, 4 + 8 * snoGroupsCount));
+  let entryUnk = new Uint32Array(file.buffer.slice(4 + 8 * snoGroupsCount, 4 + 12 * snoGroupsCount));
+  let i0 = file.readUInt32LE(4 + 12 * snoGroupsCount);
+  let dataStart = 8 + 12 * snoGroupsCount;
+
+  for (let c = 0; c < snoGroupsCount; c++) {
+    for (let i = 0, offset = dataStart + entryOffsets[c]; i < entryCounts[c]; i++, offset += 12) {
+      let snoGroup = file.readInt32LE(offset);
+      let snoId = file.readInt32LE(offset + 4);
+      let pName = file.readInt32LE(offset + 8) + entryOffsets[c] + dataStart + 12 * entryCounts[c];
+
+      let nameLength = 0;
+
+      for (let j = 0; j < 256 && file[pName + nameLength] !== 0; j++) {
+        nameLength++;
+      }
+
+      let name = file.subarray(pName, pName + nameLength).toString();
+      toc[snoGroup] = toc[snoGroup] || {};
+      toc[snoGroup][snoId] = name;
+    }
+  }
+
+  fs.writeFileSync('json/base/CoreTOC.dat.json', JSON.stringify(toc, null, ' '));
+}
+
 function devCombine(normal, dev, verbose) {
   let ret = {};
 
