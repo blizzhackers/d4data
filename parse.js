@@ -336,6 +336,8 @@ for (let c = 2; c < process.argv.length; c++) {
   getAllFiles(process.argv[c]);
 }
 
+let gbMap = {};
+
 fileNames.forEach((fileName, index) => {
   total++;
 
@@ -360,6 +362,11 @@ fileNames.forEach((fileName, index) => {
       newFileName = newFileName.join('/') + '.json';
       console.log('#' + index, newFileName);
 
+      if (data.eGameBalanceType !== null) {
+        gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
+        gbMap[data.eGameBalanceType].push(newFileName);
+      }
+
       fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
         __fileName__: fileName,
         __snoID__: snoID,
@@ -369,5 +376,9 @@ fileNames.forEach((fileName, index) => {
     }
   }
 });
+
+if (Object.values(gbMap).length) {
+  fs.writeFileSync('json/eGameBalanceType.json', JSON.stringify(gbMap, null, ' '));
+}
 
 console.log('Processed', success, 'of', total, 'files.');

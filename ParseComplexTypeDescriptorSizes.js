@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 let names = (new Function("return {\n" + fs.readFileSync('definitions/!!D4Checksums.yml').toString().split('\n').slice(2).join(',\n') + "};"))();
-let data = fs.readFileSync('data/Base/ComplexTypeDescriptorSizes.dat');
+let data = fs.readFileSync('data/base/ComplexTypeDescriptorSizes.dat');
 let output = {};
 
 for (let c = 0, count = (data.length - 4) / 8; c < count; c++) {
