@@ -1,4 +1,5 @@
 const fs = require('fs');
+const node_path = require('node:path');
 const definitions = require('./definitions.json');
 const snoGroups = require('./snoGroups.json');
 
@@ -8,6 +9,7 @@ const DEV_VERBOSE = 2;
 
 const devAttributes = DEV_INFO;
 
+process.chdir(__dirname);
 
 function devCombine(normal, dev, verbose) {
   let ret = {};
@@ -312,6 +314,7 @@ function readStructure(file, typeHashes, offset, field) {
 }
 
 let fileNames = [];
+let dirNames = {};
 let success = 0;
 let total = 0;
 
@@ -327,6 +330,7 @@ function getAllFiles(path) {
       })
     }
     else {
+      dirNames[node_path.dirname(path)] = node_path.dirname(path);
       fileNames.push(path);
     }
   }
@@ -335,6 +339,19 @@ function getAllFiles(path) {
 for (let c = 2; c < process.argv.length; c++) {
   getAllFiles(process.argv[c]);
 }
+
+dirNames = Object.values(dirNames);
+
+dirNames.forEach(dirName => {
+  dirName = dirName.split('/');
+  dirName[0] = 'json';
+  dirName = dirName.join('/');
+
+  if (!fs.existsSync(dirName)) {
+    fs.mkdirSync(dirName, { recursive: true });
+    fs.writeFileSync(dirName + '/.gitkeep', '');
+  }
+});
 
 let gbMap = {};
 
