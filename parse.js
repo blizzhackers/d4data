@@ -83,6 +83,11 @@ let basicTypes = {
       ret.groupName = snoGroups[field.group];  
     }
   },
+  "DT_SNO_NAME": function (ret, file, typeHashes, offset, field) {
+    ret.value = file.readInt32LE(offset + 4);
+    ret.group = file.readInt32LE(offset);
+    ret.groupName = snoGroups[ret.group];
+  },
   "DT_GBID": function (ret, file, typeHashes, offset, field) {
     ret.value = file.readUInt32LE(offset);
 
@@ -356,41 +361,48 @@ dirNames.forEach(dirName => {
 let gbMap = {};
 
 fileNames.forEach((fileName, index) => {
-  total++;
+  let newFileName = fileName.split('/');
 
-  let file = fs.readFileSync(fileName);
+  if (newFileName[0] === 'data') {
+    newFileName[0] = 'json';
+  }
 
-  if (file.length >= 16) {
-    let header = file.subarray(0, 16);
+  newFileName = newFileName.join('/') + '.json';
 
-    file = file.subarray(16);
+  try {
+    total++;
 
-    let dwSignature = header.readUInt32LE(0);
+    let file = fs.readFileSync(fileName);
 
-    if (dwSignature === 0xdeadbeef) {
-      let data = readStructure(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0);
-      let newFileName = fileName.split('/');
-      let snoID = file.readUInt32LE(0);
+    if (file.length >= 16) {
+      let header = file.subarray(0, 16);
 
-      if (newFileName[0] === 'data') {
-        newFileName[0] = 'json';
+      file = file.subarray(16);
+
+      let dwSignature = header.readUInt32LE(0);
+
+      if (dwSignature === 0xdeadbeef) {
+        let data = readStructure(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0);
+        let snoID = file.readUInt32LE(0);
+
+        console.log('#' + index, newFileName);
+
+        if (data.eGameBalanceType !== null && data.eGameBalanceType !== undefined) {
+          gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
+          gbMap[data.eGameBalanceType].push(newFileName);
+        }
+
+        fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
+          __fileName__: fileName,
+          __snoID__: snoID,
+        }), null, ' ') + '\n');
+
+        success++;
       }
-
-      newFileName = newFileName.join('/') + '.json';
-      console.log('#' + index, newFileName);
-
-      if (data.eGameBalanceType !== null && data.eGameBalanceType !== undefined) {
-        gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
-        gbMap[data.eGameBalanceType].push(newFileName);
-      }
-
-      fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
-        __fileName__: fileName,
-        __snoID__: snoID,
-      }), null, ' ') + '\n');
-
-      success++;
     }
+  } catch (err) {
+    console.error(err);
+    fs.writeFileSync(newFileName, '{}');
   }
 });
 
