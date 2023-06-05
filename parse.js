@@ -127,8 +127,40 @@ let basicTypes = {
 
     ret.value = [];
 
-    for (let c = 0; c < dataSize / typeSize; c++) {
-      ret.value.push(readStructure(file, typeHashes.slice(1), dataOffset + c * typeSize, field));
+    if (dataOffset && dataSize) {
+      for (let c = 0; c < dataSize / typeSize; c++) {
+        ret.value.push(readStructure(file, typeHashes.slice(1), dataOffset + c * typeSize, field));
+      }  
+    }
+  },
+  "DT_POLYMORPHIC_VARIABLEARRAY": function (ret, file, typeHashes, offset, field) {
+    let dataOffset = file.readInt32LE(offset + 8);
+    let dataSize = file.readInt32LE(offset + 12);
+    let dataCount = file.readInt32LE(offset + 16);
+
+    if (devAttributes > DEV_INFO) {
+      ret.__dataOffset__ = '0x' + dataOffset.toString(16);
+      ret.__dataSize__ = '0x' + dataSize.toString(16);
+      ret.__dataCount__ = '0x' + dataCount.toString(16);
+    }
+
+    ret.value = [];
+
+    if (dataOffset && dataSize && dataCount) {
+      // I think this is pointer storage or something.
+      // Skip 8 bytes per entry at the start.
+      dataOffset += dataCount * 8;
+      dataSize -= dataCount * 8;
+
+      for (let c = 0; c < dataCount; c++) {
+        let polyBase = readStructure(file, [0x5d4bac71], dataOffset, field);
+        let polySize = getTypeSize(polyBase.dwType);
+
+        ret.value.push(readStructure(file, [polyBase.dwType], dataOffset, field));
+
+        dataOffset += polySize;
+        dataSize -= polySize;
+      }
     }
   },
   "DT_STRING_FORMULA": function (ret, file, typeHashes, offset, field) {
@@ -144,18 +176,31 @@ let basicTypes = {
       ret.__compiledSize__ = compiledSize;
     }
 
-    ret.value = file.subarray(formulaOffset, formulaOffset + formulaSize - 1).toString();
-    ret.compiled = [];
+    while (formulaSize > 0 && file.readUInt8(formulaOffset + formulaSize - 1) === 0) {
+      formulaSize--;
+    }
 
-    for (let c = compiledOffset; c < compiledOffset + compiledSize; c++) {
-      ret.compiled.push(file.readUInt8(c));
-    }  
+    ret.value = file.subarray(formulaOffset, formulaOffset + formulaSize).toString().trim();
+    ret.compiled = file.subarray(compiledOffset, compiledOffset + compiledSize).toString('base64');
   },
   "DT_CSTRING": function (ret, file, typeHashes, offset, field) {
     let stringOffset = file.readInt32LE(offset + 8);
     let stringSize = file.readInt32LE(offset + 12);
 
-    ret.value = file.subarray(stringOffset, stringOffset + stringSize - 1).toString();
+    while (stringSize > 0 && file.readUInt8(stringOffset + stringSize - 1) === 0) {
+      stringSize--;
+    }
+
+    ret.value = file.subarray(stringOffset, stringOffset + stringSize).toString();
+  },
+  "DT_CHARARRAY": function (ret, file, typeHashes, offset, field) {
+    let strlen = field.arrayLength;
+
+    while (strlen > 0 && file.readUInt8(offset + strlen - 1) === 0) {
+      strlen--;
+    }
+
+    ret.value = file.subarray(offset, offset + strlen).toString();
   },
   "DT_RGBACOLOR": function (ret, file, typeHashes, offset, field) {
     ret.value = {
