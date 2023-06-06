@@ -476,6 +476,10 @@ let basicTypes = {
 };
 
 function readStructure(file, typeHashes, offset, field, fieldPath) {
+  if (typeHashes[0] === 1028442418) { // DT_NULL
+    return null;
+  }
+
   if (!fieldPath) {
     throw new Error("Needs a field path!");
   }
