@@ -321,7 +321,7 @@ let basicTypes = {
       ret.otherFile = true;
       ret.dataType = typeHashes.slice(1);
       ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
-        definitions[typeHash].name;
+        return getType(typeHash).name;
       });
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
@@ -363,7 +363,7 @@ let basicTypes = {
       ret.otherFile = true;
       ret.dataType = typeHashes.slice(1);
       ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
-        definitions[typeHash].name;
+        return getType(typeHash).name;
       });
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
