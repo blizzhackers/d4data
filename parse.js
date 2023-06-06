@@ -12,6 +12,7 @@ const devAttributes = DEV_INFO;
 process.chdir(__dirname);
 
 let toc = {};
+let gbid = fs.existsSync('json/GBID.json') ? JSON.parse(fs.readFileSync('json/GBID.json'), null, ' ') : {};
 
 if (fs.existsSync('data/base/CoreTOC.dat')) {
   let file = fs.readFileSync('data/base/CoreTOC.dat');
@@ -116,6 +117,7 @@ let basicTypes = {
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
       ret.groupName = snoGroups[field.group];
+      ret.type = 'sno';
       if (toc[ret.group] && toc[ret.group][ret.value]) {
         ret.name = toc[ret.group][ret.value];
       }
@@ -125,6 +127,7 @@ let basicTypes = {
     ret.value = file.readInt32LE(offset + 4);
     ret.group = file.readInt32LE(offset);
     ret.groupName = snoGroups[ret.group];
+    ret.type = 'sno';
 
     if (devAttributes >= DEV_INFO) {
       if (toc[ret.group] && toc[ret.group][ret.value]) {
@@ -134,9 +137,14 @@ let basicTypes = {
   },
   "DT_GBID": function (ret, file, typeHashes, offset, field) {
     ret.value = file.readUInt32LE(offset);
+    ret.type = 'gbid';
 
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
+
+      if (gbid[ret.group] && gbid[ret.group][ret.value] && gbid[ret.group][ret.value].length) {
+        ret.name = gbid[ret.group][ret.value][0];
+      }
     }
   },
   "DT_STARTLOC_NAME": function (ret, file, typeHashes, offset, field) {
@@ -347,6 +355,22 @@ function readStructure(file, typeHashes, offset, field) {
     if (type.name === 'GBIDHeader') {
       ret.szNameGBIDHash = gbidHash(ret.szName);
     }
+
+    if (type.name === 'GameBalanceDefinition') {
+      if (ret.ptData && ret.ptData[0] && ret.ptData[0].tEntries && ret.ptData[0].tEntries.length) {
+        gbid[ret.eGameBalanceType] = gbid[ret.eGameBalanceType] || {};
+
+        ret.ptData[0].tEntries.forEach(entry => {
+          if (entry.tHeader && entry.tHeader.szNameGBIDHash !== undefined) {
+            gbid[ret.eGameBalanceType][entry.tHeader.szNameGBIDHash] = gbid[ret.eGameBalanceType][entry.tHeader.szNameGBIDHash] || [];
+
+            if (!gbid[ret.eGameBalanceType][entry.tHeader.szNameGBIDHash].includes(entry.tHeader.szName)) {
+              gbid[ret.eGameBalanceType][entry.tHeader.szNameGBIDHash].push(entry.tHeader.szName);
+            }
+          }
+        });
+      }
+    }
   }
   else if (type.type === "basic" && basicTypes[type.name]) {
     basicTypes[type.name](ret, file, typeHashes, offset, field);
@@ -452,6 +476,10 @@ fileNames.forEach((fileName, index) => {
 
 if (Object.values(gbMap).length) {
   fs.writeFileSync('json/eGameBalanceType.json', JSON.stringify(gbMap, null, ' '));
+}
+
+if (Object.values(gbid).length) {
+  fs.writeFileSync('json/GBID.json', JSON.stringify(gbid, null, ' '));
 }
 
 console.log('Processed', success, 'of', total, 'files.');

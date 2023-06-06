@@ -17,7 +17,8 @@
   "snoMarkerSet": {
    "value": -1,
    "group": 24,
-   "groupName": "MarkerSet"
+   "groupName": "MarkerSet",
+   "type": "sno"
   },
   "nID": -1
  },
@@ -29,7 +30,8 @@
  "unk_6a4ec7f": {
   "value": -1,
   "group": 48,
-  "groupName": "World"
+  "groupName": "World",
+  "type": "sno"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
@@ -38,6 +40,7 @@
    "value": 1095068,
    "group": 24,
    "groupName": "MarkerSet",
+   "type": "sno",
    "name": "Kehj_LowDesert (QST_FinalStraw)"
   },
   "nID": 1
@@ -51,6 +54,7 @@
   "value": 69068,
   "group": 48,
   "groupName": "World",
+  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 4294967295,
@@ -58,6 +62,7 @@
   "value": 531811,
   "group": 22,
   "groupName": "LevelArea",
+  "type": "sno",
   "name": "Kehj_LowDesert"
  },
  "unk_f956a05": 1,
@@ -70,12 +75,14 @@
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 60
  },
  "snoBountySubzone": {
   "value": -1,
   "group": 80,
-  "groupName": "SubZone"
+  "groupName": "SubZone",
+  "type": "sno"
  },
  "eBountyTier": -1,
  "eBountyType": -1,
@@ -116,7 +123,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -140,6 +148,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 418
@@ -163,6 +172,7 @@
              "value": 1095609,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_01"
             }
            }
@@ -196,12 +206,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tif Hydra.ActorIsValid(idCamelClone05) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone05)\r\n\t\tidCamelClone05 = nil\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(idMerchant) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idMerchant)\r\n\t\tidMerchant = nil\r\n\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\r\n\tidCamelClone05 = Hydra.CreatePersonalClone(npc_Camel_05)\r\n\tidMerchantClone = Hydra.CreatePersonalClone(npc_Merchant_End)\r\n\t\r\n\r\n\tif Hydra.ActorIsValid(idCamelClone05) and Hydra.ActorIsValid(idMerchantClone) then\r\n\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idMerchantClone)\r\n\t\t\t\r\n\t\t\t--Hydra.QActorSetAnimSetOverride(idMerchantClone, \"NPC_Idle_Stand_Dazed\", false, true)\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone05, marker_Camel_Location05, \"NPC_Walk\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone05, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorSetAnimSetOverride(idMerchantClone, \"NPC_Idle_Stand_Horse_Pet\")\r\n\t\t\t\r\n\t\t\tHydra.QActorPlayConversation(Conv_MerchantBark, idOwner, idMerchantClone)\t\r\n\t\t\t\r\n\t\t\tHydra.QActorWait(idMerchantClone, 7)\r\n\t\t\t\r\n\t\t\tHydra.QActorWait(idCamelClone05, 10)\r\n\t\t\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idMerchantClone, false, true)\r\n\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone05, marker_CamelEnd, \"NPC_Walk\", false)\r\n\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idMerchantClone, marker_MerchantEnd, \"NPC_Walk\", false)\r\n\t\r\n\t\t\tHydra.QActorFadeAndDelete(idCamelClone05, 0.3)\r\n\t\t\r\n\t\t\tHydra.QActorFadeAndDelete(idMerchantClone, 0.3)\r\n\t\r\n\t\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -230,6 +242,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -241,7 +254,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -251,7 +265,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -259,14 +274,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -282,14 +299,16 @@
       "snoTreasureClass": {
        "value": 1241393,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 2,
       "nGoldTier": 2,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -305,14 +324,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -326,13 +347,15 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [
       {
        "value": 1171633,
        "group": 73,
        "groupName": "Item",
+       "type": "sno",
        "name": "QST_Kehj_FinalStraw_BagofOats"
       }
      ],
@@ -345,12 +368,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -372,7 +397,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -384,7 +410,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -399,7 +426,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -440,7 +468,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -464,6 +493,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 51
@@ -487,6 +517,7 @@
              "value": 1097667,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_C_01"
             }
            }
@@ -520,12 +551,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -554,6 +587,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -565,7 +599,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -575,7 +610,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -583,14 +619,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -606,14 +644,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -629,14 +669,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -650,7 +692,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -662,12 +705,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -689,7 +734,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -701,7 +747,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -716,7 +763,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -750,7 +798,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -790,6 +839,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 413
@@ -809,12 +859,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone02) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone02)\r\n\t\tidCamelClone02 = nil\r\n\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone02 = Hydra.CreatePersonalClone(npc_Camel_02)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone02) then\r\n\t\t\tHydra.QActorClearAnimSetOverride(idCamelClone02, false, true)\r\n\t\t\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone02, marker_Camel_Location02, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone02, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone02, npc_Camel_03)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone02)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone02, 0.0, npc_Camel_03)\r\n\t\tend\r\n\t\r\n\tHydra.Wait(8.0)\r\n\tHydra.EventSendToActor(\"Camel_02\", idSelf, idSelf)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -838,6 +890,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -849,7 +902,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -859,7 +913,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -867,14 +922,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -890,14 +947,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -913,14 +972,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -934,7 +995,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -968,7 +1030,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1032,12 +1095,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend",
        "fDebugDisable": 0,
@@ -1061,6 +1126,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -1072,7 +1138,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1082,7 +1149,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1090,14 +1158,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1113,14 +1183,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1136,14 +1208,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1157,7 +1231,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1184,7 +1259,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1205,6 +1281,7 @@
              "value": 1095703,
              "group": 1,
              "groupName": "Actor",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_MerchantCamel"
             }
            }
@@ -1222,12 +1299,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1268,6 +1347,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -1277,6 +1357,7 @@
          "value": 1095703,
          "group": 1,
          "groupName": "Actor",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_MerchantCamel"
         }
        ],
@@ -1286,7 +1367,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1296,7 +1378,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1304,14 +1387,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1327,14 +1412,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1350,14 +1437,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1371,7 +1460,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -1383,12 +1473,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1410,7 +1502,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1422,7 +1515,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1437,7 +1531,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1478,7 +1573,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1502,6 +1598,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 90
@@ -1525,6 +1622,7 @@
              "value": 1097826,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_C_02"
             }
            }
@@ -1558,12 +1656,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorPlaySound(npc_Camel_04, \"Play_WILD_Camel_Vox_Louder_Death\")\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1592,6 +1692,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -1603,7 +1704,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1613,7 +1715,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1621,14 +1724,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1644,14 +1749,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1667,14 +1774,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1688,7 +1797,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1715,7 +1825,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1731,12 +1842,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start()\r\n\r\nidOwner = Hydra.QuestGetOwner()\r\n\r\nHydra.QActorClearAnimSetOverride(npc_Camel_04)\r\n\r\nHydra.QActorPlayConversation(Conv_CamelBark, idOwner, npc_Camel_04)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1764,7 +1877,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1774,7 +1888,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1782,14 +1897,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1805,14 +1922,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1828,14 +1947,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1849,7 +1970,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -1861,12 +1983,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1888,7 +2012,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1900,7 +2025,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1915,7 +2041,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1956,7 +2083,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1993,6 +2121,7 @@
              "value": 1097844,
              "group": 31,
              "groupName": "Quest",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_VGN_Scorpions"
             }
            }
@@ -2010,12 +2139,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, snoQuest)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2039,6 +2170,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -2050,7 +2182,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2060,7 +2193,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2068,14 +2202,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2091,14 +2227,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2114,14 +2252,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2135,7 +2275,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -2162,7 +2303,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2178,12 +2320,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start()\r\n\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2211,7 +2355,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2221,7 +2366,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2229,14 +2375,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2252,14 +2400,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2275,14 +2425,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2296,7 +2448,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -2324,6 +2477,7 @@
          "value": 1098035,
          "group": 51,
          "groupName": "Condition",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_Scorpion"
         },
         "unk_c3ba01d": 0,
@@ -2364,6 +2518,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 266
@@ -2383,12 +2538,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2416,7 +2573,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2426,7 +2584,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2434,14 +2593,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2457,14 +2618,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2480,14 +2643,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2501,7 +2666,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -2513,12 +2679,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -2540,7 +2708,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -2552,7 +2721,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -2567,7 +2737,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -2608,7 +2779,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2632,6 +2804,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 90
@@ -2655,6 +2828,7 @@
              "value": 1097829,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_C_03"
             }
            }
@@ -2688,12 +2862,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorPlaySound(npc_Camel_04, \"Play_WILD_Camel_Vox_Louder_Death\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2722,6 +2898,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -2733,7 +2910,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2743,7 +2921,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2751,14 +2930,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2774,14 +2955,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2797,14 +2980,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2818,7 +3003,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -2830,12 +3016,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -2857,7 +3045,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -2869,7 +3058,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -2884,7 +3074,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -2918,7 +3109,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2958,6 +3150,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 414
@@ -2977,12 +3170,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\t\tif Hydra.ActorIsValid(idCamelClone04) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone04)\r\n\t\tidCamelClone04 = nil\r\n\t\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone04 = Hydra.CreatePersonalClone(npc_Camel_04)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone04) then\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone04, marker_Camel_Location04, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone04, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone04, npc_Camel_05)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone04)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone04, 0.3)\r\n\t\t\t\r\n\t\tend\r\n\t\r\n\tHydra.Wait(10.0)\r\n\tHydra.EventSendToActor(\"Camel_04\", idSelf, idSelf)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3006,6 +3201,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -3017,7 +3213,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3027,7 +3224,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3035,14 +3233,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3058,14 +3258,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3081,14 +3283,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3102,7 +3306,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -3136,7 +3341,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3200,12 +3406,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3229,6 +3437,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -3240,7 +3449,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3250,7 +3460,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3258,14 +3469,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3281,14 +3494,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3304,14 +3519,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3325,7 +3542,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -3352,7 +3570,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3373,6 +3592,7 @@
              "value": 1095703,
              "group": 1,
              "groupName": "Actor",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_MerchantCamel"
             }
            }
@@ -3390,12 +3610,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3436,6 +3658,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -3445,6 +3668,7 @@
          "value": 1095703,
          "group": 1,
          "groupName": "Actor",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_MerchantCamel"
         }
        ],
@@ -3454,7 +3678,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3464,7 +3689,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3472,14 +3698,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3495,14 +3723,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3518,14 +3748,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3539,7 +3771,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -3551,12 +3784,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -3578,7 +3813,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -3590,7 +3826,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -3605,7 +3842,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -3646,7 +3884,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3686,6 +3925,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 416
@@ -3705,12 +3945,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\nHydra.ActorPlayConversation(Conv_PlayerBark02, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3739,6 +3981,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -3750,7 +3993,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3760,7 +4004,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3768,14 +4013,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3791,14 +4038,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3814,14 +4063,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3835,7 +4086,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -3847,12 +4099,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -3874,7 +4128,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -3886,7 +4141,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -3901,7 +4157,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -3935,7 +4192,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3975,6 +4233,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 414
@@ -3994,12 +4253,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone03) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone03)\r\n\t\tidCamelClone03 = nil\r\n\tend\r\n\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone03 = Hydra.CreatePersonalClone(npc_Camel_03)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone03) then\r\n\t\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idCamelClone03, false, true)\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone03, marker_Camel_Location03, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone03, npc_Camel_04)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone03)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone03, 0.0, npc_Camel_04)\r\n\t\r\n\t\tend\r\n\r\n\tHydra.Wait(7.0)\r\n\tHydra.ActorClearAnimSetOverride(npc_Camel_04)\r\n\tHydra.EventSendToActor(\"Camel_03\", idSelf, idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4023,6 +4284,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -4034,7 +4296,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4044,7 +4307,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4052,14 +4316,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4075,14 +4341,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4098,14 +4366,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4119,7 +4389,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -4153,7 +4424,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4217,12 +4489,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4246,6 +4520,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -4257,7 +4532,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4267,7 +4543,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4275,14 +4552,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4298,14 +4577,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4321,14 +4602,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4342,7 +4625,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -4369,7 +4653,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4390,6 +4675,7 @@
              "value": 1095703,
              "group": 1,
              "groupName": "Actor",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_MerchantCamel"
             }
            }
@@ -4407,12 +4693,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4453,6 +4741,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -4462,6 +4751,7 @@
          "value": 1095703,
          "group": 1,
          "groupName": "Actor",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_MerchantCamel"
         }
        ],
@@ -4471,7 +4761,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4481,7 +4772,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4489,14 +4781,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4512,14 +4806,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4535,14 +4831,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4556,7 +4854,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -4568,12 +4867,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -4595,7 +4896,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -4607,7 +4909,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -4622,7 +4925,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -4663,7 +4967,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4687,6 +4992,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 1
@@ -4710,6 +5016,7 @@
              "value": 1171592,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_02"
             }
            }
@@ -4743,12 +5050,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4772,6 +5081,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -4783,7 +5093,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4793,7 +5104,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4801,14 +5113,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4824,14 +5138,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4847,14 +5163,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4868,7 +5186,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -4880,12 +5199,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -4907,7 +5228,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -4919,7 +5241,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -4934,7 +5257,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -4975,7 +5299,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -5012,6 +5337,7 @@
              "value": 1171633,
              "group": 73,
              "groupName": "Item",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_BagofOats"
             }
            }
@@ -5029,12 +5355,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -5063,6 +5391,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -5072,6 +5401,7 @@
          "value": 1171633,
          "group": 73,
          "groupName": "Item",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_BagofOats"
         }
        ],
@@ -5081,7 +5411,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -5091,7 +5422,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -5099,14 +5431,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5122,14 +5456,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5145,14 +5481,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5166,7 +5504,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -5178,12 +5517,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -5205,7 +5546,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -5217,7 +5559,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -5232,7 +5575,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -5273,7 +5617,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -5313,6 +5658,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 33
@@ -5332,12 +5678,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\nHydra.ActorPlayConversation(Conv_PlayerBark01, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -5366,6 +5714,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -5377,7 +5726,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -5387,7 +5737,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -5395,14 +5746,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5418,14 +5771,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5441,14 +5796,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5462,7 +5819,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -5474,12 +5832,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -5501,7 +5861,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -5513,7 +5874,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -5528,7 +5890,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -5569,7 +5932,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -5609,6 +5973,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 415
@@ -5628,12 +5993,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -5662,6 +6029,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -5673,7 +6041,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -5683,7 +6052,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -5691,14 +6061,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5714,14 +6086,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5737,14 +6111,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -5758,7 +6134,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -5770,12 +6147,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -5797,7 +6176,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -5809,7 +6189,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -5824,7 +6205,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -5865,7 +6247,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -5905,6 +6288,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 417
@@ -5924,12 +6308,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -5958,6 +6344,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -5969,7 +6356,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -5979,7 +6367,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -5987,14 +6376,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6010,14 +6401,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6033,14 +6426,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6054,7 +6449,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -6066,12 +6462,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -6093,7 +6491,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -6105,7 +6504,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -6120,7 +6520,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -6161,7 +6562,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -6201,6 +6603,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 201
@@ -6220,12 +6623,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -6254,6 +6659,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -6265,7 +6671,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -6275,7 +6682,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -6283,14 +6691,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6306,14 +6716,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6329,14 +6741,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6350,7 +6764,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -6362,12 +6777,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -6389,7 +6806,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -6401,7 +6819,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -6416,7 +6835,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -6450,7 +6870,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -6490,6 +6911,7 @@
               "value": 1095068,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Kehj_LowDesert (QST_FinalStraw)"
              },
              "nID": 33
@@ -6509,12 +6931,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone)\r\n\t\tidCamelClone = nil\r\n\t\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone = Hydra.CreatePersonalClone(npc_Camel_01)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone) then\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone, marker_Camel_Location01, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone, npc_Camel_02)\t\r\n\t\t\t\r\n\t\t\tHydra.QActorSetAnimSetOverride(idCamelClone, animSet_Camel_Eating)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone, 0.0, npc_Camel_02)\r\n\t\tend\r\n\t\r\n\tHydra.Wait(4.7)\r\n\t\r\n\tHydra.EventSendToActor(\"Camel_01\", idSelf, idSelf)\r\n\t\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -6538,6 +6962,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -6549,7 +6974,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -6559,7 +6985,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -6567,14 +6994,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6590,14 +7019,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6613,14 +7044,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6634,7 +7067,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -6668,7 +7102,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -6732,12 +7167,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -6761,6 +7198,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -6772,7 +7210,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -6782,7 +7221,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -6790,14 +7230,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6813,14 +7255,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6836,14 +7280,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -6857,7 +7303,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -6884,7 +7331,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -6905,6 +7353,7 @@
              "value": 1095703,
              "group": 1,
              "groupName": "Actor",
+             "type": "sno",
              "name": "QST_Kehj_FinalStraw_MerchantCamel"
             }
            }
@@ -6922,12 +7371,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -6968,6 +7419,7 @@
          "value": 531811,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Kehj_LowDesert"
         }
        ],
@@ -6977,6 +7429,7 @@
          "value": 1095703,
          "group": 1,
          "groupName": "Actor",
+         "type": "sno",
          "name": "QST_Kehj_FinalStraw_MerchantCamel"
         }
        ],
@@ -6986,7 +7439,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -6996,7 +7450,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -7004,14 +7459,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -7027,14 +7484,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -7050,14 +7509,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -7071,7 +7532,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -7083,12 +7545,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -7110,7 +7574,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -7122,7 +7587,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -7137,7 +7603,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   }
  ],
@@ -7148,6 +7615,7 @@
   "value": 1017248,
   "group": 51,
   "groupName": "Condition",
+  "type": "sno",
   "name": "Level40Plus"
  },
  "unk_c47e01a": "",
@@ -7161,6 +7629,7 @@
    "value": 1171633,
    "group": 73,
    "groupName": "Item",
+   "type": "sno",
    "name": "QST_Kehj_FinalStraw_BagofOats"
   }
  ],
@@ -7169,22 +7638,26 @@
  "unk_b43b442": [],
  "gbidSurveyType": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "unk_b37e635": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "snoAudioContext": {
   "value": -1,
   "group": 93,
-  "groupName": "AudioContext"
+  "groupName": "AudioContext",
+  "type": "sno"
  },
  "unk_af3a4c1": [
   {
    "value": 1171633,
    "group": 73,
    "groupName": "Item",
+   "type": "sno",
    "name": "QST_Kehj_FinalStraw_BagofOats"
   }
  ]

@@ -18,6 +18,7 @@
    "value": 520386,
    "group": 24,
    "groupName": "MarkerSet",
+   "type": "sno",
    "name": "Scos_Hills (Game)"
   },
   "nID": 17
@@ -31,6 +32,7 @@
   "value": 69068,
   "group": 48,
   "groupName": "World",
+  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_c2e8448": {
@@ -40,6 +42,7 @@
    "value": 520386,
    "group": 24,
    "groupName": "MarkerSet",
+   "type": "sno",
    "name": "Scos_Hills (Game)"
   },
   "nID": 17
@@ -53,13 +56,15 @@
   "value": 69068,
   "group": 48,
   "groupName": "World",
+  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 237257,
  "snoLevelArea": {
   "value": -1,
   "group": 22,
-  "groupName": "LevelArea"
+  "groupName": "LevelArea",
+  "type": "sno"
  },
  "unk_f956a05": 1,
  "unk_14dee1b": 0,
@@ -71,12 +76,14 @@
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 60
  },
  "snoBountySubzone": {
   "value": -1,
   "group": 80,
-  "groupName": "SubZone"
+  "groupName": "SubZone",
+  "type": "sno"
  },
  "eBountyTier": -1,
  "eBountyType": -1,
@@ -124,7 +131,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -164,6 +172,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 37
@@ -183,12 +192,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n\t--Play Wailing noise\r\n\tHydra.ActorPlaySound(ID_SPIRITSHRINE_TOWN, SFX_WAILING)\r\n\t\r\n\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorsInSameLevelArea(idActor, idPlayer) then\r\n\t\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\t\tHydra.ActorPlaySound(idPlayer, SFX_TORMENTED_REMAINS_2CH)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(2.0)\r\n\t\r\n\t\r\n\t-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\n\tlocal idfollowerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n\t-- Check validity, every time\r\n\tif Hydra.ActorIsValid(idfollowerYorin) == true then\r\n\r\n\t\t-- Check if the Follower is following the player that is triggering the callback\r\n\t\tif Hydra.ActorGetFollowTarget(idfollowerYorin) == idActor then\r\n\t\t\t\r\n\t\t\t--Yorin comments on Wailing noise\r\n\t\t\tHydra.ActorPlaySimpleConversation(CON_NOISE, idfollowerYorin)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
@@ -257,12 +268,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -274,7 +287,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -284,7 +298,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -292,14 +307,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -315,14 +332,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -338,14 +357,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -359,7 +380,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -371,12 +393,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -399,6 +423,7 @@
      "value": 520386,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Game)"
     },
     "nID": 172
@@ -412,6 +437,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -427,7 +453,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -468,7 +495,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -508,6 +536,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 38
@@ -527,12 +556,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\nend",
        "fDebugDisable": 0,
@@ -575,12 +606,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -592,7 +625,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -602,7 +636,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -610,14 +645,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -633,14 +670,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -656,14 +695,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -677,7 +718,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -711,7 +753,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -750,6 +793,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 40
@@ -769,12 +813,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorDamager, idActorDamaged)\t\t\r\nend",
        "fDebugDisable": 0,
@@ -798,12 +844,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -815,7 +863,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -825,7 +874,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -833,14 +883,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -856,14 +908,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -879,14 +933,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -900,7 +956,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -912,12 +969,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -940,6 +999,7 @@
      "value": 520386,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Game)"
     },
     "nID": 172
@@ -953,6 +1013,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -968,7 +1029,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1009,7 +1071,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1048,6 +1111,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 40
@@ -1067,12 +1131,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t--Disable Spirit spawner\r\n\tif Hydra.ActorIsValid(SPN_SPIRITS_01) then\r\n\t\tHydra.ActorDisable(SPN_SPIRITS_01)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1101,6 +1167,7 @@
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -1112,7 +1179,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1133,7 +1201,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1167,7 +1236,9 @@
             "dwPad": 0,
             "gbidActorGroup": {
              "value": 3436616187,
-             "group": 24
+             "type": "gbid",
+             "group": 24,
+             "name": "QST_Scos_Beehive_Banshee"
             }
            }
           ]
@@ -1184,12 +1255,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1218,6 +1291,7 @@
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -1229,7 +1303,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1239,7 +1314,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1247,14 +1323,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1270,14 +1348,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1293,14 +1373,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1314,7 +1396,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\nbYorin = true\r\nHydra.ActorWarpToActor(idYorinSpawnLoc, followerYorin)\r\nHydra.QActorFaceSameAsActor(idYorinSpawnLoc, followerYorin)\r\n\t\r\n\t--Remove Yorrin Follower\r\n\t--if Hydra.ActorIsValid(followerYorin) then\r\n\t--\tHydra.ActorDelete(followerYorin)\r\n\t--end\r\n--Stop Combat music\r\nHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\n\r\nHydra.QuestAdvancePhase()"
@@ -1341,7 +1424,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1365,6 +1449,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 38
@@ -1384,12 +1469,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1417,7 +1504,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1427,7 +1515,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1435,14 +1524,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1458,14 +1549,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1481,14 +1574,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1502,7 +1597,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "\r\n"
@@ -1514,12 +1610,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1542,6 +1640,7 @@
      "value": 520386,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Game)"
     },
     "nID": 172
@@ -1555,6 +1654,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1570,7 +1670,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1611,7 +1712,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1635,6 +1737,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 49
@@ -1658,6 +1761,7 @@
              "value": 754714,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_LilithVisit01"
             }
            }
@@ -1691,12 +1795,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t--Remove Yorrin Follower\r\n\t--if Hydra.ActorIsValid(followerYorin) then\r\n\t--\tHydra.ActorDelete(followerYorin)\r\n\t--end\r\n\t--Hydra.ActorEnable(ID_YORIN)\r\n\t--Remove Vine Barriers linked to Arlo; Enable Breakable Barriers\r\n\tlocal tFog = Hydra.ActorsLinkedByActorInGroup(idActorNPC, \"Fog\")\r\n\tlocal tVines = Hydra.ActorsLinkedByActorInGroup(idActorNPC, \"Breakables\")\r\n\t\r\n\t--Remove Fog Barrier Vines\r\n\tfor i, idFog in ipairs(tFog) do\r\n\t\tHydra.ActorDelete(idFog)\r\n\tend\r\n\t\r\n\t--Enable Breakable Vines\r\n\tfor i, idVines in ipairs(tVines) do\r\n\t\tHydra.ActorEnable(idVines)\r\n\tend\r\n\t\r\n--Enable Retreat volume in Clocheen\r\n\tHydra.ActorEnable(TRIG_RETREAT)\r\n\r\n-- Moved Yorin bark conversation out of background phase\r\n\tHydra.QActorPlaySimpleConversation(CON_YORIN_BARK, ID_YORIN)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1725,12 +1831,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -1742,7 +1850,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1752,7 +1861,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1760,14 +1870,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1783,14 +1895,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1806,14 +1920,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1827,7 +1943,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1854,7 +1971,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1869,12 +1987,14 @@
        "snoWorld": {
         "value": -1,
         "group": 48,
-        "groupName": "World"
+        "groupName": "World",
+        "type": "sno"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start()\r\n\r\n\tHydra.ActorEnable(ID_YORIN)\r\n\t\t\r\n\tif bYorin then\r\n\t\tHydra.ActorWarpToActor(ID_YORIN, idYorinSpawnLoc)\r\n\t\tHydra.QActorFaceSameAsActor(ID_YORIN, idYorinSpawnLoc)\r\n\tend\r\n\t\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_YORIN, LOC_YORIN_SHRINE, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(ID_YORIN, LOC_YORIN_SHRINE)\r\n\t\t\t\r\n\t--Yorin comments on destroyed Tormented Shrine\r\n\tHydra.ActorPlaySimpleConversation(CON_CLEAR_01, ID_YORIN)\r\n\r\n\t--Arlo and Maisie open hut door and enter the scene\r\n\tHydra.ActorEnable(ID_ARLO)\r\n\tHydra.ActorSetConversationStatus(ID_ARLO, false)\r\n\tHydra.ActorEnable(ID_MAISIE)\r\n\tHydra.ActorSetAnimSetOverride(ID_ARLO, \"NPC_NonCombat_HTH_Suspicious\") -- Start suspicious\r\n\t\t\r\n\t--Open Arlo's door\r\n\tHydra.ActorEnable(ID_DOOR_HUT)\r\n\tHydra.ActorGizmoOperate(ID_DOOR_HUT)\r\n\t\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_ARLO, LOC_ARLO_WALK, \"NPC_Walk\", true)\r\n\tHydra.QActorFaceSameAsActor(ID_ARLO, LOC_ARLO_WALK)\r\n\t\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_MAISIE, LOC_MAISIE_WALK, \"NPC_Walk\", true)\r\n\tHydra.QActorFaceSameAsActor(ID_MAISIE, LOC_MAISIE_WALK)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1902,7 +2022,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1912,7 +2033,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1920,14 +2042,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1943,14 +2067,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1966,14 +2092,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1987,7 +2115,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "\r\n"
@@ -2014,7 +2143,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2038,6 +2168,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 49
@@ -2061,6 +2192,7 @@
              "value": 756087,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_ShrineClear02"
             }
            }
@@ -2094,12 +2226,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t-- Clear the animset override of 'suspicion'\r\n\tHydra.ActorClearAnimSetOverride(ID_ARLO)\r\n\tHydra.ActorSetConversationStatus(ID_ARLO, true)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2123,6 +2257,7 @@
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -2134,7 +2269,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2144,7 +2280,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2152,14 +2289,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2175,14 +2314,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2198,14 +2339,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2219,7 +2362,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "\r\n"
@@ -2246,7 +2390,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2270,6 +2415,7 @@
               "value": 1415948,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Clocheen_NPCS)"
              },
              "nID": 1
@@ -2293,6 +2439,7 @@
              "value": 754711,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_ShrineClear"
             }
            }
@@ -2326,12 +2473,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Yorin comments on destroyed Tormented Shrine\r\n\tHydra.ActorPlaySimpleConversation(CON_CLEAR_02, ID_YORIN, ID_ARLO)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2355,12 +2504,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -2372,7 +2523,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2382,7 +2534,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2390,14 +2543,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2413,14 +2568,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2436,14 +2593,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2457,7 +2616,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": ""
@@ -2469,12 +2629,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -2497,6 +2659,7 @@
      "value": 752705,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
     },
     "nID": 49
@@ -2510,6 +2673,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2525,7 +2689,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -2566,7 +2731,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2582,12 +2748,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2654,6 +2822,7 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         }
        ],
@@ -2665,7 +2834,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2675,7 +2845,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2683,14 +2854,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2706,14 +2879,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2729,14 +2904,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2750,7 +2927,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\r\n--Player comments on fog clearing, returing to Yorin\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayConversation(CON_CLEAR_BARK, tPlayers[i])\r\n\tend\r\n\t\r\n\tHydra.QuestAdvancePhase()\r\n"
@@ -2777,7 +2955,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2816,6 +2995,7 @@
               "value": 753162,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_BarrowMounds_Spirits)"
              },
              "nID": 81
@@ -2835,12 +3015,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2864,12 +3046,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -2881,7 +3065,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2902,7 +3087,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -2941,6 +3127,7 @@
               "value": 753162,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_BarrowMounds_Spirits)"
              },
              "nID": 101
@@ -2960,12 +3147,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2989,12 +3178,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -3006,7 +3197,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3016,7 +3208,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3024,14 +3217,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3047,14 +3242,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3070,14 +3267,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3091,7 +3290,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
@@ -3118,7 +3318,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3152,7 +3353,9 @@
             "dwPad": 0,
             "gbidActorGroup": {
              "value": 2973305744,
-             "group": 24
+             "type": "gbid",
+             "group": 24,
+             "name": "QST_Scos_Hills_WailingHills_TormentedRemains"
             }
            }
           ]
@@ -3169,12 +3372,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3250,6 +3455,7 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         }
        ],
@@ -3261,7 +3467,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3271,7 +3478,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3279,14 +3487,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3302,14 +3512,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3325,14 +3537,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3346,7 +3560,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": ""
@@ -3358,12 +3573,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -3386,6 +3603,7 @@
      "value": 520386,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Game)"
     },
     "nID": 173
@@ -3399,6 +3617,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -3414,7 +3633,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -3455,7 +3675,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3495,6 +3716,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 123
@@ -3514,12 +3736,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n--Yorin and Arlo Revelation Callout Conversation\r\n\tHydra.ActorPlaySimpleConversation(CON_REV_CALL, ID_YORIN)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3548,12 +3772,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -3565,7 +3791,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3575,7 +3802,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3583,14 +3811,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3606,14 +3836,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3629,14 +3861,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3650,7 +3884,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()"
@@ -3662,12 +3897,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -3690,6 +3927,7 @@
      "value": 752705,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
     },
     "nID": 123
@@ -3703,6 +3941,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -3718,7 +3957,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -3752,7 +3992,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -3788,6 +4029,7 @@
              "value": 756087,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_ShrineClear02"
             }
            }
@@ -3820,12 +4062,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n--Yorin looks at Arlo\r\n\tif Hydra.ActorIsValid(ID_YORIN) then\r\n\t\tHydra.ActorFaceActor(ID_YORIN, ID_ARLO)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -3849,12 +4093,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -3866,7 +4112,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -3876,7 +4123,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -3884,14 +4132,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3907,14 +4157,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3930,14 +4182,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -3951,7 +4205,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": ""
@@ -3978,7 +4233,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4002,6 +4258,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 49
@@ -4025,6 +4282,7 @@
              "value": 756087,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_ShrineClear02"
             }
            }
@@ -4074,12 +4332,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer, idParentNode)\r\n\t\r\n--Yorin moves to Arlo\r\n\tif Hydra.ActorIsValid(ID_YORIN) then\r\n\t\tHydra.ActorClearLoadout(ID_YORIN)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(ID_YORIN, LOC_YORIN_WALK, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(ID_YORIN, LOC_YORIN_WALK)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4103,12 +4363,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -4120,7 +4382,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4130,7 +4393,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4138,14 +4402,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4161,14 +4427,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4184,14 +4452,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4205,7 +4475,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": ""
@@ -4232,7 +4503,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4268,6 +4540,7 @@
              "value": 754714,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_LilithVisit01"
             }
            }
@@ -4301,12 +4574,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n--Enable optional conversations for Arlo and Maise\r\n\tclArlo = Hydra.ReferenceConversationList(\"NPC_QST_Scos_Arlo\")\r\n\tclMaisie = Hydra.ReferenceConversationList(\"NPC_QST_Scos_Maisie\")\r\n\t\r\n\tHydra.ActorSetConversationList(ID_ARLO, clArlo)\r\n\tHydra.ActorSetConversationList(ID_MAISIE, clMaisie)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4330,12 +4605,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -4347,7 +4624,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4357,7 +4635,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4365,14 +4644,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4388,14 +4669,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4411,14 +4694,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4432,7 +4717,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": ""
@@ -4444,12 +4730,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -4471,7 +4759,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -4483,7 +4772,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -4498,7 +4788,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -4532,7 +4823,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -4556,6 +4848,7 @@
               "value": 752705,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
              },
              "nID": 49
@@ -4579,6 +4872,7 @@
              "value": 923156,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Scos_Hills_ArloReveal"
             }
            }
@@ -4612,12 +4906,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -4646,12 +4942,14 @@
          "value": 752911,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_WailingHills"
         },
         {
          "value": 748415,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Scos_Hills_Clocheen"
         }
        ],
@@ -4663,7 +4961,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -4673,7 +4972,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -4681,14 +4981,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 3,
       "nGoldTier": 3,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4704,14 +5006,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4727,14 +5031,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -4748,7 +5054,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -4760,12 +5067,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -4788,6 +5097,7 @@
      "value": 752705,
      "group": 24,
      "groupName": "MarkerSet",
+     "type": "sno",
      "name": "Scos_Hills (Scos_Hills_Beehive_Spirits)"
     },
     "nID": 49
@@ -4801,6 +5111,7 @@
     "value": 69068,
     "group": 48,
     "groupName": "World",
+    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -4816,7 +5127,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   }
  ],
@@ -4826,7 +5138,8 @@
  "snoStartCondition": {
   "value": -1,
   "group": 51,
-  "groupName": "Condition"
+  "groupName": "Condition",
+  "type": "sno"
  },
  "unk_c47e01a": "",
  "unk_993f312": "\r\nHydra.ActorDisable(ID_YORIN)\r\nbYorin = false\r\n",
@@ -4841,6 +5154,7 @@
     "value": 540304,
     "group": 1,
     "groupName": "Actor",
+    "type": "sno",
     "name": "NPC_QST_Scos_Yorin_Follower"
    },
    "unk_74ee52d": {
@@ -4851,7 +5165,8 @@
     "snoSummonPower": {
      "value": -1,
      "group": 29,
-     "groupName": "Power"
+     "groupName": "Power",
+     "type": "sno"
     },
     "tMarkerHandle": {
      "__type__": "MarkerHandle",
@@ -4859,7 +5174,8 @@
      "snoMarkerSet": {
       "value": -1,
       "group": 24,
-      "groupName": "MarkerSet"
+      "groupName": "MarkerSet",
+      "type": "sno"
      },
      "nID": -1
     },
@@ -4879,7 +5195,8 @@
       "snoSummonPower": {
        "value": -1,
        "group": 29,
-       "groupName": "Power"
+       "groupName": "Power",
+       "type": "sno"
       },
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
@@ -4887,7 +5204,8 @@
        "snoMarkerSet": {
         "value": -1,
         "group": 24,
-        "groupName": "MarkerSet"
+        "groupName": "MarkerSet",
+        "type": "sno"
        },
        "nID": -1
       },
@@ -4897,7 +5215,8 @@
      "unk_c49c579": {
       "value": -1,
       "group": 51,
-      "groupName": "Condition"
+      "groupName": "Condition",
+      "type": "sno"
      },
      "arLevelAreas": []
     },
@@ -4913,7 +5232,8 @@
       "snoSummonPower": {
        "value": -1,
        "group": 29,
-       "groupName": "Power"
+       "groupName": "Power",
+       "type": "sno"
       },
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
@@ -4921,7 +5241,8 @@
        "snoMarkerSet": {
         "value": -1,
         "group": 24,
-        "groupName": "MarkerSet"
+        "groupName": "MarkerSet",
+        "type": "sno"
        },
        "nID": -1
       },
@@ -4931,7 +5252,8 @@
      "unk_c49c579": {
       "value": -1,
       "group": 51,
-      "groupName": "Condition"
+      "groupName": "Condition",
+      "type": "sno"
      },
      "arLevelAreas": []
     },
@@ -4947,7 +5269,8 @@
       "snoSummonPower": {
        "value": -1,
        "group": 29,
-       "groupName": "Power"
+       "groupName": "Power",
+       "type": "sno"
       },
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
@@ -4955,7 +5278,8 @@
        "snoMarkerSet": {
         "value": -1,
         "group": 24,
-        "groupName": "MarkerSet"
+        "groupName": "MarkerSet",
+        "type": "sno"
        },
        "nID": -1
       },
@@ -4965,7 +5289,8 @@
      "unk_c49c579": {
       "value": -1,
       "group": 51,
-      "groupName": "Condition"
+      "groupName": "Condition",
+      "type": "sno"
      },
      "arLevelAreas": []
     }
@@ -4978,16 +5303,20 @@
  "unk_b43b442": [],
  "gbidSurveyType": {
   "value": 3340288678,
-  "group": 57
+  "type": "gbid",
+  "group": 57,
+  "name": "QuestLowChance"
  },
  "unk_b37e635": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "snoAudioContext": {
   "value": -1,
   "group": 93,
-  "groupName": "AudioContext"
+  "groupName": "AudioContext",
+  "type": "sno"
  },
  "unk_af3a4c1": []
 }

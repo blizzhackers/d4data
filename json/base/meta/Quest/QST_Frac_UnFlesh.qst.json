@@ -17,7 +17,8 @@
   "snoMarkerSet": {
    "value": -1,
    "group": 24,
-   "groupName": "MarkerSet"
+   "groupName": "MarkerSet",
+   "type": "sno"
   },
   "nID": -1
  },
@@ -29,7 +30,8 @@
  "unk_6a4ec7f": {
   "value": -1,
   "group": 48,
-  "groupName": "World"
+  "groupName": "World",
+  "type": "sno"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
@@ -38,6 +40,7 @@
    "value": 1063692,
    "group": 24,
    "groupName": "MarkerSet",
+   "type": "sno",
    "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
   },
   "nID": 73
@@ -51,6 +54,7 @@
   "value": 69068,
   "group": 48,
   "groupName": "World",
+  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 4294967295,
@@ -58,6 +62,7 @@
   "value": 1092708,
   "group": 22,
   "groupName": "LevelArea",
+  "type": "sno",
   "name": "Frac_GaleValley_EasternEdge"
  },
  "unk_f956a05": 1,
@@ -70,12 +75,14 @@
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 60
  },
  "snoBountySubzone": {
   "value": -1,
   "group": 80,
-  "groupName": "SubZone"
+  "groupName": "SubZone",
+  "type": "sno"
  },
  "eBountyTier": -1,
  "eBountyType": -1,
@@ -123,7 +130,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 1,
         "flCooldownSeconds": 0,
@@ -144,6 +152,7 @@
              "value": 1092223,
              "group": 1,
              "groupName": "Actor",
+             "type": "sno",
              "name": "QST_Frac_UnFlesh_Krystyna_Follower"
             }
            }
@@ -168,6 +177,7 @@
               "value": 1063692,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
              },
              "nID": 139
@@ -187,12 +197,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\t\r\n\t--Yulia Move + Bark\r\n\tcloneYULIA = Hydra.CreatePersonalClone(ID_YULIA)\r\n\tif Hydra.ActorIsValid(cloneYULIA) then\r\n\t\tHydra.QActorPlayConversation(CONVO_YULIA, id_Self, cloneYULIA)\r\n\t\tHydra.QActorWaitForConversationFinished(cloneYULIA, CONVO_YULIA)\r\n\t\tHydra.QActorWait(cloneYULIA, 1.5)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneYULIA, LOC_YULIA, \"NPC_RUN\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneYULIA, 1)\r\n\tend\r\n\t\t\r\n\t--Follower to Static + Bark\r\n\tidKrys = Hydra.QuestGetFollower(ID_KRYS_FOLLOWER)\r\n\tif Hydra.ActorIsValid(idKrys) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idKrys)\r\n\t\tHydra.QActorEnableAI(idKrys, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idKrys, ID_KRYS_ARRIVE, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idKrys, ID_KRYS_ARRIVE)\r\n\t\t\r\n\t\t--Follower Bark + Anim\r\n\t\tHydra.QActorWait(idKrys, 1.5)\r\n\t\tHydra.QActorSetAnimSetOverride(idKrys, ANIM_PRAY)\r\n\t\tHydra.QActorWaitForConversationFinished(idKrys, CONVO_YULIA)\r\n\t\tHydra.WaitForQEmpty(idKrys)\r\n\t\t--Hydra.QActorEventSendToActor(idKrys, \"QST_UNFLESH_ARRIVE\", idSelf)\r\n\t\tHydra.QActorPlayConversation(CONVO_KRYS, id_Self, idKrys)\r\n\t\tHydra.QActorWaitForConversationFinished(idKrys, CONVO_KRYS)\r\n\t\t\t\t\r\n\t\tHydra.QActorWait(idKrys, 0.5)\r\n\t\tHydra.QActorDelete(idKrys)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
@@ -264,12 +276,14 @@
          "value": 537592,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_Town"
         },
         {
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -281,7 +295,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -291,7 +306,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -299,14 +315,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -322,14 +340,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -345,14 +365,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -366,7 +388,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -378,12 +401,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -405,7 +430,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -417,7 +443,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -432,7 +459,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -473,7 +501,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -510,6 +539,7 @@
              "value": 1063748,
              "group": 31,
              "groupName": "Quest",
+             "type": "sno",
              "name": "QST_VGN_Frac_UnFlesh"
             }
            }
@@ -527,12 +557,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -561,6 +593,7 @@
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -572,7 +605,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -582,7 +616,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -590,14 +625,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -613,14 +650,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -636,14 +675,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -657,7 +698,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -669,12 +711,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -696,7 +740,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -708,7 +753,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -723,7 +769,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -764,7 +811,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 1,
         "flCooldownSeconds": 0,
@@ -804,6 +852,7 @@
               "value": 1063692,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
              },
              "nID": 139
@@ -823,12 +872,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n\t--Hydra.QActorSheath\r\n\tid_Self = Hydra.QuestGetOwner()\t\r\n\r\n\tHydra.QActorWait(ID_KRYS_CLOSE, 1)\r\n\tHydra.QActorPlayConversation(CONVO_FEODOR, id_Self, ID_KRYS_CLOSE)\r\n\tHydra.QActorWaitForConversationFinished(ID_KRYS_CLOSE,CONVO_FEODOR)\r\n\tHydra.QActorWait(ID_KRYS_CLOSE, 1)\r\n\t\t\t\r\nend",
        "fDebugDisable": 0,
@@ -857,6 +908,7 @@
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -868,7 +920,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -878,7 +931,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -886,14 +940,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -909,14 +965,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -932,14 +990,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -953,7 +1013,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -965,12 +1026,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -992,7 +1055,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1004,7 +1068,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1019,7 +1084,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1060,7 +1126,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1084,6 +1151,7 @@
               "value": 1063692,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
              },
              "nID": 1
@@ -1107,6 +1175,7 @@
              "value": 1063699,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Frac_UnFlesh_Krystyna_01"
             }
            }
@@ -1140,12 +1209,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -1169,6 +1240,7 @@
          "value": 537592,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_Town"
         }
        ],
@@ -1180,7 +1252,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1190,7 +1263,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1198,14 +1272,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1221,14 +1297,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1244,14 +1322,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1265,7 +1345,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1277,12 +1358,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1304,7 +1387,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1316,7 +1400,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1331,7 +1416,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1372,7 +1458,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1396,6 +1483,7 @@
               "value": 1063692,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
              },
              "nID": 88
@@ -1419,6 +1507,7 @@
              "value": 1065123,
              "group": 12,
              "groupName": "Conversation",
+             "type": "sno",
              "name": "QST_Frac_UnFlesh_Krystyna_05"
             }
            }
@@ -1452,12 +1541,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t--Static Run from A to B\r\n\tCloneKrysEnd = Hydra.CreatePersonalClone(ID_KRYS_CLOSE)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(CloneKrysEnd, LOC_KRYS_END, \"NPC_WALK\", true)\r\n\tHydra.QActorDeletePersonalClone(CloneKrysEnd, 1)\r\n\t\r\nend",
        "fDebugDisable": 0,
@@ -1486,6 +1577,7 @@
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -1497,7 +1589,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1507,7 +1600,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1515,14 +1609,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1538,14 +1634,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1561,14 +1659,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1582,7 +1682,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1594,12 +1695,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1621,7 +1724,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1633,7 +1737,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1648,7 +1753,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1682,7 +1788,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1722,6 +1829,7 @@
               "value": 1063692,
               "group": 24,
               "groupName": "MarkerSet",
+              "type": "sno",
               "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
              },
              "nID": 149
@@ -1741,12 +1849,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\t\r\n\tHydra.ActorPlayConversation(CONVO_DIE, idActorPlayer, ID_FEODOR)\r\nend",
        "fDebugDisable": 0,
@@ -1775,6 +1885,7 @@
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -1786,7 +1897,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -1796,7 +1908,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -1804,14 +1917,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1827,14 +1942,16 @@
       "snoTreasureClass": {
        "value": 1190322,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 2,
       "nGoldTier": 2,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1850,14 +1967,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -1871,7 +1990,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -1883,12 +2003,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -1910,7 +2032,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -1922,7 +2045,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -1937,7 +2061,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -1971,7 +2096,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -1991,7 +2117,8 @@
             "snoQuest": {
              "value": -1,
              "group": 31,
-             "groupName": "Quest"
+             "groupName": "Quest",
+             "type": "sno"
             }
            }
           ]
@@ -2011,7 +2138,8 @@
             "snoActor": {
              "value": -1,
              "group": 1,
-             "groupName": "Actor"
+             "groupName": "Actor",
+             "type": "sno"
             }
            }
           ]
@@ -2028,12 +2156,14 @@
         "value": 69068,
         "group": 48,
         "groupName": "World",
+        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(snoQuest, idActorFollower)\r\n\t\r\n\tfollowerKrys = Hydra.QuestGetFollower(ID_KRYS_FOLLOWER)\r\n\tif Hydra.ActorIsValid(followerKrys) then \r\n\t\tHydra.ActorClearAnimSetOverride(followerKrys)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
@@ -2057,24 +2187,28 @@
          "value": 1042786,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_BigLake"
         },
         {
          "value": 445552,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley"
         },
         {
          "value": 537592,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_Town"
         },
         {
          "value": 1092708,
          "group": 22,
          "groupName": "LevelArea",
+         "type": "sno",
          "name": "Frac_GaleValley_EasternEdge"
         }
        ],
@@ -2086,7 +2220,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -2096,7 +2231,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -2104,14 +2240,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2127,14 +2265,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2150,14 +2290,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -2171,7 +2313,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -2183,12 +2326,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -2210,7 +2355,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -2222,7 +2368,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -2237,7 +2384,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   }
  ],
@@ -2248,6 +2396,7 @@
   "value": 292617,
   "group": 51,
   "groupName": "Condition",
+  "type": "sno",
   "name": "Level8Plus"
  },
  "unk_c47e01a": "",
@@ -2263,6 +2412,7 @@
     "value": 1092223,
     "group": 1,
     "groupName": "Actor",
+    "type": "sno",
     "name": "QST_Frac_UnFlesh_Krystyna_Follower"
    },
    "unk_74ee52d": {
@@ -2273,7 +2423,8 @@
     "snoSummonPower": {
      "value": -1,
      "group": 29,
-     "groupName": "Power"
+     "groupName": "Power",
+     "type": "sno"
     },
     "tMarkerHandle": {
      "__type__": "MarkerHandle",
@@ -2281,7 +2432,8 @@
      "snoMarkerSet": {
       "value": -1,
       "group": 24,
-      "groupName": "MarkerSet"
+      "groupName": "MarkerSet",
+      "type": "sno"
      },
      "nID": -1
     },
@@ -2301,7 +2453,8 @@
       "snoSummonPower": {
        "value": -1,
        "group": 29,
-       "groupName": "Power"
+       "groupName": "Power",
+       "type": "sno"
       },
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
@@ -2310,6 +2463,7 @@
         "value": 1063692,
         "group": 24,
         "groupName": "MarkerSet",
+        "type": "sno",
         "name": "Frac_GaleValley (QST_Frac_UnFlesh)"
        },
        "nID": 1
@@ -2320,49 +2474,57 @@
      "unk_c49c579": {
       "value": -1,
       "group": 51,
-      "groupName": "Condition"
+      "groupName": "Condition",
+      "type": "sno"
      },
      "arLevelAreas": [
       {
        "value": 1042786,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_BigLake"
       },
       {
        "value": 445552,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley"
       },
       {
        "value": 537592,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_Town"
       },
       {
        "value": 1092708,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_EasternEdge"
       },
       {
        "value": 1092708,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_EasternEdge"
       },
       {
        "value": 1042788,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_Mill"
       },
       {
        "value": 949044,
        "group": 22,
        "groupName": "LevelArea",
+       "type": "sno",
        "name": "Frac_GaleValley_KnightsGarrison"
       }
      ]
@@ -2376,16 +2538,19 @@
  "unk_b43b442": [],
  "gbidSurveyType": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "unk_b37e635": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "snoAudioContext": {
   "value": -1,
   "group": 93,
-  "groupName": "AudioContext"
+  "groupName": "AudioContext",
+  "type": "sno"
  },
  "unk_af3a4c1": []
 }

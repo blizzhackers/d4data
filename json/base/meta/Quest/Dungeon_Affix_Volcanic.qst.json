@@ -17,7 +17,8 @@
   "snoMarkerSet": {
    "value": -1,
    "group": 24,
-   "groupName": "MarkerSet"
+   "groupName": "MarkerSet",
+   "type": "sno"
   },
   "nID": -1
  },
@@ -29,7 +30,8 @@
  "unk_6a4ec7f": {
   "value": -1,
   "group": 48,
-  "groupName": "World"
+  "groupName": "World",
+  "type": "sno"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
@@ -37,7 +39,8 @@
   "snoMarkerSet": {
    "value": -1,
    "group": 24,
-   "groupName": "MarkerSet"
+   "groupName": "MarkerSet",
+   "type": "sno"
   },
   "nID": -1
  },
@@ -49,13 +52,15 @@
  "unk_506369e": {
   "value": -1,
   "group": 48,
-  "groupName": "World"
+  "groupName": "World",
+  "type": "sno"
  },
  "unk_d2181f0": 4294967295,
  "snoLevelArea": {
   "value": -1,
   "group": 22,
-  "groupName": "LevelArea"
+  "groupName": "LevelArea",
+  "type": "sno"
  },
  "unk_f956a05": 1,
  "unk_14dee1b": 0,
@@ -67,12 +72,14 @@
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 60
  },
  "snoBountySubzone": {
   "value": -1,
   "group": 80,
-  "groupName": "SubZone"
+  "groupName": "SubZone",
+  "type": "sno"
  },
  "eBountyTier": -1,
  "eBountyType": -1,
@@ -97,12 +104,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -124,7 +133,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -136,7 +146,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -151,7 +162,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -185,7 +197,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -200,12 +213,14 @@
        "snoWorld": {
         "value": -1,
         "group": 48,
-        "groupName": "World"
+        "groupName": "World",
+        "type": "sno"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start()\r\n\tlocal flCooldownBase =\tFL_COOLDOWN1;\r\n\t\r\n\tHydra.Wait(FL_DUNGEONAFFIX_COOLUP);\r\n\r\n\t-- If this is not a dungeon, stop\r\n\tif not Hydra.SubzoneIsDungeon() then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\twhile (true) do\r\n\t\t-- Shorten the cooldown after first stage\r\n\t\tif gb_FirstStageDone then\r\n\t\t\tflCooldownBase = FL_COOLDOWN2;\r\n\t\tend\r\n\r\n\t\t-- Find valid players\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tlocal idPlayerValid = Hydra.ACDID_INVALID;\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\t\tidPlayerValid = idPlayer;\r\n\t\t\t\tbreak;\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\tif not Hydra.ActorIsValid(idPlayerValid) then\r\n\t\t\tHydra.Wait(flCooldownBase);\r\n\t\telse\r\n\t\t\t-- First check to see whether any player is in combat\r\n\t\t\tlocal tPlayersValid = {};\r\n\t\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\t\tif Hydra.ActorIsValid(idPlayer) and Hydra.ActorIsAlive(idPlayer) and Hydra.ActorIsInCombat(idPlayer) then\r\n\t\t\t\t\ttable.insert(tPlayersValid, idPlayer);\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\tlocal nPlayerValidCount = #tPlayersValid;\r\n\t\t\tif nPlayerValidCount <= 0 then\r\n\t\t\t\tHydra.Wait(flCooldownBase);\r\n\t\t\telse\r\n\t\t\t\t-- Calculate the cooldown based on player count\r\n\t\t\t\tlocal flCooldown = flCooldownBase / (1 + (nPlayerValidCount - 1) * FL_COOLDOWN_EXTRAPLAYER);\r\n\r\n\t\t\t\t-- Only trigger in chance\r\n\t\t\t\tif Hydra.GetRandomFloat() <= FL_CHANCE then\r\n\t\t\t\t\t-- Spawn it under a random player\r\n\t\t\t\t\tShuffleTable(tPlayersValid);\r\n\t\t\t\t\t\r\n\t\t\t\t\tlocal idPlayerPicked = Hydra.ACTORID_INVALID;\r\n\t\t\t\t\tfor i, idPlayer in ipairs(tPlayersValid) do\r\n\t\t\t\t\t\tif gpt_LastVolcanic == nil or not Hydra.PositionIsValid(gpt_LastVolcanic) then\r\n\t\t\t\t\t\t\tidPlayerPicked = idPlayer;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\t\tlocal ptPlayer = Hydra.ActorGetPosition(idPlayer);\r\n\t\t\t\t\t\tif Hydra.PositionGetDistanceSquaredToPosition(ptPlayer, gpt_LastVolcanic) > FL_DISTANCESQ_MIN then\r\n\t\t\t\t\t\t\tidPlayerPicked = idPlayer;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif not Hydra.ActorIsValid(idPlayerPicked) then\r\n\t\t\t\t\t\tidPlayerPicked = tPlayersValid[1];\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif Hydra.ActorIsValid(idPlayerPicked) then\r\n\t\t\t\t\t\t-- Trigger the volcanic at player's feet\r\n\t\t\t\t\t\tgpt_LastVolcanic = Hydra.ActorGetPosition(idPlayerPicked);\r\n\t\t\t\t\t\tHydra.ActorTriggerEnvironmentPower(idPlayerPicked, idPlayerPicked, S_VOLCANIC_POWER, Hydra.TEAM_MONSTER_0);\r\n\t\t\t\t\tend\r\n\t\t\t\tend\r\n\r\n\t\t\t\tHydra.Wait(flCooldown);\r\n\t\t\tend\r\n\t\tend\r\n\tend -- while loop\r\nend\r\n",
        "fDebugDisable": 0,
@@ -233,7 +248,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -243,7 +259,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -251,14 +268,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -274,14 +293,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -297,14 +318,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -318,7 +341,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "\r\n"
@@ -345,7 +369,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -378,12 +403,14 @@
        "snoWorld": {
         "value": -1,
         "group": 48,
-        "groupName": "World"
+        "groupName": "World",
+        "type": "sno"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(flGameTime)\r\n\tgb_FirstStageDone = true;\r\nend\r\n",
        "fDebugDisable": 0,
@@ -411,7 +438,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -421,7 +449,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -429,14 +458,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -452,14 +483,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -475,14 +508,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -496,7 +531,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -530,7 +566,8 @@
         "snoCondition": {
          "value": -1,
          "group": 51,
-         "groupName": "Condition"
+         "groupName": "Condition",
+         "type": "sno"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
@@ -608,12 +645,14 @@
        "snoWorld": {
         "value": -1,
         "group": 48,
-        "groupName": "World"
+        "groupName": "World",
+        "type": "sno"
        },
        "unk_e879cce": {
         "value": -1,
         "group": 12,
-        "groupName": "Conversation"
+        "groupName": "Conversation",
+        "type": "sno"
        },
        "unk_28bc3c5": "function Start(idActorPlayer, snoSubzone, dwDungeonType)\r\nend\r\n",
        "fDebugDisable": 0,
@@ -641,7 +680,8 @@
         "snoReputation": {
          "value": -1,
          "group": 105,
-         "groupName": "Reputation"
+         "groupName": "Reputation",
+         "type": "sno"
         },
         "nValue": 0
        }
@@ -651,7 +691,8 @@
      "unk_89d02b1": {
       "value": -1,
       "group": 73,
-      "groupName": "Item"
+      "groupName": "Item",
+      "type": "sno"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
@@ -659,14 +700,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -682,14 +725,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -705,14 +750,16 @@
       "snoTreasureClass": {
        "value": -1,
        "group": 52,
-       "groupName": "TreasureClass"
+       "groupName": "TreasureClass",
+       "type": "sno"
       },
       "nXPTier": 0,
       "nGoldTier": 0,
       "snoTrackedReward": {
        "value": -1,
        "group": 126,
-       "groupName": "TrackedReward"
+       "groupName": "TrackedReward",
+       "type": "sno"
       },
       "unk_b0fd814": 0,
       "unk_186d5e6": {
@@ -726,7 +773,8 @@
      "unk_e903c4e": {
       "value": -1,
       "group": 12,
-      "groupName": "Conversation"
+      "groupName": "Conversation",
+      "type": "sno"
      },
      "unk_8f432f8": [],
      "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
@@ -738,12 +786,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -765,7 +815,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -777,7 +828,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -792,7 +844,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   },
   {
@@ -810,12 +863,14 @@
    "unk_951ad2a": {
     "value": -1,
     "group": 51,
-    "groupName": "Condition"
+    "groupName": "Condition",
+    "type": "sno"
    },
    "snoReward": {
     "value": -1,
     "group": 52,
-    "groupName": "TreasureClass"
+    "groupName": "TreasureClass",
+    "type": "sno"
    },
    "unk_189b89b": 0,
    "nTimerDuration": 0,
@@ -837,7 +892,8 @@
     "snoMarkerSet": {
      "value": -1,
      "group": 24,
-     "groupName": "MarkerSet"
+     "groupName": "MarkerSet",
+     "type": "sno"
     },
     "nID": -1
    },
@@ -849,7 +905,8 @@
    "unk_ed8215b": {
     "value": -1,
     "group": 48,
-    "groupName": "World"
+    "groupName": "World",
+    "type": "sno"
    },
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
@@ -864,7 +921,8 @@
    "snoAudioContext": {
     "value": -1,
     "group": 93,
-    "groupName": "AudioContext"
+    "groupName": "AudioContext",
+    "type": "sno"
    }
   }
  ],
@@ -874,7 +932,8 @@
  "snoStartCondition": {
   "value": -1,
   "group": 51,
-  "groupName": "Condition"
+  "groupName": "Condition",
+  "type": "sno"
  },
  "unk_c47e01a": "S_DUNGEON_AFFIX_NAME = \"Volcanic\";\r\ngid_ThisQuest = Hydra.ACDID_INVALID;\r\n\r\n-- Affix specific data\r\nFL_DUNGEONAFFIX_COOLUP = 10;\r\nN_STAGE1_DURATION = 300;\r\nFL_COOLDOWN1 = 12;\r\nFL_COOLDOWN2 = 9;\r\nFL_CHANCE = 0.666\r\nFL_COOLDOWN_EXTRAPLAYER = 0.8;\r\nFL_DISTANCESQ_MIN = 3;\r\n\r\nS_VOLCANIC_POWER = Hydra.ReferencePower(\"Dungeon_Affix_Volcanic_Single\");\r\n\r\ngpt_LastVolcanic = nil\r\ngb_FirstStageDone = false;\r\n",
  "unk_993f312": "-- Remove phase 2, put the logic into phase 1.\r\n\r\ngid_ThisQuest = idSelf;",
@@ -888,16 +947,19 @@
  "unk_b43b442": [],
  "gbidSurveyType": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "unk_b37e635": {
   "value": 4294967295,
+  "type": "gbid",
   "group": 57
  },
  "snoAudioContext": {
   "value": -1,
   "group": 93,
-  "groupName": "AudioContext"
+  "groupName": "AudioContext",
+  "type": "sno"
  },
  "unk_af3a4c1": []
 }
