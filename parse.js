@@ -19,8 +19,8 @@ if (fs.existsSync('data/base/CoreTOC.dat')) {
   let snoGroupsCount = file.readUInt32LE(0);
   let entryCounts = new Uint32Array(file.buffer.slice(4, 4 + 4 * snoGroupsCount));
   let entryOffsets = new Uint32Array(file.buffer.slice(4 + 4 * snoGroupsCount, 4 + 8 * snoGroupsCount));
-  let entryUnk = new Uint32Array(file.buffer.slice(4 + 8 * snoGroupsCount, 4 + 12 * snoGroupsCount));
-  let i0 = file.readUInt32LE(4 + 12 * snoGroupsCount);
+  // let entryUnk = new Uint32Array(file.buffer.slice(4 + 8 * snoGroupsCount, 4 + 12 * snoGroupsCount));
+  // let i0 = file.readUInt32LE(4 + 12 * snoGroupsCount);
   let dataStart = 8 + 12 * snoGroupsCount;
 
   for (let c = 0; c < snoGroupsCount; c++) {
