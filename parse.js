@@ -222,8 +222,8 @@ let basicTypes = {
   "DT_RANGE": function (ret, file, typeHashes, offset, field, fieldPath) {
     readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let typeSize = getTypeSize(typeHashes.slice(1));
-    ret.value = readStructure(file, typeHashes.slice(1), offset, field, [...fieldPath, 'value']);
-    ret.end_value = readStructure(file, typeHashes.slice(1), offset + typeSize, field, [...fieldPath, 'end_value']);
+    ret.rangeValue1 = readStructure(file, typeHashes.slice(1), offset, field, [...fieldPath, 'value1']);
+    ret.rangeValue2 = readStructure(file, typeHashes.slice(1), offset + typeSize, field, [...fieldPath, 'value2']);
   },
   "DT_FIXEDARRAY": function (ret, file, typeHashes, offset, field, fieldPath) {
     readLog.push(fieldPath.join('.') + ' @ ' + offset);
