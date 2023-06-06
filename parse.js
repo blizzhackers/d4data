@@ -320,6 +320,9 @@ let basicTypes = {
       ret.flags = field.flags;
       ret.otherFile = true;
       ret.dataType = typeHashes.slice(1);
+      ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
+        definitions[typeHash].name;
+      });
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
       return;
@@ -359,6 +362,9 @@ let basicTypes = {
       ret.flags = field.flags;
       ret.otherFile = true;
       ret.dataType = typeHashes.slice(1);
+      ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
+        definitions[typeHash].name;
+      });
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
       ret.dataCount = dataCount;
