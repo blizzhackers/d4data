@@ -319,8 +319,22 @@ let basicTypes = {
     if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
       ret.flags = field.flags;
       ret.otherFile = true;
-      ret.dataType = typeHashes.slice(1);
-      ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
+
+      if ([
+        3846829457, // DT_CSTRING
+        3244749660, // DT_VARIABLEARRAY
+        3493213809, // DT_TAGMAP
+        1683664497, // DT_POLYMORPHIC_VARIABLEARRAY
+        3877855748, // DT_RANGE
+        2175310548, // DT_CHARARRAY
+      ].includes(typeHashes[1])) {
+        ret.dataType = typeHashes.slice(1);
+      }
+      else {
+        ret.dataType = [typeHashes[1]];
+      }
+
+      ret.dataTypeName = ret.dataType.map(typeHash => {
         return getType(typeHash).name;
       });
       ret.dataOffset = dataOffset;
@@ -361,8 +375,22 @@ let basicTypes = {
     if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
       ret.flags = field.flags;
       ret.otherFile = true;
-      ret.dataType = typeHashes.slice(1);
-      ret.dataTypeNames = typeHashes.slice(1).map(typeHash => {
+
+      if ([
+        3846829457, // DT_CSTRING
+        3244749660, // DT_VARIABLEARRAY
+        3493213809, // DT_TAGMAP
+        1683664497, // DT_POLYMORPHIC_VARIABLEARRAY
+        3877855748, // DT_RANGE
+        2175310548, // DT_CHARARRAY
+      ].includes(typeHashes[1])) {
+        ret.dataType = typeHashes.slice(1);
+      }
+      else {
+        ret.dataType = [typeHashes[1]];
+      }
+
+      ret.dataTypeName = ret.dataType.map(typeHash => {
         return getType(typeHash).name;
       });
       ret.dataOffset = dataOffset;
