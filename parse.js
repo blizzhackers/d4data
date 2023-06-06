@@ -1,7 +1,7 @@
 const fs = require('fs');
 const node_path = require('node:path');
 const definitions = require('./definitions.json');
-const snoGroups = require('./snoGroups.json');
+const snoGroups = require('./json/snoGroups.json');
 
 const DEV_NONE = 0;
 const DEV_INFO = 1;
@@ -13,6 +13,50 @@ process.chdir(__dirname);
 
 let toc = {};
 let gbid = fs.existsSync('json/GBID.json') ? JSON.parse(fs.readFileSync('json/GBID.json'), null, ' ') : {};
+let readLog = [];
+let fieldHashes = {};
+
+function gbidHash(str) {
+  let hash = new Uint32Array(1);
+
+  str = str.toLowerCase();
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0];
+}
+
+function typeHash(str) {
+  let hash = new Uint32Array(1);
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0];
+}
+
+function fieldHash(str) {
+  let hash = new Uint32Array(1);
+
+  for (let c = 0; c < str.length; c++) {
+    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+  }
+
+  return hash[0] & 0xFFFFFFF;
+}
+
+fs.readFileSync('names.txt').toString().split(/[\n\r\s]+/gi).forEach(word => {
+  let hash = fieldHash(word);
+
+  fieldHashes[hash] = fieldHashes[hash] || [];
+
+  if (!fieldHashes[hash].includes(word)) {
+    fieldHashes[hash].push(word);
+  }
+});
 
 if (fs.existsSync('data/base/CoreTOC.dat')) {
   let file = fs.readFileSync('data/base/CoreTOC.dat');
@@ -96,22 +140,28 @@ function getTypeSize (type) {
 }
 
 let basicTypes = {
-  "DT_BYTE": function (ret, file, typeHashes, offset, field) {
+  "DT_BYTE": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readUInt8(offset);
   },
-  "DT_WORD": function (ret, file, typeHashes, offset, field) {
+  "DT_WORD": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readUInt16LE(offset);
   },
-  "DT_ENUM": function (ret, file, typeHashes, offset, field) {
+  "DT_ENUM": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readInt32LE(offset);
   },
-  "DT_INT": function (ret, file, typeHashes, offset, field) {
+  "DT_INT": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readInt32LE(offset);
   },
-  "DT_FLOAT": function (ret, file, typeHashes, offset, field) {
+  "DT_FLOAT": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readFloatLE(offset);
   },
-  "DT_SNO": function (ret, file, typeHashes, offset, field) {
+  "DT_SNO": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readInt32LE(offset);
 
     if (devAttributes >= DEV_INFO) {
@@ -123,7 +173,8 @@ let basicTypes = {
       }
     }
   },
-  "DT_SNO_NAME": function (ret, file, typeHashes, offset, field) {
+  "DT_SNO_NAME": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readInt32LE(offset + 4);
     ret.group = file.readInt32LE(offset);
     ret.groupName = snoGroups[ret.group];
@@ -135,7 +186,8 @@ let basicTypes = {
       }
     }
   },
-  "DT_GBID": function (ret, file, typeHashes, offset, field) {
+  "DT_GBID": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readUInt32LE(offset);
     ret.type = 'gbid';
 
@@ -147,61 +199,168 @@ let basicTypes = {
       }
     }
   },
-  "DT_STARTLOC_NAME": function (ret, file, typeHashes, offset, field) {
+  "DT_STARTLOC_NAME": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readUInt32LE(offset);
   },
-  "DT_UINT": function (ret, file, typeHashes, offset, field) {
+  "DT_UINT": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readUInt32LE(offset);
   },
-  "DT_ACD_NETWORK_NAME": function (ret, file, typeHashes, offset, field) {
+  "DT_ACD_NETWORK_NAME": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readBigUInt64LE(offset).toString(16);
   },
-  "DT_SHARED_SERVER_DATA_ID": function (ret, file, typeHashes, offset, field) {
+  "DT_SHARED_SERVER_DATA_ID": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readBigUInt64LE(offset).toString(16);
   },
-  "DT_INT64": function (ret, file, typeHashes, offset, field) {
+  "DT_INT64": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = file.readBigInt64LE(offset).toString(16);
   },
-  "DT_RANGE": function (ret, file, typeHashes, offset, field) {
+  "DT_RANGE": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let typeSize = getTypeSize(typeHashes.slice(1));
-    ret.value = readStructure(file, typeHashes.slice(1), offset + typeSize, field);
-    ret.end_value = readStructure(file, typeHashes.slice(1), offset, field);
+    ret.value = readStructure(file, typeHashes.slice(1), offset, field, [...fieldPath, 'value']);
+    ret.end_value = readStructure(file, typeHashes.slice(1), offset + typeSize, field, [...fieldPath, 'end_value']);
   },
-  "DT_FIXEDARRAY": function (ret, file, typeHashes, offset, field) {
+  "DT_FIXEDARRAY": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = [];
     let typeSize = getTypeSize(typeHashes.slice(1));
 
     for (let c = 0; c < field.arrayLength; c++) {
-      ret.value.push(readStructure(file, typeHashes.slice(1), offset + c * typeSize, field));
+      ret.value.push(readStructure(file, typeHashes.slice(1), offset + c * typeSize, field, [...fieldPath, c]));
     }
   },
-  "DT_VARIABLEARRAY": function (ret, file, typeHashes, offset, field) {
+  "DT_TAGMAP": function (ret, file, typeHashes, offset, field, fieldPath) {
+    let padding1 = file.readInt32LE(offset);
+    let padding2 = file.readInt32LE(offset + 4);
+    let dataOffset = file.readInt32LE(offset + 8);
+    let dataSize = file.readInt32LE(offset + 12);
+    let dataCount = file.readInt32LE(dataOffset);
+    dataOffset += 4;
+    let tagEntries = [];
+
+    ret.value = {
+      __type__: 'DT_TAGMAP',
+      __typeHash__: 3493213809,
+    };
+
+    if (devAttributes > DEV_INFO) {
+      ret.__padding1__ = padding1;
+      ret.__padding2__ = padding2;
+      ret.__dataOffset__ = '0x' + dataOffset.toString(16);
+      ret.__dataSize__ = '0x' + dataSize.toString(16);
+      ret.__dataCount__ = '0x' + dataCount.toString(16);
+    }
+
+    if (padding1 || padding2) {
+      throw new Error('Unexpected value in padding!');
+    }
+
+    for (let c = 0; c < dataCount; c++) {
+      let tagEntry = {
+        tagNameHash: file.readUInt32LE(dataOffset),
+        tagType: [file.readUInt32LE(dataOffset + 4), 1028442418],
+      };
+
+      if (fieldHashes[tagEntry.tagNameHash] && fieldHashes[tagEntry.tagNameHash].length === 1) {
+        tagEntry.tagName = fieldHashes[tagEntry.tagNameHash][0];
+      }
+
+      if ([
+        3846829457, // DT_CSTRING
+        3244749660, // DT_VARIABLEARRAY
+        3493213809, // DT_TAGMAP
+        1683664497, // DT_POLYMORPHIC_VARIABLEARRAY
+        3877855748, // DT_RANGE
+        2175310548, // DT_CHARARRAY
+      ].includes(tagEntry.tagType[0])) {
+        tagEntry.tagType[1] = file.readUInt32LE(dataOffset + 8);
+        dataOffset += 12;
+      }
+      else {
+        dataOffset += 8;
+      }
+
+      tagEntries.push(tagEntry);
+    }
+
+    tagEntries.forEach(tagEntry => {
+      let typeSize = getTypeSize(tagEntry.tagType);
+      let tagName = tagEntry.tagName || ('unk_' + tagEntry.tagNameHash.toString(16));
+
+      ret.value[tagName] = readStructure(file, tagEntry.tagType, dataOffset, field, [...fieldPath, tagName]);
+
+      dataOffset += typeSize;
+    });
+  },
+  "DT_VARIABLEARRAY": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let typeSize = getTypeSize(typeHashes.slice(1));
+    let padding1 = file.readInt32LE(offset);
+    let padding2 = file.readInt32LE(offset + 4);
     let dataOffset = file.readInt32LE(offset + 8);
     let dataSize = file.readInt32LE(offset + 12);
 
     if (devAttributes > DEV_INFO) {
+      ret.__padding1__ = padding1;
+      ret.__padding2__ = padding2;
       ret.__dataOffset__ = '0x' + dataOffset.toString(16);
       ret.__dataSize__ = '0x' + dataSize.toString(16);
+    }
+
+    if (padding1 || padding2) {
+      throw new Error('Unexpected value in padding!');
+    }
+
+    if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
+      ret.flags = field.flags;
+      ret.otherFile = true;
+      ret.dataOffset = dataOffset;
+      ret.dataSize = dataSize;
+      return;
     }
 
     ret.value = [];
 
     if (dataOffset && dataSize) {
       for (let c = 0; c < dataSize / typeSize; c++) {
-        ret.value.push(readStructure(file, typeHashes.slice(1), dataOffset + c * typeSize, field));
+        ret.value.push(readStructure(file, typeHashes.slice(1), dataOffset + c * typeSize, field, [...fieldPath, c]));
       }  
     }
   },
-  "DT_POLYMORPHIC_VARIABLEARRAY": function (ret, file, typeHashes, offset, field) {
+  "DT_POLYMORPHIC_VARIABLEARRAY": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
+    let padding1 = file.readInt32LE(offset);
+    let padding2 = file.readInt32LE(offset + 4);
     let dataOffset = file.readInt32LE(offset + 8);
     let dataSize = file.readInt32LE(offset + 12);
     let dataCount = file.readInt32LE(offset + 16);
+    let padding3 = file.readInt32LE(offset + 20);
 
     if (devAttributes > DEV_INFO) {
+      ret.__padding1__ = padding1;
+      ret.__padding2__ = padding2;
       ret.__dataOffset__ = '0x' + dataOffset.toString(16);
       ret.__dataSize__ = '0x' + dataSize.toString(16);
       ret.__dataCount__ = '0x' + dataCount.toString(16);
+      ret.__padding3__ = padding3;
+    }
+
+    if (padding1 || padding2 || padding3) {
+      throw new Error('Unexpected value in padding!');
+    }
+
+    if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
+      ret.flags = field.flags;
+      ret.otherFile = true;
+      ret.dataOffset = dataOffset;
+      ret.dataSize = dataSize;
+      ret.dataCount = dataCount;
+      return;
     }
 
     ret.value = [];
@@ -213,17 +372,18 @@ let basicTypes = {
       dataSize -= dataCount * 8;
     
       for (let c = 0; c < dataCount && dataSize; c++) {
-        let polyBase = readStructure(file, [0x5d4bac71], dataOffset, field);
-        let polySize = getTypeSize(polyBase.dwType);
+        let polyBase = readStructure(file, [0x5d4bac71], dataOffset, field, [...fieldPath, c]);
+        let polySize = getTypeSize(polyBase.dwType.value === undefined ? polyBase.dwType : polyBase.dwType.value);
 
-        ret.value.push(readStructure(file, [polyBase.dwType, ...typeHashes.slice(1)], dataOffset, field));
+        ret.value.push(readStructure(file, [polyBase.dwType.value === undefined ? polyBase.dwType : polyBase.dwType.value, ...typeHashes.slice(1)], dataOffset, field, [...fieldPath, c]));
 
         dataOffset += polySize;
         dataSize -= polySize;
       }
     }
   },
-  "DT_STRING_FORMULA": function (ret, file, typeHashes, offset, field) {
+  "DT_STRING_FORMULA": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let formulaOffset = file.readInt32LE(offset + 8);
     let formulaSize = file.readInt32LE(offset + 12);
     let compiledOffset = file.readInt32LE(offset + 24);
@@ -243,7 +403,8 @@ let basicTypes = {
     ret.value = file.subarray(formulaOffset, formulaOffset + formulaSize).toString().trim();
     ret.compiled = file.subarray(compiledOffset, compiledOffset + compiledSize).toString('base64');
   },
-  "DT_CSTRING": function (ret, file, typeHashes, offset, field) {
+  "DT_CSTRING": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let stringOffset = file.readInt32LE(offset + 8);
     let stringSize = file.readInt32LE(offset + 12);
 
@@ -253,7 +414,8 @@ let basicTypes = {
 
     ret.value = file.subarray(stringOffset, stringOffset + stringSize).toString();
   },
-  "DT_CHARARRAY": function (ret, file, typeHashes, offset, field) {
+  "DT_CHARARRAY": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     let strlen = field.arrayLength;
 
     while (strlen > 0 && file.readUInt8(offset + strlen - 1) === 0) {
@@ -262,7 +424,8 @@ let basicTypes = {
 
     ret.value = file.subarray(offset, offset + strlen).toString();
   },
-  "DT_RGBACOLOR": function (ret, file, typeHashes, offset, field) {
+  "DT_RGBACOLOR": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       r: file.readUInt8(offset),
       g: file.readUInt8(offset + 1),
@@ -270,7 +433,8 @@ let basicTypes = {
       a: file.readUInt8(offset + 3),
     };
   },
-  "DT_RGBACOLORVALUE": function (ret, file, typeHashes, offset, field) {
+  "DT_RGBACOLORVALUE": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       r: file.readFloatLE(offset),
       g: file.readFloatLE(offset + 4),
@@ -278,26 +442,30 @@ let basicTypes = {
       a: file.readFloatLE(offset + 12),
     };
   },
-  "DT_BCVEC2I": function (ret, file, typeHashes, offset, field) {
+  "DT_BCVEC2I": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       x: file.readFloatLE(offset),
       y: file.readFloatLE(offset + 4),
     };
   },
-  "DT_VECTOR2D": function (ret, file, typeHashes, offset, field) {
+  "DT_VECTOR2D": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       x: file.readFloatLE(offset),
       y: file.readFloatLE(offset + 4),
     };
   },
-  "DT_VECTOR3D": function (ret, file, typeHashes, offset, field) {
+  "DT_VECTOR3D": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       x: file.readFloatLE(offset),
       y: file.readFloatLE(offset + 4),
       z: file.readFloatLE(offset + 8),
     };
   },
-  "DT_VECTOR4D": function (ret, file, typeHashes, offset, field) {
+  "DT_VECTOR4D": function (ret, file, typeHashes, offset, field, fieldPath) {
+    readLog.push(fieldPath.join('.') + ' @ ' + offset);
     ret.value = {
       x: file.readFloatLE(offset),
       y: file.readFloatLE(offset + 4),
@@ -307,39 +475,10 @@ let basicTypes = {
   },
 };
 
-function gbidHash(str) {
-  let hash = new Uint32Array(1);
-
-  str = str.toLowerCase();
-
-  for (let c = 0; c < str.length; c++) {
-    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
+function readStructure(file, typeHashes, offset, field, fieldPath) {
+  if (!fieldPath) {
+    throw new Error("Needs a field path!");
   }
-
-  return hash[0];
-}
-
-function typeHash(str) {
-  let hash = new Uint32Array(1);
-
-  for (let c = 0; c < str.length; c++) {
-    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
-  }
-
-  return hash[0];
-}
-
-function fieldHash(str) {
-  let hash = new Uint32Array(1);
-
-  for (let c = 0; c < str.length; c++) {
-    hash[0] = (hash[0] << 5) + hash[0] + str.charCodeAt(c);
-  }
-
-  return hash[0] & 0xFFFFFFF;
-}
-
-function readStructure(file, typeHashes, offset, field) {
   let type = getType(typeHashes[0]), ret = devCombine(type.type === "complex" ? {
     __type__: type.name,
     __typeHash__: type.hash,  
@@ -349,7 +488,7 @@ function readStructure(file, typeHashes, offset, field) {
 
   if (type.type === "complex") {
     type.fields.forEach(field => {
-      ret[field.name] = readStructure(file, field.type, offset + field.offset, field);
+      ret[field.name] = readStructure(file, field.type, offset + field.offset, field, [...fieldPath, field.name]);
     });
 
     if (type.name === 'GBIDHeader') {
@@ -373,7 +512,7 @@ function readStructure(file, typeHashes, offset, field) {
     }
   }
   else if (type.type === "basic" && basicTypes[type.name]) {
-    basicTypes[type.name](ret, file, typeHashes, offset, field);
+    basicTypes[type.name](ret, file, typeHashes, offset, field, fieldPath);
   }
   else {
     throw new Error('Unhandled type: ' + type.name);
@@ -431,13 +570,15 @@ let gbMap = {};
 fileNames.forEach((fileName, index) => {
   let newFileName = fileName.split('/');
 
+  readLog = [];
+
   if (newFileName[0] === 'data') {
     newFileName[0] = 'json';
   }
 
   newFileName = newFileName.join('/') + '.json';
 
-  try {
+  // try {
     total++;
 
     let file = fs.readFileSync(fileName);
@@ -450,7 +591,7 @@ fileNames.forEach((fileName, index) => {
       let dwSignature = header.readUInt32LE(0);
 
       if (dwSignature === 0xdeadbeef) {
-        let data = readStructure(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0);
+        let data = readStructure(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0, null, [fileName]);
         let snoID = file.readUInt32LE(0);
 
         console.log('#' + index, newFileName);
@@ -468,10 +609,10 @@ fileNames.forEach((fileName, index) => {
         success++;
       }
     }
-  } catch (err) {
-    console.error(err);
-    fs.writeFileSync(newFileName, '{}');
-  }
+  // } catch (err) {
+  //   console.error(err);
+  //   fs.writeFileSync(newFileName, '{}');
+  // }
 });
 
 if (Object.values(gbMap).length) {
