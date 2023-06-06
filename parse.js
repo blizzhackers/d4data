@@ -319,6 +319,7 @@ let basicTypes = {
     if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
       ret.flags = field.flags;
       ret.otherFile = true;
+      ret.dataType = typeHashes.slice(1);
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
       return;
@@ -357,6 +358,7 @@ let basicTypes = {
     if ((field.flags & 0x200000) || (field.flags & 0x400000)) {
       ret.flags = field.flags;
       ret.otherFile = true;
+      ret.dataType = typeHashes.slice(1);
       ret.dataOffset = dataOffset;
       ret.dataSize = dataSize;
       ret.dataCount = dataCount;
