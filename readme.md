@@ -5,4 +5,5 @@ These are files that are pulled from the game and parsed into json. Focus will i
 All parsing code is open source and written by the community, but all direct game assets remain property of Blizzard. Please consult their terms of service before they throw lawyers at you :)
 
 Texture assets (work in progress): https://files.blizzhackers.dev/d4tex/
+
 Comprehensive Atlas: https://blizzhackers.github.io/d4data/atlas.html
