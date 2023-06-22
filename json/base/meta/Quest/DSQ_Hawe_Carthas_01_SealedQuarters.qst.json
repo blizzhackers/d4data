@@ -11387,11 +11387,11 @@
   "groupName": "Condition",
   "type": "sno"
  },
- "unk_c47e01a": "function KseniaPlayConversation(idConversation, fWait)\r\n\tlocal idKSeniaFollower = Hydra.QuestGetFollower(\"npcF_QST_Hawe_Carthas_01_Follower\")\r\n\r\n\tif Hydra.ActorIsValid(idKSeniaFollower) then\r\n\t\t\t\r\n\t\tif convCurrentConversation ~= nil then\r\n\t\t\tHydra.QActorStopAllQueuedActions(idKSeniaFollower)\r\n\t\t\tHydra.CancelConversation(convCurrentConversation, idKSeniaFollower)\r\n\t\t\t--Hydra.QActorWait(idKSeniaFollower, 0.5)\r\n\t\tend\t\r\n\t\t\r\n\t\tHydra.QActorWait(idKSeniaFollower, fWait)\r\n\t\tHydra.QActorPlaySimpleConversation(idConversation, idKSeniaFollower)\r\n\t\tconvCurrentConversation = idConversation\r\n\t\t\r\n\t\tHydra.WaitForConversationFinished(idConversation)\r\n\t\tconvCurrentConversation = nil\r\n\telse\r\n\t\tconvCurrentConversation = nil\r\n\tend\r\n\t\t\r\n\treturn convCurrentConversation\r\nend",
- "unk_993f312": "convCurrentConversation = nil",
- "unk_39af3bb": "",
- "unk_857ebd2": "",
- "unk_556de93": "",
+ "szUserFunctionsScript": "function KseniaPlayConversation(idConversation, fWait)\r\n\tlocal idKSeniaFollower = Hydra.QuestGetFollower(\"npcF_QST_Hawe_Carthas_01_Follower\")\r\n\r\n\tif Hydra.ActorIsValid(idKSeniaFollower) then\r\n\t\t\t\r\n\t\tif convCurrentConversation ~= nil then\r\n\t\t\tHydra.QActorStopAllQueuedActions(idKSeniaFollower)\r\n\t\t\tHydra.CancelConversation(convCurrentConversation, idKSeniaFollower)\r\n\t\t\t--Hydra.QActorWait(idKSeniaFollower, 0.5)\r\n\t\tend\t\r\n\t\t\r\n\t\tHydra.QActorWait(idKSeniaFollower, fWait)\r\n\t\tHydra.QActorPlaySimpleConversation(idConversation, idKSeniaFollower)\r\n\t\tconvCurrentConversation = idConversation\r\n\t\t\r\n\t\tHydra.WaitForConversationFinished(idConversation)\r\n\t\tconvCurrentConversation = nil\r\n\telse\r\n\t\tconvCurrentConversation = nil\r\n\tend\r\n\t\t\r\n\treturn convCurrentConversation\r\nend",
+ "szOnStartupScript": "convCurrentConversation = nil",
+ "szOnShutdownScript": "",
+ "szOnAbandonScript": "",
+ "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",
