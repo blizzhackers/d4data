@@ -191,9 +191,10 @@ let basicTypes = {
     if (devAttributes >= DEV_INFO) {
       ret.__group__ = field.group;
       ret.__type__ = 'DT_SNO';
-      ret.groupName = snoGroups[field.group];
-      if (toc[ret.group] && toc[ret.group][ret.value]) {
-        ret.name = toc[ret.group][ret.value];
+      ret.__typeHash__ = typeHashes[0];
+      ret.groupName = snoGroups[ret.__group__];
+      if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
+        ret.name = toc[ret.__group__][ret.__raw__];
       }
     }
   },
@@ -210,6 +211,7 @@ let basicTypes = {
 
     ret.__group__ = file.readInt32LE(offset);
     ret.__type__ = 'DT_SNO_NAME';
+    ret.__typeHash__ = typeHashes[0];
     ret.groupName = snoGroups[ret.__group__];
 
     if (devAttributes >= DEV_INFO) {
@@ -230,12 +232,13 @@ let basicTypes = {
     }
 
     ret.__type__ = 'DT_GBID';
+    ret.__typeHash__ = typeHashes[0];
 
     if (devAttributes >= DEV_INFO) {
-      ret.group = field.group;
+      ret.__group__ = field.__group__;
 
-      if (gbid[ret.group] && gbid[ret.group][ret.__raw__] && gbid[ret.group][ret.__raw__].length) {
-        ret.name = gbid[ret.group][ret.__raw__][0];
+      if (gbid[ret.__group__] && gbid[ret.__group__][ret.__raw__] && gbid[ret.__group__][ret.__raw__].length) {
+        ret.name = gbid[ret.__group__][ret.__raw__][0];
       }
     }
   },
