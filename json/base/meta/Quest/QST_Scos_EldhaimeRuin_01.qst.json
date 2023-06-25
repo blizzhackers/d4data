@@ -4,9 +4,9 @@
  "__type__": "QuestDefinition",
  "__typeHash__": 1053929211,
  "eQuestType": 2,
- "unk_f88ee86": -1,
- "unk_4c4339b": 0,
- "unk_f522ece": 2,
+ "ePlayerQuestType": -1,
+ "eEventQuestType": 0,
+ "eInstanceQuestType": 2,
  "eRepeatType": 0,
  "eVignetteType": 0,
  "unk_43f3849": 0,
@@ -15,10 +15,11 @@
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 520252,
-   "group": 24,
+   "__raw__": 520252,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Scos_Lowlands (Game)"
   },
   "nID": 1
@@ -29,20 +30,22 @@
   "z": 63.788299560546875
  },
  "unk_6a4ec7f": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 524615,
-   "group": 24,
+   "__raw__": 524615,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Scos_Lowlands (Eldhaime_Keep_Ruins)"
   },
   "nID": 111
@@ -53,18 +56,20 @@
   "z": 77.73249816894531
  },
  "unk_506369e": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 11112,
  "snoLevelArea": {
-  "value": 521043,
-  "group": 22,
+  "__raw__": 521043,
+  "__group__": 22,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "LevelArea",
-  "type": "sno",
   "name": "Scos_Lowlands_Eldhaime_Keep"
  },
  "unk_f956a05": 1,
@@ -75,17 +80,8 @@
  "unk_b89b77f": 0,
  "unk_c18cabd": 0,
  "unk_79f6e17": 0,
- "gbidSubzoneModifierTag": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 60
- },
- "snoBountySubzone": {
-  "value": -1,
-  "group": 80,
-  "groupName": "SubZone",
-  "type": "sno"
- },
+ "gbidSubzoneModifierTag": null,
+ "snoBountySubzone": null,
  "eBountyTier": -1,
  "eBountyType": -1,
  "unk_313dbf6": 0,
@@ -104,7 +100,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 82,
      "ptLink": [
@@ -129,17 +125,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -155,7 +146,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -170,10 +161,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 807334,
-              "group": 24,
+              "__raw__": 807334,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
              },
              "nID": 8
@@ -190,19 +182,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tidMarkerRunTo = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"runto\")[1]\r\n\tidDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"door\")[1]\r\n\t\r\n\t-- Put Donan in idle to more closely match CC intro\r\n\tHydra.ActorPlaySimpleConversation(convDonanCallOut, id_Donan_PreCC)\r\n\t\r\n\t-- Move existing PKs in exterior to clear door\r\n\tHydra.ActorSetTargetable(id_PK_Antje, false)\r\n\tHydra.ActorSetTargetable(id_PK_Guard01, false)\r\n\tHydra.ActorSetTargetable(id_PK_Guard02, false)\r\n\tHydra.ActorEnableAI(id_PK_Antje, false)\r\n\tHydra.ActorEnableAI(id_PK_Guard01, false)\r\n\tHydra.ActorEnableAI(id_PK_Guard02, false)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Guard01, id_Marker_Guard01_Inspect, \"npc_run\", true)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard01, s_Animset_Inspect)\r\n\tHydra.ActorSetAITether(id_PK_Guard01, id_Marker_Guard01_Inspect)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard01, animset_Knight_NonCombat)\r\n\tHydra.QActorSetIdleAnim(id_PK_Guard01, animkey_Knight_Inspect)\r\n\t\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Guard02, id_Marker_Guard02_Inspect, \"npc_run\", true)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard02, s_Animset_Inspect)\r\n\tHydra.ActorSetAITether(id_PK_Guard02, id_Marker_Guard02_Inspect)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard02, animset_Knight_NonCombat)\r\n\tHydra.QActorSetIdleAnim(id_PK_Guard02, animkey_Knight_Inspect)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Antje, id_Marker_Antje, \"npc_run\", true)\r\n\tHydra.ActorSetAITether(id_PK_Antje, id_Marker_Antje)\r\n\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidMarkerRunTo = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"runto\")[1]\r\n\tidDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"door\")[1]\r\n\t\r\n\t-- Put Donan in idle to more closely match CC intro\r\n\tHydra.ActorPlaySimpleConversation(convDonanCallOut, id_Donan_PreCC)\r\n\t\r\n\t-- Move existing PKs in exterior to clear door\r\n\tHydra.ActorSetTargetable(id_PK_Antje, false)\r\n\tHydra.ActorSetTargetable(id_PK_Guard01, false)\r\n\tHydra.ActorSetTargetable(id_PK_Guard02, false)\r\n\tHydra.ActorEnableAI(id_PK_Antje, false)\r\n\tHydra.ActorEnableAI(id_PK_Guard01, false)\r\n\tHydra.ActorEnableAI(id_PK_Guard02, false)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Guard01, id_Marker_Guard01_Inspect, \"npc_run\", true)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard01, s_Animset_Inspect)\r\n\tHydra.ActorSetAITether(id_PK_Guard01, id_Marker_Guard01_Inspect)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard01, animset_Knight_NonCombat)\r\n\tHydra.QActorSetIdleAnim(id_PK_Guard01, animkey_Knight_Inspect)\r\n\t\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Guard02, id_Marker_Guard02_Inspect, \"npc_run\", true)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard02, s_Animset_Inspect)\r\n\tHydra.ActorSetAITether(id_PK_Guard02, id_Marker_Guard02_Inspect)\r\n\tHydra.QActorSetAnimSetOverride(id_PK_Guard02, animset_Knight_NonCombat)\r\n\tHydra.QActorSetIdleAnim(id_PK_Guard02, animkey_Knight_Inspect)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_PK_Antje, id_Marker_Antje, \"npc_run\", true)\r\n\tHydra.ActorSetAITether(id_PK_Antje, id_Marker_Antje)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -226,10 +214,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 809167,
-         "group": 22,
+         "__raw__": 809167,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep_GreatHall"
         }
        ],
@@ -238,40 +227,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -283,20 +252,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -308,20 +267,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -331,17 +280,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 182,
      "ptLink": [],
@@ -359,17 +303,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -385,7 +324,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -400,10 +339,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 531756,
-              "group": 24,
+              "__raw__": 531756,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Entrance)"
              },
              "nID": 33
@@ -420,19 +360,15 @@
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle, false)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -451,10 +387,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 521043,
-         "group": 22,
+         "__raw__": 521043,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep"
         }
        ],
@@ -463,40 +400,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -508,20 +425,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -533,20 +440,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -556,31 +453,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -593,16 +475,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 807334,
-     "group": 24,
+     "__raw__": 807334,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
     },
     "nID": 8
@@ -613,10 +496,11 @@
     "z": 70.53469848632812
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -629,12 +513,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -646,7 +525,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 93,
      "ptLink": [
@@ -671,17 +550,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 43,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -697,7 +571,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2983118812,
           "eVariableType": 13,
@@ -709,10 +583,11 @@
             "eParamType": 25,
             "dwPad": 0,
             "snoWorld": {
-             "value": 522993,
-             "group": 48,
+             "__raw__": 522993,
+             "__group__": 48,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "World",
-             "type": "sno",
              "name": "CSD_Scos_Eldhaime_Ruins"
             }
            }
@@ -727,19 +602,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -767,10 +638,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 521043,
-         "group": 22,
+         "__raw__": 521043,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep"
         }
        ],
@@ -779,40 +651,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -824,20 +676,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -849,20 +691,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -872,17 +704,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 185,
      "ptLink": [],
@@ -900,17 +727,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 27,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -926,7 +748,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1072510348,
           "eVariableType": 1,
@@ -941,10 +763,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 531756,
-              "group": 24,
+              "__raw__": 531756,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Entrance)"
              },
              "nID": 57
@@ -961,19 +784,15 @@
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\tlocal idPortal = Hydra.ActorsEnableLinkedByActorInGroup(idActorGizmo, \"door\")[1]\r\n\t\r\n\tHydra.ActorEnable(idPortal)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tlocal idPortal = Hydra.ActorsEnableLinkedByActorInGroup(idActorGizmo, \"door\")[1]\r\n\t\r\n\tHydra.ActorEnable(idPortal)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -992,10 +811,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 521043,
-         "group": 22,
+         "__raw__": 521043,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep"
         }
        ],
@@ -1004,40 +824,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1049,20 +849,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1074,20 +864,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1097,31 +877,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1134,16 +899,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 522997,
-     "group": 24,
+     "__raw__": 522997,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "CSD_Scos_Eldhaime_Ruins"
     },
     "nID": 1
@@ -1153,12 +919,7 @@
     "y": 0,
     "z": 0
    },
-   "unk_ed8215b": {
-    "value": -1,
-    "group": 48,
-    "groupName": "World",
-    "type": "sno"
-   },
+   "unk_ed8215b": null,
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
     "__typeHash__": 1797021084,
@@ -1169,12 +930,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1186,7 +942,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 180,
      "ptLink": [
@@ -1211,17 +967,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -1237,7 +988,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -1252,10 +1003,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 1272242,
-              "group": 24,
+              "__raw__": 1272242,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Pale_Scos_S_Entrance_01 (EldhaimeRuinsExit)"
              },
              "nID": 1
@@ -1272,19 +1024,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 522993,
-        "group": 48,
+        "__raw__": 522993,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Scos_Eldhaime_Ruins"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle, false)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1303,10 +1051,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 522995,
-         "group": 22,
+         "__raw__": 522995,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "CSD_Scos_Eldhaime_Ruins"
         }
        ],
@@ -1315,40 +1064,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1360,20 +1089,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1385,20 +1104,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1408,31 +1117,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1445,16 +1139,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 520252,
-     "group": 24,
+     "__raw__": 520252,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Scos_Lowlands (Game)"
     },
     "nID": 138
@@ -1465,10 +1160,11 @@
     "z": 73.92610168457031
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1481,12 +1177,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1498,7 +1189,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 173,
      "ptLink": [
@@ -1523,17 +1214,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -1548,10 +1234,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 807334,
-              "group": 24,
+              "__raw__": 807334,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
              },
              "nID": 7
@@ -1560,7 +1247,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -1572,17 +1259,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 697691,
-             "group": 12,
+             "__raw__": 697691,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Scos_Ruins_Cine_CSE"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1606,19 +1294,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1642,10 +1326,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 809167,
-         "group": 22,
+         "__raw__": 809167,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep_GreatHall"
         }
        ],
@@ -1654,40 +1339,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1699,20 +1364,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1724,20 +1379,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1747,31 +1392,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1784,16 +1414,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 807334,
-     "group": 24,
+     "__raw__": 807334,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
     },
     "nID": 7
@@ -1804,10 +1435,11 @@
     "z": 70.4354019165039
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1820,12 +1452,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1837,7 +1464,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 167,
      "ptLink": [],
@@ -1855,17 +1482,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -1880,10 +1502,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 807334,
-              "group": 24,
+              "__raw__": 807334,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
              },
              "nID": 40
@@ -1892,7 +1515,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -1907,10 +1530,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 807334,
-              "group": 24,
+              "__raw__": 807334,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
              },
              "nID": 21
@@ -1927,19 +1551,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 806405,
-        "group": 48,
+        "__raw__": 806405,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Scos_Eldhaime_Barracks"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\tHydra.Wait(1.0)\r\n\tHydra.ActorGizmoSetDisabled(idDoor, false)\r\n\tHydra.ActorGizmoOperate(idDoor)\r\n\tHydra.QActorFadeAndDelete(id_Donan_PostCC, 1.0)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.Wait(1.0)\r\n\tHydra.ActorGizmoSetDisabled(idDoor, false)\r\n\tHydra.ActorGizmoOperate(idDoor)\r\n\tHydra.QActorFadeAndDelete(id_Donan_PostCC, 1.0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1962,40 +1582,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 1,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 3,
       "nGoldTier": 3,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2007,20 +1607,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2032,20 +1622,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2055,17 +1635,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 187,
      "ptLink": [],
@@ -2083,12 +1658,7 @@
         "__typeHash__": 2935055576,
         "eEventType": 65,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [],
@@ -2099,19 +1669,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start()\r\n\tHydra.QActorPlaySimpleConversation(convDonanSearch, id_Donan_PostCC)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_Donan_PostCC, idMarkerRunTo, \"npc_run\", true)\r\n\t\r\n\t-- Unlock great hall door so players don't have to go all the way around again\r\n\t--Hydra.ActorGizmoSetDisabled(ID_DOOR_GREATHALL, false)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle)\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.QActorPlaySimpleConversation(convDonanSearch, id_Donan_PostCC)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_Donan_PostCC, idMarkerRunTo, \"npc_run\", true)\r\n\t\r\n\t-- Unlock great hall door so players don't have to go all the way around again\r\n\t--Hydra.ActorGizmoSetDisabled(ID_DOOR_GREATHALL, false)\r\n\tSetTraversalEnabled(id_Marker_TraversalToggle)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2134,40 +1694,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2179,20 +1719,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2204,20 +1734,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2227,31 +1747,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2264,16 +1769,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "\t",
-   "unk_c820299": "",
+   "szOnEnterScript": "\t",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 807334,
-     "group": 24,
+     "__raw__": 807334,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
     },
     "nID": 21
@@ -2284,10 +1790,11 @@
     "z": 74.35790252685547
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2300,12 +1807,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2319,18 +1821,8 @@
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2343,17 +1835,12 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
-    "snoMarkerSet": {
-     "value": -1,
-     "group": 24,
-     "groupName": "MarkerSet",
-     "type": "sno"
-    },
+    "snoMarkerSet": null,
     "nID": -1
    },
    "unk_47f8481": {
@@ -2361,12 +1848,7 @@
     "y": 0,
     "z": 0
    },
-   "unk_ed8215b": {
-    "value": -1,
-    "group": 48,
-    "groupName": "World",
-    "type": "sno"
-   },
+   "unk_ed8215b": null,
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
     "__typeHash__": 1797021084,
@@ -2377,12 +1859,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2394,7 +1871,7 @@
    "eType": 2,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 178,
      "ptLink": [],
@@ -2412,17 +1889,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 8,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -2437,10 +1909,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 807334,
-              "group": 24,
+              "__raw__": 807334,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Scos_Lowlands (Eldhaime_Keep_Ruins_Donan_POI)"
              },
              "nID": 7
@@ -2449,7 +1922,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -2461,17 +1934,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 697691,
-             "group": 12,
+             "__raw__": 697691,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Scos_Ruins_Cine_CSE"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -2495,19 +1969,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t-- Used to make Donan only visible to players that have completed the CC so he doesn't photobomb active CCs\r\n\tHydra.SetPlayerVariableFlag(idActorPlayer, \"EldhaimeRuins_01_DonanCC\")\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t-- Used to make Donan only visible to players that have completed the CC so he doesn't photobomb active CCs\r\n\tHydra.SetPlayerVariableFlag(idActorPlayer, \"EldhaimeRuins_01_DonanCC\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2526,10 +1996,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 809167,
-         "group": 22,
+         "__raw__": 809167,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Scos_Lowlands_Eldhaime_Keep_GreatHall"
         }
        ],
@@ -2538,40 +2009,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2583,20 +2034,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2608,20 +2049,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2631,31 +2062,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2668,17 +2084,12 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
-    "snoMarkerSet": {
-     "value": -1,
-     "group": 24,
-     "groupName": "MarkerSet",
-     "type": "sno"
-    },
+    "snoMarkerSet": null,
     "nID": -1
    },
    "unk_47f8481": {
@@ -2686,12 +2097,7 @@
     "y": 0,
     "z": 0
    },
-   "unk_ed8215b": {
-    "value": -1,
-    "group": 48,
-    "groupName": "World",
-    "type": "sno"
-   },
+   "unk_ed8215b": null,
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
     "__typeHash__": 1797021084,
@@ -2702,23 +2108,13 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   }
  ],
- "unk_1755172": [],
+ "arRequiredReputations": [],
  "arReputationRewards": [],
  "unk_46e3956": [],
- "snoStartCondition": {
-  "value": -1,
-  "group": 51,
-  "groupName": "Condition",
-  "type": "sno"
- },
+ "snoStartCondition": null,
  "szUserFunctionsScript": "",
  "szOnStartupScript": "idDonan = nil\r\nbCutsceneStarted = false\r\n",
  "szOnShutdownScript": "",
@@ -2729,10 +2125,11 @@
    "__type__": "QuestFollower",
    "__typeHash__": 2974844252,
    "snoActor": {
-    "value": 538156,
-    "group": 1,
+    "__raw__": 538156,
+    "__group__": 1,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "Actor",
-    "type": "sno",
     "name": "NPC_QST_Donan_Follower"
    },
    "unk_74ee52d": {
@@ -2740,21 +2137,11 @@
     "__typeHash__": 3666486037,
     "unk_6c68319": 0,
     "unk_d64b2c9": 0,
-    "snoSummonPower": {
-     "value": -1,
-     "group": 29,
-     "groupName": "Power",
-     "type": "sno"
-    },
+    "snoSummonPower": null,
     "tMarkerHandle": {
      "__type__": "MarkerHandle",
      "__typeHash__": 3934284334,
-     "snoMarkerSet": {
-      "value": -1,
-      "group": 24,
-      "groupName": "MarkerSet",
-      "type": "sno"
-     },
+     "snoMarkerSet": null,
      "nID": -1
     },
     "eVisibility": 0,
@@ -2770,32 +2157,17 @@
       "__typeHash__": 3666486037,
       "unk_6c68319": 0,
       "unk_d64b2c9": 0,
-      "snoSummonPower": {
-       "value": -1,
-       "group": 29,
-       "groupName": "Power",
-       "type": "sno"
-      },
+      "snoSummonPower": null,
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
        "__typeHash__": 3934284334,
-       "snoMarkerSet": {
-        "value": -1,
-        "group": 24,
-        "groupName": "MarkerSet",
-        "type": "sno"
-       },
+       "snoMarkerSet": null,
        "nID": -1
       },
       "eVisibility": 0,
       "unk_209d19e": 0
      },
-     "snoPlayerAttachCondition": {
-      "value": -1,
-      "group": 51,
-      "groupName": "Condition",
-      "type": "sno"
-     },
+     "snoPlayerAttachCondition": null,
      "arLevelAreas": []
     },
     {
@@ -2807,32 +2179,17 @@
       "__typeHash__": 3666486037,
       "unk_6c68319": 0,
       "unk_d64b2c9": 0,
-      "snoSummonPower": {
-       "value": -1,
-       "group": 29,
-       "groupName": "Power",
-       "type": "sno"
-      },
+      "snoSummonPower": null,
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
        "__typeHash__": 3934284334,
-       "snoMarkerSet": {
-        "value": -1,
-        "group": 24,
-        "groupName": "MarkerSet",
-        "type": "sno"
-       },
+       "snoMarkerSet": null,
        "nID": -1
       },
       "eVisibility": 0,
       "unk_209d19e": 0
      },
-     "snoPlayerAttachCondition": {
-      "value": -1,
-      "group": 51,
-      "groupName": "Condition",
-      "type": "sno"
-     },
+     "snoPlayerAttachCondition": null,
      "arLevelAreas": []
     },
     {
@@ -2844,32 +2201,17 @@
       "__typeHash__": 3666486037,
       "unk_6c68319": 0,
       "unk_d64b2c9": 0,
-      "snoSummonPower": {
-       "value": -1,
-       "group": 29,
-       "groupName": "Power",
-       "type": "sno"
-      },
+      "snoSummonPower": null,
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
        "__typeHash__": 3934284334,
-       "snoMarkerSet": {
-        "value": -1,
-        "group": 24,
-        "groupName": "MarkerSet",
-        "type": "sno"
-       },
+       "snoMarkerSet": null,
        "nID": -1
       },
       "eVisibility": 0,
       "unk_209d19e": 0
      },
-     "snoPlayerAttachCondition": {
-      "value": -1,
-      "group": 51,
-      "groupName": "Condition",
-      "type": "sno"
-     },
+     "snoPlayerAttachCondition": null,
      "arLevelAreas": []
     },
     {
@@ -2881,32 +2223,17 @@
       "__typeHash__": 3666486037,
       "unk_6c68319": 0,
       "unk_d64b2c9": 0,
-      "snoSummonPower": {
-       "value": -1,
-       "group": 29,
-       "groupName": "Power",
-       "type": "sno"
-      },
+      "snoSummonPower": null,
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
        "__typeHash__": 3934284334,
-       "snoMarkerSet": {
-        "value": -1,
-        "group": 24,
-        "groupName": "MarkerSet",
-        "type": "sno"
-       },
+       "snoMarkerSet": null,
        "nID": -1
       },
       "eVisibility": 0,
       "unk_209d19e": 0
      },
-     "snoPlayerAttachCondition": {
-      "value": -1,
-      "group": 51,
-      "groupName": "Condition",
-      "type": "sno"
-     },
+     "snoPlayerAttachCondition": null,
      "arLevelAreas": []
     },
     {
@@ -2918,32 +2245,17 @@
       "__typeHash__": 3666486037,
       "unk_6c68319": 0,
       "unk_d64b2c9": 0,
-      "snoSummonPower": {
-       "value": -1,
-       "group": 29,
-       "groupName": "Power",
-       "type": "sno"
-      },
+      "snoSummonPower": null,
       "tMarkerHandle": {
        "__type__": "MarkerHandle",
        "__typeHash__": 3934284334,
-       "snoMarkerSet": {
-        "value": -1,
-        "group": 24,
-        "groupName": "MarkerSet",
-        "type": "sno"
-       },
+       "snoMarkerSet": null,
        "nID": -1
       },
       "eVisibility": 0,
       "unk_209d19e": 0
      },
-     "snoPlayerAttachCondition": {
-      "value": -1,
-      "group": 51,
-      "groupName": "Condition",
-      "type": "sno"
-     },
+     "snoPlayerAttachCondition": null,
      "arLevelAreas": []
     }
    ]
@@ -2954,21 +2266,11 @@
  "unk_2aa5f20": [],
  "unk_b43b442": [],
  "gbidSurveyType": {
-  "value": 3340288678,
-  "type": "gbid",
-  "group": 57,
-  "name": "QuestLowChance"
+  "__raw__": 3340288678,
+  "__type__": "DT_GBID",
+  "__typeHash__": 1028170061
  },
- "unk_b37e635": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "snoAudioContext": {
-  "value": -1,
-  "group": 93,
-  "groupName": "AudioContext",
-  "type": "sno"
- },
+ "unk_b37e635": null,
+ "snoAudioContext": null,
  "unk_af3a4c1": []
 }

@@ -4,9 +4,9 @@
  "__type__": "QuestDefinition",
  "__typeHash__": 1053929211,
  "eQuestType": 2,
- "unk_f88ee86": -1,
- "unk_4c4339b": 0,
- "unk_f522ece": 1,
+ "ePlayerQuestType": -1,
+ "eEventQuestType": 0,
+ "eInstanceQuestType": 1,
  "eRepeatType": 0,
  "eVignetteType": 0,
  "unk_43f3849": 0,
@@ -14,12 +14,7 @@
  "unk_d060a69": {
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
-  "snoMarkerSet": {
-   "value": -1,
-   "group": 24,
-   "groupName": "MarkerSet",
-   "type": "sno"
-  },
+  "snoMarkerSet": null,
   "nID": -1
  },
  "vecStartLocation": {
@@ -27,21 +22,11 @@
   "y": 0,
   "z": 0
  },
- "unk_6a4ec7f": {
-  "value": -1,
-  "group": 48,
-  "groupName": "World",
-  "type": "sno"
- },
+ "unk_6a4ec7f": null,
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
-  "snoMarkerSet": {
-   "value": -1,
-   "group": 24,
-   "groupName": "MarkerSet",
-   "type": "sno"
-  },
+  "snoMarkerSet": null,
   "nID": -1
  },
  "unk_ff5c704": {
@@ -49,19 +34,9 @@
   "y": 0,
   "z": 0
  },
- "unk_506369e": {
-  "value": -1,
-  "group": 48,
-  "groupName": "World",
-  "type": "sno"
- },
+ "unk_506369e": null,
  "unk_d2181f0": 4294967295,
- "snoLevelArea": {
-  "value": -1,
-  "group": 22,
-  "groupName": "LevelArea",
-  "type": "sno"
- },
+ "snoLevelArea": null,
  "unk_f956a05": 1,
  "unk_14dee1b": 0,
  "flParticipationRadius": 12,
@@ -70,17 +45,8 @@
  "unk_b89b77f": 0,
  "unk_c18cabd": 0,
  "unk_79f6e17": 0,
- "gbidSubzoneModifierTag": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 60
- },
- "snoBountySubzone": {
-  "value": -1,
-  "group": 80,
-  "groupName": "SubZone",
-  "type": "sno"
- },
+ "gbidSubzoneModifierTag": null,
+ "snoBountySubzone": null,
  "eBountyTier": -1,
  "eBountyType": -1,
  "unk_313dbf6": 0,
@@ -99,7 +65,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 23,
      "ptLink": [],
@@ -117,12 +83,7 @@
         "__typeHash__": 2935055576,
         "eEventType": 65,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [],
@@ -133,19 +94,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start()\r\n\t--NOTE: maybe we should convert these infinity while loop into hearbeat callbacks? and have a timer phase before that to do cool up\r\n\t--a while infinite loop always feels dangerous, not sure if it's 100% sure, but it should be tho\r\n\t-- If the area somehow is NOT a dungeon, stop this loop. It must be some errors, or a misuseage since dungeon affixes are only supposed to be in a dungeon\r\n\tif not Hydra.SubzoneIsDungeon() then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\t--initial delay before affix takes effects\r\n\tHydra.Wait(1);\r\n\t\r\n\t--This quest solely handles situations when AI cannot handle itself. Eg. cannot find a nearby alive target, too far from target(cause AI to freeze), etc\r\n\twhile (true) do\r\n\t\t--give while loop a global cooldown\r\n\t\tHydra.Wait(0.5)\r\n\tend -- while loop\r\nend",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start()\r\n\t--NOTE: maybe we should convert these infinity while loop into hearbeat callbacks? and have a timer phase before that to do cool up\r\n\t--a while infinite loop always feels dangerous, not sure if it's 100% sure, but it should be tho\r\n\t-- If the area somehow is NOT a dungeon, stop this loop. It must be some errors, or a misuseage since dungeon affixes are only supposed to be in a dungeon\r\n\tif not Hydra.SubzoneIsDungeon() then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\t--initial delay before affix takes effects\r\n\tHydra.Wait(1);\r\n\t\r\n\t--This quest solely handles situations when AI cannot handle itself. Eg. cannot find a nearby alive target, too far from target(cause AI to freeze), etc\r\n\twhile (true) do\r\n\t\t--give while loop a global cooldown\r\n\t\tHydra.Wait(0.5)\r\n\tend -- while loop\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -168,40 +119,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -213,20 +144,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -238,20 +159,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -261,17 +172,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "\r\n"
+     "szOnSetCompleteScript": "\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 38,
      "ptLink": [],
@@ -289,17 +195,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 12,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3510011063,
           "eVariableType": 10,
@@ -323,19 +224,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(flGameTime)\t\r\n\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\tif not Hydra.ActorIsValid(idFollower) then\r\n\t\t--if we don't have a follower, spawn one\r\n\t\tUF_SpawnFollower();\r\n\telse\t\r\n\t\t--we have a follower, and it does have a target. If the target is too far, warp to it.\r\n\t\tlocal idFollowerTarget = Hydra.ActorGetAIPrimaryTarget(idFollower)\r\n\t\tif Hydra.ActorIsValid(idFollowerTarget) then\r\n\t\t\tif Hydra.ActorDistanceSquaredBetweenActors(idFollowerTarget, idFollower) > ( nWARP_DISTANCE * nWARP_DISTANCE )\r\n\t\t\t\tand not Hydra.BuffIsOnActor(S_PWR_PROTECTION, \"is_In_Dome_Phase\", idFollower) then\r\n\t\t\t\tHydra.ActorWarpToActor(idFollower, idFollowerTarget)\r\n\t\t\tend\r\n\t\telse\r\n\t\t\t--we have a follower but it has no target, find an alive one as new target\r\n\t\t\tUF_SearchForAliveTarget()\r\n\t\tend\r\n\tend\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\t\t\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(flGameTime)\t\r\n\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\tif not Hydra.ActorIsValid(idFollower) then\r\n\t\t--if we don't have a follower, spawn one\r\n\t\tUF_SpawnFollower();\r\n\telse\t\r\n\t\t--we have a follower, and it does have a target. If the target is too far, warp to it.\r\n\t\tlocal idFollowerTarget = Hydra.ActorGetAIPrimaryTarget(idFollower)\r\n\t\tif Hydra.ActorIsValid(idFollowerTarget) then\r\n\t\t\tif Hydra.ActorDistanceSquaredBetweenActors(idFollowerTarget, idFollower) > ( nWARP_DISTANCE * nWARP_DISTANCE )\r\n\t\t\t\tand not Hydra.BuffIsOnActor(S_PWR_PROTECTION, \"is_In_Dome_Phase\", idFollower) then\r\n\t\t\t\tHydra.ActorWarpToActor(idFollower, idFollowerTarget)\r\n\t\t\tend\r\n\t\telse\r\n\t\t\t--we have a follower but it has no target, find an alive one as new target\r\n\t\t\tUF_SearchForAliveTarget()\r\n\t\tend\r\n\tend\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -358,40 +249,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -403,20 +274,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -428,20 +289,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -451,31 +302,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "\r\n"
+     "szOnSetCompleteScript": "\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -488,17 +324,12 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
-    "snoMarkerSet": {
-     "value": -1,
-     "group": 24,
-     "groupName": "MarkerSet",
-     "type": "sno"
-    },
+    "snoMarkerSet": null,
     "nID": -1
    },
    "unk_47f8481": {
@@ -506,12 +337,7 @@
     "y": 0,
     "z": 0
    },
-   "unk_ed8215b": {
-    "value": -1,
-    "group": 48,
-    "groupName": "World",
-    "type": "sno"
-   },
+   "unk_ed8215b": null,
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
     "__typeHash__": 1797021084,
@@ -522,23 +348,13 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   }
  ],
- "unk_1755172": [],
+ "arRequiredReputations": [],
  "arReputationRewards": [],
  "unk_46e3956": [],
- "snoStartCondition": {
-  "value": -1,
-  "group": 51,
-  "groupName": "Condition",
-  "type": "sno"
- },
+ "snoStartCondition": null,
  "szUserFunctionsScript": "function UF_SpawnFollower ()\r\n\tlocal tPlayers = Hydra.PlayerActors();\r\n\tlocal tAlivePlayers = {};\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\ttable.insert(tAlivePlayers, idPlayer);\r\n\t\tend\r\n\tend\r\n\r\n\tif Hydra.ActorIsValid(tAlivePlayers[1]) and Hydra.ActorFinishedLoading(tAlivePlayers[1]) then\r\n\t\tShuffleTable(tAlivePlayers);\r\n\t\tlocal ptTargetLoc = Hydra.ActorGetPosition(tAlivePlayers[1]);\r\n\t\tlocal ptFacing = Hydra.ActorGetFacing(tAlivePlayers[1]);\r\n\t\tlocal ptSpawnLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, 2, 4, true);\r\n\t\tidFollower = Hydra.ActorSpawnActor(S_FOLLOWER_ACTOR, ptSpawnLoc, ptFacing, true, 0, 0);\r\n\t\tif Hydra.ActorIsValid(idFollower) then\r\n\t\t\t--target a random player\r\n\t\t\tHydra.ActorAIForcePrimaryTarget(idFollower, tAlivePlayers[1]);\r\n\t\t\t--apply death monitor so it can detect wipe or frustration, then give players a long break.\r\n\t\t\t--solo play will make this easier since every death is a wipe, but I think we are fine with it.\r\n\t\t\tHydra.QActorPower(idFollower,S_PWR_DEATHMONITOR);\r\n\t\tend\r\n\telse\r\n\t\t--nope, everyone is dead, or people are still in limbo loading screen, do nothing this turn\r\n\tend\r\nend\r\n\r\nfunction UF_SearchForAliveTarget ()\r\n\tlocal tPlayers = Hydra.PlayerActors();\r\n\tlocal tAlivePlayers = {};\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\ttable.insert(tAlivePlayers, idPlayer);\r\n\t\tend\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(tAlivePlayers[1]) then\r\n\t\t--target a random player\r\n\t\tShuffleTable(tAlivePlayers);\r\n\t\tHydra.ActorAIForcePrimaryTarget(idFollower, tAlivePlayers[1]);\r\n\t\t\r\n\t\t--if the target is too far, warp to it (this fixes portal issues with certain dungeons, especially in a single person party)\r\n\t\tif Hydra.ActorDistanceSquaredBetweenActors(tAlivePlayers[1], idFollower) > ( nWARP_DISTANCE * nWARP_DISTANCE )\r\n\t\tand not Hydra.BuffIsOnActor(S_PWR_PROTECTION, \"is_In_Dome_Phase\", idFollower) then\r\n\t\t\tHydra.ActorWarpToActor(idFollower, tAlivePlayers[1])\r\n\t\tend\r\n\telse\r\n\t\t--nope, everyone is dead, do nothing this turn\r\n\tend\r\nend\r\n\r\n",
  "szOnStartupScript": "S_DUNGEON_AFFIX_NAME = \"Thunder Storm\";\r\nnWARP_DISTANCE = 16;\r\nidFollower = Hydra.ACDID_INVALID;",
  "szOnShutdownScript": "",
@@ -549,21 +365,8 @@
  "arQuestDungeons": [],
  "unk_2aa5f20": [],
  "unk_b43b442": [],
- "gbidSurveyType": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "unk_b37e635": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "snoAudioContext": {
-  "value": -1,
-  "group": 93,
-  "groupName": "AudioContext",
-  "type": "sno"
- },
+ "gbidSurveyType": null,
+ "unk_b37e635": null,
+ "snoAudioContext": null,
  "unk_af3a4c1": []
 }

@@ -4,9 +4,9 @@
  "__type__": "QuestDefinition",
  "__typeHash__": 1053929211,
  "eQuestType": 2,
- "unk_f88ee86": -1,
- "unk_4c4339b": 0,
- "unk_f522ece": 2,
+ "ePlayerQuestType": -1,
+ "eEventQuestType": 0,
+ "eInstanceQuestType": 2,
  "eRepeatType": 0,
  "eVignetteType": 0,
  "unk_43f3849": 0,
@@ -15,10 +15,11 @@
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 708533,
-   "group": 24,
+   "__raw__": 708533,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleClosed)"
   },
   "nID": 7
@@ -29,20 +30,22 @@
   "z": 1.3818299770355225
  },
  "unk_6a4ec7f": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 708533,
-   "group": 24,
+   "__raw__": 708533,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleClosed)"
   },
   "nID": 7
@@ -53,18 +56,20 @@
   "z": 1.3818299770355225
  },
  "unk_506369e": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 4294967295,
  "snoLevelArea": {
-  "value": 741310,
-  "group": 22,
+  "__raw__": 741310,
+  "__group__": 22,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "LevelArea",
-  "type": "sno",
   "name": "Hawe_SnakePeople_Village_Temple"
  },
  "unk_f956a05": 1,
@@ -75,17 +80,8 @@
  "unk_b89b77f": 0,
  "unk_c18cabd": 0,
  "unk_79f6e17": 0,
- "gbidSubzoneModifierTag": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 60
- },
- "snoBountySubzone": {
-  "value": -1,
-  "group": 80,
-  "groupName": "SubZone",
-  "type": "sno"
- },
+ "gbidSubzoneModifierTag": null,
+ "snoBountySubzone": null,
  "eBountyTier": -1,
  "eBountyType": -1,
  "unk_313dbf6": 0,
@@ -104,7 +100,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 24,
      "ptLink": [
@@ -129,17 +125,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 0,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1189140265,
           "eVariableType": 1,
@@ -155,7 +146,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1189140251,
           "eVariableType": 1,
@@ -167,10 +158,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 712749,
-             "group": 1,
+             "__raw__": 712749,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "snake_queen"
             }
            }
@@ -185,19 +177,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 714171,
-        "group": 48,
+        "__raw__": 714171,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Marsh_SnakeDen"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.BossEncounterManuallyComplete(S_LEVELAREA_SNAKE_BOSS)\r\n\t--Play Victory Music Stinger\r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Victory\")\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.BossEncounterManuallyComplete(S_LEVELAREA_SNAKE_BOSS)\r\n\t--Play Victory Music Stinger\r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Victory\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -218,50 +206,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 712749,
-         "group": 1,
+         "__raw__": 712749,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "snake_queen"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -273,20 +242,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -298,20 +257,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -321,17 +270,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 78,
      "ptLink": [
@@ -356,17 +300,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 63,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2983118812,
           "eVariableType": 13,
@@ -378,17 +317,18 @@
             "eParamType": 25,
             "dwPad": 0,
             "snoWorld": {
-             "value": 714171,
-             "group": 48,
+             "__raw__": 714171,
+             "__group__": 48,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "World",
-             "type": "sno",
              "name": "CSD_Hawe_Marsh_SnakeDen"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1584348101,
           "eVariableType": 6,
@@ -400,10 +340,11 @@
             "eParamType": 5,
             "dwPad": 0,
             "snoLevelArea": {
-             "value": 714192,
-             "group": 22,
+             "__raw__": 714192,
+             "__group__": 22,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "LevelArea",
-             "type": "sno",
              "name": "CSD_Hawe_Marsh_SnakeDen_Boss"
             }
            }
@@ -417,19 +358,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(sWorldName, sLevelAreaName)\r\nHydra.ClearMusicOverride(\"CSD_Hawe_Marsh_SnakeDen\")\r\n\r\n\r\n\r\n\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nHydra.ClearMusicOverride(\"CSD_Hawe_Marsh_SnakeDen\")\r\n\r\n\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -450,50 +381,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 714192,
-         "group": 22,
+         "__raw__": 714192,
+         "__group__": 22,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "CSD_Hawe_Marsh_SnakeDen_Boss"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -505,20 +417,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -530,20 +432,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -553,31 +445,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -590,16 +467,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 599577,
-     "group": 24,
+     "__raw__": 599577,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleOpen)"
     },
     "nID": 1
@@ -610,10 +488,11 @@
     "z": 2.1237399578094482
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -626,12 +505,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -643,7 +517,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 34,
      "ptLink": [],
@@ -661,17 +535,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 27,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -687,7 +556,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1072510348,
           "eVariableType": 1,
@@ -699,10 +568,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 721107,
-             "group": 1,
+             "__raw__": 721107,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "QST_Hawe_Marsh_MohlonIncenseBox"
             }
            }
@@ -717,19 +587,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 66,
        "snoWorld": {
-        "value": 714171,
-        "group": 48,
+        "__raw__": 714171,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Marsh_SnakeDen"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\nHydra.ClearMusicOverride(\"CSD_Hawe_Marsh_SnakeDen\")\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nHydra.ClearMusicOverride(\"CSD_Hawe_Marsh_SnakeDen\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -750,50 +616,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 721107,
-         "group": 1,
+         "__raw__": 721107,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_MohlonIncenseBox"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -805,20 +652,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -830,20 +667,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -853,17 +680,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 65,
      "ptLink": [
@@ -888,17 +710,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 16,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -914,7 +731,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 4231711516,
           "eVariableType": 1,
@@ -926,10 +743,11 @@
             "eParamType": 17,
             "dwPad": 0,
             "snoItem": {
-             "value": 721150,
-             "group": 73,
+             "__raw__": 721150,
+             "__group__": 73,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Item",
-             "type": "sno",
              "name": "QST_Hawe_Marsh_Incense"
             }
            }
@@ -944,19 +762,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 714171,
-        "group": 48,
+        "__raw__": 714171,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Marsh_SnakeDen"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idItem)\r\n\r\n\r\n\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\n\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -977,50 +791,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 721150,
-         "group": 73,
+         "__raw__": 721150,
+         "__group__": 73,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Item",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_Incense"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1032,20 +827,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1057,20 +842,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1080,31 +855,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1117,16 +877,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 599577,
-     "group": 24,
+     "__raw__": 599577,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleOpen)"
     },
     "nID": 1
@@ -1137,10 +898,11 @@
     "z": 2.1237399578094482
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1153,12 +915,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1170,7 +927,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 108,
      "ptLink": [
@@ -1195,17 +952,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 45,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -1221,7 +973,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 4130614259,
           "eVariableType": 3,
@@ -1237,7 +989,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -1249,10 +1001,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 721108,
-             "group": 1,
+             "__raw__": 721108,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "QST_Hawe_Marsh_MohlonIncenseBoxSwitch"
             }
            }
@@ -1267,19 +1020,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 714171,
-        "group": 48,
+        "__raw__": 714171,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Marsh_SnakeDen"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_SeeIncense, idActor)\r\n\tHydra.WaitForConversationFinished(conv_SeeIncense)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_SeeIncense, idActor)\r\n\tHydra.WaitForConversationFinished(conv_SeeIncense)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1300,50 +1049,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 721108,
-         "group": 1,
+         "__raw__": 721108,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_MohlonIncenseBoxSwitch"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1355,20 +1085,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1380,20 +1100,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1403,31 +1113,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1440,16 +1135,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 599577,
-     "group": 24,
+     "__raw__": 599577,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleOpen)"
     },
     "nID": 1
@@ -1460,10 +1156,11 @@
     "z": 2.1237399578094482
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1476,12 +1173,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1493,7 +1185,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 69,
      "ptLink": [],
@@ -1512,17 +1204,18 @@
         "eEventType": 10,
         "dwListenerFlags": 0,
         "snoCondition": {
-         "value": 1041568,
-         "group": 51,
+         "__raw__": 1041568,
+         "__group__": 51,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "Condition",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_PlayerHasIncense"
         },
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -1537,10 +1230,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 534435,
-              "group": 24,
+              "__raw__": 534435,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Hawe_Marsh (Game)"
              },
              "nID": 91
@@ -1549,7 +1243,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -1561,17 +1255,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 731913,
-             "group": 12,
+             "__raw__": 731913,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "Hawe_Marsh_LorathTemple"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1595,19 +1290,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idActorNPC, idLorathRunLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idActorNPC, 1)\r\n\t\r\n\tHydra.QActorWait(idNeyrelleTown, 0.5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelleTown, idNeyrelleRunLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idNeyrelleTown, 1)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idActorNPC, idLorathRunLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idActorNPC, 1)\r\n\t\r\n\tHydra.QActorWait(idNeyrelleTown, 0.5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelleTown, idNeyrelleRunLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idNeyrelleTown, 1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1630,41 +1321,33 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 1,
      "unk_89d02b1": {
-      "value": 1244603,
-      "group": 73,
+      "__raw__": 1244603,
+      "__group__": 73,
+      "__type__": "DT_SNO",
+      "__typeHash__": 2764331143,
       "groupName": "Item",
-      "type": "sno",
       "name": "1HDagger_Rare_QST_Hawe_Marsh_05"
      },
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
       "snoTreasureClass": {
-       "value": 719394,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
+       "__raw__": 719394,
+       "__group__": 52,
+       "__type__": "DT_SNO",
+       "__typeHash__": 2764331143,
+       "groupName": "TreasureClass"
       },
       "nXPTier": 5,
       "nGoldTier": 5,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1676,20 +1359,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1701,20 +1374,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1724,25 +1387,21 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [
       {
-       "value": 721150,
-       "group": 73,
+       "__raw__": 721150,
+       "__group__": 73,
+       "__type__": "DT_SNO",
+       "__typeHash__": 2764331143,
        "groupName": "Item",
-       "type": "sno",
        "name": "QST_Hawe_Marsh_Incense"
       }
      ],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 85,
      "ptLink": [],
@@ -1760,12 +1419,7 @@
         "__typeHash__": 2935055576,
         "eEventType": 65,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [],
@@ -1776,19 +1430,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start()\r\n\r\n\tHydra.ActorSetConversationList(idLorathTemple, convlist_LorathTemple)\r\n\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.ActorSetConversationList(idLorathTemple, convlist_LorathTemple)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1811,40 +1455,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1856,20 +1480,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1881,20 +1495,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1904,17 +1508,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 87,
      "ptLink": [],
@@ -1932,17 +1531,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 16,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1958,7 +1552,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 4231711516,
           "eVariableType": 1,
@@ -1970,10 +1564,11 @@
             "eParamType": 17,
             "dwPad": 0,
             "snoItem": {
-             "value": 721150,
-             "group": 73,
+             "__raw__": 721150,
+             "__group__": 73,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Item",
-             "type": "sno",
              "name": "QST_Hawe_Marsh_Incense"
             }
            }
@@ -1987,19 +1582,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 70,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idItem)\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2020,50 +1605,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 721150,
-         "group": 73,
+         "__raw__": 721150,
+         "__group__": 73,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Item",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_Incense"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2075,20 +1641,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2100,20 +1656,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2123,31 +1669,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2160,16 +1691,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "\tHydra.Wait(1)\r\n\tlocal tRope = Hydra.ActorsInGroup(\"QST_Hawe_Marsh_04_RopeExit\")\r\n\tlocal tPlayersOnQuest = Hydra.QuestGetParticipants()\r\n\t\r\n\tHydra.ActorEnable(tRope[1])\r\n\tHydra.ActorPlayEffectGroup(tRope[1], s_Rocks_Falling)\r\n\tfor i = 1, #tPlayersOnQuest do\r\n\t\tif Hydra.ActorIsValid(tPlayersOnQuest[i]) and Hydra.ActorIsAlive(tPlayersOnQuest[i]) then\r\n\t\t\tif Hydra.ActorsInSameLevelArea(tPlayersOnQuest[i], tRope[1]) then\r\n\t\t\t\tHydra.QActorPower(tPlayersOnQuest[i], s_Camera_Shake)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.GizmoPlayAnim(tRope[1], \"AnimKey_Opening\")\r\n\tHydra.ActorSetIdleAnim(tRope[1], \"AnimKey_Open\")\r\n\tHydra.ActorGizmoSetDisabled(tRope[1], false)",
-   "unk_c820299": "",
+   "szOnEnterScript": "\tHydra.Wait(1)\r\n\tlocal tRope = Hydra.ActorsInGroup(\"QST_Hawe_Marsh_04_RopeExit\")\r\n\tlocal tPlayersOnQuest = Hydra.QuestGetParticipants()\r\n\t\r\n\tHydra.ActorEnable(tRope[1])\r\n\tHydra.ActorPlayEffectGroup(tRope[1], s_Rocks_Falling)\r\n\tfor i = 1, #tPlayersOnQuest do\r\n\t\tif Hydra.ActorIsValid(tPlayersOnQuest[i]) and Hydra.ActorIsAlive(tPlayersOnQuest[i]) then\r\n\t\t\tif Hydra.ActorsInSameLevelArea(tPlayersOnQuest[i], tRope[1]) then\r\n\t\t\t\tHydra.QActorPower(tPlayersOnQuest[i], s_Camera_Shake)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.GizmoPlayAnim(tRope[1], \"AnimKey_Opening\")\r\n\tHydra.ActorSetIdleAnim(tRope[1], \"AnimKey_Open\")\r\n\tHydra.ActorGizmoSetDisabled(tRope[1], false)",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534435,
-     "group": 24,
+     "__raw__": 534435,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Marsh (Game)"
     },
     "nID": 91
@@ -2180,10 +1712,11 @@
     "z": 0.3651300072669983
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2196,12 +1729,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2213,7 +1741,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 75,
      "ptLink": [
@@ -2238,17 +1766,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -2264,7 +1787,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -2276,10 +1799,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 731344,
-             "group": 1,
+             "__raw__": 731344,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "DRLG_Generic_Boss_Trigger"
             }
            }
@@ -2293,19 +1817,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\t\r\n\tlocal idBoss = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"BOSS\")[1]\r\n\tlocal idFakeBox = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"SWITCH\")[1]\r\n\tlocal idRealBox = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"CHEST\")[1]\r\n\t\r\n\tHydra.ActorEnable(idRealBox)\r\n\tHydra.ActorDelete(idFakeBox)\r\n\t\r\n\tHydra.ActorEnable(idBoss)\r\n\tHydra.ActorPlayEffectGroup(idActor, Sound_BossVOX)\r\n\tHydra.ActorTriggerPowerAtFeet(idBoss, SpawnPowerSno)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_SNAKE_BOSS)\r\n\r\n    --Play Boss Music on Reset \r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Phase1\")\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tlocal idBoss = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"BOSS\")[1]\r\n\tlocal idFakeBox = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"SWITCH\")[1]\r\n\tlocal idRealBox = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"CHEST\")[1]\r\n\t\r\n\tHydra.ActorEnable(idRealBox)\r\n\tHydra.ActorDelete(idFakeBox)\r\n\t\r\n\tHydra.ActorEnable(idBoss)\r\n\tHydra.ActorPlayEffectGroup(idActor, Sound_BossVOX)\r\n\tHydra.ActorTriggerPowerAtFeet(idBoss, SpawnPowerSno)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_SNAKE_BOSS)\r\n\r\n    --Play Boss Music on Reset \r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Phase1\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2326,50 +1840,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 731344,
-         "group": 1,
+         "__raw__": 731344,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "DRLG_Generic_Boss_Trigger"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2381,20 +1876,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2406,20 +1891,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2429,31 +1904,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2466,17 +1926,12 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
-    "snoMarkerSet": {
-     "value": -1,
-     "group": 24,
-     "groupName": "MarkerSet",
-     "type": "sno"
-    },
+    "snoMarkerSet": null,
     "nID": 0
    },
    "unk_47f8481": {
@@ -2484,12 +1939,7 @@
     "y": 0,
     "z": 0
    },
-   "unk_ed8215b": {
-    "value": -1,
-    "group": 48,
-    "groupName": "World",
-    "type": "sno"
-   },
+   "unk_ed8215b": null,
    "unk_f6ded77": {
     "__type__": "Type_6b1c5d9c",
     "__typeHash__": 1797021084,
@@ -2500,12 +1950,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2517,7 +1962,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 110,
      "ptLink": [],
@@ -2535,17 +1980,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 28,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -2561,7 +2001,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1072510348,
           "eVariableType": 1,
@@ -2573,10 +2013,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 721108,
-             "group": 1,
+             "__raw__": 721108,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "QST_Hawe_Marsh_MohlonIncenseBoxSwitch"
             }
            }
@@ -2591,19 +2032,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 714171,
-        "group": 48,
+        "__raw__": 714171,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Marsh_SnakeDen"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--ZH Lets starts the fight here. Fog walls go up\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_SNAKE_BOSS)\r\n\t\r\n\tidFirstPlayer = idActorPlayer\r\n\tidMohlon = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BOSS\")[1]\r\n\t\r\n\t--Trigger Stun CC and spawn boss\r\n\tidSwitchBox = idActorGizmo\r\n\tidIncenseBox = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BOX\")[1]\r\n\tHydra.EventSend(\"Stun\", idActorPlayer)\r\n\t\r\n\tlocal idTrigger = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRIGGER\")[1]\r\n\tHydra.ActorDelete(idTrigger)\r\n\t\r\n\t--Trigger eye trap visuals\r\n\tlocal idTraps1 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP1\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps1) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tlocal idTraps2 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP2\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps2) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tlocal idTraps3 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP3\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps3) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tHydra.ActorPlayEffectGroup(idActorPlayer, Sound_EyeTrapSummon)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--ZH Lets starts the fight here. Fog walls go up\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_SNAKE_BOSS)\r\n\t\r\n\tidFirstPlayer = idActorPlayer\r\n\tidMohlon = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BOSS\")[1]\r\n\t\r\n\t--Trigger Stun CC and spawn boss\r\n\tidSwitchBox = idActorGizmo\r\n\tidIncenseBox = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BOX\")[1]\r\n\tHydra.EventSend(\"Stun\", idActorPlayer)\r\n\t\r\n\tlocal idTrigger = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRIGGER\")[1]\r\n\tHydra.ActorDelete(idTrigger)\r\n\t\r\n\t--Trigger eye trap visuals\r\n\tlocal idTraps1 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP1\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps1) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tlocal idTraps2 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP2\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps2) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tlocal idTraps3 = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAP3\")\r\n\tfor i, idEyeSpawner in ipairs(idTraps3) do\r\n\t\tHydra.ActorTriggerPowerAtTarget(idEyeSpawner, idActorPlayer, TrapPower);\r\n\tend\r\n\t\r\n\tHydra.ActorPlayEffectGroup(idActorPlayer, Sound_EyeTrapSummon)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2624,50 +2061,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 721108,
-         "group": 1,
+         "__raw__": 721108,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "QST_Hawe_Marsh_MohlonIncenseBoxSwitch"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2679,20 +2097,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2704,20 +2112,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2727,17 +2125,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 112,
      "ptLink": [
@@ -2762,17 +2155,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 30,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 334654326,
           "eVariableType": 7,
@@ -2789,7 +2177,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -2805,13 +2193,13 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2344914334,
           "eVariableType": 11,
           "unk_67545b": [
            {
-            "__type__": "Type_4d3d23af",
+            "__type__": "ScriptEventParamAllowAny",
             "__typeHash__": 1295852463,
             "dwType": 1295852463,
             "eParamType": 0,
@@ -2827,19 +2215,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.Wait(1)\r\n\t--Hydra.ActorPlayEffectGroup(idFirstPlayer, ScreenShake)\r\n\ttPlayers = Hydra.PlayerActorsInLevelArea(\"CSD_Hawe_Marsh_SnakeDen_Boss\")\r\n\t\r\n\t--for i, idStunPlayer in ipairs(tPlayers) do\r\n\r\n\t\t--Hydra.BuffApplyToTarget(PlayerStun, \"STUN\", idStunPlayer)\r\n\t\r\n\t--end\r\n\t\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorPlayEffectGroup(idFirstPlayer, Sound_BossVOX)\r\n    --Play Victory Music Stinger\r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Phase1\")\r\n\tHydra.ActorEnable(idMohlon)\r\n\tHydra.ActorTriggerPowerAtFeet(idMohlon, SpawnPowerSno)\r\n\t\r\n\tHydra.Wait(3)\r\n\t\r\n\tHydra.ActorDisable(idSwitchBox)\r\n\tHydra.ActorEnable(idIncenseBox)\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.Wait(1)\r\n\t--Hydra.ActorPlayEffectGroup(idFirstPlayer, ScreenShake)\r\n\ttPlayers = Hydra.PlayerActorsInLevelArea(\"CSD_Hawe_Marsh_SnakeDen_Boss\")\r\n\t\r\n\t--for i, idStunPlayer in ipairs(tPlayers) do\r\n\r\n\t\t--Hydra.BuffApplyToTarget(PlayerStun, \"STUN\", idStunPlayer)\r\n\t\r\n\t--end\r\n\t\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorPlayEffectGroup(idFirstPlayer, Sound_BossVOX)\r\n    --Play Victory Music Stinger\r\n\tHydra.MusicOverride(\"CSD_Hawe_Marsh_SnakeDen\", \"Music_Boss_SnakeQueen_Phase1\")\r\n\tHydra.ActorEnable(idMohlon)\r\n\tHydra.ActorTriggerPowerAtFeet(idMohlon, SpawnPowerSno)\r\n\t\r\n\tHydra.Wait(3)\r\n\t\r\n\tHydra.ActorDisable(idSwitchBox)\r\n\tHydra.ActorEnable(idIncenseBox)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2862,40 +2240,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2907,20 +2265,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2932,20 +2280,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2955,31 +2293,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2992,16 +2315,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 599577,
-     "group": 24,
+     "__raw__": 599577,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Marsh (Hawe_Marsh_Campaign_TempleOpen)"
     },
     "nID": 1
@@ -3012,10 +2336,11 @@
     "z": 2.1237399578094482
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -3028,23 +2353,13 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   }
  ],
- "unk_1755172": [],
+ "arRequiredReputations": [],
  "arReputationRewards": [],
  "unk_46e3956": [],
- "snoStartCondition": {
-  "value": -1,
-  "group": 51,
-  "groupName": "Condition",
-  "type": "sno"
- },
+ "snoStartCondition": null,
  "szUserFunctionsScript": "",
  "szOnStartupScript": "S_LEVELAREA_SNAKE_BOSS = Hydra.ReferenceLevelArea(\"CSD_Hawe_Marsh_SnakeDen_Boss\")\r\n",
  "szOnShutdownScript": "",
@@ -3055,28 +2370,16 @@
  "arQuestDungeons": [],
  "unk_2aa5f20": [],
  "unk_b43b442": [],
- "gbidSurveyType": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "unk_b37e635": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "snoAudioContext": {
-  "value": -1,
-  "group": 93,
-  "groupName": "AudioContext",
-  "type": "sno"
- },
+ "gbidSurveyType": null,
+ "unk_b37e635": null,
+ "snoAudioContext": null,
  "unk_af3a4c1": [
   {
-   "value": 721150,
-   "group": 73,
+   "__raw__": 721150,
+   "__group__": 73,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "Item",
-   "type": "sno",
    "name": "QST_Hawe_Marsh_Incense"
   }
  ]

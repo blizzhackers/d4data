@@ -179,48 +179,65 @@ let basicTypes = {
   },
   "DT_SNO": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
-    ret.value = file.readInt32LE(offset);
+    results.readLength += 4;
+
+    ret.__raw__ = file.readInt32LE(offset);
+
+    if (ret.__raw__ === -1 || ret.__raw__ === 0xFFFFFFFF) {
+      ret.__raw__ = null;
+      return;
+    }
 
     if (devAttributes >= DEV_INFO) {
-      ret.group = field.group;
+      ret.__group__ = field.group;
+      ret.__type__ = 'DT_SNO';
       ret.groupName = snoGroups[field.group];
-      ret.type = 'sno';
       if (toc[ret.group] && toc[ret.group][ret.value]) {
         ret.name = toc[ret.group][ret.value];
       }
     }
-
-    results.readLength += 4;
   },
   "DT_SNO_NAME": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
-    ret.value = file.readInt32LE(offset + 4);
-    ret.group = file.readInt32LE(offset);
-    ret.groupName = snoGroups[ret.group];
-    ret.type = 'sno';
+    results.readLength += 8;
 
-    if (devAttributes >= DEV_INFO) {
-      if (toc[ret.group] && toc[ret.group][ret.value]) {
-        ret.name = toc[ret.group][ret.value];
-      }
+    ret.__raw__ = file.readInt32LE(offset + 4);
+
+    if (ret.__raw__ === -1 || ret.__raw__ === 0xFFFFFFFF) {
+      ret.__raw__ = null;
+      return;
     }
 
-    results.readLength += 8;
+    ret.__group__ = file.readInt32LE(offset);
+    ret.__type__ = 'DT_SNO_NAME';
+    ret.groupName = snoGroups[ret.__group__];
+
+    if (devAttributes >= DEV_INFO) {
+      if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
+        ret.name = toc[ret.__group__][ret.__raw__];
+      }
+    }
   },
   "DT_GBID": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
-    ret.value = file.readUInt32LE(offset);
-    ret.type = 'gbid';
+    results.readLength += 4;
+
+    ret.__raw__ = file.readUInt32LE(offset);
+
+    if (ret.__raw__ === -1 || ret.__raw__ === 0xFFFFFFFF) {
+      ret.__raw__ = null;
+      return;
+    }
+
+    ret.__type__ = 'DT_GBID';
 
     if (devAttributes >= DEV_INFO) {
       ret.group = field.group;
 
-      if (gbid[ret.group] && gbid[ret.group][ret.value] && gbid[ret.group][ret.value].length) {
-        ret.name = gbid[ret.group][ret.value][0];
+      if (gbid[ret.group] && gbid[ret.group][ret.__raw__] && gbid[ret.group][ret.__raw__].length) {
+        ret.name = gbid[ret.group][ret.__raw__][0];
       }
     }
-
-    results.readLength += 4;
   },
   "DT_STARTLOC_NAME": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});

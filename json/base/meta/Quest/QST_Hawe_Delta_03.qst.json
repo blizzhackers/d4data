@@ -4,9 +4,9 @@
  "__type__": "QuestDefinition",
  "__typeHash__": 1053929211,
  "eQuestType": 2,
- "unk_f88ee86": -1,
- "unk_4c4339b": 0,
- "unk_f522ece": 2,
+ "ePlayerQuestType": -1,
+ "eEventQuestType": 0,
+ "eInstanceQuestType": 2,
  "eRepeatType": 0,
  "eVignetteType": 0,
  "unk_43f3849": 0,
@@ -15,10 +15,11 @@
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 600639,
-   "group": 24,
+   "__raw__": 600639,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Hawe_Delta (Hawe_Delta_Campaign_Base)"
   },
   "nID": 122
@@ -29,20 +30,22 @@
   "z": -0.21368801593780518
  },
  "unk_6a4ec7f": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_c2e8448": {
   "__type__": "MarkerHandle",
   "__typeHash__": 3934284334,
   "snoMarkerSet": {
-   "value": 931856,
-   "group": 24,
+   "__raw__": 931856,
+   "__group__": 24,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "MarkerSet",
-   "type": "sno",
    "name": "Hawe_Delta (Hawe_Delta_03)"
   },
   "nID": 23
@@ -53,18 +56,20 @@
   "z": 1.6699399948120117
  },
  "unk_506369e": {
-  "value": 69068,
-  "group": 48,
+  "__raw__": 69068,
+  "__group__": 48,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "World",
-  "type": "sno",
   "name": "Sanctuary_Eastern_Continent"
  },
  "unk_d2181f0": 237348,
  "snoLevelArea": {
-  "value": 937238,
-  "group": 22,
+  "__raw__": 937238,
+  "__group__": 22,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
   "groupName": "LevelArea",
-  "type": "sno",
   "name": "Hawe_DeltaEast_02"
  },
  "unk_f956a05": 1,
@@ -75,17 +80,8 @@
  "unk_b89b77f": 0,
  "unk_c18cabd": 0,
  "unk_79f6e17": 0,
- "gbidSubzoneModifierTag": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 60
- },
- "snoBountySubzone": {
-  "value": -1,
-  "group": 80,
-  "groupName": "SubZone",
-  "type": "sno"
- },
+ "gbidSubzoneModifierTag": null,
+ "snoBountySubzone": null,
  "eBountyTier": -1,
  "eBountyType": -1,
  "unk_313dbf6": 0,
@@ -104,7 +100,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 20,
      "ptLink": [
@@ -129,17 +125,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 27,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -155,7 +146,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1072510348,
           "eVariableType": 1,
@@ -167,10 +158,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 1249142,
-             "group": 1,
+             "__raw__": 1249142,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "Ancients_Deathspeaker_Chest_Client_Dyn"
             }
            }
@@ -185,19 +177,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- Grant the item to the player who operated the chest, player makes a comment\r\n\tHydra.ItemGiveQuestItemToPlayer(idActorPlayer, itemEliasFinger, \"QST_Hawe_Delta_03\")\r\n\tidFingerPlayer = idActorPlayer\r\n\tHydra.Wait(0.5)\r\n\r\n\t------------------------------------------------\r\n\t-- MarkerLink Variable Setup\r\n\t-- We need to do this here since we can't use PSV to grab dungeon content.\r\n\t-- These are all linked to the Chest in the labeled markerset.\r\n\t------------------------------------------------\r\n\t\r\n\t-- This is the delay from the moment the water begins rising that the traversal is disabled + the triggers are used to stun players.\r\n\t-- They are additive, which means the total event time is 10 seconds.\r\n\ttTriggerKillDelays = {7.5,0.5,0.5,0.5,0.5,0.5}\r\n\r\n\t-- These are Proximity Triggers. When the Trigger Kill Delay is met, every actor inside is stunned\r\n\ttIslandTriggers = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t-- These are used to disable/enable traversals.\r\n\t-- They are snapped to the position of the traversals starting with the one you use to leave the island\r\n\ttTraversalProbes = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\tidBlockingRocks = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BLOCKING_ROCKS\")[1]\r\n\tidFallingDebrisLocation = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"FALLING_DEBRIS_LOC\")[1]\r\n\t\t\t\t\r\n\t--These are used to disable/enable traps,\r\n\t--They will turn on after you've picked up the finger\r\n\ttTraps = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAPS\")\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\nend",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- Grant the item to the player who operated the chest, player makes a comment\r\n\tHydra.ItemGiveQuestItemToPlayer(idActorPlayer, itemEliasFinger, \"QST_Hawe_Delta_03\")\r\n\tidFingerPlayer = idActorPlayer\r\n\tHydra.Wait(0.5)\r\n\r\n\t------------------------------------------------\r\n\t-- MarkerLink Variable Setup\r\n\t-- We need to do this here since we can't use PSV to grab dungeon content.\r\n\t-- These are all linked to the Chest in the labeled markerset.\r\n\t------------------------------------------------\r\n\t\r\n\t-- This is the delay from the moment the water begins rising that the traversal is disabled + the triggers are used to stun players.\r\n\t-- They are additive, which means the total event time is 10 seconds.\r\n\ttTriggerKillDelays = {7.5,0.5,0.5,0.5,0.5,0.5}\r\n\r\n\t-- These are Proximity Triggers. When the Trigger Kill Delay is met, every actor inside is stunned\r\n\ttIslandTriggers = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t-- These are used to disable/enable traversals.\r\n\t-- They are snapped to the position of the traversals starting with the one you use to leave the island\r\n\ttTraversalProbes = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\tidBlockingRocks = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BLOCKING_ROCKS\")[1]\r\n\tidFallingDebrisLocation = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"FALLING_DEBRIS_LOC\")[1]\r\n\t\t\t\t\r\n\t--These are used to disable/enable traps,\r\n\t--They will turn on after you've picked up the finger\r\n\ttTraps = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAPS\")\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -218,50 +206,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 1249142,
-         "group": 1,
+         "__raw__": 1249142,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "Ancients_Deathspeaker_Chest_Client_Dyn"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -273,20 +242,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -298,20 +257,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -321,31 +270,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -358,16 +292,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -378,10 +313,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -394,12 +330,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -411,7 +342,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 41,
      "ptLink": [],
@@ -429,17 +360,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 45,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -455,7 +381,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 4130614259,
           "eVariableType": 3,
@@ -471,7 +397,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -483,10 +409,9 @@
             "eParamType": 35,
             "dwPad": 0,
             "gbidActorGroup": {
-             "value": 1933035179,
-             "type": "gbid",
-             "group": 24,
-             "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker_RLHDoor"
+             "__raw__": 1933035179,
+             "__type__": "DT_GBID",
+             "__typeHash__": 1028170061
             }
            }
           ]
@@ -499,19 +424,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FingerAltar, idActor)\r\n\r\n\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FingerAltar, idActor)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -534,40 +449,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -579,20 +474,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -604,20 +489,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -627,17 +502,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 104,
      "ptLink": [],
@@ -655,17 +525,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -681,7 +546,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -693,10 +558,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 964433,
-             "group": 1,
+             "__raw__": 964433,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker_Pillars"
             }
            }
@@ -710,19 +576,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FloodedPassage, idActor)\r\n\tHydra.WaitForConversationFinished(conv_FloodedPassage)\r\n\tHydra.ActorSetInvulnerable(idWeakPillar, false)\r\n\tHydra.ActorSetTargetable(idWeakPillar, true)\r\n\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FloodedPassage, idActor)\r\n\tHydra.WaitForConversationFinished(conv_FloodedPassage)\r\n\tHydra.ActorSetInvulnerable(idWeakPillar, false)\r\n\tHydra.ActorSetTargetable(idWeakPillar, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -743,22 +599,18 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 964433,
-         "group": 1,
+         "__raw__": 964433,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker_Pillars"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       },
@@ -775,23 +627,18 @@
         "__typeHash__": 2935055576,
         "eEventType": 0,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1189140265,
           "eVariableType": 1,
           "unk_67545b": [
            {
-            "__type__": "Type_4d3d23af",
+            "__type__": "ScriptEventParamAllowAny",
             "__typeHash__": 1295852463,
             "dwType": 1295852463,
             "eParamType": 0,
@@ -800,7 +647,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1189140251,
           "eVariableType": 1,
@@ -812,10 +659,11 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 1250766,
-             "group": 1,
+             "__raw__": 1250766,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "Ancients_Flooded_TempleOfDeathSpeaker_CollapsedPillarBridge_Multistage"
             }
            }
@@ -829,19 +677,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.Wait(7)\r\n\tfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\t\tSetTraversalEnabled(TraversalKill, true)\r\n\tend\r\n\t\r\n\t--updating minimap to reaveal bridge\r\n\tHydra.ActorSceneRevealSecretMap(tTraversalKillers[1], 1)\r\n\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.Wait(7)\r\n\tfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\t\tSetTraversalEnabled(TraversalKill, true)\r\n\tend\r\n\t\r\n\t--updating minimap to reaveal bridge\r\n\tHydra.ActorSceneRevealSecretMap(tTraversalKillers[1], 1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -862,50 +700,31 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 1250766,
-         "group": 1,
+         "__raw__": 1250766,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "Ancients_Flooded_TempleOfDeathSpeaker_CollapsedPillarBridge_Multistage"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -917,20 +736,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -942,20 +751,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -965,17 +764,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 32,
      "ptLink": [],
@@ -993,17 +787,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -1015,17 +804,18 @@
             "eParamType": 4,
             "dwPad": 0,
             "snoActor": {
-             "value": 1100625,
-             "group": 1,
+             "__raw__": 1100625,
+             "__group__": 1,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Actor",
-             "type": "sno",
              "name": "QST_Hawe_Delta_03_EliasGhostScroll"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -1037,17 +827,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 1098235,
-             "group": 12,
+             "__raw__": 1098235,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Hawe_Delta_03_Ghost_01"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1071,19 +862,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 84,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1104,22 +891,18 @@
        "arSubzones": [],
        "arSnonameTokens": [
         {
-         "value": 1100625,
-         "group": 1,
+         "__raw__": 1100625,
+         "__group__": 1,
+         "__type__": "DT_SNO_NAME",
+         "__typeHash__": 3339108615,
          "groupName": "Actor",
-         "type": "sno",
          "name": "QST_Hawe_Delta_03_EliasGhostScroll"
         }
        ],
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       },
@@ -1136,17 +919,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -1161,10 +939,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 1259677,
-              "group": 24,
+              "__raw__": 1259677,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Ancients_Flooded_S_Arena_01 (CSD_Hawe_Swamp_TempleoftheDeathspeaker_Ghosts)"
              },
              "nID": 1
@@ -1173,7 +952,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -1185,17 +964,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 1098343,
-             "group": 12,
+             "__raw__": 1098343,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Hawe_Delta_03_Ghost_02"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1219,19 +999,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 84,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1254,12 +1030,7 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       },
@@ -1276,17 +1047,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -1301,10 +1067,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 1259676,
-              "group": 24,
+              "__raw__": 1259676,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Ancients_Flooded_E_Arena_01 (CSD_Hawe_Swamp_TempleoftheDeathspeaker_Ghosts)"
              },
              "nID": 1
@@ -1313,7 +1080,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -1325,17 +1092,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 1098345,
-             "group": 12,
+             "__raw__": 1098345,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Hawe_Delta_03_Ghost_03"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1359,19 +1127,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 84,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1394,40 +1158,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1439,20 +1183,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1464,20 +1198,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1487,17 +1211,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "RLH_DOOR = Hydra.ActorsInGroup(\"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RLHDoor\")[1]\r\nHydra.ActorFadeAndDelete(RLH_DOOR, 1)"
+     "szOnSetCompleteScript": "RLH_DOOR = Hydra.ActorsInGroup(\"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RLHDoor\")[1]\r\nHydra.ActorFadeAndDelete(RLH_DOOR, 1)"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 83,
      "ptLink": [
@@ -1522,12 +1241,7 @@
         "__typeHash__": 2935055576,
         "eEventType": 36,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [],
@@ -1538,19 +1252,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start()\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1573,40 +1277,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1618,20 +1302,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1643,20 +1317,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1666,31 +1330,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.Wait(1)\r\n\r\nif Hydra.ActorIsValid(idPlayer) then\r\n\tHydra.ActorPlayConversation(conv_PlayerMuses, idPlayer)\r\nend \r\n\r\nHydra.QuestAdvancePhase()"
+     "szOnSetCompleteScript": "Hydra.Wait(1)\r\n\r\nif Hydra.ActorIsValid(idPlayer) then\r\n\tHydra.ActorPlayConversation(conv_PlayerMuses, idPlayer)\r\nend \r\n\r\nHydra.QuestAdvancePhase()"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -1703,16 +1352,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -1723,10 +1373,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -1739,12 +1390,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -1756,7 +1402,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 102,
      "ptLink": [],
@@ -1774,17 +1420,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 43,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -1800,7 +1441,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2983118812,
           "eVariableType": 13,
@@ -1812,10 +1453,11 @@
             "eParamType": 25,
             "dwPad": 0,
             "snoWorld": {
-             "value": 600761,
-             "group": 48,
+             "__raw__": 600761,
+             "__group__": 48,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "World",
-             "type": "sno",
              "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
             }
            }
@@ -1829,19 +1471,9 @@
        "unk_47705e2": 0,
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
-       "snoWorld": {
-        "value": -1,
-        "group": 48,
-        "groupName": "World",
-        "type": "sno"
-       },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\nend\r\n",
+       "snoWorld": null,
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1864,40 +1496,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1909,20 +1521,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1934,20 +1536,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -1957,17 +1549,12 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "--Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
     },
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 91,
      "ptLink": [
@@ -1992,17 +1579,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 10,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2304262567,
           "eVariableType": 1,
@@ -2017,10 +1599,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 814002,
-              "group": 24,
+              "__raw__": 814002,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Ancients_Flooded_NW_POI_ShorelineEntrance_01 (Game)"
              },
              "nID": 141
@@ -2029,7 +1612,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1739417742,
           "eVariableType": 4,
@@ -2041,17 +1624,18 @@
             "eParamType": 10,
             "dwPad": 0,
             "snoConversation": {
-             "value": 1259604,
-             "group": 12,
+             "__raw__": 1259604,
+             "__group__": 12,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "Conversation",
-             "type": "sno",
              "name": "QST_Hawe_Delta_03_Ghost_00"
             }
            }
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -2075,19 +1659,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorKill(idActorNPC)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlayConversation(conv_FirstRitual, idActorPlayer)\r\n\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorKill(idActorNPC)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlayConversation(conv_FirstRitual, idActorPlayer)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2110,40 +1690,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2155,20 +1715,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2180,20 +1730,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2203,31 +1743,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2240,16 +1765,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "idWeakPillar = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillar\")[1]\r\nHydra.ActorSetInvulnerable(idWeakPillar, true)\r\nHydra.ActorSetTargetable(idWeakPillar, false)\r\n\r\ntTraversalKillers = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillarTraversalKillers\")\r\n\r\nfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\tSetTraversalEnabled(TraversalKill, false)\r\nend",
-   "unk_c820299": "",
+   "szOnEnterScript": "idWeakPillar = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillar\")[1]\r\nHydra.ActorSetInvulnerable(idWeakPillar, true)\r\nHydra.ActorSetTargetable(idWeakPillar, false)\r\n\r\ntTraversalKillers = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillarTraversalKillers\")\r\n\r\nfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\tSetTraversalEnabled(TraversalKill, false)\r\nend",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -2260,10 +1786,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2276,12 +1803,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2293,7 +1815,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 99,
      "ptLink": [
@@ -2318,17 +1840,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 43,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 1387993843,
           "eVariableType": 1,
@@ -2344,7 +1861,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2983118812,
           "eVariableType": 13,
@@ -2356,10 +1873,11 @@
             "eParamType": 25,
             "dwPad": 0,
             "snoWorld": {
-             "value": 600761,
-             "group": 48,
+             "__raw__": 600761,
+             "__group__": 48,
+             "__type__": "DT_SNO",
+             "__typeHash__": 2764331143,
              "groupName": "World",
-             "type": "sno",
              "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
             }
            }
@@ -2374,19 +1892,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 69068,
-        "group": 48,
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "Sanctuary_Eastern_Continent"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tHydra.ActorPlayEffectGroup(idActorPlayer, S_FADE_IN_EFF)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\n\r\n\t\r\n\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tHydra.ActorPlayEffectGroup(idActorPlayer, S_FADE_IN_EFF)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\n\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2410,10 +1924,11 @@
        "unk_6a71535": 0,
        "arLevelAreas": [
         {
-         "value": 937238,
-         "group": 22,
+         "__raw__": 937238,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
          "groupName": "LevelArea",
-         "type": "sno",
          "name": "Hawe_DeltaEast_02"
         }
        ],
@@ -2422,40 +1937,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2467,20 +1962,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2492,20 +1977,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2515,31 +1990,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2552,16 +2012,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "Hydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)",
-   "unk_c820299": "",
+   "szOnEnterScript": "Hydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -2572,10 +2033,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2588,12 +2050,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2605,7 +2062,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 122,
      "ptLink": [
@@ -2630,17 +2087,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 46,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
@@ -2656,7 +2108,7 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 3941013568,
           "eVariableType": 1,
@@ -2671,10 +2123,11 @@
              "__type__": "MarkerHandle",
              "__typeHash__": 3934284334,
              "snoMarkerSet": {
-              "value": 1364248,
-              "group": 24,
+              "__raw__": 1364248,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
               "groupName": "MarkerSet",
-              "type": "sno",
               "name": "Ancients_Flooded_FLEX_POI_IslandHop_01 (CSD_Hawe_Swamp_TempleoftheDeathspeaker_RunLikeHell)"
              },
              "nID": 4
@@ -2691,19 +2144,15 @@
        "eIndicatorType": 2,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FindFinger, idActor)\r\n\t\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FindFinger, idActor)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2726,40 +2175,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 0,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2771,20 +2200,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2796,20 +2215,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -2819,31 +2228,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
     }
    ],
    "unk_4b2de13": 4294967295,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -2856,16 +2250,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -2876,10 +2271,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -2892,12 +2288,7 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   },
   {
    "__type__": "QuestPhase",
@@ -2909,7 +2300,7 @@
    "eType": 0,
    "arCallbackSets": [
     {
-     "__type__": "Type_11b9d2b9",
+     "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 129,
      "ptLink": [],
@@ -2927,12 +2318,7 @@
         "__typeHash__": 2935055576,
         "eEventType": 65,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [],
@@ -2944,19 +2330,15 @@
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start()\r\n\t\r\n\t-- Create the heartbeat actor (deleted at the end)\r\n\t-- spawn on a point, since players can become invalid at any time\r\n\tidHeartBeat = Hydra.ActorSpawnActor(sHeartBeatSounds, idFallingDebrisLocation) \r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Rocks fall near the player\r\n\t-- This also starts the actual water rising (embedded in this actor)\r\n\tHydra.ActorSpawnActor(idFallingDebris,idFallingDebrisLocation,false,0,0)\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetLevelArea(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RunLikeHeck\" then -- Only players within the flooding section\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxScreenShake)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\n\t\r\n\tfor i, idTrap in ipairs(tTraps) do\r\n\t\tHydra.ActorEnable(idTrap)\r\n\tend\r\n\t\r\n\tHydra.Wait(2.0) -- 2.5 total wait\r\n\r\n\t-- \"Im not going to die in here!\"\r\n\tif Hydra.ActorIsValid(idFingerPlayer) then\r\n\t\tHydra.ActorPlayConversation(conv_Escape, idFingerPlayer)\r\n\tend\r\n\t\r\n\t-----------------------------------------\r\n\t-- VIGNETTE -Phase 2 Logic Start Immedietley\r\n\t-----------------------------------------\r\n\r\n\t\r\n\t-- The Hydra.Waits() in here add up to 10 seconds (declared in previous phase)\r\n\tSetTraversalEnabled(tTraversalProbes[6], false)\r\n\tHydra.ActorGizmoSetDisabled(idBlockingRocks,false)\r\n\t\r\n\tfor i=1, #tTriggerKillDelays, 1 do\r\n\t\tHydra.Wait (tTriggerKillDelays[i])\r\n\t\ttActorsInTrigger = Hydra.ActorsInTriggerBounds(tIslandTriggers[i])\r\n\r\n\t\tfor i, idActorInTrigger in ipairs(tActorsInTrigger) do\r\n\t\t\t-- only stun players, ignore other actor SNOs\r\n\t\t\tif Hydra.ActorIsPlayer(idActorInTrigger) then \r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idActorInTrigger, idActorInTrigger, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\tSetTraversalEnabled(tTraversalProbes[i], false)\r\n\tend\r\n\t\r\n\t-- By the time we get here, we have Hydra.Wait()ed 12.5 seconds total.\r\n\t\r\n\t-- Remove the heartbeat that was created earlier\r\n\tif Hydra.ActorIsValid(idHeartBeat) then\r\n\t\tHydra.ActorDelete(idHeartBeat)\r\n\tend\t\r\n\r\n\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t-- Make the screen dark\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxFadeToBlack)\r\n\t\t\t\t\r\n\t\t\t\t-- Stun everyone in case we somehow missed someone\r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idPlayer, idPlayer, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t\r\n\t-- objective complete at this point on the tracker\r\n\tHydra.EventSend(\"Deathspeaker_FloodingComplete\")\r\n\t\r\n\t-- Wait a beat\r\n\tHydra.Wait(4) -- The 17.5 seconds total\r\n\t\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t--Warp to sanctuary\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\t\r\n\t\t\t\t-- We are setting the game variable HERE because if there are no players inside this dungeon when we get here, \r\n\t\t\t\t-- it means they used a scroll of escape, and they will not be appearing where you would if the delta quest continued. \r\n\t\t\t\t-- We treat this as a relog.\r\n\t\t\t\tHydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)\r\n\t\t\t\t\r\n\t\t\t\t-- Remove the stun buff before you warp.\r\n\t\t\t\tHydra.BuffRemove(powerStun, \"STUN_SELF\", idPlayer) \r\n\t\t\t\t\r\n\t\t\t\t-- Warp to where lorath is standing, concatenate the GBID with the player index, so the players dont stack on eachother\r\n\t\t\t\tHydra.PlayerWarpToWorld(idPlayer, \"Sanctuary_Eastern_Continent\", \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_Exit_Alt_\"..i, true, true)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\t-- Create the heartbeat actor (deleted at the end)\r\n\t-- spawn on a point, since players can become invalid at any time\r\n\tidHeartBeat = Hydra.ActorSpawnActor(sHeartBeatSounds, idFallingDebrisLocation) \r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Rocks fall near the player\r\n\t-- This also starts the actual water rising (embedded in this actor)\r\n\tHydra.ActorSpawnActor(idFallingDebris,idFallingDebrisLocation,false,0,0)\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetLevelArea(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RunLikeHeck\" then -- Only players within the flooding section\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxScreenShake)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\n\t\r\n\tfor i, idTrap in ipairs(tTraps) do\r\n\t\tHydra.ActorEnable(idTrap)\r\n\tend\r\n\t\r\n\tHydra.Wait(2.0) -- 2.5 total wait\r\n\r\n\t-- \"Im not going to die in here!\"\r\n\tif Hydra.ActorIsValid(idFingerPlayer) then\r\n\t\tHydra.ActorPlayConversation(conv_Escape, idFingerPlayer)\r\n\tend\r\n\t\r\n\t-----------------------------------------\r\n\t-- VIGNETTE -Phase 2 Logic Start Immedietley\r\n\t-----------------------------------------\r\n\r\n\t\r\n\t-- The Hydra.Waits() in here add up to 10 seconds (declared in previous phase)\r\n\tSetTraversalEnabled(tTraversalProbes[6], false)\r\n\tHydra.ActorGizmoSetDisabled(idBlockingRocks,false)\r\n\t\r\n\tfor i=1, #tTriggerKillDelays, 1 do\r\n\t\tHydra.Wait (tTriggerKillDelays[i])\r\n\t\ttActorsInTrigger = Hydra.ActorsInTriggerBounds(tIslandTriggers[i])\r\n\r\n\t\tfor i, idActorInTrigger in ipairs(tActorsInTrigger) do\r\n\t\t\t-- only stun players, ignore other actor SNOs\r\n\t\t\tif Hydra.ActorIsPlayer(idActorInTrigger) then \r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idActorInTrigger, idActorInTrigger, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\tSetTraversalEnabled(tTraversalProbes[i], false)\r\n\tend\r\n\t\r\n\t-- By the time we get here, we have Hydra.Wait()ed 12.5 seconds total.\r\n\t\r\n\t-- Remove the heartbeat that was created earlier\r\n\tif Hydra.ActorIsValid(idHeartBeat) then\r\n\t\tHydra.ActorDelete(idHeartBeat)\r\n\tend\t\r\n\r\n\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t-- Make the screen dark\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxFadeToBlack)\r\n\t\t\t\t\r\n\t\t\t\t-- Stun everyone in case we somehow missed someone\r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idPlayer, idPlayer, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t\r\n\t-- objective complete at this point on the tracker\r\n\tHydra.EventSend(\"Deathspeaker_FloodingComplete\")\r\n\t\r\n\t-- Wait a beat\r\n\tHydra.Wait(4) -- The 17.5 seconds total\r\n\t\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t--Warp to sanctuary\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\t\r\n\t\t\t\t-- We are setting the game variable HERE because if there are no players inside this dungeon when we get here, \r\n\t\t\t\t-- it means they used a scroll of escape, and they will not be appearing where you would if the delta quest continued. \r\n\t\t\t\t-- We treat this as a relog.\r\n\t\t\t\tHydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)\r\n\t\t\t\t\r\n\t\t\t\t-- Remove the stun buff before you warp.\r\n\t\t\t\tHydra.BuffRemove(powerStun, \"STUN_SELF\", idPlayer) \r\n\t\t\t\t\r\n\t\t\t\t-- Warp to where lorath is standing, concatenate the GBID with the player index, so the players dont stack on eachother\r\n\t\t\t\tHydra.PlayerWarpToWorld(idPlayer, \"Sanctuary_Eastern_Continent\", \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_Exit_Alt_\"..i, true, true)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2979,12 +2361,7 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       },
@@ -3001,17 +2378,12 @@
         "__typeHash__": 2935055576,
         "eEventType": 30,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "value": -1,
-         "group": 51,
-         "groupName": "Condition",
-         "type": "sno"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": 0,
         "flCooldownSeconds": 0,
         "arEventFilters": [
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 334654326,
           "eVariableType": 7,
@@ -3028,13 +2400,13 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2197444774,
           "eVariableType": 1,
           "unk_67545b": [
            {
-            "__type__": "Type_4d3d23af",
+            "__type__": "ScriptEventParamAllowAny",
             "__typeHash__": 1295852463,
             "dwType": 1295852463,
             "eParamType": 0,
@@ -3043,13 +2415,13 @@
           ]
          },
          {
-          "__type__": "Type_bd82039e",
+          "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
           "tKey": 2344914334,
           "eVariableType": 11,
           "unk_67545b": [
            {
-            "__type__": "Type_4d3d23af",
+            "__type__": "ScriptEventParamAllowAny",
             "__typeHash__": 1295852463,
             "dwType": 1295852463,
             "eParamType": 0,
@@ -3066,19 +2438,15 @@
        "eIndicatorType": 3,
        "unk_9c1ea4f": 0,
        "snoWorld": {
-        "value": 600761,
-        "group": 48,
+        "__raw__": 600761,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
         "groupName": "World",
-        "type": "sno",
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
-       "unk_e879cce": {
-        "value": -1,
-        "group": 12,
-        "groupName": "Conversation",
-        "type": "sno"
-       },
-       "unk_28bc3c5": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
+       "unk_e879cce": null,
+       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3101,40 +2469,20 @@
        "unk_a71fd1a": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
-        "snoReputation": {
-         "value": -1,
-         "group": 105,
-         "groupName": "Reputation",
-         "type": "sno"
-        },
+        "snoReputation": null,
         "nValue": 0
        }
       }
      ],
      "unk_a845fa9": 1,
-     "unk_89d02b1": {
-      "value": -1,
-      "group": 73,
-      "groupName": "Item",
-      "type": "sno"
-     },
+     "unk_89d02b1": null,
      "unk_68d4eb0": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 4,
       "nGoldTier": 4,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -3146,20 +2494,10 @@
      "tReward": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -3171,20 +2509,10 @@
      "unk_b3249db": {
       "__type__": "QuestReward",
       "__typeHash__": 3387295447,
-      "snoTreasureClass": {
-       "value": -1,
-       "group": 52,
-       "groupName": "TreasureClass",
-       "type": "sno"
-      },
+      "snoTreasureClass": null,
       "nXPTier": 0,
       "nGoldTier": 0,
-      "snoTrackedReward": {
-       "value": -1,
-       "group": 126,
-       "groupName": "TrackedReward",
-       "type": "sno"
-      },
+      "snoTrackedReward": null,
       "unk_b0fd814": 0,
       "unk_186d5e6": {
        "__type__": "Type_e12242af",
@@ -3194,31 +2522,16 @@
       "unk_f8ed991": []
      },
      "unk_8c63f3c": 0,
-     "unk_e903c4e": {
-      "value": -1,
-      "group": 12,
-      "groupName": "Conversation",
-      "type": "sno"
-     },
+     "unk_e903c4e": null,
      "unk_8f432f8": [],
-     "unk_98d4504": "Hydra.QuestAdvancePhase()\r\n"
+     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
     }
    ],
    "unk_4b2de13": 22,
    "unk_188a07a": [],
    "unk_61c2846": 0,
-   "unk_951ad2a": {
-    "value": -1,
-    "group": 51,
-    "groupName": "Condition",
-    "type": "sno"
-   },
-   "snoReward": {
-    "value": -1,
-    "group": 52,
-    "groupName": "TreasureClass",
-    "type": "sno"
-   },
+   "unk_951ad2a": null,
+   "snoReward": null,
    "unk_189b89b": 0,
    "nTimerDuration": 0,
    "unk_2bde7b6": 0,
@@ -3231,16 +2544,17 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "unk_9c63f9d": "",
-   "unk_c820299": "",
+   "szOnEnterScript": "",
+   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
     "snoMarkerSet": {
-     "value": 534434,
-     "group": 24,
+     "__raw__": 534434,
+     "__group__": 24,
+     "__type__": "DT_SNO",
+     "__typeHash__": 2764331143,
      "groupName": "MarkerSet",
-     "type": "sno",
      "name": "Hawe_Delta (Game)"
     },
     "nID": 14
@@ -3251,10 +2565,11 @@
     "z": 0.8611909747123718
    },
    "unk_ed8215b": {
-    "value": 69068,
-    "group": 48,
+    "__raw__": 69068,
+    "__group__": 48,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
     "groupName": "World",
-    "type": "sno",
     "name": "Sanctuary_Eastern_Continent"
    },
    "unk_f6ded77": {
@@ -3267,23 +2582,13 @@
     "__typeHash__": 1797021084,
     "hImageHandle": 0
    },
-   "snoAudioContext": {
-    "value": -1,
-    "group": 93,
-    "groupName": "AudioContext",
-    "type": "sno"
-   }
+   "snoAudioContext": null
   }
  ],
- "unk_1755172": [],
+ "arRequiredReputations": [],
  "arReputationRewards": [],
  "unk_46e3956": [],
- "snoStartCondition": {
-  "value": -1,
-  "group": 51,
-  "groupName": "Condition",
-  "type": "sno"
- },
+ "snoStartCondition": null,
  "szUserFunctionsScript": "",
  "szOnStartupScript": "",
  "szOnShutdownScript": "",
@@ -3295,28 +2600,19 @@
  "unk_2aa5f20": [],
  "unk_b43b442": [],
  "gbidSurveyType": {
-  "value": 2427452660,
-  "type": "gbid",
-  "group": 57,
-  "name": "QuestHighChance"
+  "__raw__": 2427452660,
+  "__type__": "DT_GBID",
+  "__typeHash__": 1028170061
  },
- "unk_b37e635": {
-  "value": 4294967295,
-  "type": "gbid",
-  "group": 57
- },
- "snoAudioContext": {
-  "value": -1,
-  "group": 93,
-  "groupName": "AudioContext",
-  "type": "sno"
- },
+ "unk_b37e635": null,
+ "snoAudioContext": null,
  "unk_af3a4c1": [
   {
-   "value": 965050,
-   "group": 73,
+   "__raw__": 965050,
+   "__group__": 73,
+   "__type__": "DT_SNO",
+   "__typeHash__": 2764331143,
    "groupName": "Item",
-   "type": "sno",
    "name": "QST_Hawe_Delta_EliasFinger"
   }
  ]
