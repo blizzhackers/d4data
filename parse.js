@@ -235,10 +235,10 @@ let basicTypes = {
     ret.__typeHash__ = typeHashes[0];
 
     if (devAttributes >= DEV_INFO) {
-      ret.__group__ = field.__group__;
+      ret.group = field.group;
 
-      if (gbid[ret.__group__] && gbid[ret.__group__][ret.__raw__] && gbid[ret.__group__][ret.__raw__].length) {
-        ret.name = gbid[ret.__group__][ret.__raw__][0];
+      if (gbid[ret.group] && gbid[ret.group][ret.__raw__] && gbid[ret.group][ret.__raw__].length) {
+        ret.name = gbid[ret.group][ret.__raw__][0];
       }
     }
   },
