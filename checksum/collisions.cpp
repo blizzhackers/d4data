@@ -18,9 +18,8 @@ std::unordered_set<uint32_t> checksumMatchSecondary;
 bool hashType = 0, outputLog = true;
 bool paired = false, usingFieldTypeMap = false;
 
-std::vector<std::string> prefix;
+std::vector<std::string> subdict[64];
 std::vector<std::string> dict;
-std::vector<std::string> suffix;
 std::unordered_map<std::string, bool> stringUsed;
 std::unordered_map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
 std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
@@ -39,24 +38,28 @@ uint32_t checksum(std::string str, uint32_t hash = 0, uint32_t hashType = 0) {
 }
 
 auto getDictSize(long pos, long max) {
-  if (pos == 0 && prefix.size() > 0) {
-    return prefix.size();
+  // If suffixes exist, use those.
+  if (subdict[63].size() > 0 && pos == max - 1) {
+    pos = 63;
   }
 
-  if (pos == max - 1 && suffix.size() > 0) {
-    return suffix.size();
+  // If positional dict overrides exist, use those.
+  if (subdict[pos].size() > 0) {
+    return subdict[pos].size();
   }
 
   return dict.size();
 }
 
 std::string getDictEntry(long index, long pos, long max) {
-  if (pos == 0 && prefix.size() > 0) {
-    return prefix[index];
+  // If suffixes exist, use those.
+  if (subdict[63].size() > 0 && pos == max - 1) {
+    pos = 63;
   }
 
-  if (pos == max - 1 && suffix.size() > 0) {
-    return suffix[index];
+  // If positional dict overrides exist, use those.
+  if (subdict[pos].size() > 0) {
+    return subdict[pos][index];
   }
 
   return dict[index];
@@ -130,7 +133,7 @@ bool checkPaired(int32_t max) {
 }
 
 bool correctType(uint32_t currentChecksum) {
-  if (!usingFieldTypeMap || prefix.size() < 1) {
+  if (!usingFieldTypeMap || subdict[0].size() < 1) {
     return true;
   }
 
@@ -139,7 +142,7 @@ bool correctType(uint32_t currentChecksum) {
   }
 
   for (uint32_t typeHash : fieldTypeMap[currentChecksum]) {
-    if (typePrefixes[typeHash].count(prefix[tmp[0]]) > 0) {
+    if (typePrefixes[typeHash].count(subdict[0][tmp[0]]) > 0) {
       return true;
     }
   }
@@ -559,8 +562,8 @@ void loadFieldTypeMap () {
 }
 
 int main(int argc, char *argv[]) {
-  bool gettingPrefix = false;
-  bool gettingSuffix = false;
+  uint32_t gettingSubDict = 0;
+  uint32_t subDictPos = 0;
   bool gettingMin = false;
   bool gettingMax = false;
   bool useDict = true;
@@ -593,13 +596,18 @@ int main(int argc, char *argv[]) {
         hashType = 2;
       }
       else if(arg == "--prefix") {
-        gettingPrefix = true;
+        gettingSubDict = 2;
+        subDictPos = 0;
       }
       else if(arg == "--suffix") {
-        gettingSuffix = true;
+        gettingSubDict = 2;
+        subDictPos = 63;
+      }
+      else if(arg == "--subdict") {
+        gettingSubDict = 1;
       }
       else if(arg == "--no-prefix") {
-        prefix.clear();
+        subdict[0].clear();
         noPrefix = true;
       }
       else if(arg == "--words-only") {
@@ -629,13 +637,32 @@ int main(int argc, char *argv[]) {
       else if(arg[0] == '-') {
         // discard unknown option
       }
-      else if(gettingPrefix) {
-        prefix.push_back(arg);
-        gettingPrefix = false;
+      else if(gettingSubDict == 1) {
+        std::stringstream ss;
+
+        ss << arg;
+        ss >> subDictPos;
+
+        gettingSubDict = 2;
       }
-      else if(gettingSuffix) {
-        suffix.push_back(arg);
-        gettingSuffix = false;
+      else if(gettingSubDict == 2) {
+        if (arg.length()) {
+          std::stringstream ss;
+          std::string str;
+
+          ss << arg;
+          ss >> str;
+
+          while (ss) {
+            subdict[subDictPos].push_back(str);
+            ss >> str;
+          }
+        }
+        else {
+            subdict[subDictPos].push_back(arg);
+        }
+
+        gettingSubDict = 0;
       }
       else if(gettingMin) {
         uint32_t uTmp = 0;
@@ -760,9 +787,9 @@ int main(int argc, char *argv[]) {
     dict.push_back(elem.first);
   }
 
-  if (hashType == 1 && !noPrefix && prefix.size() < 1) {
-    prefix = getPrefixes();
-    prefix.push_back("");
+  if (hashType == 1 && !noPrefix && subdict[0].size() < 1) {
+    subdict[0] = getPrefixes();
+    subdict[0].push_back("");
   }
 
   if (hashType == 1) {
@@ -770,9 +797,9 @@ int main(int argc, char *argv[]) {
   }
 
   if (checksumMatch.size()) {
-    std::cerr << "Prefix size: " << prefix.size() << std::endl;
+    std::cerr << "Prefix size: " << subdict[0].size() << std::endl;
     std::cerr << "Dictionary size: " << dict.size() << std::endl;
-    std::cerr << "Suffix size: " << suffix.size() << std::endl;
+    std::cerr << "Suffix size: " << subdict[63].size() << std::endl;
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
     for (uint32_t c = minPos; c < maxPos; c++) {
       std::cerr << "Length: " << (c + 1) << std::endl;
