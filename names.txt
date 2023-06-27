@@ -307,6 +307,7 @@ EndConversationMessage
 EndOfTickMessage
 EngagedMessage
 EnterKnownLookOverrides
+EnterKnownShaderMapOverrides
 EnterWorldMessage
 EnterWorldPlayer
 Environment
@@ -331,6 +332,7 @@ FloatingAmountMessage
 FloatingNumberMessage
 FogMask
 FogOfWarDefinition
+FogOfWarImage
 FogVolumeDefinition
 FoliageGrid
 FoliageSettings
@@ -400,6 +402,7 @@ HelpCode_Table
 HeroDefinition
 HeroDetailsArray
 HeroDetailsEntry
+HeroDetailsValue
 HeroPreset
 HiddenCacheEntry
 HiddenCacheEntry_Table
@@ -684,6 +687,7 @@ PowerConditionHasResource
 PowerConditionIsPet
 PowerConditionIsPower
 PowerConditionOnChance
+PowerCrowdControlInfo
 PowerDefinition
 PowerFormulaTableEntry
 PowerFormulaTableEntry_Table
@@ -970,6 +974,7 @@ TriggerEventShowSubtitle
 TriggerEventSpawnObject
 TriggerEventVoice
 TriggerGizmoData
+TriggerProximityData
 TryChatMessage
 TryConsoleCommand
 TrySalvageAllMessage
@@ -1254,6 +1259,8 @@ arHairColorChoices
 arHairColorList
 arHairColors
 arHairStyleChoices
+arHealthPotions
+arHeroDetailsEntries
 arHeroes
 arIKFrames
 arIKWindows
@@ -1299,6 +1306,7 @@ arNPCs
 arNewItems
 arNodes
 arNpcTemplates
+arOceanMask
 arOptionalParams
 arParamTypes
 arParametricLayers
@@ -1353,6 +1361,7 @@ arShaderMapOverrides
 arShaderOverrides
 arSideQuests
 arSkillTags
+arSkillTreeIcons
 arSkinColorList
 arSkinColors
 arSlides
@@ -1454,6 +1463,7 @@ bForever
 bFromItem
 bHarmful
 bHasDamageShield
+bHasPlayerIndicator
 bHasRotation
 bHasSocket
 bHide
@@ -1488,14 +1498,17 @@ bIsCheat
 bIsChild
 bIsCoreStat
 bIsCraftItemName
+bIsCraftingMat
 bIsDefault
 bIsDisabled
 bIsDragTarget
 bIsEnchant
 bIsGlobal
+bIsHiddenAffix
 bIsMale
 bIsPassive
 bIsPlayer
+bIsPlayerAlly
 bIsPrimary
 bIsTransmog
 bIsUnique
@@ -1557,9 +1570,14 @@ bTriggersOnce
 bUnlocked
 bUntargetableDuring
 bUsableInTown
+bUseAltName
+bUseAlternateName
+bUseAnimatedOffset
 bUseDropShadow
 bUseMask
+bUseTargetActor
 bUsesOperand
+bUsesWeaponExpertise
 bVal
 bValid
 bVertical
@@ -1707,6 +1725,7 @@ dwPhase
 dwPhaseNameHash
 dwPhaseUID
 dwPitch
+dwPlaylistID
 dwPlaylistIndex
 dwPortalType
 dwQuestHash
@@ -1879,6 +1898,7 @@ eHealType
 eHintingMode
 eHintingStyle
 eHirelingClass
+eHitFlashCurve
 eHitSound
 eHotkey
 eHotkeyAlternate
@@ -1985,6 +2005,7 @@ eScope
 eScrollbarAlignment
 eScrollbarStyle
 eScrollbarVisibility
+eSecondaryBlendParam
 eSelectionOrder
 eSemantic
 eServiceType
@@ -2083,6 +2104,7 @@ fFlatten
 fGenerateFootstepParticles
 fGenerated
 fGrass
+fHasZoneMap
 fHealer
 fHeight
 fHidden
@@ -2099,6 +2121,7 @@ fIsCorpse
 fIsFogged
 fIsLoop
 fIsNPC
+fIsSpawned
 fIsStatic
 fIsTracked
 fIsTraversalExit
@@ -2185,6 +2208,7 @@ flBorderWidth
 flBottom
 flCancelDistance
 flCapsuleLength
+flCastingEffectGroupDuration
 flChance
 flChillDuration
 flCloudScale
@@ -2275,6 +2299,9 @@ flHeightMax
 flHeightMin
 flHeightScale
 flHirelingDiminishedBonusRatio
+flHitFlashIntensity
+flHitFlashMultiplier
+flHitFlashPower
 flHorizontalStiffness
 flHue
 flIdleRadius
@@ -2283,6 +2310,10 @@ flImpactDirection
 flImpactPitch
 flImpulseFactor
 flIntensity
+flIrisBrightness
+flIrisRotation
+flLastDistance
+flLastPercent
 flLastPlayedTime
 flLastWeight
 flLateralMaxDistance
@@ -2349,6 +2380,7 @@ flPriority
 flProgressMax
 flProgressMin
 flProjectileRadius
+flPupilSize
 flRadius
 flRadiusA
 flRadiusB
@@ -2382,6 +2414,8 @@ flSeconds
 flSecs
 flSellPricePercent
 flShearStiffness
+flShoreMultiplier
+flShoreSpeed
 flSinIncAccel
 flSinIncPerTick
 flSkinExponent
@@ -2481,6 +2515,7 @@ gbidHelpCode
 gbidHiddenCache
 gbidHiddenCaches
 gbidLabel
+gbidLookTag
 gbidName
 gbidPetType
 gbidRanks
@@ -2517,8 +2552,10 @@ hIconOverride
 hIconPushed
 hIconRound
 hImage
+hImageDisabled
 hImageFrame
 hImageHandle
+hImageHover
 hImageNormal
 hLabel
 hLargeIcon
@@ -2534,10 +2571,12 @@ hResource
 hRightBorder
 hSmallIcon
 hSocketedImage
+hSourceImage
 hStructure
 hSubtitle
 hTemplate
 hText
+hTileImage
 hTitle
 hTooltipText
 hTopBorder
@@ -2577,11 +2616,14 @@ localTransform
 mInertiaTensor
 m_FaceCount
 m_VertexCount
+m_aBendingConstraints
 m_aCapsules
+m_aDistanceConstraints
 m_aFaceSubEdges
 m_aFaces
 m_aPlanes
 m_aSubEdges
+m_aVertexMap
 m_aVertices
 m_annItem
 m_area
@@ -2594,6 +2636,7 @@ m_cellId
 m_cellWidth
 m_centroid
 m_data
+m_eHasModifiedPowerTagMap
 m_faceCount
 m_friction
 m_id
@@ -2693,6 +2736,7 @@ nIndexCount
 nIndexNode
 nIndexOffset
 nInputFocusOrder
+nIntLiteral
 nIntValue
 nIsFemale
 nItemCount
@@ -2728,6 +2772,7 @@ nMarkerIndex
 nMaterialIndex
 nMaxCount
 nMaxHeight
+nMaxHitFlash
 nMaxIterations
 nMaxLeaves
 nMaxLevel
@@ -2767,6 +2812,7 @@ nPlayerClass
 nPlayerKills
 nPlayers
 nPotionCount
+nPotionTier
 nPrimitiveCount
 nPrimitiveIndex
 nPriority
@@ -2795,6 +2841,7 @@ nSlotMinY
 nSlotX
 nSlotY
 nSlots
+nSocketIndex
 nSortOrder
 nSortPri
 nSpawnMaxCount
@@ -2908,10 +2955,14 @@ pathParticleDuration
 pathParticleScale
 pathPhaseSpeedOverTime
 pathRadius
+pathScaleOverLength
+pathScaleOverTime
 pathSeparation
+pathShadowIntensity
 pathSourcePointAlongRopeMotion
 pathSourcePointPerpendicularMotion
 pathSourcePointWorldUpMotion
+pathSourceRadius
 pathSunColor
 pathSunIntensity
 pathSystemAlpha
@@ -3078,6 +3129,7 @@ ptUIData
 ptVOData
 ptValidComponents
 ptVertexElems
+ptVertexMap
 ptVertices
 ptWaypointGizmoData
 ptWeaponClasses
@@ -3206,6 +3258,7 @@ snoDefaultSoundTable
 snoDemonScroll
 snoDepth
 snoDestLevelArea
+snoDestStringList
 snoDestination
 snoDisallowedAffixes
 snoDisembodiedVoice
@@ -3716,9 +3769,11 @@ tDebugName
 tDefault
 tDefaultEntry
 tDefaultLook
+tDefaultPortalInfo
 tDefaultTextures
 tDelay
 tDestination
+tDestinationAttribute
 tDisplayTimes
 tDomainEpoch
 tDuration
@@ -3728,6 +3783,7 @@ tElements
 tEnchantAffixChoices
 tEnchantSkills
 tEnterKnownLookOverrides
+tEnterKnownShaderMapOverrides
 tEntries
 tEnvironment
 tEquipment
@@ -3778,6 +3834,7 @@ tItems
 tJewelry
 tKey
 tKeyVal
+tKeyedDungeonReward
 tLevelScaling
 tLevelScalingData
 tLightInfluenceSettings
@@ -3803,9 +3860,11 @@ tMatTex
 tMatTexProjected
 tMaterial
 tMax
+tMaxBlend
 tMaxCharges
 tMaxStackCount
 tMetadata
+tMinBlend
 tMinRequired
 tMonsterACDInfo
 tMountACDInfo
@@ -3829,6 +3888,7 @@ tParent
 tParentBoneName
 tPassiveData
 tPathData
+tPathHandle
 tPayload
 tPhaseName
 tPitch
@@ -3880,8 +3940,10 @@ tSlot
 tSlots
 tSlowAmount
 tSoundPlayHistory
+tSourceAttribute
 tSpecificItem
 tSphere
+tStaggerMultiplier
 tStarsSettings
 tStartEvent
 tStateA
