@@ -1,6 +1,12 @@
 const fs = require('fs');
 const node_path = require('node:path');
 const definitions = require('./definitions.json');
+
+const attributes = Object.values(require('./attributes.json')).reduce((t, v) => {
+  t[v.eAttrib] = v;
+  return t;
+}, {});
+
 const snoGroups = require('./json/snoGroups.json');
 
 const DEV_NONE = 0;
@@ -617,6 +623,10 @@ function readStructure(file, typeHashes, offset, field, fieldPath, results = { r
 
     type.fields.forEach(field => {
       ret[field.name] = readStructure(file, field.type, offset + field.offset, field, [...fieldPath, field.name], subresults);
+
+      if (ret.eAttribute !== null && ret.eAttribute !== undefined) {
+        ret.__eAttribute_name__ = attributes[ret.eAttribute].name;
+      }    
     });
 
     results.readLength += type.size;
