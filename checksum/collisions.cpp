@@ -15,7 +15,8 @@ uint32_t minPos = 0;
 
 std::unordered_set<uint32_t> checksumMatch;
 std::unordered_set<uint32_t> checksumMatchSecondary;
-bool hashType = 0, outputLog = true;
+uint32_t hashType = 0;
+bool outputLog = true;
 bool paired = false, usingFieldTypeMap = false;
 
 std::vector<std::string> subdict[64];
@@ -165,7 +166,7 @@ void collisions(long pos, long max, uint32_t currentChecksum = 0) {
         else if (hashType == 1) {
           outfilePath << "field/";
         }
-        else if (hashType == 1) {
+        else if (hashType == 2) {
           outfilePath << "gbid/";
         }
 
@@ -750,13 +751,13 @@ int main(int argc, char *argv[]) {
   std::unordered_map<std::string, bool> dictmap;
 
   if (!wordsOnly) {
-    for (const auto baseelem : defaultDict) {
+    for (const auto &baseelem : defaultDict) {
       dictmap[baseelem] = true;
     }
   }
 
   if (useDict) {
-    for (const auto baseelem : (useDict ? getDict(useEnglish) : defaultDict)) {
+    for (const auto &baseelem : (useDict ? getDict(useEnglish) : defaultDict)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
         std::string newelem = elem;
