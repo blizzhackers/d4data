@@ -169,7 +169,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -246,8 +245,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -313,7 +311,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tHydra.Wait(1.0)\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayConversation(convPlayer01, tPlayers[i])\r\n\tend\r\n\r\n\tHydra.WaitForConversationFinished(convPlayer01)\r\n\t\r\n\tHydra.Wait(1)\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayEffectGroup(tPlayers[i], fxWolfHowl)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -390,8 +387,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -479,7 +475,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\r\n\tHydra.Wait(1)\r\n\tif Hydra.ActorIsValid(idActorPlayer) == true then\r\n\t\tHydra.ActorPlayConversation(convPlayer02, idActorPlayer) -- Global Chatter\r\n\t\tHydra.WaitForConversationFinished(convPlayer02)\r\n\t\tHydra.Wait(0.5)\r\n\tend\r\n\t\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayConversation(convMonk01, tPlayers[i])\r\n\tend\r\n\t\r\n\tHydra.Wait(4)\r\n\t\r\n\t-- We send an event so that the objective doesn't get marked off until after the conversation.\r\n\tHydra.EventSend(\"VoiceDone\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -605,7 +600,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -691,8 +685,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -712,8 +705,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -845,7 +836,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -922,8 +912,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1016,7 +1005,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.Wait(0.5)\r\n\tHydra.QActorClearAnimSetOverride(actorVani)\r\n\tHydra.QActorClearAnimSetOverride(actorOswen)\r\n\tHydra.QActorFaceSameAsActor(actorVani, locVaniFacePlayerShed)\r\n\tHydra.QActorFaceSameAsActor(actorOswen, locOswenFacePlayerShed)\r\n\t\r\n\tHydra.Wait(3.5)\r\n\tHydra.ActorSetConversationStatus(actorVani, true)\r\n\tHydra.ActorSetConversationStatus(actorOswen, true)\r\n\tHydra.ActorSetConversationStatus(actorMonkStocks, true)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1093,8 +1081,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1114,8 +1101,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1277,7 +1262,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorSetUseAlternateName(actorMonkStocks, false)\r\n\t\r\n\t-- Oswen leaves the building but stays outside the door\r\n\tHydra.QActorWait(actorOswen, 5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorOswen, locOswenShed, \"NPC_Walk\", true)\r\n\tHydra.QActorFaceSameAsActor(actorOswen, locOswenShed)\r\n\tHydra.QActorSetAnimSetOverride(actorOswen, \"NPC_Idle_Stand_Lean\")\r\n\tHydra.QActorSetConversationList(actorOswen, \"NPC_Frac_Prologue_Oswen\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1354,8 +1338,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1375,8 +1358,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.ActorPlaySimpleConversation(convVaniLeaves, actorVani)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1492,7 +1473,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1569,8 +1549,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1611,7 +1590,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- Vani walks towards Tavern Door\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorVani, locTavernDoor, \"NPC_Walk_SemiFast\", true)\r\n\tHydra.QActorFaceActor(actorVani, actorTavernDoor)\r\n\tHydra.WaitForQEmpty(actorVani)\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Make it look like Vani opened the door\r\n\tHydra.ActorGizmoOperate(actorTavernDoor)\r\n\tHydra.ActorEnable(actorStanis)\r\n\tHydra.ActorEnable(actorIsbel)\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Move to the final location, face towards player\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorVani, locVaniInside, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(actorVani, locVaniInside)\r\n\tHydra.WaitForQEmpty(actorVani)\r\n\t\r\n\tHydra.EventSend(\"VaniReachedTheFireplace\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1719,7 +1697,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1796,8 +1773,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1817,8 +1793,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1973,7 +1947,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t-- Remove EXP adjustment for pre-Nevesk.\r\n\tlocal tPlayers = Hydra.QuestGetParticipants();\r\n\tfor i,idPlayer in pairs(tPlayers) do\r\n\t\tHydra.BuffRemove(S_POWER_EXP_ADJUSTER, \"PRE_NEVESK\", idPlayer);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2050,8 +2023,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2071,8 +2043,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Whether we are on the final phase, which dictaes whether the heartbeat/subzone XP buff application should work\r\nbFinalPhase = true",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2192,7 +2162,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, snoSubzone)\r\n\r\n\tif bFinalPhase == false then\r\n\t\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\t\r\n\t\t-- Apply an exp adjustment for pre-Nevesk to ensure players only level up inside Nevesk.\r\n\t\tfor i,idPlayer in pairs(tPlayers) do\r\n\t\t\tHydra.BuffApplyToTarget(S_POWER_EXP_ADJUSTER, \"PRE_NEVESK\", idPlayer);\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2263,7 +2232,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif bFinalPhase == false then\r\n\t\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\t\r\n\t\t-- Apply an exp adjustment for pre-Nevesk to ensure players only level up inside Nevesk.\r\n\t\tfor i,idPlayer in pairs(tPlayers) do\r\n\t\t\tHydra.BuffApplyToTarget(S_POWER_EXP_ADJUSTER, \"PRE_NEVESK\", idPlayer);\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2340,8 +2308,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2420,7 +2387,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t-- If the player attacks that first wolf, bring his buddies on board\r\n\t\r\n\tif bFirstWarg == false then\r\n\t\tbFirstWarg = true\r\n\r\n\t\tHydra.ActorEnableAI(idActorDamaged)\r\n\t\tHydra.ActorAddAITarget(idActorDamaged, idActorDamager)\r\n\t\tHydra.QActorAnim(idActorDamaged, \"Generic_Taunt\")\r\n\t\tHydra.Wait(1.5)\r\n\t\t\r\n\t\tfor i, Spawner in ipairs(tWolfSpawners) do\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(Spawner)\r\n\t\t\tHydra.Wait(0.15)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2521,7 +2487,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- if the player skips past the wolf, do the same as attacking, but faster\r\n\tif bFirstWarg == false then\r\n\t\tbFirstWarg = true\r\n\r\n\t\tHydra.ActorEnableAI(actorWolfEating)\r\n\t\tHydra.ActorAddAITarget(actorWolfEating, idActor)\r\n\t\tHydra.QActorAnim(actorWolfEating, \"Generic_Taunt\")\r\n\t\t\r\n\t\tfor i, Spawner in ipairs(tWolfSpawners) do\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(Spawner)\r\n\t\t\tHydra.Wait(0.15)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2598,8 +2563,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2678,7 +2642,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorVendor)\r\n\r\n\tHydra.ActorPlayConversation(conv_Isbel, idActorPlayer, idActorVendor)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2755,8 +2718,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2835,7 +2797,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorVendor)\r\n\r\n\tHydra.ActorPlayConversation(conv_Stanis, idActorPlayer, idActorVendor)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2912,8 +2873,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2933,8 +2893,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2964,11 +2922,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Weather\r\nS_WORLD_SANCTUARY = Hydra.ReferenceWorld(\"Sanctuary_Eastern_Continent\")\r\nS_WEATHER_PROLOGUE = Hydra.ReferenceWeather(\"weather_FracturedPeaks_prologue\")\r\nHydra.WeatherOverride(S_WORLD_SANCTUARY, S_WEATHER_PROLOGUE)\r\nHydra.TimeOfDaySetOverride(S_WORLD_SANCTUARY, 0.0)\r\n\r\nHydra.ActorSetUseAlternateName(actorMonkStocks, true)\r\n\r\nHydra.ActorSetIdleAnim(actorWolfEating, \"GenericJobState\")\r\ntWolfSpawners = Hydra.ActorsInGroup(\"Prologue_WolfAmbushSpawners\")\r\n\r\nHydra.ActorDisable(actorStanis)\r\nHydra.ActorDisable(actorIsbel)\r\n\r\nHydra.ActorSetConversationStatus(actorVani, false)\r\nHydra.ActorSetConversationStatus(actorOswen, false)\r\nHydra.ActorSetConversationStatus(actorMonkStocks, false)\r\n\r\n-- The status of the first warg\r\nbFirstWarg = false\r\n\r\n-- Whether we are on the final phase, which dictaes whether the heartbeat/subzone XP buff application should work\r\nbFinalPhase = false\r\n\r\n-- Used to adjust how much exp players are getting from monster kills\r\nS_POWER_EXP_ADJUSTER = Hydra.ReferencePower(\"QST_Prologue_Experience_Adjuster\");",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -129,7 +129,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorReceptacle, dwCount)\r\n\t--Bridge Logic\r\n\tlocal tBlockers = Hydra.ActorsLinkedByActorInGroup(idActorReceptacle, \"DOOR\")\r\n\tlocal tTorches = Hydra.ActorsLinkedByActorInGroup(idActorReceptacle, \"TORCH\")\r\n\tlocal tFlames = Hydra.ActorsLinkedByActorInGroup(idActorReceptacle, \"FLAME\")\r\n\tlocal idBridge = Hydra.ActorsLinkedByActorInGroup(idActorReceptacle, \"BRIDGE\")[1]\r\n\t\r\n\tfor i, idBlocker in pairs(tBlockers) do\r\n\t\tHydra.ActorDelete(idBlocker)\r\n\tend\r\n\t\r\n\tfor j, idTorches in pairs(tTorches) do\r\n\t\tHydra.ActorGizmoSetDisabled(idTorches, true)\r\n\tend\r\n\t\r\n\tfor k, idFlame in pairs(tFlames) do\r\n\t\tHydra.ActorPlayEffectGroup(idFlame, S_FX_WHITEFLAME)\r\n\t\tHydra.Wait(0.1)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(idBridge)\r\n\tHydra.ActorSceneRevealSecretMap(idBridge, 1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -206,8 +205,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -227,8 +225,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -258,11 +254,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

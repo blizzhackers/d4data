@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -356,7 +352,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -433,8 +428,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -454,8 +448,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorPlayEffectGroup(ID_SIGIL_MARKER, T_SIGILS[Hydra.GetRandomInt(1, #T_SIGILS)], true)\r\n\r\nHydra.Wait(1)\r\n\r\nif bElite then\r\n\tHydra.ActorPlayEffectGroup(idSelf, SFX_WARNING_MINOR)\r\nelse\r\n\tHydra.ActorPlayEffectGroup(idSelf, SFX_WARNING_MAJOR)\r\nend\r\n\r\nHydra.Wait(0.5)\t\r\n\r\n-- spawn monsters\r\nHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"spawner\")\r\nfor i, spawnerId in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawner\")) do\r\n\tHydra.ActorTriggerSpawnerUpdate(spawnerId)\r\nend\r\n\r\n-- chance to spawn elite\r\nif bElite then\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"elite\")\r\nend\r\nOWC_SMP_CHECK()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -485,11 +477,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idSelf = Hydra.QuestGetOwner()\r\nbElite = false\r\n\r\nif Hydra.GetRandomFloat() <= 1 then\r\n\tbElite = true\r\nend\r\n\r\nT_SIGILS = \r\n\t{\r\n\t\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_01\"),\r\n\t\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_02\"),\r\n\t\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_03\"),\r\n\t\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_04\")\r\n\t}\r\n\t\r\nHydra.ActorSetPowerEffectSize(ID_SIGIL_MARKER, 10)",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

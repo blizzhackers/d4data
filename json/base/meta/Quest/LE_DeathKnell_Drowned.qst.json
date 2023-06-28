@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -194,8 +192,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -306,7 +302,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -383,8 +378,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -467,7 +461,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -520,7 +513,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.QuestCallbackCountSet(107, BELLS_KILLED)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -597,8 +589,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -618,8 +609,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.Wait(0.25)\r\n\r\nfor i, idBell in pairs(Hydra.ActorsInPrefabScopedGroup(\"LE_Drowned_DeathKnell_Bells\")) do\r\n\tif Hydra.ActorIsValid(idBell) then\r\n\t\tHydra.ActorKill(idBell)\r\n\tend\r\nend\r\n\r\n-- Disable Spawners\r\nfor i, idSpawner in pairs(T_SPAWNERS_ALL) do\r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorDelete(idSpawner)\r\n\tend\r\nend\r\n\r\n-- Spawn a super here if we completed the mastery\r\nif Hydra.QuestGetBonusPhaseResult() then\r\n\tHydra.ActorSetPowerEffectSize(SUPER_SPAWNER, 8)\r\n\tHydra.ActorPlayEffectGroup(SUPER_SPAWNER, EG_BURST_WATER)\r\n\tHydra.ActorTriggerSpawnerUpdate(SUPER_SPAWNER)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -710,7 +699,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -787,8 +775,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -861,7 +848,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"spawnerBellKilled\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -967,7 +953,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\n\tupdateBellSpawner()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1044,8 +1029,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1097,7 +1081,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"elite_spawner\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1174,8 +1157,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1255,7 +1237,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tBELLS_KILLED = BELLS_KILLED + 1\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1332,8 +1313,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1353,8 +1333,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "updateBellSpawner()\r\nHydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"spawnerAmbient\")",
-   "szOnExitScript": "BELLS_KILLED = Hydra.QuestCallbackCountGet(97)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1461,7 +1439,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1538,8 +1515,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1559,8 +1535,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1665,7 +1639,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1742,8 +1715,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1795,7 +1767,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1872,8 +1843,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1893,8 +1863,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 4,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1999,7 +1967,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.QActorAnimAndNewIdle(idActorSpawned, S_SPAWN_ANIM, S_SPAWN_IDLE)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2076,8 +2043,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2097,8 +2063,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2128,11 +2092,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function updateBellSpawner()\r\n\tHydra.Wait(Hydra.GetRandomFloat(0.5, 1.5))\r\n\t\r\n\tnCurrentBellSpawnIndex = nCurrentBellSpawnIndex + 1\r\n\tHydra.ActorEnable(T_BELL_SPAWNERS[nCurrentBellSpawnIndex])\r\n\tHydra.ActorAddToPrefabScopedGroup(T_BELL_SPAWNERS[nCurrentBellSpawnIndex], \"LE_Drowned_DeathKnell_Bells\")\r\nend",
- "szOnStartupScript": "\t-- Event Generic Data\r\n\tID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\t\r\n\tlocal nBellSpawnerCap = 3\r\n\t\r\n\tnCurrentBellSpawnIndex = 0\r\n\t\r\n\tBELLS_KILLED = 0\r\n\t\r\n\tT_BELL_SPAWNERS = {}\r\n\t\r\n\tfor i=1, nBellSpawnerCap do\r\n\t\tT_BELL_SPAWNERS[i] = Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"spawnerBell\"..tostring(i))[1]\r\n\tend\r\n\t\r\n\tHydra.QActorAnimAndNewIdle(Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"Monster_Bell_Initial\")[1], S_SPAWN_ANIM, S_SPAWN_IDLE)",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

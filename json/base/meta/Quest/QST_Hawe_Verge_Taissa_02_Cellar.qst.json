@@ -143,7 +143,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -229,8 +228,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -250,8 +248,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\tHydra.ActorPlaySimpleConversation(RitualConv_02b, idTaissa)\r\n",
-   "szOnExitScript": "Hydra.ActorRemoveComplexEffect(tEffectActors[3], tEffects[3])\r\nHydra.ActorSetPowerEffectSize(tEffectActors[3], 3)\r\n\r\nHydra.Wait(1)\r\n\r\nHydra.ActorSetIdleAnim(idTaissa, \"AnimKey_Neutral\")\r\n\r\nHydra.ActorPlaySimpleConversation(RitualConv_03, idTaissa)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -386,7 +382,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidTaissa = idActorNPC\r\n\tidFaceLoc = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"FACE_LOC\")[1]\r\n\tHydra.QActorFaceActor(idTaissa, idFaceLoc)\r\n\tHydra.WaitForQEmpty(idTaissa)\r\n\t\r\n\tHydra.ActorSetIdleAnim(idTaissa, \"AnimKey_OmniChannel\")\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idTaissa, 4)\r\n\t\r\n\ttEffects[3] = Hydra.ActorPlayEffectGroup(idTaissa, sWitchEffect, true, Hydra.ACDID_INVALID, true, \"HP_Center\")\r\n\ttEffectActors[3] = idTaissa\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -472,8 +467,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -493,8 +487,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.Wait(1)\r\n\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -622,7 +614,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idTimue, idRoomEntrance, \"NPC_RUN\", true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idTaissa, idRoomEntrance, \"NPC_RUN\", true)\r\n\tHydra.QActorFadeAndDelete(idTaissa, 1)\r\n\tHydra.QActorFadeAndDelete(idTimue, 1)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -708,8 +699,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -729,8 +719,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -803,7 +791,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\ttNPCWitches = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"NPC_WITCHES\")\r\n\ttAllWitches = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"ALL_WITCHES\")\r\n\ttAllWitches = SortActorListByDistance(idTaissa, tAllWitches)\r\n\tidTimue = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"TIMUE\")[1]\r\n\tHydra.ActorSetConversationList(idTimue, \"\")\r\n\tidTimueRunLoc = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"TimueRunLoc\")[1]\r\n\tidRoomEntrance = Hydra.ActorsLinkedByActorInGroup(idTaissa, \"RoomEntrance\")[1]\r\n\t\r\n\t\r\n\tfor i, idAllWitch in ipairs(tAllWitches) do\r\n\t\tHydra.ActorEnable(idAllWitch)\r\n\t\tlocal idWalkTo = Hydra.ActorsLinkedByActorInGroup(idAllWitch, \"WALK_TO\")[1]\r\n\t\tHydra.QActorWait(idAllWitch, Hydra.GetRandomFloat(0.1, 0.3))\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idAllWitch, idWalkTo, \"NPC_WALK\", true)\r\n\t\t--Hydra.QActorFaceSameAsActor(idAllWitch, idWalkTo)\r\n\t\t--Hydra.ActorSetPowerEffectSize(idAllWitch, 5)\r\n\t\t--Hydra.QActorPlayEffectGroup(idAllWitch, sShaderRemove)\r\n\t\tHydra.QActorPlayEffectGroup(idAllWitch, sWitchEffect, false, Hydra.ACDID_INVALID, \"HP_Center\")\r\n\tend\r\n\t\r\n\tHydra.ActorPlaySimpleConversation(RitualConv_03, idTaissa)\r\n\tHydra.WaitForConversationFinished(RitualConv_03)\r\n\tHydra.ActorEnable(idTimue)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idTimue, idTimueRunLoc, \"NPC_WALK\", true)\r\n\t\t\r\n\tfor i, idAllWitch in ipairs(tAllWitches) do\r\n\t\tlocal idWalkTo = Hydra.ActorsLinkedByActorInGroup(idAllWitch, \"WALK_TO\")[1]\r\n\t\tHydra.ActorDelete(idAllWitch)\r\n\t\tHydra.ActorSetPowerEffectSize(idWalkTo, 4)\r\n\t\tHydra.ActorPlayEffectGroup(idWalkTo, sWitchEnd)\r\n\tend\r\n\t\r\n\tHydra.ActorPlaySimpleConversation(RitualConv_04, idTaissa)\r\n\t\r\n\tHydra.WaitForConversationFinished(RitualConv_04)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -880,8 +867,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -901,8 +887,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -932,11 +916,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "tEffects = {}\r\ntEffectActors = {}\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -160,7 +160,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -270,7 +269,6 @@
        "unk_9c1ea4f": 137,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -347,8 +345,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -400,7 +397,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif Hydra.ActorGetPrimaryPower(ID_CHILD) == SNO_PHASED then\r\n\t\tHydra.ActorTriggerPhaseJump(ID_CHILD)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -477,8 +473,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -498,8 +493,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -621,7 +614,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -698,8 +690,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(0.02)\r\n\r\nHydra.ActorRemoveMergedAIState(ID_CHILD, AISTATE_CHILD_CONTROLLER)\r\n\r\nif Hydra.QuestGetBonusPhaseResult() then\r\n\tHydra.QuestAdvancePhase()\r\nelse\r\n\tHydra.EventSendToActor(\"BONUS_FAILED\", ID_THIS_QUEST, ID_THIS_QUEST)\r\nend\r\n\t"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -789,7 +780,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -866,8 +856,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -901,7 +890,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.ActorMergeAIState(ID_CHILD, AISTATE_CHILD_CONTROLLER, ID_CHILD, 0)\r\n\tsetNextTrigger(false)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1003,7 +991,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.ActorPlayEffectGroup(T_HINTS[nCurrentBodyIndex], EG_SKELETON_SPAWN)\r\n\t\r\n--\tHydra.ActorSetInvulnerable(T_HINTS[nCurrentBodyIndex], false)\r\n--\tHydra.ActorSetCollidable(T_HINTS[nCurrentBodyIndex], true)\r\n\t\r\n\tHydra.ActorKill(T_HINTS[nCurrentBodyIndex])\r\n\t\r\n\tlocal ptSpawn = Hydra.ActorGetPosition(T_HINTS[nCurrentBodyIndex])\r\n\tlocal pfSpawn = Hydra.PositionGetFacingToPosition(ptSpawn, Hydra.ActorGetPosition(ID_CHILD))\r\n\t\r\n\tHydra.ActorSpawnActor(ACTOR_SPAWNER_SKELETON_ELITE, ptSpawn, pfSpawn, false, 0, 0)\r\n\r\n\tsetNextTrigger(true)\r\n\t\r\n\tif Hydra.ActorIsValid(idCurrentSkeletonSpawner) then\r\n\t\tHydra.ActorDelete(idCurrentSkeletonSpawner)\r\n\t\tidCurrentSkeletonSpawner = Hydra.ACDID_INVALID\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1105,7 +1092,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.EventSendToActor(\"TurnOffSpawners\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\r\n\tHydra.BuffRemove(POWER_CORPSE_BUFF, \"MAIN\", T_HINTS[nCurrentBodyIndex])\r\n\t\r\n\tif nCurrentBodyIndex ~= N_NUM_CORPSES then\r\n\t\tlocal ptSpawn = Hydra.ActorGetPosition(T_HINTS[nCurrentBodyIndex])\r\n\t\tlocal pfSpawn = Hydra.PositionGetFacingToPosition(ptSpawn, Hydra.ActorGetPosition(ID_CHILD))\r\n\t\t\r\n\t\tidCurrentSkeletonSpawner = Hydra.ActorSpawnActor(ACTOR_SPAWNER_SKELETON, ptSpawn, pfSpawn, false, 0, 0)\r\n\r\n\telse\r\n\t\r\n\t\tHydra.QuestCallbackCountSet(118, 1000)\r\n\t\tHydra.EventSendToActor(\"AdvanceQuestPhase\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\t\t\r\n\tend\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1207,7 +1193,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tif Hydra.BuffIsOnActor(POWER_MOVE_CONTROLLER, \"NEAR_PLAYER\", ID_CHILD) then\r\n\t\tfor i = 1, nCurrentBodyIndex do\r\n\t\t\tfor i2 = 1, #T_SPAWNERS_WEREWOLF[i] do\r\n\t\t\t\tif Hydra.ActorIsValid(T_SPAWNERS_WEREWOLF[i][i2]) then\r\n\t\t\t\t\tif not Hydra.ActorIsEnabled(T_SPAWNERS_WEREWOLF[i][i2]) then\r\n\t\t\t\t\t\tHydra.ActorEnable(T_SPAWNERS_WEREWOLF[i][i2])\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif Hydra.ActorGizmoIsDisabled(T_SPAWNERS_WEREWOLF[i][i2]) then\r\n\t\t\t\t\t\tHydra.ActorGizmoSetDisabled(T_SPAWNERS_WEREWOLF[i][i2], false)\r\n\t\t\t\t\tend\r\n\t\t\t\tend\t\t\t\t\r\n\t\t\tend\r\n\t\tend\r\n\tend\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1309,7 +1294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tfor i = 1, nCurrentBodyIndex do\r\n\t\tfor i2 = 1, #T_SPAWNERS_WEREWOLF[i] do\r\n\t\t\tif Hydra.ActorIsValid(T_SPAWNERS_WEREWOLF[i][i2]) then\r\n\t\t\t\tif not Hydra.ActorGizmoIsDisabled(T_SPAWNERS_WEREWOLF[i][i2]) then\r\n\t\t\t\t\tHydra.ActorGizmoSetDisabled(T_SPAWNERS_WEREWOLF[i][i2], true)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1411,7 +1395,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.EventSendToActor(\"TurnOnSpawners\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\t\r\n\tlocal flPercent = round(1 - (getSoulDistanceToTarget(nCurrentBodyIndex) / FL_TARGET_DISTANCE), 4)\r\n\t\r\n\tif flPercent > flLastProgressBarPercent then\r\n\t\tflLastProgressBarPercent = flPercent\r\n\t\tHydra.QuestCallbackCountSet(118, flPercent * 1000)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1513,7 +1496,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1600,7 +1582,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1671,7 +1652,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif Hydra.ActorIsValid(ID_CHILD) and \r\n\tHydra.ActorIsValid(T_HINTS[nCurrentBodyIndex]) and\r\n\tHydra.BuffIsOnActor(POWER_MOVE_CONTROLLER, \"NEAR_PLAYER\", ID_CHILD) and\r\n\tnot Hydra.ActorHasAITarget(ID_CHILD, T_HINTS[nCurrentBodyIndex]) then\r\n\t\tHydra.ActorAddAITarget(ID_CHILD, T_HINTS[nCurrentBodyIndex], true)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1748,8 +1728,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1769,8 +1748,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1881,7 +1858,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif idActorKilled == idEliteBoss then\r\n\t\tHydra.EventSendToActor(\"ELITE_DEFEATED\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1983,7 +1959,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2074,7 +2049,6 @@
        "unk_9c1ea4f": 178,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2151,8 +2125,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2172,8 +2145,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.QActorPhasedAnimLoop(ID_CHILD, POWER_SCRIPTED_COWER, 0)\r\n\r\nlocal ptSpawn = Hydra.ActorGetPosition(T_HINTS[N_NUM_CORPSES])\r\nlocal pfSpawn = Hydra.PositionGetFacingToPosition(ptSpawn, Hydra.ActorGetPosition(ID_CHILD))\r\nlocal idPrecursor = Hydra.ActorSpawnActor(ACTOR_ELITE_PRECURSOR, ptSpawn, pfSpawn, false, 0, 0)\r\n\r\nHydra.ActorPlayEffectGroup(idPrecursor, EG_PRECURSOR)\r\n\r\nHydra.Wait(4)\r\n\r\nHydra.ActorPlaySimpleConversation(CONV_ELITE_SPAWN, idPrecursor)\r\nHydra.WaitForConversationFinished(CONV_ELITE_SPAWN)\r\n\r\nidEliteBoss = Hydra.ActorSpawnActor(S_ELITE_TO_SPAWN, ptSpawn, pfSpawn, false, 0, 0, Hydra.MR_SUPER_ELITE)\r\n\r\nlocal idProxy = Hydra.ActorSpawnActor(ACTOR_GENERIC_PROXY, ptSpawn, pfSpawn, false, 0, 0)\r\n\r\nHydra.ActorSetPowerEffectSize(idProxy, 8)\r\n\r\nHydra.ActorPlayEffectGroup(idEliteBoss, EG_ELITE_SPAWN)\r\nHydra.ActorAddToPrefabScopedGroup(idEliteBoss, \"LE_LostSoul_Final_Elite\")\r\nHydra.ActorTriggerPowerAtFeet(idEliteBoss, POWER_SUMMON_ANIMATION) -- can't get sno to feed into actorSpawnActor\r\nHydra.ActorKill(T_HINTS[nCurrentBodyIndex])\r\nHydra.QuestSetCustomParamFromActor(1, idEliteBoss)\r\nHydra.ActorDelete(idPrecursor)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2299,7 +2270,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2376,8 +2346,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorTriggerPhaseJump(ID_CHILD)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2460,7 +2429,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorPlaySimpleConversation(CONV_CALLOUT, ID_CHILD)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2537,8 +2505,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2558,8 +2525,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2674,7 +2639,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2751,8 +2715,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2804,7 +2767,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2881,8 +2843,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2902,8 +2863,6 @@
    "unk_669bcf8": 51,
    "unk_287ecb5": 54,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2969,7 +2928,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\t\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\n\r\n\tif (Hydra.ActorIsValid(idEliteBoss)) then\r\n\t\tlocal ptSpawn = Hydra.ActorGetPosition(idEliteBoss)\r\n\t\tlocal idProxy = Hydra.ActorSpawnActor(ACTOR_GENERIC_PROXY, ptSpawn, ptSpawn, false, 0, 0)\r\n\t\tHydra.ActorSetPowerEffectSize(idProxy, 16)\r\n\t\tHydra.ActorPlayEffectGroup(idProxy, EG_FXKIT_SPIRIT_EXPLODE)\r\n\t\t\r\n\t\tfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(\"LE_LostSoul_All_Mobs\")) do\r\n\t\t\tHydra.ActorPlayEffectGroup(actorID, EG_FXKIT_SPIRIT_IMPACT)\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\t\t\r\n\t\tHydra.ActorTriggerPhaseJump(ID_CHILD)\r\n\t\r\n\t\tidEliteNPC = Hydra.ActorSpawnActor(S_NPC_TO_SPAWN, idEliteBoss, false, 0, 0)\r\n\t\tHydra.ActorSetTeam(idEliteNPC, Hydra.TEAM_SCENERY)\r\n\t\tHydra.ActorTriggerPowerAtFeet(idEliteNPC, POWER_NPC_SPAWN)\r\n\t\r\n\t\tif (Hydra.ActorHasQueuedActions(ID_CHILD)) then\r\n\t\t\tHydra.QActorStopAllQueuedActions(ID_CHILD)\r\n\t\tend\r\n\t\r\n\t\tHydra.QActorWait(idEliteNPC, 1)\r\n\t\tHydra.QActorWait(ID_CHILD, 1)\r\n\t\t\r\n\t\tHydra.QActorFaceActor(idEliteNPC, ID_CHILD)\r\n\t\tHydra.QActorFaceActor(ID_CHILD, idEliteNPC)\r\n\t\t\r\n\t\tHydra.QActorWait(idEliteNPC, 3)\r\n\t\tHydra.QActorWait(ID_CHILD, 3)\r\n\t\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idEliteNPC, ID_CHILD, \"NPC_WALK\", false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(ID_CHILD, idEliteNPC, \"NPC_WALK\", false)\r\n\t\t\r\n\t\tHydra.QActorWait(idEliteNPC, 3)\r\n\t\tHydra.QActorWait(ID_CHILD, 3)\r\n\t\t\r\n\t\tHydra.QActorFadeAndDelete(idEliteNPC, 4)\r\n\t\tHydra.QActorFadeAndDelete(ID_CHILD, 4)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3046,8 +3004,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3067,8 +3024,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3179,7 +3134,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3256,8 +3210,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3277,8 +3230,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorTriggerPowerAtFeet(ID_CHILD, POWER_COLLAPSE_CRY)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3308,11 +3259,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function IsNearAnotherHint(pt, tPtsToCheck)\r\n\r\n\tlocal flDistance = 0\r\n\tlocal nPointsToCheck = #tPtsToCheck\r\n\t\r\n\tif nPointsToCheck == 1 then -- are we checking against the first hint (nearest to center)\r\n\t\r\n\t\tflDistance = Hydra.PositionGetDistanceToPosition(pt, tPtsToCheck[1])\r\n\t\t\r\n\t\tif flDistance < N_DIST_TARGET_BETWEEN_HINTS_MAX then\r\n\t\t\treturn true, flDistance\r\n\t\tend\r\n\t\t\r\n\t\treturn false\r\n\tend\r\n\t\r\n\tfor i = 1, nPointsToCheck do\r\n\t\tflDistance = flDistance + Hydra.PositionGetDistanceToPosition(pt, tPtsToCheck[i])\r\n\tend\r\n\t\r\n\tflDistance = flDistance / nPointsToCheck\r\n\t\r\n\tif flDistance < N_DIST_TARGET_BETWEEN_HINTS_AVG then -- for subsequent points we want the average distance between points to be 16m\r\n\t\treturn true, flDistance\r\n\tend\r\n\r\n\treturn false\r\nend\r\n\r\nlocal function getBestPoint(ptStart, tPtsToCheck)\r\n\t\r\n\tlocal flBestDist = 0\r\n\tlocal ptBest\r\n\t\r\n\tfor i=1, 100 do\r\n\t\r\n\t\tlocal ptSpawn = Hydra.PositionSearchForNearbyNavmeshPosition(ptStart, N_DIST_TARGET_BETWEEN_HINTS_MIN, N_DIST_TARGET_BETWEEN_HINTS_MAX)\r\n\t\tlocal bIsNear, flDistCheck = IsNearAnotherHint(ptSpawn, tPtsToCheck)\r\n\t\t\r\n\t\tif not bIsNear then\r\n\t\t\r\n\t\t\tptSpawn = Hydra.PositionSnapToGround(ptSpawn)\r\n\t\t\treturn ptSpawn\r\n\t\t\t\r\n\t\telse\r\n\t\t\r\n\t\t\tif flDistCheck > flBestDist then\r\n\t\t\t\r\n\t\t\t\tflBestDist = flDistCheck\r\n\t\t\t\tptBest = ptSpawn\r\n\t\t\t\t\r\n\t\t\tend\r\n\r\n\t\tend\r\n\tend\r\n\r\n\treturn ptBest\r\n\t\r\nend\r\n\r\nlocal function round(what, precision)\r\n\r\n   return math.ceil(what*math.pow(10,precision)+0.5) / math.pow(10,precision)\r\n   \r\nend\r\n\r\nlocal function getSoulDistanceToTarget(nCurrentTargetIndex)\r\n\t\r\n\tlocal flDist = Hydra.PositionGetDistanceToPosition(Hydra.ActorGetPosition(ID_CHILD), tSortedPtSpawns[nCurrentTargetIndex])\r\n\t\r\n\tif N_NUM_CORPSES - nCurrentTargetIndex > 0 then -- we're only have one more to go\r\n\t\r\n\t\tfor i = nCurrentTargetIndex + 1, N_NUM_CORPSES do\r\n\t\t\tflDist = flDist + Hydra.PositionGetDistanceToPosition(tSortedPtSpawns[i-1], tSortedPtSpawns[i])\r\n\t\tend\r\n\t\t\r\n\tend\r\n\t\r\n\treturn flDist - 1 -- shave a bit off for attack / combat collision radius\r\n\t\r\nend\r\n\r\nlocal function setNextTrigger(bFlee)\r\n\r\n\tnCurrentBodyIndex = nCurrentBodyIndex + 1\r\n\tHydra.BuffApplyToTarget(POWER_MOVE_CONTROLLER, \"MAIN\", ID_CHILD)\r\n\tHydra.BuffApplyToTarget(POWER_CORPSE_BUFF, \"MAIN\", T_HINTS[nCurrentBodyIndex])\r\n\tHydra.ActorAddAITarget(ID_CHILD, T_HINTS[nCurrentBodyIndex], true)\r\n\tHydra.ActorAIForcePrimaryTarget(ID_CHILD, T_HINTS[nCurrentBodyIndex])\r\nend\r\n\r\nlocal function GetSecondaryMonsterFam(sSNOName)\r\n\tlocal familyNum = Hydra.GetRandomInt(1, 3)\r\n\tif familyNum == 1 then\r\n\t\t--set everything to skeletons\r\n\t\tif sSNOName == ACTOR_NPC_F then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"skeleton_melee_unique_ACD_LE_LostSoul_Child\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Son\")\r\n\t\telseif sSNOName == ACTOR_NPC_MC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"skeleton_melee_unique_ACD_LE_LostSoul_Grandfather\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Grandfather\")\r\n\t\telseif sSNOName == ACTOR_NPC_FC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"skeleton_melee_unique_ACD_LE_LostSoul_Mother\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Mother\")\r\n\t\telseif sSNOName == ACTOR_NPC_M then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"skeleton_melee_unique_ACD_LE_LostSoul_Wife\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Wife\")\r\n\t\tend\r\n\telseif familyNum == 2 then\r\n\t\t--set everything to ghosts\r\n\t\tACTOR_SPAWNER_SKELETON_ELITE = Hydra.ReferenceActor(\"Spawner_LE_LostSoul_Ghost_Elite\")\r\n\t\tACTOR_SPAWNER_SKELETON = Hydra.ReferenceActor(\"Spawner_LE_LostSoul_Ghost\")\r\n\t\tif sSNOName == ACTOR_NPC_F then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"ghost_melee_male_unique_ACD_LE_LostSoul_Child_Ghost\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Son\")\r\n\t\telseif sSNOName == ACTOR_NPC_MC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"ghost_melee_male_unique_ACD_LE_LostSoul_Grandfather_Ghost\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Grandfather\")\r\n\t\telseif sSNOName == ACTOR_NPC_FC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"ghost_melee_female_unique_ACD_LE_LostSoul_Mother_Ghost\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Mother\")\r\n\t\telseif sSNOName == ACTOR_NPC_M then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"ghost_melee_female_unique_ACD_LE_LostSoul_Wife_Ghost\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Wife\")\r\n\t\tend\r\n\telseif familyNum == 3 then\r\n\t\t--set everything to zombies\r\n\t\tACTOR_SPAWNER_SKELETON_ELITE = Hydra.ReferenceActor(\"Spawner_LE_LostSoul_Zombie_Elite\")\r\n\t\tACTOR_SPAWNER_SKELETON = Hydra.ReferenceActor(\"Spawner_LE_LostSoul_Zombie\")\r\n\t\tif sSNOName == ACTOR_NPC_F then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"zombie_melee_male_unique_ACD_LE_LostSoul_Child_Zombie\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Son\")\r\n\t\telseif sSNOName == ACTOR_NPC_MC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"zombie_male_unique_ACD_LE_LostSoul_Grandfather_Zombie\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Grandfather\")\r\n\t\telseif sSNOName == ACTOR_NPC_FC then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"zombie_melee_female_unique_ACD_LE_LostSoul_Mother_Zombie\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Mother\")\r\n\t\telseif sSNOName == ACTOR_NPC_M then\r\n\t\t\tS_ELITE_TO_SPAWN = Hydra.ReferenceActor(\"zombie_melee_female_unique_ACD_LE_LostSoul_Wife_Zombie\")\r\n\t\t\tS_NPC_TO_SPAWN = Hydra.ReferenceActor(\"LE_LostSoul_NPC_Wife\")\r\n\t\tend\r\n\tend\r\nend",
- "szOnStartupScript": "ID_THIS_QUEST = Hydra.QuestGetOwner()\r\nT_HINTS = {}\r\nN_NUM_CORPSES = 3\r\nPSAG_ALL_MOBS = \"LE_LostSoul_All_Mobs\"\r\nLEVELAREA = Hydra.ActorGetLevelArea(idSelf)\r\n\r\nnCurrentBodyIndex = 0\r\nidCurrentSkeletonSpawner = Hydra.ACDID_INVALID\r\nidEliteBoss = Hydra.ACDID_INVALID\r\nidEliteNPC = Hydra.ACDID_INVALID\r\nflLastProgressBarPercent = 0\r\n\r\nSNO_PHASED = Hydra.PowerSNOFromName(POWER_PHASED_ANIM)\r\n\r\nlocal sSNOName = Hydra.ActorGetSNOName(ID_CHILD)\r\nGetSecondaryMonsterFam(sSNOName)\r\n\r\nT_SPAWNERS_WEREWOLF = {}\r\n\r\nfor i = 1, N_NUM_CORPSES do \r\n\tT_SPAWNERS_WEREWOLF[i] = {}\r\n\t\r\n\tlocal tSpawners = Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"spawner\"..tostring(i))\r\n\tfor i2 = 1, #tSpawners do\r\n\t\tT_SPAWNERS_WEREWOLF[i][#T_SPAWNERS_WEREWOLF[i] + 1] = tSpawners[i2]\r\n\tend\r\nend\r\n\r\nlocal tPtSpawns = {}\r\nlocal ptThisQuest = Hydra.ActorGetPosition(ID_THIS_QUEST)\r\nlocal pfDefault = Hydra.FacingFromYaw(0)\r\nlocal tCorpseMarkers = {ACTOR_CORPSE_MARKER_01, ACTOR_CORPSE_MARKER_02, ACTOR_CORPSE_MARKER_03}\r\n\r\nFYShuffle(tCorpseMarkers)\r\n\r\nN_DIST_TARGET_BETWEEN_HINTS_MIN = 10\r\nN_DIST_TARGET_BETWEEN_HINTS_MAX = 12\r\nN_DIST_TARGET_BETWEEN_HINTS_AVG = 14\r\n\r\ntPtSpawns[1] = Hydra.PositionSnapToGround(Hydra.PositionSearchForNearbyNavmeshPosition(ptThisQuest, 3, 5))\r\n\r\nfor i = 2, N_NUM_CORPSES do\r\n\ttPtSpawns[i] = getBestPoint(ptThisQuest, tPtSpawns)\r\nend\r\n\r\ntSortedPtSpawns = {}\r\n\r\nfor i = 1, N_NUM_CORPSES do\r\n\ttSortedPtSpawns[N_NUM_CORPSES + 1 - i] = tPtSpawns[i]\r\nend\r\n\r\nfor i = 1, N_NUM_CORPSES do\r\n\tT_HINTS[i] = Hydra.ActorSpawnActor(tCorpseMarkers[i], tSortedPtSpawns[i] , pfDefault, true, 0, 0)\r\n\tHydra.ActorSpawnActor(ACTOR_CORPSE_DECAL, tSortedPtSpawns[i] , pfDefault, true, 0, 0)\r\n\tHydra.ActorSetCollidable(T_HINTS[i], false)\r\n\tHydra.ActorSpawnActor(ACTOR_PROP_SPAWNER, tSortedPtSpawns[i], pfDefault, false, 0, 0)\r\nend\r\n\r\nFL_TARGET_DISTANCE = getSoulDistanceToTarget(1)\r\n\r\n--SETUP--\r\nHydra.ActorClearAITether(ID_CHILD)\r\nHydra.QActorPhasedAnimLoop(ID_CHILD, POWER_SCRIPTED_COWER, 0)\r\n--Hydra.ActorTriggerPowerAtFeet(ID_CHILD, POWER_SCRIPTED_COWER)\r\nHydra.ActorSetCannotBeTargetedByAI(ID_CHILD, true)\r\nHydra.ActorSetInvulnerable(ID_CHILD, true)\r\n\r\nfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(\"LE_LostSoul_Intro_Mobs\")) do\r\n\tHydra.ActorMergeAIState(actorID, AISTATE_TAUNT_LOOP, actorID, 0)\r\nend",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

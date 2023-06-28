@@ -213,7 +213,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t-- enable Prava's AI\r\n\tHydra.ActorEnableAI(Actor_Prava_Escort, true)\r\n\t\r\n\t--turn Prava to face stairs\r\n\tHydra.ActorFaceAbsolute(Actor_Prava_Escort, -90);\r\n\t\r\n\t-- Wait until Prava finishes facing the correct direction before the followers get into position.\r\n\tHydra.Wait(2);\r\n\t\r\n\t--\tSet Prava's Pale Knight Escort to never die\r\n\tHydra.ActorSetNeverDieInActorGroup(\"QST_Kehj_Caldeum_PravasPaleKnights\", true);\r\n\r\n\t-- Identify who's who for follower logic\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(PRAVA_FOLLOWERS_GROUP_NAME)) do\r\n\t\tif (Hydra.ActorIsValid(idFollower)) then\r\n\t\t\tif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_A\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_A\", 1);\r\n\t\t\telseif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_B\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_B\", 1);\r\n\t\t\telseif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_C\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_C\", 1);\r\n\t\t\telseif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_D\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_D\", 1);\r\n\t\t\telseif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_E\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_E\", 1);\r\n\t\t\telseif (Hydra.ActorIsInGroup(idFollower, \"QST_Kehj_Caldeum_Prava_Knight_Melee_F\")) then\r\n\t\t\t\tHydra.ActorSetAILocalVariable(idFollower, \"KNIGHT_MELEE_F\", 1);\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tHydra.ActorSetFollowTarget(idFollower, Hydra.ActorsLinkedByActorInGroup(idFollower, \"Prava\")[1], Hydra.FOLLOW_TYPE_DEFAULT);\r\n\t\tend\r\n\tend\r\n\r\n\t--put Prava on spline\r\n\tHydra.ActorSetAILocalVariable(Actor_Prava_Escort, \"ESCORTING\", 1)\r\n\tHydra.ActorSetNodePath(Actor_Prava_Escort, splinePrava01, Hydra.PATH_FOLLOW_ONE_WAY, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -290,8 +289,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -311,8 +309,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\nHydra.ActorEnable(Actor_Lorath_Escort)\r\nHydra.ActorEnable(Actor_Donan_Escort)\r\nHydra.ActorEnable(Actor_Neyrelle_Escort)\r\nHydra.ActorEnable(Actor_Prava_Escort)\r\nHydra.ActorEnable(Actor_Brute_Escort)\r\nHydra.ActorEnable(Actor_Knight_00_Escort)\r\nHydra.ActorEnable(Actor_Knight_01_Escort)\r\nHydra.ActorEnable(Actor_Knight_02_Escort)\r\nHydra.ActorEnable(Actor_Knight_03_Escort)\r\nHydra.ActorEnable(Actor_Knight_04_Escort)\r\nHydra.ActorEnable(Actor_Knight_05_Escort)\r\n\r\n-- Block slide traversal in the escort sequence section\r\n\tSetTraversalEnabled(Slide_Traversal_Blocker, false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -437,7 +433,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t--Play Boss Victory Stinger\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_MegaDemon_Victory\")\r\n\t\r\n\t-- remove blocker on the roof & collision\r\n\tHydra.ActorGizmoOperate(Actor_Miniboss_Blocker)\r\n\tHydra.QActorWait(Actor_Miniboss_Blocker, 2)\r\n\tHydra.QActorKill(Actor_Miniboss_Blocker)\r\n\t\r\n\tfor i, idBossCollision in ipairs( Hydra.ActorsInGroup(\"QST_Caldeum_Miniboss_Blocker\")) do \r\n\t\tHydra.ActorDisable(idBossCollision, true)\r\n\t\tend\r\n\t\r\n\t--give any triumphant UI some time to clear before playing the bark\r\n\tHydra.Wait(4)\r\n\tHydra.ActorPlaySimpleConversation(convPravaBark_03, Actor_Prava_Escort)\r\n\t\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Follower\")) do\r\n\t\t--Hydra.ActorTriggerPowerAtFeet(idFollower, POWER_DAMAGE_BUFF);\r\n\t\tHydra.BuffApplyToTarget(POWER_DAMAGE_BUFF, \"INCREASED_DAMAGE\", idFollower)\r\n\t\tend\r\n\t\t\r\n\t-- Unlock slide traversal in the escort sequence section\r\n\tSetTraversalEnabled(Slide_Traversal_Blocker, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -514,8 +509,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -535,8 +529,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -661,7 +653,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\t-- Prava orders Brute to break to barrier\r\n\tHydra.QActorPlaySimpleConversation(Conv_Wall_Breaking, Actor_Prava_Escort)\r\n\t\r\n\t--workaround for npcs not moving\r\n\tHydra.QActorStopAllQueuedActions(Actor_Brute_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_00_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_01_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_02_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_03_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_04_Escort)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Knight_05_Escort)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Prava_Escort, locPravaWallBreak, \"NPC_Walk\", true)\r\n\t\r\n\t-- workaround for npcs not moving\r\n\tHydra.QActorEnableAI(Actor_Brute_Escort, false)\r\n\tHydra.QActorStopAllQueuedActions(Actor_Brute_Escort)\r\n\t\r\n\t-- remove damage buff from brute\r\n\tHydra.BuffRemove(POWER_DAMAGE_BUFF, \"INCREASED_DAMAGE\", Actor_Brute_Escort);\r\n\t\r\n\t-- brute destroys wall blocking the path\r\n\t-- logic for breaking wall applied in knight_brute_attk_BreakWall power\r\n\tHydra.QActorMoveToLocationConstantSpeed(Actor_Brute_Escort, Loc_Brute_Clear_path, Hydra.MOVE_RATE_RUN, true)\r\n\tHydra.QActorPower(Actor_Brute_Escort, \"knight_brute_attk_BreakWall\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -747,8 +738,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -768,8 +758,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "for i, idFollower in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Follower\")) do\r\n\tHydra.BuffRemove(POWER_DAMAGE_BUFF, \"INCREASED_DAMAGE\", idFollower)\r\nend\r\n\r\nHydra.ActorSetAILocalVariable(Actor_Prava_Escort, \"ESCORTING\", 1)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -913,7 +901,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--Prava says: it's locked\r\n\tHydra.ActorPlaySimpleConversation(convGatestop_01, Actor_Brute_Escort, Actor_Prava_Escort)\r\n\tHydra.WaitForConversationFinished(convGatestop_01)\r\n\tHydra.ActorSetAILocalVariable(Actor_Prava_Escort, \"ESCORTING\", 0)\r\n\tfor i, idFollower in pairs(Hydra.ActorsInGroup(PRAVA_FOLLOWERS_GROUP_NAME)) do\r\n\t\tHydra.ActorDisableAI(idFollower)\r\n\tend\r\n\t\r\n-- Move knights to new static NPC positions\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Lorath_Escort, Loc_Five_Lorath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Lorath_Escort, Loc_Five_Lorath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Donan_Escort, Loc_Five_Donan, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Donan_Escort, Loc_Five_Donan)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Neyrelle_Escort, Loc_Five_Neyrelle, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Neyrelle_Escort, Loc_Five_Neyrelle)\r\n\t\r\n\t--Donan syas: let's talk\r\n\tHydra.ActorPlaySimpleConversation(convGatestop_02, Actor_Lorath_Escort)\r\n\tHydra.WaitForConversationFinished(convGatestop_02);\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -999,8 +986,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1070,7 +1056,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1147,8 +1132,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1230,7 +1214,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorSetAILocalVariable(Actor_Prava_Escort, \"ESCORTING\", 1)\r\n\t--put Prava on spline\r\n\tHydra.ActorSetNodePath(Actor_Prava_Escort, splinePrava03, Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\t\r\n\tfor i, idDemonSpawners in ipairs( Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Monsters_Payload_3_Spawners\")) do \r\n\t\tHydra.ActorEnable(idDemonSpawners, true)\r\n\tend\r\n\tHydra.Wait(2)\r\n\tHydra.ActorPlaySimpleConversation(Conv_Prava_Demons_Bark, Actor_Prava_Escort)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1321,7 +1304,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorAddAITarget(idActorSpawned, Actor_Prava_Escort, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1398,8 +1380,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1419,8 +1400,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1545,7 +1524,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tCampaignForcedPartyGatherPlayIGC(Conv_Across_the_Gate, idActorPlayer)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1644,8 +1622,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1741,7 +1718,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tHydra.ActorPlayConversation(convPlayerBarkPostBrokenGate, idActorPlayer)\r\n\t\r\n\t--delete escort actors\r\n\tHydra.ActorDelete(Actor_Knight_00_Postpath)\r\n\tHydra.ActorDelete(Actor_Knight_01_Postpath)\r\n\tHydra.ActorDelete(Actor_Knight_02_Postpath)\r\n\tHydra.ActorDelete(Actor_Knight_03_Postpath)\r\n\tHydra.ActorDelete(Actor_Knight_04_Postpath)\r\n\tHydra.ActorDelete(Actor_Knight_05_Postpath)\r\n\tHydra.ActorDelete(Actor_Prava_Postpath)\r\n\tHydra.ActorDelete(Actor_Brute_Postpath)\r\n\tHydra.ActorDelete(Actor_Lorath_Postpath)\r\n\tHydra.ActorDelete(Actor_Donan_Postpath)\r\n\tHydra.ActorDelete(Actor_Neyrelle_Postpath)\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1818,8 +1794,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1882,7 +1857,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1964,7 +1938,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2046,7 +2019,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2128,7 +2100,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2210,7 +2181,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2292,7 +2262,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2374,7 +2343,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2456,7 +2424,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2538,7 +2505,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2620,7 +2586,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2702,7 +2667,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2779,8 +2743,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"Knight_at_Gate\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2862,7 +2825,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2939,8 +2901,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2960,8 +2921,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Prava_Escort, Actor_Prava_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Prava_Escort, Actor_Prava_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Lorath_Escort, Actor_Lorath_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Lorath_Escort, Actor_Lorath_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Donan_Escort, Actor_Donan_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Donan_Escort, Actor_Donan_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Neyrelle_Escort, Actor_Neyrelle_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Neyrelle_Escort, Actor_Neyrelle_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_00_Escort, Actor_Knight_00_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_00_Escort, Actor_Knight_00_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_01_Escort, Actor_Knight_01_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_01_Escort, Actor_Knight_01_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_02_Escort, Actor_Knight_02_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_02_Escort, Actor_Knight_02_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_03_Escort, Actor_Knight_03_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_03_Escort, Actor_Knight_03_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_04_Escort, Actor_Knight_04_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_04_Escort, Actor_Knight_04_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Knight_05_Escort, Actor_Knight_05_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Knight_05_Escort, Actor_Knight_05_Postpath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Actor_Brute_Escort, Actor_Brute_Postpath, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(Actor_Brute_Escort, Actor_Brute_Postpath)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3041,7 +3000,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3118,8 +3076,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3139,8 +3096,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3265,7 +3220,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorDelete(spawnerInfiniteAlleySoftBlocker01)\r\n\tHydra.ActorEnable(gizmoSpawnerMiniboss)\r\n\t\r\n\t--for i, idMegaRainTarget in ipairs(DEMON_MEGA_RAIN_TARGETS) do\r\n\t--\tHydra.BuffRemove(POWER_DEMON_MEGA_RAIN, \"RAIN\", idMegaRainTarget);\r\n\t--end\r\n\tHydra.BuffRemove(POWER_DEMON_MEGA_RAIN, \"RAIN\", demonRainTarget_00);\r\n\tHydra.BuffRemove(POWER_DEMON_MEGA_RAIN, \"RAIN\", demonRainTarget_01);\r\n\r\n\t\r\n\tHydra.ActorDelete(DEMON_MEGA_MINIBOSS_PROXY);\r\n\t\r\n\t--Play Boss Music\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_MegaDemon_Phase1\")\r\n\t\r\n\tHydra.ActorEnableAI(Actor_Prava_Escort, true);\r\n\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Follower\")) do\r\n\t\tHydra.ActorEnableAI(idFollower, true);\r\n\tend\r\n\r\n\t-- Pale Knights use Raise Shield Animation loop\r\n\tfor i, idKnight in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Knight_Melee\")) do \r\n\t\tif (Hydra.ActorHasQueuedActions(idKnight)) then\r\n\t\t\tHydra.ActorTriggerPhaseJump(idKnight);\r\n\t\t\t\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3377,8 +3331,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3457,7 +3410,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorPlaySimpleConversation(convPravaBark_02, Actor_Prava_Escort)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3534,8 +3486,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3626,7 +3577,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- Trigger wave\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(PRAVA_WAVES_TRIGGER, \"AMBUSHER\");\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3703,8 +3653,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3776,7 +3725,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\tHydra.ActorSetAIState(Actor_Prava_Escort, \"idle\");\r\n\tHydra.ActorEnableAI(Actor_Prava_Escort, false);\r\n\t\r\n\tHydra.Wait(2);\r\n\t\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Follower\")) do\r\n\t\tHydra.ActorSetAIState(idFollower, \"idle\");\r\n\t\tHydra.ActorEnableAI(idFollower, false);\r\n\tend\r\n\t\r\n\t-- Pale Knights use Raise Shield Animation loop\r\n\tfor i, idKnight in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Knight_Melee\")) do \r\n\t\tHydra.QActorPhasedAnimLoop(idKnight, KNIGHT_SHIELD_RAISE_POWER, 0)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3853,8 +3801,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3874,8 +3821,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4000,7 +3945,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tplaySmallShake(idActorDetector)\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_02A, POWER_DEBRIS)\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_02B, POWER_DEBRIS)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlaySimpleConversation(Conv_Shake_02, Actor_Lorath_Escort)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4086,8 +4030,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4159,7 +4102,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t--Hydra.TraceScreen(\"BONK\")\r\n\tHydra.ActorDamageByPercent(idActorDamaged, 25)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4236,8 +4178,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4319,7 +4260,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4396,8 +4336,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4417,8 +4356,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4566,7 +4503,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4643,8 +4579,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4664,8 +4599,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4797,7 +4730,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tplaySmallShake(idActorDetector)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlaySimpleConversation(Conv_Shake_01, Actor_Donan_Escort)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4883,8 +4815,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4970,7 +4901,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n\t\r\n\t--for i, idMegaRainTarget in ipairs(Hydra.ActorsInGroup(DEMON_MEGA_RAIN_TARGETS)) do\r\n\t--\tif (Hydra.ActorIsValid(idMegaRainTarget)) then\r\n\t--\t\tHydra.ActorTriggerPowerAtTarget(DEMON_MEGA_MINIBOSS_PROXY, idMegaRainTarget, POWER_DEMON_MEGA_RAIN, true);\r\n\t--\tend\r\n\t--end\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5047,8 +4977,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorSetAILocalVariable(Actor_Prava_Escort, \"ESCORTING\", 0)\r\n\r\nHydra.Wait(3);\r\n\r\n--Hydra.ActorSpawnActors(S_DEMON_SWARMER_ACTOR_NAME, Actor_Prava_Escort, Hydra.GetRandomInt(3, 5), 7, 1.5, true, Hydra.MR_NORMAL, 529470); \r\n\r\n--Hydra.Wait(0.5);\r\n\r\nHydra.QActorPlaySimpleConversation(Conv_Attack_Above_1, Actor_Prava_Escort)\r\n\r\n-- Pale Knights use Raise Shield Animation loop\r\nfor i, idKnights in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Knight_Melee\")) do \r\n\tHydra.QActorPhasedAnimLoop(idKnights, KNIGHT_SHIELD_RAISE_POWER, 0)\r\nend\r\n\t\r\nHydra.QuestAdvancePhase();"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5118,7 +5047,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5195,8 +5123,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5216,8 +5143,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5326,7 +5251,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5403,8 +5327,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5506,7 +5429,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5583,8 +5505,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorDelete(spawnerInfiniteAlleySoftBlocker02)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5656,7 +5577,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\t--Trigger another wave\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(PRAVA_WAVES_TRIGGER, \"AMBUSHER\");\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5733,8 +5653,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5754,8 +5673,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5882,7 +5799,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\n\tHydra.QActorPlaySimpleConversation(Conv_Attack_Above_2, Actor_Donan_Escort)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6005,8 +5921,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6040,7 +5955,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_Bombardment_Start\");\t\r\n\t\r\n\tHydra.ActorTriggerPowerAtTarget(DEMON_MEGA_MINIBOSS_PROXY, demonRainTarget_00, POWER_DEMON_MEGA_RAIN, true);\r\n\tHydra.ActorTriggerPowerAtTarget(DEMON_MEGA_MINIBOSS_PROXY, demonRainTarget_01, POWER_DEMON_MEGA_RAIN, true);\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6117,8 +6031,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6200,7 +6113,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n-- Remove Raise Shield Animation from Pale Knights\r\n\tfor i, idKnights in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Prava_Knight_Melee\")) do\r\n\t\tHydra.ActorTriggerPhaseJump(idKnights)\r\n\tend\r\n\tHydra.ActorTriggerPhaseJump(Actor_Prava_Escort)\r\n\t-- Prava and Knights flavor dialogue\r\n\tHydra.ActorPlaySimpleConversation(convPravaBark_01, Actor_Prava_Escort)\r\n\t\r\n\t--put Prava on spline\r\n\t--Hydra.TraceScreen(\"Prava on spline 2\")\r\n\t--Hydra.TraceScreen(\"Prava : \", Actor_Prava_Escort)\r\n\t--Hydra.TraceScreen(\"spline2 : \", splinePrava02)\r\n\tHydra.ActorSetNodePath(Actor_Prava_Escort, splinePrava02, Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6277,8 +6189,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6298,8 +6209,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6336,11 +6245,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function playSmallShake(idActorSource)\r\n\tfor i, playerID in pairs(Hydra.PlayerActors()) do\r\n\t\tif (Hydra.ActorDistanceBetweenActors(idActorSource, playerID) < 20) then\r\n\t\t\tHydra.ActorPlayEffectGroup(playerID, EG_SHAKE_SMALL)\r\n\t\tend\r\n\tend\r\nend",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

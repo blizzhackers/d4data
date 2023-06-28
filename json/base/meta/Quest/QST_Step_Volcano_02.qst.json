@@ -171,7 +171,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\t\r\n\tHydra.Wait(3)\r\n\tidFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.ActorPlaySimpleConversation(LORATH_CAVE_CONVO, idFollower)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -248,8 +247,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -349,7 +347,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\t--Dust VFX/SFX on Door\r\n\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Step_DescentIntoFlame_DemonDoor\")) do\r\n\t\tHydra.ActorPlayEffectGroup(i, EG_DUST)\r\n\t\tHydra.ActorPlaySound(i, SFX_RUMBLE)\r\n\tend\r\n\t\r\n\tidFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONV_CHASM_02, idFollower)\r\n\t\tHydra.WaitForConversationFinished(CONV_CHASM_02)\r\n\tend\r\n\r\n--Open Door; Activate Barrier; Demon Entrance\r\n\t--Door\r\n\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Step_DescentIntoFlame_DemonDoor\")) do\r\n\t\tHydra.ActorGizmoOperate(i)\r\n\tend\r\n\t--Barrier\r\n\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Step_DescentIntoFlame_DemonBarrier\")) do\r\n\t\tHydra.ActorEnable(i)\r\n\tend\r\n\t--Demon\r\n\tSpawner_Megademon = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"QST_Step_Volcano_02_MegaDemon\")[1]\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"QST_Step_Volcano_02_MegaDemon\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -472,7 +469,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n--\ttWalls = Hydra.ActorsLinkedByActor(idActorSpawner)\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\r\n--\tidMalach = idActorSpawned\r\n--\tHydra.ActorSetInvulnerable(idMalach, true)\r\n\t\r\n\t--Smash Walls. His attack power has a slight AOE, that can cause an invalid ID error on loop. Lets check each attempt first.\r\n--\tfor i, ActorID in ipairs(tWalls) do\r\n--\t\tif Hydra.ActorIsValid(ActorID) == true then\r\n--\t\t\tHydra.ActorTriggerPowerAtTargetsFeet(idActorSpawned, ActorID, \"demon_mega_miniboss_frenzy\")\r\n--\t\t\tHydra.Wait(0.5)\r\n\t\t\t-- Flag wall vulnerability here so players can't easily kill wall instead\r\n--\t\t\tHydra.ActorSetInvulnerable(ActorID, false)\r\n\t\t\tfor i, ActorID in ipairs(tPlayers) do\r\n\t\t\t\t-- Make sure player isn't chillin in town first\r\n\t\t\t\tif Hydra.ActorGetWorld(ActorID) == \"CSD_Step_MtCivo_TempleoftheTriune\" then\r\n\t\t\t\t\tHydra.ActorPlayEffectGroup(ActorID, \"QST_Step_Volcano_TempleScreenShake\")\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t--Hydra.Wait(1.0)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -558,8 +554,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -579,8 +574,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -728,7 +721,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tSetTraversalEnabled(idTraversal, true)\r\n\t\r\n\t-- Turn on the way back up too\r\n\tHydra.ActorGizmoSetDisabled(idTraversalReverse, false)\r\n\tHydra.Wait(5.0)\r\n\tHydra.SetGameVariableFlag(\"QST_Step_Volcano_BlockIGC\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -843,7 +835,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -920,8 +911,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 11,
@@ -941,8 +931,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1061,7 +1049,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n--Remove Demon Barrier\r\nHydra.EventSend(\"DRLGKit_BarrierWall_Remove_01\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1147,8 +1134,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 39,
@@ -1168,8 +1154,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Hydra.ActorSetInvulnerable(idMalach, false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1301,7 +1285,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tidMarker = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"marker\")[1]\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idFollower)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, idMarker, \"npc_run\", true)\r\n\t\tHydra.WaitForQEmpty(idFollower)\r\n\t\tHydra.QActorFadeAndDelete(idFollower, 1.0)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1387,8 +1370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1467,7 +1449,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidTraversal = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"traversal\")[1]\r\n\tidTraversalReverse = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"traversal2\")[1]\r\n\t\r\n\tSetTraversalEnabled(idTraversal, false)\r\n\t\r\n\tHydra.EventSend(\"BrolWalk\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1544,8 +1525,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1565,8 +1545,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1686,7 +1664,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1772,8 +1749,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1859,7 +1835,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tlocal idPortal = Hydra.ActorsEnableLinkedByActorInGroup(idActorGizmo, \"PORTAL\")[1]\r\n\t\r\n\tHydra.ActorEnable(idPortal)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1936,8 +1911,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1957,8 +1931,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2070,7 +2042,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t--Play Boss Victory Stinger\r\n\tHydra.MusicOverride(\"CSD_Step_MtCivo_TempleoftheTriune\", \"Music_Boss_TyrantKing_Victory\")\r\n\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Campaign_Brol\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Brol\")\r\n\tend\r\n\t\r\n\t------------------------------------------------------\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2156,8 +2127,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2177,8 +2147,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Play Boss Music\r\nHydra.MusicOverride(\"CSD_Step_MtCivo_TempleoftheTriune\", \"Music_Boss_TyrantKing_Phase1\")",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2326,7 +2294,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2403,8 +2370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2424,8 +2390,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2536,7 +2500,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.ActorPlayConversation(conv_Entrance_Herald_03, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2613,8 +2576,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2723,7 +2685,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidWarpLoc = Hydra.ActorsLinkedByActorInGroup(idActorNPC, \"PLAYER_WARP\")[1]\r\n\tidTraversalLoc = Hydra.ActorsLinkedByActorInGroup(idActorNPC, \"traversal_warp\")[1]\r\n\t\r\n\tHydra.ActorWarpToActor(idActorPlayer, idTraversalLoc)\r\n\r\n\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2837,7 +2798,6 @@
         "name": "CSD_Step_MtCivo_TempleoftheTriune"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.Wait(1)\r\n\t\r\n\tHydra.ActorWarpToActor(idActorPlayer, idWarpLoc)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2914,8 +2874,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2935,8 +2894,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2966,11 +2923,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "--IGC_DST_Main_Video = Hydra.ReferenceEffectGroup(\"Conv_QST_Step_TEMP_TAISSA_RTC\")\r\n\r\n--ID_FirstPlayer = Hydra.ActorGetPlayersAndPetsInRange(LORATH_OVERLOOK, 32)[1]\r\n--Hydra.ActorFaceActor(LORATH_OVERLOOK, ID_FirstPlayer, true)\r\n--global variables\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

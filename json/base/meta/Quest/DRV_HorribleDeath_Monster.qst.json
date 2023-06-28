@@ -152,7 +152,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorPlaySimpleConversation(S_CONV_HELP, idNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -263,7 +262,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -340,8 +338,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -361,8 +358,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -428,7 +423,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\tHydra.QActorAnimAndNewIdle(idNPC, S_ANIM_DIE, S_ANIM_DEAD)\r\n\r\n\t\t-- Spawn\r\n\t\tfor i, idMonster in ipairs(T_MONSTERS) do\r\n\t\t\tif Hydra.ActorIsValid(idMonster) then\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idMonster, false)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\tHydra.ActorTriggerPowerAtFeet(idNPC, S_PWR_BURST)\r\n\t\tHydra.ActorSetBloody(idNPC, 1)\r\n\t\t\r\n\t\tfor i, idGore in ipairs(T_GORE) do\r\n\t\t\tif Hydra.ActorIsValid(idGore) then\r\n\t\t\t\tHydra.ActorEnable(idGore)\r\n\t\t\tend\r\n\t\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -505,8 +499,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -526,8 +519,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -557,11 +548,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Initial Setup\r\nfor i, idMonster in ipairs(T_MONSTERS) do\r\n\t--Playing dead\r\n\tHydra.ActorEnableAI(idMonster, false)\r\n\tHydra.ActorSetTargetable(idMonster, false)\r\n\tHydra.ActorSetInvisible(idMonster, true)\r\n\tHydra.ActorSetIdleAnim(idMonster, S_ANIM_DEAD)\r\nend\r\n\r\nHydra.ActorSetAnimSetOverride(idNPC, S_ANIMSET_SICK)\r\nHydra.ActorSetIdleAnim(idNPC, S_ANIM_SICK_IDLE)\r\nHydra.ActorSetBloody(idNPC, 0.5)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

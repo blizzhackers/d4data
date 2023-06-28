@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.QuestSetCustomParamFromActor(1, idActorSpawned)\r\n\tMinimapAddPingForParticipants(idActorSpawned, 10, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -219,8 +218,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -293,7 +291,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\tlocal idNPC = T_NPCS[idActorGizmo]\r\n\t\r\n\t-- handle NPC escape\r\n\tif Hydra.ActorIsValid(idNPC) then\r\n\t\tHydra.ActorRemoveFromPrefabScopedGroup(idNPC, \"EH_Trigger\")\r\n\t\tHydra.ActorPlaySimpleConversation(CONV_FREED, idNPC)\r\n\t\r\n\t\tif S_ACTOR_GIZMO == GIZMO_STAKE then\r\n\t\t\tHydra.QActorClearAnimSetOverride(idNPC)\r\n\t\tend\r\n\t\t--Sort through runTo positions. If the nearest runTo does not have a path, try the farthest, if that also\r\n\t\t--has no path, just fade and delete.\r\n\t\tif T_FLEE_LOCS ~= nil then \r\n\t\t\ttable.sort(T_FLEE_LOCS, function(a, b) return Hydra.ActorDistanceSquaredBetweenActors(idNPC, a) < Hydra.ActorDistanceSquaredBetweenActors(idNPC, b) end)\r\n\t\t\tlocal idNearestRunTo = T_FLEE_LOCS[1]\r\n\t\t\tlocal NEARESTPOS = Hydra.ActorGetPosition(idNearestRunTo)\r\n\t\t\tlocal NPCPOS = Hydra.ActorGetPosition(idNPC)\r\n\t\t\t\r\n\t\t\tif Hydra.DoesPathExistBetweenPositions(NPCPOS, NEARESTPOS, true) then\r\n\t\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idNPC, idNearestRunTo, \"NPC_RUN\", false, true)\r\n\t\t\t\tHydra.QActorFadeAndDelete(idNPC, 2)\r\n\t\t\telse\r\n\t\t\t\tHydra.QActorFadeAndDelete(idNPC, 2)\r\n\t\t\t\t\r\n\t\t\tend\r\n\t\telse -- handle non-npc gizmo case\r\n\t\t\tHydra.ActorFadeAndDelete(T_NPCS[idActorGizmo], 2)\r\n\t\t\tHydra.ActorKill(idActorGizmo)\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- spawn defenders\r\n\t\r\n\tID_LAST_GIZMO_USER = idActorPlayer\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -370,8 +367,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\nHydra.ActorTriggerSpawnerUpdate(ID_SPAWNER_UNIQUE)\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -391,8 +387,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -514,7 +508,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -591,8 +584,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -658,7 +650,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif sLevelAreaName == S_LEVEL_AREA then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -711,7 +702,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif #Hydra.PlayerActorsInLevelArea(S_LEVEL_AREA) > 0 then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -788,8 +778,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -809,8 +798,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -931,7 +918,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tif Hydra.ActorIsValid(idActorDetector) and Hydra.ActorIsAlive(idActorDetector) then \r\n\t\tHydra.ActorPlaySimpleConversation(CONV_HELP_BARKS, idActorDetector)\r\n\tend\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1008,8 +994,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1029,8 +1014,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1096,7 +1079,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1173,8 +1155,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1194,8 +1175,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1246,8 +1225,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1298,8 +1275,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1421,7 +1396,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tfor i, enemy in pairs(Hydra.ActorsInPrefabScopedGroup(\"EH_Unique\")) do\r\n\t\tHydra.ActorKill(enemy)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1498,8 +1472,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1/60)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1571,7 +1544,6 @@
        "unk_9c1ea4f": 67,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif Hydra.ActorGetMonsterRarity(idActorKilled) == Hydra.MR_SUPER_ELITE then\r\n\t\tHydra.EventSendToActor(\"SUPER_KILLED\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1648,8 +1620,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1669,8 +1640,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorTriggerSpawnerUpdate(ID_SPAWNER_UNIQUE)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1785,7 +1754,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1862,8 +1830,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1/60)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1915,7 +1882,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1992,8 +1958,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2013,8 +1978,6 @@
    "unk_669bcf8": 40,
    "unk_287ecb5": 51,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2065,8 +2028,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2096,11 +2057,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "tHasHeardStartConv = {}\r\nID_LAST_GIZMO_USER = Hydra.ACDID_INVALID\r\n\r\n--tuning / setup knobs\r\nlocal N_GIZMOS_TO_SPAWN = 6 - Hydra.PrefabScopedActorGroupGetCount(\"EH_Gizmos\")\r\nlocal T_SPAWNERS_MONSTERS = Hydra.ActorsInPrefabScopedGroup(\"EH_Monster_Spawner\")\r\nlocal T_SPAWNERS_ELITE = Hydra.ActorsInPrefabScopedGroup(\"EH_Elite_Spawner\")\r\nlocal T_SPAWNERS_CHAMPIONS = Hydra.ActorsInPrefabScopedGroup(\"EH_Champion_Spawner\")\r\nlocal S_ACTORGROUP_GIZMO = \"EH_Gizmos\"\r\n\r\nCHEST_LOCATION = Hydra.ActorsInPrefabScopedGroup(\"EH_CHEST\")[1]\r\nID_SPAWNER_UNIQUE = Hydra.ActorsInPrefabScopedGroup(\"EH_Unique_Spawner\")[1]\r\n\r\n-- spawn normal monsters\r\nlocal nSpawnerCount = #T_SPAWNERS_MONSTERS\r\nif nSpawnerCount > 0 then\r\n\tFYShuffle(T_SPAWNERS_MONSTERS)\r\n\t\r\n\tfor i = 1, nSpawnerCount do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_MONSTERS[i])\r\n\tend\r\nend\r\n\r\nFYShuffle(T_SPAWNERS_ELITE) -- shuffle outside, want the elites spread out here\r\n-- spawn one elite pack\r\nif #T_SPAWNERS_ELITE > 0 then\r\n\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_ELITE[1])\r\nend\r\n\r\n-- Once this value is > 1 it'll cause champions to spawn (so world tier 3 and up)\r\n-- subtracting 1 instead of 2 because WTs are index 0 in code (so WT3, 2 in code, produces 1 Champ)\r\nlocal nChampionCount = Hydra.GameGetCurrentWorldTier() - 1\r\n\r\n-- Spawn a champion for each world tier above 2\r\nif nChampionCount > 0 and #T_SPAWNERS_CHAMPIONS >= nChampionCount then\r\n\tFYShuffle(T_SPAWNERS_CHAMPIONS)\r\n\t\r\n\tfor i = 1, nChampionCount do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_CHAMPIONS[i])\r\n\tend\r\nend\r\n\r\n\r\nFYShuffle(T_GIZMO_SPAWN_LOCS)\r\n\r\nT_NPCS = {}\r\n\r\nfor i=1, N_GIZMOS_TO_SPAWN do\r\n\tlocal ptSpawn = Hydra.ActorGetPosition(T_GIZMO_SPAWN_LOCS[i])\r\n\tlocal ptFacing = Hydra.ActorGetFacing(T_GIZMO_SPAWN_LOCS[i])\r\n\tlocal sActorToSpawn = Hydra.ActorPickFromEncounter(S_ACTOR_GIZMO, idSelf)\r\n\t\r\n\tif sActorToSpawn == \"\" then\r\n\t\tsActorToSpawn = S_ACTOR_GIZMO\r\n\tend\t\r\n\t\r\n\tlocal idLastCreatedActor = Hydra.ActorSpawnActor(sActorToSpawn, ptSpawn, ptFacing, false, 0, 0)\r\n\t\r\n\tHydra.ActorAddToPrefabScopedGroup(idLastCreatedActor, S_ACTORGROUP_GIZMO)\r\n\t\r\n\tif sActorToSpawn == GIZMO_STAKE then -- stakes require the NPCs spawn with different offset than cages\r\n\t\tptSpawn = Hydra.PositionOffset(ptSpawn, ptFacing, 0.35)\r\n\tend\r\n\t\r\n\tT_NPCS[idLastCreatedActor] = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_NPC, idSelf), ptSpawn, ptFacing, false, 0, 0)\r\n\t\r\n\tHydra.ActorAddToPrefabScopedGroup(T_NPCS[idLastCreatedActor], \"EH_Trigger\")\r\n\t\r\n\tif sActorToSpawn == GIZMO_STAKE then -- stakes require the NPCs adopt sitting neutral animset\r\n\t\tHydra.ActorSetAnimSetOverride(T_NPCS[idLastCreatedActor], ANIMSET_SIT_TIEDUP)\r\n\tend\r\n\t\r\n\tHydra.ActorTriggerPowerAtFeet(T_NPCS[idLastCreatedActor], POWER_DESTROY_NEARBY_DEST)\r\n\t\r\nend\r\n\r\n",
- "szOnShutdownScript": "Events.Despawn(idSelf, Hydra.DESPAWN_BEHAVIOR_EVENT_HUB_EVENT)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

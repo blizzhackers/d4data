@@ -141,7 +141,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tlocal pos01 = Hydra.ActorGetPosition(Marker_Location_01)\r\n\tlocal pos02 = Hydra.ActorGetPosition(Marker_Location_02)\r\n\t\r\n\t-- Set Ancillary Fallen AI enabled, run back to position\r\n\tif Hydra.ActorIsValid(Fallen_04) then\r\n\t\tHydra.ActorEnableAI(Fallen_04)\r\n\t\tHydra.QActorMoveToPositionConstantSpeed(Fallen_04, pos02, Hydra.MOVE_RATE_SPRINT, 1.0)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_06) then\r\n\t\tHydra.ActorEnableAI(Fallen_06)\r\n\t\tHydra.QActorMoveToPositionConstantSpeed(Fallen_06, pos01, Hydra.MOVE_RATE_SPRINT, 1.0)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -218,8 +217,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -298,7 +296,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n-- Set Team for Barrel trap\r\n\tif Hydra.ActorIsValid(Barrel) then\r\n\t\tHydra.ActorSetTeam(Barrel, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tend\r\n\t\r\n\t-- Set Primary Fallen AI enabled\r\n\tif Hydra.ActorIsValid(Fallen_01) then\r\n\t\tHydra.ActorEnableAI(Fallen_01)\r\n\t\tHydra.ActorAIForcePrimaryTarget(Fallen_01,Barrel)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_02) then\r\n\t\tHydra.ActorEnableAI(Fallen_02)\r\n\t\tHydra.ActorAIForcePrimaryTarget(Fallen_02,Barrel)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_03) then\r\n\t\tHydra.ActorEnableAI(Fallen_03)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_05) then\r\n\t\tHydra.ActorEnableAI(Fallen_05)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -375,8 +372,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -454,7 +450,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\r\n\tlocal player1 = Hydra.ActorGetPlayersAndPetsInRange(Marker_Location_01, 30, false,false)[1]\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_01) and Hydra.ActorIsValid(player1) then\r\n\t\t-- Grunt taunt audio \r\n\t\tHydra.ActorPlayEffectGroup(Fallen_01, \"fallen_grunt_taunt\")\r\n\t\t-- Set New Target\r\n\t\tHydra.ActorAIForcePrimaryTarget(Fallen_01,player1)\r\n\t\t\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_02) and Hydra.ActorIsValid(player1)  then\r\n\t\t-- Set New Target\r\n\t\tHydra.ActorAIForcePrimaryTarget(Fallen_02,player1)\r\n\tend\t\t\r\n\t\r\n\tHydra.EventSend(\"DOV_Barrel_Gameplay_Moment\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -531,8 +526,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -552,8 +546,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -667,7 +659,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t-- Set Primary Fallen AI enabled\r\n\tif Hydra.ActorIsValid(Fallen_01) then\r\n\t\tHydra.ActorEnableAI(Fallen_01)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_02) then\r\n\t\tHydra.ActorEnableAI(Fallen_02)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_03) then\r\n\t\tHydra.ActorEnableAI(Fallen_03)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(Fallen_05) then\r\n\t\tHydra.ActorEnableAI(Fallen_05)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -744,8 +735,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -765,8 +755,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -839,7 +827,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -916,8 +903,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -937,8 +923,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -968,11 +952,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Set Fallen AI disabled\r\nHydra.ActorDisableAI(Fallen_01)\r\nHydra.ActorDisableAI(Fallen_02)\r\n\r\nHydra.ActorDisableAI(Fallen_04)\r\nHydra.ActorDisableAI(Fallen_05)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

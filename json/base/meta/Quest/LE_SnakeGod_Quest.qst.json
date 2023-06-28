@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -194,8 +192,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -306,7 +302,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -383,8 +378,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -404,8 +398,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Turn off the worshipper spawner\r\nHydra.ActorDisable(ID_WORSHIPPER_SPAWNER)\r\n\r\nif Hydra.QuestGetBonusPhaseResult() then\r\n\r\n\t-- Summon elite snake if the mastery was met\r\n\tHydra.BuffRemove(POWER_SNAKEGOD_CONTROLLER, \"HUNGER\", ID_SNAKE_GOD)\r\n\tHydra.BuffRemove(POWER_SNAKEGOD_CONTROLLER, \"WANDER\", ID_SNAKE_GOD)\r\n\tHydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"STUNNED\", ID_SNAKE_GOD)\r\n\t\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(ID_SNAKE_GOD, 8)\r\n\tHydra.ActorSetPowerEffectIntensity(ID_SNAKE_GOD, 1)\r\n\tHydra.ActorSetPowerEffectDuration(ID_SNAKE_GOD, 3)\r\n\tHydra.ActorPlayEffectGroup(ID_SNAKE_GOD, EG_DEMONIC_CHARGE, true)\r\n\t\r\n\tHydra.Wait(2.5)\r\n\t\r\n\tHydra.ActorTriggerSpawnerUpdate(ID_SNAKE_GOD_FINAL)\r\n\tHydra.ActorSetTeam(ID_SNAKE_GOD, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tHydra.ActorRemoveMergedAIState(ID_SNAKE_GOD, AISTATE_SNAKEGOD_CONTROLLER)\r\n\tHydra.QActorDelete(ID_SNAKE_GOD)\r\n\t\r\n\tlocal snakeGodID = -1\r\n\t-- Find the spawned super elite\r\n\tfor i, worshipperID in ipairs(Hydra.ActorsInPrefabScopedGroup(PSAG_WORSHIPPERS)) do\r\n\t\tif Hydra.ActorGetMonsterRarity(worshipperID) == Hydra.MR_SUPER_ELITE then\r\n\t\t\tsnakeGodID = worshipperID\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Set VFX queues here\r\n\tHydra.ActorSetPowerEffectSize(snakeGodID, 10)\r\n\tHydra.ActorSetPowerEffectIntensity(snakeGodID, 1)\r\n\tHydra.ActorSetPowerEffectDuration(snakeGodID, 3)\r\n\t-- Play some burst FX on the boss summon\r\n\tHydra.ActorPlayEffectGroup(snakeGodID, EG_DEMONIC_BURST, true)\r\n\tHydra.ActorPlayEffectGroup(snakeGodID, EG_DISTORTION_BURST, true)\r\n\tHydra.ActorPlayEffectGroup(snakeGodID, EG_BLOOD_BURST, true)\t\r\n\t\t\r\n\tHydra.Wait(0.75)\r\n\t-- Apply the Ascended Buff here\r\n\tHydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"ASCENDED\", snakeGodID)\t\r\nelse\r\n\t-- Mastery was unfufilled here, regognize accordingly\r\n\tHydra.ActorSetPowerEffectSize(ID_SNAKE_GOD, 4)\r\n\tHydra.ActorSetPowerEffectIntensity(ID_SNAKE_GOD, 1)\r\n\tHydra.ActorSetPowerEffectDuration(ID_SNAKE_GOD, 3)\r\n\tHydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"STUNNED\", ID_SNAKE_GOD)\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\tHydra.ActorPlayEffectGroup(ID_SNAKE_GOD, EG_SPIRIT_BURST)\t\r\n\tHydra.ActorKill(ID_SNAKE_GOD, \"Death_Shadow\")\r\nend\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -489,7 +481,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -566,8 +557,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -656,7 +646,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t-- We are getting close to completing the mastery, so let's spawn an elite to add a gameplay wrinkle\r\n\tif Hydra.QuestCallbackCountGet(142) == 20 then\r\n\t\t-- Spawn elites\r\n\t\tHydra.ActorTriggerSpawnerUpdate(ID_MASTERY_ELITE)\t\t\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -733,8 +722,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -754,8 +742,6 @@
    "unk_669bcf8": 12,
    "unk_287ecb5": 83,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -859,7 +845,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tlocal bSnakeVasValidBuff = Hydra.BuffIsOnActor(POWER_SNAKEGOD_CONTROLLER, \"HUNGER\", ID_SNAKE_GOD) or Hydra.BuffIsOnActor(POWER_SNAKEGOD_CONTROLLER, \"WANDER\", ID_SNAKE_GOD)\r\n\t-- Only check if the snake god is alive\r\n\tif Hydra.ActorIsValid(ID_SNAKE_GOD) then\r\n\t\t-- Check if we're in range and the snake has HUNGER buff\r\n\t\tif IsWithinRangeOfSnake(idActorKilled) then\r\n\t\t\t-- This is a good kill! Send the correct event\r\n\t\t\tHydra.EventSend(\"LE_Worshippers_Killed\")\r\n\t\t\t-- Show a rope effect that charges the snake\r\n\t\t\tHydra.ActorSetPowerEffectDuration(idActorKilled, F_KILL_ATTRACTOR_DURATION)\r\n\t\t\tHydra.ActorPlayEffectGroupActorToActor(idActorKilled, ID_SNAKE_GOD, EG_ATTRACTOR_BLOOD, false, \"HP_pelvis\", \"HP_mouth\")\r\n\t\t\t-- Apply the sname eating buff\r\n\t\t\t--Hydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"EATING\", ID_SNAKE_GOD)\r\n\t\t\t-- Apply death charge anim\r\n\t\t\tHydra.ActorPlayEffectGroup(idActorKilled, EG_DEATH_CHARGE)\r\n\t\t\t\r\n\t\t\t-- Give a bonus point for killing an elite within range\r\n\t\t\tif Hydra.ActorIsElite(idActorKilled) then\r\n\t\t\t\tHydra.EventSend(\"LE_Worshippers_Killed\")\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -936,8 +921,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -957,8 +941,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1058,7 +1040,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_SNAKEGOD_WORSHIPPER, idActorSpawned, 0)\r\n\tHydra.ActorSetFollowTarget(idActorSpawned, ID_SNAKE_GOD, Hydra.FOLLOW_TYPE_DEFAULT)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1135,8 +1116,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1215,7 +1195,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1292,8 +1271,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1313,8 +1291,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n-- Snakey config stuff\r\nHydra.ActorEnable(ID_SNAKE_GOD)\r\nHydra.QActorPower(ID_SNAKE_GOD, POWER_SUMMON_MAGICAL)\r\nHydra.ActorSetWanderArea(ID_SNAKE_GOD, T_WANDER_AREA)\r\nHydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"HUNGER\", ID_SNAKE_GOD)\r\nHydra.ActorMergeAIState(ID_SNAKE_GOD, AISTATE_SNAKEGOD_CONTROLLER, ID_SNAKE_GOD, 0)\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1405,7 +1381,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1482,8 +1457,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1565,7 +1539,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1642,8 +1615,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1711,7 +1683,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_SNAKEGOD_WORSHIPPER, idActorSpawned, 0)\r\n\tHydra.ActorSetFollowTarget(idActorSpawned, ID_SNAKE_GOD, Hydra.FOLLOW_TYPE_DEFAULT)\r\n\tHydra.ActorSetFollowTarget(ID_SNAKE_GOD, idActorSpawned, Hydra.FOLLOW_TYPE_DEFAULT)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1788,8 +1759,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1857,7 +1827,6 @@
        "unk_9c1ea4f": 142,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1934,8 +1903,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1955,8 +1923,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8500000238418579,
-   "szOnEnterScript": "Hydra.Wait(2.25)\r\n\r\nif Hydra.BuffIsOnActor(POWER_SNAKEGOD_CONTROLLER, \"HUNGER\", ID_SNAKE_GOD) then\r\n\tHydra.BuffRemove(POWER_SNAKEGOD_CONTROLLER, \"HUNGER\", ID_SNAKE_GOD)\r\nend\r\nHydra.BuffApplyToTarget(POWER_SNAKEGOD_CONTROLLER, \"WANDER\", ID_SNAKE_GOD)\r\n\r\nif B_DEBUGGING == false then\r\n\tfor i, spawnerID in pairs(T_SPAWNERS) do\r\n\t\tif Hydra.ActorIsValid(spawnerID) then\r\n\t\t\tHydra.ActorEnable(spawnerID)\r\n\t\tend\r\n\tend\r\nend\r\nif Hydra.ActorIsValid(ID_WORSHIPPER_SPAWNER) then\r\n\tHydra.ActorEnable(ID_WORSHIPPER_SPAWNER)\r\nend",
-   "szOnExitScript": "for i, spawnerID in pairs(T_SPAWNERS) do\r\n\tif Hydra.ActorIsValid(spawnerID) then\r\n\t\tHydra.ActorDisable(spawnerID)\r\n\tend\r\nend\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1986,11 +1952,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function IsWithinRangeOfSnake(idActor)\r\n\tif Hydra.ActorIsValid(ID_SNAKE_GOD) and Hydra.ActorIsValid(idActor) then\r\n\t\tlocal fSnakePos \t\t= Hydra.ActorGetPosition(ID_SNAKE_GOD, false)\r\n\t\tlocal fWorshipperPos \t= Hydra.ActorGetPosition(idActor, false)\r\n\t\tlocal fDistFromGod \t\t= Hydra.PositionGetDistanceSquaredToPosition(fSnakePos, fWorshipperPos)\r\n\t\t\r\n\t\tif fDistFromGod < F_SNAKE_GOD_DISTANCE_SQ then\r\n\t\t\treturn true\r\n\t\tend\r\n\t\treturn false\r\n\tend\r\nend",
- "szOnStartupScript": "-- Event Specific variable setup\r\nID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\nT_ACTIVE_WORSHIPPERS = {}\r\n\r\nF_SNAKE_GOD_DISTANCE = 3.25 -- Distance for the kill to count as satiating the snake god\r\nF_SNAKE_GOD_DISTANCE_SQ = F_SNAKE_GOD_DISTANCE * F_SNAKE_GOD_DISTANCE\r\n\r\n-- Controls how long the effect from the killed cultist takes to travel to the snake for a valid kill\r\nF_KILL_ATTRACTOR_DURATION = 1\r\n\r\nPSAG_WORSHIPPERS = \"LE_SnakeGod_Worshippers\"\r\n\r\nB_DEBUGGING = false\r\n\r\n\r\n\r\n",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

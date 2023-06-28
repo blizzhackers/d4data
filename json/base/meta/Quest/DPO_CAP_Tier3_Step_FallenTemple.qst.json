@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t------------------------------------------------------\r\n\t\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Capstone_Elias\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Capstone_Elias\")\r\n\tend\r\n\t\r\n\t------------------------------------------------------\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -221,8 +220,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -303,7 +301,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(\"CAP_Tier3_Step_FallenTemple\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -389,8 +386,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -410,8 +406,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -524,7 +518,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t-- Determine the Boss Encounter LevelArea dynamically\r\n\tS_HOLDOUT_LEVEL_AREA = Hydra.ActorGetLevelArea(idActorGizmo)\r\n\tHydra.BossEncounterManuallyQueueStart(S_HOLDOUT_LEVEL_AREA)\r\n\t\r\n\tHoldout_DemonBarrier = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Holdout_DemonBarrier\")[1]\r\n\tHoldout_Demonwall = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Holdout_DemonWall\")[1]\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -610,8 +603,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -631,8 +623,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -723,7 +713,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t\r\n\tlocal tSpawners = Hydra.ActorsLinkedByActorInGroup(Holdout_DemonBarrier, \"SPAWNERS\")\r\n\t\r\n\t-- STOP SPAWNERS\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\tHydra.ActorDisable(idSpawner)\r\n\tend\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_HOLDOUT_LEVEL_AREA)\r\n\tHydra.ActorFadeAndDelete(Holdout_Demonwall,2)\r\n\tHydra.ActorFadeAndDelete(Holdout_DemonBarrier,1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -800,8 +789,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -881,7 +869,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -967,8 +954,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -988,8 +974,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1102,7 +1086,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorReceptacle)\r\n\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffApplyToTarget(DamageTakenDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\t end\r\n\tend\r\n\t\r\n\tHydra.ActorFadeAndDelete(MainRoom_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1188,8 +1171,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1263,7 +1245,6 @@
        "unk_9c1ea4f": 24,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1349,8 +1330,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1370,8 +1350,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1484,7 +1462,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1570,8 +1547,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1591,8 +1567,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1705,7 +1679,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tfor iter,idActor in pairs(Hydra.ActorsInGroup(\"DGN_Frac_AnicasClaim_QuestDoor\")) do\r\n\t\tHydra.ActorFadeAndDelete(idActor, 2)\r\n\tend\r\n\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffRemove(CCIncreaseDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\t\tHydra.BuffRemove(DamageTakenDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1791,8 +1764,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1882,7 +1854,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tfor i, idSpawner in ipairs(Hydra.ActorsLinkedByActorInGroup(idActorDetector,\"Monster\")) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1968,8 +1939,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1989,8 +1959,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2103,7 +2071,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, snoglyph)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2189,8 +2156,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n\r\n\r\n-- now that the motes are all collected, turn on the ambush spawners\r\n--for i,idSpawner in pairs(Hydra.ActorsInGroup(PSV_PostMoteAmbushSpawners)) do\r\n--\tHydra.ActorEnable(idSpawner)\r\n--\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n--end\r\n\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2262,7 +2228,6 @@
        "unk_9c1ea4f": 36,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tDF_DropAnima(S_AnimaActor, idActorKilled)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2339,8 +2304,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2360,8 +2324,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2473,7 +2435,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_STRUCTURE_LEVEL_AREA)\r\n\t\r\n\tfor i, idBarrier in pairs(Raze_DemonBarriers) do\r\n\t\t\tHydra.ActorFadeAndDelete(idBarrier,2)\r\n\tend\r\n\t\r\n--[[\r\n\tS_ONYX_STATUE = Hydra.ReferenceActor(\"Carryable_StoneCarving\")\r\n\tRopeEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstRope_lightning\")\r\n\tExplosionEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstCylindrical_lightning\")\r\n\t\r\n\tlocal idCarryable = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"Carryable\")[1]\r\n\tHydra.ActorSetPowerEffectSize(idSelf, 8)\r\n\tHydra.ActorPlayEffectGroupActorToActor(Raze_LightningOrigin, idCarryable, RopeEffect)\r\n\tHydra.ActorPlayEffectGroup(idCarryable, ExplosionEffect)\r\n\t-- Hydra.ActorSpawnCarryable(S_ONYX_STATUE, Raze_LightningTarget, false, 0,0)\r\n]]\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2559,8 +2520,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2640,7 +2600,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2726,8 +2685,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2747,8 +2705,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2860,7 +2816,6 @@
        "unk_9c1ea4f": 49,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tRaze_DemonBarriers = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Raze_DemonBarriers\")\r\n\tRaze_LightningOrigin = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocTop\")[1]\r\n\tRaze_LightningTarget = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocBottom\")[1]\r\n\t\r\n\tfor i, idBarrier in pairs(Raze_DemonBarriers) do\r\n\t\t\tHydra.ActorFadeAndDelete(idBarrier,2)\r\n\tend\r\n\r\n--[[\r\n\tS_ONYX_STATUE = Hydra.ReferenceActor(\"Carryable_StoneCarving\")\r\n\tRopeEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstRope_lightning\")\r\n\tExplosionEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstCylindrical_lightning\")\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idSelf, 8)\r\n\tHydra.ActorPlayEffectGroupActorToActor(Raze_LightningOrigin, Raze_LightningTarget, RopeEffect)\r\n\tHydra.ActorPlayEffectGroup(Raze_LightningTarget, ExplosionEffect)\r\n\tHydra.ActorSpawnCarryable(S_ONYX_STATUE, Raze_LightningTarget, false, 0,0)\r\n]]\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2946,8 +2901,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3027,7 +2981,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t\r\n\t-- Determine the Boss Encounter LevelArea dynamically\r\n\tS_STRUCTURE_LEVEL_AREA = Hydra.ActorGetLevelArea(idActorDamaged)\r\n\tHydra.BossEncounterManuallyQueueStart(S_STRUCTURE_LEVEL_AREA)\r\n\r\n\tRaze_DemonBarriers = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Raze_DemonBarriers\")\r\n\tRaze_LightningOrigin = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocTop\")[1]\r\n\tRaze_LightningTarget = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocBottom\")[1]\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3113,8 +3066,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3134,8 +3086,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3248,7 +3198,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorReceptacle)\r\n\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffApplyToTarget(CCIncreaseDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.ActorFadeAndDelete(Chapel_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3334,8 +3283,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3409,7 +3357,6 @@
        "unk_9c1ea4f": 52,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3495,8 +3442,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3516,8 +3462,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3631,7 +3575,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3708,8 +3651,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3790,7 +3732,6 @@
        "unk_9c1ea4f": 61,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n    --Deactivate sigil of the indolent and Halls demon barrier\r\n\tfor i, idSigils in pairs(Sigils) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSigils,true)\r\n\t\tHydra.ActorFadeAndDelete(idSigils,2)\r\n\tend\r\n\t\r\n\tHydra.ActorFadeAndDelete(Halls_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3876,8 +3817,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3958,7 +3898,6 @@
        "unk_9c1ea4f": 61,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t--Deactivate sigil of the weak and Chapel demon barrier\r\n\tfor i, idSigils in pairs(Sigils) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSigils,true)\r\n\t\tHydra.ActorFadeAndDelete(idSigils,2)\r\n\tend\r\n\r\n\tHydra.ActorFadeAndDelete(Chapel_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4044,8 +3983,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4065,8 +4003,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4179,7 +4115,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorReceptacle)\r\n\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffApplyToTarget(DamageTakenDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\t end\r\n\tend\r\n\t\r\n\tHydra.ActorFadeAndDelete(Halls_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4265,8 +4200,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4340,7 +4274,6 @@
        "unk_9c1ea4f": 76,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4426,8 +4359,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4447,8 +4379,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4561,7 +4491,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorReceptacle)\r\n\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffApplyToTarget(CCIncreaseDebuff,\"Periodic_Debuff\",idplayer)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.ActorFadeAndDelete(MainRoom_DemonBarrier,2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4647,8 +4576,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4722,7 +4650,6 @@
        "unk_9c1ea4f": 80,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4808,8 +4735,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4829,8 +4755,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4942,7 +4866,6 @@
        "unk_9c1ea4f": 84,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tRaze_DemonBarriers = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Raze_DemonBarriers\")\r\n\tRaze_LightningOrigin = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocTop\")[1]\r\n\tRaze_LightningTarget = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocBottom\")[1]\r\n\t\r\n\tfor i, idBarrier in pairs(Raze_DemonBarriers) do\r\n\t\t\tHydra.ActorFadeAndDelete(idBarrier,2)\r\n\tend\r\n\r\n\tS_ONYX_STATUE = Hydra.ReferenceActor(\"Carryable_StoneCarving\")\r\n\tRopeEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstRope_lightning\")\r\n\tExplosionEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstCylindrical_lightning\")\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idSelf, 8)\r\n\tHydra.ActorPlayEffectGroupActorToActor(Raze_LightningOrigin, Raze_LightningTarget, RopeEffect)\r\n\tHydra.ActorPlayEffectGroup(Raze_LightningTarget, ExplosionEffect)\r\n\tHydra.ActorSpawnCarryable(S_ONYX_STATUE, Raze_LightningTarget, false, 0,0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5028,8 +4951,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5109,7 +5031,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t\r\n\t-- Determine the Boss Encounter LevelArea dynamically\r\n\tS_STRUCTURE_LEVEL_AREA = Hydra.ActorGetLevelArea(idActorDamaged)\r\n\tHydra.BossEncounterManuallyQueueStart(S_STRUCTURE_LEVEL_AREA)\r\n\r\n\tRaze_DemonBarriers = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Raze_DemonBarriers\")\r\n\tRaze_LightningOrigin = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocTop\")[1]\r\n\tRaze_LightningTarget = Hydra.ActorsInGroup(\"CAP_Tier3_FallenTemple_StructureLocBottom\")[1]\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5195,8 +5116,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5216,8 +5136,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5329,7 +5247,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_STRUCTURE_LEVEL_AREA)\r\n\t\r\n\tfor i, idBarrier in pairs(Raze_DemonBarriers) do\r\n\t\t\tHydra.ActorFadeAndDelete(idBarrier,2)\r\n\tend\r\n\r\n\tS_ONYX_STATUE = Hydra.ReferenceActor(\"Carryable_StoneCarving\")\r\n\tRopeEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstRope_lightning\")\r\n\tExplosionEffect = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstCylindrical_lightning\")\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idSelf, 8)\r\n\tHydra.ActorPlayEffectGroupActorToActor(Raze_LightningOrigin, Raze_LightningTarget, RopeEffect)\r\n\tHydra.ActorPlayEffectGroup(Raze_LightningTarget, ExplosionEffect)\r\n\tHydra.ActorSpawnCarryable(S_ONYX_STATUE, Raze_LightningTarget, false, 0,0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5415,8 +5332,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5496,7 +5412,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5582,8 +5497,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5603,8 +5517,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5695,7 +5607,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t\r\n\tlocal tSpawners = Hydra.ActorsLinkedByActorInGroup(Holdout_DemonBarrier, \"SPAWNERS\")\r\n\t\r\n\t-- STOP SPAWNERS\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\t-- Hydra.ActorDisable(idSpawner)\r\n\tend\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_HOLDOUT_LEVEL_AREA)\r\n\tHydra.ActorFadeAndDelete(Holdout_Demonwall,2)\r\n\tHydra.ActorFadeAndDelete(Holdout_DemonBarrier,1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5772,8 +5683,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5853,7 +5763,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5939,8 +5848,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5960,8 +5868,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6074,7 +5980,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t-- Determine the Boss Encounter LevelArea dynamically\r\n\tS_HOLDOUT_LEVEL_AREA = Hydra.ActorGetLevelArea(idActorGizmo)\r\n\tHydra.BossEncounterManuallyQueueStart(S_HOLDOUT_LEVEL_AREA)\r\n\t\r\n\tHoldout_DemonBarrier = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Holdout_DemonBarrier\")[1]\r\n\tHoldout_Demonwall = Hydra.ActorsInGroup(\"CAP_Tier3_Step_FallenTemple_Holdout_DemonWall\")[1]\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6160,8 +6065,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6181,8 +6085,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6295,7 +6197,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6381,8 +6282,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6402,8 +6302,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6516,7 +6414,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6602,8 +6499,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6623,8 +6519,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6675,8 +6569,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6727,8 +6619,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6758,11 +6648,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

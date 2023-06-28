@@ -199,7 +199,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -285,8 +284,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -306,8 +304,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -427,7 +423,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -553,7 +548,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -656,8 +650,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "idAsaFollower = Hydra.QuestGetFollower(\"QST_Kehj_Armor_01_AsaFollower\")\r\nidQuestOwner = Hydra.QuestGetOwner()\r\n\r\nif Hydra.ActorIsValid(idAsaFollower) then\r\n\tHydra.QuestFollowerTakeOwnership(idAsaFollower)\r\n\t--Hydra.QActorWait(idAsaFollower, 1.5)\r\n\tHydra.QActorClearAnimSetOverride(idAsaFollower)\r\n\t\r\n\tHydra.QActorPlayConversation(conv_Asa_02a, idQuestOwner, idAsaFollower)\r\n\t--Hydra.QActorWait(idAsaFollower, 5.0)\r\n\tHydra.QActorWaitForConversationFinished(idAsaFollower, conv_Asa_02a, true)\r\n\tHydra.QActorFadeAndDelete(idAsaFollower, 1.5)\r\nend\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -743,7 +736,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorHasItemByName(idSelf, item_AlimArmor) == false then\r\n\t\tidAsaFollower = Hydra.QuestGetFollower(\"QST_Kehj_Armor_01_AsaFollower\")\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(idAsaFollower) then\r\n\t\t\r\n\t\t\tif Hydra.IsPlayerVariableSet(idSelf, \"QST_Kehj_Armor_01_AlimBarkHeard\") == false then\r\n\t\t\t\tHydra.ActorPlayConversation(conv_Asa_01_AlimBark, idSelf, idAsaFollower)\r\n\t\t\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Kehj_Armor_01_AlimBarkHeard\")\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tHydra.ActorDisableAI(idAsaFollower)\t\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idAsaFollower, actor_AsaAlim, \"NPC_Run\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(idAsaFollower, actor_AsaAlim, true)\r\n\t\t\tHydra.QActorSetAnimSetOverride(idAsaFollower, \"NPC_Idle_Kneel_HeadDown\")\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -848,7 +840,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidAsaFollower = Hydra.QuestGetFollower(\"QST_Kehj_Armor_01_AsaFollower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idAsaFollower) then\r\n\t\tHydra.QActorStopAllQueuedActions(idAsaFollower)\r\n\t\tHydra.QActorClearAnimSetOverride(idAsaFollower)\r\n\t\tHydra.ActorEnableAI(idAsaFollower)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -925,8 +916,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1012,7 +1002,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorHasItemByName(idSelf, item_TalaArmor) == false then\r\n\t\tidAsaFollower = Hydra.QuestGetFollower(\"QST_Kehj_Armor_01_AsaFollower\")\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(idAsaFollower) then\r\n\t\t\tHydra.ActorDisableAI(idAsaFollower)\r\n\t\t\t\r\n\t\t\tif Hydra.IsPlayerVariableSet(idSelf, \"QST_Kehj_Armor_01_TalaBarkHeard\") == false then\r\n\t\t\t\tHydra.ActorPlayConversation(conv_Asa_01_TalaBark, idSelf, idAsaFollower)\r\n\t\t\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Kehj_Armor_01_TalaBarkHeard\")\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idAsaFollower, actor_AsaTala, \"NPC_Run\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(idAsaFollower, actor_AsaTala, true)\r\n\t\t\tHydra.QActorSetAnimSetOverride(idAsaFollower, \"NPC_Idle_Kneel_HeadDown\")\r\n\t\tend\r\n\tend\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1117,7 +1106,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidAsaFollower = Hydra.QuestGetFollower(\"QST_Kehj_Armor_01_AsaFollower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idAsaFollower) then\r\n\t\tHydra.QActorStopAllQueuedActions(idAsaFollower)\r\n\t\tHydra.QActorClearAnimSetOverride(idAsaFollower)\r\n\t\tHydra.ActorEnableAI(idAsaFollower)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1194,8 +1182,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 70,
@@ -1215,8 +1202,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1364,7 +1349,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidAsaClone = Hydra.CreatePersonalClone(actor_AsaDungeonEntrance)\r\n\t\r\n\tif Hydra.ActorIsValid(idAsaClone) then\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idAsaClone, loc_DungeonEntrance, \"NPC_Walk_Fast\", false)\r\n\t\tHydra.QActorDeletePersonalClone(idAsaClone, 1.5)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1455,8 +1439,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1476,8 +1459,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1590,7 +1571,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\tHydra.QActorClearAnimSetOverride(idActorFollower)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1667,8 +1647,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1688,8 +1667,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1830,7 +1807,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1944,8 +1920,7 @@
        "groupName": "Item",
        "name": "QST_Kehj_Armor_01_TalaArmor"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2041,7 +2016,6 @@
         "name": "DGN_Kehj_ForgottenRuins"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2152,8 +2126,7 @@
        "groupName": "Item",
        "name": "QST_Kehj_Armor_01_TalaArmor"
       }
-     ],
-     "szOnSetCompleteScript": ""
+     ]
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2173,8 +2146,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2211,11 +2182,6 @@
   "groupName": "Condition",
   "name": "Level40Plus"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

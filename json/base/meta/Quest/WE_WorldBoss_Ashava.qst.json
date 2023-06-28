@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tfor i, playerID in pairs(Hydra.QuestGetParticipants()) do\r\n\t\tHydra.SetPlayerVariableFlag(playerID, \"WorldBoss_Loot_Cooldown\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "bossOutro()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -194,8 +192,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -308,7 +304,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -394,8 +389,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -454,7 +448,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -531,8 +524,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -566,7 +558,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Portal opens wide\r\n\tif Hydra.ActorIsValid(Ref_Id_BossSpawn_MawPortal) and Hydra.ActorIsValid(Ref_Id_BossSpawn_MawSkirt) then\r\n\t\tPlayMawSummoning(Ref_Id_BossSpawn_MawPortal, Ref_Id_BossSpawn_MawSkirt);\r\n\t\tHydra.Wait(3.7)\r\n\tend\r\n\t\r\n\t-- Boss shows up\r\n\t-- Override weather\r\n\tif (strLevelArea == S_ZONE_NAME_FRAC) then\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_FRAC);\r\n\telseif (strLevelArea == S_ZONE_NAME_HAWE) then\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_HAWE);\r\n\telseif (strLevelArea == S_ZONE_NAME_KEHJ) then\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_KEHJ);\r\n\telseif (strLevelArea == S_ZONE_NAME_SCOS) then\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_SCOS);\r\n\telseif (strLevelArea == S_ZONE_NAME_STEP) then\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_STEP);\r\n\telse\r\n\t\tHydra.WeatherOverride(strWorld, S_WEATHER_BOSS_DEFAULT);\r\n\tend\r\n\r\n\tHydra.MusicOverride(strWorld, S_BOSS_SPAWN_MUSIC);\r\n\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf)\r\n\r\n\tHydra.Wait(5);\r\n\r\n\t--Portal goes away\r\n\tif Hydra.ActorIsValid(Ref_Id_BossSpawn_MawPortal) and Hydra.ActorIsValid(Ref_Id_BossSpawn_MawSkirt) then\r\n    \tPlayMawClosing(Ref_Id_BossSpawn_MawPortal, Ref_Id_BossSpawn_MawSkirt);\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -643,8 +634,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -720,7 +710,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tidBossMonster = idActorSpawned;\r\n\r\n\t-- Send Event that World Boss started to World Boss itself so Event Listeners can also recieved the World Boss's ID to reference from\r\n\t-- Event is listend by:\r\n\t-- \tHelltide Background Quest to notify Fire Storm\r\n\t--\t\t* Disable spawing Monsters for ship 1_0_X Perf\r\n\t--\t\t* Despawn spawned Monsters for ship 1_0_X Perf\r\n\tHydra.EventSend(S_EVENT_WORLDBOSS_STARTED, idBossMonster);\r\n\r\n\t-- Scare away mounts in the arena when the boss appears\r\n\tif Hydra.ActorIsValid(idFearZone) then\r\n\t\tHydra.ActorEnable(idFearZone)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -806,8 +795,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -833,8 +821,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -900,7 +886,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -977,8 +962,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "if Hydra.ActorIsValid(idBossMonster) then\r\n\tHydra.ActorFadeAndDelete(idBossMonster, 2);\r\nend\r\n\r\nbossOutro()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -998,8 +982,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1090,7 +1072,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1167,8 +1148,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1249,7 +1229,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1335,8 +1314,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1362,8 +1340,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.009999999776482582,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1453,7 +1429,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1530,8 +1505,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1551,8 +1525,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1665,7 +1637,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1751,8 +1722,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1849,7 +1819,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tPlayMawClosing(Ref_Id_BossSpawn_MawPortal, Ref_Id_BossSpawn_MawSkirt);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1935,8 +1904,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2026,7 +1994,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2112,8 +2079,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "if Hydra.ActorIsAlive(idBossMonster) then\r\n\t-- Get Portal Skirt Pos with offset so it aligns with escape animation\r\n\tlocal flEscapePortalSkirtOffset = -2;\r\n\tlocal vBossPos = Hydra.ActorGetPosition(idBossMonster);\r\n\tlocal vBossFacing = Hydra.ActorGetFacing(idBossMonster);\r\n\tlocal vEscapePortalSkirtPos = Hydra.PositionOffset(vBossPos, vBossFacing, flEscapePortalSkirtOffset);\r\n\r\n\t-- Spawn Skirt\r\n\tSpawnMaw(vEscapePortalSkirtPos);\r\n\r\n\t-- Boss perform Escape Power, notify Quest Escape Done, and cleanup boss\r\n\tHydra.QActorPower(idBossMonster, S_BOSS_ESCAPE_POWER);\r\n\tHydra.QActorEventSend(idBossMonster, \"Boss_Escaped\");\r\n\tHydra.QActorDelete(idBossMonster);\r\nend"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2139,8 +2105,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.009999999776482582,
-   "szOnEnterScript": "if Hydra.ActorIsAlive(idBossMonster) then\r\n\tHydra.BuffApplyToTarget(S_BOSS_ESCAPE_POWER, \"ESCAPING\", idBossMonster);\r\n\r\n\t-- Move Boss to center of arena proximity\r\n\tlocal flArenaCenterProximity = 2;\r\n\tHydra.QActorMoveToPositionConstantSpeed(idBossMonster, Ref_VMawPos, Hydra.MOVE_RATE_WALK, flArenaCenterProximity);\r\n\r\n\t-- Notify self(Quest) that boss arrived at its Escape Destination to start the Skirt Portal (Maw) \r\n\tHydra.QActorEventSend(idBossMonster, \"Arrived_At_Escape\");\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2254,7 +2218,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tif Hydra.ActorIsAlive(idBossMonster) then\r\n\t\t-- Send event World Boss Started if World Boss Event is Pinged\r\n\t\tHydra.EventSend(S_EVENT_WORLDBOSS_STARTED, idBossMonster);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2331,8 +2294,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2352,8 +2314,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2383,11 +2343,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "-- Quest Events (Example Helltide background Quest interfaces with this)\r\nS_EVENT_WORLDBOSS_PING = \"EVENT_WORLDBOSS_PING\";\r\nS_EVENT_WORLDBOSS_STARTED = \"EVENT_WORLDBOSS_STARTED\";\r\nS_EVENT_WORLDBOSS_DONE = \"EVENT_WORLDBOSS_DONE\";\r\n\r\nfunction EnableMaw(idPortal, idSkirt)\r\n\tif Hydra.ActorIsValid(idPortal) and Hydra.ActorIsValid(idSkirt) then\r\n\t\tHydra.ActorEnable(idPortal);\r\n\t\tHydra.ActorSetCollidable(idPortal, true);\r\n\t\tHydra.ActorTriggerPowerAtTarget(idPortal, idPortal, POWER_SKIRTOPEN);\r\n\t\tHydra.ActorTriggerPowerAtTarget(idPortal, idPortal, POWER_PORTALIDLE);\r\n\tend\r\n\r\n\tif Hydra.ActorIsValid(idSkirt) then\r\n\t\tHydra.QActorAnim(idSkirt, POWER_SKIRTOPEN);\r\n\tend\r\nend\r\n\r\nfunction PlayMawSummoning(idPortal, idSkirt)\r\n\tif Hydra.ActorIsValid(idPortal) then\r\n\t\tHydra.ActorTriggerPowerAtTarget(idPortal, idPortal, POWER_PORTALOPEN);\r\n\tend\r\n\r\n\tif Hydra.ActorIsValid(idSkirt) then\r\n\t\tHydra.QActorAnim(idSkirt, POWER_SKIRTOPENING);\r\n\tend\r\nend\r\n\r\nfunction SpawnMaw(vPos)\r\n\tif not Is_Maw_Active then\r\n\r\n\t\tIs_Maw_Active = true\r\n\r\n\t\tif Hydra.ActorIsValid(Ref_Id_BossSpawn_MawSkirt) then\r\n\t\t\tHydra.ActorDelete(Ref_Id_BossSpawn_MawSkirt);\r\n\t\tend\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(Ref_Id_BossSpawn_MawPortal) then\r\n\t\t\tHydra.ActorDelete(Ref_Id_BossSpawn_MawPortal);\r\n\t\tend\r\n\t\t\r\n\t\tlocal vMawPos = Hydra.PositionOffsetVertically(vPos,-0.075);\r\n\t\r\n\t\tRef_Id_BossSpawn_MawPortal = Hydra.ActorSpawnActor(S_MAW_PORTAL_ACTOR, vMawPos, Ref_VMawFacing, false, 0, 0);\r\n\t\tRef_Id_BossSpawn_MawSkirt = Hydra.ActorSpawnActor(S_MAW_SKIRT_ACTOR, vMawPos, Ref_VMawFacing, false, 0, 0);\r\n\t\r\n\t\tif Hydra.ActorIsValid(Ref_Id_BossSpawn_MawPortal) and Hydra.ActorIsValid(Ref_Id_BossSpawn_MawSkirt)then\r\n\t\t\tEnableMaw(Ref_Id_BossSpawn_MawPortal, Ref_Id_BossSpawn_MawSkirt);\r\n\t\tend\r\n\tend\r\nend\r\n\r\nfunction PlayMawClosing(idPortal, idSkirt)\r\n\tif Is_Maw_Active then\r\n\t\r\n\t\t-- Make sure we only Play Closing once\r\n\t\tIs_Maw_Active = false;\r\n\r\n\t\t-- Portal goes away\r\n\t\tif Hydra.ActorIsValid(idPortal) then\r\n\t\t\t-- Wait before killing portal, this is similar to the anim duration of the skirt escape anim\r\n\t\t\tHydra.QActorWait(idPortal, 1.3);\r\n\t\t\tHydra.QActorKill(idPortal);\r\n\t\tend\r\n\t\r\n\t\t-- Skirt goes away\r\n\t\tif Hydra.ActorIsValid(idSkirt) then\r\n\t\t\tHydra.QActorAnim(idSkirt, POWER_MAW_ESCAPE);\r\n\t\t\tHydra.QActorKill(idSkirt);\r\n\t\tend\r\n\r\n\tend\r\nend\r\n\r\nlocal function bossOutro()\r\n\tif Hydra.ActorIsValid(idFearZone) then\r\n\t\tHydra.ActorDisable(idFearZone)\r\n\tend\r\n\t\r\n\tHydra.Wait(.1)\r\n\t\r\n\tHydra.QuestAdvancePhase()\r\n\t\r\n\tPlayMawClosing(Ref_Id_BossSpawn_MawPortal, Ref_Id_BossSpawn_MawSkirt)\r\n\tHydra.Wait(5)\r\n\tHydra.ClearWeatherOverride(strWorld)\r\n\t\r\n\tHydra.Wait(15)\r\n\tHydra.ClearMusicOverride(strWorld)\r\n\t\r\n\t-- For Quests interfacing with World Bosses such as Helltide to notify World Boss Event is done (killed or escape)\r\n\t-- With Wait so we do not enable some Quests such as Helltide during World Boss death and escape performance\r\n\tHydra.EventSend(S_EVENT_WORLDBOSS_DONE)\r\n\r\nend",
- "szOnStartupScript": "-- ======= CONSTANTS =======\r\n--\tGeneral\r\n\tRANGE_QUEST = 40;\r\n\tTIMER_ACTIVE = \"WorldEvent_PVE_AbyssLord\";\r\n--\tQuest Constants\r\n\tS_BOSS_ESCAPE_POWER = Hydra.ReferencePower(\"worldboss_abyssLord_escape\");\r\n\tS_ZONE_NAME_FRAC = \"Frac_World_Event_B\";\r\n\tS_ZONE_NAME_HAWE = \"Hawe_WorldEvent_03\";\r\n\tS_ZONE_NAME_KEHJ = \"Kehj_WorldEvent_01\";\r\n\tS_ZONE_NAME_SCOS = \"Scosglen_Loch_Raeth_WorldBoss_Caen_Adar\";\r\n\tS_ZONE_NAME_STEP = \"Step_WorldEvent_03\";\r\n\tS_SKIRT_CLOSE_TIME = 4.0;\r\n\tS_SKIRT_FADE_TIME = 4.3;\r\n\tS_MAW_PORTAL_ACTOR = Hydra.ReferenceActor(\"WorldBoss_AbyssLord_Maw_Portal\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tS_MAW_SKIRT_ACTOR = Hydra.ReferenceActor(\"worldBoss_abyssLord_maw_skirt\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n--\tConversations\r\n-- Weather and ligthing\r\n\tS_WEATHER_BOSS_DEFAULT = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n\tS_WEATHER_BOSS_FRAC = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n\tS_WEATHER_BOSS_HAWE = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n\tS_WEATHER_BOSS_KEHJ = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n\tS_WEATHER_BOSS_SCOS = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n\tS_WEATHER_BOSS_STEP = Hydra.ReferenceWeather(\"weather_worldBoss_abyssLord\");\r\n--\tSound FX\r\n--\tVisual FX\r\n-- Music\r\n\tS_BOSS_SPAWN_MUSIC = Hydra.ReferenceMusic(\"Music_WorldBoss_Ashava_Spawn\");\r\n--\tMonster Powers\r\n\tPOWER_PORTALIDLE = Hydra.ReferencePower(\"WE_AbyssLord_Portal_Idle\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tPOWER_PORTALOPEN = Hydra.ReferencePower(\"WE_AbyssLord_Portal_Open\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tPOWER_SKIRTOPEN = Hydra.ReferencePower(\"AnimKey_Open\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tPOWER_SKIRTOPENING = Hydra.ReferencePower(\"AnimKey_Opening\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tPOWER_SKIRTCLOSE = Hydra.ReferencePower(\"AnimKey_Closing\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n\tPOWER_MAW_ESCAPE = Hydra.ReferencePower(\"AnimKey_Escape\", Hydra.SCRIPT_PRELOAD_REFERENCE);\r\n-- ======= VARIABLES =======\r\n--\tGeneral\r\n\tidThisQuest = Hydra.QuestGetOwner();\r\n\tstrWorld = Hydra.ActorGetWorld(idThisQuest);\r\n\tstrLevelArea = Hydra.ActorGetLevelArea(idThisQuest);\r\n--\tQuest Variables\r\n\tidBossMonster = Hydra.ActorsLinkedByActorInGroup(idThisQuest, \"Actor_Monster\")[1];\r\n\tRef_VMawPos = Hydra.ActorGetPosition(idBossMonster);\r\n\tRef_VMawFacing = Hydra.FacingFromYaw(0);\r\n\tRef_Id_BossSpawn_MawPortal = Hydra.ACDID_INVALID;\r\n\tRef_Id_BossSpawn_MawSkirt = Hydra.ACDID_INVALID;\r\n\tIs_Maw_Active = false;\r\n\tidFearZone = Hydra.ActorsLinkedByActorInGroup(idThisQuest, \"Actor_FearZone\")[1];\r\n--\tConversations\r\n-- ======= Initial Setup =======\t\r\n-- ======= Play Anim ======= --\r\n\tSpawnMaw(Ref_VMawPos);\r\n",
- "szOnShutdownScript": "\r\n",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "\tHydra.ClearWeatherOverride(strWorld)\r\n\tHydra.ClearMusicOverride(strWorld)\r\n\t\r\n\tif Hydra.ActorIsValid(idBossMonster) then\r\n\t\tlocal tSummons = Hydra.PowerActorGetAllSummons(idBossMonster);\r\n\t\t\r\n\t\tfor i,idSummon in ipairs(tSummons) do\r\n\t\t\tHydra.ActorFadeAndDelete(idSummon, 1.0);\r\n\t\tend\r\n\tend\r\n",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

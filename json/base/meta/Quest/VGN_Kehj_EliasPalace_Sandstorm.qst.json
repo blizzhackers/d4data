@@ -151,7 +151,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tWorldHighWindsTracker = Hydra.GetRandomInt(1, 4)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -249,8 +247,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -348,7 +344,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\r\n\tif sLevelAreaName == S_LEVELAREA_SELF then\r\n\t\tHydra.EventSend(\"ActivateWindCheck\")\r\n\t\tHydra.BuffApplyToTarget(POWER_SANDSTORM, \"SANDSTORM_VISUAL_NORMAL\", idActorPlayer)\r\n\r\n\t-- remove sandstorm buffs and damage when you are no longer in the level area\r\n\telse\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE_DEADLY\", idActorPlayer)\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", idActorPlayer)\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE\", idActorPlayer)\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"SANDSTORM_VISUAL_NORMAL\", idActorPlayer)\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"SANDSTORM_VISUAL_HIGH\", idActorPlayer)\r\n\t\t\r\n\t\tlocal tPlayers = Hydra.PlayerActorsInLevelArea(S_LEVELAREA_SELF)\r\n\t\tlocal nPlayersAlive = 0;\r\n\r\n\t\tfor i, ActorID in ipairs(tPlayers) do\r\n\r\n\t\t\tif Hydra.ActorIsAlive(ActorID) then\r\n\t\t\t\tnPlayersAlive = nPlayersAlive + 1;\r\n\t\t\tend\r\n\t\t\t\r\n\t\tend\r\n\r\n\t\tif nPlayersAlive == 0 then\r\n\t\t\tHydra.EventSend(\"ResetWinds\")\r\n\t\tend\r\n\t\t\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -425,8 +420,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -492,7 +486,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tPlayers = Hydra.PlayerActorsInLevelArea(S_LEVELAREA_SELF)\r\n\tlocal nPlayersAlive = 0;\r\n\r\n\tfor i, ActorID in ipairs(tPlayers) do\r\n\r\n\t\tif Hydra.ActorIsAlive(ActorID) then\r\n\t\t\tnPlayersAlive = nPlayersAlive + 1;\r\n\t\tend\r\n\t\t\r\n\tend\r\n\r\n\tif nPlayersAlive == 0 then\r\n\t\tHydra.EventSend(\"ResetWinds\")\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -569,8 +562,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -622,7 +614,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\r\n\tlocal tPlayers = Hydra.PlayerActorsInLevelArea(S_LEVELAREA_SELF)\r\n\tfor i, ActorID in ipairs(tPlayers) do\r\n\t\tif not Hydra.BuffIsOnActor(POWER_SANDSTORM_SAFE, \"BUFF_SAFEZONE\", ActorID) then \r\n\t\t\r\n\t\t\t-- No Safezone, No High Damage. Cleanup any lingering damage effects and apply correct effect\r\n\t \t\tif not Hydra.BuffIsOnActor(POWER_SANDSTORM, \"SANDSTORM_VISUAL_HIGH\", ActorID) then\r\n\t\t\t\tif Hydra.BuffIsOnActor(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", ActorID) then\r\n\t\t\t\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", ActorID)\r\n\t\t\t\tend\t\r\n\t\t\t\tif not Hydra.BuffIsOnActor(POWER_SANDSTORM, \"STORM_DAMAGE\", ActorID) then\r\n\t\t\t\t\tHydra.BuffApplyToTarget(POWER_SANDSTORM, \"STORM_DAMAGE\", ActorID)\r\n\t\t\t\tend\r\n\r\n\t\t\t-- No Safezone, Yes high damage\r\n\t\t\telseif Hydra.BuffIsOnActor(POWER_SANDSTORM, \"SANDSTORM_VISUAL_HIGH\", ActorID) then\r\n\t\t\t\tif Hydra.BuffIsOnActor(POWER_SANDSTORM, \"STORM_DAMAGE\", ActorID) then\r\n\t\t\t\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE\", ActorID)\r\n\t\t\t\tend\r\n\t\t\t\tif not Hydra.BuffIsOnActor(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", ActorID) then\r\n\t\t\t\t\tHydra.BuffApplyToTarget(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", ActorID)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t-- yes safezone\r\n\t\telse\r\n\t\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE\", ActorID)\r\n\t\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE_HIGH\", ActorID)\r\n\t\t\tHydra.BuffRemove(POWER_SANDSTORM, \"STORM_DAMAGE_DEADLY\", ActorID)\r\n\t\tend\r\n\tend\r\n\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -699,8 +690,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -720,8 +710,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -834,7 +822,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\t\r\n\t\r\n\tHighWindsActive = true\r\n\t\r\n\t-- Start High Winds DoT for all party members\r\n\tlocal tPlayers = Hydra.PlayerActorsInLevelArea(\"Kehj_Ridge\")\r\n\tfor i, ActorID in ipairs(tPlayers) do\r\n\t\tHydra.BuffApplyToTarget(POWER_SANDSTORM, \"SANDSTORM_VISUAL_HIGH\", ActorID)\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"SANDSTORM_VISUAL_NORMAL\", ActorID)\t\r\n\tend\r\n\t\r\n\t-- Spawn Tornados\r\n\tlocal S_SANDSTORM_TORNADO = Hydra.ReferenceActor(\"VGN_Kehj_EliasPalace_Sandstorm_Tornado_Invisible_Parent\");\r\n\tlocal tTornados = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_Tornado_Marker\")\r\n\tfor i, ActorID in ipairs(tTornados) do\r\n\t\tCurrentTornado = Hydra.ActorSpawnActor(S_SANDSTORM_TORNADO, ActorID)\t\r\n\t\tHydra.ActorAddToGroup(CurrentTornado, \"QST_Kehj_EliasPalace_Tornado\")\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -920,8 +907,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1010,7 +996,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1087,8 +1072,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1108,8 +1092,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1200,7 +1182,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n\t-- Time to Go Sound Que\r\n\t-- no longer possible to access the sandstorm before being on the quest\r\n\t\r\n\tlocal tParty = Hydra.PlayerActors()\r\n\r\n\tfor i, ActorID in ipairs(tParty) do\r\n\t\tHydra.BuffRemove(POWER_SANDSTORM, \"SANDSTORM_VISUAL_HIGH\", ActorID)\r\n\t\tHydra.BuffApplyToTarget(POWER_SANDSTORM, \"SANDSTORM_VISUAL_NORMAL\", ActorID)\t\r\n\tend\r\n\t-- Remove any spawned tornados\r\n\tlocal tSpawnedTornados = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_Tornado\")\r\n\tfor i, ActorID in ipairs(tSpawnedTornados) do\r\n\t\tHydra.ActorDelete(ActorID)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1277,8 +1258,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1367,7 +1347,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1444,8 +1423,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1465,8 +1443,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1579,7 +1555,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- pulls the the player who entered the safe zone. this is used to play the exit hint dialogue\r\n\tidActorPlayer = idActor\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1665,8 +1640,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1755,7 +1729,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1832,8 +1805,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1853,8 +1825,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1905,8 +1875,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1957,8 +1925,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1988,11 +1954,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_WEATHER_SANDSTORM = Hydra.ReferenceWeather(\"pvp_OpenWorld_Affix_Sandstorm\")\r\nS_WEATHER_DEFAULT = Hydra.ReferenceWeather(\"weather_Kehjistan_physical\")\r\nS_WORLD_THIS = Hydra.ActorGetWorld(idSelf)\r\nS_LEVELAREA_SELF = Hydra.ActorGetLevelArea(idSelf)\r\n\r\n\r\nHighWindsActive = false\r\nS_SANDSTORM_TORNADO = Hydra.ReferenceActor(\"VGN_Kehj_EliasPalace_Sandstorm_Tornado_Invisible_Parent\");\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

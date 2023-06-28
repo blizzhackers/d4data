@@ -76,7 +76,7 @@
  "unk_14dee1b": 0,
  "flParticipationRadius": 12,
  "unk_8881b0e": 20,
- "dwNextUID": 331,
+ "dwNextUID": 332,
  "unk_b89b77f": 0,
  "unk_c18cabd": 0,
  "unk_79f6e17": 0,
@@ -185,7 +185,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -271,8 +270,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -292,8 +290,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -432,7 +428,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--Bool for Yorin Comment locked\r\n\tbTombEntered = true\r\n\r\n\t--Set up Markers linked to Trigger\r\n\ttDoors = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Doors\")\r\n\tidMainDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"MainDoor\")[1]\r\n\tidRuneStone01 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"RuneHole01\")[1]\r\n\tidRuneStone02 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"RuneHole02\")[1]\r\n\tlocDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"DoorLoc\")[1]\r\n\tidYorinInvest = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Yorin\")[1]\r\n\tidRetreat01 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Retreat\")[1]\r\n\t\r\n\t-- always refresh variable\r\n\tfollowerYorin = idActor\r\n\t\r\n\t--Yorin moves to the Warded Passage and investigates\r\n\tif Hydra.ActorIsValid(followerYorin) then\r\n\t\tHydra.ActorEnableAI(followerYorin, false)\r\n\t\tHydra.QuestFollowerTakeOwnership(followerYorin)\r\n\t\tHydra.ActorPlaySimpleConversation(CON_CALL_LOCK_01, followerYorin)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerYorin, locDoor, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerYorin, locDoor)\r\n\t\tHydra.QActorWaitForConversationFinished(followerYorin, CON_CALL_LOCK_01)\r\n\t\tHydra.QActorSheath(followerYorin)\r\n\t\tHydra.QActorWait(followerYorin, 1)\r\n\t\tHydra.WaitForQEmpty(followerYorin)\r\n\t\tHydra.ActorDelete(followerYorin)\r\n\tend\r\n\t\r\n\t--Enable static Yorin, inspecting Runed Passageway\r\n\tHydra.ActorEnable(idYorinInvest)\r\n\tHydra.ActorSetAnimSetOverride(idYorinInvest, \"NPC_Yorin_Idle_Stand_Inspect_EyeLevel\")\r\n\t\r\n\tHydra.EventSend(\"DoorInvest\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -527,8 +522,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -621,7 +615,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\r\n\r\n\t-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\n\tlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n\t-- Check validity, every time\r\n\tif Hydra.ActorIsValid(followerYorin) == true then\r\n\t\tlocal idPlayerTarget = Hydra.ActorGetFollowTarget(followerYorin)\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(idPlayerTarget) then\r\n\t\t\t--Yorin comments on Druid Tomb\r\n\t\t\tHydra.ActorPlayConversation(CON_CAIRN_ENTRANCE, idPlayerTarget, followerYorin)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -716,8 +709,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -813,7 +805,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -899,8 +890,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -986,7 +976,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1072,8 +1061,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1093,8 +1081,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Bool for Yorin Comment\r\nbTombEntered = false\r\n\t\r\n--Make Wardstone Receptacles Untargetable\r\nlocal tReceptacles = Hydra.ActorsInGroup(\"QST_Scos_Hills_WeepingCairns_Receptacles\")\r\n\t\r\nfor i, idReceptacle in ipairs(tReceptacles) do\r\n\tHydra.ActorSetTargetable(idReceptacle, false)\r\nend\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1256,7 +1242,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tlocal akInspect = Hydra.ReferencePower(\"AnimKey_Inspect_EyeLevel\")\r\n\t\r\n\t--Open side passages\r\n\tfor i, idDoor in ipairs(tDoors) do\r\n\t\tHydra.ActorGizmoSetDisabled(idDoor, false)\r\n\tend\r\n\r\n\t--Make Wardstone Receptacles Targetable\r\n\tlocal tReceptacles = Hydra.ActorsInGroup(\"QST_Scos_Hills_WeepingCairns_Receptacles\")\r\n\t\t\r\n\tfor i, idReceptacle in ipairs(tReceptacles) do\r\n\t\tif i == 2 then\r\n\t\t\tHydra.ActorSetTargetable(idReceptacle, true)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1342,8 +1327,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1363,8 +1347,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1499,7 +1481,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorReceptacle)\r\n\t--Yorin opens Runed Passage\r\n\tHydra.ActorPlaySimpleConversation(CON_CAIRN_OPEN, idYorinInvest)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1585,8 +1566,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1666,7 +1646,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tidWardstoneSpawn = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"SPAWN\")[1]\r\n\tHydra.Wait(1)\r\n\t--Spawn carryable Rune\r\n\tHydra.ActorSpawnCarryable(ID_RUNE_CARRYABLE, idWardstoneSpawn, false, 0, 0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1761,8 +1740,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1843,7 +1821,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1938,8 +1915,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2055,7 +2031,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t--Open Runed Passageway\r\n\tHydra.ActorEnable(idMainDoor)\r\n\tHydra.ActorGizmoOperate(idMainDoor, idSelf)\r\n\t\r\n\t--Remove Yorin's Idle Override\r\n\tif Hydra.ActorIsValid(idYorinInvest) then\r\n\t\tHydra.ActorClearAnimSetOverride(idYorinInvest)\r\n\t\tHydra.ActorSetSheathPreference(idYorinInvest, 1)\r\n\t\tHydra.ActorDisable(idYorinInvest)\r\n\tend\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2141,8 +2116,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2162,8 +2136,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2302,7 +2274,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--Set up Markers linked to Trigger\r\n\ttWoodWraiths = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Spawners\")\r\n\ttCairns = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Cairns\")\r\n\ttSummoning = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Summoning\")\r\n\tlocYorin = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"YorinLoc\")[1]\r\n\tidYorinTomb = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Yorin\")[1]\r\n\tidTombDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Door\")[1]\r\n\tidJournal01 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Journal\")[1]\r\n\t\r\n\t\r\n\tfollowerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n\t--Yorin moves to the Druid Corpse and comments\r\n\tif Hydra.ActorIsValid(followerYorin) then\r\n\t\tHydra.ActorEnableAI(followerYorin, false)\r\n\t\tHydra.QuestFollowerTakeOwnership(followerYorin)\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(followerYorin) == true then\r\n\t\t\tidPlayerTarget = Hydra.ActorGetFollowTarget(followerYorin)\r\n\t\t\tHydra.ActorPlayConversation(CON_CALL_CORPSES01, idPlayerTarget, followerYorin)\r\n\t\tend\r\n\t\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerYorin, locYorin, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerYorin, locYorin)\r\n\t\tHydra.QActorSheath(followerYorin)\r\n\tend\r\n\tHydra.Wait(8.0)\r\n\tHydra.EventSend(\"CorpseInvest\")\r\n\t\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2397,8 +2368,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2494,7 +2464,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t--Enable static Yorin, inspecting Tortured Druid Corpse\r\n\tif Hydra.ActorIsValid(followerYorin) then\r\n\t\tHydra.ActorDelete(followerYorin)\r\n\tend\r\n\t\r\n\t--Remove deprecated Yorin\r\n\tHydra.ActorDisable(idYorinInvest)\r\n\tHydra.ActorEnable(idYorinTomb)\t\r\n\tHydra.ActorSetSheathPreference(idYorinTomb, 1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2580,8 +2549,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2662,7 +2630,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2757,8 +2724,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2778,8 +2744,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Give Yorin his combat loadout via Event\r\nHydra.EventSend(\"YorinLoadout\")\r\n\r\n-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\nlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n-- Check validity, every time\r\nif Hydra.ActorIsValid(followerYorin) == true then\r\n\tlocal idPlayerTarget = Hydra.ActorGetFollowTarget(followerYorin)\r\n\t\t\r\n\tif Hydra.ActorIsValid(idPlayerTarget) then\r\n\t\t--Yorin voices concern\r\n\t\tHydra.ActorPlayConversation(CON_CALL_CONCERN, idPlayerTarget, followerYorin)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2911,7 +2875,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\t\r\n\t--Open Tomb Door\r\n\tHydra.ActorGizmoSetDisabled(idTombDoor, false)\r\n\t\r\n\t--Enable Airidah Journal 01\r\n\tHydra.ActorGizmoSetDisabled(idJournal01, false)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2997,8 +2960,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3018,8 +2980,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Give Yorin his combat loadout via Event\r\nHydra.EventSend(\"YorinLoadout\")",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3071,7 +3031,14 @@
      "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 197,
-     "ptLink": [],
+     "ptLink": [
+      {
+       "__type__": "QuestObjectiveSetLink",
+       "__typeHash__": 730988871,
+       "dwDestinationPhaseUID": 199,
+       "eLinkType": 1
+      }
+     ],
      "arCallbacks": [
       {
        "__type__": "QuestCallback",
@@ -3158,7 +3125,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--Set up Markers linked to Trigger\r\n\tlocCairn = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"CairnLoc\")[1]\r\n\tidYorinRev = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Yorin01\")[1]\r\n\tidRuneDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Door\")[1]\r\n\t\r\n\t--Yorin comments on chamber and moves to Defiled Cairn of the Elders\r\n\tfollowerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n\tif Hydra.ActorIsValid(followerYorin) then\r\n\t\tHydra.ActorEnableAI(followerYorin, false)\r\n\t\tHydra.QuestFollowerTakeOwnership(followerYorin)\r\n\t\tHydra.ActorPlaySimpleConversation(CON_CALL_REVERED01, followerYorin)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerYorin, locCairn, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerYorin, locCairn)\r\n\t\tHydra.QActorWaitForConversationFinished(followerYorin, CON_CALL_REVERED01)\r\n\t\tHydra.WaitForQEmpty(followerYorin)\r\n\t\tHydra.ActorDelete(followerYorin)\r\n\tend\r\n\t\r\n\t--Spawn new static Yorin\r\n\tHydra.ActorEnable(idYorinRev)\r\n\tHydra.QActorPlaySimpleConversation(CON_CALL_REVERED02, idYorinRev)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3253,8 +3219,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3335,7 +3300,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3430,21 +3394,13 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
      "dwUID": 260,
-     "ptLink": [
-      {
-       "__type__": "QuestObjectiveSetLink",
-       "__typeHash__": 730988871,
-       "dwDestinationPhaseUID": 199,
-       "eLinkType": 1
-      }
-     ],
+     "ptLink": [],
      "arCallbacks": [
       {
        "__type__": "QuestCallback",
@@ -3534,7 +3490,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3620,8 +3575,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3641,8 +3595,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Give Yorin his combat loadout via Event\r\nHydra.EventSend(\"YorinLoadout\")\r\n\r\n-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\nlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n-- Check validity, every time\r\nif Hydra.ActorIsValid(followerYorin) == true then\r\n\tlocal idPlayerTarget = Hydra.ActorGetFollowTarget(followerYorin)\r\n\t\t\r\n\tif Hydra.ActorIsValid(idPlayerTarget) then\r\n\t\t--Yorin comment on riled dead.\r\n\t\tHydra.ActorPlayConversation(CON_AIRI_SECRETS, idPlayerTarget, followerYorin)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3769,7 +3721,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3864,8 +3815,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3885,8 +3835,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4035,7 +3983,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, snoMonsterFamily, szArchetype, idActorVictim)\r\n\r\n--Yorin comments on disturbed dead\r\n\tlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n\tif (bTombEntered == false) and (Hydra.ActorIsValid(followerYorin)) then\r\n\t\tHydra.ActorPlaySimpleConversation(CON_CALL_DEAD, followerYorin)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4112,8 +4059,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4202,7 +4148,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t--Enable Yorin's Conversation List\r\n\tclYorin = Hydra.ReferenceConversationList(\"QST_Scos_Hills_Yorin_ConvoList\")\r\n\t\r\n\tHydra.QActorSetConversationList(idYorinInvest, clYorin)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4279,8 +4224,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4362,7 +4306,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t--Give Yorin his combat loadout\r\n\tlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\r\n\tif Hydra.ActorIsValid(followerYorin) then\r\n\t\tHydra.ActorSetLoadout(followerYorin, \"npc_yorin_WEP_mace\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4439,8 +4382,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4460,8 +4402,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4602,7 +4542,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.QActorSetIdleAnim(idActorNPC, \"AnimKey_Neutral\")\r\n\tHydra.QActorUnsheath(idActorNPC)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4688,8 +4627,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4778,7 +4716,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t--Disembodied Spirits see Yorin as a Pale Knight; enemy\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorsInSameWorld(idPlayer, idActorNPC) then\r\n\t\t\tHydra.ActorPlayDisembodiedConversation(CON_DISEMBODIED_REVENGE, idPlayer)\r\n\t\tend\r\n\tend\r\n\r\n\t--Activate spirit effects on Cairns\r\n\tfor i, idCairns in pairs(tCairns) do\r\n\t\tHydra.ActorDelete(idCairns)\r\n\tend\r\n\t\r\n\tfor i, tSummoning in pairs(tSummoning) do\r\n\t\tHydra.ActorEnable(tSummoning)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4855,8 +4792,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4945,7 +4881,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t--Yorin pleads with the Spirits\r\n\tHydra.QActorPower(idYorinTomb, \"AnimKey_Emote_Talk_Pleading\")\r\n\tHydra.QActorPlaySimpleConversation(CON_YORIN_PLEADING, idYorinTomb)\r\n\tHydra.QActorWaitForConversationFinished(idYorinTomb, CON_YORIN_PLEADING)\r\n\t\r\n\t-- Safety measure.  If player leaves area during theater, conversation finished will never fire on Yorin and \r\n\t-- will block progression but QEmpty will fire and it's always valid for the quest to send an event.\r\n\tHydra.WaitForQEmpty(idYorinTomb)\r\n\tHydra.EventSend(\"PaleRevenge02_Finished\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5022,8 +4957,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5112,7 +5046,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\t--Spawn Vengeful Wildwood\r\n\t--Destroy protected cairns\r\n\tfor i, idSummoner in pairs(tSummoning) do\r\n\t\tHydra.ActorDelete(idSummoner)\r\n\tend\r\n\t\r\n\t--Enable Vengeful Wildwood \r\n\tfor i, idWoodWraiths in pairs(tWoodWraiths) do\r\n\t\tHydra.ActorSetPowerEffectSize(idWoodWraiths, 4.0)\r\n\t\tHydra.ActorPlayEffectGroup(idWoodWraiths, FXKIT_SPIRIT_BURST)\r\n\t\tHydra.ActorEnable(idWoodWraiths)\r\n\tend\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5189,8 +5122,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5299,7 +5231,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorSetIdleAnim(idActorNPC, \"AnimKey_Inspect_EyeLevel\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5385,8 +5316,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5406,8 +5336,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5472,8 +5400,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5524,8 +5450,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5576,8 +5500,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5628,8 +5550,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5680,8 +5600,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5829,7 +5747,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Open Rune Door\r\n\tHydra.ActorGizmoSetDisabled(idRuneDoor, false)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5915,8 +5832,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5936,8 +5852,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6071,7 +5985,6 @@
         "name": "CSD_Scos_Hills_WeepingCairns"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6166,8 +6079,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6187,8 +6099,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Give Yorin his combat loadout via Event\r\nHydra.EventSend(\"YorinLoadout\")\r\n\r\n-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\nlocal followerYorin = Hydra.QuestGetFollower(ID_YORIN_FOLLOWER)\r\n\t\r\n-- Check validity, every time\r\nif Hydra.ActorIsValid(followerYorin) == true then\r\n\tlocal idPlayerTarget = Hydra.ActorGetFollowTarget(followerYorin)\r\n\t\t\r\n\tif Hydra.ActorIsValid(idPlayerTarget) then\r\n\t\t--Yorin says Airidah must be found for answers\r\n\t\tHydra.ActorPlayConversation(CON_YORIN_AIRIHUNT, idPlayerTarget, followerYorin)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6226,17 +6136,62 @@
     "hImageHandle": 0
    },
    "snoAudioContext": null
+  },
+  {
+   "__type__": "QuestPhase",
+   "__typeHash__": 1662164195,
+   "dwType": 1662164195,
+   "dwPad": 0,
+   "dwUID": 331,
+   "dwFlags": 0,
+   "eType": 3,
+   "arCallbackSets": [],
+   "unk_4b2de13": 4294967295,
+   "unk_188a07a": [],
+   "unk_61c2846": 0,
+   "unk_951ad2a": null,
+   "snoReward": null,
+   "unk_189b89b": 0,
+   "nTimerDuration": 0,
+   "unk_2bde7b6": 0,
+   "unk_d3b7ed7": [],
+   "unk_8280b0e": 20,
+   "unk_eff642d": 0,
+   "unk_fc27941": 0,
+   "unk_d9a8a05": 4294967295,
+   "unk_5d4cfc0": 4294967295,
+   "unk_669bcf8": 4294967295,
+   "unk_287ecb5": 4294967295,
+   "unk_6344bd7": 0,
+   "unk_fab6e45": {
+    "__type__": "MarkerHandle",
+    "__typeHash__": 3934284334,
+    "snoMarkerSet": null,
+    "nID": -1
+   },
+   "unk_47f8481": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+   },
+   "unk_ed8215b": null,
+   "unk_f6ded77": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "unk_f84da79": {
+    "__type__": "Type_6b1c5d9c",
+    "__typeHash__": 1797021084,
+    "hImageHandle": 0
+   },
+   "snoAudioContext": null
   }
  ],
  "arRequiredReputations": [],
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

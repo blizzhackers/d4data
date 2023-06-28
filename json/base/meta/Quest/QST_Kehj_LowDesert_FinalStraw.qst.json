@@ -192,7 +192,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tif Hydra.ActorIsValid(idCamelClone05) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone05)\r\n\t\tidCamelClone05 = nil\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(idMerchant) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idMerchant)\r\n\t\tidMerchant = nil\r\n\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\r\n\tidCamelClone05 = Hydra.CreatePersonalClone(npc_Camel_05)\r\n\tidMerchantClone = Hydra.CreatePersonalClone(npc_Merchant_End)\r\n\t\r\n\r\n\tif Hydra.ActorIsValid(idCamelClone05) and Hydra.ActorIsValid(idMerchantClone) then\r\n\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idMerchantClone)\r\n\t\t\t\r\n\t\t\t--Hydra.QActorSetAnimSetOverride(idMerchantClone, \"NPC_Idle_Stand_Dazed\", false, true)\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone05, marker_Camel_Location05, \"NPC_Walk\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone05, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorSetAnimSetOverride(idMerchantClone, \"NPC_Idle_Stand_Horse_Pet\")\r\n\t\t\t\r\n\t\t\tHydra.QActorPlayConversation(Conv_MerchantBark, idOwner, idMerchantClone)\t\r\n\t\t\t\r\n\t\t\tHydra.QActorWait(idMerchantClone, 7)\r\n\t\t\t\r\n\t\t\tHydra.QActorWait(idCamelClone05, 10)\r\n\t\t\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idMerchantClone, false, true)\r\n\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone05, marker_CamelEnd, \"NPC_Walk\", false)\r\n\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idMerchantClone, marker_MerchantEnd, \"NPC_Walk\", false)\r\n\t\r\n\t\t\tHydra.QActorFadeAndDelete(idCamelClone05, 0.3)\r\n\t\t\r\n\t\t\tHydra.QActorFadeAndDelete(idMerchantClone, 0.3)\r\n\t\r\n\t\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -298,8 +297,7 @@
        "groupName": "Item",
        "name": "QST_Kehj_FinalStraw_BagofOats"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     ]
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -319,8 +317,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -468,7 +464,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -559,8 +554,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -580,8 +574,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -699,7 +691,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone02) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone02)\r\n\t\tidCamelClone02 = nil\r\n\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone02 = Hydra.CreatePersonalClone(npc_Camel_02)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone02) then\r\n\t\t\tHydra.QActorClearAnimSetOverride(idCamelClone02, false, true)\r\n\t\t\t\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone02, marker_Camel_Location02, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone02, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone02, npc_Camel_03)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone02)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone02, 0.0, npc_Camel_03)\r\n\t\tend\r\n\t\r\n\tHydra.Wait(8.0)\r\n\tHydra.EventSendToActor(\"Camel_02\", idSelf, idSelf)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -785,8 +776,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -882,7 +872,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -968,8 +957,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1034,7 +1022,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1146,8 +1133,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1167,8 +1153,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "if Hydra.ActorIsValid(idCamelClone02) then\r\n \t-- Need to use DeletePersonalClone here to specify replacement actor for smooth transition\r\n\tHydra.QActorDeletePersonalClone(idCamelClone02, 0.0, npc_Camel_03)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1316,7 +1300,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorPlaySound(npc_Camel_04, \"Play_WILD_Camel_Vox_Louder_Death\")\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1407,8 +1390,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1449,7 +1431,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nidOwner = Hydra.QuestGetOwner()\r\n\r\nHydra.QActorClearAnimSetOverride(npc_Camel_04)\r\n\r\nHydra.QActorPlayConversation(Conv_CamelBark, idOwner, npc_Camel_04)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1526,8 +1507,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1547,8 +1527,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1668,7 +1646,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1754,8 +1731,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1796,7 +1772,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1873,8 +1848,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1967,7 +1941,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nHydra.EventSend(\"Scorpion_Spawn\")\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2044,8 +2017,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2065,8 +2037,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2214,7 +2184,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorPlaySound(npc_Camel_04, \"Play_WILD_Camel_Vox_Louder_Death\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2305,8 +2274,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2326,8 +2294,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2445,7 +2411,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\tif Hydra.ActorIsValid(idCamelClone04) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone04)\r\n\t\tidCamelClone04 = nil\r\n\t\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone04 = Hydra.CreatePersonalClone(npc_Camel_04)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone04) then\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone04, marker_Camel_Location04, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone04, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone04, npc_Camel_05)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone04)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone04, 0.3)\r\n\t\t\t\r\n\t\tend\r\n\t\r\n\tHydra.Wait(10.0)\r\n\tHydra.EventSendToActor(\"Camel_04\", idSelf, idSelf)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2531,8 +2496,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2628,7 +2592,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2714,8 +2677,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2780,7 +2742,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2892,8 +2853,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2913,8 +2873,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "if Hydra.ActorIsValid(idCamelClone04) then\r\n \t-- Need to use DeletePersonalClone here to specify replacement actor for smooth transition\r\n\tHydra.QActorDeletePersonalClone(idCamelClone04, 0.0, npc_Camel_05)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3039,7 +2997,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nHydra.ActorPlayConversation(Conv_PlayerBark02, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3130,8 +3087,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3151,8 +3107,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3270,7 +3224,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone03) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone03)\r\n\t\tidCamelClone03 = nil\r\n\tend\r\n\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone03 = Hydra.CreatePersonalClone(npc_Camel_03)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone03) then\r\n\t\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(idCamelClone03, false, true)\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone03, marker_Camel_Location03, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone03, npc_Camel_04)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone03)\r\n\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone03, 0.0, npc_Camel_04)\r\n\t\r\n\t\tend\r\n\r\n\tHydra.Wait(7.0)\r\n\tHydra.ActorClearAnimSetOverride(npc_Camel_04)\r\n\tHydra.EventSendToActor(\"Camel_03\", idSelf, idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3356,8 +3309,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3453,7 +3405,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3539,8 +3490,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3605,7 +3555,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3717,8 +3666,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3738,8 +3686,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "if Hydra.ActorIsValid(idCamelClone03) then\r\n \t-- Need to use DeletePersonalClone here to specify replacement actor for smooth transition\r\n\tHydra.QActorDeletePersonalClone(idCamelClone03, 0.0, npc_Camel_04)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3887,7 +3833,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3973,8 +3918,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3994,8 +3938,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4115,7 +4057,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4215,8 +4156,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4236,8 +4176,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4362,7 +4300,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nHydra.ActorPlayConversation(Conv_PlayerBark01, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4453,8 +4390,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4474,8 +4410,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4600,7 +4534,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4691,8 +4624,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4712,8 +4644,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4838,7 +4768,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4929,8 +4858,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4950,8 +4878,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5076,7 +5002,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5167,8 +5092,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5188,8 +5112,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5307,7 +5229,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorIsValid(idCamelClone) then\r\n\t\t--Resetting clone to make testing easier.\r\n\t\tHydra.QActorDeletePersonalClone(idCamelClone)\r\n\t\tidCamelClone = nil\r\n\t\tend\r\n\t\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tidCamelClone = Hydra.CreatePersonalClone(npc_Camel_01)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idCamelClone) then\r\n\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idCamelClone, marker_Camel_Location01, \"NPC_Run\", true)\r\n\t\t\t\r\n\t\t\tHydra.QActorFaceSameAsActor(idCamelClone, npc_Camel_02)\t\r\n\t\t\t\r\n\t\t\tHydra.QActorSetAnimSetOverride(idCamelClone, animSet_Camel_Eating)\r\n\t\t\t\r\n\t\t\t--Hydra.WaitForQEmpty(idCamelClone)\r\n\t\t\t\r\n\t\t\tHydra.ActorPlaySound(idCamelClone, \"Play_WILD_Camel_Vox_Louder_Grunt\")\r\n\t\t\t\r\n\t\t\tHydra.QActorDeletePersonalClone(idCamelClone, 0.0, npc_Camel_02)\r\n\t\tend\r\n\t\r\n\tHydra.Wait(4.7)\r\n\t\r\n\tHydra.EventSendToActor(\"Camel_01\", idSelf, idSelf)\r\n\t\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5393,8 +5314,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5490,7 +5410,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5576,8 +5495,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5642,7 +5560,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5754,8 +5671,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5775,8 +5691,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": " if Hydra.ActorIsValid(idCamelClone) then\r\n \t-- Need to use DeletePersonalClone here to specify replacement actor for smooth transition\r\n\tHydra.QActorDeletePersonalClone(idCamelClone, 0.0, npc_Camel_02)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5813,11 +5727,6 @@
   "groupName": "Condition",
   "name": "Level40Plus"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [
   {

@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -295,7 +293,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -372,8 +369,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -393,8 +389,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -516,7 +510,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Guarantee elite if villagers are freed\r\n\tID_SPAWNER = Hydra.ActorsLinkedByActorInGroup(idSelf, \"elite\")[1]\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -593,8 +586,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -673,7 +665,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\n\r\n\tHydra.Wait(.5)\r\n\r\n\t-- Kill the villagers and summon the demon\r\n\ttGizmos = Hydra.ActorsLinkedByActorInGroup(idSelf, \"stake\")\r\n\tfor i, idGizmo in ipairs(tGizmos) do\r\n\t\tHydra.ActorGizmoSetDisabled(idGizmo, true)\r\n\tend\r\n\t\r\n\ttNPCs = Hydra.ActorsInPrefabScopedGroup(\"SMP_NPCs\")\r\n\tfor i, idNPC in ipairs(tNPCs) do\r\n\t\tHydra.ActorKill(idNPC)\r\n\t\tHydra.Wait(Hydra.GetRandomFloat() * .25)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -750,8 +741,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -771,8 +761,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "for i, actorID in pairs(T_MELEES) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n\t\tHydra.QActorClearAnimSetOverride(actorID)\r\n\t\tHydra.QActorEnableAI(actorID, true)\r\n\tend\r\nend\r\n\r\nif Hydra.ActorIsValid(ID_SUMMONER) then\r\n\tHydra.QActorClearAnimSetOverride(ID_SUMMONER)\r\n\tHydra.QActorEnableAI(ID_SUMMONER, true)\r\nend",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -873,7 +861,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tlocal tempNPC = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"npc\")[1]\r\n\tHydra.ActorRemoveComplexEffect(tempNPC, T_ROPES[tempNPC])\r\n\r\n\tHydra.QActorAnimAndNewIdle(tempNPC, ANIMKEY_TIED_OUTRO, ANIMKEY_NEUTRAL)\r\n\tHydra.ActorClearAnimSetOverride(tempNPC)\r\n\tHydra.ActorMergeAIState(tempNPC, AISTATE_FLEE, tempNPC, 0)\r\n\t\r\n\tHydra.ActorRemoveFromPrefabScopedGroup(tempNPC, \"SMP_NPCs\")\r\n\t\r\n\tfor i, actorID in pairs(T_STAKES) do\r\n\t\tif Hydra.ActorIsValid(actorID) and not Hydra.ActorGizmoSwitchIsOn(actorID)then\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.EventSendToActor(\"ALL_PRISONERS_FREED\", idSelf, idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -950,8 +937,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -971,8 +957,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1091,7 +1075,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1168,8 +1151,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1189,8 +1171,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorDelete(ID_FXLOC_BLOOD)\r\nHydra.ActorPlayEffectGroup(ID_FXLOC_BURST, EG_BLOOD_BURST)\r\nHydra.Wait(.75)\r\nHydra.ActorTriggerSpawnerUpdate(ID_SPAWNER)\r\nOWC_SMP_CHECK()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1220,11 +1200,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "bElite = Events.SMPShouldBeElite(idSelf)\r\n\r\nif bElite then\r\n\tID_SPAWNER = Hydra.ActorsLinkedByActorInGroup(idSelf, \"elite\")[1]\r\nelse\r\n\tID_SPAWNER = Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawner\")[1]\r\nend\r\n\r\nT_ROPES = {}\r\n\t\r\n\t--setup npcs in correct pose and create bllod rope from them to marker location\r\n\tfor i, actorID in pairs(T_NPCS) do\r\n\t\tHydra.ActorSetBloody(actorID, 0.9)\r\n\t\tT_ROPES[actorID] = Hydra.ActorPlayEffectGroupActorToActor(actorID, ID_FXLOC_BLOOD, EG_ROPE_BLOOD, true, \"HP_chest\")\r\n\tend\r\n\r\n\t--setup cultist summoner\r\n\tHydra.ActorEnableAI(ID_SUMMONER, false)\r\n\r\n\t--setup cultist melee\r\n\tfor i, actorID in pairs(T_MELEES) do\r\n--\t\tHydra.ActorSetIdleAnim(actorID, \"Cultist_Worship\")\r\n\t\tHydra.ActorEnableAI(actorID, false)\r\n\tend\r\n\r\n\t--create blood orb above portal, and demon rope feeding into it\r\n\tHydra.ActorSetPowerEffectSize(ID_FXLOC_BLOOD, 1.5)\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_BLOOD, EG_BLOOD_CHARGE, true)\r\n--\tHydra.ActorPlayEffectGroupActorToActor(ID_FXLOC_BLOOD, ID_RopeFXLoc, \"fxKit_harmless_persistentRope_demonic\", true)\r\n\tHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST, 8)",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

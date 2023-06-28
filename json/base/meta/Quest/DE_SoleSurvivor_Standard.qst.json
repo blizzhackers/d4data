@@ -161,7 +161,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -238,8 +237,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -322,7 +320,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n-- Sets an escape location for the NPC to run to based on where the player comes from.\r\n\tidEscapeLoc = Hydra.ActorSpawnActor(S_ACTOR_MARKER_LOCATION, idActor, false, 0,0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -399,8 +396,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -420,8 +416,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -512,7 +506,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -589,8 +582,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -662,7 +654,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n-- Increment the wave count.\t\r\n\tnWaveCount = nWaveCount + 1\t\r\n\tHydra.EventSend(\"WaveClear\", idSelf)\r\n\t\t\r\n-- Add a small pause between waves.\t\r\n\tHydra.Wait(1)\r\n\t\t\t\r\n-- Wave spawning\t\r\n\tif nWaveCount == 1 then --wave 1 just died, spawn wave 2\r\n\t\t\r\n\t\tfor i, idSpawner in ipairs(tWAVE_02) do\r\n\t\t\tif Hydra.ActorIsValid(idSpawner) then \r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\telseif nWaveCount == 2 then -- wave 2 just died, spawn wave 3\r\n\t\t--NPC callout\r\n\t\tif Hydra.ActorIsValid(idLastStandNPC) then \r\n\t\t\tHydra.QActorPlaySimpleConversation(S_CONV_CALLOUT, idLastStandNPC)\r\n\t\tend\r\n\t\t\r\n\t\tfor i, idSpawner in ipairs(tWAVE_03) do\r\n\t\t\tif Hydra.ActorIsValid(idSpawner) then \r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\t\tHydra.ActorTriggerSpawnerUpdate(idSpawner)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\telseif nWaveCount > 2 then -- Wave 4 +\r\n\t\t\t\r\n\t\tfor i, idSpawner in ipairs(tWAVE_03) do\r\n\t\t\tif Hydra.ActorIsValid(idSpawner) then \r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\t\tHydra.ActorTriggerSpawnerUpdate(idSpawner)\r\n\t\t\tend\r\n\t\tend\t\r\n\t\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -739,8 +730,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -823,7 +813,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -900,8 +889,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -921,8 +909,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- This spawns the initial wave\r\nfor i, idSpawner in ipairs(tWAVE_01) do\r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1046,7 +1032,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Spawn reward chest\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\t\r\n\tend\r\n\r\n-- The NPC rewards the player and then runs off.\t\r\n\tif Hydra.ActorIsValid(idActorNPC) then\r\n\t\tHydra.TreasureClassDropAtActor(idActorNPC, S_TREASURECLASS_NORMAL, true)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idLastStandNPC, idEscapeLoc, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFadeAndDelete(idLastStandNPC, 1)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1123,8 +1108,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1144,8 +1128,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Call anims to have the NPC stand up.\r\nif Hydra.ActorIsValid(idLastStandNPC) then\r\n\tHydra.QActorAnimAndNewIdle(idLastStandNPC, S_ANIMPOWER_GETUP, S_ANIMPOWER_NEUTRAL_ALT)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1269,7 +1251,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n--Spawn reward chest\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\t\r\n\tend\r\n\t\r\n-- The NPC dies.\r\n\tif Hydra.ActorIsValid(idActorNPC) then\r\n\t\tHydra.QActorAnimAndNewIdle(idLastStandNPC, S_ANIMPOWER_DEATH, S_ANIMPOWER_DEAD)\r\n\tend\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1346,8 +1327,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1367,8 +1347,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1419,8 +1397,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1524,7 +1500,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1601,8 +1576,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Player successfully completed the waves, set the appropriate variable.\r\n\tnVictoryTier = 1\r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1654,7 +1628,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1731,8 +1704,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1752,8 +1724,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 188,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1849,7 +1819,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1926,8 +1895,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--If the player completed the mastery advance this phase.\r\nif nVictoryTier == 1 then\r\n\tHydra.QuestAdvancePhase()\r\nend"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1991,7 +1959,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2068,8 +2035,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--If the player failed the mastery advance this phase.\r\nif nVictoryTier == 0 then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2089,8 +2055,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2120,11 +2084,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- ======= VARIABLES =======\r\n--\tGeneral\r\nnWaveCount = 0\r\nnVictoryTier = 0\r\n",
- "szOnShutdownScript": "if nVictoryTier == 0 and Hydra.ActorIsValid(idRewardChest) then\r\n\t--Hydra.ActorEnable(idRewardChest);\r\nend\r\nif nVictoryTier == 1 and Hydra.ActorIsValid(idRewardChest_Large) then\r\n\t--Hydra.ActorEnable(idRewardChest_Large);\r\nend\r\n\r\nHydra.EventSend(\"DungeonEventComplete\")\r\n",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

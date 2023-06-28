@@ -184,7 +184,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorKill(ID_BLOCKER)\r\n\r\n\t\r\n\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drorp occurs\r\n\t\t-- idFirstTimeRewardLocation is set/created on \"Actor Killed)\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Campaign_Duriel\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Duriel\")\r\n\tend\r\n\t\r\n\t------------------------------------------------------\r\n\t\r\n\tHydra.Wait(3)\r\n\tHydra.ActorPlayConversation(convDurielKill, idActorKiller)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -284,8 +283,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -319,7 +317,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tCurrentDurielPlayer = Hydra.ActorGetClosestPlayer(markerDurielSpawn_Location)\r\n\t\r\n\tif Hydra.ActorIsValid(CurrentDurielPlayer) == true then\r\n\t\tHydra.ActorPlayConversation(convDurielSpawn, CurrentDurielPlayer)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -396,8 +393,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -417,8 +413,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -536,7 +530,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tlocal POWER_DEBRIS = Hydra.ReferencePower(\"QST_Kehj_Caldeum_Debris\")\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_04A, POWER_DEBRIS)\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_04B, POWER_DEBRIS)\r\n\tlocal tPlayers = Hydra.PlayerActors()\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif (Hydra.ActorDistanceBetweenActors(idActor, idPlayer) < 15) then\r\n\t\t\tHydra.BuffApplyToTarget(S_CAMERA_SHAKE_POWER, \"Shake_Lrg\", idPlayer)\r\n\t\t\tHydra.ActorPlaySound(idPlayer, soundShakeLrg)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -613,8 +606,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -700,7 +692,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorPlayConversation(convDurielEnter, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -777,8 +768,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -874,7 +864,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -994,8 +983,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1074,7 +1062,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorPlayConversation(convDurielClass, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1151,8 +1138,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1172,8 +1158,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1239,7 +1223,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1316,8 +1299,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1337,8 +1319,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "SetTraversalEnabled(Duriel_Traversal)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1463,7 +1443,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tlocal POWER_DEBRIS = Hydra.ReferencePower(\"QST_Kehj_Caldeum_Debris\")\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_03A, POWER_DEBRIS)\r\n\tHydra.ActorTriggerPowerAtFeet(markerDurielDebris_03B, POWER_DEBRIS)\r\n\tlocal tPlayers = Hydra.PlayerActors()\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif (Hydra.ActorDistanceBetweenActors(idActor, idPlayer) < 15) then\r\n\t\t\tHydra.BuffApplyToTarget(S_CAMERA_SHAKE_POWER, \"Shake_Med\", idPlayer)\r\n\t\t\tHydra.ActorPlaySound(idPlayer, soundShakeMed)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1540,8 +1519,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1575,7 +1553,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Hotfix for escort path blockers being present\r\nfor i, idBlockers in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Escort_Blockade\")) do \r\n\t\tHydra.ActorDisable(idBlockers, true)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1652,8 +1629,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1673,8 +1649,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1704,11 +1678,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "SetTraversalEnabled(Duriel_Traversal, false)\r\nS_LEVEL_AREA = \"Kehj_Caldeum_Duriel\"\r\n\r\nS_CAMERA_SHAKE_POWER = Hydra.ReferencePower(\"QST_Caldeum_Duriel_Shake\")\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

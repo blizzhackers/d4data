@@ -130,7 +130,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.Wait(5)\r\n\tidTalkingChest = idActorSpawned\r\n\tlocal tNearbySpawnLocs = Hydra.FindSpawnLocsNearPlayer(idSelf, \"Dungeon_Clicky_Any\", 10, 30, false, true)\r\n\t\r\n\tif #tNearbySpawnLocs < 3 then\r\n\t\tHydra.ActorGizmoSetDisabled(Hydra.ActorSpawnActor(S_REALCHEST, idTalkingChest, false, 0, 0), false)\r\n\t\tHydra.ActorDelete(idTalkingChest)\r\n\telse\r\n\t\tHydra.ActorSetConversationList(idTalkingChest, S_CONV_MAGICWORDS_01)\r\n\t\t--Placing the runescripts at different available spots\r\n\t\tnRandLoc = Hydra.GetRandomInt(1, #tNearbySpawnLocs)\r\n\t\tidRuneScript01 = Hydra.ActorSpawnActor(S_RUNESCRIPT_01, tNearbySpawnLocs[nRandLoc], tNearbySpawnLocs[nRandLoc], false, 0, 0)\r\n\t\ttable.remove(tNearbySpawnLocs, nRandLoc)\r\n\t\t\r\n\t\tnRandLoc = Hydra.GetRandomInt(1, #tNearbySpawnLocs)\r\n\t\tidRuneScript02 = Hydra.ActorSpawnActor(S_RUNESCRIPT_02, tNearbySpawnLocs[nRandLoc], tNearbySpawnLocs[nRandLoc], false, 0, 0)\r\n\t\ttable.remove(tNearbySpawnLocs, nRandLoc)\r\n\t\t\r\n\t\tnRandLoc = Hydra.GetRandomInt(1, #tNearbySpawnLocs)\r\n\t\tidRuneScript03 = Hydra.ActorSpawnActor(S_RUNESCRIPT_03, tNearbySpawnLocs[nRandLoc], tNearbySpawnLocs[nRandLoc], false, 0, 0)\r\n\t\ttable.remove(tNearbySpawnLocs, nRandLoc)\r\n\tend\r\n\t--NOTE: For whatever reason, removing this Wait creates a chance for the event to fail\r\n\t--It will spawn Jah Eth Lum as the words but the words will not work on the chest\r\n\t--Hydra.Wait(1)\r\n\t--Hydra.TraceScreen(tNearbySpawnLocs[1])\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -207,8 +206,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -296,7 +294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tlocal idRealChest = Hydra.ACDID_INVALID\r\n\tif sConversation == idPhrase then\r\n\t\tidRealChest = Hydra.ActorSpawnActor(S_REALCHEST, idTalkingChest, false, 0, 0)\r\n\t\tHydra.ActorGizmoSetDisabled(idRealChest, false)\r\n\t\tHydra.ActorTriggerPowerAtFeet(idRealChest, S_PWR_KNOCKBACK)\r\n\telse\r\n\t\tHydra.ActorTriggerPowerAtFeet(idSelf, S_PWR_KNOCKBACK)\r\n\tend\r\n\t\r\n\tHydra.ActorPlayEffectGroup(idSelf, S_FX_CHESTBLAST)\r\n\tHydra.ActorDelete(idTalkingChest)\r\n\t\r\n\tHydra.ActorFadeAndDelete(idRuneScript01, 3)\r\n\tHydra.ActorFadeAndDelete(idRuneScript02, 3)\r\n\tHydra.ActorFadeAndDelete(idRuneScript03, 3)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -373,8 +370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -394,8 +390,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -501,7 +495,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorPlayDisembodiedConversation(idWord01, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -603,7 +596,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorPlayDisembodiedConversation(idWord02, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -705,7 +697,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorPlayDisembodiedConversation(idWord03, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -791,8 +782,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -812,8 +802,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -843,11 +831,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "nWordsSaid = 0\r\n\r\n--List of complete phrases\r\ntPhrases = \t\t{\r\n\t\t\t\tS_PHRASE_01,\r\n\t\t\t\tS_PHRASE_02,\r\n\t\t\t\tS_PHRASE_03,\r\n\t\t\t\tS_PHRASE_04,\r\n\t\t\t\tS_PHRASE_05,\r\n\t\t\t\tS_PHRASE_06,\r\n\t\t\t\tS_PHRASE_07,\r\n\t\t\t\tS_PHRASE_08\r\n\t\t\t\t}\r\n\r\n--The 3 lists of magic words for variation\r\ntWordSet01 = \t{\r\n\t\t\t\tS_MAGICWORD_Vemp,\r\n\t\t\t\tS_MAGICWORD_Sint\r\n\t\t\t\t}\r\n\t\t\t\t\r\ntWordSet02 = \t{\r\n\t\t\t\tS_MAGICWORD_Et,\r\n\t\t\t\tS_MAGICWORD_La\r\n\t\t\t\t}\r\n\t\t\t\t\r\ntWordSet03 = \t{\r\n\t\t\t\tS_MAGICWORD_Maldus,\r\n\t\t\t\tS_MAGICWORD_Palox\r\n\t\t\t\t}\r\n\r\n--The actual pages with the words the players find\r\nidRuneScript01 = Hydra.ACDID_INVALID\r\nidRuneScript02 = Hydra.ACDID_INVALID\r\nidRuneScript03 = Hydra.ACDID_INVALID\r\n\r\n--Chests\r\nidTalkingChest = Hydra.ActorsLinkedByActorInGroup(idSelf, \"TALKINGCHEST\")[1]\r\nHydra.ActorGizmoSetDisabled(idTalkingChest, false)\r\n\r\n--Words on the pages\r\nidWord01 = Hydra.ACDID_INVALID\r\nidWord02 = Hydra.ACDID_INVALID\r\nidWord03 = Hydra.ACDID_INVALID\r\n\r\n\r\n--Selecting a magic phrase and assigning the right words to the scattered pages\r\nnRandWord = Hydra.GetRandomInt(0, 7)\r\nidPhrase = tPhrases[nRandWord+1]\r\n\r\n--Da heck is this?\r\n--Since the magic words are paired up (2 to each word slot)\r\n--it was simple enough to make a binary logic check to determine which words\r\n--to scatter without having to check for each phrase individually\r\nidWord01 = tWordSet01[1]\r\nidWord02 = tWordSet02[1]\r\nidWord03 = tWordSet03[1]\r\n\r\nif nRandWord > 4 then\r\n\tidWord01 = tWordSet01[2]\r\nend\r\nif (nRandWord % 4 > 1) then\r\n\tidWord02 = tWordSet02[2]\r\nend\r\nif nRandWord % 2 > 0 then\r\n\tidWord03 = tWordSet03[2]\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

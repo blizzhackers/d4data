@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -341,7 +337,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorEnableAI(idActorSpawned, false)-- disable spawned monster ai\r\n\tHydra.ActorSetTargetable(idActorSpawned, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -418,8 +413,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -439,8 +433,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -544,7 +536,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -621,8 +612,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -642,8 +632,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "OWC_SMP_CHECK()\r\nHydra.ActorPlayEffectGroup(ID_THIS_QUEST, SFX_WARN)\r\n\r\nfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(\"SMP_Monsters\")) do-- When player is within specified range, raise monsters using raise fx\r\n\tHydra.ActorTriggerPhaseJump(actorID)\r\n\tHydra.ActorEnableAI(actorID, true)\r\n\tHydra.ActorSetTargetable(actorID, true)\r\n\t\r\n\tHydra.Wait(Hydra.GetRandomFloat(0, 0.2))-- wait to space out monster raise\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -673,11 +661,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "ID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\nbElite = Events.SMPShouldBeElite(idSelf)\r\n\r\nHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"spawner\")\r\n\r\nif bElite then\r\n\tSFX_WARN = SFX_WARN_MAJOR\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"elite\")\r\nelse\r\n\tSFX_WARN = SFX_WARN_MINOR\r\nend\r\n",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

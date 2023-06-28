@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -296,7 +294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -373,8 +370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -394,8 +390,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -499,7 +493,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -576,8 +569,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -597,8 +589,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "OWC_SMP_CHECK()\r\nfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(\"SMP_Brawl_Crowd\")) do\r\n\tHydra.ActorRemoveMergedAIState(actorID, AISTATE_TAUNT)\r\n\tHydra.ActorOverrideAIAwarenessRadius(actorID, 0, true)\r\nend\r\n\r\nif bHasLunatic and Hydra.ActorIsValid(idLunatic) and Hydra.ActorIsValid(idVictim) then\r\n\tHydra.QActorPower(idLunatic, POWER_LUNATIC_SUICIDE, idLunatic)\r\n\tHydra.WaitForQEmpty(idLunatic)\r\n\tif Hydra.ActorIsValid(idVictim) then\r\n\t\tHydra.ActorKill(idVictim)\t\r\n\tend\r\n\r\nelse\r\n\tfor i, actorID in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"initialMonsters\")) do\r\n\t\tHydra.ActorRemoveMergedAIState(actorID, AISTATE_BRAWLER)\r\n\t\tHydra.ActorOverrideAIAwarenessRadius(actorID, 0, true)\r\n\tend\r\nend\r\n\t\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -698,7 +688,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_TAUNT, idActorSpawned, 0)\r\n\tHydra.ActorOverrideAIAwarenessRadius(idActorSpawned, 3, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -775,8 +764,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -796,8 +784,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -827,11 +813,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "bElite = Events.SMPShouldBeElite(idSelf)\r\nbHasLunatic = false\r\n\r\n-- spawn monsters\r\nfor i, spawnerID in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawners\")) do\r\n\tEvents.ActorEnableSpawner(spawnerID)\r\nend\r\n\r\n-- chance to spawn elite\r\nif bElite then\r\n\tfor i, spawnerID in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"elite\")) do\r\n\t\tEvents.ActorEnableSpawner(spawnerID)\r\n\tend\r\nend\r\n\r\nfor i, actorID in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"initialMonsters\")) do\r\n\tif Hydra.ActorIsArchetype(actorID, \"lunatic\") then\r\n\t\tHydra.ActorMergeAIState(actorID, AISTATE_TAUNT, actorID, 0)\r\n\t\tbHasLunatic = true\r\n\t\tif idLunatic == nil then\r\n\t\t\tidLunatic = actorID\r\n\t\telse\r\n\t\t\tidVictim = actorID\r\n\t\tend\r\n\telse\r\n\t\tHydra.ActorMergeAIState(actorID, AISTATE_BRAWLER, actorID, 0)\r\n\t\tidVictim = actorID\r\n\tend\r\n\t\r\n\tHydra.ActorOverrideAIAwarenessRadius(actorID, 3, true)\r\nend",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

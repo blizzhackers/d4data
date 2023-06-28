@@ -136,7 +136,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\t--convo starts\r\n\tHydra.ActorPlayConversation(convCellar1, idActorPlayer)\r\n\t\r\n\tHydra.Wait(2)\r\n\t\r\n\t--monk walks\r\n\t--local monk = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Monk\")[1]\r\n\t--local marker = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Marker\")[1]\r\n\t--Hydra.QActorMoveToLocationDynamicSpeed(monk, marker, \"NPC_Walk\", false)\r\n\t\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -213,8 +212,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -294,7 +292,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -371,8 +368,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -468,7 +464,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -545,8 +540,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -566,8 +560,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -703,7 +695,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--mobs hostile\r\n\tfor i, mob in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Enemies\")) do\r\n\t\tHydra.ActorSetTeam(mob, (Hydra.TEAM_MONSTER_DEFAULT))\r\n\t\tHydra.ActorEnableAI(mob)\r\n\tend\r\n\t--deserter allied and run in \r\n\tlocal deserter = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter\")[1]\r\n\tlocal marker = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter_Fight\")[1]\r\n\tHydra.ActorSetTeam(deserter, (Hydra.TEAM_PLAYER_DEFAULT))\r\n\tHydra.ActorEnableAI(deserter)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(deserter, marker, \"NPC_Run\", false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -789,8 +780,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -824,7 +814,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--stop ambient convo\r\n\tHydra.CancelConversation(convCellar1)\r\n\t--do monk intro convo\r\n\tlocal monk = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Monk\")[1]\r\n\tHydra.ActorPlaySimpleConversation(convCellar3, monk)\r\n\t--deserter appears and approaches\r\n\tlocal deserter = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter\")[1]\r\n\tlocal marker = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter_Walkto\")[1]\r\n\tHydra.ActorEnable(deserter)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(deserter, marker, \"NPC_Walk\", false)\r\n\tHydra.QActorFaceSameAsActor(deserter, marker)\r\n\t--send guard kill event\r\n\tHydra.EventSend(\"Penitent_02_Knight_Dead\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -901,8 +890,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -922,8 +910,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1034,7 +1020,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1111,8 +1096,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorClearAnimSetOverride(actorSuna)\r\nlocal deserter = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter\")[1]\r\nlocal marker = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter_Talk\")[1]\r\nHydra.ActorDisableAI(deserter)\r\nHydra.QActorPlaySimpleConversation(convCellar4, deserter)\r\nHydra.QActorMoveToLocationDynamicSpeed(deserter, marker, \"NPC_Run\", false)\r\nHydra.QActorFaceSameAsActor(deserter, marker)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1146,7 +1130,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorSetAnimSetOverride(actorSuna, \"NPC_Idle_Crouch_Cower\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1223,8 +1206,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1244,8 +1226,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1374,7 +1354,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tlocal deserter = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter\")[1]\r\n\tlocal marker = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Deserter_Exit\")[1]\r\n\tlocal suna = Hydra.ActorsInGroup(\"QST_Kehj_Penitent_02_Cellar_Suna\")[1]\r\n\tHydra.QActorMoveToLocationDynamicSpeed(deserter, marker, \"NPC_Run\", false)\r\n\tHydra.QActorFadeAndDelete(deserter, 2)\r\n\tHydra.Wait(2)\r\n\t--Hydra.TraceScreen(\"ACTOR \", suna, \" PLAYING CONVO \", convCellar6)\r\n\tHydra.ActorPlaySimpleConversation(convCellar6, suna)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(suna, marker, \"NPC_Walk_Fast\", false)\r\n\tHydra.QActorFadeAndDelete(suna, 2)\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1460,8 +1439,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1481,8 +1459,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1533,8 +1509,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1564,11 +1538,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

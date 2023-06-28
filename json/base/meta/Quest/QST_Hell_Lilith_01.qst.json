@@ -177,7 +177,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n-- Note: Lilith music transition implementation has been partially moved to Lilith_p1_Boss_Death_Transition_To_p2 power. \t\r\n\t\r\n\t--Play Phase 1 Victory Stinger\r\n--\tHydra.MusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\", \"Music_Boss_Lilith_Phase1_Victory\")\r\n\t\r\n--\t--Play Boss Phase 2 Music\r\n--\tHydra.Wait(4.5)\r\n--\tHydra.MusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\", \"Music_Boss_Lilith_Phase2\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -263,8 +262,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -352,7 +350,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -438,8 +435,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -459,8 +455,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.BossEncounterManuallyQueueStart(Hydra.ReferenceLevelArea(\"CSD_Kehj_Hell_ThroneOfHatred_Boss\"))\r\n\r\nlocal idSpawnLoc = Hydra.ActorsInGroup(\"Lilith_Boss_Spawn\")[1]\r\nlocal idLilithPhase1 = Hydra.ActorSpawnActor(\"Lilith_p1_Boss\", idSpawnLoc, false, 0, 0)\r\nHydra.ActorFaceAbsolute(idLilithPhase1, 45)\r\nHydra.ActorAddToBossEncounter(idLilithPhase1)\r\n\t",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -587,7 +581,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Delete the trigger, so that it doesn't fire again (same idea as one-shot on the trigger gizmo, i'm just used to doing it this way)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\t--Play Boss Phase 1 Music\r\n\tHydra.MusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\", \"Music_Boss_Lilith_Phase1\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -673,8 +666,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -694,8 +686,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -782,7 +772,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tlocal idFloorManager = Hydra.ActorsInGroup(\"Lilith_P1_Collapse_1\")[1]\r\n\tif idFloorManager then\r\n\t\tlocal BREAK_EVENT = \"BREAK_FLOOR\"\r\n\t\tHydra.EventSendToActor(BREAK_EVENT, idFloorManager, idFloorManager)\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -859,8 +848,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -880,8 +868,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1015,7 +1001,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1092,8 +1077,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1113,8 +1097,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1246,7 +1228,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1323,8 +1304,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1417,7 +1397,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n-- Get references\r\nidNeyrelleDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"neyrelle\")[1]\r\nidNeyrelleMephisto = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Neyrelle_Mephisto\")[1]\r\nidDoor = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"door\")[1]\r\n\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1494,8 +1473,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1584,7 +1562,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Disembodied voice \r\nlocal tPlayers = Hydra.QuestGetParticipants()\r\n\r\n\tfor i, idNearbyPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorGetWorld(idNearbyPlayer) == \"CSD_Kehj_Hell_ThroneOfHatred\" then\r\n\t\tHydra.ActorPlayDisembodiedConversation(\"QST_Hell_Cathedral_Entrance3\", idNearbyPlayer)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1661,8 +1638,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1742,7 +1718,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Disembodied voice \r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\r\n\tfor i, idNearbyPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorGetWorld(idNearbyPlayer) == \"CSD_Kehj_Hell_ThroneOfHatred\" then\r\n\t\t\tHydra.ActorPlayDisembodiedConversation(\"QST_Hell_Cathedral_Entrance1\", idNearbyPlayer)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1819,8 +1794,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1909,7 +1883,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nfollowerNeyrelle = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_OneArmed\")\r\n\r\n\tif Hydra.ActorIsValid(followerNeyrelle) == true then\r\n\tHydra.ActorPlayConversation(\"QST_Hell_Mephisto_WarningPre\", idActorPlayer, followerNeyrelle)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1986,8 +1959,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2007,8 +1979,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2170,7 +2140,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t-- Activate Arena Light\r\n\ttLights = Hydra.ActorsInGroup(idArenaLights)\r\n\tif Hydra.ActorIsValid(tLights[1]) then\r\n\t\tHydra.ActorEnable(tLights[1])\r\n\t\tHydra.Wait(0.1)\r\n\t\tHydra.ActorDelete(tLights[1])\r\n\tend\r\n\t\r\n\t-- Set up a variable for Neyrelle's visibility condition\r\n\tHydra.SetGameVariableFlag(\"QST_Hell_CathedralOfHatred_NeyrelleLeaves\")\r\n\r\n\t-- Disable Wolf near portal in Hell\r\n\tHydra.ActorDisable(Herald_After_Sightless_Eye)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2285,7 +2254,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2362,8 +2330,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2383,8 +2350,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2546,7 +2511,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorEnable(Herald_After_Sightless_Eye)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2623,8 +2587,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2644,8 +2607,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.QActorMoveToLocationConstantSpeed(Actor_Neyrelle_Sea_of_Flames, Loc_Cathedral_of_Hatred_Portal, Hydra.MOVE_RATE_WALK, true)\r\nHydra.QActorFadeAndDelete(Actor_Neyrelle_Sea_of_Flames, 0)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2807,7 +2768,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.ActorSetIdleAnim(Donan_After_Sightless_Eye, \"AnimKey_Dead\")\r\n-- Delete Neyrelle so she's no visibile in follow-up conversation\r\nHydra.ActorDelete(Neyrelle_After_Sightless_Eye)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2929,7 +2889,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3006,8 +2965,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3086,7 +3044,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nHydra.ActorPlaySimpleConversation(\"QST_Hell_Neyrelle_After_Eye\", Neyrelle_After_Sightless_Eye)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3163,8 +3120,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3184,8 +3140,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3340,7 +3294,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\")\r\n\t\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"QST_Epilogue_Kehj_Bookend\")\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3447,7 +3400,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3530,8 +3482,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3551,8 +3502,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3686,7 +3635,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Delete the trigger, so that it doesn't fire again (same idea as one-shot on the trigger gizmo, i'm just used to doing it this way)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\r\n\tHydra.BossEncounterManuallyQueueStart(Hydra.ReferenceLevelArea(\"CSD_Kehj_Hell_ThroneOfHatred_Boss\"))\r\n\t\r\n\t--Play Phase2 Boss Music\r\n\tHydra.MusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\", \"Music_Boss_Lilith_Phase2\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3772,8 +3720,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3793,8 +3740,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3928,7 +3873,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4014,8 +3958,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4095,7 +4038,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t--Play Phase 2 Victory Stinger\r\n\tHydra.MusicOverride(\"CSD_Kehj_Hell_ThroneOfHatred\", \"Music_Boss_Lilith_Phase2_Victory\")\r\n\r\n\t-- TEMP - this should be spawned on her ash pile!\r\n\tidFirstTimeRewardLocation = Hydra.ActorSpawnActor(sFirstTimeRewardDropActor, idActorKilled)\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(\"CSD_Kehj_Hell_ThroneOfHatred_Boss\")\r\n\t-- We need a wait here because the death animation power also kicks off a\r\n\t-- camera reset (\"Camera_Observer_normal\") EG in the same tick.\r\n\tHydra.Wait(0.1);\r\n\t\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idNearbyPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorGetWorld(idNearbyPlayer) == \"CSD_Kehj_Hell_ThroneOfHatred\" then\r\n\t\t\tHydra.ActorPlayConversation(Conv_Lilith_Defeated_RTC, idNearbyPlayer)\r\n\t\tend\r\n\tend\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4181,8 +4123,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4216,7 +4157,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Spawn Lilith phase 2 actor using a spawn power.\r\n\tlocal idSpawnLoc = Hydra.ActorsInGroup(\"Lilith_Boss_Spawn\")[1]\r\n\tlocal S_SUMMON_POWER = Hydra.ReferencePower(\"Lilith_p2_boss_spawn\");\r\n\tlocal snoPowerSummon = Hydra.PowerSNOFromName(S_SUMMON_POWER);\r\n\tlocal idLilithPhase2 = Hydra.ActorSpawnActor(\"Lilith_p2_Boss\", idSpawnLoc, false, 0, 0, Hydra.MR_BOSS, snoPowerSummon, false)\r\n\tHydra.ActorAddToBossEncounter(idLilithPhase2);\r\n\t\r\n\t-- Enable boss camera, so that the camera yaws towards Lilith.\r\n\tHydra.ActorSetUseBossCamera(idLilithPhase2, true);\r\n\r\n\t-- Make Lilith untargetable until she fully emerge from blood pool. (The buff is from the power: Lilith_p1_Boss_HeartCrucible)\r\n\tHydra.BuffApplyToTarget(LILITH_INVULNERABLE, \"UNTARGETABLE\", idLilithPhase2);\r\n\r\n\t-- Remove untargetable buff (The buff is from the power: Lilith_p1_Boss_HeartCrucible)\r\n\tHydra.Wait(8);\r\n\tHydra.BuffRemove(LILITH_INVULNERABLE, \"UNTARGETABLE\", idLilithPhase2);\r\n\r\n\t-- Remove camera yaw, so the camera is centered on the player \r\n\tHydra.Wait(6);\r\n\t\r\n\tHydra.ActorSetBossCameraOverride(idLilithPhase2, \"observer_lilith_p2_boss_stage_1\");\r\n\tHydra.ActorSetBossCameraFollowsPlayer(idLilithPhase2, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4293,8 +4233,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4390,7 +4329,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the dorp occurs\r\n\t\t-- idFirstTimeRewardLocation is set/created on \"Actor Killed\"\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idFirstTimeRewardLocation, \"FirstTimeReward_Campaign_Lilith\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Lilith\")\r\n\tend\r\n\t\r\n\t-- Since this boss doesn't have its own treasure class, also drop generic treasure at this time\r\n\tHydra.TreasureClassDropAtActor(idFirstTimeRewardLocation, \"Campaign_Boss\")\r\n\t\r\n\t-- Remove the Reward Actor\r\n\tHydra.ActorDelete(idFirstTimeRewardLocation)\r\n\t------------------------------------------------------\r\n\t\r\n\t\r\n\t\r\n\tHydra.SetPlayerVariableFlag(idActorPlayer, \"QST_Hell_Lilith_Killed\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4467,8 +4405,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4488,8 +4425,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4628,7 +4563,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4762,8 +4696,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4783,8 +4716,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "--Hydra.QActorPlaySimpleConversation(Conv_Neyrelle_Sea_of_Flames_LookAt, Actor_Neyrelle_Sea_of_Flames)\r\n--Hydra.QActorMoveToLocationDynamicSpeed(Actor_Neyrelle_Sea_of_Flames, Loc_Neyrelle_Sea_of_Flames, \"NPC_Walk\", true)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4900,7 +4831,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4977,8 +4907,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5074,7 +5003,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5151,8 +5079,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5245,7 +5172,6 @@
         "name": "CSD_Kehj_Hell_ThroneOfHatred"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nfollowerNeyrelle = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_OneArmed\")\r\n\r\n\tif Hydra.ActorIsValid(followerNeyrelle) == true then\r\n\t\tHydra.QuestFollowerTakeOwnership(followerNeyrelle)\r\n\t\tHydra.ActorEnableAI(followerNeyrelle, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerNeyrelle, idNeyrelleMephisto, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerNeyrelle, idNeyrelleMephisto)\r\n\t\tHydra.WaitForQEmpty(followerNeyrelle)\r\n\tend\r\n\r\n\tHydra.EventSend(\"MephistoSpotted\")\r\n\tHydra.ActorDelete(followerNeyrelle)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5331,8 +5257,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5421,7 +5346,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Disembodied voice \r\nlocal tPlayers = Hydra.QuestGetParticipants()\r\n\r\n\tfor i, idNearbyPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorGetWorld(idNearbyPlayer) == \"CSD_Kehj_Hell_ThroneOfHatred\" then\r\n\t\tHydra.ActorPlayDisembodiedConversation(\"QST_Hell_Mephisto_Warning\", idNearbyPlayer)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5498,8 +5422,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5585,7 +5508,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Find Player that Neyrelle follower is attached to\r\n\tfor i, idOwner in ipairs(Hydra.PlayerActors()) do \r\n\t\tif Hydra.ActorGetFollowTarget(idActor) == idOwner then\r\n\t\t\tHydra.ActorPlayConversation(\"QST_Hell_Cathedral_Entrance2\", idOwner, idActor)\r\n\t\tend\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5671,8 +5593,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5692,8 +5613,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorGizmoSetDisabled(idDoor, false)\r\nHydra.ActorGizmoOperate(idDoor)\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5737,11 +5656,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- First Time Reward proxy\r\nsFirstTimeRewardDropActor = Hydra.ReferenceActor(\"FirstTimeReward_Proxy_Generic\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

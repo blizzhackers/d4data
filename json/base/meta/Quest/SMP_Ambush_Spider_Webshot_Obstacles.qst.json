@@ -164,7 +164,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPowerName, idTarget)\r\n\r\n\tif bElite then\r\n\t\tHydra.ActorPlayEffectGroup(idSelf, SFX_WARNING_MINOR)\r\n\telse\r\n\t\tHydra.ActorPlayEffectGroup(idSelf, SFX_WARNING_MAJOR)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.2)\t\r\n\t\r\n\t-- Spawn monsters\r\n\tfor i, spawnerId in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawners\")) do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(spawnerId)\r\n\tend\r\n\t\r\n\t-- Chance to spawn elite\r\n\tif bElite then\r\n\t\tfor i, spawnerId in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"elite\")) do\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(spawnerId)\r\n\t\tend\r\n\tend\r\n\r\n\r\n\t\r\n\tlocal idPlayer = Hydra.ActorGetClosestPlayer(idSelf)\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -241,8 +240,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -262,8 +260,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -382,7 +378,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -459,8 +454,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -480,8 +474,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "OWC_SMP_CHECK()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -581,7 +573,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t-- Freeze the spanw of spawnees to randomize their spawn time\r\n\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.ActorDisable(idActorSpawned)\r\n\t\r\n\tHydra.Wait(Hydra.GetRandomFloat(0, 1.5))\r\n\r\n\tHydra.ActorEnableAI(idActorSpawned, true)\r\n\tHydra.ActorEnable(idActorSpawned)\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idActorSpawned, idSelf, POWER_SPIDER_FALL)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -658,8 +649,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -679,8 +669,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -710,11 +698,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function spawnMonsters() \r\n\r\nend\r\n\r\nfunction spawnWebRain()\r\n\t\r\nend\r\n\r\n\r\n",
- "szOnStartupScript": "POWER_SPIDER_FALL = Hydra.ReferencePower(\"Teleport_Nearby_Summoned_Animating_SpiderCeiling\")\r\nPOWER_SPIDER_WEBSHOT = Hydra.ReferencePower(\"SMP_Spider_Ambush_Webshot_Ceiling\")\r\n\r\n\r\n-- Trigger the Web Spawner\r\nHydra.ActorTriggerSpawnerUpdate(ID_GIZMO_SPAWNER)\r\n\r\nidSelf = Hydra.QuestGetOwner()\r\nbElite = false\r\n\r\nif Hydra.GetRandomFloat() <= 0.05 then\r\n\tbElite = true\r\nend",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

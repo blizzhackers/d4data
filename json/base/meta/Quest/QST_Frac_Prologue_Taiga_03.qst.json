@@ -117,7 +117,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.Wait(1)\r\n\t-- Move enemies and wake them (except Vani and Stanis)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorMonsterDevmir, locDevmirRunTo, \"NPC_Run\", true)\r\n\tHydra.QActorEnableAI(actorMonsterDevmir, true)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorMonsterIsbel, locIsbelRunTo, \"NPC_Run\", true)\r\n\tHydra.QActorEnableAI(actorMonsterIsbel, true)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorMonsterTovri, locTovriRunTo, \"NPC_Run\", true)\r\n\tHydra.QActorEnableAI(actorMonsterTovri, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -217,7 +216,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\tlocal actorMonkFollower = Hydra.QuestGetFollower(\"NPC_QST_Frac_Prologue_Monk_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(actorMonkFollower) then\r\n\t\tHydra.ActorDisableAI(actorMonkFollower)\r\n\t\tHydra.QActorPlaySimpleConversation(convMonkFlw00, actorMonkFollower, true)\r\n\t\tHydra.WaitForConversationFinished(convMonkFlw00)\r\n\t\tHydra.ActorEnableAI(actorMonkFollower)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -303,8 +301,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -384,7 +381,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tHydra.ActorDisableAI(actorMonsterVani)\r\n\tHydra.ActorSetTargetable(actorMonsterVani, false)\r\n\tHydra.QActorAnimAndNewIdle(actorMonsterVani, \"AnimKey_Die\", \"AnimKey_Die_Loop\")\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorPlaySimpleConversation(convVaniDies, actorMonsterVani)\r\n\tHydra.WaitForQEmpty(actorMonsterVani)\r\n\tHydra.WaitForConversationFinished(convVaniDies)\r\n\tHydra.ActorSpawnActor(actorVaniCorpse, actorMonsterVani, false, 0,0)\r\n\tHydra.QActorDelete(actorMonsterVani)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -461,8 +457,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -541,7 +536,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- (FEN-534344)\r\n\t-- This is prevent them from being killable before the door is opened\r\n\tHydra.ActorSetInvulnerable(actorMonsterStanis, false)\r\n\tHydra.ActorSetInvulnerable(actorMonsterVani, false)\r\n\tHydra.ActorSetTargetable(actorMonsterStanis, true)\r\n\tHydra.ActorSetTargetable(actorMonsterVani, true)\r\n\r\n\tHydra.QActorEnableAI(actorMonsterStanis, true)\r\n\tHydra.QActorEnableAI(actorMonsterVani, true)\r\n\t\t\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -618,8 +612,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -705,7 +698,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\t\r\n\r\n\tHydra.SetGameVariableFlag(\"PrologueVanisCorpseLootable\", true)\r\n\tlocal followerMonk = Hydra.QuestGetFollower(\"NPC_QST_Frac_Prologue_Monk_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(followerMonk) then\r\n\t\tHydra.ActorEnableAI(followerMonk, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerMonk, locMonkOutsideWalkTo, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerMonk, locMonkOutsideWalkTo)\r\n\t\tHydra.QActorSheath(followerMonk)\r\n\t\tHydra.QActorWaitForConversationFinished(followerMonk, convMonkLeave)\r\n\t\tHydra.ActorPlaySimpleConversation(convMonkLeave, followerMonk)\r\n\t\tHydra.WaitForQEmpty(followerMonk)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(actorMonkOutside)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -782,8 +774,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -803,8 +794,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.SetGameVariableFlag(\"PrologueContinued\", true)\r\nHydra.ActorSetDamageCap(actorMonsterVani, 0.01)\r\n\r\n-- (FEN-534344)\r\n-- This is prevent them from being killable before the door is opened\r\nHydra.ActorSetInvulnerable(actorMonsterStanis, true)\r\nHydra.ActorSetInvulnerable(actorMonsterVani, true)\r\nHydra.ActorSetTargetable(actorMonsterStanis, false)\r\nHydra.ActorSetTargetable(actorMonsterVani, false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -891,7 +880,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -968,8 +956,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -989,8 +976,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1103,7 +1088,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\n\r\n\tHydra.EventSend(\"HasKey\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1165,7 +1149,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Check if any players have the Chapel key already\r\n\ttPlayers = Hydra.PlayerActors()\r\n\t\r\n\tfor i, Player in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorHasItemByName(Player, itemChapelKey) then\r\n\t\t\tHydra.EventSend(\"HasKey\")\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1242,8 +1225,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1332,7 +1314,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Handle the rest in the background so we're not waiting here\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorMonkOutside, locMonkDoorWalkTo, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(actorMonkOutside, locMonkDoorWalkTo)\r\n\tHydra.Wait(4)\r\n\tHydra.ActorGizmoOperate(actorFenceDoor)\r\n\tHydra.Wait(0.5)\r\n\tHydra.QActorWait(actorMonkOutside, 1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorMonkOutside, locMonkChapelWalkTo, \"NPC_Walk\", true)\r\n\tHydra.QActorFaceSameAsActor(actorMonkOutside, locMonkChapelWalkTo)\r\n\tHydra.Wait(1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1409,8 +1390,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1430,8 +1410,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1579,7 +1557,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1656,8 +1633,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1738,7 +1714,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1824,8 +1799,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1845,8 +1819,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1890,11 +1862,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_WORLD_SANCTUARY = Hydra.ReferenceWorld(\"Sanctuary_Eastern_Continent\")\r\nS_WEATHER_PROLOGUE = Hydra.ReferenceWeather(\"weather_FracturedPeaks_prologue\")\r\nHydra.WeatherOverride(S_WORLD_SANCTUARY, S_WEATHER_PROLOGUE)\r\nHydra.TimeOfDaySetOverride(S_WORLD_SANCTUARY, 0.0)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

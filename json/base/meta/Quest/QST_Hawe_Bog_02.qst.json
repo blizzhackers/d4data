@@ -220,7 +220,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t-- Conditioned for use only if the player is \r\n\t-- NOT continuing directly from previous quest.\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle, idNeyrelleRunLoc01, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelle,idNeyrelleRunLoc01)\r\n\tHydra.QActorSetAnimSetOverride(idNeyrelle, \"NPC_Idle_Stand_Inspect_Sky\")\r\n\tHydra.QActorEventSend(idNeyrelle, \"NeyrelleRunFinished\")\r\n\r\n\tHydra.QActorWait(idLorath, 0.5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, idLorathRunLoc01, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idLorath,idLorathRunLoc01)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -297,8 +296,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -346,7 +344,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Conditioned to only fire if the player is \r\n\t-- continuing directly from previous quest.\r\n\r\n\tHydra.Wait(2)\r\n\tHydra.QActorPlaySimpleConversation(conv_LorathSnake, idLorath)\r\n\tHydra.QActorWaitForConversationFinished(idNeyrelle, conv_LorathSnake)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle, idNeyrelleRunLoc01, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelle,idNeyrelleRunLoc01)\r\n\tHydra.QActorSetAnimSetOverride(idNeyrelle, \"NPC_Idle_Stand_Inspect_Sky\")\r\n\tHydra.QActorEventSend(idNeyrelle, \"NeyrelleRunFinished\")\r\n\r\n\tHydra.QActorWaitForConversationFinished(idLorath, conv_LorathSnake)\r\n\tHydra.QActorWait(idLorath, 0.5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, idLorathRunLoc01, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idLorath,idLorathRunLoc01)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -423,8 +420,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -444,8 +440,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -614,7 +608,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.QActorClearAnimSetOverride(idNeyrelle)\r\n\tHydra.WaitForQEmpty(idNeyrelle)\r\n\tHydra.EventSend(\"Whispers1\", idNeyrelle)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -691,8 +684,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -712,8 +704,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -848,7 +838,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.ActorEnableAI(idNeyrelleFollower, false)\r\n\t\r\n\tHydra.QActorSheath(idNeyrelleFollower)\r\n\tHydra.QActorWait(idNeyrelle, 2)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelleFollower, NeyrelleSqueezeLoc, \"NPC_Run\", true)\r\n\tHydra.ActorPlaySimpleConversation(conv_NeyrelleSqueeze, idNeyrelleFollower, idLorathFollower)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelleFollower, NeyrelleSqueezeLoc)\r\n\tHydra.QActorWait(idLorathFollower, 1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, LorathSqueezeLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idLorathFollower, LorathSqueezeLoc)\r\n\t\r\n\tHydra.Wait(11)\r\n\tHydra.ActorSetCollidable(idNeyrelleFollower, false)\r\n\tHydra.QActorPhasedAnimLoop(idNeyrelleFollower, \"AnimKey_Crawl_Phased\", 14)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelleFollower, NeyrelleFadeOutLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFadeAndDelete(idNeyrelleFollower, 0.5)\r\n\tHydra.Wait(10)\r\n\r\n\tHydra.EventSend(\"NextAmbushWave\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -925,8 +914,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1008,7 +996,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.QActorWait(idLorathFollower, 1)\r\n\tHydra.QActorPlaySimpleConversation(conv_LorathWorried, idLorathFollower)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1085,8 +1072,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1174,7 +1160,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\t\r\n\tHydra.ActorDisableAI(idLorathFollower)\r\n\tHydra.ActorEnable(idNeyrelle2)\r\n\tHydra.QActorAnim(idNeyrelle2, \"AnimKey_Ladder_Push\")\r\n\tHydra.ActorPlaySimpleConversation(conv_NeyrelleLadder, idNeyrelle2)\r\n\tHydra.MinimapAddPing(idNeyrelle2, 4, true)\r\n\tHydra.QActorSheath(idLorathFollower)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, LorathLadderLoc, \"NPC_Run\", true)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1318,8 +1303,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1339,8 +1323,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1479,7 +1461,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1556,7 +1537,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1647,7 +1627,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1724,8 +1703,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"RuinsEscaped\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1814,7 +1792,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\t\r\n\r\n\tHydra.ActorDelete(idLorathFollower)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1891,8 +1868,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1971,7 +1947,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayConversation(conv_Whispers2, tPlayers[i])\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2048,8 +2023,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2069,8 +2043,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2193,7 +2165,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2270,8 +2241,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2366,7 +2336,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2448,7 +2417,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2525,8 +2493,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"NeyrelleRunFinished\")\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2622,7 +2589,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2699,8 +2665,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2720,8 +2685,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2869,7 +2832,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.Wait(4)\r\n\t\r\n\tidLorathFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tidNeyrelleFollower = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_Magic\")\r\n\t\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i = 1, #tPlayers do\r\n\t\tHydra.ActorPlayConversation(conv_Whispers1, tPlayers[i])\r\n\tend\r\n\t\r\n\tHydra.WaitForConversationFinished(conv_Whispers1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2946,8 +2908,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2967,8 +2928,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3041,7 +3000,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.Wait(13.17)\r\n\tHydra.QActorWait(idNeyrelle2, 1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle2, NeyrelleLadderLoc2, \"NPC_Run\", true)\r\n\tHydra.QActorPower(idNeyrelle2, powerTraversal, idClimbDownTraversal, true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle2, NeyrelleEscapeLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelle2, NeyrelleEscapeLoc)\r\n\tHydra.EventSend(\"LadderDown\", idNeyrelle2)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3118,8 +3076,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3189,7 +3146,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3266,8 +3222,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3369,7 +3324,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tSetTraversalEnabled(idTraversalKiller2, true)\r\n\tSetTraversalEnabled(idTraversalKiller, true)\r\n\t\r\n\r\n\tHydra.QActorWait(idLorathFollower, 0.5)\r\n\tHydra.QActorPower(idLorathFollower, powerTraversal, idRungUpTraversal, true)\r\n\tHydra.QActorSheath(idLorathFollower)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, NeyrelleLadderLoc2, \"NPC_Run\", true)\r\n\tHydra.QActorPower(idLorathFollower, powerTraversal, idClimbDownTraversal, true)\r\n\tHydra.QActorSheath(idLorathFollower)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, LorathEscapeLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(idLorathFollower, LorathEscapeLoc)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3446,8 +3400,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3467,8 +3420,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3600,7 +3551,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tidLorathFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tidNeyrelleFollower = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_Magic\")\r\n\t\r\n\tHydra.QuestFollowerTakeOwnership(idLorathFollower)\r\n\tHydra.QuestFollowerTakeOwnership(idNeyrelleFollower)\r\n\t\r\n\tHydra.ActorDisableAI(idLorathFollower)\r\n\tHydra.ActorDisableAI(idNeyrelleFollower)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelleFollower, NeyrelleStandLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelleFollower, NeyrelleStandLoc, true)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, idAmbushTrigger, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idLorathFollower, idAmbushTrigger, true)\r\n\tHydra.ActorPlaySimpleConversation(conv_LorathDeadEnd, idLorathFollower, idNeyrelleFollower)\r\n\tHydra.WaitForQEmpty(idLorathFollower)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3707,7 +3657,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3784,8 +3733,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.WaitForConversationFinished(conv_LorathDeadEnd)\r\nHydra.ActorPlayEffectGroup(idLorathFollower, sfxSnakeAmbush)\r\nHydra.ActorPlaySimpleConversation(conv_NeyrelleAmbush, idNeyrelleFollower)\r\nHydra.WaitForConversationFinished(conv_NeyrelleAmbush)\r\nHydra.EventSend(\"Moved\", idLorathFollower)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3889,7 +3837,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.EventSend(\"BeginAmbushVignette\")\r\n\tHydra.ActorEnableAI(idLorathFollower)\r\n\tHydra.ActorEnableAI(idNeyrelleFollower)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4018,8 +3965,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4039,8 +3985,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4091,11 +4035,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "SetTraversalEnabled(idTraversalKiller, false)\r\nSetTraversalEnabled(idTraversalKiller2, false)\r\nSetTraversalEnabled(idTraversalKiller3, false)\r\nSetTraversalEnabled(idTraversalKiller4, false)\r\nbNeyrelleEnteredRuinsTrigger = false\r\n\r\n-- Make snake segment invulnerable as players can get there early and kill it resulting in a blocker in Bog_03\r\nHydra.ActorSetCannotBeTargetedByAI(idWoundedSnakeSegment, true)\r\nHydra.ActorSetInvulnerable(idWoundedSnakeSegment, true)\r\nHydra.ActorSetTargetable(idWoundedSnakeSegment, false)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.EventSend(\"QST_Kehj_Ambush_Advance\", idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -212,8 +211,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -285,7 +283,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -362,8 +359,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -445,7 +441,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.ActorPlayConversation(convAmbush, idActor, actorCultistSpeaker)\r\n\t\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_CHARGE, EG_CHARGE, true, Hydra.ACDID_INVALID, true)\r\n\tHydra.ActorSetIdleAnim(ID_SUMMONER_MAIN, ANIMKEY_OMNICHANNEL)\r\n\t\r\n\t-- Spawn the Succubus\r\n\tHydra.ActorDelete(ID_FXLOC_CHARGE)\r\n\tHydra.Wait(0.3)\r\n\tif Hydra.ActorIsValid(ID_SUMMONER_MAIN) then\r\n\t\tHydra.ActorTriggerPowerAtFeet(ID_SUMMONER_MAIN, ANIMKEY_OMNICAST)\r\n\t\tHydra.QActorSetIdleAnim(ID_SUMMONER_MAIN, ANIMKEY_NEUTRAL)\r\n\t\tHydra.ActorSetTeam(ID_SUMMONER_MAIN, Hydra.TEAM_SCENERY)\r\n\t\t--Hydra.QActorEnableAI(ID_SUMMONER_MAIN, true)\r\n\tend\r\n\tHydra.Wait(0.3)\r\n\tidSpawnedSuccubus = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SUMMON, idSelf), ID_VICTIM_01, false, 0, 0, Hydra.MR_NORMAL, POWER_SPAWN)\r\n\tHydra.ActorAddToGroup(idSpawnedSuccubus, \"QST_Kehj_Caldeum_Cultist_Ambush\")\r\n\t--Hydra.ActorSetTeam(idSpawnedSuccubus, Hydra.TEAM_SCENERY)\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_BURST_01, EG_BURST)\r\n\tHydra.ActorFadeAndDelete(ID_VICTIM_01, .2)\r\n\tHydra.Wait(1.0)\r\n\t\r\n\t-- Spawn the fly demons\r\n\tidSpawnedFly01 = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SUMMON_DEMONS, idSelf), ID_VICTIM_02, false, 0, 0, Hydra.MR_NORMAL, POWER_SPAWN)\r\n\tHydra.ActorAddToGroup(idSpawnedFly01, \"QST_Kehj_Caldeum_Cultist_Ambush\")\r\n\t--Hydra.ActorSetTeam(idSpawnedFly, Hydra.TEAM_SCENERY)\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_BURST_02, EG_BURST)\r\n\tHydra.QActorFadeAndDelete(ID_VICTIM_02, .2)\r\n\t\r\n\tidSpawnedFly02 = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SUMMON_DEMONS, idSelf), ID_VICTIM_03, false, 0, 0, Hydra.MR_NORMAL, POWER_SPAWN)\r\n\tHydra.ActorAddToGroup(idSpawnedFly02, \"QST_Kehj_Caldeum_Cultist_Ambush\")\r\n\t--Hydra.ActorSetTeam(idSpawnedFly, Hydra.TEAM_SCENERY)\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_BURST_03, EG_BURST)\r\n\tHydra.QActorFadeAndDelete(ID_VICTIM_03, .2)\r\n\t\r\n\tHydra.Wait(1.0)\r\n\tfor i, Cultist in ipairs(tCultists) do\r\n\t\tHydra.ActorClearAnimSetOverride(Cultist)\r\n\t\tHydra.ActorSetTeam(Cultist, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorSetNoDamage(Cultist, false)\r\n\t\tHydra.ActorEnableAI(Cultist)\r\n\t\tHydra.Wait(0.5)\r\n\tend\t\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -522,8 +517,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -595,7 +589,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\t\r\n\tHydra.EventSend(\"QST_Kehj_Ambush_Advance\", idActorDamager)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -672,8 +665,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -762,7 +754,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.EventSend(\"QST_Kehj_Ambush_Advance\", idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -839,8 +830,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -860,8 +850,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -891,11 +879,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "POWER_SPAWN = Hydra.PowerSNOFromName(POWER_SPAWN)\r\nHydra.ActorDisableAI(ID_SUMMONER_MAIN)\r\n\r\nif Hydra.GetRandomFloat() <= 0.05 then\r\n\tMR_RARITY = Hydra.MR_SUPER_ELITE\r\nend\r\n\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST_01, 8)\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST_02, 8)\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST_03, 8)\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_CHARGE, 4)\r\nHydra.ActorSetPowerEffectDuration(ID_FXLOC_CHARGE, 5)\r\n\r\n--Hydra.ActorPlayEffectGroup(ID_FXLOC_CHARGE, EG_CHARGE, true, Hydra.ACDID_INVALID, true)\r\n\r\n--Hydra.ActorSetIdleAnim(ID_SUMMONER, ANIMKEY_OMNICHANNEL)\r\n--Hydra.ActorDisableAI(ID_SUMMONER)\r\n\r\nfor i, actorID in pairs(T_PROPS) do\r\n\tHydra.ActorSetInvulnerable(actorID, true)\r\n\tHydra.ActorSetTargetable(actorID, false)\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

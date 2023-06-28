@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--Enable all the spawners. Wave timers are controlled on the spawners themselves.\t\r\n\tfor i, idAllSpawner in ipairs(tAllSpawners) do\r\n\t\tif Hydra.ActorIsValid then \r\n\t\t\tHydra.ActorGizmoSetDisabled(idAllSpawner, false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t--Add a VFX buff to the statue.\r\n\tfor i, idStatue in ipairs(tStatues) do\r\n\t\tHydra.Wait(0.15)\r\n\t\tHydra.BuffApplyToTarget(S_CHARGING_POWER, \"STATUE_CHARGING\", idStatue)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -341,7 +337,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n-- Change the statues back to their default look.\r\n\tfor i, idStatue in ipairs(tStatues) do\r\n\t\tHydra.Wait(0.15)\r\n\t\tHydra.BuffApplyToTarget(S_CHARGING_POWER, \"STATUE_LOOK_SWITCH_OFF\", idStatue)\r\n\tend\r\n\t\r\n-- Enable reward chest.\t\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -418,8 +413,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -453,7 +447,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Disable spawners\r\n\tfor i, idAllSpawner in ipairs(tAllSpawners) do\r\n\t\tif Hydra.ActorIsValid(idAllSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idAllSpawner, true)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -530,8 +523,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -551,8 +543,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -652,7 +642,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n--Setting the count for the number of elites killed.\r\nnEliteCount = nEliteCount + 1\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -729,8 +718,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -782,7 +770,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -859,8 +846,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -880,8 +866,6 @@
    "unk_669bcf8": 0,
    "unk_287ecb5": 27,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -972,7 +956,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1049,8 +1032,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1122,7 +1104,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\t--Checking the distance from the center to determine if the monster is killed in the blood circle.\r\n\t--Any monsters killed inside the circle have an extra blood effect.\r\n\tif Hydra.ActorDistanceSquaredBetweenActors(idSelf, idActorKilled) <= N_QUEST_CREDIT_MAX_RADIUS_SQ then \r\n\t\tHydra.ActorSetPowerEffectSize(idActorKilled, 4)\r\n\t\tHydra.ActorPlayEffectGroup(idActorKilled, S_BLOOD_EXPLOSION_FX)\r\n\t\t\r\n\t\t-- Award points based on monster difficulty.\r\n\t\tif Hydra.ActorIsInGroup(idActorKilled, S_SMALL_POINT_MONSTERS) then\r\n\t\t\tnBloodProgress =  nBloodProgress + N_MONSTER_POINTS_SMALL\r\n\t\telseif Hydra.ActorIsInGroup(idActorKilled, S_LARGE_POINT_MONSTERS) then\r\n\t\t\tnBloodProgress = nBloodProgress + N_MONSTER_POINTS_LARGE\r\n\t\tend\r\n\t\t\r\n\t\t--Caps nBloodProgress to 100 if greater than 100 (FEN-601202)\r\n\t\tif nBloodProgress > 100 then\r\n\t\t\tnBloodProgress = 100\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Set the chargeable progress based on points earned from monsters.\r\n\tfor i, idStatue in ipairs(tStatues) do\r\n\t\tidBlood = Hydra.ActorsLinkedByActor(idStatue)[1]\r\n\t\tHydra.ChargeableGizmoSetProgress(idBlood, nBloodProgress)\r\n\tend\r\n\t\r\n\t-- When the chargeable fills up, spawn an elite.\r\n\tif nBloodProgress >= 100 and nEliteCount == 0 then\r\n\t\tif Hydra.ActorIsValid(idElite01) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idElite01, false)\r\n\t\t\t\r\n\t\t\t--Resetting the chargeable.\r\n\t\t\tfor i, idStatue in ipairs(tStatues) do\r\n\t\t\t\tidBlood = Hydra.ActorsLinkedByActor(idStatue)[1]\r\n\t\t\t\tnBloodProgress = 0\r\n\t\t\t\tHydra.ChargeableGizmoSetProgress(idBlood, nBloodProgress)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t-- Spawning the second elite.\t\r\n\telseif nBloodProgress >= 100 and nEliteCount == 1 then\r\n\t\tif Hydra.ActorIsValid(idElite02) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idElite02, false)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1199,8 +1180,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1268,7 +1248,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\t--Adding some blood VFX when the elites spawn.\r\n\tHydra.ActorSetPowerEffectSize(idActorSpawned, 4)\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, S_BLOOD_SPAWN_FX)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1345,8 +1324,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1366,8 +1344,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1397,11 +1373,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- ======= CONSTANTS =======\r\n\tN_QUEST_CREDIT_MAX_RADIUS = 3.5\r\n\tN_QUEST_CREDIT_MAX_RADIUS_SQ = math.pow(N_QUEST_CREDIT_MAX_RADIUS, 2) -- square it once, never have to do math again\r\n\tN_MONSTER_POINTS_SMALL = 5\r\n\tN_MONSTER_POINTS_LARGE = 10\r\n\t\r\n\t\r\n-- ======= VARIABLES =======\t\r\n\tnEliteCount = 0\r\n\tnBloodProgress = 0\r\n\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

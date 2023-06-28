@@ -147,7 +147,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\t-- progress\r\n\tlocal tSac = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SACRIFICE\")\r\n\t\r\n\t-- Transform worshippers into werewolves\r\n\tfor i, idSac in ipairs(tSac) do\r\n\t\tif Hydra.ActorIsAlive(idSac) == true then\r\n\t\t\tlocal idSacrifice = Hydra.ActorSpawnActor(S_WEREWOLF_SAC, idSac, false, 0,0)\r\n\t\t\tHydra.ActorDelete(idSac)\r\n\t\t\tHydra.ActorPlayEffectGroup(idSacrifice, S_TRANSFORM_EFFECT)\r\n\t\t\tHydra.Wait(1)\r\n\t\tend\t\r\n\tend\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\t-- Cultist joins the battle\r\n\tHydra.ActorDelete(idBlocker)\r\n\tHydra.ActorSetInvulnerable(idCultistSorcerer, false)\r\n\tHydra.ActorEnableAI(idCultistSorcerer, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -224,8 +223,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -245,8 +243,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -370,7 +366,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -447,8 +442,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -523,7 +517,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -600,8 +593,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -621,8 +613,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -652,11 +642,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_TRANSFORM_EFFECT = Hydra.ReferenceEffectGroup(\"fxKit_damaging_burstCylindrical_shadow\")\r\n\r\nidCultistSorcerer = Hydra.ActorsLinkedByActorInGroup(idSelf, \"CULTIST\")[1]\r\nidBlocker = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BLOCKER\")[1]\r\n\r\nHydra.ActorSetInvulnerable(idCultistSorcerer, true)\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

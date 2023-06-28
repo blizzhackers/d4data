@@ -178,7 +178,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, snoSubzone)\r\n\r\n\t-- Any time a player enters the subzone, wait a second then check\r\n\t-- if they need the Elias Finger item. The 1 second wait is to \r\n\t-- allow the \"Wake Up Near Lorath\" callback to apply variable\r\n\t-- in the case the player is just playing naturally since that\r\n\t-- callback will handle the item drop in that case\r\n\t\r\n\tHydra.Wait(1)\r\n\tif not Hydra.IsGameVariableSet(\"DeltaWashedAshore\") then\r\n\t\r\n\t\tHydra.ItemDropAtActor(idBackupItemSpawn, itemEliasFinger)\r\n\t\tHydra.SetGameVariableFlag(\"DeltaWashedAshore\")\r\n\t\t\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -255,8 +254,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -344,7 +342,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\r\n-- Checks the group to see if anyone has the Elias' Finger\r\n-- instanced quest item. If not, drops one on the ground.\r\n\r\n\tHydra.SetGameVariableFlag(\"DeltaWashedAshore\")\r\n\t\r\n\tlocal tActors = Hydra.QuestGetParticipants()\r\n\r\n\t-- check players for items. If one is found, set variable\r\n\tfor i, PlayerID in ipairs(tActors) do\r\n\r\n\t\tHydra.BuffRemove(powerStun, \"STUN_SELF\", PlayerID) \r\n\t\tHydra.ActorTriggerPowerAtFeet(PlayerID, powerWakeUp)\r\n\t\r\n\t\tif Hydra.ActorHasItemByName(PlayerID, itemEliasFinger) then\r\n\t\t\tbHasItem = true\r\n\t\tend\r\n\t\t\r\n\tend\r\n\t\r\n\t-- if item is not found, drop a copy of the item for a player\r\n\tif not bHasItem then\r\n\t\tHydra.ItemDropAtActor(idBackupItemSpawn, itemEliasFinger)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -430,8 +427,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -547,7 +543,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -624,8 +619,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -706,7 +700,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -792,8 +785,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -813,8 +805,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -953,7 +943,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tHydra.ActorSetConversationStatus(idLorath, false)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlaySimpleConversation(conv_LorathReact, idLorath)\r\n\tHydra.ActorClearAnimSetOverride(idLorath)\r\n\r\n\tHydra.Wait(4)\r\n\tHydra.ActorSetAnimSetOverride(idNeyrelle, \"NPC_Neyrelle_Ground_WakeUp_Phased_campaign\")\r\n\tHydra.Wait(8)\r\n\tHydra.ActorPlaySimpleConversation(conv_NeyStirs, idNeyrelle)\r\n\tHydra.WaitForConversationFinished(conv_NeyStirs)\r\n\tHydra.EventSend(\"NeyrelleAwake\")\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1039,8 +1028,7 @@
        "groupName": "Item",
        "name": "QST_Hawe_Delta_EliasFinger"
       }
-     ],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1121,7 +1109,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1207,8 +1194,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1297,7 +1283,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1374,8 +1359,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1395,8 +1379,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1558,7 +1540,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.Wait(1)\r\n\t\r\n\t-- Neyrelle Actions\r\n\tHydra.QActorWait(idNeyrelle, 2)\r\n\tHydra.QActorClearAnimSetOverride(idNeyrelle)\r\n\tHydra.QActorWaitForConversationFinished(idNeyrelle, conv_LorathLeaves)\r\n\t--Hydra.QActorWait(idNeyrelle, 1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle, locNeyrelleWalkTo, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idNeyrelle, 1)\r\n\t\r\n\t-- Lorath Actions\r\n\tHydra.QActorWait(idLorath, 0.5)\r\n\tHydra.QActorPlaySimpleConversation(conv_LorathLeaves, idLorath)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, locLorathFireKickWalkTo, \"NPC_Walk\", true)\r\n\tHydra.QActorAnim(idLorath, powerDonanKick)\r\n\tHydra.WaitForQEmpty(idLorath)\r\n\tHydra.ActorFadeAndDelete(idCampfire, 0.5)\r\n\tHydra.ActorEnable(idCampfireExtinguished)\r\n\tHydra.QActorWaitForConversationFinished(idLorath, conv_LorathLeaves)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, locLorathMoveTo, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idLorath, 1)\r\n\t\r\n\tHydra.WaitForQEmpty(idNeyrelle)\r\n\tHydra.EventSend(\"NPCsGone\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1666,7 +1647,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1743,8 +1723,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1764,8 +1743,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1852,7 +1829,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1929,8 +1905,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1950,8 +1925,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2002,8 +1975,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2033,11 +2004,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "bItemDropped = false\r\nbHasItem = false\r\nbFreshStartItemGiven = false\r\nitemEliasFinger = Hydra.ReferenceItem(\"QST_Hawe_Delta_EliasFinger\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

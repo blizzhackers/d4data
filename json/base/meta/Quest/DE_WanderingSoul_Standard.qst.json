@@ -160,7 +160,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Turn on all spawners\r\n\tfor i, idAllSpawner in ipairs(T_ALL_SPAWNERS) do\r\n\t\tHydra.ActorGizmoSetDisabled(idAllSpawner, false)\r\n\tend\r\n\t\r\n\t--Initiates the first wander point for the ghost. After this it will be handled in the Attack Waves phase\r\n\tUF_Wander(idSelf, idActorNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -237,8 +236,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -258,8 +256,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -350,7 +346,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -427,8 +422,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -501,7 +495,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\t--Plays burst vfx and an attractor that goes back to the wander soul\r\n\tHydra.ActorSetPowerEffectSize(idActorKilled, 4)\r\n\tHydra.ActorSetPowerEffectDuration(idActorKilled, 1)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idActorKilled, idWanderingSoul, S_FX_GHOSTROPE)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_FX_GHOSTBURST, true)\r\n\t\r\n\t--Update bonus obj tracker \r\n\tif Hydra.QuestCallbackCountGet(94) > 850 then\r\n\t\tHydra.QuestCallbackCountSet(94, 1000)\r\n\telse\r\n\t\tHydra.QuestCallbackCountSet(94, Hydra.QuestCallbackCountGet(94) + 150)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -588,7 +581,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif bBonusAchieved == false then\r\n\t\t--Remove progress from the tracker when the wandering soul is hit.\r\n\t\tif Hydra.QuestCallbackCountGet(94) < 10 then\r\n\t\t\tHydra.QuestCallbackCountSet(94, 0)\r\n\t\telse\r\n\t\t\tHydra.QuestCallbackCountSet(94, Hydra.QuestCallbackCountGet(94) - 10)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -665,8 +657,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -719,7 +710,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\n\t--After reaching the wander point, it wanders again\r\n\tHydra.Wait(0.1)\r\n\tUF_Wander(idSelf, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -796,8 +786,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -880,7 +869,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -957,8 +945,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Bonus has been achieved.\r\nbBonusAchieved = true\r\nHydra.EventSend(\"BonusSuccess\", idSelf)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1010,7 +997,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeElapsed)\r\n\r\n-- Find a random monster.\r\n\tlocal nTotalMonsters = Hydra.ActorGroupGetCount(S_ALLMONSTERS)\r\n\tlocal nRandomMonster = Hydra.GetRandomInt(1, nTotalMonsters)\r\n\tidSelectedMonster = Hydra.ActorsInGroup(S_ALLMONSTERS)[nRandomMonster]\r\n\t\r\n-- Set that monster to force target the wandering soul.\t\r\n\tif bBonusAchieved == false then\r\n\t\tif Hydra.ActorIsValid(idSelectedMonster) and Hydra.ActorIsAlive(idSelectedMonster) then\r\n\t\t\tHydra.ActorAIForcePrimaryTarget(idSelectedMonster, idWanderingSoul)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1087,8 +1073,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1108,8 +1093,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1182,7 +1165,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1259,8 +1241,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- If the bonus wasn't achieved then move to the next phase\r\nif bBonusAchieved == false then\r\n\tHydra.EventSend(\"BonusFailed\", idSelf)\r\n\tHydra.QuestAdvancePhase()\r\nelse\r\n--Plays ghost conversation\r\n\tHydra.QActorStopAllQueuedActions(idWanderingSoul)\r\n\tHydra.QActorPlaySimpleConversation(S_CONV_SUCCESS, idWanderingSoul)\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1348,7 +1329,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t--fades ghost into the elite after ghost conversation\r\n\tHydra.ActorWarpToActor(idSuperEliteSpawnMarker, idWanderingSoul)\r\n\tHydra.ActorPlayEffectGroup(idWanderingSoul, S_FX_GHOSTBURST)\r\n\tHydra.ActorFadeAndDelete(idWanderingSoul, 0.25)\r\n\tHydra.ActorGizmoSetDisabled(ID_ELITE_SPAWNER, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1425,8 +1405,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1490,7 +1469,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1567,8 +1545,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1588,8 +1565,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Function to disable all the spawners\r\nCleanupPrep(idSelf)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1712,7 +1687,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Fade ghost; Enable chest\r\n\tHydra.ActorFadeAndDelete(idActorNPC, 1)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorGizmoSetDisabled(idChestNormal, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1789,8 +1763,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1810,8 +1783,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1911,7 +1882,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t--Apply ghost effect on soul eaters\r\n\tHydra.ActorSetPowerEffectSize(idActorSpawned, 4)\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, S_FX_GHOSTFILLED, true, Hydra.ACDID_INVALID, \"HP_chest\")\r\n\t\r\n\t--Force it to target the wandering soul.\r\n\tHydra.ActorAIForcePrimaryTarget(idActorSpawned, idWanderingSoul)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1988,8 +1958,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2057,7 +2026,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t--Apply ghost effect on soul eaters\r\n\tHydra.ActorSetPowerEffectSize(idActorSpawned, 4)\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, S_FX_GHOSTFILLED, true, Hydra.ACDID_INVALID, \"HP_chest\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2134,8 +2102,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2155,8 +2122,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2271,7 +2236,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2348,8 +2312,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2432,7 +2395,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2509,8 +2471,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2530,8 +2491,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 8,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2627,7 +2586,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2704,8 +2662,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2725,8 +2682,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2792,7 +2747,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n--Turn on the reward chest\r\n\tHydra.ActorGizmoSetDisabled(idChestNormal, false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2869,8 +2823,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2890,8 +2843,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2921,11 +2872,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "---------------------------------\r\n-- Destroy spawners in a table --\r\nfunction CleanupPrep(questID)\r\n\r\n\tfor i, idAllSpawner in ipairs(T_ALL_SPAWNERS) do\r\n\t\tif Hydra.ActorIsValid(idAllSpawner) then \r\n\t\t\tHydra.ActorKill(idAllSpawner)\r\n\t\tend\r\n\tend\r\nend\r\n\r\n------------------\r\n-- Ghost Wander --\r\nfunction UF_Wander(idSelf, idActor)\r\n\t\r\n\t-- Get a random position in relation to the quest location\r\n\tlocal ptSelfPos = Hydra.ActorGetPosition(idSelf)\r\n\tlocal ptWalkPos = Hydra.PositionOffsetRandomly(ptSelfPos, 0, 8)\r\n\t\r\n\t-- Have ths ghost move to the picked location\r\n\tHydra.QActorMoveToPositionConstantSpeed(idActor, ptWalkPos, Hydra.MOVE_RATE_WALK)\r\nend\r\n",
- "szOnStartupScript": "\r\n-- ======= VARIABLES =======\r\n--\tGeneral\r\n\tS_EVENT_PROGRESS = \"DE_Standard_WanderingSoul_Progress\"\r\n\tS_EVENT_FAILURE = \"DE_Standard_WanderingSoul_Failure\"\r\n\t\r\n--\tBonusTracker\r\n\tbBonusAchieved = false\r\n\r\n\t--Enables initial Soul Imbued enemies to familiarize the player with the unusual appearance\r\n\tHydra.ActorGizmoSetDisabled(ID_STARTING_SPAWNER, false)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

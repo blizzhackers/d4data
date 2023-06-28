@@ -171,7 +171,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n--Asa helps Dawood away\r\n\t--[[Hydra.QActorClearAnimSetOverride(actor_Asa)\r\n\tHydra.QActorSheath(actor_Asa)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Asa, loc_AsaStart, \"NPC_Walk\", false)\r\n\tHydra.QActorFadeAndDelete(actor_Asa, 1.5)\r\n\t\r\n\tHydra.QActorClearAnimSetOverride(actor_Dawood)\r\n\tHydra.QActorSetAnimSetOverride(actor_Dawood, \"NPC_Base_wounded_standing\")\r\n\tHydra.QActorSheath(actor_Dawood)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Dawood, loc_DawwodStart, \"NPC_Walk\", false)\t\r\n\tHydra.QActorFadeAndDelete(actor_Dawood, 1.5)]]--\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -248,8 +247,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -269,8 +267,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -390,7 +386,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -467,8 +462,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -488,8 +482,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -600,7 +592,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Dawood, loc_DawwodPre, \"NPC_Run\", true)\r\n\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Asa, loc_AsaPre, \"NPC_Run\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -677,8 +668,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -757,7 +747,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n--Enemy Bark and Face\r\n\t--Hydra.ActorAIForcePrimaryTarget(actor_Boss, actor_Dawood)\r\n\tHydra.ActorFaceActor(actor_Boss, actor_Dawood, true)\r\n\tHydra.ActorPlaySimpleConversation(conv_LonelyWolf_04c, actor_Boss)\r\n\r\n--Dawood Behavior\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Dawood, loc_DawwodStart, \"NPC_Run\", false)\r\n\t--Hydra.QActorWait(actor_Dawood, 0.5)\r\n\tHydra.QActorPlaySimpleConversation(conv_LonelyWolf_04d, actor_Dawood, false, actor_Asa)\r\n\tHydra.QActorEnableAI(actor_Dawood, true)\r\n\r\n--Asa Behavior\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actor_Asa, loc_AsaStart, \"NPC_Run\", true)\r\n\tHydra.QActorEnableAI(actor_Asa, true)\r\n\t\r\n--Enemy Behavior\t\r\n\tHydra.QActorWait(actor_Boss, 0.5)\r\n\tHydra.QActorPower(actor_Boss, power_CultistAttack, actor_Dawood)\r\n\t--Hydra.QActorPower(actor_Boss, power_Knockback, actor_Dawood)\r\n\r\n\tlocal tBossSquad = Hydra.ActorsInGroup(\"QST_Kehj_LonelyWolf_03_Cultists\")\r\n\t\r\n\tfor i,idBossSquad in ipairs(tBossSquad) do\r\n\t\tHydra.QActorClearAnimSetOverride(idBossSquad)\r\n\t\tHydra.ActorEnableAI(idBossSquad)\r\n\tend\r\n\t\r\n\tHydra.Wait(2.5)\r\n\tHydra.ActorSetHitPointsPercent(actor_Dawood, .01)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -834,8 +823,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -914,7 +902,6 @@
        "unk_9c1ea4f": 20,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\tHydra.ActorDisableAI(actor_Dawood)\r\n\tHydra.ActorSetInvulnerable(actor_Dawood, true)\r\n\t\r\n\tHydra.ActorDisableAI(actor_Asa)\r\n\tHydra.ActorSetInvulnerable(actor_Asa, true)\r\n\t\r\n\tHydra.ActorPlaySimpleConversation(conv_LonelyWolf_04a, actor_Asa, actor_Dawood)\r\n\t\r\n\tif Hydra.ActorIsValid(actor_Dawood) then\r\n\t\tHydra.QActorSetAnimSetOverride(actor_Dawood, \"NPC_Base_wounded_standing\")\r\n\t\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(actor_Dawood, loc_DawoodEnd, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(actor_Dawood, loc_DawoodEnd)\r\n\t\tHydra.QActorSetAnimSetOverride(actor_Dawood, \"NPC_Idle_Sit_Ground_Wounded\")\r\n\tend\r\n\r\n\t\r\n\tif Hydra.ActorIsValid(actor_Asa) then\r\n\t\tHydra.QActorWaitForConversationFinished(actor_Asa, conv_LonelyWolf_04a)\r\n\t\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(actor_Asa, loc_AsaEnd, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(actor_Asa, loc_AsaEnd)\r\n\t\tHydra.QActorSetAnimSetOverride(actor_Asa, \"NPC_Idle_Kneel_Help_Wounded\")\r\n\tend\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -991,8 +978,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1012,8 +998,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1043,11 +1027,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

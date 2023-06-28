@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 15,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidAneta = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Aneta\")[1]\r\n\tidVass = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Vass\")[1]\r\n\tidFireMarker = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"FireMarker\")[1]\r\n\tidVassRunToLoc = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"VassRunToLoc\")[1]\r\n\r\n\ttVillagers = Hydra.ActorsInGroup(\"DSQ_Hawe_TheHeretic_VillagersCave\")\r\n\ttAshStatues = Hydra.ActorsInGroup(\"DSQ_Hawe_TheHeretic_AshenFiguresCave\")\r\n\ttFlameMarkers = Hydra.ActorsInGroup(\"DSQ_Hawe_TheHeretic_FlameWaveMarkers\")\r\n\ttMoreFireMarkers = Hydra.ActorsInGroup(\"DSQ_Hawe_TheHeretic_MoreFireMarkers\")\r\n\ttSpawners = Hydra.ActorsInGroup(\"DSQ_Hawe_TheHeretic_DemonSpawners\")\r\n\r\n\tHydra.QActorSetAnimSetOverride(idAneta, \"NPC_Idle_Stand_Scared_01\")\r\n\tHydra.ActorPlaySimpleConversation(convVassAccuse, idAneta)\r\n\tHydra.Wait(15)\r\n\tHydra.QActorSetAnimSetOverride(idAneta, \"NPC_Scream\")\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorSetPowerEffectSize(idAneta, 2.5)\r\n\tHydra.ActorPlayEffectGroup(idAneta, fxFire, true)\r\n\r\n\tHydra.Wait(0.5)\r\n\tHydra.QActorWait(tVillagers[1], 0.15)\r\n\tHydra.QActorPhasedAnimLoop(tVillagers[1], \"AnimKey_Cower\", 0)\r\n\tHydra.QActorWait(tVillagers[2], 0.15)\r\n\tHydra.QActorAnim(tVillagers[2], \"AnimKey_Talk_Scared\")\r\n\tHydra.QActorWait(tVillagers[3], 0.2)\r\n\tHydra.QActorPhasedAnimLoop(tVillagers[3], \"AnimKey_Emote_Cry\", 0)\r\n\tHydra.QActorClearAnimSetOverride(idVass)\r\n\tHydra.QActorWait(idVass, 0.1)\r\n\tHydra.QActorAnimLoop(idVass, \"AnimKey_Backpedal\", 1.5)\r\n\tHydra.Wait(1.5)\r\n\tHydra.QActorStopAllQueuedActions(idVass)\r\n\tHydra.QActorFaceActor(idVass, idVassRunToLoc)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idVass, idVassRunToLoc, \"NPC_Run\", false)\r\n\tHydra.QActorFadeAndDelete(idVass, 1)\r\n\r\n\tHydra.Wait(1)\r\n\tHydra.ActorClearAnimSetOverride(idAneta, false)\r\n\tHydra.QActorAnim(idAneta, \"AnimKey_Idle_Angry\")\r\n\tHydra.Wait(0.75)\r\n\tHydra.ActorPlaySimpleConversation(convAnetaScream, idAneta)\r\n\tHydra.Wait(1.5)\r\n\t\r\n\tfor i, FlameMarker in ipairs(tFlameMarkers) do\r\n\t\tHydra.ActorEnable(FlameMarker)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.15)\r\n\t\r\n\tfor i, Villager in ipairs(tVillagers) do\r\n\t\tHydra.ActorDisable(Villager)\r\n\tend\r\n\t\r\n\tfor i, AshStatue in ipairs(tAshStatues) do\r\n\t\tHydra.ActorEnable(AshStatue)\r\n\t\tHydra.ActorPlayEffectGroup(AshStatue, \"fxKit_aoe_explosion_fire_cylindrical_impact\")\r\n\tend\r\n\tHydra.QActorPhasedAnimLoop(idAneta, \"CrowdControl_StunWithIntro\", 0)\r\n\t\r\n\tfor i, Spawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorEnable(Spawner)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tHydra.QActorPhasedAnimLoop(idAneta, \"CrowdControl_Knockdown\", 0)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idAneta, fxFire)\r\n\t--Hydra.ActorDisable(idFireMarker)\r\n\t\r\n\tHydra.EventSend(\"AnetaFound\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -212,8 +211,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -302,7 +300,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -379,8 +376,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -400,8 +396,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -512,7 +506,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n\tHydra.Wait(1)\r\n\tHydra.ActorTriggerPhaseJump(idAneta)\r\n\t--Hydra.Wait(1)\r\n\tHydra.QActorSetAnimSetOverride(idAneta, \"NPC_Base_wounded_standing_head\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -589,8 +582,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -610,8 +602,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -662,8 +652,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -792,7 +780,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\t--Hydra.QActorClearAnimSetOverride(idAneta)\r\n\tHydra.QActorWait(idAneta, 1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAneta, idVassRunToLoc, \"NPC_Run\", false)\r\n\tHydra.Wait(1.5)\r\n\tHydra.ActorPlaySimpleConversation(convRunAway, idAneta)\r\n\tHydra.QActorFadeAndDelete(idAneta, 1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -878,8 +865,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -899,8 +885,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -951,8 +935,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -982,11 +964,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

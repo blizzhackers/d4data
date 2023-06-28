@@ -158,7 +158,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidGizmo = idActorGizmo\r\n\tHydra.CancelConversation(CONVO_BakriaNote)\r\n\t\r\n\tHydra.Wait(1)\r\n\tlocal idLeyranaFollower = Hydra.QuestGetFollower(\"NPC_QST_Rogue_Leyrana\")\r\n\t\r\n\tHydra.QActorClearAnimSetOverride(id_Ghost)\r\n\tHydra.ActorSetAIState(id_Ghost, \"idle\")\r\n\tHydra.ActorSetDisableWander(id_Ghost, true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(id_Ghost, id_BakiraCorpse, \"NPC_Run\", false, false, true, true)\r\n\t--Hydra.EventSendToActor(\"Rogue_InnerSight_Convo_Ghost\")\r\n\tHydra.ActorPlaySimpleConversation(CONVO_GHOST, id_Ghost, idLeyranaFollower)\r\n\tHydra.WaitForConversationFinished(id_Ghost, CONVO_GHOST)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -235,8 +234,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -315,7 +313,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -392,8 +389,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -413,8 +409,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -539,7 +533,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_RogueInnerSight_BakiraAll\")) do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(i)\r\n\tend\r\n\t\r\n\tid_BakiraCorpse = Hydra.ActorsInGroup(\"QST_RogueInnerSight_BakiraCorpse\")[1]\r\n\tid_Ghost = Hydra.ActorsInGroup(\"QST_RogueInnerSight_Akara\")[1]\r\n\tHydra.ActorSetTeam(id_Ghost, Hydra.TEAM_SCENERY)\r\n\tHydra.ActorAIOverrideNormalBehavior(id_Ghost, \"Generic_Npc_Wander\")\r\n\tHydra.Wait(1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -616,8 +609,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -637,8 +629,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -744,7 +734,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorSetTeam(id_Ghost, Hydra.TEAM_NEUTRAL)\r\n\tHydra.ActorSetAIState(id_Ghost, \"idle\")\r\n\tHydra.ActorSetIdleAnim(id_Ghost, S_COWER)\r\n\t\r\n\tHydra.ActorPlaySimpleConversation(CONVO_GHOST_DEATH, id_Ghost)\r\n\t\r\n\tHydra.WaitForConversationFinished(CONVO_GHOST_DEATH)\r\n\t\r\n\ttPlayerGroup = Hydra.ActorGetPlayersAndPetsInRange(id_Ghost, 8.0, false, false, false)\r\n\t\r\n\tfor i = 1, #tPlayerGroup do\r\n\t\tif Hydra.ActorIsValid(tPlayerGroup[i]) then\r\n\t\t\tif Hydra.ActorIsPlayer(tPlayerGroup[i]) then\r\n\t\t\t\t\r\n\t\t\t\tidClass = Hydra.PlayerGetClass(tPlayerGroup[i])\r\n\t\t\t\t\t\t\t\t\r\n\t\t\t\tif idClass == \"Rog\" then\r\n\t\t\t\t\tHydra.ActorSetPowerEffectDuration(id_Ghost, 1);\t-- controls the travel time of each missile. Higher values means slower projectiles\r\n\t\t\t\t\tHydra.ActorSetPowerEffectSize(id_Ghost, 3); -- controls the spawn rate of the missiles (in missiles/second)\r\n\t\t\r\n\t\t\t\t\tidValidActor = tPlayerGroup[i]\r\n\t\t\t\t\t\r\n\t\t\t\t\tHydra.ActorPlayEffectGroupActorToActor(id_Ghost, tPlayerGroup[i], S_EG_ATTRACTOR)\r\n\r\n\t\t\t\t\tHydra.BuffApplyToTarget(S_STUN, \"STUN\", tPlayerGroup[i])\r\n\t\t\t\t\tHydra.ActorSetInvulnerable(tPlayerGroup[i], true)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\n\tHydra.Wait(3)\r\n\t\r\n\tHydra.ActorKill(id_Ghost)\r\n\t\r\n\tfor i = 1, #tPlayerGroup do\r\n\t\tif Hydra.ActorIsValid(tPlayerGroup[i]) then\r\n\t\t\tHydra.ActorSetInvulnerable(tPlayerGroup[i], false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t\tHydra.Wait(2)\r\n\t\r\n\tidLeyranaFollower = Hydra.QuestGetFollower(\"NPC_QST_Rogue_Leyrana_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idLeyranaFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idLeyranaFollower)\t\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_OH_NO, idLeyranaFollower)\t\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idLeyranaFollower, ID_LEYRANA_FINAL, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idLeyranaFollower, ID_LEYRANA_FINAL)\t\t\r\n\t\tHydra.QActorClearAnimSetOverride(idLeyranaFollower)\r\n\t\tHydra.QActorDelete(idLeyranaFollower)\r\n\t\tHydra.WaitForQEmpty(idLeyranaFollower)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -821,8 +810,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -842,8 +830,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\tHydra.QActorStopAllQueuedActions(id_Ghost)\r\n\tHydra.ActorAIOverrideNormalBehavior(id_Ghost, \"NPC_Combat_Melee_BAsic\")\r\n\tHydra.ActorSetAIBehavior(id_Ghost, Hydra.AIBEHAVIOR_TYPE_NORMAL)\r\n\tHydra.ActorSetTeam(id_Ghost, Hydra.TEAM_MONSTER_0)\r\n\tHydra.ActorSetInvulnerable(id_Ghost, false)\r\n\tHydra.ActorSetAIState(id_Ghost, \"aggressive\")\r\n\t",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -873,11 +859,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

@@ -178,7 +178,6 @@
         "name": "Frac_Underworld"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -273,8 +272,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -370,7 +368,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\t--Deletes Blocker\r\n\tHydra.ActorFadeAndDelete(idActorDetector, 1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -456,8 +453,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -477,8 +473,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -647,7 +641,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -733,8 +726,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -754,8 +746,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -903,7 +893,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tfollowerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\n\tidNeyrelleDoor = Hydra.ActorsInGroup(\"QST_Frac_Und_03_Neyrelle_Door\")[1]\r\n\t\t\r\n\t--Neyrelle Bark + Move\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.ActorPlaySimpleConversation(convHoldoutStart, followerNeyrelle)\r\n\t\tHydra.QuestFollowerTakeOwnership(followerNeyrelle)\r\n\t\tHydra.ActorEnableAI(followerNeyrelle, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerNeyrelle, idNeyrelleDoor, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerNeyrelle, idNeyrelleDoor)\r\n\t\tHydra.WaitForQEmpty(followerNeyrelle)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.ActorDelete(followerNeyrelle)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(idNeyrelleDoor)\r\nend\r\n\t",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1006,8 +995,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1027,8 +1015,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1162,7 +1148,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tHydra.EventSend(\"HOLDOUT_BEGIN\")\r\n\t\r\n\t--Neyrelle casting stuff\r\n\tidFinalBarrier = Hydra.ActorsInGroup(\"CSD_Frac_Underworld_AncientCity_FinalBarrier\")[1]\r\n\tHydra.QActorPhasedAnimLoop(idNeyrelleDoor, sPowerUse, 0)\r\n\tHydra.QActorRemoveComplexEffectByEffectGroupSNO(idNeyrelleDoor, \"fxKit_harmless_persistentRope_horadric\")\r\n\tHydra.Wait(2)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idNeyrelleDoor, idFinalBarrier, fxHoradricRope, true, \"HP_LeftHand\", \"HP_Mouth\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1257,8 +1242,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1354,7 +1338,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorTriggerPhaseJump(idNeyrelleDoor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1431,8 +1414,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1520,7 +1502,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\tHydra.ActorTriggerPhaseJump(idNeyrelleDoor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1606,8 +1587,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1686,7 +1666,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1763,8 +1742,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1784,8 +1762,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1926,7 +1902,6 @@
         "name": "Frac_Underworld"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2017,8 +1992,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2038,8 +2012,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2192,7 +2164,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tactorNeyAtPetals2 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"NEY\")[1]\r\n\tlocNeyAtPetals2 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"LOC\")[1]\r\n\r\n\tfollowerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.ActorPlaySimpleConversation(convNeyMidwayGate, followerNeyrelle)\r\n\t\tHydra.WaitForConversationFinished(convNeyMidwayGate)\r\n\tend\r\n\t\r\n\t--Get level area and delete trigger\r\n\tidLevelArea = Hydra.ActorGetLevelArea(idActorDetector)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\t\r\n\t--Start Boss Fight\r\n\tHydra.BossEncounterManuallyQueueStart(idLevelArea)\r\n\t\r\n\t--idSpawnerElite = Hydra.ActorsInGroup(\"CSD_Frac_Underworld_AncientCity_EliteFight\")[1]\r\n\t--Hydra.ActorGizmoSetDisabled(idSpawnerElite, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2278,8 +2249,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2299,8 +2269,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2425,7 +2393,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2502,8 +2469,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2591,7 +2557,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--End Boss Fight\r\n\tHydra.BossEncounterManuallyComplete(Hydra.ActorGetLevelArea(idActorKilled))\r\n\r\n\tfollowerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.QActorEnableAI(followerNeyrelle, false);\r\n\t\tHydra.QuestFollowerTakeOwnership(followerNeyrelle);\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerNeyrelle, locNeyAtPetals2, \"NPC_Run\", true);\r\n\t\tHydra.QActorFaceSameAsActor(followerNeyrelle, locNeyAtPetals2);\r\n\t\tHydra.WaitForQEmpty(followerNeyrelle)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.ActorDelete(followerNeyrelle)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(actorNeyAtPetals2)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2677,8 +2642,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2698,8 +2662,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2845,7 +2807,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tCampaignForcedPartyGatherPlayIGC(convLilithVhenardChat2, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2960,7 +2921,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.EventSend(\"DRLGKit_BarrierWall_Remove_01\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3037,8 +2997,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3058,8 +3017,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3212,7 +3169,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tlocNeyAtPetals1 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"LOC\")[1]\r\n\tactorNeyAtPetals1 = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"NEY\")[1]\r\n\t\r\n--Neyrelle follower becomes static\r\n\tfollowerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.QActorEnableAI(followerNeyrelle, false);\r\n\t\tHydra.QuestFollowerTakeOwnership(followerNeyrelle);\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerNeyrelle, locNeyAtPetals1, \"NPC_Run\", true);\r\n\t\tHydra.QActorFaceSameAsActor(followerNeyrelle, locNeyAtPetals1);\r\n\t\tHydra.WaitForQEmpty(followerNeyrelle)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\tHydra.ActorDisable(followerNeyrelle)\r\n\t\tHydra.ActorDelete(followerNeyrelle)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(actorNeyAtPetals1)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3298,8 +3254,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3319,8 +3274,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3466,7 +3419,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tCampaignForcedPartyGatherPlayIGC(convLilithVhenardChat3, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3581,7 +3533,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.EventSend(\"DRLGKit_BarrierWall_Remove_02\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3658,8 +3609,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3679,8 +3629,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3826,7 +3774,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--Cleanup Neyrelle from phases 1-3\r\n\tHydra.ActorDisable(actorNeyAtPetals1)\r\n\tHydra.ActorDelete(actorNeyAtPetals1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3903,8 +3850,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3924,8 +3870,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4071,7 +4015,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t--Cleanup Neyrelle from phases 4-7\r\n\tHydra.ActorDisable(actorNeyAtPetals2)\r\n\tHydra.ActorDelete(actorNeyAtPetals2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4148,8 +4091,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4169,8 +4111,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4316,7 +4256,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4393,8 +4332,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4414,8 +4352,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "idNeyrelleDoor = Hydra.ActorsInGroup(\"QST_Frac_Und_03_Neyrelle_Door\")[1]\r\nHydra.ActorDisable(idNeyrelleDoor)\r\nfollowerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\nHydra.ActorEnableAI(followerNeyrelle, true)\r\nHydra.QActorPlaySimpleConversation(convHoldoutEnd, followerNeyrelle)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4487,8 +4423,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4608,7 +4542,6 @@
         "name": "CSD_Frac_Underworld_AncientCity"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\t--Get level area and delete trigger\r\n\tidLevelArea = Hydra.ActorGetLevelArea(idActorDetector)\r\n\tHydra.ActorDelete(idActorDetector)\r\n\t\r\n\t--Start Boss Fight\r\n\tHydra.BossEncounterManuallyQueueStart(idLevelArea)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4694,8 +4627,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4715,8 +4647,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4856,7 +4786,6 @@
         "name": "Frac_Underworld"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\nlocal followerNeyrelle = Hydra.QuestGetFollower(ID_NEYRELLE_FOLLOWER)\r\n\r\n-- Check for Neyrelle for Vhenard writing reaction line\r\nif Hydra.ActorIsValid(followerNeyrelle) == true then\r\n\r\n\t-- Check if Neyrelle is following the player that is triggering the Vhenard writing gizmo line callback\r\n\tif Hydra.ActorGetFollowTarget(followerNeyrelle) == idActorPlayer then\r\n\t\t-- Vhenard writing reaction line\r\n\t\tHydra.ActorPlaySimpleConversation(convVhenardWriting1, followerNeyrelle)\r\n\tend\r\n\r\nend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4933,8 +4862,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4954,8 +4882,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4985,11 +4911,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- This is handled by the QST_Frac_Underworld_HoistManager\r\nHydra.EventSend(\"QST_FRAC_UNDERWORLD_MANAGEHOIST\", actorHoistManagerQuest, 1)\r\n\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

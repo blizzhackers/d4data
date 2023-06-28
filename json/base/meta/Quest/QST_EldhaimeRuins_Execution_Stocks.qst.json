@@ -152,7 +152,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tif Hydra.ActorIsValid(idMonster) and Hydra.ActorIsAlive(idMonster) then\r\n\t\tHydra.ActorEnableAI(idMonster, true)\r\n\t\tHydra.QActorAnim(idMonster, S_ANIM_ATTACK)\r\n\t\tHydra.Wait(0.5)\r\n\t\tHydra.ActorKill(idNPC)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -229,8 +228,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -298,7 +296,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorEnable(idBlood)\r\n\t--Wait before kill so it doesn't look like the player killed them\r\n\tHydra.Wait(0.25)\r\n\tHydra.ActorKill(idNPC)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -375,8 +372,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -396,8 +392,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -463,7 +457,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorEnable(idBlood)\r\n\tif Hydra.ActorIsValid(idMonster) and Hydra.ActorIsAlive(idMonster) then\r\n\t\tHydra.ActorSetInvulnerable(idMonster, false)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -540,8 +533,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -609,7 +601,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorEnable(idBlood)\r\n\tif Hydra.ActorIsValid(idNPC) then\r\n\t\t--Wait before kill so it doesn't look like the player killed them\r\n\t\tHydra.Wait(0.25)\r\n\t\tHydra.ActorKill(idNPC)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -686,8 +677,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -707,8 +697,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -738,11 +726,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idMonster = Hydra.ActorsLinkedByActorInGroup(idSelf, \"MONSTERS\")[1]\r\nidNPC = Hydra.ActorsLinkedByActorInGroup(idSelf, \"NPC\")[1]\r\nidBlood = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BLOOD\")[1]\r\n\r\n-- Initial Setup\r\nif Hydra.ActorIsValid(idMonster) and Hydra.ActorIsAlive(idMonster) then\r\n\tHydra.ActorEnableAI(idMonster, false)\r\n\tHydra.ActorSetInvulnerable(idMonster, true)\r\nend\r\n\r\nHydra.ActorSetNoDamage(idNPC, false)\r\nHydra.ActorDamageByPercent(idNPC, 99.9)\r\nHydra.ActorSetNoDamage(idNPC, true)\r\nHydra.ActorSetIdleAnim(idNPC, S_ANIM_STOCKS)\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

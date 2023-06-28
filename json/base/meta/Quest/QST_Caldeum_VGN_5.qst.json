@@ -131,7 +131,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tidSpawner = Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawner\")[1]\r\n\tidBrute = Hydra.ActorsLinkedByActorInGroup(idSelf, \"brute\")[1]\r\n\tPower_Slam = Hydra.ReferencePower(\"VGN_knight_brute_attk_slam\")\r\n\tDeathPower = Hydra.ReferencePower(\"death_cutInHalf_physical_default\")\r\n\t\r\n\tHydra.ActorSetPowerEffectDuration(idBrute, 1.0)\r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorTriggerPowerAtTarget(idBrute, idSpawner, Power_Slam, true)\r\n\tend\r\n\t\r\n\tHydra.Wait(1.0)\r\n\t\r\n\tif Hydra.ActorIsValid(idSpawner) then\t\r\n\t\tHydra.QActorKill(idSpawner, DeathPower)\r\n\tend\r\n\t\r\n\tHydra.ActorEnableAI(idBrute)\r\n\r\n\tfor i, idAmbushSpawner in ipairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"spawners_ambush\")) do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(idAmbushSpawner)\r\n\t\tHydra.Wait(1.5)\r\n\t\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -208,8 +207,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSendToActor(\"QST_Caldeum_VGN_5\", idSelf, idSelf)"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -229,8 +227,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -260,11 +256,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

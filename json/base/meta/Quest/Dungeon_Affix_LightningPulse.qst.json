@@ -81,8 +81,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -148,7 +146,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.Wait(1);\r\n\r\n\twhile true do\r\n\t\t-- Find valid players\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\t\tlocal idPulse = Hydra.ActorFindNearestActor(idPlayer, 60, true, true, Hydra.ReferenceActor(\"Dungeon_Affix_LightningPulse\"));\r\n\t\t\t\tif Hydra.ActorIsValid(idPulse) then\r\n\t\t\t\t\tgid_Pulse = idPulse;\r\n\t\t\t\t\treturn;\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\tHydra.Wait(0.5);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -225,8 +222,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -278,7 +274,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif not Hydra.ActorIsValid(gid_Pulse) then\r\n\t\treturn;\r\n\tend\r\n\r\n\tlocal idPlayer = Hydra.ActorGetClosestPlayer(gid_Pulse);\r\n\tif not Hydra.ActorIsValid(idPlayer) or not Hydra.ActorIsAlive(idPlayer) then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\tif Hydra.ActorDistanceSquaredBetweenActors(idPlayer, gid_Pulse) > 625 then\r\n\t\tHydra.ActorTriggerPowerAtTarget(gid_Pulse, idPlayer, Hydra.ReferencePower(\"Dungeon_Affix_LightningPulse_Teleport\"));\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -355,8 +350,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -376,8 +370,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Hydra.TraceScreen(\"Added Dungeon Affix: {c_blue}\"..S_DUNGEON_AFFIX_NAME..\"{/c}\");\r\n\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -407,11 +399,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "gid_Pulse = Hydra.ACDID_INVALID;\r\n",
- "szOnStartupScript": "\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

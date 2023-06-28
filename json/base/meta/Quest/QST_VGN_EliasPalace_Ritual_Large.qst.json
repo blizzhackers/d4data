@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "for i, actorID in pairs(T_MELEES) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n\t\tHydra.ActorSetTeam(actorID, Hydra.TEAM_SCENERY)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -356,7 +352,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -433,8 +428,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -454,8 +448,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Hydra.ActorTriggerSpawnerUpdate(ID_SPAWNER)\r\n\r\nif Hydra.ActorIsValid(ID_SUMMONER) then\r\n\tHydra.ActorTriggerPowerAtFeet(ID_SUMMONER, ANIMKEY_OMNICAST)\r\n\tHydra.QActorSetIdleAnim(ID_SUMMONER, ANIMKEY_NEUTRAL)\r\n\tHydra.ActorSetTeam(ID_SUMMONER, Hydra.TEAM_SCENERY)\r\n\t--Hydra.QActorEnableAI(ID_SUMMONER, true)\r\nend\r\n\r\n-- remove the blood ropes\r\nHydra.Wait(0.3)\r\nfor i, actorID in pairs(T_NPCS) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n\t\tHydra.ActorRemoveComplexEffect(actorID, T_ROPES[actorID])\r\n\t\tHydra.ActorSetTeam(actorID, Hydra.TEAM_SCENERY)\r\n--\t\tHydra.QActorClearAnimSetOverride(actorID)\r\n--\t\tHydra.QActorEnableAI(actorID, true)\r\n\tend\r\nend\r\nlocal idSpawned = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SUMMON, idSelf), ID_SPAWNER, false, 0, 0, Hydra.MR_NORMAL, POWER_SPAWN)\r\nHydra.ActorAddToPrefabScopedGroup(idSpawned, \"SMP_Monsters\")\r\nHydra.ActorSetTeam(idSpawned, Hydra.TEAM_SCENERY)\r\nHydra.Wait(.5)\r\n-- explode the blood sac\r\nHydra.ActorDelete(ID_FXLOC_BLOOD)\r\nHydra.ActorPlayEffectGroup(ID_FXLOC_BURST, EG_BLOOD_BURST)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -485,11 +477,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "\tPOWER_SPAWN = Hydra.PowerSNOFromName(POWER_SPAWN)\r\n\t\r\n\tT_ROPES = {}\r\n\t\r\n\t--setup npcs in correct pose and create bllod rope from them to marker location\r\n\tfor i, actorID in pairs(T_NPCS) do\r\n\t\tHydra.ActorSetBloody(actorID, 0.9)\r\n\t\tT_ROPES[actorID] = Hydra.ActorPlayEffectGroupActorToActor(actorID, ID_FXLOC_BLOOD, EG_ROPE_BLOOD, true, \"HP_chest\")\r\n\tend\r\n\r\n\t--setup cultist summoner\r\n\tHydra.ActorEnableAI(ID_SUMMONER, false)\r\n\tHydra.ActorSetInvulnerable(ID_SUMMONER, true)\r\n\tHydra.ActorSetTargetable(ID_SUMMONER, false)\r\n\tHydra.QActorPower(ID_SUMMONER, POWER_OMNICHANNEL_SUMMON)\r\n\r\n\t--setup cultist melee\r\n\tfor i, actorID in pairs(T_MELEES) do\r\n--\t\tHydra.ActorSetIdleAnim(actorID, \"Cultist_Worship\")\r\n\t\tHydra.ActorEnableAI(actorID, false)\r\n\tend\r\n\r\n\t--create blood orb above portal, and demon rope feeding into it\r\n\tHydra.ActorSetPowerEffectSize(ID_FXLOC_BLOOD, 1.5)\r\n\tHydra.ActorPlayEffectGroup(ID_FXLOC_BLOOD, EG_BLOOD_CHARGE, true)\r\n--\tHydra.ActorPlayEffectGroupActorToActor(ID_FXLOC_BLOOD, ID_RopeFXLoc, \"fxKit_harmless_persistentRope_demonic\", true)\r\n\tHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST, 8)",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

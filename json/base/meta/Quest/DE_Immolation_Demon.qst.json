@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\tHydra.ActorPlaySound(idAltar, S_SFX_DEMONTAUNT)\r\n\t--Knocks player away after shrine is used\r\n\tfor i, idSpawner in ipairs(tBossFight) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorTriggerPowerAtFeet(idSpawner, S_PWR_KNOCKBACK)\r\n\t\tend\r\n\tend\r\n\t--Plays  fire fx on eyes\r\n\tHydra.Wait(1)\r\n\tfor i, idFire in pairs(tFires) do\r\n\t\tif Hydra.ActorIsValid(idFire) then\r\n\t\t\tHydra.ActorSetPowerEffectSize(idFire, 0.5)\r\n\t\t\tHydra.ActorPlayEffectGroup(idFire, S_FIRESTART)\r\n\t\t\tHydra.Wait(0.2)\r\n\t\t\tHydra.ActorPlayEffectGroup(idFire, S_FIRE, true)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -303,7 +299,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--Spawn Waves\r\n\tfor i, idSpawner in ipairs(tOnslaught) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -380,8 +375,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -440,7 +434,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t--Stop spawning\r\n\tfor i, idSpawner in ipairs(tOnslaught) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\tend\r\n\tend\r\n\r\n\t--Delete the 1\" tall mortar cultist R.I.P. buddy :bigbosssalute:\r\n\tif Hydra.ActorIsValid(idMortarer) then\r\n\t\tHydra.ActorDelete(idMortarer)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -517,8 +510,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Stop spawning\r\nfor i, idSpawner in ipairs(tOnslaught) do\r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\tend\r\nend\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -586,7 +578,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t--Spawns firewall where monsters spawn\r\n\tidFirewall = Hydra.ActorSpawnActor(S_FIREWALL, idActorSpawned, false, 0, 0)\r\n\ttable.insert(tFirewalls, idFirewall)\r\n\tHydra.ActorFaceActor(idFirewall, idSelf, true)\r\n\tHydra.ActorFaceFacing(idFirewall, Hydra.FacingRotate(Hydra.ActorGetFacing(idFirewall), 90), true)\r\n\tHydra.ActorTriggerPowerAtFeet(idFirewall, S_PWR_FIREWALL)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -663,8 +654,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -736,7 +726,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--Fire mortars on monster death\r\n\tif Hydra.ActorIsValid(idMortarer) and Hydra.ActorIsValid(idActorKiller) then\r\n\t\tHydra.QActorPower(idMortarer, S_MORTAR, idActorKiller)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -813,8 +802,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -834,8 +822,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -924,7 +910,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\n--Spawn reward chest\r\n\tHydra.ActorGizmoSetDisabled(idHeroicChest, false)\r\n\r\n\t--If the mastery hasn't been completed remove the gem but keep the statue\r\n\tif Hydra.ActorIsValid(idGem) then\r\n\t\tHydra.ActorDelete(idGem)\r\n\tend\r\n\r\n\t--Delete the statue fire if it hasn't been deleted already.\r\n\tfor i, idFire in pairs(tFires) do\r\n\t\tif Hydra.ActorIsValid(idFire) then\r\n\t\t\tHydra.ActorDelete(idFire)\r\n\t\tend\r\n\tend\t\r\n\t\r\n\t--Delete any fire spawned by enemies.\r\n\tfor i, idFirewall in ipairs(tFirewalls) do\r\n\t\tif Hydra.ActorIsValid(idFirewall) then\r\n\t\t\tHydra.ActorDelete(idFirewall)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1001,8 +986,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1022,8 +1006,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n--If mastery succeeded spawn boss\r\nif nVictoryTier == 3 then \r\n\tHydra.Wait(1)\r\n\r\n\t--Destroy the altar\r\n\tHydra.ActorDelete(idAltar)\r\n\tHydra.ActorDelete(idGem)\r\n\r\n\t--Remove the fires\r\n\tfor i, idFire in pairs(tFires) do\r\n\t\tif Hydra.ActorIsValid(idFire) then\r\n\t\t\tHydra.ActorDelete(idFire)\r\n\t\tend\r\n\tend\r\n\r\n\t--Spawn Boss Wave\r\n\tfor i, idSpawner in ipairs(tBossFight) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\tHydra.ActorSetPowerEffectSize(idAltar, 5)\r\n\t\t\tHydra.ActorPlayEffectGroup(idAltar, S_STATUEEXPLODE_PHYSICAL)\r\n\t\t\tHydra.ActorPlayEffectGroup(idAltar, S_STATUEEXPLODE_FIRE)\r\n\t\tend\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1127,7 +1109,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1204,8 +1185,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Sets bonus variable\r\n\tnVictoryTier = 3\r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1257,7 +1237,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1334,8 +1313,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1355,8 +1333,6 @@
    "unk_669bcf8": 11,
    "unk_287ecb5": 22,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1386,11 +1362,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "--===== References =======\r\ntFirewalls = {}\r\nnVictoryTier = 0\r\n\r\n--General\r\nnWave = 1\r\n\r\n--Adding a reference here to fix a bug about an ambush spawner not being referenced. (FEN-535897)\r\n--Will remove once a real reference is added at some point. -Dini\r\nHydra.ReferenceActor(\"DRLG_Spawner_Demon_Family_Ambush_Elite\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -152,7 +152,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -229,8 +228,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -296,7 +294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif sLevelAreaName == S_LEVEL_AREA then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -349,7 +346,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif #Hydra.PlayerActorsInLevelArea(S_LEVEL_AREA) > 0 then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -426,8 +422,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -447,8 +442,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -514,7 +507,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -591,8 +583,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -612,8 +603,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -724,7 +713,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -801,8 +789,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorTriggerSpawnerUpdate(ID_SPAWNER_UNIQUE)\r\nlocal superElite = Hydra.ActorsInPrefabScopedGroup(\"EH_Unique\")[1]\r\nHydra.QuestSetCustomParamFromActor(1, superElite)\r\nHydra.MinimapAddPing(superElite, 10)\r\n\r\nHydra.Wait(0.1)\r\nHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -836,7 +823,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- Make sure that any structures destroyed before entering are counted towards the total\r\n\t-- For some reason this wasn't working when put in the phase enter so needed to be it's own callback\r\n\tHydra.Wait(0.5)\r\n\tnRazeObjectsDestroyed = 3 - Hydra.PrefabScopedActorGroupGetCount(\"EH_RazeActors\")\r\n\tif nRazeObjectsDestroyed > 0 then\r\n\t\tHydra.QuestCallbackCountSet(36 , nRazeObjectsDestroyed)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -913,8 +899,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -986,7 +971,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "-- This check is needed for the EH Raze event with bells, where the pools spawned by its power belong to the same actorGroup\r\nfunction Start(idActorSpawned, idActorSpawner)\r\n\tif (Hydra.ActorIsValid(idActorSpawner) == false) then\r\n\t\tHydra.ActorRemoveFromPrefabScopedGroup(idActorSpawned, \"EH_RazeActors\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1063,8 +1047,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1084,8 +1067,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1136,8 +1117,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1188,8 +1167,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1311,7 +1288,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tfor i, enemy in pairs(Hydra.ActorsInPrefabScopedGroup(\"EH_Unique\")) do\r\n\t\tHydra.ActorKill(enemy)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1388,8 +1364,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1/60) -- CF: wait a frame to fix bonus race condition\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1461,7 +1436,6 @@
        "unk_9c1ea4f": 97,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif Hydra.ActorGetMonsterRarity(idActorKilled) == Hydra.MR_SUPER_ELITE then\r\n\t\tHydra.EventSendToActor(\"SUPER_KILLED\", idSelf, idSelf)\r\n\t\tID_LAST_KILLER = idActorKiller\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1538,8 +1512,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1559,8 +1532,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1675,7 +1646,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1752,8 +1722,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1805,7 +1774,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1882,8 +1850,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1903,8 +1870,6 @@
    "unk_669bcf8": 63,
    "unk_287ecb5": 80,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1955,8 +1920,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2007,8 +1970,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2106,7 +2067,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif sLevelAreaName == S_LEVEL_AREA and not TableContains(tHasHeardStartConv, idActorPlayer) and Hydra.PlayerIsPrimary(idActorPlayer) then\r\n\t\tTableRemoveInvalidIDs(tHasHeardStartConv) -- so we're not collecting a bunch of garbage ids\r\n\t\ttHasHeardStartConv[#tHasHeardStartConv + 1] = idActorPlayer\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2183,8 +2143,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2258,7 +2217,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tSummonDefendersAt(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2351,7 +2309,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tSummonDefendersAt(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2428,8 +2385,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2449,8 +2405,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2480,11 +2434,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "-- spawn defenders at event target\r\nfunction SummonDefendersAt(idActor)\r\n\t\r\n\tif ACTOR_SPAWNER_DEFENDERS then\r\n\t\t\r\n\t\t-- play Minor Wave EG and spawn defenders\r\n\t\tif EG_DEFENDER_SPAWN and Hydra.ActorIsValid(idActor) then\r\n\t\t\tHydra.ActorPlayEffectGroup(idActor, EG_DEFENDER_SPAWN)\r\n\t\tend\r\n\t\t\r\n\t\tHydra.ActorSpawnActor(ACTOR_SPAWNER_DEFENDERS, idActor, false, 0, 0)\r\n\tend\r\n\r\nend",
- "szOnStartupScript": "tHasHeardStartConv = {}\r\n\r\nT_SPAWNERS_MONSTERS = Hydra.ActorsInPrefabScopedGroup(\"EH_Monster_Spawner\")\r\nT_SPAWNERS_ELITE = Hydra.ActorsInPrefabScopedGroup(\"EH_Elite_Spawner\")\r\nT_SPAWNERS_CHAMPIONS = Hydra.ActorsInPrefabScopedGroup(\"EH_Champion_Spawner\")\r\nCHEST_LOCATION = Hydra.ActorsInPrefabScopedGroup(\"EH_CHEST\")[1]\r\nID_SPAWNER_UNIQUE = Hydra.ActorsInPrefabScopedGroup(\"EH_Unique_Spawner\")[1]\r\n\r\n-- spawn normal monsters\r\nlocal nSpawnerCount = #T_SPAWNERS_MONSTERS\r\nif nSpawnerCount > 0 then\r\n\tFYShuffle(T_SPAWNERS_MONSTERS)\r\n\t\r\n\tfor i = 1, nSpawnerCount do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_MONSTERS[i])\r\n\tend\r\nend\r\n\r\n-- spawn extra elite(s)\r\nif #T_SPAWNERS_ELITE > 0 then\r\n\tFYShuffle(T_SPAWNERS_ELITE)\r\n\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_ELITE[1])\r\nend\r\n\r\n-- spawn champions based on world tier\r\n-- Once this value is > 1 it'll cause champions to spawn (so world tier 3 and up)\r\n-- subtracting 1 instead of 2 because WTs are index 0 in code (so WT3, 2 in code, produces 1 Champ)\r\nlocal nChampionCount = Hydra.GameGetCurrentWorldTier() - 1\r\nif nChampionCount > 0 and #T_SPAWNERS_CHAMPIONS >= nChampionCount then\r\n\tFYShuffle(T_SPAWNERS_CHAMPIONS)\r\n\t\r\n\tfor i = 1, nChampionCount do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_CHAMPIONS[i])\r\n\tend\r\nend",
- "szOnShutdownScript": "Events.Despawn(idSelf, Hydra.DESPAWN_BEHAVIOR_EVENT_HUB_EVENT)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

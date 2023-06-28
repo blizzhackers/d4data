@@ -134,7 +134,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_BLOOD_BURST)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_SKELETON_DEATH)\r\n\t\r\n\tN_CULTIST_KILLS = N_CULTIST_KILLS + 1\r\n\t\r\n\tif N_CULTIST_KILLS % 3 == 0 then\r\n\t\tHydra.BuffApplyToTarget(S_SIGIL_POWER, \"MAIN\", ID_PROXY)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -211,8 +210,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -291,7 +289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tT_STARTING_CULTISTS = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Spire\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -368,8 +365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -389,8 +385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -456,7 +450,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -533,8 +526,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -554,8 +546,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -666,7 +656,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tlocal portalCount = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\")\r\n\t\r\n\t-- Takes a second for the portal to actually be cleared from the group. So if there's only one left at this time, it's the one being cleaned up\r\n\tif #portalCount > 1 then\r\n\t\treturn\r\n\tend\r\n\t\r\n\t-- If we've already completed this quest step we don't want to spawn more portals.\r\n\tlocal nPortalsKilled = Hydra.QuestCallbackCountGet(172)\r\n\tif nPortalsKilled >= 7 then\r\n\t\treturn\r\n\tend\r\n\t\r\n\tif B_IS_DEMONWAVE == true then\r\n\t\tS_MonsterFamily = \"FAMILY_DEMON\"\r\n\t\t\r\n\t\tSpawnPortal(ptCenter, S_DEMON_PORTAL_LARGE)\t\r\n\telse\r\n\t\tS_MonsterFamily = \"FAMILY_MAIN\"\r\n\t\t\r\n\t\tfor i = 1, N_PORTALS do\r\n\t\t\tSpawnPortal(getBestSpawn(Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\"), N_PORTAL_DIST_MIN, N_PORTAL_DIST_MAX), S_DEMON_PORTAL)\r\n\t\tend\r\n\t\t\r\n\t\tB_IS_DEMONWAVE = true\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -743,8 +732,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -816,7 +804,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n--\tlocal portalCount = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\")\r\n\t\r\n--\t-- Takes a second for the portal to actually be cleared from the group. So if there's only one left at this time, it's the one being cleaned up\r\n--\tif #portalCount > 1 then\r\n--\t\tHydra.TraceScreen(\"Still more Portals\")\r\n--\t\treturn\r\n--\tend\r\n\t\r\n--\tif B_IS_DEMONWAVE == true then\r\n--\t\tS_MonsterFamily = \"FAMILY_DEMON\"\r\n\t\t\r\n--\t\tSpawnPortal(ptCenter, S_DEMON_PORTAL_LARGE)\t\r\n--\telse\r\n--\t\tS_MonsterFamily = \"FAMILY_MAIN\"\r\n\t\t\r\n--\t\tfor i = 1, N_PORTALS do\r\n--\t\t\tSpawnPortal(getBestSpawn(Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\"), N_PORTAL_DIST_MIN, N_PORTAL_DIST_MAX), S_DEMON_PORTAL)\r\n--\t\tend\r\n\t\t\r\n--\t\tB_IS_DEMONWAVE = true\r\n--\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -893,8 +880,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -946,7 +932,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n--\tif B_HEROIC_ACHIEVED == false then\r\n--\t\tHydra.QuestCallbackSetComplete(135)\r\n--\tend\r\n\t\r\n--\tHydra.QuestCallbackSetComplete(129)\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1023,8 +1008,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1044,8 +1028,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1149,7 +1131,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1226,8 +1207,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "B_HEROIC_ACHIEVED = true"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1310,7 +1290,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1387,8 +1366,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1408,8 +1386,6 @@
    "unk_669bcf8": 132,
    "unk_287ecb5": 177,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1480,11 +1456,13 @@
           "eVariableType": 7,
           "unk_67545b": [
            {
-            "__type__": "ScriptEventParamAllowAny",
-            "__typeHash__": 1295852463,
-            "dwType": 1295852463,
-            "eParamType": 0,
-            "dwPad": 0
+            "__type__": "ScriptEventParamString",
+            "__typeHash__": 234160671,
+            "dwType": 234160671,
+            "eParamType": 6,
+            "dwPad": 0,
+            "dwStringHash": 2757515607,
+            "szString": "TRIGGERED_VIA_SCRIPT_USZ_INVASION"
            }
           ]
          },
@@ -1495,11 +1473,12 @@
           "eVariableType": 1,
           "unk_67545b": [
            {
-            "__type__": "ScriptEventParamAllowAny",
-            "__typeHash__": 1295852463,
-            "dwType": 1295852463,
-            "eParamType": 0,
-            "dwPad": 0
+            "__type__": "ScriptEventParamSelf",
+            "__typeHash__": 1210992754,
+            "dwType": 1210992754,
+            "eParamType": 11,
+            "dwPad": 0,
+            "idValue": 0
            }
           ]
          },
@@ -1528,7 +1507,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1605,8 +1583,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1658,7 +1635,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t-- Heroic failure callback\r\n\tHydra.QuestCallbackSetComplete(135)\r\n\t\r\n\t-- This phase completion callback\r\n\tHydra.QuestCallbackSetComplete(131)\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1691,12 +1667,12 @@
        "unk_b185921": 0,
        "unk_5342cc0": 0,
        "dwUID": 187,
-       "dwFlags": 0,
+       "dwFlags": 1,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 42,
+        "eEventType": 0,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": 0,
@@ -1705,8 +1681,23 @@
          {
           "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
-          "tKey": 2729414872,
-          "eVariableType": 23,
+          "tKey": 1189140265,
+          "eVariableType": 1,
+          "unk_67545b": [
+           {
+            "__type__": "ScriptEventParamAllowAny",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
+           }
+          ]
+         },
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 1189140251,
+          "eVariableType": 1,
           "unk_67545b": [
            {
             "__type__": "Type_f0e6041c",
@@ -1723,25 +1714,10 @@
             }
            }
           ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2537675485,
-          "eVariableType": 11,
-          "unk_67545b": [
-           {
-            "__type__": "ScriptEventParamAllowAny",
-            "__typeHash__": 1295852463,
-            "dwType": 1295852463,
-            "eParamType": 0,
-            "dwPad": 0
-           }
-          ]
          }
         ],
         "unk_492729e": [],
-        "unk_9927fd3": 2414055017
+        "unk_9927fd3": 1776065304
        },
        "dwLinesSeconds": 0,
        "unk_47705e2": 0,
@@ -1749,7 +1725,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\n\t-- The mastery completion callback to ensure it passes\r\n\tHydra.QuestCallbackSetComplete(126)\t\r\n\t\r\n\t-- The phase completion callback\r\n\tHydra.QuestCallbackSetComplete(131)\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1826,8 +1801,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1847,8 +1821,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Spawn the boss\r\nlocal t_mobs = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Mobs\")\r\nlocal t_portals = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\")\r\n\r\nfor i = 1, #t_mobs do\r\n\tif Hydra.ActorIsAlive(t_mobs[i]) then\r\n\t\tHydra.ActorPlayEffectGroup(t_mobs[i], S_DEMON_OUT)\r\n\t\tHydra.ActorKill(t_mobs[i], S_SKELETON_DEATH_POWER)\r\n\tend\r\nend\r\n\r\nif #t_portals > 0 then\r\n\tfor i = 1, #t_portals do\r\n\t\tHydra.ActorKill(t_portals[i])\r\n\tend\r\nend\r\n\r\nHydra.Wait(2)\r\n\r\nHydra.ActorPlayEffectGroup(ID_PROXY, S_Camera_Shake)\r\n\r\nlocal pfDefault = Hydra.FacingFromYaw(0)\r\n\r\nHydra.Wait(0.5)\r\n\r\n-- See if we should use a capstone boss\r\nlocal nCurrentWorldTier = Hydra.GameGetCurrentWorldTier() + 1 -- +1 to account for world tier 1 starting at 0 index\r\nlocal aBossToSpawn = nil\r\n\r\nif nCurrentWorldTier >= 4 then\r\n\taBossToSpawn = S_OVERRIDE_BOSS\r\nelse\r\n\taBossToSpawn = S_NORMAL_BOSS\r\nend\r\n\r\n\r\nlocal aBoss = Hydra.ActorSpawnActor(aBossToSpawn, ptCenter, pfDefault, true, 1, 2)\r\nHydra.ActorAddToPrefabScopedGroup(aBoss, \"US_Demon_Invasion_Elites\")\r\n\r\nlocal ptFx = Hydra.ActorGetPosition(aBoss)\r\n\r\nHydra.ActorPlayEffectGroup(aBoss, S_SUMMON_EFFECTS_TARGET)",
-   "szOnExitScript": "local t_portals = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\")\r\nlocal t_mobs = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Mobs\")\r\n\r\nif #t_portals > 0 then\r\n\tfor i = 1, #t_portals do\r\n\t\tHydra.ActorKill(t_portals[i])\r\n\tend\r\nend\r\n\r\nif #t_mobs > 0 then\r\n\tfor i = 1, #t_mobs do\r\n\t\tif Hydra.ActorIsAlive(t_mobs[i]) then\r\n\t\t\tHydra.ActorKill(t_mobs[i])\r\n\t\tend\r\n\tend\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1967,7 +1939,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSummoner, idActorSummoned, sPowerName)\r\n\tHydra.ActorAddToPrefabScopedGroup(idActorSummoned, \"US_Demon_Invasion_Mobs\")\r\n\tHydra.ActorRemoveFromPrefabScopedGroup(idActorSummoned, \"US_Demon_Invasion_Portal\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2058,7 +2029,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorRemoveFromPrefabScopedGroup(idActorKilled, \"US_Demon_Invasion_Mobs\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2145,7 +2115,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorMergeAIState(idActorSpawned, S_CUTLISTS_AI, idActorSpawned, 0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2222,8 +2191,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2243,8 +2211,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2355,7 +2321,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2432,8 +2397,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2485,7 +2449,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif Hydra.ActorIsAlive(T_STARTING_CULTISTS[1]) then\r\n\t\tHydra.ActorTriggerPowerAtFeet(T_STARTING_CULTISTS[1], S_CULTIST_CUT_THROAT_POWER)\r\n\tend\r\n\t\r\n\ttable.remove(T_STARTING_CULTISTS, 1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2576,7 +2539,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_BLOOD_BURST)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_SKELETON_DEATH)\r\n\t\r\n\tN_CULTIST_KILLS = N_CULTIST_KILLS + 1\r\n\t\r\n\tif N_CULTIST_KILLS % 3 == 0 then\r\n\t\tHydra.BuffApplyToTarget(S_SIGIL_POWER, \"MAIN\", ID_PROXY)\r\n\tend\r\n\t\r\n\t-- When a cultist is killed, remove it from the list of surviving cutlists since it won't need to slit it's throat\r\n\tif TableContains(T_STARTING_CULTISTS, idActorKilled) then\r\n\t\tfor i = 1, #T_STARTING_CULTISTS do\r\n\t\t\tif T_STARTING_CULTISTS[i] == idActorKilled then\r\n\t\t\t\ttable.remove(T_STARTING_CULTISTS, i)\r\n\t\t\t\tbreak\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2653,8 +2615,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2674,8 +2635,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.RemoveBuffs(ID_PROXY, S_SIGIL_POWER)\r\n\r\nHydra.Wait(1)\r\n\r\nHydra.ActorPlayEffectGroup(ID_PROXY, S_Camera_Shake)\r\n\r\nSpawnPortal(ptCenter, S_DEMON_PORTAL_LARGE)\r\n\r\n--Hydra.Wait(1)\r\n\r\n--local pfDefault = Hydra.FacingFromYaw(0)\r\n--local aPortal = Hydra.ActorSpawnActor(S_DEMON_PORTAL_LARGE, ptCenter, pfDefault, true, 0, 0)\r\n\r\n--Hydra.ActorMergeAIState(aPortal, S_PORTAL_AI, aPortal)\r\n\r\n--Hydra.ActorAddToPrefabScopedGroup(aPortal, \"US_Demon_Invasion_Portal\")\r\n\r\n--Hydra.BuffApplyToTarget(S_PORTAL_POWER, \"FAMILY_DEMON\", aPortal)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2766,7 +2725,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n--This is needed to get the mastery to dispaly/work correctly\r\n-- Also gives players time to see if they failed/succeeded on the mastery\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2843,8 +2801,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2864,8 +2821,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorKill(ID_PROXY)\r\n\r\nlocal t_mobs = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Elites\")\r\n\r\nfor i = 1, #t_mobs do\r\n\t-- Switch this to a power for cleaner execution\r\n\tHydra.ActorPlayEffectGroup(t_mobs[i], S_DEMON_OUT_LARGE)\r\n\tHydra.ActorFadeAndDelete(t_mobs[i], 1.5)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2976,7 +2931,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3053,8 +3007,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3106,7 +3059,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t-- If the player is taking too long to clear the remaining mobs then kill the remaining mobs\r\n\tlocal t_mobs = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Mobs\")\r\n\r\n\tfor i = 1, #t_mobs do\r\n\t\tHydra.ActorPlayEffectGroup(t_mobs[i], S_DEMON_OUT)\r\n\t\tHydra.ActorKill(t_mobs[i], S_SKELETON_DEATH_POWER)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3183,8 +3135,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3204,8 +3155,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "local t_portals = Hydra.ActorsInPrefabScopedGroup(\"US_Demon_Invasion_Portal\")\r\n\r\nif #t_portals > 0 then\r\n\tfor i = 1, #t_portals do\r\n\t\tHydra.ActorKill(t_portals[i])\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3235,11 +3184,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "-- Check to see if a point we want to spawn is to close to another\r\nlocal function isNearPortal(pt, tPortalsToCheck)\t\r\n\tlocal ptToCheck\r\n\t\r\n\tlocal flDistance = 0\r\n\t\r\n\tfor i = 1, #tPortalsToCheck do\r\n\t\tptToCheck = Hydra.ActorGetPosition(tPortalsToCheck[i])\r\n\t\tflDistance = Hydra.PositionGetDistanceToPosition(pt, ptToCheck)\r\n\t\t\r\n\t\tif flDistance < N_PORTAL_DIST_MIN then\r\n\t\t\treturn true, flDistance\r\n\t\tend\t\t\r\n\tend\r\n\t\r\n\treturn false\r\nend\r\n\r\n-- Find the best spawn location for a new portal\r\nlocal function getBestSpawn(tAvoidLocations, nMinDistance, nMaxDistance)\t\r\n\tlocal flBestDist = 0\r\n\tlocal ptBest\r\n\t\r\n\tif #tAvoidLocations == 0 then\r\n\t\treturn Hydra.PositionSearchForNearbyNavmeshPosition(ptCenter, nMinDistance, nMaxDistance)\r\n\telse\r\n\t\tfor i = 1, 30 do\r\n\t\t\tlocal ptSpawn = Hydra.PositionSearchForNearbyNavmeshPosition(ptCenter, nMinDistance, nMaxDistance)\r\n\t\t\t\r\n\t\t\tlocal bIsNear, flDistCheck = isNearPortal(ptSpawn, tAvoidLocations)\r\n\t\t\t\r\n\t\t\tif not bIsNear then\r\n\t\t\t\tptSpawn = Hydra.PositionSnapToGround(ptSpawn)\r\n\t\t\t\treturn ptSpawn\r\n\t\t\telse\r\n\t\t\t\tif flDistCheck > flBestDist then\r\n\t\t\t\t\tflBestDist = flDistCheck\r\n\t\t\t\t\tptBest = ptSpawn\r\n\t\t\t\tend\r\n\t\t\tend\t\r\n\t\tend\r\n\t\r\n\t\tHydra.PositionSnapToGround(ptBest)\r\n\t\treturn ptBest\r\n\tend\r\n\t\r\n\r\nend\r\n\r\n\r\nlocal function SpawnPortal(ptSpawn, s_portal_to_spawn)\r\n\tlocal pfDefault = Hydra.FacingFromYaw(0)\r\n\tlocal aPortal = Hydra.ActorSpawnActor(s_portal_to_spawn, ptSpawn, pfDefault, true, 0, 0)\r\n\r\n\tHydra.ActorAddToPrefabScopedGroup(aPortal, \"US_Demon_Invasion_Portal\")\r\n\r\n\tHydra.BuffApplyToTarget(S_PORTAL_POWER, S_MonsterFamily, aPortal)\r\n\t\r\n\tHydra.ActorMergeAIState(aPortal, S_PORTAL_AI, aPortal, 0)\r\n\t\r\n\t-- If it's a demon wave, spawn a bonus elite demon for each portal\r\n\tif B_IS_DEMONWAVE == true then\r\n\t\tB_IS_DEMONWAVE = false\r\n\t\t\r\n\t\t-- Make sure this isn't the initial portal. We don't want any elites spawning as part of the first portal\r\n\t\tif N_PORTALS < 4 and N_PORTALS > 1 then\r\n\t\t\tN_PORTALS = N_PORTALS + 1\r\n\t\t\t\r\n\t\t\tfor i = 2, N_PORTALS do\r\n\t\r\n\t\t\t\tlocal sMonster = Hydra.ActorPickFromEncounter(S_DEMON_ELITES, aPortal)\r\n\t\t\t\tHydra.Wait(1.5)\r\n\t\t\t\t\r\n\t\t\t\t-- Make sure the portal is still alive when we want to spawn the elite\r\n\t\t\t\tif Hydra.ActorIsValid(aPortal) then\r\n\t\t\t\t\tlocal aMonster = Hydra.ActorSpawnActor(sMonster, ptSpawn, pfDefault, true, 0.5, 1.5, 1)\r\n\t\t\t\t\tHydra.ActorAddToPrefabScopedGroup(aMonster, \"US_Demon_Invasion_Mobs\")\r\n\t\t\t\t\tlocal ptFX = Hydra.ActorGetPosition(aMonster)\r\n\t\t\t\t\tHydra.ActorPlayEffectGroupActorToActor(aPortal, aMonster, S_SUMMON_EFFECTS)\r\n\t\t\t\t\tHydra.ActorPlayEffectGroup(aMonster, S_SUMMON_EFFECTS_TARGET)\r\n\t\t\t\telse\r\n\t\t\t\t\tbreak\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\telse\r\n\t\t\tN_PORTALS = 2\r\n\t\tend\r\n\t\t\r\n\r\n\tend\r\nend",
- "szOnStartupScript": "-- Event Specific Data\r\nID_SELF = Hydra.QuestGetOwner()\r\n\r\nCHEST_LOCATION = Hydra.ActorsLinkedByActorInGroup(ID_SELF, \"Chest_Location\")[1]\r\n\r\nN_CULTIST_KILLS = 0\r\n\r\nN_PORTALS = 0\r\n\r\nN_PORTAL_DIST_MIN = 8\r\nN_PORTAL_DIST_MAX = 14\r\n\r\nB_IS_DEMONWAVE = true\r\nB_HEROIC_ACHIEVED = false\r\n\r\nS_MonsterFamily = \"FAMILY_DEMON\"\r\n\r\nptCenter = Hydra.ActorGetPosition(ID_SELF)\r\n\r\nlocal pfDefault = Hydra.FacingFromYaw(0)\r\nID_PROXY = Hydra.ActorSpawnActor(S_GENERIC_PROXY, ptCenter, pfDefault, true, 0, 0)\r\nHydra.BuffApplyToTarget(S_SIGIL_POWER, \"MAIN\", ID_PROXY)\r\n\r\nT_STARTING_CULTISTS = {}",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -137,7 +137,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t\r\n-- Evil monster convo about disturbing his slumber.\t\r\n\tHydra.ActorPlayConversation(S_CONVO_INTRO, idActorDamager, idActorDamaged) \r\n\tHydra.QActorAnimAndNewIdle(idActorDamaged, S_ANIM_WELL_RUPTURE, S_ANIM_WELL_IDLE)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -214,8 +213,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -235,8 +233,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -327,7 +323,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -404,8 +399,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -457,7 +451,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n-- Additional VFX of bats emerging from the blood rupture\r\n\tHydra.ActorPlayEffectGroup(idSelf,S_EG_BAT_FOUNTAIN_PHASE1)\r\n\tHydra.QActorAnim(ID_WELL_GIZMO, S_ANIM_WELL_RUPTURE)\r\n\r\n-- Start the second round of spawners\r\n\tfor i, idPhase02 in ipairs(tPhase02Spawners) do\r\n\t\tif Hydra.ActorIsValid(idPhase02) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idPhase02, false)\r\n\t\tend\r\n\tend\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -534,8 +527,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -587,7 +579,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t\r\n-- More evil taunting by the big baddie.\t\r\n\tlocal idConversationPlayer = Hydra.ActorGetClosestPlayer(ID_WELL_GIZMO)\r\n\tHydra.ActorPlayConversation(S_CONVO_PHASE_2_INTRO, idConversationPlayer, ID_WELL_GIZMO) \r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -664,8 +655,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -722,7 +712,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -799,8 +788,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -820,8 +808,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n-- Set the well to invulnerable since it will blow up in the end.\r\n\tHydra.ActorSetInvulnerable(ID_WELL_GIZMO, true)\r\n\tHydra.ActorSetTargetable(ID_WELL_GIZMO, false)\r\n\r\n-- VFX of bats emerging from the rupture and start blood splashing\r\n\tHydra.ActorPlayEffectGroup(idVfxMarker,S_EG_BAT_FOUNTAIN_PHASE1)\r\n\r\n-- Enable the first set of spawners\r\n\tfor i, idPhase01 in ipairs(tPhase01Spawners) do\r\n\t\tif Hydra.ActorIsValid(idPhase01) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idPhase01, false)\r\n\t\tend\r\n\tend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -910,7 +896,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\n-- Enable the reward chest\r\n\tHydra.ActorGizmoSetDisabled(ID_REWARD_CHEST, false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -987,8 +972,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1022,7 +1006,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- If the player achieves the bonus start the final baddie conversation\r\n-- If no bonus destroy the rupture\r\n\tif bBonusAchieved == true then\r\n\t\tlocal idConversationPlayer = Hydra.ActorGetClosestPlayer(ID_WELL_GIZMO)\r\n\t\tHydra.ActorPlayConversation(S_CONVO_PHASE_3_INTRO, idConversationPlayer, ID_WELL_GIZMO) \r\n\telse\r\n\t\tHydra.ActorKill(ID_WELL_GIZMO)\r\n\t\tHydra.ActorKill(idSuperElite) --killing the spawn gizmo here to fix bug FEN-605225, when this gizmo doesn't trigger it never cleans up, so you can't complete the Event because it is still in the ActorGroup\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1099,8 +1082,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1189,7 +1171,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- After the final baddie conversation destroy the rupture and spawn him\r\n\tHydra.ActorKill(ID_WELL_GIZMO)\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorGizmoSetDisabled(idSuperElite, false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1266,8 +1247,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1287,8 +1267,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Stop the spawners\r\nfor i,idSpawner in pairs(tPhase01Spawners) do \r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\tend\r\nend\r\n\r\nfor i,idSpawner in pairs(tPhase02Spawners) do \r\n\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\tend\t\r\nend\r\n\r\n-- Stop the blood vfx coming from the rupture\r\n--Hydra.ActorRemoveComplexEffect(idVfxMarker, idBloodSplash)\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1408,7 +1386,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPowerName, idTarget)\r\n\r\n-- Catch our created vampires (from combine powers) and put them into the actor group\r\n\tHydra.ActorAddToGroup(idActor,AG_ABANDONEDWELL_MONSTERS)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1485,8 +1462,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1554,7 +1530,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n-- Buffing the bats to make them a little more than just a 1 hit kill\r\n\tHydra.BuffApplyToTarget(S_BAT_BUFF, \"DAMAGE_RESISTANCE\", idActorSpawned)\r\n\t\r\n-- Set the variable that allows their AI to start merging immediately\t\r\n\tHydra.ActorSetAILocalVariable(idActorSpawned, \"CAN_FORM\", 1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1631,8 +1606,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1652,8 +1626,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1758,7 +1730,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1844,8 +1815,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Set bonus variable\r\n\tbBonusAchieved = true \r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1897,7 +1867,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1974,8 +1943,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1995,8 +1963,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 8,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2026,11 +1992,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- references\r\n\r\nbBonusAchieved = false\r\n\r\n-- Adding a damage cap so the player can't kill the well before the event starts.\r\nHydra.ActorSetDamageCap(ID_WELL_GIZMO, 99.9)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

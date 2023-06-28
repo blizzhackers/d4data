@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -291,7 +289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -368,8 +365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -389,8 +385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "tMonsters = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Monster\")\r\nfor i, idMonster in ipairs(tMonsters) do\r\n\tHydra.ActorEnableAI(idMonster, true)\r\n\tHydra.ActorClearAnimSetOverride(idMonster)\r\nend\r\n\t\r\ntMiners = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Miner\")\r\nfor i, idMiner in ipairs(tMiners) do\r\n\tHydra.ActorRemoveMergedAIState(idMiner, SNO_MINER_AI)\r\n\tHydra.ActorSetAIBehavior(idMiner, Hydra.AIBEHAVIOR_TYPE_NORMAL)\r\nend\r\n\r\ntMonsters = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Cultist_Speaker\")\r\n\r\nif #tMonsters > 0 then\r\n\tShuffleTable(tMonsters)\r\n\tfor i=1, #tMonsters, 1 do\r\n\t\tif Hydra.ActorIsAlive(tMonsters[i]) then\r\n\t\t\tHydra.ActorPlaySimpleConversation(SNO_CONV_ATK, tMonsters[i])\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\nend\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -456,7 +450,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -533,8 +526,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -554,8 +546,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -585,11 +575,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Event Specific Data\r\n--\tSNO_MINER_AI = Hydra.ReferenceAIState(\"NPC_Routine_Laborer\")\r\n\tSNO_CONV_ATK = Hydra.ReferenceConversation(\"CAMP_Karamat_Cultist_Atk\")\r\n\r\n\r\n--\ttMonsters = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Fallen_Grunt\")\r\n--\tfor i, idMonster in ipairs(tMonsters) do\r\n--\t\tHydra.ActorEnableAI(idMonster, true)\r\n--\tend\r\n\t\r\n--Hydra.ActorSetAIBehavior()\r\n\t\r\n\ttMiners = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Miner\")\r\n\tfor i, idMiner in ipairs(tMiners) do\r\n\t\tHydra.ActorMergeAIState(idMiner, SNO_MINER_AI, idMiner, 0)\r\n\tend\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

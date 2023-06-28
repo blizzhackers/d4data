@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tfor i, idStatue in pairs(T_STATUES) do\r\n\t\tHydra.ActorSetTargetable(idStatue, false)\r\n\tend\r\n\t\r\n\tfor i=1, #T_STATUES do\r\n\t\tif T_STATUES[i] == idActorGizmo then\r\n--\t\t\tnCurrentActiveStatueIndex = i\r\n\t\t\tnStartingStatueIndex = i\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\n\t\r\n\tfor i, playerID in pairs(Hydra.QuestGetParticipants()) do\r\n\t\tHydra.ActorPlayDisembodiedConversation(CONV_INTRO, playerID)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -328,7 +324,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -405,8 +400,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -491,7 +485,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--\tHydra.ActorRemoveFromPrefabScopedGroup(idActor, PSAG_ACTIVE_STATUES)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -562,7 +555,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\r\n--\tnHeartBeatCount = nHeartBeatCount + 1\r\n\t\r\n--\tif nHeartBeatCount == 10 then\r\n--\t\tstartNextStatue(true)\r\n--\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -654,7 +646,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -745,7 +736,6 @@
        "unk_9c1ea4f": 112,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tlocal tStatuesActive = Hydra.ActorsInPrefabScopedGroup(PSAG_ACTIVE_STATUES)\r\n\t\r\n\tif #tStatuesActive <= 0 then\r\n\t\treturn\r\n\tend\r\n\t\r\n\tfor i, activeStatueID in pairs(tStatuesActive) do\r\n\t\tif Hydra.ActorDistanceBetweenActors(idActorKilled, activeStatueID) - Hydra.ActorGetRadius(idActorKilled) <= N_STATUE_RANGE then\r\n\t\t\tstatueChargedFX(idActorKilled, activeStatueID)\r\n\t\t\t\r\n\t\t\tlocal nMinPoints = 4\r\n--\t\t\tlocal monsterFamily = string.lower(Hydra.ActorGetMonsterFamily(idActorKilled))\r\n\t\t\t-- NG: Due to the way fallen spawn (reduced numbers to allow resurrections) \r\n\t\t\t-- I am increasing min points per fallen kill to 5 to help with the mastery\r\n--\t\t\tif string.find(monsterFamily, \"fallen\") then\r\n--\t\t\t\tnMinPoints = 6\r\n--\t\t\tend\r\n\t\t\t-- cf: commenting out NGs work since spawners no longer count dead fallen as active\r\n\t\t\t\r\n\t\t\tlocal nScore = math.max(nMinPoints, math.ceil(Hydra.ActorGetHitPointsMax(idActorKilled) * 4))\r\n\t\t\taddChargeToChargeable(activeStatueID, nScore)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -822,8 +812,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -883,7 +872,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorChargeable)\r\n\tHydra.Wait(0.5) -- Wait to avoid race condition\r\n\tif STATUES_COMPLETED == 2 then\r\n\t\tHydra.QuestAdvancePhase()\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -960,8 +948,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -981,8 +968,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8500000238418579,
-   "szOnEnterScript": "for i, spawnerID in pairs(T_SPAWNERS) do\r\n\tif Hydra.ActorIsValid(spawnerID) then\r\n\t\tHydra.ActorEnable(spawnerID)\r\n\tend\r\nend\r\n\r\n\r\nlocal idCurrentStatue = T_STATUES[nStartingStatueIndex]\r\n--Hydra.BuffApplyToTarget(POWER_STATUE, \"STATUE_WARMUP\", idCurrentStatue)\r\n\r\nfor i, statue in ipairs(T_STATUES) do -- needs to be in order\r\n\tHydra.BuffApplyToTarget(POWER_STATUE, \"STATUE_WARMUP\", statue)\r\n--\ttStatuesNotFull[#tStatuesNotFull+1] = statueID\r\nend\r\n\r\n--Hydra.Wait(3)\r\n\r\n--statueChargedFX(ID_CORPSE, idCurrentStatue)\r\n--addChargeToChargeable(idCurrentStatue, 10) -- free charge to teach mechanic\r\n\r\nHydra.Wait(.5)\r\n\r\n--play monster spawn sfx\r\nHydra.ActorPlayEffectGroup(ID_THIS_QUEST, EG_SFX_MONSTERSPAWN)",
-   "szOnExitScript": "for i, statueID in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_ACTIVE_STATUES)) do\r\n\tHydra.BuffRemove(POWER_STATUE, \"STATUE_ACTIVE\", statueID)\r\nend\r\n\r\nfor i, spawnerID in pairs(T_SPAWNERS) do\r\n\tif Hydra.ActorIsValid(spawnerID) then\r\n\t\tHydra.ActorDisable(spawnerID)\r\n\tend\r\nend\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1048,7 +1033,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1125,8 +1109,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1146,8 +1129,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1258,7 +1239,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1335,8 +1315,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1356,8 +1335,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "if Hydra.QuestGetBonusPhaseResult() then\r\n\t-- Spawn super elite if the bonus was achieved\r\n\tHydra.ActorSetPowerEffectSize(ID_SUPER_ELITE, 8)\r\n\tHydra.ActorPlayEffectGroup(ID_SUPER_ELITE, EG_BURST_BLOOD)\r\n\tHydra.ActorTriggerSpawnerUpdate(ID_SUPER_ELITE)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1441,7 +1418,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1518,8 +1494,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1572,7 +1547,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorChargeable)\r\n\r\n\tlocal idStatue = Hydra.ActorsLinkedByActorInGroup(idActorChargeable, \"statue\")[1]\r\n\tTableRemove(tStatuesNotFull, idStatue)\r\n\tHydra.ActorRemoveFromPrefabScopedGroup(idStatue, PSAG_ACTIVE_STATUES)\r\n\t\r\n\tHydra.BuffApplyToTarget(POWER_STATUE, \"STATUE_SPAWN_ELITE\", idStatue)\r\n\tHydra.QActorWait(idActorChargeable, 0.3)\r\n\tHydra.QActorDelete(idActorChargeable)\r\n\tHydra.ActorKill(idStatue)\r\n\t\r\n\tSTATUES_COMPLETED = STATUES_COMPLETED + 1\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1649,8 +1623,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1670,8 +1643,6 @@
    "unk_669bcf8": 12,
    "unk_287ecb5": 83,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1772,7 +1743,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.Wait(1.5)\r\n\t\r\n\tif Hydra.ActorIsValid(idActorSpawned) then\r\n\t\tHydra.BuffApplyToTarget(POWER_STATUE, \"ELITE_SPAWNED\", idActorSpawned)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1876,7 +1846,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n-- this event is sent by the power\r\n\tHydra.ActorAddToPrefabScopedGroup(idActor, PSAG_ACTIVE_STATUES)\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1953,8 +1922,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1974,8 +1942,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2005,11 +1971,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function statueChargedFX(idActorKilled, idStatue)\r\n\r\n\tHydra.ActorPlayEffectGroupActorToActor(idActorKilled, idStatue, EG_ROPE_CHARGED)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, EG_DEATH_CHARGED)\r\n\tHydra.ActorFadeAndDelete(idActorKilled, 3)\r\n\tHydra.BuffApplyToTarget(POWER_STATUE, \"STATUE_CHARGED\", idStatue)\r\n\t\r\nend\r\n\r\nlocal function addChargeToChargeable(idStatue, nScore)\r\n\tlocal idChargeable = T_CHARGEABLES[idStatue]\r\n\tHydra.ChargeableGizmoSetProgress(idChargeable, math.min(100, Hydra.ChargeableGizmoGetProgress(idChargeable) + nScore))\r\nend",
- "szOnStartupScript": "-- Event Specific Data\r\n\tID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\n\tN_STATUE_RANGE = 6\r\n\tPSAG_ACTIVE_STATUES = \"LE_Altar_Active_Statues\"\r\n\t\r\n\tSTATUES_COMPLETED = 0\r\n\t\r\n\ttStatuesNotFull = {}\r\n\tT_CHARGEABLES = {}\r\n\tnHeartBeatCount = 0\r\n\t\r\n--\tiStatueOne = Hydra.GetRandomInt(1, #T_STATUES)\r\n--\tiStatueTwo = Hydra.GetRandomInt(1, #T_STATUES)\r\n\t\r\n--\tif iStatueOne == iStatueTwo then\r\n--\t\tiStatueTwo = iStatueTwo + 1\r\n\t\t\r\n--\t\tif iStatueTwo > #T_STATUES then\r\n--\t\t\tT_STATUES = 1\r\n--\t\tend\r\n--\tend\r\n\t\r\n\tfor i, statueID in ipairs(T_STATUES) do -- needs to be in order\r\n\t\tT_CHARGEABLES[statueID] = Hydra.ActorsLinkedByActorInGroup(statueID, \"Progress\")[1]\r\n\t\ttStatuesNotFull[#tStatuesNotFull+1] = statueID\r\n\tend\r\n\t\r\n--\tnCurrentActiveStatueIndex = 1\r\n\r\n\tnStartingStatueIndex = 1\t\r\n\tnChargeableScoreProgressTotal = 100\r\n",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

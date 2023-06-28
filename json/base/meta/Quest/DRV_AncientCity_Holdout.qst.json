@@ -151,7 +151,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(S_HOLDOUT_LEVEL_AREA)\r\n\tidNeyrelleDoor = Hydra.ActorsInGroup(\"QST_Frac_Und_03_Neyrelle_Door\")[1]\r\n\t\r\n\t--Neyrelle casting stuff\r\n\t--Hydra.QActorPhasedAnimLoop(idNeyrelle, sPowerUse, 0)\r\n\t--Hydra.ActorPlayEffectGroupActorToActor(idNeyrelle, idBarrier, fxHoradricRope, true, \"HP_LeftHand\", \"HP_Mouth\")\r\n\t\r\n\t--Spawning the enemies\r\n\ttSpawners = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SPAWNERS\")\r\n\t\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\tHydra.ActorEnable(idSpawner)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -249,8 +247,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -341,7 +337,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t--HOLDOUT END\r\n\tidProxy = Hydra.ActorSpawnActor(sProxy, idBarrier, false, 0, 0)\r\n\tHydra.ActorSetPowerEffectSize(idProxy, 20)\r\n\tHydra.ActorPlayEffectGroup(idProxy, fxDemonicBurstHarmless)\r\n\tHydra.BossEncounterManuallyComplete(S_HOLDOUT_LEVEL_AREA)\r\n\tHydra.EventSend(\"DV_Standard_Holdout_Complete\")\r\n\tHydra.EventSend(S_HOLDOUT_LEVEL_AREA)\r\n\tHydra.EventSend(\"DRLGKit_BarrierWall_Remove_03\")\r\n\t\r\n\t--STOP SPAWNERS\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\tHydra.ActorDisable(idSpawner)\r\n\tend\r\n\t\r\n\t--KILL EVERYTHING THAT SPAWNED\r\n\ttEnemies = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SPAWNERS\")\r\n\ttEnemies = SortActorListByDistance(idSelf,tEnemies)\r\n\tfor i, idEnemy in ipairs(tEnemies) do\r\n\t\tif Hydra.ActorIsAlive(idEnemy) == true then\r\n\t\t\tHydra.ActorSetPowerEffectSize(idEnemy, 6)\r\n\t\t\tHydra.ActorPlayEffectGroup(idEnemy, fxDemonicBurstHarmless)\r\n\t\t\tHydra.ActorKill(idEnemy)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -418,8 +413,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -484,7 +478,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tif Hydra.ActorGetLevelArea(idSelf) == sLevelAreaName then\r\n\t\tHydra.EventSend(\"DV_Standard_Holdout\", idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -561,8 +554,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -652,7 +644,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -729,8 +720,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -750,8 +740,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -817,7 +805,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -894,8 +881,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -915,8 +901,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -989,7 +973,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1066,8 +1049,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1087,8 +1069,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1118,11 +1098,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idChestLoc = Hydra.ActorsLinkedByActorInGroup(idSelf, \"CHEST_LOC\")[1]\r\n\r\nS_HOLDOUT_LEVEL_AREA = Hydra.ActorGetLevelArea(idSelf)\r\n\r\nidNeyrelle = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Neyrelle\")[1]\r\n\r\nidStand = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Neyrelle_Stand\")[1]",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

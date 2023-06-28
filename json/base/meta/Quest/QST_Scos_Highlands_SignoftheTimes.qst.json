@@ -192,7 +192,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -269,8 +268,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -290,8 +288,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -439,7 +435,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Attempt to Grant Quest Item\r\n\tidQuestOwner = Hydra.QuestGetOwner()\r\n\r\n\tHydra.ItemGiveQuestItemToPlayer(idQuestOwner, \"QST_Scos_SignoftheTimes_ListofLastDeeds\", \"QST_Scos_Highlands_SignoftheTimes\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -530,8 +525,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -551,8 +545,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -681,7 +673,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -792,8 +783,7 @@
        "groupName": "Item",
        "name": "QST_Scos_SignoftheTimes_TavishDaggers"
       }
-     ],
-     "szOnSetCompleteScript": "\tlocal idFollower = Hydra.QuestGetFollower(ID_NAIRNE_FOLLOWER)\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\r\n--Nairne return conversation\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idFollower)\r\n\t\tHydra.ActorDisableAI(idFollower)\r\n\t\tHydra.QActorPlayConversation(CON_RETURN, idOwner, idFollower)\r\n\t\tHydra.QActorWaitForConversationFinished(idFollower, CON_RETURN)\r\n\t\tHydra.QActorFadeAndDelete(idFollower, 1.0)\r\n\tend\r\n\t\r\n\tHydra.QuestAdvancePhase()\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -879,7 +869,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n--Play placement Effect on Dagger\r\n\tHydra.ActorPlayEffectGroup(ID_DAGGER_01, \"fxKit_physical_impactRock\")\r\n\r\n--Nairne Gateway Statue Conversation\r\n\tlocal idFollower = Hydra.QuestGetFollower(ID_NAIRNE_FOLLOWER)\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\t\r\n\t\tHydra.ActorPlayConversation(CON_SPOT_02, idOwner, idFollower)\r\n\t\tHydra.WaitForConversationFinished(CON_SPOT_02)\r\n\tend\r\n\r\n--Tavish Deed completed Event Send\r\nHydra.EventSendToActor(\"TAVISH_DEED_COMPLETED\", idSelf, idSelf)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1001,8 +990,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1088,7 +1076,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n--Play placement Effect on Dagger\r\n\tHydra.ActorPlayEffectGroup(ID_DAGGER_02, \"fxKit_physical_impactRock\")\r\n\t\r\n--Nairne Old Crane Conversation\r\n\tlocal idFollower = Hydra.QuestGetFollower(ID_NAIRNE_FOLLOWER)\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\t\r\n\t\tHydra.ActorPlayConversation(CON_SPOT_01, idOwner, idFollower)\r\n\t\tHydra.WaitForConversationFinished(CON_SPOT_01)\r\n\tend\r\n\t\r\n--Tavish Deed completed Event Send\r\nHydra.EventSendToActor(\"TAVISH_DEED_COMPLETED\", idSelf, idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1214,8 +1201,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1301,7 +1287,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n--Play placement Effect on Dagger\r\n\tHydra.ActorPlayEffectGroup(ID_DAGGER_03, \"fxKit_physical_impactRock\")\r\n\t\r\n--Nairne Old Crane Conversation\r\n\tlocal idFollower = Hydra.QuestGetFollower(ID_NAIRNE_FOLLOWER)\r\n\tidOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tif Hydra.ActorIsValid(idFollower) then\t\r\n\t\tHydra.ActorPlayConversation(CON_SPOT_03, idOwner, idFollower)\r\n\t\tHydra.WaitForConversationFinished(CON_SPOT_03)\r\n\tend\r\n\r\n--Tavish Deed completed Event Send\r\nHydra.EventSendToActor(\"TAVISH_DEED_COMPLETED\", idSelf, idSelf)\r\n\r\n--Spawn Elite Highlands Bear\r\n--Hydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorGizmo, \"HighlandsBear\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1427,8 +1412,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1469,7 +1453,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n--Nairne comments on starting hunt for List of Last Deeds\r\n\tHydra.Wait(1.0)\r\n\r\n\tfollowerNairne = Hydra.QuestGetFollower(\"NPC_QST_SignoftheTimes_Nairne_Follower\")\r\n\tlocal idPlayer = Hydra.ActorGetFollowTarget(followerNairne)\r\n\t\r\n\tif Hydra.ActorIsValid(followerNairne) and Hydra.ActorIsValid(idPlayer) then\r\n\t\tHydra.ActorPlayConversation(CON_FOLLOW_START, idPlayer, followerNairne)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1546,8 +1529,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1567,8 +1549,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1716,7 +1696,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1816,8 +1795,7 @@
        "groupName": "Item",
        "name": "QST_Scos_SignoftheTimes_ListofLastDeeds"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1903,7 +1881,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n-- Nairne celebratory Personal Conversation\r\nHydra.ActorPlayConversation(CON_NSCENE_RETURN, idActor, ID_NAIRNE)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1989,8 +1966,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2010,8 +1986,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2131,7 +2105,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2231,8 +2204,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2252,8 +2224,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2394,7 +2364,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2500,8 +2469,7 @@
        "groupName": "Item",
        "name": "QST_Scos_SignoftheTimes_GooseSign"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     ]
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2521,8 +2489,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2647,7 +2613,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n-- Nairne ambient introduction Personal Conversation\r\nHydra.ActorPlayConversation(CON_NSCENE_INTRO, idActor, ID_NAIRNE)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2764,8 +2729,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2785,8 +2749,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2934,7 +2896,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Attempt to Grant Quest Item\r\n\tidQuestOwner = Hydra.QuestGetOwner()\r\n\r\n\tHydra.ItemGiveQuestItemToPlayer(idQuestOwner, \"QST_Scos_SignoftheTimes_ListofLastDeeds\", \"QST_Scos_Highlands_SignoftheTimes\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3025,8 +2986,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3114,7 +3074,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3209,8 +3168,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3230,8 +3188,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3351,7 +3307,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3451,8 +3406,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3472,8 +3426,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3593,7 +3545,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\tHydra.QActorClearAnimSetOverride(idActorFollower)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3670,8 +3621,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3691,8 +3641,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3729,11 +3677,6 @@
   "groupName": "Condition",
   "name": "Level21Plus"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

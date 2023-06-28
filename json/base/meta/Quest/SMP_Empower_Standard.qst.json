@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -295,7 +293,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -372,8 +369,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -393,8 +389,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -513,7 +507,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -590,8 +583,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -611,8 +603,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorPlayEffectGroup(ID_TARGET, EG_CHARGE, false, Hydra.ACDID_INVALID, true, \"HP_chest\")\r\n\r\nHydra.Wait(1)\r\nHydra.ActorTriggerPowerAtFeet(ID_TARGET, POWER_DESPAWN)\r\n\r\nHydra.Wait(0.35)\r\nlocal idSpawned = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SPAWN_IN, idSelf), ID_TARGET, false, 0, 0, MR_RARITY, POWER_SPAWN_IN)\r\nHydra.ActorAddToPrefabScopedGroup(idSpawned, \"SMP_Monsters\")\r\nHydra.ActorPlayEffectGroup(idSpawned, EG_TRANSFORM_IN)\r\n\r\nHydra.Wait(0.65)\r\nfor i, actorID in pairs(T_CHANNELERS) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n--\t\tHydra.ActorInterruptPrimaryPower(actorID)\r\n\t\tHydra.ActorTriggerPhaseJump(actorID)\r\n\tend\r\nend\r\nOWC_SMP_CHECK()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -642,11 +632,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "bElite = Events.SMPShouldBeElite(idSelf)\r\n\r\nif bElite then\r\n\tMR_RARITY = Hydra.MR_SUPER_ELITE\r\nelse\r\n\tMR_RARITY = Hydra.MR_NORMAL\r\nend\r\n\r\n-- Set ritual target invulnerable\r\nHydra.ActorSetInvulnerable(ID_TARGET, true)\r\nHydra.ActorSetTargetable(ID_TARGET, false)\r\n\r\n-- Sigial FX\r\nHydra.ActorSetPowerEffectSize(ID_FX_LOC, 8)\r\nID_SIGIL = Hydra.ActorPlayEffectGroup(ID_FX_LOC, EG_SIGIL, true)\r\n\r\n-- Target FX\r\nHydra.ActorSetPowerEffectSize(ID_TARGET, 4)\r\nHydra.ActorSetPowerEffectDuration(ID_TARGET, 1)\r\n\r\nHydra.QActorPower(ID_TARGET, POWER_OMNICHANNEL)\r\nPOWER_SPAWN_IN = Hydra.PowerSNOFromName(POWER_SPAWN_IN)\r\n\r\nT_ROPES = {}\r\n\r\nfor i, actorID in pairs(T_CHANNELERS) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n\t\tHydra.ActorFaceActor(actorID, ID_TARGET, true)\r\n\t\tHydra.QActorPower(actorID, POWER_OMNICHANNEL)\r\n\t\tT_ROPES[actorID] = Hydra.ActorPlayEffectGroupActorToActor(actorID, ID_TARGET, EG_ROPE, true)\r\n\tend\r\nend",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

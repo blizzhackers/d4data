@@ -137,7 +137,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -214,8 +213,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -291,7 +289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -368,8 +365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -389,8 +385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -490,7 +484,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorDisable(idActorSpawner)\r\n\tHydra.ActorAddToPrefabScopedGroup(idActorSpawned, \"SMP_Monsters\")\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, DEMON_TRANSFORM)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, DEMON_SPAWNS_SFX)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -567,8 +560,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -655,7 +647,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -732,8 +723,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -753,8 +743,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorPlayEffectGroup(idSelf, FIRE_BURST)\r\nHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"HARBINGER\")\r\nfor i, worshiper in pairs(Hydra.ActorsLinkedByActorInGroup(idSelf, \"CULTISTS\")) do \r\n\tHydra.ActorTriggerPowerAtFeet(worshiper, DEATH_ANIM)\r\n\tHydra.ActorKill(worshiper)\r\nend\r\n\r\nHydra.ActorRemoveComplexEffect(idSelf, sigilId) ",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -784,11 +772,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "CULTIST_SIGIL_DECALS = {\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_01\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_02\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_03\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_04\")\r\n}",
- "szOnStartupScript": "DEMON_TRANSFORM = Hydra.ReferenceEffectGroup(\"fxKit_transformation_demonic_out\")\r\n\r\nfor i, cultist in pairs(CULTISTS) do \r\n\tHydra.ActorDisableAI(cultist)\r\n\tHydra.ActorTriggerPowerAtFeet(cultist, WORSHIP_POWER)\t\r\nend\r\n\r\nHydra.ActorSetPowerEffectSize(idSelf, 8)\r\nsigilId = Hydra.ActorPlayEffectGroup(idSelf, CULTIST_SIGIL_DECALS[Hydra.GetRandomInt(1, #CULTIST_SIGIL_DECALS)], true)\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

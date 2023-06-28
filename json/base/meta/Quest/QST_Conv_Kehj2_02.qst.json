@@ -184,7 +184,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--resolve encounter\r\n\tHydra.BossEncounterManuallyComplete(S_ANDARIELFIGHT);\r\n\t--clear weather\r\n\tHydra.ClearWeatherOverride(S_WORLD, S_WEATHER)\r\n\t--Play Boss Victory Music\r\n\tHydra.MusicOverride(S_WORLD, \"Music_Boss_Andariel_Victory\")\r\n\tHydra.Wait(10) -- Wait for Andariel's death animation to finish playing, then drop loot and transition to the next quest\r\n\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drorp occurs\r\n\t\t-- idFirstTimeRewardLocation is set/created on \"Actor Killed)\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idActorKilled, TC_FTR_ANDARIEL, idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Andariel\")\r\n\tend\r\n\t\r\n\t------------------------------------------------------\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -284,8 +283,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -372,7 +370,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\r\n\t--Reset Music if failed\r\n\tHydra.ClearMusicOverride(S_WORLD)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -467,8 +464,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -549,7 +545,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidAndariel = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"ANDARIEL\")[1];\r\n\tHydra.ActorEnable(idAndariel);\r\n\tHydra.ActorDelete(idActorDetector);\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -644,8 +639,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -665,8 +659,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- delay to make it look nicer (a quicker delay for the temp movie)\r\nHydra.Wait(1);\r\n-- initiate weather\r\nHydra.WeatherOverride(S_WORLD, S_WEATHER)\r\n-- initiate encounter\r\nHydra.BossEncounterManuallyQueueStart(S_ANDARIELFIGHT)\r\n--Play Boss Music\r\nHydra.MusicOverride(S_WORLD, \"Music_Boss_Andariel_Phase1\")",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -807,7 +799,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(S_WORLD)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -916,8 +907,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -937,8 +927,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Reset Boss Music\r\nHydra.ClearMusicOverride(S_WORLD)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1025,7 +1013,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1102,8 +1089,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1123,8 +1109,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1190,7 +1174,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1267,8 +1250,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1288,8 +1270,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1319,11 +1299,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_WEATHER = Hydra.ReferenceWeather(\"weather_kehjistan_andariel_sandstorm\")\r\nS_WORLD = Hydra.ReferenceWorld(\"Sanctuary_Eastern_Continent\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

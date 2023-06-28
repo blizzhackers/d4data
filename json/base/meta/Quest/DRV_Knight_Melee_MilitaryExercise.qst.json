@@ -129,7 +129,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t--if any actor gets attacked, enable monster AI and stop practicing \r\n\tlocal tKnights = TableUnion(tMelee, tMelee2)\r\n\tfor i, idMelee in ipairs (tKnights) do\r\n\t\tif Hydra.ActorIsValid(idMelee) then\r\n\t\t\tHydra.QActorEnableAI(idMelee, true)\r\n\t\tend\r\n\tend \r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -206,8 +205,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -276,7 +274,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t--if any player gets too close, enable monster AI and stop practicing \r\n\tlocal tKnights = TableUnion(tMelee, tMelee2)\r\n\tfor i, idMelee in ipairs (tKnights) do\r\n\t\tif Hydra.ActorIsValid(idMelee) then\r\n\t\t\tHydra.ActorEnableAI(idMelee, true)\r\n\t\tend\r\n\tend \r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -353,8 +350,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -406,7 +402,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\t--keep performing the practing power, with the animation of melee attacks\r\n\tfor i, idMelee in ipairs (tMelee) do\r\n\t\tif Hydra.ActorIsValid(idMelee) and Hydra.ActorIsAlive(idMelee) and (not Hydra.ActorIsInCombat(idMelee)) then\r\n\t\t\tHydra.QActorPower(idMelee, S_ANIM_POWER)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -483,8 +478,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -504,8 +498,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -535,11 +527,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "--set all knight melee to be in the shield holding stance, for better look\r\nfor i, idMelee in ipairs (tMelee2) do\r\n\tHydra.QActorPower(idMelee, Hydra.ReferencePower(\"knight_melee_shield\"))\r\nend \r\nfor i, idMelee in ipairs (tMelee) do\r\n\tHydra.QActorPower(idMelee, Hydra.ReferencePower(\"knight_melee_shield\"))\r\nend ",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

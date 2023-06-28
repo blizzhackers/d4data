@@ -169,7 +169,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n-- Turn off thumping\r\n\tbCabinetChecked = true\r\n-- Bats fly out of the cabinet\r\n\tlocal moveLoc = Hydra.ActorsLinkedByActor(actorBat)[1]\r\n\tlocal moveLoc2 = Hydra.ActorsLinkedByActor(actorBat2)[1]\r\n\tHydra.ActorPlayEffectGroup(actorCabinetFX, fxImpactWood)\r\n\tHydra.ActorEnable(actorBat)\r\n\tHydra.ActorEnable(actorBat2)\r\n\tHydra.BuffApplyToTarget(powerPassability, \"MAIN\", actorBat)\r\n\tHydra.BuffApplyToTarget(powerPassability, \"MAIN\", actorBat2)\r\n\tHydra.QActorMoveToLocationConstantSpeed(actorBat, moveLoc, Hydra.MOVE_RATE_RUN, true)\r\n\tHydra.QActorFadeAndDelete(actorBat, 2.0)\r\n\tHydra.QActorMoveToLocationConstantSpeed(actorBat2, moveLoc2, Hydra.MOVE_RATE_RUN, true)\r\n\tHydra.QActorFadeAndDelete(actorBat2, 2.0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -255,8 +254,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -308,7 +306,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif not (bCabinetChecked) then\r\n\t\tHydra.ActorPlaySound(actorCabinetFX, soundThud)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -385,8 +382,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -406,8 +402,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -509,7 +503,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -600,8 +593,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -689,7 +681,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -784,8 +775,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -805,8 +795,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -938,7 +926,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n-- Lorath moves into the chapel\r\n\tHydra.ActorPlaySimpleConversation(convLorath01, actorLorath) \t-- Lorath to horse\r\n\tHydra.QActorClearAnimSetOverride(actorLorath)\r\n\tHydra.QActorSetConversationStatus(actorLorath, false)\r\n\tHydra.QActorWait(actorLorath, 0.5)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorLorath, locLorathInChapel, \"NPC_WALK_FAST\", true)\r\n\tHydra.QActorSetConversationStatus(actorLorath, true)\r\n\tHydra.QActorPlaySimpleConversation(convLorath02, actorLorath) \t-- Lorath \"she's not here...\"\r\n\tHydra.QActorEventSend(actorLorath, \"LorathInChapel\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1043,7 +1030,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1129,8 +1115,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"QST_Epilogue_Kehj_Advance1\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1219,7 +1204,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1327,7 +1311,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1404,8 +1387,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1425,8 +1407,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1587,7 +1567,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1678,8 +1657,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1699,8 +1677,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1832,7 +1808,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n--Hydra.ActorPlayConversation(convPlayer02, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1909,8 +1884,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2003,7 +1977,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2138,7 +2111,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nHydra.ActorPlaySimpleConversation(convIosef01, idActor, actorLorath)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2268,7 +2240,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorSetSheathPreference(actorLorath, 2)\r\n\t--Hydra.QActorFaceActor(actorLorath, actorIosef)\r\n\t--Hydra.QActorSetAnimSetOverride(actorLorath, \"NPC_lorath_nonCombat_2HT\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2354,8 +2325,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2375,8 +2345,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Lorath moves out\r\n\tHydra.QActorMoveToLocationDynamicSpeed(actorLorath, locLorathConfront, \"NPC_WALK_FAST\", true)\r\n\tHydra.QActorEventSend(actorLorath, \"InPosition\")\r\n-- Iosef and Knights Arrive\r\nlocal tPaleKnights = Hydra.ActorsInGroup(\"EpiloguePaleKnights\")\r\nfor i, idActor in ipairs(tPaleKnights) do\r\n\tHydra.ActorEnable(idActor)\r\n\tlocal moveLoc = Hydra.ActorsLinkedByActor(idActor)[1]\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idActor, moveLoc, \"NPC_WALK\", true)\r\n\tHydra.QActorFaceSameAsActor(idActor, moveLoc)\r\n\tHydra.QActorEventSend(idActor, \"InPosition\")\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2537,7 +2505,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.ActorSetSheathPreference(actorIosef, 2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2628,8 +2595,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2649,8 +2615,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2782,7 +2746,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2897,8 +2860,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2918,8 +2880,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.QActorClearAnimSetOverride(actorLorath)\r\nHydra.QActorEnableAI(actorLorath, true)\r\n\r\nlocal tPaleKnights = Hydra.ActorsInGroup(\"EpiloguePaleKnights\")\r\nfor i, idActor in ipairs(tPaleKnights) do\r\n\tHydra.ActorClearAnimSetOverride(idActor)\r\n\tHydra.ActorSetInvulnerable(idActor, false)\r\n\tHydra.ActorSetTargetable(idActor, true)\r\n\tHydra.ActorSetCannotBeTargetedByAI(idActor, false)\r\n\tHydra.ActorSetNeverDie(idActor, false)\r\n\tHydra.ActorEnableAI(idActor)\r\n\tHydra.ActorSetTeam(idActor, Hydra.TEAM_MONSTER_DEFAULT)\r\nend\r\n\r\nif Hydra.ActorIsValid(actorIosef) and Hydra.ActorIsAlive(actorIosef) then\r\n\tHydra.ActorPlaySimpleConversation(convIosef03, actorIosef)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3074,7 +3034,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.ActorDisable(actorLorath)\r\n\tHydra.ActorDisable(propHorse)\r\n\tHydra.ActorDisable(propRope)\r\n\tHydra.ActorDisable(propDonan)\r\n\tHydra.ActorDisable(propCart)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3173,8 +3132,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3194,8 +3152,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3260,8 +3216,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3312,8 +3266,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3343,11 +3295,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Var for cabinet thumping sound in background phase\r\nbCabinetChecked = false\r\n\r\n-- Disable Lorath's AI to start so he doesn't try to fight the bats if you let them out. Will turn this on for the Iosef fight.\r\nHydra.QActorEnableAI(actorLorath, false)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

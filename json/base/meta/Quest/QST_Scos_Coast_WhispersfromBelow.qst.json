@@ -171,7 +171,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\r\n-- Roina calls to investgate the river\r\n\tlocal idQuestOwner = Hydra.QuestGetOwner()\r\n\t\r\n\tHydra.ActorPlayConversation(CON_SEARCH, idQuestOwner, idActorFollower)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -248,8 +247,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -349,7 +347,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--Move Roina follower to river\r\n\tidFollower = Hydra.QuestGetFollower(ID_ROINA_FOLLOWER)\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idFollower)\r\n\t\tHydra.QActorEnableAI(idFollower, false)\r\n\t\tHydra.ActorPlayConversation(CON_Victim, idSelf, idFollower)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, LOC_RIVER, \"IGC_NPC_RUN\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idFollower, LOC_RIVER)\r\n\tend\r\n\tHydra.WaitForConversationFinished(CON_Victim)\r\n\tHydra.QActorDelete(idFollower)\r\n\t-- Cecil taken by Wight effect\r\n\tHydra.ActorPlaySound(LOC_WIGHTWATER, \"Play_QUE_Generic_Scream_Male\")\r\n\t--Hydra.ActorPlayEffectGroup(LOC_WIGHTWATER, \"drowned_seahag_geyser\")\r\n\tHydra.ActorSetPowerEffectSize(LOC_WIGHTWATER, 2.0)\r\n\tHydra.ActorPlayEffectGroup(LOC_WIGHTWATER, \"drowned_seahag_geyser_damage\")\r\n\t\r\n-- Active Wight hair appearance\r\n\tHydra.QActorAnim(GIZ_Hair, \"AnimKey_Opening\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -479,8 +476,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -500,8 +496,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -642,7 +636,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -719,8 +712,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -740,8 +732,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -882,7 +872,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidClone = Hydra.CreatePersonalClone(ID_ROINA_RH_02)\r\n\tif Hydra.ActorIsValid(idClone) then\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idClone, LOC_ROINARUNTO, \"npc_run\", true)\r\n\t\tHydra.QActorDeletePersonalClone(idClone, 1.0)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -979,8 +968,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1021,7 +1009,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- Roina comments on Hair\r\n\tHydra.QActorPlayConversation(CON_HAIR_BARK, idSelf, ID_ROINA_RH_02)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1098,8 +1085,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1119,8 +1105,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1245,7 +1229,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1367,8 +1350,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1388,8 +1370,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1426,11 +1406,6 @@
   "groupName": "Condition",
   "name": "Level11Plus"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

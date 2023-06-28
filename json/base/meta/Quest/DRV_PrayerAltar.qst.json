@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -212,8 +211,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -288,7 +286,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -365,8 +362,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -458,7 +454,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -535,8 +530,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -556,8 +550,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -623,7 +615,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.Wait(0.25)\r\n\t\r\n\ttPrayerCircleMonsters = Hydra.ActorsLinkedByActorInGroup(idSelf, \"MONSTERS\")\r\n\t\r\n\tlocal bNPCSpoke = false\r\n\t\r\n\t-- Initial Setup\r\n\tfor i, idMonster  in ipairs(tPrayerCircleMonsters) do\r\n\t\tif Hydra.ActorIsValid(idMonster) and Hydra.ActorIsAlive(idMonster) then\r\n\t\t\tHydra.ActorEnableAI(idMonster, true)\r\n\t\t\tif bNPCSpoke == false then\r\n\t\t\t\tHydra.ActorPlaySimpleConversation(S_CONV_CALLOUT, idMonster)\r\n\t\t\t\tbNPCSpoke = true\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tHydra.Wait(0.1)\r\n\t\t\t\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -700,8 +691,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -721,8 +711,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -752,11 +740,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Constants\r\nS_ANIM_KNEELING_IDLE = Hydra.ReferencePower(\"Cultist_Melee_Kneeling_Idle\")\r\nS_ANIM_KNEELING_STANDUP = Hydra.ReferencePower(\"Cultist_Melee_Kneeling_Stand\")\r\n\r\n-- Marker Data\r\ntPrayerCircleMonsters = Hydra.ActorsLinkedByActorInGroup(idSelf, \"MONSTERS\")\r\n\r\n-- Initial Setup\r\nfor i, idMonster  in ipairs(tPrayerCircleMonsters) do\r\n\tHydra.ActorEnableAI(idMonster, false)\r\nend\r\nfor i, idMonster  in ipairs(tPrayerCircleMonsters) do\r\n\tHydra.ActorSetIdleAnim(idMonster, S_ANIM_KNEELING_IDLE)\r\n\tHydra.Wait(Hydra.GetRandomFloat()/4)\r\nend\r\n\r\n\t\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

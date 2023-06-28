@@ -151,7 +151,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t--Hydra.TraceScreen(\"Ambush Start event received\")\r\n\tif (#Hydra.ActorsInGroup(DEMON_AMBUSH_TRIGGERS_AND_SPAWNERS) > 0) then\r\n\t\tfor i, idAmbushActor in pairs(Hydra.ActorsInGroup(DEMON_AMBUSH_TRIGGERS_AND_SPAWNERS)) do\r\n\t\t\t--Hydra.TraceScreen(\"Enabling: \", idAmbushActor)\r\n\t\t\tHydra.ActorEnable(idAmbushActor)\r\n\t\t\tif Hydra.ActorGizmoIsDisabled(idAmbushActor) then\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idAmbushActor, false)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -263,7 +261,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--Hydra.TraceScreen(\"Vignette Phase 1 Start\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -340,8 +337,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -361,8 +357,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -466,7 +460,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -543,8 +536,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -623,7 +615,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tfor i, idDemon in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Demon_Ambush_Escort_1\")) do\r\n\t\tHydra.ActorEnableAI(idDemon, true);\r\n\t\tHydra.ActorAIForcePrimaryTarget(idDemon, idActor);\r\n\tend\r\n\t\r\n\tHydra.Wait(0.5);\r\n\t\r\n\tfor i, idUniqueElite in ipairs(Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Demon_Ambush_UniqueElite\")) do\r\n\t\tHydra.ActorTriggerPhaseJump(idUniqueElite);\r\n\tend\t\r\n\t\r\n\tHydra.EventSend(\"QST_Kehj_Cald_01_Prava\")\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -700,8 +691,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -721,8 +711,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -827,7 +815,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorTriggerPowerAtTarget(idActorSpawned, Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Demon_Ambush_MortarTarget\")[1], MORTAR_RAIN);\r\n\tHydra.ActorEnable(Hydra.ActorsLinkedByActorInGroup(idSelf, \"StopBombsTrigger\")[1]);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -913,8 +900,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -987,7 +973,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorTriggerPowerAtTarget(idActorSpawned, Hydra.ActorsInGroup(\"QST_Kehj_Caldeum_Demon_Ambush_MortarTarget\")[2], MORTAR_RAIN);\r\n\tHydra.ActorEnable(Hydra.ActorsLinkedByActorInGroup(idSelf, \"StopBombsTrigger\")[1]);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1073,8 +1058,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1094,8 +1078,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1125,11 +1107,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

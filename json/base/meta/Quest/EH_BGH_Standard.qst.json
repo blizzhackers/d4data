@@ -81,8 +81,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -204,7 +202,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t-- userEvent approach taken here in order to support Pushed Quest Variable Overrides per event markerset\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -281,8 +278,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -348,7 +344,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif sLevelAreaName == S_LEVEL_AREA then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -401,7 +396,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif #Hydra.PlayerActorsInLevelArea(S_LEVEL_AREA) > 0 then\r\n\t\tHydra.EventSendToActor(\"PlayerInLevelArea\", idSelf, idSelf)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -478,8 +472,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -499,8 +492,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -612,7 +603,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -689,8 +679,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -710,8 +699,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- wakeup boss\r\nidBoss = Hydra.ActorsInPrefabScopedGroup(PSAG_BOSS)[1]\r\nif Hydra.ActorIsAlive(idBoss) and Hydra.ActorIsValid(idBoss) then \r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idBoss, EG_BOSS_INVULN_VFX)\r\n\tHydra.ActorSetIdleAnim(idBoss, POWER_DEFAULT_IDLE)\r\n\tHydra.ActorEnableAI(idBoss)\r\n\tHydra.ActorSetInvulnerable(idBoss, false)\r\n\tHydra.ActorPlayEffectGroup(idSelf, SFX_BOSS_ARRIVAL)\r\n\tHydra.MinimapAddPing(idBoss, 10)\r\nend\r\n\r\n-- prevent worship AI behaviors\r\nHydra.ActorDelete(ID_WORSHIP_TARGET)\r\nfor i, idMonster in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_WORSHIPERS)) do \r\n\tHydra.ActorRemoveMergedAIState(idMonster, AISTATE_WORSHIP_LOOP)\r\nend\r\n\r\n-- spawn adds (we cant rely on systemic minions here because the boss is spawned during startup)\r\nHydra.ActorEnable(Hydra.ActorsLinkedByActorInGroup(idSelf, \"ADDS\")[1])",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -815,7 +802,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\tHydra.ActorDisable(idActorSpawner)\r\n\t\r\n\t-- store reference to boss for attractor vfx in HeartBeat callbacks\r\n\tidBoss = idActorSpawned\r\n\t\r\n\tHydra.QuestSetCustomParamFromActor(1, idBoss)\r\n\tHydra.ActorSetPowerEffectSize(idActorSpawned, 5)\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, EG_BOSS_INVULN_VFX, true)\r\n\tHydra.ActorSetIdleAnim(idActorSpawned, POWER_BOSS_INVULN_IDLE)\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.ActorSetInvulnerable(idActorSpawned, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -892,8 +878,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -961,7 +946,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t-- AISTATE_WORSHIP_LOOP is a marker level override. Set it to an AI state that will cause your monsters to \r\n\t-- do a believable worship AI loop (EVT_Monster_Taunt_Loop_Self_Interrupt is a shippable fallback)\r\n\tHydra.ActorFaceActor(idActorSpawned, idSelf)\r\n\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_WORSHIP_LOOP, idActorSpawned, 0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1038,8 +1022,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1111,7 +1094,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\t\r\n\t-- set up ritualist behavior... do anim, face center, play vfx\r\n\tHydra.ActorDisable(idActorSpawner)\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.QActorWait(idActorSpawned, Hydra.GetRandomFloat(0.0, 0.4))\r\n\tHydra.QActorPower(idActorSpawned, POWER_RITUALIST_IDLE)\r\n\t\r\n\t-- provide ritualists dmg reduction so they are not killed before the kill phase\r\n\tHydra.BuffApplyToTarget(POWER_DMG_REDUCTION, \"MAIN\", idActorSpawned)\r\n\t\r\n\t-- insert refs into tables for Disrupt:Heart Beat vfx\t\r\n\ttLivingRitualists[idActorSpawned] = true\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1188,8 +1170,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1274,7 +1255,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\t\r\n\t-- spawn guards when player approaches ritual sites\r\n\tif Hydra.ActorIsValid(idActorDetector) and Hydra.ActorIsEnabled(idActorDetector) then\r\n\t\tfor i, spawner in pairs(Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"GUARDS\")) do\r\n\t\t\tif Hydra.ActorIsValid(spawner) then Hydra.ActorEnable(spawner) end\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1351,8 +1331,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1424,7 +1403,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tHydra.ActorEnableAI(idActorDamaged, true)\r\n\tHydra.ActorInterruptPrimaryPower(idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1501,8 +1479,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1522,8 +1499,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1645,7 +1620,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1722,8 +1696,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1775,7 +1748,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tUF_PlayBurstFromRitual(idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1852,8 +1824,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1925,7 +1896,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.EventSendToActor(\"INCREMENT_CALLBACK\", idSelf, idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2002,8 +1972,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2023,8 +1992,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8500000238418579,
-   "szOnEnterScript": "-- remove damage reduction from ritualists\r\nfor i, idMonster in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_RITUALISTS)) do\r\n\tHydra.BuffRemove(POWER_DMG_REDUCTION, \"MAIN\", idMonster)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2108,7 +2075,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2185,8 +2151,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2258,7 +2223,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2335,8 +2299,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2356,8 +2319,6 @@
    "unk_669bcf8": 101,
    "unk_287ecb5": 109,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2485,7 +2446,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2562,8 +2522,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2643,7 +2602,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2720,8 +2678,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2773,7 +2730,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tUF_PlayBurstFromRitual(idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2850,8 +2806,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2871,8 +2826,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2938,7 +2891,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3015,8 +2967,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3036,8 +2987,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3088,8 +3037,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3140,8 +3087,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3171,11 +3116,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function UF_PlayBurstFromRitual(idSelf) \r\n\r\n\tlocal tLivingRitualists = Hydra.ActorsInPrefabScopedGroup(PSAG_RITUALISTS)\r\n\tfor i, idRitualist in pairs(tLivingRitualists) do\r\n\t\tif Hydra.ActorIsAlive(idRitualist) and Hydra.ActorIsValid(idRitualist) then\r\n\t\t\tHydra.ActorSetPowerEffectDuration(idRitualist, 3)\r\n\t\t\tHydra.ActorPlayEffectGroupActorToActor(idRitualist, idBoss, EG_RITUAL_ATTRACTOR_VFX, false, \"HP_leftHand\")\r\n\t\tend\r\n\tend\r\nend",
- "szOnStartupScript": "idBoss = \"\"\r\ntRitualSiteByMonsterId = {}\r\ntLivingRitualists = {}\r\nT_SPAWNERS_CHAMPIONS = Hydra.ActorsInPrefabScopedGroup(PSAG_CHAMP_SPAWNERS)\r\n\r\nlocal tAllSites = Hydra.ActorsLinkedByActorInGroup(idSelf, \"RITUAL_SITES\")\r\nFYShuffle(tAllSites)\r\n\r\n-- activate 3 sites per event run\r\nfor i, idSite in pairs(tAllSites) do\r\n\tif i < 4 then\r\n\t\t-- spawn ritualists\r\n\t\tfor i, idSpawner in pairs(Hydra.ActorsLinkedByActorInGroup(idSite, \"RITUALISTS\")) do \r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\tHydra.ActorEnable(idSpawner)\r\n\t\tend\r\n\t\t-- do vfx\r\n\t\tHydra.ActorEnable(idSite)\r\n\t\tHydra.ActorSetPowerEffectSize(idSite, 6)\r\n\t\tHydra.ActorPlayEffectGroup(idSite, EG_RITUALSITE_VFX, true)\r\n\t\r\n\telse \r\n\t\tHydra.ActorDisable(idSite)\r\n\t\tHydra.ActorDelete(idSite)\r\n\tend\r\nend\r\n\r\n-- Spawn a champion for each world tier above 2\r\nlocal nChampionCount = Hydra.GameGetCurrentWorldTier() - 1 -- subtract 1 instead of 2, function assumes 0-index\r\nif nChampionCount > 0 and #T_SPAWNERS_CHAMPIONS >= nChampionCount then\r\n\tFYShuffle(T_SPAWNERS_CHAMPIONS)\r\n\t\r\n\tfor i = 1, nChampionCount do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(T_SPAWNERS_CHAMPIONS[i])\r\n\tend\r\nend",
- "szOnShutdownScript": "Events.Despawn(idSelf, Hydra.DESPAWN_BEHAVIOR_EVENT_HUB_EVENT)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

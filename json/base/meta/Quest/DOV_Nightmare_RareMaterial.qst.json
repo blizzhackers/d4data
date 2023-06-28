@@ -157,7 +157,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, snoMonsterFamily, szArchetype, idActorVictim)\r\n\r\n\tlocal nMobRarity = Hydra.ActorGetMonsterRarity(idActorVictim) -- this is an Enum zero for normal, and then more than zero for higher\r\n\r\n\tif nMobRarity > 0 then\t-- normal mobs count for 1, higher count for 2\r\n\t\tnKillProgress = nKillProgress + 2\r\n\telse if nMobRarity == Hydra.MR_NORMAL then\r\n\t\tnKillProgress = nKillProgress + 1\r\n\tend\t\r\n\t\r\n\tlocal nDrop = Hydra.GetRandomInt(1, 100) -- the base odds of rolling 100 in 100 trials is about 73%\r\n\t\t\t\t\t\t\t\t\t\t\t -- 71 kills gives 50% to get a drop\r\n\t\t\t\t\t\t\t\t\t\t\t -- 1/100 * 2/100 * 3/100 * etc.\r\n\t\t\t\t\t\t\t\t\t\t\t \t\t\t\t\t\t\t\t\t\t\t \r\n\t--Hydra.TraceScreen(nKillProgress .. \" \" .. nDrop)\r\n\t\r\n\tif nKillProgress > nDrop then\r\n\t\t--Hydra.TraceScreen(nKillProgress .. \" \" .. nDrop)\r\n\t\r\n\t\tHydra.TreasureClassDropAtActor(idActorVictim, Hydra.ReferenceTreasureClass(\"HarvestNode_Herb_Rare_Angelbreath\"))\r\n\t\tHydra.EventSendToActor(\"DOV_Nightmare_RareMaterial_Finished\", idSelf, idSelf)\r\n\t\t\r\n\t\tnKillProgress = 0\r\n\tend\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -234,8 +233,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -317,7 +315,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -394,8 +391,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -415,8 +411,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -446,11 +440,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "nKillProgress = -25 -- start below zero, players have to kill at least this many before drops happen",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

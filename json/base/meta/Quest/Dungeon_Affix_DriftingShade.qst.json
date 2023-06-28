@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--initial delay before affix takes effects\r\n\tHydra.Wait(FL_DUNGEONAFFIX_COOLUP);\r\n\t\r\n\t--keep looping to spawn shades\r\n\twhile (true) do\r\n\t\t--=====STOP CONDITION: region is not dungeon====--\r\n\t\t--If the area somehow is NOT a dungeon, stop this loop. It must be some errors, or a misuseage since affixes are only supposed to be in a dungeon\r\n\t\tif not Hydra.SubzoneIsDungeon() then\r\n\t\t\tbreak;\r\n\t\tend\r\n\t\t--=====STOP CONDITION====--\r\n\t\t\r\n\t\t--get player actors\r\n\t\t--local idPlayerValid = Hydra.ACDID_INVALID;\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tlocal tViableTargets = {}\r\n\t\t\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer)\r\n\t\t\t\tand Hydra.ActorIsAlive(idPlayer)\r\n\t\t\t\tand Hydra.ActorIsInCombat(idPlayer)\r\n\t\t\t\tand not Hydra.BuffIsOnActor(SNO_POWER_TARAGETED, \"BUFF_TARGETED\", idPlayer) then\r\n\t\t\t\t\r\n\t\t\t\ttable.insert(tViableTargets, idPlayer)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\t--=====STOP CONDITION: no valid player====--\r\n\t\t--[[ Comment this part of stop condition out, since for now we allow players to exit and re-enter ND. If this logic is active, in a single player game, player can exit then come back to stop the affix quest and cheese the ND.\r\n\t\t--if there's no valid player, break the loop\r\n\t\tif not Hydra.ActorIsValid(idPlayerValid) then\r\n\t\t\t--break;\r\n\t\tend]]--\r\n\t\t--=====STOP CONDITION====--\r\n\t\t\r\n\t\t--Hydra.Trace(\"combat players: {c_blue}\"..#tViableTargets..\"{/c} || Shades: {c_blue}\"..#tTargetedPlayers..\"{/c}\");\r\n\t\t--====SPAWN LOGIC====--\t\t\r\n\t\tif #tViableTargets == 1 then\r\n\t\t\t--User Function: spawn the shade here, mark the player with buff tag, and force it to be the target of the shade\r\n\t\t\tUF_Spawn_Shade(tViableTargets[1]);\r\n\t\t\tHydra.Wait(FL_NOSHADETIME_MIN + (FL_NOSHADETIME_OFFSET * Hydra.GetRandomFloat())); --offset is 0~3s, total no shade time is 10~13s ,set in OnStartup\r\n\t\t\t\r\n\t\telseif #tViableTargets > 1 then\r\n\t\t\t\t\r\n\t\t\tShuffleTable(tViableTargets);\r\n\t\t\t--find the first player that is not chased by a shade (can tell by the buff), and spawn a shade for this player\r\n\t\t\tfor i, idPlayer in ipairs (tViableTargets) do\r\n\t\t\t\tif not Hydra.BuffIsOnActor(SNO_POWER_TARAGETED, \"BUFF_TARGETED\", idPlayer) then\r\n\t\t\t\t\t--User Function: spawn the shade here, mark the player with buff tag, and force it to be the target of the shade\r\n\t\t\t\t\tUF_Spawn_Shade(idPlayer);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tend\t\r\n\t\t\tend\r\n\t\t\t--for each shade spawn, wait for a small time, and make sure the interval is large enough so they don't spawn the same time\r\n\t\t\tHydra.Wait(FL_DIFFTIME + FL_DIFFTIME_OFFSET * Hydra.GetRandomFloat()); --offset is 0~2s, total interval time is 1~3s, set in OnStartup\r\n\t\telse\r\n\t\t\t--if there are already enough shades, then enter cooldown. Also take a break, if no combat player then no cores. Cool down time scale with player number, scale has diminishing return on more players\r\n\t\t\t--if the player leaves the dungeon, tPlayers will become null, so use math.max to default to 1 if the player(s) is no longer present.\r\n\t\t\t--Hydra.Trace(\"Enter shade cool down, \"..#tPlayer..\" players exist, rest for \"..FL_NOSHADETIME_MIN * GROUP_SCALAR[#tPlayer] + (FL_NOSHADETIME_OFFSET * math.min( Hydra.GetRandomFloat(), 0.33 ))..\" seconds\");\r\n\t\t\tHydra.Wait(FL_NOSHADETIME_MIN * GROUP_SCALAR[math.max(1,#tPlayer)] + (FL_NOSHADETIME_OFFSET * Hydra.GetRandomFloat())); --offset is 0~3s, total no shade time is 10~13s, also multiplied by the group number scalar, set in OnStartup\r\n\t\tend\r\n\t\t--====SPAWN LOGIC====--\r\n\t\t\r\n\t\t--give while loop a global cooldown\r\n\t\tHydra.Wait(0.5)\r\n\tend -- while loop\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -194,8 +192,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -225,11 +221,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function UF_Spawn_Shade(idTargetPlayer)\r\n\t--get a random location that fits requirements around the player, and check LOS. Only spawn at a point that player LOS check is successful\r\n\tlocal ptTargetLoc = Hydra.ActorGetPosition(idTargetPlayer);\r\n\t--validate player position on navmesh, if not, like a bar is leaping in the air, then get the most closed position on navmesh\r\n\tif not Hydra.PositionIsOnValidNavmesh(ptTargetLoc) then \r\n\t\tptTargetLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, 0, 0.5, true);\r\n\tend\r\n\t\r\n\tlocal idShade = Hydra.ACDID_INVALID;\r\n\tlocal ptSpawnLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, flMinDisFromTarget, flMaxDisFromTarget);\r\n\tlocal ptFacing = Hydra.PositionGetFacingToPosition(ptSpawnLoc, ptTargetLoc);\t\r\n\t\r\n\t--Spawn the shade any have it use the targeting power, which handles all warning and initialization for the shade and target.\r\n\tidShade = Hydra.ActorSpawnActor(S_SHADE_CORE_ACTOR, ptSpawnLoc, ptFacing, false, 0, 0);\r\n\tif not Hydra.ActorIsValid(idShade) then\r\n\t\treturn;\r\n\tend\r\n\r\n\tHydra.ActorTriggerPowerAtTarget(idShade, idTargetPlayer, SNO_POWER_TARAGETED);\r\nend",
- "szOnStartupScript": "--generic affix properties\r\nS_DUNGEON_AFFIX_NAME = \"Drifting Shade\";\r\nFL_DUNGEONAFFIX_COOLUP = 24;\r\nFL_NOSHADETIME_MIN = 10;\r\nFL_NOSHADETIME_OFFSET = 3;\r\nFL_DIFFTIME = 1;\r\nFL_DIFFTIME_OFFSET = 2;\r\n\r\n--BALANCE KNOB: cool down scalar for 1 to 4 players, index is the player number\r\nGROUP_SCALAR = {1, 1, 0.84, 0.75};\r\n\r\n--the shade spawn range, how far away from the targeted player\r\nflMinDisFromTarget = 6;\r\nflMaxDisFromTarget = 9;\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

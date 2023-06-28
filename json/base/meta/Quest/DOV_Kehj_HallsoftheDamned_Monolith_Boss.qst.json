@@ -131,7 +131,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--effect ropes\r\n\tHydra.Wait(0.5)\r\n\tlocal idLink1 = Hydra.ActorPlayEffectGroupActorToActor( idMarker3, idMarker1, VFX_LINK, true );\r\n\tlocal idLink2 = Hydra.ActorPlayEffectGroupActorToActor( idMarker2, idMarker1, VFX_LINK, true );\r\n\tlocal idLink3 = Hydra.ActorPlayEffectGroupActorToActor( idMarker2, idMarker3, VFX_LINK, true );\r\n\t\r\n\tHydra.Wait(2.5)\r\n\t--remove visual candies\r\n\tHydra.ActorRemoveComplexEffect(idMarker3, idLink1)\r\n\tHydra.ActorRemoveComplexEffect(idMarker2, idLink2)\r\n\tHydra.ActorRemoveComplexEffect(idMarker2, idLink3)\r\n\t\r\n\t--remove markers\r\n\tHydra.ActorDelete(idMarker1)\r\n\tHydra.ActorDelete(idMarker2)\r\n\tHydra.ActorDelete(idMarker3)\r\n\tHydra.ActorDelete(idMarker4)\r\n\t\r\n\t--Enable the Skeleton Boss Spawner\r\n\tHydra.ActorGizmoSetDisabled(S_BOSS_SPAWNER, false) \r\n\t\r\n\t-- Remove invulnerable for the statues\r\n\tfor i, idStatue in ipairs(tStatues) do\r\n\t\tHydra.ActorSetInvulnerable(idStatue, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -208,8 +207,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -229,8 +227,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -260,11 +256,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "\r\n-- Set statues to invulnerable until the fight starts.\r\n\tfor i, idStatue in ipairs(tStatues) do\r\n\t\tHydra.ActorSetInvulnerable(idStatue, true)\r\n\tend\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

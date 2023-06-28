@@ -156,7 +156,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -233,8 +232,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorEnableAI(ID_BOSS)\r\nHydra.QActorPower(ID_BOSS, POWER_SHOUT)\r\n\r\nHydra.WaitForQEmpty(ID_BOSS)\r\n\r\nHydra.ActorMergeAIState(ID_BOSS, AISTATE_STAYINARENA, ID_BOSS, 0)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -254,8 +252,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -321,7 +317,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -398,8 +393,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -419,8 +413,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -548,7 +540,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorAddToPrefabScopedGroup(nUserParam, \"LE_Empowered_Boss\")\r\n\tHydra.QuestSetCustomParamFromActor(2, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -625,8 +616,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -713,7 +703,6 @@
        "unk_9c1ea4f": 83,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -802,7 +791,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tupdateChannelSpawner(ID_SPAWNER_CHANNELER_1)\r\n\tHydra.ActorPlayEffectGroup(ID_THIS_QUEST, EG_MINOR_WAVE)\r\n\t\r\n\tHydra.ActorSetDamageCap(ID_BOSS, 0.59)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -891,7 +879,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tupdateChannelSpawner(ID_SPAWNER_CHANNELER_2)\r\n\tHydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"spawnerAmbient2\")\r\n\t-- Spawn elites here\r\n\t-- We do this instead of use a population because we want 1 fewer elites, since theire\r\n\t-- is a unique elite roaming already. No elites on WT1-2\r\n\tif Hydra.GameGetCurrentWorldTier() >= Hydra.WORLD_TIER_3 then\r\n\t\tHydra.ActorTriggerSpawnerUpdate(ID_AMBIENT_ELITE)\r\n\t\tif Hydra.GameGetCurrentWorldTier() == Hydra.WORLD_TIER_4 then\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(ID_AMBIENT_ELITE)\r\n\t\tend\r\n\tend\r\n\tHydra.ActorPlayEffectGroup(ID_THIS_QUEST, EG_MAJOR_WAVE)\r\n\tHydra.ActorSetDamageCap(ID_BOSS, 0.29)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -980,7 +967,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tupdateChannelSpawner(ID_SPAWNER_CHANNELER_3)\r\n\tHydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"spawnerAmbient3\")\r\n\tHydra.ActorPlayEffectGroup(ID_THIS_QUEST, EG_MINOR_WAVE)\r\n\tHydra.ActorSetDamageCap(ID_BOSS, 0.049)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1069,7 +1055,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\t\r\n\tHydra.ActorMergeAIState(ID_BOSS, AISTATE_TRANSFORM, ID_BOSS)\r\n\tHydra.ActorRemoveMergedAIState(ID_BOSS, AISTATE_STAYINARENA)\r\n\t\r\n\tlocal bShouldWait = false\r\n\r\n\tfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_CHANNELERS)) do\r\n\t\tif Hydra.ActorIsAlive(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\t\tbShouldWait = true\r\n\t\tend\r\n\tend\r\n\t\r\n\tif bShouldWait then\r\n\t\tHydra.Wait(1.02)\r\n\tend\r\n\r\n\tupdateChannelSpawner(ID_SPAWNER_CHANNELER_4)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1146,8 +1131,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1206,7 +1190,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1283,8 +1266,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "if not Hydra.QuestGetBonusPhaseResult() then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1304,8 +1286,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "Hydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"spawnerAmbient1\")\r\n\r\nEvents.ActorSetPhased(ID_BOSS, false)",
-   "szOnExitScript": "for i, actorID in pairs(T_SPAWNERS) do\r\n\tif Hydra.ActorIsValid(actorID) then\r\n\t\tHydra.ActorDelete(actorID)\r\n\tend\r\nend\r\n\r\nHydra.ActorKill(ID_ARENA)\r\n\r\nfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_CHANNELERS)) do\r\n\tHydra.ActorRemoveMergedAIState(actorID, AISTATE_CHANNEL)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1409,7 +1389,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1486,8 +1465,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1566,7 +1544,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_ALL_MOBS)) do\r\n\t\tHydra.QActorWait(actorID, Hydra.GetRandomFloat(0, 0.5))\r\n\t\tHydra.QActorKill(actorID)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1643,8 +1620,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1664,8 +1640,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1770,7 +1744,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tif Hydra.ActorIsValid(ID_BOSS) then\r\n\t\tHydra.ActorPlayEffectGroup(idActorSpawned, EG_CHANNELER_SHOUT)\r\n\t\tHydra.ActorAddAITarget(idActorSpawned, ID_BOSS, true)\r\n\t\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_CHANNEL, idActorSpawned, 0)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1857,7 +1830,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tID_BOSS = idActorSpawned\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.BuffApplyToTarget(POWER_CHANNEL, \"AI_TARGET\", ID_BOSS)\r\n\tHydra.QuestSetCustomParamFromActor(1, ID_BOSS)\r\n\tHydra.SetActorVariable(ID_BOSS, \"questID\", ID_THIS_QUEST)\r\n\tHydra.ActorSetDamageCap(ID_BOSS, 0.9)\r\n\tEvents.ActorSetPhased(ID_BOSS, true)\r\n\tHydra.BuffApplyToTarget(POWER_BOSS_MODIFIERS, \"NO_LEASH\", ID_BOSS)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1934,8 +1906,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1955,8 +1926,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2040,7 +2009,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2117,8 +2085,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2188,7 +2155,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2265,8 +2231,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2286,8 +2251,6 @@
    "unk_669bcf8": 72,
    "unk_287ecb5": 87,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2398,7 +2361,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2475,8 +2437,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2496,8 +2457,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "if Hydra.ActorIsValid(ID_BOSS) then\r\n\tHydra.ActorMergeAIState(ID_BOSS, AISTATE_DESPAWN, ID_BOSS)\r\n\tHydra.DisplayGameMessageForAllQuestParticipants(\"Messages:LE_Empowered_BossEscaped\")\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2527,11 +2486,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function updateChannelSpawner(idNewChannelSpawner)\r\n\r\n\tif Hydra.ActorIsValid(idCurrentChannelSpawner) then\r\n\t\tHydra.ActorDelete(idCurrentChannelSpawner)\r\n\tend\r\n\t\r\n\tidCurrentChannelSpawner = idNewChannelSpawner\r\n\t\r\n\tif Hydra.PrefabScopedActorGroupGetCount(PSAG_CHANNELERS) == 0 then\r\n\t\tHydra.ActorEnable(idCurrentChannelSpawner)\r\n\tend\r\n\t\r\nend",
- "szOnStartupScript": "idCurrentChannelSpawner = Hydra.ACDID_INVALID\r\nPSAG_CHANNELERS = \"LE_Empowered_Channeler\"\r\nPSAG_ALL_MOBS = \"LE_Empowered_AllMobs\"\r\nID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\nupdateChannelSpawner(ID_INITIAL_CHANNEL_SPAWNER)",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

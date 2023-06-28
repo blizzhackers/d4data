@@ -178,7 +178,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n    --Play voctory music stinger and wait to reset music\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_Astaroth_Victory\")\r\n\tHydra.ActorFadeAndDelete(ID_ARENA_ENTRANCE_DONAN, 0.5)\r\n\tHydra.ActorEnable(idDonan)\r\n\tHydra.ActorGizmoSetDisabled(gizmoGate,false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -407,7 +406,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tidAstarothLoc = idActorKilled\r\n\tptDonan = Hydra.ActorGetPosition(idDonan)\r\n\tptDonanRunTo = Hydra.ActorGetPosition(idAstarothLoc)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -493,8 +491,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -514,8 +511,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -684,7 +679,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\tidFirstTimeRewardLocation = Hydra.ActorSpawnActor(sFirstTimeRewardDropActor, idAstarothMountCorpse)\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drorp occurs\r\n\t\t-- idFirstTimeRewardLocation is set/created on \"Actor Killed)\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idFirstTimeRewardLocation, \"FirstTimeReward_Campaign_Astaroth\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Astaroth\")\r\n\tend\r\n\t\r\n\t-- Since this boss doesn't have its own treasure class, also drop generic treasure at this time\r\n\tHydra.TreasureClassDropAtActor(idFirstTimeRewardLocation, \"Campaign_Boss\")\r\n\t\r\n\t-- Remove the Reward Actor\r\n\tHydra.ActorDelete(idFirstTimeRewardLocation)\r\n\t------------------------------------------------------\r\n\t\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -775,8 +769,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -885,7 +878,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.Wait(2.5);\r\n\tHydra.EventSend(\"CLEANUP_CORPSES\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -976,8 +968,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -997,8 +988,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorGizmoOperate(gizmoGate, idSelf)\r\n\r\nif Hydra.PositionIsOnValidNavmesh(ptDonanRunTo) and Hydra.DoesPathExistBetweenPositions(ptDonan, ptDonanRunTo) then\r\n\tHydra.QActorMoveToPositionDynamicSpeed(idDonan, ptDonanRunTo, \"NPC_Run\", 5.5)\r\nelse\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idDonan, idLocation, \"NPC_Run\", true)\r\nend\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1078,7 +1067,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1161,8 +1149,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1182,8 +1169,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1345,7 +1330,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1467,7 +1451,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1544,8 +1527,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1579,7 +1561,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\ttCurrentPlayer = Hydra.QuestGetParticipants()\r\n\t\r\n\t--Reset Music\r\n\tHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\n\t\r\n\t--Enable mourning Donan and Yorin's corpse\r\n\tHydra.ActorEnable(idYorin)\r\n\tHydra.ActorEnable(idAstarothMountCorpse)\r\n\t\r\n\t--Inject Donan's Conversation List\r\n\tHydra.ActorPlayConversation(S_CONVO_FIGHT_COMPLETE_01, tCurrentPlayer[1])\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Set guards outside gate to use normal anims\r\n\tHydra.QActorClearAnimSetOverride(ID_M_GUARD_01)\r\n\tHydra.QActorSetAnimSetOverride(ID_M_GUARD_01, \"NPC_Idle\")\r\n\tHydra.ActorSetConversationStatus(ID_M_GUARD_01, true)\r\n\t\r\n\tHydra.Wait(0.3)\r\n\tHydra.QActorClearAnimSetOverride(ID_F_GUARD)\r\n\tHydra.QActorSetAnimSetOverride(ID_F_GUARD, \"NPC_Idle\")\r\n\tHydra.Wait(0.6)\r\n\tHydra.QActorClearAnimSetOverride(ID_M_GUARD_02)\r\n\tHydra.QActorSetAnimSetOverride(ID_M_GUARD_02, \"NPC_Idle\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1656,8 +1637,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1677,8 +1657,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1820,7 +1798,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1906,8 +1883,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1988,7 +1964,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2190,8 +2165,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2211,8 +2185,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Play Boss Music Phase 1\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_Astaroth_Phase1\")",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2361,7 +2333,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n--Play Boss Music Phase 2\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_Astaroth_Phase2\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2447,8 +2418,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2529,7 +2499,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2684,8 +2653,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2705,8 +2673,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Play Boss Music Phase 2\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Boss_Astaroth_Phase2\")",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2757,11 +2723,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "if Hydra.ActorGizmoIsDisabled(ID_ARENA_ENTRANCE_GATE) then\r\n\tHydra.ActorGizmoSetDisabled(ID_ARENA_ENTRANCE_GATE, false)\r\nend\r\n\r\nif Hydra.ActorGizmoIsDoorOpen(ID_ARENA_ENTRANCE_GATE) == false then\r\n\tHydra.ActorGizmoOperate(ID_ARENA_ENTRANCE_GATE)\r\nend\r\n\r\nif Hydra.ActorIsValid(ID_ARENA_ENTRANCE_DONAN) then\r\n\tHydra.QActorSetIdleAnim(ID_ARENA_ENTRANCE_DONAN, \"AnimKey_Emote_Cry_Collapse_Idle\")\r\nend\r\n\r\n-- First Time Reward proxy\r\nsFirstTimeRewardDropActor = Hydra.ReferenceActor(\"FirstTimeReward_Proxy_Generic\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

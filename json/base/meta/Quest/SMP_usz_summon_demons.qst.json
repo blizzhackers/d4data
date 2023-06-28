@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -291,7 +289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -368,8 +365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -389,8 +385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -509,7 +503,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -586,8 +579,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -607,8 +599,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "OWC_SMP_CHECK()\r\n-- juice\r\nHydra.ActorSetPowerEffectSize(VFX_SOURCE, 10)\r\nHydra.ActorSetPowerEffectIntensity(VFX_SOURCE, 1)\r\nHydra.ActorPlayEffectGroup(VFX_SOURCE, EG_HARMLESS_BURST)\r\nHydra.ActorPlayEffectGroup(VFX_SOURCE, SFX_DEMON_WALLA)\r\n\r\n-- summon demons\r\nHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"base\")\r\n\r\nif Hydra.GetRandomInt(1, 100) <= 20 then\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"elites\")\r\nelse\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"noElites\")\r\nend\r\n\r\n-- delay cultist activation to sell fantasy that they are summoning the demons\r\nHydra.Wait(1.5)\r\n\r\nHydra.ActorRemoveComplexEffect(idSelf, sigilId) \t\r\n\r\nfor i, cultist in pairs(CULTISTS) do\r\n\tif Hydra.ActorIsValid(cultist) and Hydra.ActorIsAlive(cultist) then \r\n\t\tHydra.ActorRemoveMergedAIState(cultist, WORSHIP_AI)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -708,7 +698,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -785,8 +774,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -806,8 +794,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -837,11 +823,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "SPAWN_LOCS = {}\r\nANIM_WORSHIP = Hydra.ReferencePower(\"Cultist_Worship\")\r\n\r\n-- this value should match the time in usz_smp_summon_demon\r\nATTRACTOR_DURATION = 2\r\n\r\nCULTIST_SIGIL_DECALS = {\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_01\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_02\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_03\"),\r\n\tHydra.ReferenceEffectGroup(\"fxKit_persistentSigilDecal_cultist_04\")\r\n}\r\n\r\nfor i, cultist in pairs(CULTISTS) do \r\n\t-- merge worship AI\r\n\tHydra.ActorMergeAIState(cultist, WORSHIP_AI, cultist, 0)\r\n\tHydra.ActorAddToPrefabScopedGroup(cultist, \"SMP_Monsters\")\r\nend\r\n\r\nHydra.ActorSetPowerEffectSize(idSelf, 8)\r\nsigilId = Hydra.ActorPlayEffectGroup(idSelf, CULTIST_SIGIL_DECALS[Hydra.GetRandomInt(1, #CULTIST_SIGIL_DECALS)], true)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

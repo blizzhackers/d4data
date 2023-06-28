@@ -131,7 +131,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Player enters gate area\r\n\t-- Set TownGate var to 0 (initializing trajectory tracking)\r\n\tHydra.SetPlayerVariableNumeric(idActor, TOWN_GATE_VAR, 0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -219,7 +218,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Player leaves gate area\r\n\t-- Reset TOWN_TownGate variable\r\n\tHydra.SetPlayerVariableNumeric(idActor, TOWN_GATE_VAR, -1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -307,7 +305,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Player enters \"outer\" gate area\r\n\t-- Increment TOWN_TownGate variable\r\n\tPlayerGateVar = Hydra.GetPlayerVariableNumericValue(idActor, TOWN_GATE_VAR)\r\n\tPlayerGateVar = PlayerGateVar + 1\r\n\tHydra.SetPlayerVariableNumeric(idActor, TOWN_GATE_VAR, PlayerGateVar)\r\n\r\n\t-- Variable should be \"1\" if the player is entering town, \"2\" if leaving\r\n\tif PlayerGateVar == 2 then\r\n\t\tif Hydra.IsGameVariableSet(\"EldhaimeIntro\") then\r\n\t\t\tHydra.ActorPlayConversation(CONV_FAREWELL, idActor, ID_GUARD)\r\n\t\telse\r\n\t\t\tHydra.SetGameVariableFlag(\"EldhaimeIntro\")\r\n\t\t\tHydra.ActorPlaySimpleConversation(CONV_FIRSTTIMEGREETING, ID_GUARD)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -395,7 +392,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Player enters \"inner\" gate area\r\n\t-- Increment TOWN_TownGate variable\r\n\tPlayerGateVar = Hydra.GetPlayerVariableNumericValue(idActor, TOWN_GATE_VAR)\r\n\tPlayerGateVar = PlayerGateVar + 1\r\n\tHydra.SetPlayerVariableNumeric(idActor, TOWN_GATE_VAR, PlayerGateVar)\r\n\t\r\n\t-- Variable should be \"1\" if the player is leaving town, \"2\" if entering\r\n\tif PlayerGateVar == 2 then\r\n\t\tif Hydra.IsGameVariableSet(\"EldhaimeIntro\") then\r\n\t\t\tHydra.ActorPlayConversation(CONV_GREETING, idActor, ID_GUARD)\r\n\t\telse\r\n\t\t\tHydra.SetGameVariableFlag(\"EldhaimeIntro\")\r\n\t\t\tHydra.ActorPlaySimpleConversation(CONV_FIRSTTIMEGREETING, ID_GUARD)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -472,8 +468,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -556,7 +551,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -633,8 +627,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -654,8 +647,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -685,11 +676,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "TOWN_GATE_VAR = \"TOWN_TownGate\"\r\nID_GUARD = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Guard\")[1]",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)\r\n",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

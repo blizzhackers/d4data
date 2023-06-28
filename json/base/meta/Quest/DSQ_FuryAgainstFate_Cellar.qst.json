@@ -143,7 +143,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -220,8 +219,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -241,8 +239,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -383,7 +379,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Remove Ealda's Anim Override\r\nHydra.ActorSetSheathPreference(ID_EALDA_01, (Hydra.SHEATH_PREF_UNSHEATHED))\r\nHydra.ActorClearAnimSetOverride(ID_EALDA_01)\r\n\r\n--Make Gore Gate destrutible\r\n\tHydra.ActorSetNoDamage(GIZ_GATE, false)\r\n\tHydra.ActorSetTargetable(GIZ_GATE, true)\r\n--Set Ealda's new Tether\r\n\tHydra.ActorSetAITether(ID_EALDA_01, LOC_GATE)\r\n--Ealda moves towards the Gore Gate\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_EALDA_01, LOC_GATE, \"NPC_Run\", true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -460,8 +455,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -549,7 +543,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Give Ealda Strong Talk Override for Rally Speech\r\nHydra.ActorSetAnimSetOverride(ID_EALDA_01, \"NPC_Idle_Stand_Talk_Strong\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -626,8 +619,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -647,8 +639,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Disable Spear Display\r\n\tHydra.ActorDisable(GIZ_DISPLAY)\r\n\r\n--Make Gore Gate indestrutible\r\n\tHydra.ActorSetNoDamage(GIZ_GATE, true)\r\n\tHydra.ActorSetTargetable(GIZ_GATE, false)\r\n\r\n--Disable Pit Cannibals\r\n\tfor i, idCannibal in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_PITCANNIBALS)) do\r\n\t\t\tHydra.ActorDisableAI(idCannibal)\r\n\t\t\tHydra.ActorSetNoDamage(idCannibal, true)\r\n\tend\r\n\r\n--Ealda Sheathe Weapon\r\nHydra.ActorSetSheathPreference(ID_EALDA_01, (Hydra.SHEATH_PREF_SHEATHED))\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -769,7 +759,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Swap to Ealda 02 for static Conversation\r\n\tHydra.ActorDisable(ID_EALDA_01)\r\n\tHydra.ActorEnable(ID_EALDA_02)\r\n\t\r\n--Ealda Sheath Weapon\r\nHydra.ActorSetSheathPreference(ID_EALDA_02, (Hydra.SHEATH_PREF_SHEATHED))\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -846,8 +835,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -925,7 +913,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n--Enable Pit Cannibals\r\n\tfor i, idCannibal in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_PITCANNIBALS)) do\r\n\t\t\tHydra.ActorEnableAI(idCannibal)\r\n\t\t\tHydra.ActorSetNoDamage(idCannibal, false)\r\n\tend\r\n--Ealda tethers in Pit\r\n\tHydra.ActorSetAITether(ID_EALDA_01, LOC_PIT)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_EALDA_01, LOC_PIT, \"NPC_Run\", false)\r\n\r\n--Set Barbarians to tether in Pit\t\r\n\tlocal tBarbarians = Hydra.ActorsInGroup(\"QST_Step_South_FuryAgainstFate_Barbarians\")\r\n\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_BARBARIANS)) do\r\n\t\tif (Hydra.ActorIsValid(idFollower)) then\r\n\t\t\tHydra.ActorSetAITether(idFollower, LOC_PIT)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, LOC_PIT, \"NPC_Run\", false)\r\n\t\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1002,8 +989,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1075,7 +1061,6 @@
        "unk_9c1ea4f": 8,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n--Move Ealda to BannerLoc, place Banner\r\n\tHydra.ActorDisableAI(ID_EALDA_01)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_EALDA_01, LOC_BANNER, \"NPC_Run\", true)\r\n\tHydra.QActorFaceActor(ID_EALDA_01, GIZ_DISPLAY)\r\n\tHydra.WaitForQEmpty(ID_EALDA_01)\r\n\tHydra.ActorEnable(GIZ_DISPLAY)\r\n\tHydra.ActorSetPowerEffectSize(GIZ_DISPLAY, 3.0)\r\n\tHydra.ActorPlayEffectGroup(GIZ_DISPLAY, \"fxKit_physical_impactDirt\")\r\n\tHydra.ActorPlayEffectGroup(GIZ_DISPLAY, \"fxKit_harmless_burstCylindrical_smoke\")\r\n\r\n--Send Progress Event\r\n\tHydra.EventSend(\"Move_Ealda_Banner_01\", idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1152,8 +1137,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1173,8 +1157,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1315,7 +1297,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n--Remove Ealda's Anim Override\r\n\tHydra.ActorSetSheathPreference(ID_EALDA_02, (Hydra.SHEATH_PREF_UNSHEATHED))\r\n\tHydra.ActorClearAnimSetOverride(ID_EALDA_02)\r\n\r\n--Barbarians BattleCry\r\n\tHydra.ActorPlaySound(ID_BARB_F01, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_F02, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_M01, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_M02, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\n\r\n--Ealda & barbarians Warcry Anim\r\n\tHydra.QActorAnim(ID_EALDA_02, \"Unstoppable_Monster\")\r\n\t\r\nlocal tBarbarians = Hydra.ActorsInGroup(\"QST_Step_South_FuryAgainstFate_Barbarians\")\r\n\t\r\n\tfor i, idBarb in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_BARBARIANS)) do\r\n\t\tif (Hydra.ActorIsValid(idBarb)) then\r\n\t\t\tHydra.QActorAnim(idBarb, \"Unstoppable_Monster\")\r\n\t\tend\r\n\t\r\n--Start Cannibal Holdout, Enable Ealda's AI\r\n\tHydra.EventSend(\"QST_FuryAgainstFate_HoldoutStart\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1392,8 +1373,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1481,7 +1461,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n--Give Ealda Strong Talk Override for Holdout Kickoff Speech\r\n\tHydra.QActorFaceActor(ID_EALDA_02, idActorPlayer)\r\n\tHydra.ActorSetAnimSetOverride(ID_EALDA_02, \"NPC_Idle_Stand_Talk_Strong\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1558,8 +1537,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1579,8 +1557,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1700,7 +1676,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Ealda calls to storm the cannibal pit\r\nHydra.ActorPlaySimpleConversation(CON_EALDA_STORM, ID_EALDA_01)\r\n--Barbarians BattleCry\r\nHydra.ActorPlaySound(ID_BARB_F01, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\nHydra.ActorPlaySound(ID_BARB_F02, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\nHydra.ActorPlaySound(ID_BARB_M01, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\nHydra.ActorPlaySound(ID_BARB_M02, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\n\r\nlocal tBarbarians = Hydra.ActorsInGroup(\"QST_Step_South_FuryAgainstFate_Barbarians\")\r\n--Set Barbarians to follow Ealda\r\n\tfor i, idFollower in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_BARBARIANS)) do\r\n\t\tif (Hydra.ActorIsValid(idFollower)) then\r\n\t\t\t--Hydra.ActorSetFollowTarget(idFollower, ID_EALDA_01, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, LOC_GATE, \"NPC_Run\", false)\r\n\t\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1777,8 +1752,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1860,7 +1834,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Ealda Insult Bark\r\nHydra.ActorPlaySimpleConversation(CON_EALDA_AMB_01, ID_EALDA_02)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1937,8 +1910,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2020,7 +1992,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Ealda Insult Bark\r\nHydra.ActorPlaySimpleConversation(CON_EALDA_AMB_02, ID_EALDA_02)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2097,8 +2068,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2183,7 +2153,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--Attack Gore Gate if not destroyed\r\n\tif Hydra.ActorIsAlive(GIZ_GATE) then\r\n\t\tHydra.ActorAIForcePrimaryTarget(idActor, GIZ_GATE)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2260,8 +2229,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2352,7 +2320,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--Attack Gore Gate if not destroyed\r\n\tif Hydra.ActorIsAlive(GIZ_GATE) then\r\n\t\tHydra.ActorAIForcePrimaryTarget(ID_EALDA_01, GIZ_GATE)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2429,8 +2396,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2512,7 +2478,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Cannibal Cry\r\nHydra.ActorPlaySound(ID_EALDA_02, \"Play_MonsterKit_Walla_Cannibals_LRG_Group\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2589,8 +2554,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2610,8 +2574,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2732,7 +2694,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Swap to Ealda 03 for static Conversation\r\n\tHydra.ActorDisable(ID_EALDA_02)\r\n\tHydra.ActorEnable(ID_EALDA_03)\r\n\tHydra.QActorSheath(ID_EALDA_03)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2809,8 +2770,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Move Ealda Event Send\r\n\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2884,7 +2844,6 @@
        "unk_9c1ea4f": 17,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\n--Barbarians BattleCry\r\n\tHydra.ActorPlaySound(ID_BARB_F01, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_F02, \"Play_NPC_Generic_Female1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_M01, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\n\tHydra.ActorPlaySound(ID_BARB_M02, \"Play_NPC_Generic_Male1_VOX_BattleCry\")\r\n\t\r\n--Surviving barbarians celebrate AnimSet Override\r\n\tlocal tBarbarians = Hydra.ActorsInGroup(\"QST_Step_South_FuryAgainstFate_Barbarians\")\r\n\t\r\n\tfor i, idBarb in ipairs(Hydra.ActorsInGroup(GRP_FOLLOWERS_BARBARIANS)) do\r\n\t\tif (Hydra.ActorIsValid(idBarb)) then\r\n\t\t\tHydra.QActorAnim(idBarb, \"Unstoppable_Monster\")\r\n\t\tend\r\n\t\t\r\n--Turn off Ealda AI, move to Conversation location\r\n\tHydra.ActorDisableAI(ID_EALDA_02)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_EALDA_02, LOC_VICTORY, \"NPC_Run\", false)\r\n\tHydra.QActorFaceActor(ID_EALDA_02, LOC_VICTORY)\r\n\tHydra.QActorSheath(ID_EALDA_02)\r\n\tHydra.WaitForQEmpty(ID_EALDA_02)\r\n\r\n--Send Progress Event\r\n\tHydra.EventSend(\"Move_Ealda_Banner_02\", idSelf)\r\n\t\r\nend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2961,8 +2920,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2982,8 +2940,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3117,7 +3073,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3194,8 +3149,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3215,8 +3169,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3246,11 +3198,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "--Enable Spear Display if inactive\r\n\tif Hydra.ActorIsEnabled(GIZ_DISPLAY) == false then\r\n\t\tHydra.ActorEnable(GIZ_DISPLAY)\r\n\tend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

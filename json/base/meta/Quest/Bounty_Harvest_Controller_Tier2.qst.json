@@ -154,7 +154,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t-- Play Ritual Effects\r\n\t--Hydra.ActorPlayEffectGroup(ID_ACTIVATOR, EG_PERSISTENT, true, 0, \"vfxHP\")\r\n\tHydra.Wait(.75)\r\n\tHydra.ActorPlayEffectGroup(ID_ACTIVATOR, EG_BURST, true, 0,\"vfxHP\")\r\n\tHydra.ActorSetPowerEffectSize(ID_ACTIVATOR, 4)\r\n\tHydra.DisplayGameMessageForAllQuestParticipants(\"Bounties:Message_Bounty_Harvest_Ritual_Start\")\r\n\tHydra.Wait(0.25)\r\n\tHydra.ActorGizmoSetDisabled(ID_ACTIVATOR, true)\r\n\t\r\n\t-- Trigger first elite spawner\r\n\tif Hydra.ActorIsValid(ID_SPAWNER_ELITE) then \r\n\t\tHydra.ActorTriggerSpawnerUpdate(ID_SPAWNER_ELITE) \r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -231,8 +230,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -252,8 +250,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -360,7 +356,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t\r\n\tlocal ptSpawn = Hydra.PositionOffsetVertically(Hydra.ActorGetPosition(idActorSpawned), 1)\r\n\tlocal idProxy = Hydra.ActorSpawnActor(ACTOR_PROXY, ptSpawn, ptSpawn, false, 0, 0)\r\n\tHydra.ActorSetPowerEffectSize(idProxy, Hydra.ActorGetRadius(idActorSpawned) * 6)\r\n\r\n\tHydra.ActorPlayEffectGroupActorToActor(ID_ACTIVATOR, idProxy, EG_ATTRACTOR, false, \"vfxHP\", 0)\r\n\tHydra.ActorDisable(idActorSpawned)\r\n\tHydra.Wait(FL_SPAWN_TIME)\r\n\t--Hydra.ActorPlayEffectGroup(idProxy, EG_BURST)\r\n\tHydra.ActorEnable(idActorSpawned)\r\n\tHydra.ActorTriggerPowerAtFeet(idActorSpawned, POWER_SPAWN)\r\n\t\r\n\t-- Apply shader buff to all spawns\r\n\tHydra.BuffApplyToTarget(POWER_SHADER, \"SHADER\", idActorSpawned)\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\tHydra.ActorDelete(idProxy)\r\n\t\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -451,7 +446,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, EG_DEATH)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -528,8 +522,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -549,8 +542,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -601,8 +592,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -668,7 +657,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n--Hydra.ActorGizmoOperate(ID_ACTIVATOR)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -745,8 +733,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -766,8 +753,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -893,7 +878,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -970,8 +954,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -991,8 +974,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1043,8 +1024,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1074,11 +1053,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "FL_SPAWN_TIME = 1\r\n\r\nHydra.ActorSetPowerEffectDuration(ID_ACTIVATOR, FL_SPAWN_TIME)\r\nHydra.ActorSetPowerEffectSize(ID_ACTIVATOR, 9)",
- "szOnShutdownScript": "-- Failsafe in case vgn shuts down\r\n-- Remove altar ritual persistent effect and play final effects\r\nHydra.ActorRemoveComplexEffectByEffectGroupSNO(ID_ACTIVATOR, EG_PERSISTENT)\r\n\r\nHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf, Hydra.DESPAWN_BEHAVIOR_DEFAULT, false)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

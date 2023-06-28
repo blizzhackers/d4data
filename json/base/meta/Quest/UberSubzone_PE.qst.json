@@ -158,7 +158,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t-- callback to dodge validation errors\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -235,8 +234,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -277,7 +275,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\t\r\n\tHydra.Wait(8) -- delay initial (technically all, but noticeable on first) firestorms to prevent bummer player death on world xfer\r\n\t\r\n\ttPlayers = Hydra.PlayerActors()\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\t-- Notify Power Erruption Owner(s) that World Boss is Active\r\n\t\t\t-- For ship 1-0-0, this will disable spawning monsters for Perf\r\n\t\t\tif Hydra.ActorIsAlive(idWorldBoss) then\r\n\t\t\t\tHydra.BuffApplyToTarget(POWER_ERUPTION, S_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE, idPlayer);\t\t\t\t\t\r\n\t\t\t\t-- Store World Boss ID to applied Buff for future use such as checking when World Boss is killed or escaped\r\n\t\t\t\tHydra.BuffSetStoredData(idPlayer, POWER_ERUPTION, S_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE, idWorldBoss);\r\n\t\t\tend\r\n\t\r\n\t\t\tHydra.ActorTriggerEnvironmentPower(idPlayer, idPlayer, POWER_ERUPTION, Hydra.TEAM_MONSTER_0)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -354,8 +351,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -375,8 +371,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.Wait(30)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -449,7 +443,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- Ping World Boss in case a World Boss EVent has started before Helltide\r\n\tHydra.EventSend(S_EVENT_WORLDBOSS_PING);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -526,8 +519,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -547,8 +539,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -614,7 +604,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -691,8 +680,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -712,8 +700,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -786,7 +772,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- firestorm will occur every 4 to 8 minutes\r\n\tdelay = Hydra.GetRandomInt(240, 480)\r\n\tHydra.Wait(delay)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -863,8 +848,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -884,8 +868,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -976,7 +958,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tHydra.SetGameVariableFlag(\"Zone_Is_Frac\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1054,7 +1035,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tHydra.SetGameVariableFlag(\"Zone_Is_Hawe\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1132,7 +1112,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tHydra.SetGameVariableFlag(\"Zone_Is_Kehj\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1210,7 +1189,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tHydra.SetGameVariableFlag(\"Zone_Is_Scos\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1288,7 +1266,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tHydra.SetGameVariableFlag(\"Zone_Is_Step\", true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1365,8 +1342,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1448,7 +1424,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.DisplayGameMessageForAllQuestParticipants(\"Messages:USZ_RoamingFlySpawnWarning\");\r\n\r\n\t-- Send event to roaming boss so boss can register Helltide is active and periodically check if it active\r\n\t-- When no longer active it can let itself escape\r\n\t-- This is a workaround for issue with this Quest unable to send event Helltide is over in Shutdown or ending phase reliably\r\n\tHydra.EventSend(\"Helltide_RoamingBoss_StartCheckQuestActive\");\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1525,8 +1500,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1608,7 +1582,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tidWorldBoss = idActor;\r\n\r\n\tif Hydra.ActorIsAlive(idWorldBoss) then\r\n\t\t-- Notify Power Erruption Owner(s) that World Boss is Active\r\n\t\t-- For ship 1-0-0, this will disable spawning monsters for Perf\r\n\t\tlocal tPowerErruptionTargets = Hydra.PlayerActors();\r\n\t\tif #tPowerErruptionTargets > 0 then\r\n\t\t\tfor i, idPowerErruptionTarget in ipairs(tPowerErruptionTargets) do\r\n\t\t\t\tif Hydra.ActorIsValid(idPowerErruptionTarget) then\r\n\t\t\t\t\tHydra.BuffApplyToTarget(POWER_ERUPTION, S_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE, idPowerErruptionTarget);\r\n\t\t\t\t\t\r\n\t\t\t\t\t-- Store World Boss ID to applied Buff for future use such as checking when World Boss is killed or escaped\r\n\t\t\t\t\tHydra.BuffSetStoredData(idPowerErruptionTarget, POWER_ERUPTION, S_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE, idWorldBoss);\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\t-- Despawn Monsters spawned by Power Erruption\r\n\t\tDespawnPowerEruptionMonstersFromWorldBoss();\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1685,8 +1658,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1768,7 +1740,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tif Hydra.ActorIsValid(idWorldBoss) then\r\n\t\t-- Notify Power Erruption Target(s) that World Boss is Active\r\n\t\t-- For ship 1-0-0, spawning monsters are disabled for Perf\r\n\t\tlocal tPowerErruptionTargets = Hydra.PlayerActors();\r\n\t\tif #tPowerErruptionTargets > 0 then\r\n\t\t\tfor i, idPowerErruptionTarget in ipairs(tPowerErruptionTargets) do\r\n\t\t\t\tif Hydra.ActorIsValid(idPowerErruptionTarget) then\r\n\t\t\t\t\tHydra.BuffRemove(POWER_ERUPTION, S_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE, idPowerErruptionTarget);\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\tidWorldBoss = Hydra.ACDID_INVALID;\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1845,8 +1816,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1866,8 +1836,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1897,11 +1865,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "USER_EVENT_USZ_END = \"UBERSUBZONE_END\"\r\n\r\n-- World Boss\r\nS_EVENT_WORLDBOSS_PING = \"EVENT_WORLDBOSS_PING\";\r\nS_EVENT_WORLDBOSS_STARTED = \"EVENT_WORLDBOSS_STARTED\";\r\nidWorldBoss = Hydra.ACDID_INVALID;\r\n\r\n-- From POWER_ERUPTION\r\nS_POWER_ERRUPTION_BUFF_WORLDBOSS_ACTIVE = \"WORLDBOSS_ACTIVE\";\r\nS_AG_POWER_ERRUPTION_MONSTERS = \"UberSubzone_Harbinger\";\r\n\r\n-- Despawning Monsters Power\r\nlocal POWER_DESPAWN_MONSTER = Hydra.ReferencePower(\"Generic_Blood_Despawn\");\r\nS_POWER_DESPAWN_START_VAR_DELAY = \"DelayDespawn\";\r\n\r\nfunction DespawnPowerEruptionMonstersFromWorldBoss()\r\n\tif Hydra.ActorIsAlive(idWorldBoss) then\r\n\t\tlocal tPowerErruptionMonsters = Hydra.ActorsInGroup(S_AG_POWER_ERRUPTION_MONSTERS);\r\n\t\tif #tPowerErruptionMonsters > 0 then\r\n\t\t\tfor i, idMonster in ipairs(tPowerErruptionMonsters) do\r\n\r\n\t\t\t\t-- Despawn when Monster is alive, share same world with World Boss, share same level area with World Boss\r\n\t\t\t\tif Hydra.ActorIsAlive(idMonster) and Hydra.ActorsInSameWorld(idMonster, idWorldBoss) and Hydra.ActorsInSameLevelArea(idMonster, idWorldBoss) then\r\n\t\t\t\t\tHydra.StartPowerVariant(idMonster, POWER_DESPAWN_MONSTER, S_POWER_DESPAWN_START_VAR_DELAY, 0.0, 1.0);\r\n\t\t\t\tend\r\n\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend",
- "szOnStartupScript": "",
- "szOnShutdownScript": "-- set up weather conditions for affected subzones\r\n--Hydra.TraceScreen(\"UberSubzone - On Shutdown\")\r\n--Hydra.ClearWeatherOverride(\"Sanctuary_Eastern_Continent\")\r\n\r\n-- how do we terminate the playerQuest? EventSend?\r\nHydra.EventSend(USER_EVENT_USZ_END)",
- "szOnAbandonScript": "\r\n",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

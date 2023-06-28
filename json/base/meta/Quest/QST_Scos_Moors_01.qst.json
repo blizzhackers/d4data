@@ -190,7 +190,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -372,8 +371,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -393,8 +391,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -526,7 +522,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\n\r\n\tif Hydra.ActorIsValid(idCliffBlocker) then\r\n\t\tHydra.ActorSetInvulnerable(idCliffBlocker, false)\r\n\t\tHydra.ActorKill(idCliffBlocker)\r\n\tend\r\n\r\n--Enable Nafain's Wolf\r\n\tHydra.Wait (0.5)\r\n\tHydra.ActorSetPowerEffectSize(idVFXLoc, 5)\r\n\teWolf = Hydra.ActorPlayEffectGroup(idVFXLoc, S_STEALTH_WOLF_VFX, true)\r\n\tHydra.ActorEnable(ID_NPC_WOLF)\r\n\tHydra.ActorEnableAI(ID_NPC_WOLF, true)\r\n\tHydra.ActorSetAIState(ID_NPC_WOLF, \"idle\")\r\n\t\r\n\tHydra.QActorAnimAndNewIdle(ID_NPC_WOLF, \"Druid_Wolf_Howl\", \"AnimKey_Neutral\")\r\n\tHydra.ActorPlaySound(ID_NPC_WOLF, SFX_HOWL)\r\n\tHydra.QActorWait(ID_NPC_WOLF, 2)\r\n\tHydra.ActorPlayConversation(S_CONVO_PC_WOLF, idActorPlayer)\r\n\r\n\tptActorPos = Hydra.ActorGetPosition(idActorPlayer)\r\n\tHydra.WaitForQEmpty(ID_NPC_WOLF)\r\n\tHydra.ActorRemoveComplexEffect(idVFXLoc, eWolf) \r\n\tHydra.QActorMoveToPositionDynamicSpeed(ID_NPC_WOLF, ptActorPos, \"NPC_Run\", 2.0)\r\n\tHydra.QActorSetIdleAnim(ID_NPC_WOLF, \"NafainWolf_idle_sit\")\r\n\tflConvoTime = Hydra.EffectGroupGetDuration(\"Conv_QST_Scos_Moors_PC_Wolf_01\")\r\n\tflConvoTime = flConvoTime - 7.0\r\n\tHydra.QActorWait(ID_NPC_WOLF, flConvoTime)\r\n\tHydra.WaitForConversationFinished(S_CONVO_PC_WOLF)\r\n\r\n\ttAIPaths = Hydra.PathsLinkedByActor(ID_NPC_WOLF)\r\n\tAIPath = tAIPaths[1]\r\n\tHydra.QActorStopAllQueuedActions(ID_NPC_WOLF)\r\n\tHydra.WaitForQEmpty(ID_NPC_WOLF)\r\n\tHydra.ActorPlaySound(ID_NPC_WOLF, SFX_HOWL)\r\n\tHydra.QActorAnimAndNewIdle(ID_NPC_WOLF, \"Druid_Wolf_Howl\", \"AnimKey_Neutral\")\r\n\tHydra.QActorFollowPathDynamicSpeed(ID_NPC_WOLF, AIPath, \"NPC_Run\", false)\r\n\tHydra.QActorSetTeam(ID_NPC_WOLF, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tHydra.QActorFaceSameAsActor(ID_NPC_WOLF, idBloodValeWolfWarpTo)\r\n\tHydra.WaitForQEmpty(ID_NPC_WOLF)\r\n\tHydra.ActorWarpToActor(idBloodValeWolfWarpTo, ID_NPC_WOLF)\r\n\tHydra.QActorEventSend(ID_NPC_WOLF, \"Complete\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -617,8 +612,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -700,7 +694,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -777,8 +770,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -798,8 +790,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -938,7 +928,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--Conversation between Aileen and lone survivor pale knight\r\n\tHydra.ActorPlaySimpleConversation(CON_TIRMAIR_INTRO, ID_AILEEN)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1068,8 +1057,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1089,8 +1077,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1252,7 +1238,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1343,8 +1328,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1364,8 +1348,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1508,7 +1490,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.SetPlayerVariableFlag(idActorPlayer, \"QST_Scos_Moors_RaziaOptConvo\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1594,8 +1575,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1615,8 +1595,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1646,11 +1624,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

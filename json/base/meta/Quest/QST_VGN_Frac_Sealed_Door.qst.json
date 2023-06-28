@@ -155,7 +155,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"GOATS\")\r\n\tHydra.ActorPlayConversation(CONVO_PC_01, idActor)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -232,8 +231,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -253,8 +251,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -365,7 +361,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -442,8 +437,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\tHydra.Wait(1)\r\n\t--Hydra.ActorsEnableLinkedByActorInGroup(idSelf, \"GHOST\")\r\n\t-- I set the spawner to fire on external script command rather than have it disabled.\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idSelf, \"GHOST\")\r\n\t\r\n\t-- Slight delay just to be sure the ghost has had chance to spawn before we get the group.\r\n\t-- Might be able to adjust this number to suit.\r\n\tHydra.Wait(0.3)\r\n\r\n\tlocal tBandits = Hydra.ActorsInGroup(\"QST_Frac_SealDoor_Ghost\")\r\n\tfor i, idBandit in ipairs(tBandits) do\r\n\t\tif Hydra.ActorIsValid(idBandit) then\r\n\t\t\tHydra.ActorPlayEffectGroupActorToActor(LOC_DOOR_01, idBandit, FX_ROPE)\r\n\t\t\tHydra.ActorPlayEffectGroupActorToActor(LOC_DOOR_02, idBandit, FX_ROPE)\r\n\t\t\tHydra.ActorPlayEffectGroup(idBandit, FX_BLAST)\r\n\t\t\tHydra.QActorPlaySimpleConversation(CONVO_GHOST_01, idBandit)\r\n\r\n\t\tend\r\n\tend\r\n\r\n\tHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -463,8 +457,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -553,7 +545,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\tid_Self = Hydra.QuestGetOwner()\t\r\n\tHydra.ActorPlayDisembodiedConversation(CONVO_GHOST_02, id_Self)\r\n\tHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -630,8 +621,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -651,8 +641,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -682,11 +670,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -81,8 +81,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -148,7 +146,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal bPortalSpawned = false;\r\n\t\r\n\tHydra.Wait(FL_PORTALSPAWN_COOLUP);\r\n\r\n\twhile (true) do\r\n\t\r\n\t\t-- Find valid players\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tlocal idPlayerValid = Hydra.ACDID_INVALID;\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\t\tidPlayerValid = idPlayer;\r\n\t\t\t\tbreak;\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\tif Hydra.ActorIsValid(idPlayerValid) then\r\n\t\t\t-- If dungeon is done stop spawning portal\r\n\t\t\tif not Hydra.SubzoneIsDungeon() then\r\n\t\t\t\treturn;\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\t-- Check to see whether there's a portal exists\r\n\t\t\tlocal bPortalExists = false;\r\n\t\t\tfor i, idPortal in ipairs(gt_Portals) do\r\n\t\t\t\tif Hydra.ActorIsValid(idPortal) and Hydra.ActorIsAlive(idPortal) then\r\n\t\t\t\t\tbPortalExists = true;\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\ttPlayer = Hydra.PlayerActors();\r\n\t\t\t\r\n\t\t\t-- If portal exists, wait for it to be killed\r\n\t\t\tif bPortalExists then\r\n\t\t\t\tHydra.Wait(0.5);\r\n\t\t\telse\r\n\t\t\t\tif #gt_Portals > 0 then\r\n\t\t\t\t\tgt_Portals = {};\r\n\t\t\t\tend\r\n\t\t\t\t\r\n\t\t\t\t-- If we already spawned portal, it means the portal just got killed. Start a cooldown until next portal is spawned\r\n\t\t\t\tif bPortalSpawned then\r\n\t\t\t\t\tbPortalSpawned = false;\r\n\r\n\t\t\t\t\t-- Check whether boss fight is in progress\r\n\t\t\t\t\tlocal bBossFight = false;\r\n\t\t\t\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\t\t\t\tif Hydra.ActorIsValid(idPlayer) and Hydra.ActorIsAlive(idPlayer) and Hydra.ActorIsInCombat(idPlayer) then\r\n\t\t\t\t\t\t\t-- Check whether it is fighting boss\r\n\t\t\t\t\t\t\tif not Hydra.BossEncounterIsInProgress(Hydra.ActorGetLevelArea(idPlayer)) then\r\n\t\t\t\t\t\t\t\tbBossFight = true;\r\n\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif bBossFight then\r\n\t\t\t\t\t\tHydra.Wait(Hydra.GetRandomInt(FL_PORTALSPAWN_DELAY_MIN, FL_PORTALSPAWN_DELAY_MAX) + FL_PORTALSPAWN_DELAY_BOSSEXTRA);\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tHydra.Wait(Hydra.GetRandomInt(FL_PORTALSPAWN_DELAY_MIN, FL_PORTALSPAWN_DELAY_MAX));\r\n\t\t\t\t\tend\r\n\t\t\t\t-- We haven't spawn a portal yet. Need to spawn it now\r\n\t\t\t\telse\r\n\t\t\t\t\t-- First check to see whether any player is in combat\r\n\t\t\t\t\tlocal tPlayersValid = {};\r\n\t\t\t\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\t\t\t\tif Hydra.ActorIsValid(idPlayer) and Hydra.ActorIsAlive(idPlayer) and Hydra.ActorIsInCombat(idPlayer) and Hydra.PositionIsOnValidNavmesh(Hydra.ActorGetPosition(idPlayer)) then\r\n\t\t\t\t\t\t\t-- Check whether it is fighting boss\r\n\t\t\t\t\t\t\tif not Hydra.BossEncounterIsInProgress(Hydra.ActorGetLevelArea(idPlayer)) then\r\n\t\t\t\t\t\t\t\ttable.insert(tPlayersValid, idPlayer);\r\n\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif #tPlayersValid > 0 then\r\n\t\t\t\t\t\t-- Spawn it near a random player\r\n\t\t\t\t\t\tlocal idPlayerPortal = tPlayersValid[Hydra.GetRandomInt(1, #tPlayersValid)];\r\n\t\t\t\t\t\tlocal ptPlayer = Hydra.ActorGetPosition(idPlayerPortal);\r\n\t\t\t\t\t\t--local ptSpawnPortal = Hydra.PositionSearchForNearbyNavmeshPosition(ptPlayer, FL_PORTALSPAWN_DISTANCE_MIN, FL_PORTALSPAWN_DISTANCE_MAX);\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tlocal ptFacingRandom = Hydra.FacingFromYaw(360 * Hydra.GetRandomFloat());\r\n\t\t\t\t\t\tlocal flDistanceRandom = FL_PORTALSPAWN_DISTANCE_MIN + (FL_PORTALSPAWN_DISTANCE_MAX - FL_PORTALSPAWN_DISTANCE_MIN) * Hydra.GetRandomFloat();\r\n\t\t\t\t\t\tlocal ptSpawnPortal = Hydra.PositionOffset(ptPlayer, ptFacingRandom, flDistanceRandom);\r\n\t\t\t\t\t\tptSpawnPortal = Hydra.PositionCollideAgainstNavmesh(ptPlayer, ptSpawnPortal);\r\n\t\t\t\t\t\tptSpawnPortal = Hydra.PositionGetOpenLocationNearPosition(ptSpawnPortal, S_HELLPORTAL_ACTOR);\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\tif Hydra.PositionIsValid(ptSpawnPortal) then\r\n\t\t\t\t\t\t\t-- If it is not too close to the entrance\r\n\t\t\t\t\t\t\tlocal ptEntrance = Hydra.DungeonSubzoneGetEntrancePosition();\r\n\t\t\t\t\t\t\tif Hydra.PositionGetDistanceSquaredToPosition(ptSpawnPortal, ptEntrance) > FL_DISTANCEFROMENTRANCE_SQUARE then\r\n\t\t\t\t\t\t\t\t-- Spawn the Portal\r\n\t\t\t\t\t\t\t\tlocal idPortal = Hydra.ActorSpawnActor(S_HELLPORTAL_ACTOR, ptSpawnPortal, Hydra.FacingFromYaw(45), false, 0, 0);\r\n\t\t\t\t\t\t\t\tif Hydra.ActorIsValid(idPortal) then\r\n\t\t\t\t\t\t\t\t\tbPortalSpawned = true;\r\n\t\t\t\t\t\t\t\t\tHydra.ActorTriggerPowerAtTarget(idPortal, idPortal, S_DUNGEON_AFFIX_POWER);\r\n\t\t\t\t\t\t\t\t\ttable.insert(gt_Portals, idPortal);\r\n\t\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\t\tend\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\tend\r\n\t\t\t\t\t\r\n\t\t\t\t\tHydra.Wait(0.5);\r\n\t\t\t\tend -- if bPortalSpawned then else\r\n\t\t\tend -- if bPortalExists then else\r\n\t\telse\r\n\t\t\tHydra.Wait(0.5);\r\n\t\tend -- if Hydra.ActorIsValid(idPlayerValid) then\r\n\tend -- while loop\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -225,8 +222,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -278,7 +274,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\t-- Check to see whether there's a portal exists\r\n\tlocal idPortalValid = Hydra.ACDID_INVALID;\r\n\tfor i, idPortal in ipairs(gt_Portals) do\r\n\t\tif Hydra.ActorIsValid(idPortal) and Hydra.ActorIsAlive(idPortal) then\r\n\t\t\tidPortalValid = idPortal;\r\n\t\t\tbreak;\r\n\t\tend\r\n\tend\r\n\tif not Hydra.ActorIsValid(idPortalValid) then\r\n\t\treturn;\r\n\tend\r\n\r\n\tlocal idPlayer = Hydra.ActorGetClosestPlayer(idPortalValid);\r\n\tif not Hydra.ActorIsValid(idPlayer) or not Hydra.ActorIsAlive(idPlayer) then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\tif Hydra.ActorDistanceSquaredBetweenActors(idPlayer, idPortalValid) > 625 then\r\n\t\tHydra.ActorTriggerPowerAtTarget(idPortalValid, idPlayer, Hydra.ReferencePower(\"Dungeon_Affix_HellPortal_Teleport\"));\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -355,8 +350,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -376,8 +370,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Hydra.TraceScreen(\"Added Dungeon Affix: {c_blue}\"..S_DUNGEON_AFFIX_NAME..\"{/c}\");\r\n\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -407,11 +399,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "S_DUNGEON_AFFIX_NAME = \"Hell Portal\";\r\nS_DUNGEON_AFFIX_POWER = Hydra.ReferencePower(\"Dungeon_Affix_HellPortal\");\r\n\r\ngid_ThisQuest = Hydra.ACDID_INVALID;\r\n\r\n-- Affix specific data\r\nS_HELLPORTAL_ACTOR = Hydra.ReferenceActor(\"Dungeon_Affix_HellPortal\");\r\nFL_PORTALSPAWN_DISTANCE_MIN = 2;\r\nFL_PORTALSPAWN_DISTANCE_MAX = 4;\r\nFL_PORTALSPAWN_DELAY_MIN = 18;\r\nFL_PORTALSPAWN_DELAY_MAX = 26;\r\nFL_PORTALSPAWN_DELAY_BOSSEXTRA = 10;\r\nFL_DISTANCEFROMENTRANCE_SQUARE = 225;\r\nFL_PORTALSPAWN_COOLUP = 30;\r\n\r\ngt_Portals = {};\r\n",
- "szOnStartupScript": "gid_ThisQuest = idSelf;\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

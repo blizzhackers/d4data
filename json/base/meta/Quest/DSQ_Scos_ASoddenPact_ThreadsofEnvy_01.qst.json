@@ -143,7 +143,6 @@
        "unk_9c1ea4f": 52,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--Roina Actor and Loc for Conversation\r\n\tidRoina = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"NPC_ROINA\")[1]\r\n\tlocFront = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"NPC_STATIC_LOC\")[1]\r\n\tlocExit = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"NPC_EXIT_LOC\")[1]\r\n\t\r\n\t-- Wight Fight variables\r\n\tidWight = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"WIGHT\")[1]\r\n\tidHairSpawner = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"HAIR_SPAWNER\")[1]\r\n\tidZombieSpawner = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"ZOMBIE_SPAWNER\")[1]\r\n\t\r\n\t--Roina moves to Wight, commenting\r\n\t\r\n\tidFollower = Hydra.QuestGetFollowers()[1]\r\n\t\r\n\tHydra.ActorEnableAI(idFollower, false)\r\n\tHydra.QuestFollowerTakeOwnership(idFollower)\r\n\tHydra.ActorPlaySimpleConversation(CON_WIGHT_FOUND, idFollower)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, locFront, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idFollower, locFront)\r\n\tHydra.WaitForConversationFinished(idFollower, CON_WIGHT_FOUND)\r\n\tHydra.WaitForQEmpty(idFollower)\r\n\tHydra.EventSend(\"WightConversation\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -237,8 +236,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -327,7 +325,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Enable static Roina\r\n\tHydra.ActorDelete(idFollower)\r\n\tHydra.ActorEnable(idRoina)\r\n\tHydra.QActorEnableAI(idRoina, false)\r\n\tHydra.ActorSetSheathPreference(idRoina, (Hydra.SHEATH_PREF_SHEATHED))\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -404,8 +401,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -486,7 +482,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\tHydra.ActorPlaySimpleConversation(CON_ENTER_DUNGEON, idActorFollower)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -572,8 +567,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -593,8 +587,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Wight Setup\r\nHydra.ActorSetTargetableInActorGroup(\"QST_Scos_Sodden_Wight\", false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -705,7 +697,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -782,8 +773,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -884,7 +874,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Roina exits\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idRoina, locExit, \"NPC_Run\", false)\r\n\tHydra.QActorFadeAndDelete(idRoina, 1.0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -961,8 +950,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -982,8 +970,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Enable Journal 03\r\nHydra.ActorEnable(ID_JOURNAL)\r\n\r\n--Ealda sheath weapon (for Conversation)\r\nHydra.ActorSetSheathPreference(idRoina, (Hydra.SHEATH_PREF_SHEATHED))",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1095,7 +1081,6 @@
        "unk_9c1ea4f": 268,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n--Turn off Sodden Growth spawner\r\n\tHydra.ActorGizmoSetDisabled(idHairSpawner, true)\r\n\r\n--Turn off Zombie Spawner\r\n\tHydra.ActorGizmoSetDisabled(idZombieSpawner, true)\r\n\tfor i, idZomb in ipairs(Hydra.ActorsInGroup(GRP_ZOMBIES)) do\r\n\t\tif (Hydra.ActorIsValid(idZomb)) then\r\n\t\t\tHydra.ActorKill(idZomb)\r\n\t\tend\r\n\t\r\n--Water Wight's final message\r\n\tHydra.ActorPlayDisembodiedConversation(CON_WIGHTWHISPER, idActorKiller)\r\n\r\n--Make Roina Follower static for Conversation\r\n\tidFollower = Hydra.QuestGetFollowers()[1]\r\n\r\n\tif Hydra.ActorIsValid(idFollower) then\r\n\t\tHydra.ActorEnableAI(idFollower, false)\r\n\t\tHydra.QuestFollowerTakeOwnership(idFollower)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idFollower, locFront, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idFollower, locFront)\r\n\t\tHydra.WaitForQEmpty(idFollower)\r\n\t\tHydra.ActorDelete(idFollower)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1181,8 +1166,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1254,7 +1238,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t-- Play a rope effect from the Wight to the spawned actor\r\n\tif Hydra.ActorIsValid(idActorSpawned)then\r\n\t\ttRopes[idActorSpawned] = Hydra.ActorPlayEffectGroupActorToActor(idActorSpawned, idWight, S_BLOOD_ROPE, true)\r\n\t\t-- Add 1 Hair Guard.  Player must destroy all active Hair Guards before they're able to kill SoddenEffigy\r\n\t\tidHairGuard = idHairGuard+1\r\n\tend\r\n\t\r\n\t-- set the Wight to invulnerable\r\n\tif Hydra.ActorIsValid(idWight) then\r\n\t\tHydra.ActorSetInvulnerable(idWight, true)\r\n\t\tidWightShield = Hydra.ActorPlayEffectGroup(idWight, S_FX_SHIELD, true)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1345,7 +1328,6 @@
        "unk_9c1ea4f": 23,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t-- Remove complex effect (validate)\r\n\tif Hydra.ActorIsValid(idActorKilled)then\r\n\t\tidHairGuard = idHairGuard-1\r\n\t\tif Hydra.ActorComplexEffectIsValid(idActorKilled, tRopes[idActorKilled]) then\r\n\t\t\tHydra.ActorRemoveComplexEffect(idActorKilled, tRopes[idActorKilled])\r\n\t\tend\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(idWight) then\r\n\t\tif idHairGuard<=0 then\r\n\t\t\tHydra.ActorSetInvulnerable(idWight, false)\r\n\t\t\tif Hydra.ActorComplexEffectIsValid(idWight, idWightShield) then\r\n\t\t\t\tHydra.ActorRemoveComplexEffect(idWight, idWightShield)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1422,8 +1404,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1443,8 +1424,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1495,8 +1474,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1616,7 +1593,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1693,8 +1669,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1714,8 +1689,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1856,7 +1829,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t-- Enable Rona AI\r\n\tHydra.QActorEnableAI(idRoina, true)\r\n\tHydra.ActorSetSheathPreference(idRoina, (Hydra.SHEATH_PREF_UNSHEATHED))\r\n\t\r\n\t-- Wight Fight Begins\r\n\tHydra.ActorSetTargetable(idWight, true)\r\n\tHydra.ActorSetNoDamage(idWight, false)\r\n\tHydra.ActorGizmoSetDisabled(idHairSpawner, false)\r\n\tHydra.ActorGizmoSetDisabled(idZombieSpawner, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1933,8 +1905,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1954,8 +1925,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1985,11 +1954,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "tRopes = {}\r\nidHairGuard = 0",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

@@ -185,7 +185,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- Grant the item to the player who operated the chest, player makes a comment\r\n\tHydra.ItemGiveQuestItemToPlayer(idActorPlayer, itemEliasFinger, \"QST_Hawe_Delta_03\")\r\n\tidFingerPlayer = idActorPlayer\r\n\tHydra.Wait(0.5)\r\n\r\n\t------------------------------------------------\r\n\t-- MarkerLink Variable Setup\r\n\t-- We need to do this here since we can't use PSV to grab dungeon content.\r\n\t-- These are all linked to the Chest in the labeled markerset.\r\n\t------------------------------------------------\r\n\t\r\n\t-- This is the delay from the moment the water begins rising that the traversal is disabled + the triggers are used to stun players.\r\n\t-- They are additive, which means the total event time is 10 seconds.\r\n\ttTriggerKillDelays = {7.5,0.5,0.5,0.5,0.5,0.5}\r\n\r\n\t-- These are Proximity Triggers. When the Trigger Kill Delay is met, every actor inside is stunned\r\n\ttIslandTriggers = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"ISLAND_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t-- These are used to disable/enable traversals.\r\n\t-- They are snapped to the position of the traversals starting with the one you use to leave the island\r\n\ttTraversalProbes = {\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_00\")[1],\r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_01\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_02\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_03\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_04\")[1], \r\n\t\t\t\tHydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAVERSAL_PROBE_05\")[1]\r\n\t\t\t\t}\r\n\t\t\t\t\r\n\tidBlockingRocks = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"BLOCKING_ROCKS\")[1]\r\n\tidFallingDebrisLocation = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"FALLING_DEBRIS_LOC\")[1]\r\n\t\t\t\t\r\n\t--These are used to disable/enable traps,\r\n\t--They will turn on after you've picked up the finger\r\n\ttTraps = Hydra.ActorsLinkedByActorInGroup(idActorGizmo, \"TRAPS\")\r\n\r\n\t\r\n\t\r\n\r\n\t\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -271,8 +270,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -292,8 +290,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -428,7 +424,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FingerAltar, idActor)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -505,8 +500,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -580,7 +574,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FloodedPassage, idActor)\r\n\tHydra.WaitForConversationFinished(conv_FloodedPassage)\r\n\tHydra.ActorSetInvulnerable(idWeakPillar, false)\r\n\tHydra.ActorSetTargetable(idWeakPillar, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -681,7 +674,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.Wait(7)\r\n\tfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\t\tSetTraversalEnabled(TraversalKill, true)\r\n\tend\r\n\t\r\n\t--updating minimap to reaveal bridge\r\n\tHydra.ActorSceneRevealSecretMap(tTraversalKillers[1], 1)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -767,8 +759,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -872,7 +863,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1009,7 +999,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1137,7 +1126,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tHydra.ActorKill(idActorNPC)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1214,8 +1202,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "RLH_DOOR = Hydra.ActorsInGroup(\"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RLHDoor\")[1]\r\nHydra.ActorFadeAndDelete(RLH_DOOR, 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1256,7 +1243,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1333,8 +1319,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1)\r\n\r\nif Hydra.ActorIsValid(idPlayer) then\r\n\tHydra.ActorPlayConversation(conv_PlayerMuses, idPlayer)\r\nend \r\n\r\nHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1354,8 +1339,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1475,7 +1458,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1552,8 +1534,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1669,7 +1650,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorKill(idActorNPC)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlayConversation(conv_FirstRitual, idActorPlayer)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1746,8 +1726,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1767,8 +1746,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "idWeakPillar = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillar\")[1]\r\nHydra.ActorSetInvulnerable(idWeakPillar, true)\r\nHydra.ActorSetTargetable(idWeakPillar, false)\r\n\r\ntTraversalKillers = Hydra.ActorsInGroup(\"QST_Hawe_Delta_WeakPillarTraversalKillers\")\r\n\r\nfor i, TraversalKill in ipairs(tTraversalKillers) do\r\n\tSetTraversalEnabled(TraversalKill, false)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1902,7 +1879,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tHydra.ActorPlayEffectGroup(idActorPlayer, S_FADE_IN_EFF)\r\n\r\n\tif not Hydra.IsPlayerVariableSet(idActorPlayer, \"DeltaFirstTimeInTemple\") then\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActorPlayer, POWER_WAKEUP)\r\n\t\tHydra.SetPlayerVariableFlag(idActorPlayer, \"DeltaFirstTimeInTemple\")\r\n\tend\r\n\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1993,8 +1969,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2014,8 +1989,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2154,7 +2127,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorPlayConversation(conv_FindFinger, idActor)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2231,8 +2203,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2252,8 +2223,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2340,7 +2309,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\t-- Create the heartbeat actor (deleted at the end)\r\n\t-- spawn on a point, since players can become invalid at any time\r\n\tidHeartBeat = Hydra.ActorSpawnActor(sHeartBeatSounds, idFallingDebrisLocation) \r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Rocks fall near the player\r\n\t-- This also starts the actual water rising (embedded in this actor)\r\n\tHydra.ActorSpawnActor(idFallingDebris,idFallingDebrisLocation,false,0,0)\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetLevelArea(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_RunLikeHeck\" then -- Only players within the flooding section\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxScreenShake)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\n\t\r\n\tfor i, idTrap in ipairs(tTraps) do\r\n\t\tHydra.ActorEnable(idTrap)\r\n\tend\r\n\t\r\n\tHydra.Wait(2.0) -- 2.5 total wait\r\n\r\n\t-- \"Im not going to die in here!\"\r\n\tif Hydra.ActorIsValid(idFingerPlayer) then\r\n\t\tHydra.ActorPlayConversation(conv_Escape, idFingerPlayer)\r\n\tend\r\n\t\r\n\t-----------------------------------------\r\n\t-- VIGNETTE -Phase 2 Logic Start Immedietley\r\n\t-----------------------------------------\r\n\r\n\t\r\n\t-- The Hydra.Waits() in here add up to 10 seconds (declared in previous phase)\r\n\tSetTraversalEnabled(tTraversalProbes[6], false)\r\n\tHydra.ActorGizmoSetDisabled(idBlockingRocks,false)\r\n\t\r\n\tfor i=1, #tTriggerKillDelays, 1 do\r\n\t\tHydra.Wait (tTriggerKillDelays[i])\r\n\t\ttActorsInTrigger = Hydra.ActorsInTriggerBounds(tIslandTriggers[i])\r\n\r\n\t\tfor i, idActorInTrigger in ipairs(tActorsInTrigger) do\r\n\t\t\t-- only stun players, ignore other actor SNOs\r\n\t\t\tif Hydra.ActorIsPlayer(idActorInTrigger) then \r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idActorInTrigger, idActorInTrigger, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\tSetTraversalEnabled(tTraversalProbes[i], false)\r\n\tend\r\n\t\r\n\t-- By the time we get here, we have Hydra.Wait()ed 12.5 seconds total.\r\n\t\r\n\t-- Remove the heartbeat that was created earlier\r\n\tif Hydra.ActorIsValid(idHeartBeat) then\r\n\t\tHydra.ActorDelete(idHeartBeat)\r\n\tend\t\r\n\r\n\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t-- Make the screen dark\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\tHydra.ActorPlayEffectGroup(idPlayer, fxFadeToBlack)\r\n\t\t\t\t\r\n\t\t\t\t-- Stun everyone in case we somehow missed someone\r\n\t\t\t\tHydra.ActorTriggerPowerAtTarget(idPlayer, idPlayer, powerStun)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\t\r\n\t-- objective complete at this point on the tracker\r\n\tHydra.EventSend(\"Deathspeaker_FloodingComplete\")\r\n\t\r\n\t-- Wait a beat\r\n\tHydra.Wait(4) -- The 17.5 seconds total\r\n\t\r\n\t\r\n\t-- Refresh the player table\r\n\ttPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\t--Warp to sanctuary\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\tif Hydra.ActorGetWorld(idPlayer) == \"CSD_Hawe_Swamp_TempleoftheDeathspeaker\" then -- Only players within this world\r\n\t\t\t\t\r\n\t\t\t\t-- We are setting the game variable HERE because if there are no players inside this dungeon when we get here, \r\n\t\t\t\t-- it means they used a scroll of escape, and they will not be appearing where you would if the delta quest continued. \r\n\t\t\t\t-- We treat this as a relog.\r\n\t\t\t\tHydra.SetGameVariableFlag(\"DeltaQuestContinued\", true)\r\n\t\t\t\t\r\n\t\t\t\t-- Remove the stun buff before you warp.\r\n\t\t\t\tHydra.BuffRemove(powerStun, \"STUN_SELF\", idPlayer) \r\n\t\t\t\t\r\n\t\t\t\t-- Warp to where lorath is standing, concatenate the GBID with the player index, so the players dont stack on eachother\r\n\t\t\t\tHydra.PlayerWarpToWorld(idPlayer, \"Sanctuary_Eastern_Continent\", \"CSD_Hawe_Swamp_TempleoftheDeathspeaker_Exit_Alt_\"..i, true, true)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2448,7 +2416,6 @@
         "name": "CSD_Hawe_Swamp_TempleoftheDeathspeaker"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2525,8 +2492,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 22,
@@ -2546,8 +2512,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2591,11 +2555,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

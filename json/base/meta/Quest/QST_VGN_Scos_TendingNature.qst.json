@@ -119,7 +119,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\t-- Move bear to quest npc location, transform, and hand back control to main quest\r\n\tHydra.QActorMoveToLocationConstantSpeed(ID_BEAR, MARKER_ENDLOCATION, Hydra.MOVE_RATE_RUN, true)\r\n\tHydra.QActorFaceSameAsActor(ID_BEAR, MARKER_ENDLOCATION)\r\n\tHydra.QActorPlayEffectGroup(ID_BEAR, s_EFFECT_TRANSFORMATION, true)\r\n\tHydra.QActorEventSend(ID_BEAR, \"QST_TendingNature_EndFight\")\r\n\tHydra.QActorDelete(ID_BEAR)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -196,8 +195,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -279,7 +277,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -356,8 +353,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -377,8 +373,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -499,7 +493,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.ActorEnable(ID_BEAR)\r\n\tHydra.ActorSetDamageCap(ID_BEAR, 0.05)\r\n\tHydra.ActorSetCannotBeTargetedByAI(ID_BEAR, false)\r\n\t\r\n\t-- Turn aggro\r\n\tfor i, idActor in ipairs(tPoachers) do\r\n\t\tHydra.ActorSetSheathPreference(idActor, 2)\r\n\t\tHydra.ActorSetTeam(idActor, Hydra.TEAM_MONSTER_0)\r\n\t\tHydra.ActorSetInvulnerable(idActor, false)\r\n\t\tHydra.ActorSetCannotBeTargetedByAI(idActor, false)\r\n\t\tHydra.ActorEnableAI(idActor, true)\r\n\t\tHydra.ActorSetAIState(idActor, \"aggressive\")\r\n\t\tHydra.ActorAIForcePrimaryTarget(idActor, ID_BEAR)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -576,8 +569,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -597,8 +589,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "tPoachers = Hydra.ActorsLinkedByActorInGroup(idSelf, \"npc_refugee\")\r\n\r\n-- Set non targetable and non-aggro at start so they don't kill all the wildlife\r\nfor i, idActor in ipairs(tPoachers) do\r\n\tHydra.QActorEnableAI(idActor, false)\r\n\tHydra.ActorSetInvulnerable(idActor, true)\r\n\tHydra.ActorSetCannotBeTargetedByAI(idActor, true)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -628,11 +618,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idSelf = Hydra.QuestGetOwner()\r\n\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -185,7 +185,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -280,8 +279,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -301,8 +299,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -445,7 +441,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tEYE_PEDESTAL = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss04_Pedestal\")[1]\r\n\t\r\n\tHydra.QActorAnim(idLorath, \"AnimKey_PickupObject_Large\")\r\n\tHydra.ActorPlayEffectGroup(EYE_PEDESTAL, S_PEDESTAL_REMOVE_EYE) --QActorPlayEffectGroup(EYE_PEDESTAL, S_PEDESTAL_REMOVE_EYE, true)\r\n\tHydra.QActorWait(idLorath, 0.5)\r\n\tHydra.Wait(0.5)\r\n\t--Hydra.ActorSetScriptedLookOverride(EYE_PEDESTAL, \"A\")\r\n\t\r\n\tLORATH_ESCAPE_WINDOW_MARKER02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss04_Marker02\")[1]\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, LORATH_ESCAPE_WINDOW_MARKER02, \"NPC_Run\", true)\r\n\tHydra.QActorDelete(idLorath)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -531,8 +526,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -618,7 +612,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.WaitForQEmpty(idLorathFollower)\r\n\tHydra.ActorEnable(idLorath)\r\n\t\r\n\t--Hydra.ActorSetScriptedLookOverride(SIGHTLESS_EYE_PEDESTAL, \"A\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -704,8 +697,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -725,8 +717,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -851,7 +841,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidElias = Hydra.ActorsEnableLinkedByActorInGroup(idActorDetector, \"ELIAS\")[1]\r\n\tidLorath = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"LORATH\")[1]\r\n\tidLorathReceptacle = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"LORATH_RECEPTACLE\")[1]\r\n\tidLorathLook = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"LORATH_LOOK\")[1]\r\n\tELIAS_BOSS_04_MARKER = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss04_Marker\")[1]\r\n\t\r\n\tHydra.ActorDelete(idActorDetector)\r\n\t\r\n\tHydra.Wait(0.5)\r\n\tHydra.ActorPlaySimpleConversation(CONV_ESCAPE_06, idElias)\r\n\tHydra.QActorMoveToLocationConstantSpeed(idElias, ELIAS_BOSS_04_MARKER, Hydra.MOVE_RATE_WALK, true)\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_OVERLOOK_FIGHT)\r\n\tHydra.WaitForConversationFinished(CONV_ESCAPE_06)\r\n\t\r\n\tif Hydra.ActorIsAlive(idElias) then\r\n\t\tHydra.ActorEnableAI(idElias, true)\r\n\t\tHydra.ActorSetNoDamage(idElias, false)\r\n\t\tHydra.ActorSetTeam(idElias, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -928,8 +917,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -949,8 +937,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1069,7 +1055,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tLORATH_ESCAPE_WINDOW_MARKER01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss04_Marker01\")[1]\r\n\t\r\n\tidActorPlayer = idActorKiller\r\n\tHydra.BossEncounterManuallyComplete(S_LEVELAREA_OVERLOOK_FIGHT)\r\n\t\r\n\tidLorathFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tif Hydra.ActorIsValid(idLorathFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idLorathFollower)\r\n\t\tHydra.ActorSetSheathPreference(idLorathFollower, 1)\r\n\t\tHydra.QActorStopAllQueuedActions(idLorathFollower)\r\n\t\tHydra.QActorClearAnimSetOverride(idLorathFollower)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, LORATH_ESCAPE_WINDOW_MARKER01, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorEnableAI(idLorathFollower, false)\r\n\t\tHydra.QActorFaceActor(idLorathFollower, idLorathLook)\r\n\t\tHydra.QActorFadeAndDelete(idLorathFollower, 0.5)\r\n\tend\r\n\t\r\n\t---Delete initial Lorath NPC in Palace\r\n\tif Hydra.ActorIsValid(idLorathBossRoom01) then\r\n\t\tHydra.ActorDelete(idLorathBossRoom01)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1155,8 +1140,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1244,7 +1228,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1330,8 +1313,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1406,7 +1388,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_07, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1492,8 +1473,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1568,7 +1548,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_08, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1654,8 +1633,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1675,8 +1653,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1788,7 +1764,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_LEVELAREA_MAGE_HOLDOUT)\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\tidLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tif Hydra.ActorIsValid(idLorath) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONV_ESCAPE_03, idLorath)\r\n\tend\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1874,8 +1849,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1963,7 +1937,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2049,8 +2022,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2125,7 +2097,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_05, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2211,8 +2182,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2287,7 +2257,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_06, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2373,8 +2342,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2394,8 +2362,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2506,7 +2472,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tELIAS_BOSS_03 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss03\")[1]\r\n\tELIAS_BOSS_03_MARKER_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss03_Marker01\")[1]\r\n\tHydra.ActorEnable(ELIAS_BOSS_03)\r\n\t--idElias = Hydra.ActorsEnableLinkedByActorInGroup(idActorDetector, \"ELIAS_03\")[1]\r\n\tHydra.Wait(1.0)\r\n\tHydra.ActorPlayConversation(CONV_ESCAPE_02a, idActor, ELIAS_BOSS_03)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2583,8 +2548,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2677,7 +2641,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_MAGE_HOLDOUT)\r\n\tHydra.QActorMoveToLocationConstantSpeed(ELIAS_BOSS_03, ELIAS_BOSS_03_MARKER_01, Hydra.MOVE_RATE_WALK, false)\r\n\tHydra.WaitForConversationFinished(CONV_ESCAPE_02a)\r\n\t\r\n\tif Hydra.ActorIsAlive(ELIAS_BOSS_03) then\r\n\t\tHydra.ActorEnableAI(ELIAS_BOSS_03, true)\r\n\t\tHydra.ActorSetNoDamage(ELIAS_BOSS_03, false)\r\n\t\tHydra.ActorSetTeam(ELIAS_BOSS_03, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2754,8 +2717,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2775,8 +2737,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2895,7 +2855,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tidLorathfollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tELIAS_BOSS_SIGHTLESSEYE = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_SightlessEye_Marker\")[1]\r\n\t\r\n\tHydra.Wait(1)\r\n\tif Hydra.ActorIsValid(idLorathfollower) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONV_ESCAPE_01, idLorathfollower)\r\n\tend\r\n\tHydra.BossEncounterManuallyComplete(S_LEVELAREA_EYE_CHAMBER)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2981,8 +2940,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--kill all remaining monsters from previous area, so when escaping there are no left over enemies from previous quest steps\r\nlocal tEliasPalaceRemainingMonsters = Hydra.ActorsInGroup(S_MONSTER_ACTOR_GROUP_PALACE)\r\nlocal tEliasMageHallRemainingMonsters = Hydra.ActorsInGroup(S_MONSTER_ACTOR_GROUP_PALACEMAGEHALLS)\r\n\r\nfor i, idRemainingMonster in ipairs(tEliasPalaceRemainingMonsters) do\r\n\tHydra.ActorDelete(idRemainingMonster)\r\nend\r\nfor i, idRemainingMonster in ipairs(tEliasMageHallRemainingMonsters) do\r\n\tHydra.ActorDelete(idRemainingMonster)\r\nend\r\n--manually spawn all flywarriors from the spawners in the actor group, so players have something to kill on the escape\r\nHydra.ActorTriggerSpawnerUpdateInActorGroup(S_MONSTER_ACTOR_GROUP_PALACEESCAPE_FLYWARRIORS)\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3070,7 +3028,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tHydra.Wait(1.0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3156,8 +3113,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3232,7 +3188,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_03, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3318,8 +3273,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3394,7 +3348,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_04, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3480,8 +3433,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3501,8 +3453,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3621,7 +3571,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.Wait(0.5)\r\n\t-- Get a refreshed referenced to the follower, since it can be invalidated at any time\r\n\tidLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\t\r\n\t-- Get all players\r\n\tlocal tPlayers = Hydra.QuestGetParticipants()\r\n\t\t\r\n\tif Hydra.ActorIsValid(idLorath) then \r\n\t\tHydra.ActorEnableAI(idLorath, false)\r\n\t\t\r\n\t\tif Hydra.ActorGetLevelArea(idLorath) == \"CSD_Kehj_Magnus_EliasPalace_EyeRoom\" then\r\n\t\t    for i, idNearbyPlayer in ipairs(tPlayers) do\r\n\t\t\t\tif Hydra.ActorGetFollowTarget(idLorath) == idNearbyPlayer then\r\n\t\t\t\t\tHydra.ActorPlayConversation(CONV_ELIASDIES, idNearbyPlayer, idLorath)\r\n\t\t\t\t\tHydra.WaitForConversationFinished(CONV_ELIASDIES)\r\n\t\t\t\t    break\r\n\t\t        end\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3707,8 +3656,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3796,7 +3744,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3882,8 +3829,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3958,7 +3904,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_01, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4044,8 +3989,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4120,7 +4064,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_BARK_02, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4206,8 +4149,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4241,7 +4183,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tidLorathFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tHydra.QActorClearAnimSetOverride(idLorathFollower)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4318,8 +4259,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4339,8 +4279,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4460,7 +4398,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- bloodpetals removed when conversation ends\r\n\tBLOOD_PETALS = idActorGizmo\r\n\t\r\n\t-- Play IGC\r\n\tCampaignForcedPartyGatherPlayIGC(CONV_VISION, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4579,7 +4516,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tELIAS_BOSS_02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss02\")[1]\r\n\tELIAS_BOSS_MARKER_02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01_Marker02\")[1]\r\n\tHydra.ActorFadeAndDelete(BLOOD_PETALS, 1.0)\r\n\tHydra.Wait(0.5)\r\n\t\r\n\t-- Get a refreshed referenced for Follower Lorath\r\n\tidLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\t\r\n\tif Hydra.ActorIsValid(idActorPlayer) then\r\n\t\tHydra.ActorPlayConversation(CONV_ELIASLIVES, idActorPlayer, idLorath)\r\n\t\tHydra.WaitForConversationFinished(CONV_ELIASLIVES)\r\n\tend\r\n\t\r\n\t\r\n\tHydra.ActorGizmoOperate(idDoorChamber)\r\n\tHydra.ActorEnable(ELIAS_BOSS_02)\r\n\t\r\n\tHydra.Wait(0.5)\r\n\t-- Get a refreshed referenced for Follower Lorath\r\n\tidLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\t\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIASLIVES_02, ELIAS_BOSS_02, idLorath)\r\n\tHydra.QActorMoveToLocationConstantSpeed(ELIAS_BOSS_02, ELIAS_BOSS_MARKER_02, Hydra.MOVE_RATE_WALK, false)\r\n\tHydra.WaitForConversationFinished(CONV_ELIASLIVES_02)\r\n\t\r\n\tif Hydra.ActorIsAlive(ELIAS_BOSS_02) then\r\n\t\tHydra.ActorEnableAI(ELIAS_BOSS_02, true)\r\n\t\tHydra.ActorSetNoDamage(ELIAS_BOSS_02, false)\r\n\t\tHydra.ActorSetTeam(ELIAS_BOSS_02, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\t\r\n\t\r\n\tif Hydra.ActorIsValid(idLorath) then\r\n\t\tHydra.ActorEnableAI(idLorath, true)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4656,8 +4592,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4745,7 +4680,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4831,8 +4765,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4852,8 +4785,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4964,7 +4895,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tINTRO_NOBLE_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroNoble_01\")[1]\r\n\tHydra.WaitForConversationFinished(CONV_LORATH_INTRO)\r\n\tHydra.ActorPlaySimpleConversation(CONV_INTRO_01, INTRO_NOBLE_01)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5041,8 +4971,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5121,7 +5050,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tINTRO_NOBLE_02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroNoble_02\")[1]\r\n\tHydra.ActorPlaySimpleConversation(CONV_INTRO_02, INTRO_NOBLE_02)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5198,8 +5126,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5292,7 +5219,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidDoorIntro = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\t\r\n\tINTRO_NOBLE_03 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroNoble_03\")[1]\r\n\tHydra.ActorPlaySimpleConversation(CONV_INTRO_03a, INTRO_NOBLE_03)\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5378,8 +5304,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5467,7 +5392,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5553,8 +5477,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5633,7 +5556,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tINTRO_NOBLE_PRAYER = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroPrayer\")[1]\r\n\tHydra.ActorPlaySimpleConversation(CONV_INTRO_PRAYER, INTRO_NOBLE_PRAYER)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5710,8 +5632,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5797,7 +5718,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tHydra.ActorPlaySimpleConversation(CONV_LORATH_INTRO, idLorath)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5883,8 +5803,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5904,8 +5823,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5956,8 +5873,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6008,8 +5923,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6060,8 +5973,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6112,8 +6023,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6226,7 +6135,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6303,8 +6211,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6324,8 +6231,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6376,8 +6281,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6428,8 +6331,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6549,7 +6450,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6635,8 +6535,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6747,7 +6646,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\t\r\n\tif Hydra.ActorIsAlive(ELIAS_BOSS_01) then\r\n\t\tHydra.ActorEnableAI(ELIAS_BOSS_01, true)\r\n\t\tHydra.ActorSetNoDamage(ELIAS_BOSS_01, false)\r\n\t\tHydra.ActorSetTeam(ELIAS_BOSS_01, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\r\n\tCURRENT_PLAYER = idActorPlayer\r\n\t\r\n\t---Disable initial Lorath NPC in Palace\r\n\tif Hydra.ActorIsValid(idLorathBossRoom01) then\r\n\t\tHydra.ActorDisable(idLorathBossRoom01)\r\n\tend\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_EYE_CHAMBER)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6842,8 +6740,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6947,7 +6844,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\tHydra.ActorClearAnimSetOverride(ELIAS_BOSS_01)\r\n\t\r\n\tHydra.QActorFaceActor(ELIAS_BOSS_01, LORATH_BOSSROOM_MARKER_01)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7042,8 +6938,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -7063,8 +6958,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -7115,8 +7008,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -7229,7 +7120,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--\tUsed for map pinning\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7324,8 +7214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -7413,7 +7302,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7499,8 +7387,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -7574,7 +7461,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\t--Hydra.ActorEnable(ELIAS_BOSS_01)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7660,8 +7546,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -7742,7 +7627,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tidDoorChamber = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\r\n\t-- Below is moved from Trigger on actored entered in the Kill Elias 1 phase\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\tELIAS_BOSS_MARKER_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01_Marker01\")[1]\r\n\t\r\n\tHydra.Wait(1.0)\r\n\t\r\n\tHydra.ActorClearAnimSetOverride(ELIAS_BOSS_01)\r\n\tif Hydra.ActorIsAlive(ELIAS_BOSS_01) then\r\n\t\tHydra.ActorEnableAI(ELIAS_BOSS_01, true)\r\n\t\tHydra.ActorSetNoDamage(ELIAS_BOSS_01, false)\r\n\t\tHydra.ActorSetTeam(ELIAS_BOSS_01, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\t\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_EYE_CHAMBER)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7828,8 +7712,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -7849,8 +7732,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -7970,7 +7851,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -8056,8 +7936,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -8145,7 +8024,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- safety cleanup for the first elias boss\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\tif Hydra.ActorIsValid(ELIAS_BOSS_01) then\r\n\t\tHydra.ActorDelete(ELIAS_BOSS_01)\r\n\tend\t\r\n\t\r\n\t-- safety cleanup for the second elias boss (original version)\r\n\tELIAS_BOSS_02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss02\")[1]\r\n\tif Hydra.ActorIsValid(ELIAS_BOSS_02) then\r\n\t\tHydra.ActorDelete(ELIAS_BOSS_02)\r\n\tend\t\r\n\t\r\n\tidDoor = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\tELIAS_BOSS_02_RESET = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss02_Reset\")[1]\r\n\tELIAS_BOSS_RESET_MARKER = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss_ResetMarker\")[1]\r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tHydra.ActorGizmoOperate(idDoor)\r\n\tHydra.ActorEnable(ELIAS_BOSS_02_RESET)\r\n\tHydra.WaitForQEmpty(ELIAS_BOSS_02_RESET)\r\n\tif Hydra.ActorIsAlive(ELIAS_BOSS_02_RESET) then\r\n\t\tHydra.ActorEnableAI(ELIAS_BOSS_02_RESET, true)\r\n\t\tHydra.ActorSetNoDamage(ELIAS_BOSS_02_RESET, false)\r\n\t\tHydra.ActorSetTeam(ELIAS_BOSS_02_RESET, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend\t\r\n\r\nHydra.BossEncounterManuallyQueueStart(S_LEVELAREA_EYE_CHAMBER)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -8240,8 +8118,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -8261,8 +8138,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -8405,7 +8280,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tINTRO_MARKER_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroMarker_01\")[1]\r\n\tINTRO_MARKER_02 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_IntroMarker_02\")[1]\r\n\t--Hydra.ActorGizmoOperate(idDoorIntro)\r\n\t--INTRO_NOBLE_03\r\n\tHydra.QActorMoveToLocationConstantSpeed(INTRO_NOBLE_03, INTRO_MARKER_01, Hydra.MOVE_RATE_WALK, true)\r\n\tHydra.QActorFaceSameAsActor(INTRO_NOBLE_03, INTRO_MARKER_01)\r\n\tHydra.QActorSetAnimSetOverride(INTRO_NOBLE_03, \"NPC_Idle_Stand_Use_WaistLevel\")\r\n\tHydra.QActorWait(INTRO_NOBLE_03, 1.5)\r\n\tHydra.WaitForQEmpty(INTRO_NOBLE_03)\r\n\tHydra.QActorClearAnimSetOverride(INTRO_NOBLE_03)\r\n\tHydra.ActorGizmoOperate(idDoorIntro)\r\n\tHydra.QActorMoveToLocationConstantSpeed(INTRO_NOBLE_03, INTRO_MARKER_02, Hydra.MOVE_RATE_WALK, true)\r\n\tHydra.QActorFaceSameAsActor(INTRO_NOBLE_03, INTRO_MARKER_02)\r\n\tHydra.QActorSetAnimSetOverride(INTRO_NOBLE_03, NOBLE_PRAYER_ANIMSET)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -8500,8 +8374,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -8521,8 +8394,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -8573,8 +8444,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -8625,8 +8494,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -8677,8 +8544,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -8810,7 +8675,6 @@
         "name": "CSD_Kehj_Magnus_EliasPalace"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidLorathBossRoom01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01_Lorath01\")[1]\r\n\tif Hydra.ActorIsValid(idLorathFollower) then\r\n\t\tHydra.WaitForQEmpty(idLorathFollower)\r\n\tend\r\n\tHydra.ActorEnable(idLorathBossRoom01)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -8905,8 +8769,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -8987,7 +8850,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidDoorChamber = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\t\r\n\t-- Below is moved from Trigger on actored entered in the Kill Elias 1 phase\r\n\tELIAS_BOSS_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01\")[1]\r\n\tELIAS_BOSS_MARKER_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01_Marker01\")[1]\r\n\r\n\tHydra.ActorPlaySimpleConversation(CONV_ELIAS_PRAYER, ELIAS_BOSS_01)\r\n\t\r\n\tLORATH_BOSSROOM_MARKER_01 = Hydra.ActorsInGroup(\"QST_Kehj_EliasPalace_EliasBoss01_LorathMarker01\")[1]\r\n\tidLorathFollower = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tif Hydra.ActorIsValid(idLorathFollower) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idLorathFollower)\r\n\t\tHydra.QActorStopAllQueuedActions(idLorathFollower)\r\n\t\tHydra.QActorClearAnimSetOverride(idLorathFollower)\r\n\t\tHydra.QActorSetAnimSetOverride(idLorathFollower, LORATH_CONFRONT_ANIMSET)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idLorathFollower, LORATH_BOSSROOM_MARKER_01, \"NPC_Run\", true)\r\n\t\tHydra.QActorEnableAI(idLorathFollower, false)\r\n\t\tHydra.QActorFaceSameAsActor(idLorathFollower, LORATH_BOSSROOM_MARKER_01)\r\n\t\tHydra.QActorFadeAndDelete(idLorathFollower, 0.5)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -9081,8 +8943,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -9102,8 +8963,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -9133,11 +8992,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_LEVELAREA_EYE_CHAMBER = Hydra.ReferenceLevelArea(\"CSD_Kehj_Magnus_EliasPalace_EyeRoom\")\r\n\r\nS_LEVELAREA_MAGE_HOLDOUT = Hydra.ReferenceLevelArea(\"CSD_Kehj_Magnus_EliasPalace_MageHoldout\")\r\nS_LEVELAREA_OVERLOOK_FIGHT = Hydra.ReferenceLevelArea(\"CSD_Kehj_Magnus_EliasPalace_OverlookFight\")\r\n\r\nS_CARRYABLE_SIGHTLESS_EYE = Hydra.ReferenceActor(\"Carryable_SightlessEye\")\r\n\r\n\r\nS_PEDESTAL_REMOVE_EYE = Hydra.ReferenceEffectGroup(\"EliasPalace_SightlessEye_Pedestal_LookSwitch\")\r\n\r\nS_MONSTER_ACTOR_GROUP_PALACE = \"CSD_Kehj_Magnus_EliasPalace\"\r\nS_MONSTER_ACTOR_GROUP_PALACEMAGEHALLS = \"CSD_Kehj_Magnus_EliasPalaceMageHalls\"\r\nS_MONSTER_ACTOR_GROUP_PALACEESCAPE_FLYWARRIORS = \"CSD_Kehj_Magnus_EliasPalace_Flywarriors\"",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

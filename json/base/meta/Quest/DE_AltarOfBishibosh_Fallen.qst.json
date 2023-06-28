@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\t-- Undo the damage we just took so the initial hit is just to start the event\r\n\tlocal flHitPointDeficit = Hydra.ActorGetHitPointsMax(idActorDamaged)-Hydra.ActorGetHitPoints(idActorDamaged)\r\n\t\r\n\tif flHitPointDeficit > 0 then\r\n\t\tHydra.ActorHeal(idActorDamaged, flHitPointDeficit)\r\n\tend\r\n\t\r\n\t-- start spawning\r\n\t\tfor i, idSpawner in ipairs(tWave01) do\r\n\t\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\t\t\tHydra.ActorTriggerSpawnerUpdate(idSpawner)\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t-- \"Activate\" the altar\r\n\tHydra.BuffApplyToTarget( S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -249,8 +247,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -361,7 +357,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -438,8 +433,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -459,8 +453,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Apply the vfx that make the shrine look vulnerable.\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF,\"EffectGroupArt - Timed Phase\",ID_BISHIBOSH_SHRINE) \r\n\r\n-- Remove the damage cap so the player can hit the shrine.\r\nHydra.ActorSetDamageCap(ID_BISHIBOSH_SHRINE, 0)\r\n",
-   "szOnExitScript": "-- Remove the invincible and untargetable buff.\r\nHydra.BuffRemove( S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\n\r\n-- Wave 2 spawning\r\n\tfor i, idSpawner in ipairs(tWave02) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\tend\r\n\tend\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -549,7 +541,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\n\t--Enable Chest\r\n\tif Hydra.ActorIsValid(ID_CHEST) then \r\n\t\tHydra.ActorGizmoSetDisabled(ID_CHEST, false)\r\n\tend \r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -626,8 +617,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -661,7 +651,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Stop spawning\r\n\tfor i, idSpawner in ipairs(tAllSpawners) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\tend\r\n\tend\r\n\r\n\t\r\n-- If the shrine didn't die during the timed phase kill it here and activate the chest.\t\r\n\tif bShrineDead == false then\r\n\t\tif Hydra.ActorIsValid(ID_BISHIBOSH_SHRINE) then\r\n\t\t\t-- Remove the invulnerablity buff if it's on the shrine.\r\n\t\t\tif Hydra.BuffIsOnActor(S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE) then\r\n\t\t\t\tHydra.BuffRemove(S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\n\t\t\tend\r\n\t\t\tHydra.ActorKill(ID_BISHIBOSH_SHRINE)\r\n\t\t\tHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF, \"EffectGroupArt - AltarDeath\", idSelf)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -738,8 +727,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -759,8 +747,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -865,7 +851,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -951,8 +936,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Bonus variables\r\nbShrineDead = true\r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\nHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)\r\n\r\n-- Spawn the Elite\r\nHydra.ActorTriggerSpawnerUpdate(idAvatarOfBishibosh)\r\n\r\n-- Activate the altar death vfx\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF,\"EffectGroupArt - Avatar Alive\", idSelf)\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF, \"EffectGroupArt - AltarDeath\", idSelf)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1004,7 +988,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1081,8 +1064,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1102,8 +1084,6 @@
    "unk_669bcf8": 22,
    "unk_287ecb5": 28,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1194,7 +1174,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1271,8 +1250,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1347,7 +1325,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n-- This buff causes the power to resurrect the shamans.\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF, \"SHRINE_RESURRECT\", ID_BISHIBOSH_SHRINE)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1433,8 +1410,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- This will fill in any shamans that couldn't be resurrected so there are always 5.\r\nUF_ShamanSpawn()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1509,7 +1485,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n-- This buff causes the power to resurrect the shamans.\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF, \"SHRINE_RESURRECT\", ID_BISHIBOSH_SHRINE)\r\n\r\n-- Wave 3 spawning\r\n\tfor i, idSpawner in ipairs(tWave03) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1595,8 +1570,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- This will fill in any shamans that couldn't be resurrected so there are always 5.\r\nUF_ShamanSpawn()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1664,7 +1638,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorResurrected, idActorSource)\r\n\r\n-- If the shrine is still alive give it the correct vfx and the invulnerable buff.\r\n-- Add resurrected shamans to the shaman actor group.\r\n\tif bShrineDead == false then\r\n\t\tHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF,\"EffectGroupArt - Timed Phase\",ID_BISHIBOSH_SHRINE) \r\n\t\tHydra.BuffApplyToTarget( S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\n\t\tHydra.ActorAddToGroup(idActorResurrected, tShamanGroup)\r\n\t\tHydra.ActorAddToGroup(idActorResurrected, tAllMonstersGroup)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1741,8 +1714,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1799,7 +1771,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\n-- When all the shamans die change the shrine vfs so it looks vulnerable and remove the buff.\r\nif Hydra.ActorIsValid(ID_BISHIBOSH_SHRINE) and Hydra.ActorIsAlive(ID_BISHIBOSH_SHRINE) then\r\n\tHydra.BuffRemove(S_BISHIBOSH_SHRINE_BUFF, \"EffectGroupArt - Timed Phase\", ID_BISHIBOSH_SHRINE)\r\n\tHydra.BuffRemove( S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\nend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1876,8 +1847,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1949,7 +1919,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2026,8 +1995,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2085,7 +2053,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2171,8 +2138,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2192,8 +2158,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "\t\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2223,11 +2187,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "-- Spawning new Shamans if old ones can't be resurrected --\r\nfunction UF_ShamanSpawn()\r\n\r\n\tlocal nShamansRezed = Hydra.ActorGroupGetCount(tShamanGroup)\r\n\tlocal nShamansToSpawn = 5 - nShamansRezed\r\n\r\n\twhile nShamansToSpawn > 0 do\r\n\t\tHydra.ActorTriggerSpawnerUpdate(idFallbackSpawner)\r\n\t\tnShamansToSpawn = nShamansToSpawn - 1\r\n\tend\r\n\t\r\n\t-- In the event all Shamans are dead and can't be resurrected rebuff the shrine.\r\n\tHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF,\"EffectGroupArt - Timed Phase\",ID_BISHIBOSH_SHRINE) \r\n\tHydra.BuffApplyToTarget( S_BISHIBOSH_SHRINE_BUFF, \"DE_Fallen_Shrine_Buff\", ID_BISHIBOSH_SHRINE)\r\n\t\r\nend",
- "szOnStartupScript": "-- Variables\r\nbShrineDead = false\r\n\r\n-- Adding a damage cap so the player can't kill the shrine before the event starts.\r\nHydra.ActorSetDamageCap(ID_BISHIBOSH_SHRINE, 99.9)\r\n\r\n-- The initial vfx setup.\r\nHydra.BuffApplyToTarget(S_BISHIBOSH_SHRINE_BUFF,\"EffectGroupArt - Intro\",ID_BISHIBOSH_SHRINE)\r\n\r\n-- Enable the Super Elite spawner so it can be triggered if the player gets the bonus.\r\nHydra.ActorGizmoSetDisabled(idAvatarOfBishibosh, false)\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

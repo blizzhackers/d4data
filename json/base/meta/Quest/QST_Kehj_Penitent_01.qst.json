@@ -199,7 +199,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -285,8 +284,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -306,8 +304,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -380,7 +376,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tidDeserter = Hydra.QuestGetFollower(S_DES_FOLLOWER)\t\r\n\t\r\n\tif Hydra.ActorIsValid(idDeserter) then\r\n\t\tHydra.QActorFaceSameAsActor(idDeserter, LOC_DES_MID_FACING)\r\n\t\tHydra.QActorPlayConversation(CONVO_WASPS, id_Self, idDeserter)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -457,8 +452,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -546,7 +540,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\t--when bugs die, send deserter follower to static's position\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tidDeserter = Hydra.QuestGetFollower(S_DES_FOLLOWER)\t\r\n\t\r\n\tif Hydra.ActorIsValid(idDeserter) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idDeserter)\r\n\t\tHydra.ActorEnableAI(idDeserter, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idDeserter, ID_DES_MID, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idDeserter, ID_DES_MID)\r\n\t\tHydra.QActorSetAnimSetOverride(idDeserter, animSetPeaceful, false, true)\r\n\t\tHydra.QActorWait(idDeserter, 1.0)\r\n\t\tHydra.QActorDelete(idDeserter)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -637,8 +630,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -658,8 +650,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -756,7 +746,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -864,8 +853,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -906,7 +894,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t--clear anim set on wounded guy before cloning\r\n\tHydra.ActorClearAnimSetOverride(ID_REF_01_MID)\r\n\t\r\n\t--Declarations\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tcloneDeserter_Mid = Hydra.CreatePersonalClone(ID_DES_MID)\r\n\tcloneRefMid_01 = Hydra.CreatePersonalClone(ID_REF_01_MID)\t\r\n\tcloneRefMid_02 = Hydra.CreatePersonalClone(ID_REF_02_MID)\r\n\tcloneRefMid_03 = Hydra.CreatePersonalClone(ID_REF_03_MID)\r\n\t\r\n\t\r\n\t--If clones exist, move them\r\n\t--refugee validation is only checked if deserter is valid\r\n\t--Deserter Movement\r\n\tif Hydra.ActorIsValid(cloneDeserter_Mid) then\t\r\n\t\t--Hydra.QActorPlayConversation(CONVO_RETREAT, id_Self, cloneDeserter_Mid)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneDeserter_Mid, ID_DES_END, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorFaceSameAsActor(cloneDeserter_Mid, ID_DES_END)\r\n\t\tHydra.QActorWaitForConversationFinished(cloneDeserter_Mid, CONVO_WALKING)\r\n\t\tHydra.QActorDeletePersonalClone(cloneDeserter_Mid, 1)\r\n\t\r\n\t\t--cloneRefMid_01 validation and ovement\r\n\t\tif Hydra.ActorIsValid(cloneRefMid_01) then\t\r\n\t\t\tHydra.QActorWait(cloneRefMid_01, 1)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_01, ID_REF_01_END, \"NPC_RUN_SLOW\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(cloneRefMid_01, ID_REF_01_END)\r\n\t\t\t--Hydra.QActorWaitForConversationFinished(cloneRefMid_01, CONVO_RETREAT)\r\n\t\t\tHydra.QActorPlayConversation(CONVO_WALKING, id_Self, cloneRefMid_01)\r\n\t\t\tHydra.QActorWaitForConversationFinished(cloneRefMid_01, CONVO_WALKING)\r\n\t\t\tHydra.QActorDeletePersonalClone(cloneRefMid_01, 1)\r\n\t\tend\r\n\t\r\n\t\t--cloneRefMid_02 validation and ovement\r\n\t\tif Hydra.ActorIsValid(cloneRefMid_02) then\t\r\n\t\t\tHydra.QActorWait(cloneRefMid_02, 1)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_02, ID_REF_02_END, \"NPC_RUN_SLOW\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(cloneRefMid_02, ID_REF_02_END)\r\n\t\t\tHydra.QActorDeletePersonalClone(cloneRefMid_02, 1)\r\n\t\tend\r\n\t\r\n\t\t--cloneRefMid_03 validation and ovement\r\n\t\tif Hydra.ActorIsValid(cloneRefMid_03) then\t\r\n\t\t\tHydra.QActorWait(cloneRefMid_03, 1)\r\n\t\t\tHydra.QActorClearAnimSetOverride(cloneRefMid_03)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_03, ID_REF_03_END, \"NPC_RUN_SLOW\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(cloneRefMid_03, ID_REF_03_END)\r\n\t\t\tHydra.QActorDeletePersonalClone(cloneRefMid_03, 1)\r\n\t\tend\r\n\t\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -983,8 +970,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1077,7 +1063,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1163,8 +1148,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1184,8 +1168,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1333,7 +1315,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.QActorEventSend(ID_DES_MID, \"QST_VGN_PENITENT_01\")\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1424,8 +1405,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1445,8 +1425,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1587,7 +1565,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Declarations\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tcloneDeserter_Mid = Hydra.CreatePersonalClone(ID_DES_END)\r\n\tcloneRefMid_01 = Hydra.CreatePersonalClone(ID_REF_01_END)\r\n\tcloneRefMid_02 = Hydra.CreatePersonalClone(ID_REF_02_END)\r\n\tcloneRefMid_03 = Hydra.CreatePersonalClone(ID_REF_03_END)\r\n\t\r\n\t--Deserter Movement\r\n\tif Hydra.ActorIsValid(cloneDeserter_Mid) then\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneDeserter_Mid, LOC_DES, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneDeserter_Mid, 1)\r\n\tend\r\n\r\n\t--cloneRefMid_01 Movement\r\n\tif Hydra.ActorIsValid(cloneRefMid_01) then\t\r\n\t\tHydra.QActorWait(cloneRefMid_01, 1)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_01, LOC_REF_01, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneRefMid_01, 1)\r\n\tend\r\n\t\r\n\t--cloneRefMid_02 Movement\r\n\tif Hydra.ActorIsValid(cloneRefMid_02) then\t\r\n\t\tHydra.QActorWait(cloneRefMid_02, 1)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_02, LOC_REF_02, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneRefMid_02, 1)\r\n\tend\r\n\t\r\n\t--cloneRefMid_03 Movement\r\n\tif Hydra.ActorIsValid(cloneRefMid_03) then\t\r\n\t\tHydra.QActorWait(cloneRefMid_03, 1)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRefMid_03, LOC_REF_03, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneRefMid_03, 1)\r\n\tend\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1678,8 +1655,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1699,8 +1675,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1773,7 +1747,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--Declarations\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tcloneDeserter = Hydra.CreatePersonalClone(ID_DES_START)\r\n\tcloneRef2 = Hydra.CreatePersonalClone(ID_REF_02_START)\r\n\tcloneRef3 = Hydra.CreatePersonalClone(ID_REF_03_START)\r\n\t\r\n\t--set anim set on wounded mid guy so we can remove it later\r\n\tHydra.ActorSetAnimSetOverride(ID_REF_01_MID, \"NPC_Idle_Stand_Talk_Injured\")\r\n\t\r\n\t--spawn enemies\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_DES_START, \"SPAWN\")\r\n\t\r\n\t--If clones exist, move them\r\n\t--refugee validation is only checked if deserter is valid\r\n\tif Hydra.ActorIsValid(cloneDeserter) then\r\n\t\t--deserter movement\r\n\t\tHydra.ActorSetUseAlternateName(cloneDeserter, true)\r\n\t\tHydra.QActorPlayConversation(CONVO_WAIT, id_Self, cloneDeserter)\r\n\t\tHydra.QActorWait(cloneDeserter, 0.2)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneDeserter, ID_DES_MID, \"NPC_RUN_SLOW\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneDeserter)\t\t\r\n\r\n\t\t--cloneRef2 validation and movement\r\n\t\tif Hydra.ActorIsValid(cloneRef2) then\t\r\n\t\t\tHydra.QActorWait(cloneRef2, 1)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRef2, ID_REF_02_MID, \"NPC_RUN_SLOW\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(cloneRef2, ID_REF_02_MID)\r\n\t\t\tHydra.QActorDeletePersonalClone(cloneRef2)\r\n\t\tend\r\n\t\r\n\t\t--cloneRef3 valiodation and movement\r\n\t\tif Hydra.ActorIsValid(cloneRef3) then\t\r\n\t\t\tHydra.QActorClearAnimSetOverride(cloneRef3)\r\n\t\t\tHydra.QActorWait(cloneRef3, 0.2)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneRef3, ID_REF_03_MID, \"NPC_RUN_SLOW\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(cloneRef3, ID_REF_03_MID)\r\n\t\t\tHydra.QActorDeletePersonalClone(cloneRef3)\r\n\t\tend\t\t\r\n\t\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1850,8 +1823,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1937,7 +1909,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"SPAWN\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2042,7 +2013,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"SPAWN\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2119,8 +2089,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2185,7 +2154,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2293,8 +2261,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2387,7 +2354,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2473,8 +2439,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2494,8 +2459,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2643,7 +2606,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2734,8 +2696,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2755,8 +2716,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2793,11 +2752,6 @@
   "groupName": "Condition",
   "name": "Campaign_Public"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

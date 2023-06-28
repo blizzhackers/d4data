@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t-- Script to free the villagers.\r\n\tUserFunction_FreeVillager(idActorGizmo, idSelf)\r\n\t\r\n\t-- After the first villager has said \"thank you\" have the summoner respond.\r\n\tHydra.WaitForConversationFinished(S_CONVO_VILLAGER_FREE)\r\n\tHydra.ActorPlaySimpleConversation(S_CONV_INTRO, idSummoner)\t\r\n\t\t\r\n\t-- Enable initial cultist spawners.\t\r\n\tfor i, idLinkedSpawner in ipairs(tWave01) do\r\n\t\tif Hydra.ActorIsValid(idLinkedSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idLinkedSpawner, false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Enable demon spawners based on which cultist is active.\r\n\t\r\n\tlocal sWorldName = Hydra.ActorGetWorld(idActorPlayer)\r\n\t\r\n\t-- Caster Physical\r\n\tif Hydra.WorldIsDungeonStateActive(sWorldName, \"DRLG_Spawner_Cultist_physical\") then\r\n\t\tif Hydra.ActorIsValid(idCultPhysSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idCultPhysSpawner, false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Caster Fire\r\n\tif Hydra.WorldIsDungeonStateActive(sWorldName, \"DRLG_Spawner_Cultist_fire\") then\r\n\t\tif Hydra.ActorIsValid(idCultFireSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idCultFireSpawner, false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t-- Caster Poison\r\n\tif Hydra.WorldIsDungeonStateActive(sWorldName, \"DRLG_Spawner_Cultist_poison\") then\r\n\t\tif Hydra.ActorIsValid(idCultPoisSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idCultPoisSpawner, false)\r\n\t\tend\r\n\tend\t\t\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -219,8 +218,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -240,8 +238,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -332,7 +328,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -409,8 +404,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -483,7 +477,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t-- Script for freeing villagers.\r\n\tUserFunction_FreeVillager(idActorGizmo, idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -560,8 +553,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -643,7 +635,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\t-- Have the summoner respond to the half way point.\r\n\tHydra.ActorPlaySimpleConversation(S_CONV_HALFWAY, idSummoner)\r\n\t\r\n\t-- Start the next wavve of spawners.\r\n\tfor i, idLinkedSpawner in ipairs(tWave02) do\r\n\t\tif Hydra.ActorIsValid(idLinkedSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idLinkedSpawner, false)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -720,8 +711,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -794,7 +784,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -871,8 +860,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(S_USEREVENT_HALFWAYPOINT, idSelf)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -924,7 +912,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1001,8 +988,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(S_USEREVENT_HALFWAYPOINT, idSelf)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1054,7 +1040,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n--Grabs a random number based on how many total captives there potentially are in the group.\r\n--Sets the random villager based on that number in the group table.\r\n--Sets a back up villager, the first one in the table, in the event the number used is no longer valid.\r\n\tlocal idNumber = Hydra.GetRandomInt(1, 5)\r\n\tlocal idRandomVillager = Hydra.ActorsInGroup(S_CAPTIVES_GROUP)[idNumber]\r\n\tlocal idDefaultVillager = Hydra.ActorsInGroup(S_CAPTIVES_GROUP)[1]\r\n\t\r\n--Checks for the random captive to be valid and alive, if not use the back up captive.\r\n--Plays a conversation if the actor is valid.\t\t\r\n\tif Hydra.ActorIsValid(idRandomVillager) and Hydra.ActorIsAlive(idRandomVillager) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_VILLAGER, idRandomVillager)\t\r\n\telseif \tHydra.ActorIsValid(idDefaultVillager) and Hydra.ActorIsAlive(idDefaultVillager) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_VILLAGER, idDefaultVillager)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1131,8 +1116,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1184,7 +1168,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n--Grabs a random number based on how many total captives there potentially are in the group.\r\n--Sets the random villager based on that number in the group table.\r\n--Sets a back up villager, the first one in the table, in the event the number used is no longer valid.\r\n\tlocal idNumber = Hydra.GetRandomInt(1, 5) \r\n\tlocal idRandomVillager = Hydra.ActorsInGroup(S_CAPTIVES_GROUP)[idNumber] \r\n\tlocal idDefaultVillager = Hydra.ActorsInGroup(S_CAPTIVES_GROUP)[1] \r\n\t\r\n--Checks for the random captive to be valid and alive, if not use the back up captive.\r\n--Plays a conversation if the actor is valid.\t\r\n\tif Hydra.ActorIsValid(idRandomVillager) and Hydra.ActorIsAlive(idRandomVillager) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_VILLAGER, idRandomVillager)\t\r\n\telseif \tHydra.ActorIsValid(idDefaultVillager) and Hydra.ActorIsAlive(idDefaultVillager) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_VILLAGER, idDefaultVillager)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1261,8 +1244,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1334,7 +1316,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1411,8 +1392,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1432,8 +1412,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1537,7 +1515,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n-- spawn chest\r\nHydra.ActorGizmoSetDisabled(ID_CHEST, false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1614,8 +1591,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1649,7 +1625,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Disable all spawners\r\n\tUF_CleanupPrep(tAllSpawners)  \r\n\t\r\n\t-- Small pause when reaching this phase\r\n\tHydra.Wait(1)\r\n\r\n\t-- Any villagers that are remaining will be transformed into demons.\r\n\tlocal tVillagers = Hydra.ActorsInGroup(S_CAPTIVES_GROUP)\r\n\tif bBonusAchieved == false then\r\n\t\t\r\n\t\t-- Activating the stakes so the ropes drop and then swapping them with the destrutable versions\r\n\t\tfor i, idStake in ipairs(tStakes) do\r\n\t\t\tif Hydra.ActorIsValid(idStake) then\r\n\t\t\t\tHydra.ActorGizmoOperate(idStake, idSelf, false)\r\n\t\t\t\tHydra.ActorSpawnActor(S_STAKE_DST, idStake, false, 0, 0)\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\t-- Transforming the villagers\r\n\t\tfor i, idVictim in ipairs(tVillagers) do\r\n\t\t\tif Hydra.ActorIsValid(idVictim) and Hydra.ActorIsAlive(idVictim) then\r\n\t\t\t\tHydra.BuffApplyToTarget(S_VILLAGER_TRANSFORM_POWER, \"TRANSFORM\", idVictim)\r\n\t\t\tend\r\n\t\tend\r\n\t\t\r\n\t\t-- The summoner will taunt the player for failing.\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONV_FAILURE, idSummoner)\r\n\t\tHydra.WaitForConversationFinished(S_CONV_FAILURE)\r\n\t\r\n\t\t-- Turn on summoner AI and remove invulnerablity and shield vfx \r\n\t\tHydra.ActorDelete(idShield)\r\n\t\tHydra.ActorEnableAI(idSummoner, true)\r\n\t\tHydra.ActorSetInvulnerable(idSummoner, false)\r\n\t\tHydra.BuffRemove(S_GENERIC_IMMUNE, \"IMMUNE\", idSummoner)\r\n\t\t\r\n\t-- If the player suceeded then transform the summoner into an elite demon.\t\r\n\telse\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONV_SUCCESS, idSummoner)\r\n\t\tHydra.WaitForConversationFinished(S_CONV_SUCCESS)\r\n\t\tHydra.Wait(0.5)\r\n\t\tUF_CasterTransform(idSummoner, idShield)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1726,8 +1701,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1747,8 +1721,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1863,7 +1835,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\t-- Set an escape marker so the NPC runs toward the direction the player came from.\r\n\tidEscapeLoc = Hydra.ActorSpawnActor(S_ACTOR_MARKER_LOCATION, idActor, false, 0,0)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1940,8 +1911,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2014,7 +1984,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\t--Setting this so I can call the spawned summoner in scripts\r\n\tidSummoner = idActorSpawned  \r\n\t\r\n\t-- Disable the caster AI and set it invulnerable while it's shield is up\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.ActorSetInvulnerable(idActorSpawned, true)\r\n\tHydra.BuffApplyToTarget(S_GENERIC_IMMUNE, \"IMMUNE\", idActorSpawned)\r\n\t\r\n\t-- SET UP ROPES\r\n\tfor i, idVictim in ipairs(tLinkedVillagers) do\r\n\t\ttRopes[idVictim] = Hydra.ActorPlayEffectGroupActorToActor( idActorSpawned, idVictim, VFX_VICTIM_ROPE, true )\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2100,8 +2069,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2173,7 +2141,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n--Plays transform vfx on the monster that spawns after the villager \"transforms\"\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, VFX_TRANSFORM)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2250,8 +2217,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2323,7 +2289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n--Plays transform vfx on the monster that spawns after the cultist \"transforms\"\r\n\tHydra.ActorPlayEffectGroup(idActorSpawned, VFX_TRANSFORM)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2400,8 +2365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2421,8 +2385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2527,7 +2489,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2604,8 +2565,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Set bonus variable\r\n\tbBonusAchieved = true\r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2657,7 +2617,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2734,8 +2693,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2755,8 +2713,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 8,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2786,11 +2742,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "-----------------------------\r\n-- Free captured villagers --\r\nfunction UserFunction_FreeVillager(idActorGizmo, idSource)\r\n\tlocal idCaptive = Hydra.ActorsLinkedByActor(idActorGizmo)[1]\r\n\r\n-- The villager will play a conversation, have it's vfx removed, and run toward the escape location.\r\n\tif Hydra.ActorIsValid(idCaptive) and Hydra.ActorIsAlive(idCaptive) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_VILLAGER_FREE, idCaptive)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idCaptive, idEscapeLoc, \"IGC_NPC_Sprint_Fast\", false)\r\n\t\tHydra.ActorRemoveComplexEffect(idCaptive, tRopes[idCaptive])\r\n\t\tHydra.ActorRemoveFromGroup(idCaptive, S_CAPTIVES_GROUP)\r\n\t\tHydra.QActorFadeAndDelete(idCaptive, 1)\r\n\tend\r\n\t\r\n-- Drain the summoner of some health every time a villager is rescued.\t\r\n\tlocal nCurrentHP = Hydra.ActorGetHitPointsPercent(idSummoner)\r\n\tlocal nNewHP = nCurrentHP - 0.16\r\n\tHydra.ActorSetHitPointsPercent(idSummoner, nNewHP)\r\nend\r\n\r\n------------------------------------\r\n-- Turn summoner into elite demons --\r\nfunction UF_CasterTransform(idCultist, idShield)\r\n\r\n\tif Hydra.ActorIsValid(idCultist) and Hydra.ActorIsAlive(idCultist) then\r\n\t\tHydra.BuffApplyToTarget(S_CULTIST_TRANSFORM_POWER, \"TRANSFORM\", idCultist)\r\n\tend\t\r\n\t\r\n-- Delete the shield\r\n\tif Hydra.ActorIsValid(idShield) then\r\n\t\tHydra.ActorDelete(idShield)\r\n\tend\t\r\n\t\r\nend\r\n\r\n---------------------------------\t\r\n-- Disable spawners in a table --\r\nfunction UF_CleanupPrep(tAllSpawners)\r\n\r\n\tfor i, idAllSpawner in ipairs(tAllSpawners) do\r\n\t\tif Hydra.ActorIsValid(idAllSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idAllSpawner, true)\r\n\t\tend\r\n\tend\r\nend\r\n\r\n",
- "szOnStartupScript": "-- ======= CONSTANTS =======\r\n--\tGeneral\r\n\tS_USEREVENT_HALFWAYPOINT = \"DE_Cultist_DemonVessel_Halfway\"\r\n\t\r\n-- Possible types of cultists that can spawn as the central one\r\n\tS_CULTIST_CASTER_F_BASE = Hydra.ReferenceActor(\"cultist_caster_female_poison\")\r\n\tS_CULTIST_CASTER_M_BASE = Hydra.ReferenceActor(\"cultist_caster_male_poison\")\r\n\tS_CULTIST_CASTER_F_DRYS = Hydra.ReferenceActor(\"cultist_caster_female_fire\")\r\n\tS_CULTIST_CASTER_M_DRYS = Hydra.ReferenceActor(\"cultist_caster_male_fire\")\r\n\tS_CULTIST_CASTER_F_FRAC = Hydra.ReferenceActor(\"cultist_caster_female_phys\")\r\n\tS_CULTIST_CASTER_M_FRAC = Hydra.ReferenceActor(\"cultist_caster_male_phys\")\r\n\r\n-- ======= VARIABLES =======\r\n--\tGeneral\r\n\tbBonusAchieved = false\r\n\t\r\n-- Tables\r\n\ttRopes = {}\r\n\r\n-- Set animation for tied up villagers\t\r\n\tfor i, idVillager in ipairs(tLinkedVillagers) do\r\n\t\tif Hydra.ActorIsValid(idVillager) then\r\n\t\t\tHydra.ActorSetAnimSetOverride(idVillager, S_ANIMSET_TIEDUP)\r\n\t\t\tHydra.ActorEnableAI(idVillager, false)\r\n\t\tend\r\n\tend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

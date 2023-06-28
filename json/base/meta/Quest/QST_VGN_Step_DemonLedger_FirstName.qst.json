@@ -145,7 +145,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\t--setting animset overrides\r\n\r\nlocal tBandits_00 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_00\")\r\n\tfor i, idBandit in ipairs(tBandits_00) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"NPC_F_Base_idle_aroundfire_stand\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nlocal tBandits_01 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_01\")\r\n\tfor i, idBandit in ipairs(tBandits_01) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"NPC_Idle_Stand_Guard_Fidget\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nlocal tBandits_02 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_02\")\r\n\tfor i, idBandit in ipairs(tBandits_02) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"NPC_Idle_Stand_Guard_Fidget\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nlocal tBandits_03 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_03\")\r\n\tfor i, idBandit in ipairs(tBandits_03) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"bandit_sword_evnt_ground_sit_kneesup\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nlocal tBandits_04 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_04\")\r\n\tfor i, idBandit in ipairs(tBandits_04) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"bandit_ranged_event_ground_sit_kneesup\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nlocal tBandits_05 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_05\")\r\n\tfor i, idBandit in ipairs(tBandits_05) do\r\n\t\tHydra.ActorDisableAI(idBandit)\r\n\t\tHydra.ActorSetAnimSetOverride(idBandit, \"bandit_ranged_event_ground_sit_kneesup\")\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -222,8 +221,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -243,8 +241,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -349,7 +345,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.ActorPlayEffectGroup(idActorKilled, S_EFFECTGROUP_SOUL_DEATH, true)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idActorKilled, idActorKiller, S_EFFECTGROUP_SOUL_ATTRACTOR)\r\n\tHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -435,8 +430,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -505,7 +499,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--\tHydra.ActorClearAnimSetOverride(idBandit)\r\n--\tHydra.ActorEnableAI(idBandit, true)\r\n--\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n--\tHydra.ActorAIForcePrimaryTarget(idBandit, idPlayer)\r\n\t\r\n--\tlocal tBandits = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG\")\r\n--\tfor i, idBandit in ipairs(tBandits) do\r\n--\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n--\t\tHydra.ActorEnableAI(idBandit, true)\r\n--\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n--\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idPlayer)\r\n--\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -582,8 +575,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -603,8 +595,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "idSelf = Hydra.QuestGetOwner()\r\nHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -740,7 +730,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tlocal tBandits_00 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_00\")\r\n\tfor i, idBandit in ipairs(tBandits_00) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\t\r\nlocal tBandits_01 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_01\")\r\n\tfor i, idBandit in ipairs(tBandits_01) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\t\r\nlocal tBandits_02 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_02\")\r\n\tfor i, idBandit in ipairs(tBandits_02) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\t\r\nlocal tBandits_03 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_03\")\r\n\tfor i, idBandit in ipairs(tBandits_03) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\t\r\nlocal tBandits_04 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_04\")\r\n\tfor i, idBandit in ipairs(tBandits_04) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\t\r\nlocal tBandits_05 = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG_05\")\r\n\tfor i, idBandit in ipairs(tBandits_05) do\r\n\t\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t\tHydra.ActorEnableAI(idBandit)\r\n\t\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\tend\r\n\r\n\t\r\n\t--Hydra.ActorClearAnimSetOverride(BANDIT_DEBTOR)\r\n\t--Hydra.ActorEnableAI(BANDIT_DEBTOR, true)\r\n\t--Hydra.ActorSetTeam(BANDIT_DEBTOR, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t--Hydra.ActorAIForcePrimaryTarget(BANDIT_DEBTOR, idActorPlayer)\r\n\t--Hydra.ActorSetNoDamage(BANDIT_DEBTOR, false)\r\n\t\r\n\t--local tBandits = Hydra.ActorsInGroup(\"QST_Step_DemonLedger_FirstName_AG\")\r\n\t--for i, idBandit in ipairs(tBandits) do\r\n\t--\tHydra.ActorClearAnimSetOverride(idBandit)\r\n\t--\tHydra.ActorEnableAI(idBandit, true)\r\n\t--\tHydra.ActorSetTeam(idBandit, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t--\tHydra.ActorAIForcePrimaryTarget(idBandit, idActorPlayer)\r\n\t--end\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -826,8 +815,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -847,8 +835,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -878,11 +864,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_EFFECTGROUP_SOUL_DEATH = Hydra.ReferenceEffectGroup(\"mouthOfHell_take3\")\r\nS_EFFECTGROUP_SOUL_ATTRACTOR = Hydra.ReferenceEffectGroup(\"fxKit_actorToActor_attractor_ghosts\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

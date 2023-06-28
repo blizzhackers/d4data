@@ -81,8 +81,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -148,7 +146,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tlocal flCooldownBase =\tFL_COOLDOWN1;\r\n\t\r\n\tHydra.Wait(FL_DUNGEONAFFIX_COOLUP);\r\n\r\n\t-- If this is not a dungeon, stop\r\n\tif not Hydra.SubzoneIsDungeon() then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\twhile (true) do\r\n\t\t-- Shorten the cooldown after first stage\r\n\t\tif gb_FirstStageDone then\r\n\t\t\tflCooldownBase = FL_COOLDOWN2;\r\n\t\tend\r\n\r\n\t\t-- Find valid players\r\n\t\tlocal tPlayer = Hydra.PlayerActors();\r\n\t\tlocal idPlayerValid = Hydra.ACDID_INVALID;\r\n\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\tif Hydra.ActorIsValid(idPlayer) then\r\n\t\t\t\tidPlayerValid = idPlayer;\r\n\t\t\t\tbreak;\r\n\t\t\tend\r\n\t\tend\r\n\r\n\t\tif not Hydra.ActorIsValid(idPlayerValid) then\r\n\t\t\tHydra.Wait(flCooldownBase);\r\n\t\telse\r\n\t\t\t-- First check to see whether any player is in combat\r\n\t\t\tlocal tPlayersValid = {};\r\n\t\t\tfor i, idPlayer in ipairs(tPlayer) do\r\n\t\t\t\tif Hydra.ActorIsValid(idPlayer) and Hydra.ActorIsAlive(idPlayer) and Hydra.ActorIsInCombat(idPlayer) then\r\n\t\t\t\t\ttable.insert(tPlayersValid, idPlayer);\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\t\tlocal nPlayerValidCount = #tPlayersValid;\r\n\t\t\tif nPlayerValidCount <= 0 then\r\n\t\t\t\tHydra.Wait(flCooldownBase);\r\n\t\t\telse\r\n\t\t\t\t-- Calculate the cooldown based on player count\r\n\t\t\t\tlocal flCooldown = flCooldownBase / (1 + (nPlayerValidCount - 1) * FL_COOLDOWN_EXTRAPLAYER);\r\n\r\n\t\t\t\t-- Only trigger in chance\r\n\t\t\t\tif Hydra.GetRandomFloat() <= FL_CHANCE then\r\n\t\t\t\t\t-- Spawn it under a random player\r\n\t\t\t\t\tShuffleTable(tPlayersValid);\r\n\t\t\t\t\t\r\n\t\t\t\t\tlocal idPlayerPicked = Hydra.ACTORID_INVALID;\r\n\t\t\t\t\tfor i, idPlayer in ipairs(tPlayersValid) do\r\n\t\t\t\t\t\tif gpt_LastVolcanic == nil or not Hydra.PositionIsValid(gpt_LastVolcanic) then\r\n\t\t\t\t\t\t\tidPlayerPicked = idPlayer;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\t\tlocal ptPlayer = Hydra.ActorGetPosition(idPlayer);\r\n\t\t\t\t\t\tif Hydra.PositionGetDistanceSquaredToPosition(ptPlayer, gpt_LastVolcanic) > FL_DISTANCESQ_MIN then\r\n\t\t\t\t\t\t\tidPlayerPicked = idPlayer;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tend\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif not Hydra.ActorIsValid(idPlayerPicked) then\r\n\t\t\t\t\t\tidPlayerPicked = tPlayersValid[1];\r\n\t\t\t\t\tend\r\n\t\t\t\t\tif Hydra.ActorIsValid(idPlayerPicked) then\r\n\t\t\t\t\t\t-- Trigger the volcanic at player's feet\r\n\t\t\t\t\t\tgpt_LastVolcanic = Hydra.ActorGetPosition(idPlayerPicked);\r\n\t\t\t\t\t\tHydra.ActorTriggerEnvironmentPower(idPlayerPicked, idPlayerPicked, S_VOLCANIC_POWER, Hydra.TEAM_MONSTER_0);\r\n\t\t\t\t\tend\r\n\t\t\t\tend\r\n\r\n\t\t\t\tHydra.Wait(flCooldown);\r\n\t\t\tend\r\n\t\tend\r\n\tend -- while loop\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -225,8 +222,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -278,7 +274,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tgb_FirstStageDone = true;\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -355,8 +350,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -460,7 +454,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, snoSubzone, dwDungeonType)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -537,8 +530,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -558,8 +550,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Hydra.TraceScreen(\"Added Dungeon Affix: {c_blue}\"..S_DUNGEON_AFFIX_NAME..\"{/c}\");",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -610,8 +600,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -641,11 +629,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "S_DUNGEON_AFFIX_NAME = \"Volcanic\";\r\ngid_ThisQuest = Hydra.ACDID_INVALID;\r\n\r\n-- Affix specific data\r\nFL_DUNGEONAFFIX_COOLUP = 10;\r\nN_STAGE1_DURATION = 300;\r\nFL_COOLDOWN1 = 12;\r\nFL_COOLDOWN2 = 9;\r\nFL_CHANCE = 0.666\r\nFL_COOLDOWN_EXTRAPLAYER = 0.8;\r\nFL_DISTANCESQ_MIN = 3;\r\n\r\nS_VOLCANIC_POWER = Hydra.ReferencePower(\"Dungeon_Affix_Volcanic_Single\");\r\n\r\ngpt_LastVolcanic = nil\r\ngb_FirstStageDone = false;\r\n",
- "szOnStartupScript": "-- Remove phase 2, put the logic into phase 1.\r\n\r\ngid_ThisQuest = idSelf;",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

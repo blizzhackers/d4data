@@ -103,7 +103,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tfor i, idTrigger in ipairs(AREA_1_TRIGGERS) do\r\n\t\tHydra.ActorDisable(idTrigger);\r\n\tend\r\n\tfor i, idTrigger in ipairs(AREA_2_TRIGGERS) do\r\n\t\tHydra.ActorDisable(idTrigger);\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -180,8 +179,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -201,8 +199,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -304,7 +300,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tlocal idAmalgam = idActor\r\n\t\r\n\tif (Hydra.ActorGetSNOName(idAmalgam) ~= \"astaroth_boss_mount\") then\r\n\t\tlocal tBosses = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\");\r\n\t\t\r\n\t\tfor i, idBoss in ipairs(tBosses) do\r\n\t\t\tif (Hydra.ActorGetSNOName(idBoss) == \"astaroth_boss_mount\") then\r\n\t\t\t\tidAmalgam = idBoss;\r\n\t\t\t\tbreak;\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tlocal sDynamicMovementData = \"AmalgamOfRage_Run\";\r\n\t\r\n\tHydra.QActorPower(idAmalgam, UNSTOPPABLE_POWER);\t\r\n\t\r\n\tHydra.QActorEnableAI(idAmalgam, false);\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"PreIntermission2LeapSpot\")[1], sDynamicMovementData, false, false, false);\r\n\t\r\n\tlocal idSecondHouse = Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"SecondHouse\")[1];\r\n\t\r\n\tif (Hydra.ActorIsValid(idSecondHouse)) then\r\n\t\tHydra.QActorFaceActor(idAmalgam, idSecondHouse);\r\n\t\tHydra.QActorPower(idAmalgam, SECOND_LEAP_HOUSE_POWER, idSecondHouse);\r\n\telse\r\n\t\tHydra.EventSend(\"QST_Scos_Astaroth_02_AstarothEncounter_Phase2Complete\");\r\n\tend\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"PreIntermission2MoveSpot\")[1], sDynamicMovementData, false, false, false);\r\n\r\n\tHydra.QActorPower(idAmalgam, LEAP_TO_NEXT_AREA_POWER, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"SecondJumpSpot\")[1]);\r\n\t\r\n\tHydra.QActorEnableAI(idAmalgam, true);\r\n\t\r\n\tHydra.QActorPower(idAmalgam, UNSTOPPABLE_POWER);\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"Intermission2GoToSpot\")[1], sDynamicMovementData, false, false, false);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -381,8 +376,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -457,7 +451,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -534,8 +527,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -623,7 +615,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t--Reset Boss\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorFadeAndDelete(bossID, 2);\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -709,8 +700,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -730,8 +720,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "bPhase1Complete = false;",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -797,7 +785,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.BossEncounterManuallyComplete(BOSS_LEVEL_AREA)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -874,8 +861,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -895,8 +881,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1009,7 +993,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif(Hydra.ActorIsAlive(idActorPlayer)) then\r\n\t\t--Boss Respawn Trigger Enabled\r\n\t\tHydra.ActorEnable(AREA1_TRIGGER)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1095,8 +1078,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1175,7 +1157,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.EventSend(\"QST_VGN_Scos_Astaroth_02B_AstarothBoss_Start\");\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1252,8 +1233,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1342,7 +1322,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\t\r\n\tHydra.WaitForConversationFinished(IGC_SLA);\r\n\t\r\n\t--Manually Start Encounter\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_LEVEL_AREA)\r\n\t\r\n\tlocal tBosses = Hydra.ActorsEnableLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\t\r\n\tlocal tNPCs = Hydra.ActorsEnableLinkedByActorInGroup(idSelf, \"OnFireNPC\");\r\n\t\r\n\tlocal S_FEMALE_ACTOR_NAME = Hydra.ReferenceActor(\"astaroth_boss_villager_female_onfire\");\r\n\r\n\tif (#tNPCs > 0) then\r\n\t\tlocal snoStaggerPower = Hydra.PowerSNOFromName(Hydra.ReferencePower(\"astaroth_boss_mount_stagger\"));\r\n\t\t\r\n\t\tfor i, idNPC in ipairs(tNPCs) do\r\n\t\t\t\r\n\t\t\tlocal sActorName = Hydra.ActorGetSNOName(idNPC);\t\t\r\n\t\t\t\r\n\t\t\tif (sActorName == S_FEMALE_ACTOR_NAME) then\r\n\t\t\t\tHydra.BuffApplyToTarget(snoStaggerPower, \"NPC_ON_FIRE_F\", idNPC);\r\n\t\t\telse\r\n\t\t\t\tHydra.BuffApplyToTarget(snoStaggerPower, \"NPC_ON_FIRE_M\", idNPC);\r\n\t\t\tend\r\n\t\t\t\r\n\t\t\tfor b, idBoss in ipairs(tBosses) do \r\n\t\t\t\tHydra.ActorAIForcePrimaryTarget(idNPC, idBoss);\r\n\t\t\tend\r\n\t\t\t\r\n\t\tend\r\n\tend\r\n\r\n\t--Disable Trigger\r\n\tHydra.ActorDisable(AREA1_TRIGGER)\r\n\t\r\n\t-- Disable Traversals so players can't teleport through stuff\r\n\tlocal tTraversals = Hydra.ActorsLinkedByActorInGroup(idSelf, \"TraversalLocator\");\r\n\t\r\n\tif (#tTraversals > 0) then\r\n\t\tfor i, idTraversal in ipairs(tTraversals) do\r\n\t\t\tSetTraversalEnabled(idTraversal, false)\r\n\t\tend\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1419,8 +1398,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1440,8 +1418,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1550,7 +1526,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tlocal idAmalgam = idActor\r\n\t\r\n\tif (Hydra.ActorGetSNOName(idAmalgam) ~= \"astaroth_boss_mount\") then\r\n\t\tlocal tBosses = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\");\r\n\t\t\r\n\t\tfor i, idBoss in ipairs(tBosses) do\r\n\t\t\tif (Hydra.ActorGetSNOName(idBoss) == \"astaroth_boss_mount\") then\r\n\t\t\t\tidAmalgam = idBoss;\r\n\t\t\t\tbreak;\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\r\n\tlocal sDynamicMovementData = \"AmalgamOfRage_Run\";\r\n\t\r\n\tHydra.QActorPower(idAmalgam, UNSTOPPABLE_POWER);\r\n\t\r\n\tHydra.QActorEnableAI(idAmalgam, false);\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"PreIntermission1LeapSpot\")[1], sDynamicMovementData, false, false, false);\r\n\t\r\n\tlocal idFirstHouse = Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"FirstHouse\")[1];\r\n\t\r\n\tif (Hydra.ActorIsValid(idFirstHouse)) then\r\n\t\tHydra.QActorFaceActor(idAmalgam, idFirstHouse);\r\n\t\tHydra.QActorPower(idAmalgam, FIRST_LEAP_HOUSE_POWER, idFirstHouse);\r\n\telse\r\n\t\tHydra.EventSend(\"QST_Scos_Astaroth_02_AstarothEncounter_Phase1Complete\");\r\n\tend\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"PreIntermission1MoveSpot\")[1], sDynamicMovementData, false, false, false);\r\n\r\n\tHydra.QActorPower(idAmalgam, LEAP_TO_NEXT_AREA_POWER, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"FirstJumpSpot\")[1]);\r\n\t\r\n\tHydra.QActorEnableAI(idAmalgam, true);\r\n\t\r\n\tHydra.QActorPower(idAmalgam, UNSTOPPABLE_POWER);\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idAmalgam, Hydra.ActorsLinkedByActorInGroup(idAmalgam, \"Intermission1GoToSpot\")[1], sDynamicMovementData, false, false, false);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1627,8 +1602,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1716,7 +1690,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t--Reset Boss\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorFadeAndDelete(bossID, 2);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1802,8 +1775,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1823,8 +1795,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1938,7 +1908,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tfor i, idTrigger in ipairs(AREA_1_TRIGGERS) do\r\n\t\tHydra.ActorEnable(idTrigger);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2015,8 +1984,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2098,7 +2066,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tfor i, idTrigger in ipairs(AREA_2_TRIGGERS) do\r\n\t\tHydra.ActorEnable(idTrigger);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2175,8 +2142,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2249,7 +2215,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(listValidActors, idActorDetector)\r\n\tlocal idAmalgam = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"AMALGAM\")[1];\r\n\t\r\n\tfor i, idPlayer in ipairs(listValidActors) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\tHydra.ActorTriggerPowerAtTarget(idAmalgam, idPlayer, METEOR_DROP_POWER, true);\r\n\t\telse\r\n\t\t\t-- Determine what area we are in\r\n\t\t\tif (Hydra.ActorIsEnabled(Hydra.ActorsInGroup(\"Astaroth_Area_2\")[1])) then\r\n\t\t\t\t-- Port to Area 3 Gravespots\r\n\t\t\t\tlocal tGraveSpots = Hydra.ActorsEnableLinkedByActorInGroup(idActorDetector, \"AREA_3_GRAVESPOT\");\r\n\t\t\t\t\r\n\t\t\t\tif (#tGraveSpots > 0) then\r\n\t\t\t\t\tHydra.ActorWarpToActor(idPlayer, tGraveSpots[Hydra.GetRandomInt(1, #tGraveSpots)]);\r\n\t\t\t\tend\r\n\t\t\telse\r\n\t\t\t\t-- Port to Area 2 Gravespots\r\n\t\t\t\tlocal tGraveSpots = Hydra.ActorsEnableLinkedByActorInGroup(idActorDetector, \"AREA_2_GRAVESPOT\");\r\n\t\t\t\t\r\n\t\t\t\tif (#tGraveSpots > 0) then\r\n\t\t\t\t\tHydra.ActorWarpToActor(idPlayer, tGraveSpots[Hydra.GetRandomInt(1, #tGraveSpots)]);\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2326,8 +2291,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2400,7 +2364,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(listValidActors, idActorDetector)\r\n\tlocal idAmalgam = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"AMALGAM\")[1];\r\n\t\r\n\tfor i, idPlayer in ipairs(listValidActors) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\tHydra.ActorTriggerPowerAtTarget(idAmalgam, idPlayer, METEOR_DROP_POWER, true);\r\n\t\telse\r\n\t\t\t-- Port to Area 3 Gravespots\r\n\t\t\tlocal tGraveSpots = Hydra.ActorsEnableLinkedByActorInGroup(idActorDetector, \"AREA_3_GRAVESPOT\");\r\n\t\t\t\r\n\t\t\tif (#tGraveSpots > 0) then\r\n\t\t\t\tHydra.ActorWarpToActor(idPlayer, tGraveSpots[Hydra.GetRandomInt(1, #tGraveSpots)]);\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2477,8 +2440,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2498,8 +2460,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2529,11 +2489,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_LEVEL_AREA = Hydra.ActorGetLevelArea(idSelf)\r\nAREA1_TRIGGER = Hydra.ActorsLinkedByActorInGroup(idSelf, \"TRIGGER\")[1];",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -190,7 +190,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t--Gate Guard Discussion\r\n\tHydra.ActorPlayConversation(CONVO_GATE, idActor)\r\n\tHydra.WaitForConversationFinished(CONVO_GATE)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -284,8 +283,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -305,8 +303,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\t--Open the Gate\r\n\tHydra.ActorGizmoOperate(ID_GATE)\r\n\tHydra.Wait(3.5)\r\n\tHydra.ActorGizmoOperate(ID_INVIS_GATE)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -461,7 +457,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tHydra.QActorWaitForConversationFinished(ID_PRAVA, CONVO_PRAVA)\r\n\tHydra.QActorWait(ID_PRAVA, 1.5)\r\n\tHydra.WaitForQEmpty(ID_PRAVA)\r\n\tHydra.QActorPlaySimpleConversation(CONVO_VIGO_EXIT, ID_VIGO_PRAVA)\r\n\tHydra.QActorWaitForConversationFinished(ID_VIGO_PRAVA, CONVO_VIGO_EXIT)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_VIGO_PRAVA, LOC_VIGO_EXIT, \"NPC_RUN\", true)\r\n\tHydra.WaitForQEmpty(ID_VIGO_PRAVA)\r\n\tHydra.ActorFadeAndDelete(ID_VIGO_PRAVA, 1)\r\n\tHydra.EventSend(\"COMPLETE\")\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -538,8 +533,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -628,7 +622,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -705,8 +698,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -726,8 +718,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -866,7 +856,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tfollowerVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\r\n\t\r\n\t--Vigo Bark / Guard Move / Door Open / Guard Bark\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tif Hydra.ActorIsValid(followerVigo) then\r\n\t\tHydra.QActorPlaySimpleConversation(CONVO_VIGO_GUARD_01, followerVigo)\r\n\t\tHydra.QActorWaitForConversationFinished(followerVigo, CONVO_VIGO_GUARD_01)\r\n\t\tHydra.WaitForQEmpty(followerVigo)\r\n\tend\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_GUARD, LOC_GUARD, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(ID_GUARD, LOC_GUARD)\r\n\tHydra.WaitForQEmpty(ID_GUARD)\r\n\tHydra.ActorGizmoOperate(ID_INVIS_DOOR)\r\n\tHydra.ActorGizmoOperate(ID_PRAVA_DOOR)\r\n\tHydra.QActorPlaySimpleConversation(CONVO_VIGO_GUARD_02, ID_GUARD)\r\n\tHydra.QActorWaitForConversationFinished(ID_GUARD,CONVO_VIGO_GUARD_02)\r\n\t\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -952,8 +941,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1046,7 +1034,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tfollowerVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\r\n\t\r\n\t--Prava Ambient Convo\r\n\tHydra.ActorPlaySimpleConversation(CONVO_PRAVA_AMBIENT, ID_PRAVA)\r\n\t\r\n\t--Vigo Move Action\r\n\tif Hydra.ActorIsValid(followerVigo) then\r\n\t\tHydra.ActorEnableAI(followerVigo, false)\r\n\t\tHydra.QuestFollowerTakeOwnership(followerVigo)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerVigo, LOC_VIGO_PRAVA, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerVigo, LOC_VIGO_PRAVA)\r\n\t\tHydra.QActorDelete(followerVigo)\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(ID_VIGO_PRAVA)\r\n\tHydra.EventSend(\"KV1_PRAVA\")\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1132,8 +1119,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1229,7 +1215,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1306,8 +1291,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1377,7 +1361,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1454,8 +1437,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1475,8 +1457,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1638,7 +1618,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1715,8 +1694,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\t--[[\r\n\tHydra.QActorFaceSameAsActor(ID_VIGO_PRAY, LOC_VIGO_PRAY_03)\r\n\tHydra.ActorWarpToActor(ID_VIGO_PRAY, LOC_VIGO_PRAY_03)\r\n\tHydra.WaitForQEmpty(ID_VIGO_PRAY)\r\n\t]]--\r\n\tHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1824,7 +1802,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.ActorDisable(ID_VIGO_PYRE)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1901,8 +1878,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1922,8 +1898,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2055,7 +2029,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2132,8 +2105,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2226,7 +2198,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tidVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idVigo) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_AMB_BARK_01, ID_BARK_CASTER)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2312,8 +2283,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2406,7 +2376,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idVigo) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_AMB_BARK_02, ID_BARK_MONK)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2492,8 +2461,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2586,7 +2554,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idVigo) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_AMB_BARK_03, ID_BARK_KNIGHT)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2672,8 +2639,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2766,7 +2732,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidVigo = Hydra.QuestGetFollower(S_VIGO_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idVigo) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_AMB_BARK_04, ID_BARK_CASTER_02)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2852,8 +2817,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2873,8 +2837,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2999,7 +2961,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3076,8 +3037,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3097,8 +3057,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3142,11 +3100,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

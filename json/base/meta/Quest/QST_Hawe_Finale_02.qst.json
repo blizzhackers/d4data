@@ -190,7 +190,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortCrypts"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Get NPCs (and a Gate and Ritual FX)\r\n\tidDonan = Hydra.ActorsInGroup(\"QST_Hawe_Finale_DonanTomb\")[1]\r\n\tidLorath = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTomb\")[1]\r\n\tidNeyrelle = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTomb\")[1]\r\n\tidGate = Hydra.ActorsInGroup(\"QST_Hawe_Finale_TombGate\")[1]\r\n\tidRitualFX = Hydra.ActorsInGroup(\"QST_Hawe_Finale_RitualFX\")[1]\r\n\t\r\n\t-- Get locations\r\n\tidDonanLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_DonanTombLoc\")[1]\r\n\tidLorathLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc\")[1]\r\n\tidLorathLoc2 = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc2\")[1]\r\n\tidLorathLoc3 = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc3\")[1]\r\n\tidNeyrelleLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTombLoc\")[1]\r\n\tidNeyrelleHelpLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTombHelpLoc\")[1]\r\n\tidLorathRunLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathRunLoc\")[1]\r\n\tidTaissa = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Taissa\")[1]\r\n\t\r\n\t-- Play Taissa calloutg\r\n\tHydra.ActorPlaySimpleConversation(CONV_TAISSACALLOUT, idTaissa)\r\n\t\r\n\t-- Donan ritual ends\r\n\tHydra.ActorPlayEffectGroup(idRitualFX, \"fxKit_harmless_burstCylindrical_horadric\")\r\n\tHydra.ActorSetScriptedLookOverride(idRitualFX, \"IGC Soulstone Mephisto Blue - On\")\r\n\tHydra.EventSend(\"RandomizedBanterEnd\", idDonan)\r\n\tHydra.WaitForConversationFinished(CONV_RITUALBANTER)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idDonan, \"fxKit_harmless_persistentRope_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idLorath, \"fxKit_harmless_persistentRope_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idNeyrelle, \"fxKit_harmless_persistentRope_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idDonan, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idLorath, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idNeyrelle, \"fxKit_harmless_persistentCast_1hand_horadric\")\r\n\tHydra.ActorTriggerPhaseJump(idDonan)\r\n\tHydra.ActorTriggerPhaseJump(idLorath)\r\n\tHydra.ActorTriggerPhaseJump(idNeyrelle)\r\n\tHydra.QActorSetIdleAnim(idLorath, \"AnimKey_Neutral\")\r\n\tHydra.QActorSetIdleAnim(idNeyrelle, \"AnimKey_Neutral\")\r\n\tHydra.Wait(3)\r\n\tHydra.ActorDisable(idRitualFX)\r\n\tHydra.QActorPlaySimpleConversation(CONV_RITUALEND, idDonan)\r\n\t\r\n\tHydra.QActorPhasedAnimLoop(idDonan, \"AnimKey_Ground_Sit_Headinhands\", 0)\r\n\t\r\n\tHydra.QActorWait(idNeyrelle, 3)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idNeyrelle, idNeyrelleHelpLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFaceActor(idNeyrelle, idDonan)\r\n\tHydra.QActorPhasedAnimLoop(idNeyrelle, \"AnimKey_Use_Crouch\", 0)\r\n\tHydra.QActorWaitForConversationFinished(idLorath, CONV_RITUALEND)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idLorath, idLorathRunLoc, \"NPC_Run\", true)\r\n\tHydra.QActorFadeAndDelete(idLorath, 1)\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -267,8 +266,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -349,7 +347,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\t-- one is unique spawned from the graph, the other is in the gamelayer of the grave POI\r\n\tlocal tRevealHelpers = Hydra.ActorsInGroup(\"CSD_Hawe_Wetland_ZakFortCrypts_SecretDoor\")\r\n\tfor iter, idRevealer in pairs(tRevealHelpers) do\r\n\t\r\n\t\tHydra.ActorSceneRevealSecretMap(idRevealer)\r\n\t\t\r\n\tend\r\n\t\r\n\t-- Get NPCs, a Gate, a fog wall ritual FX\r\n\tidDonan = Hydra.ActorsInGroup(\"QST_Hawe_Finale_DonanTomb\")[1]\r\n\tidLorath = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTomb\")[1]\r\n\tidNeyrelle = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTomb\")[1]\r\n\tidGate = Hydra.ActorsInGroup(\"QST_Hawe_Finale_TombGate\")[1]\r\n\tidRitualFX = Hydra.ActorsInGroup(\"QST_Hawe_Finale_RitualFX\")[1]\r\n\tidFogWall = Hydra.ActorsInGroup(\"CSD_ZakFortCrypts_BossRoom_FogWallExitBlocker\")[1]\r\n\r\n\t\r\n\t-- Get locations\r\n\tidDonanLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_DonanTombLoc\")[1]\r\n\tidLorathLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc\")[1]\r\n\tidLorathLoc2 = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc2\")[1]\r\n\tidLorathLoc3 = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathTombLoc3\")[1]\r\n\tidNeyrelleLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTombLoc\")[1]\r\n\tidNeyrelleHelpLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_NeyrelleTombHelpLoc\")[1]\r\n\tidLorathRunLoc = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathRunLoc\")[1]\r\n\t\r\n\t-- Move actors to the right locations, set their idles\r\n\tHydra.ActorWarpToActor(idDonan, idDonanLoc)\r\n\tHydra.ActorEnable(idDonan)\r\n\tHydra.QActorFaceSameAsActor(idDonan, idDonanLoc)\r\n\tHydra.QActorWait(idDonan, 0.1)\r\n\tHydra.QActorPhasedAnimLoop(idDonan, \"AnimKey_Chant_Ritual_EyeLevel\", 0)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idDonan, idRitualFX, \"fxKit_harmless_persistentRope_horadric\", true, \"HP_Portrait\", \"HP_Mouth\")\r\n\tHydra.ActorPlayEffectGroup(idDonan, \"fxKit_harmless_persistentCast_2hand_horadric\", true)\r\n\t\r\n\tHydra.ActorWarpToActor(idLorath, idLorathLoc)\r\n\tHydra.ActorEnable(idLorath)\r\n\tHydra.QActorFaceSameAsActor(idLorath, idLorathLoc)\r\n\tHydra.QActorWait(idLorath, 0.1)\r\n\tHydra.QActorPhasedAnimLoop(idLorath, \"AnimKey_Chant_Ritual_Table\", 0)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idLorath, idRitualFX, \"fxKit_harmless_persistentRope_horadric\", true, \"HP_Portrait\", \"HP_Mouth\")\r\n\tHydra.ActorPlayEffectGroup(idLorath, \"fxKit_harmless_persistentCast_2hand_horadric\", true)\r\n\t\r\n\tHydra.ActorWarpToActor(idNeyrelle, idNeyrelleLoc)\r\n\tHydra.ActorEnable(idNeyrelle)\r\n\tHydra.QActorFaceSameAsActor(idNeyrelle, idNeyrelleLoc)\r\n\tHydra.QActorWait(idNeyrelle, 0.1)\r\n\tHydra.QActorPhasedAnimLoop(idNeyrelle, \"AnimKey_Chant_Ritual_Sky\", 0)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idNeyrelle, idRitualFX, \"fxKit_harmless_persistentRope_horadric\", true, \"HP_Portrait\", \"HP_Mouth\")\r\n\tHydra.ActorPlayEffectGroup(idNeyrelle, \"fxKit_harmless_persistentCast_1hand_horadric\", true)\r\n\r\n\tHydra.ActorEnable(idRitualFX)\r\n\tHydra.ActorGizmoOperate(idGate)\r\n\tHydra.ActorDelete(idFogWall)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -426,8 +423,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -523,7 +519,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\t-- Start randomized banter vignette\r\n\tHydra.EventSend(\"RandomizedBanterStart\", idDonan)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -600,8 +595,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -660,7 +654,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n--Reset Music\r\nHydra.ClearMusicOverride(\"CSD_Hawe_Wetland_ZakFortCrypts\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -737,8 +730,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -758,8 +750,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -905,7 +895,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortCrypts"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidElias = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"ELIAS\")[1]\r\n\t\r\n\t\r\n\tlocal followerTaissa = Hydra.QuestGetFollower(\"NPC_QST_Taissa_Witch_Follower\")\r\n\tlocal followerLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\n\tidTaissa = Hydra.ActorsInGroup(\"QST_Hawe_Finale_TaissaSwampElias\")[1]\r\n\tidLorath = Hydra.ActorsInGroup(\"QST_Hawe_Finale_LorathSwampElias\")[1]\r\n\t\r\n\t--Take control of followerLorath and send him to idLorath\r\n\tif Hydra.ActorIsValid(followerLorath) then\r\n\t\tHydra.QuestFollowerTakeOwnership(followerLorath)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerLorath, idLorath, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerLorath, idLorath)\r\n\tend\r\n\t\r\n\t--Take control of followerTaissa and send her to idTaissa\r\n\tif Hydra.ActorIsValid(followerTaissa) then\r\n\t\tHydra.QuestFollowerTakeOwnership(followerTaissa)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(followerTaissa, idTaissa, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(followerTaissa, idTaissa)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(followerLorath) then\r\n\t\tHydra.WaitForQEmpty(followerLorath)\r\n\t\tHydra.QActorFadeAndDelete(followerLorath, 0)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(followerTaissa) then\r\n\t\tHydra.WaitForQEmpty(followerTaissa)\r\n\t\tHydra.QActorFadeAndDelete(followerTaissa, 0)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -991,8 +980,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1087,7 +1075,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tidEliasCorpse = idActorDetector\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1164,8 +1151,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1185,8 +1171,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1251,8 +1235,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1303,8 +1285,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1445,7 +1425,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorDelete(ACTOR_TAISSA)\r\n\tHydra.ActorDelete(ACTOR_DONAN)\r\n\tHydra.ActorDelete(ACTOR_NEYRELLE)\r\n\t\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1522,8 +1501,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1632,7 +1610,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorSetInvisible(ACTOR_TAISSA, true)\r\n\tHydra.ActorSetInvisible(ACTOR_DONAN, true)\r\n\tHydra.ActorSetInvisible(ACTOR_NEYRELLE, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1709,8 +1686,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1730,8 +1706,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1796,8 +1770,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1945,7 +1917,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortCrypts"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorDisable(idElias)\r\n\tHydra.ActorDisable(idLorath)\r\n\tHydra.ActorDisable(idTaissa)\r\n\t--Hydra.ActorEnable(idEliasCorpse)\r\n\r\n\t--Teleport out of Dungeon is now handled by an actor in scene with a script on it that listens\r\n\t--for a player finishing the effectgroup cinematic.\r\n--\ttPlayers = Hydra.PlayerActors()\r\n\t\r\n--\tfor i, Player in ipairs(tPlayers) do\r\n--\t\tHydra.PlayerWarpToWorld(Player, S_WORLD_SANCTUARY, \"CSD_Hawe_Wetland_ZakFortCrypts_Exit\")\r\n--\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2022,8 +1993,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2132,7 +2102,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortCrypts"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--local tPlayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\t--for i = 1, #tPlayers do\r\n\t\t--if Hydra.ActorIsValid(tPlayers[i]) then\r\n\t\t\t--if tPlayers[i] ~= idActorPlayer then\r\n\t\t\t\t--Hydra.ActorPlayConversation(CONV_HAWE_FINALE_CINE_CHE, tPlayers[i])\r\n\t\t\t--end\r\n\t\t--end\r\n\t--end\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2209,8 +2178,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2230,8 +2198,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2296,8 +2262,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2445,7 +2409,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortCrypts"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n\tHydra.ActorDisable(idActorNPC)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2522,8 +2485,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2543,8 +2505,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2609,8 +2569,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2640,11 +2598,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_WORLD_SANCTUARY = Hydra.ReferenceWorld(\"Sanctuary_Eastern_Continent\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

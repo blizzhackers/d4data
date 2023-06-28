@@ -165,7 +165,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\t-- Find the Actors in Prefab: QST_Hawe_Verge_Taissa_01_Cellar_Contents\r\n\tidTaissaSwamp = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_NPCTaissa\")[1]\r\n\ttGhostSpawners = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_GhostAmbushSpawners\")\r\n\t\r\n\t-- Enable Ghost Spawners\r\n\tfor i, idSpawner in ipairs(tGhostSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\tend\r\n\t\r\n\t--Taissa enabled and posed\r\n\tHydra.ActorEnable(idTaissaSwamp)\r\n\tHydra.ActorSetAnimSetOverride(idTaissaSwamp, animsetTaissaGround)\r\n\tHydra.ActorSetIdleAnim(idTaissaSwamp, \"AnimKey_Sick_Prone_OnBack\")\r\n\tHydra.ActorPlaySimpleConversation(sConvoTaissa01_T01a, idTaissaSwamp)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -242,8 +241,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -263,8 +261,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -368,7 +364,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -459,7 +454,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -536,8 +530,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"WaveTwoBegin\")\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -626,7 +619,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tHydra.Wait(1)\r\n\tHydra.ActorPlaySimpleConversation(sConvoTaissa01_T01c, idTaissaSwamp)\r\n\tHydra.WaitForConversationFinished(sConvoTaissa01_T01c)\r\n\tHydra.ActorPlayEffectGroup(idTaissaSwamp, fxAndarielLaugh)\r\n\t\r\n\tfor i, idChainSpawner in ipairs(tChainSpawners2) do\r\n\t\tHydra.ActorGizmoSetDisabled(idChainSpawner, false)\r\n\tend\r\n\t\r\n\tfor i, idHutSpawner in ipairs(tHutSpawners2) do\r\n\t\tHydra.ActorGizmoSetDisabled(idHutSpawner, false)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -703,8 +695,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -724,8 +715,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -852,7 +841,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidEscapeLoc = Hydra.ActorsLinkedByActorInGroup(idActorNPC, \"runloc\")[1]\r\n\tHydra.ActorClearAnimSetOverride(idActorNPC)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idActorNPC, idEscapeLoc, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFadeAndDelete(idActorNPC, 1.0)\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -929,8 +917,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -950,8 +937,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1056,7 +1041,6 @@
        "unk_9c1ea4f": 67,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t--References\r\n\tidTaissaSwamp = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_NPCTaissa\")[1]\r\n\ttChainSpawners = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_NPCChainsSpawners\")\r\n\ttHutSpawners = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_HutSpawners\")\r\n\ttChainSpawners2 = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_NPCChainsSpawners2\")\r\n\ttHutSpawners2 = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Taissa_01_Cellar_HutSpawners2\")\r\n\r\n\tHydra.QActorWaitForConversationFinished(idTaissaSwamp, sConvoTaissa01_T01a)\r\n\tHydra.WaitForQEmpty(idTaissaSwamp)\r\n\t\r\n\t--Taissa Bark\r\n\tHydra.ActorPlaySimpleConversation(sConvoTaissa01_T01b, idTaissaSwamp)\r\n\tHydra.WaitForConversationFinished(sConvoTaissa01_T01b)\r\n\tHydra.EventSend(\"SpawnGhosts\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1133,8 +1117,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1223,7 +1206,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Impact the player if they are too close!\r\n\tHydra.ActorSetPowerEffectSize(idTaissaSwamp, 10)\r\n\tHydra.ActorPlayEffectGroup(idTaissaSwamp, sDemonicBurst, true)\r\n\tHydra.ActorTriggerPowerAtFeet(idTaissaSwamp, sPowerKnockBack)\r\n\t\r\n\tHydra.Wait(0.10)\r\n\tHydra.ActorPlayEffectGroup(idTaissaSwamp, fxAndarielLaugh)\r\n\t\t\r\n\t--Chains spawner\r\n\tfor i, idChainSpawner in ipairs(tChainSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idChainSpawner, false)\r\n\tend\r\n\t\r\n\tfor i, idHutSpawner in ipairs(tHutSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idHutSpawner, false)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1300,8 +1282,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1321,8 +1302,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1433,7 +1412,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\tHydra.EventSend(\"DRLGKit_BarrierWall_Remove_01\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1510,8 +1488,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1531,8 +1508,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1636,7 +1611,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1727,7 +1701,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1804,8 +1777,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"TaissaSaved\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1894,7 +1866,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.QActorAnimAndNewIdle(idTaissaSwamp, \"AnimKey_Sick_Prone_OnBack_Getup\", \"AnimKey_Sick_Standing_Idle\")\r\n\tHydra.WaitForQEmpty(idTaissaSwamp)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1971,8 +1942,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1992,8 +1962,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2023,11 +1991,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

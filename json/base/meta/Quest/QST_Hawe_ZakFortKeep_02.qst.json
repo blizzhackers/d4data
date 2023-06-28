@@ -183,7 +183,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\t--Skeleton Bark\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"SKELETONS\")\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"PALADIN\")\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -269,8 +268,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -363,7 +361,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidDonan = Hydra.QuestGetFollower(S_DONAN_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idDonan) then\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVO_DONAN_03, idDonan)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -449,8 +446,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -470,8 +466,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -604,7 +598,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n\t--Donan comments on Paladin Lord earning his rest\t\r\n\tidDonan = Hydra.QuestGetFollower(S_DONAN_FOLLOWER)\t\r\n\tif Hydra.ActorIsValid(idDonan) and Hydra.ActorGetWorld(idDonan) == \"CSD_Hawe_Wetland_ZakFortKeep\" then\r\n\t\tHydra.ActorPlaySimpleConversation(CONVO_DONAN_SKEL_KILL, idDonan)\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -681,8 +674,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -702,8 +694,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\t--Disable Door + Enables Door Monster\r\n\ttDoor = Hydra.ActorsInGroup(\"QST_Hawe_ZakfortKeep_Dungeon_Door_Monster\")\r\n\tfor i, idDoor in ipairs(tDoor) do\r\n\t\tHydra.ActorSetInvulnerable(idDoor, false)\r\n\t\tHydra.ActorSetTargetable(idDoor, true)\r\n\t\tHydra.ActorSetTeam(idDoor, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -858,7 +848,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tID_DONAN_DUNGEON_EXIT = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_End\")[1]\r\n\t\r\n\tHydra.QActorWaitForConversationFinished(ID_DONAN_DUNGEON_EXIT, CONVO_DONAN_EXIT)\r\n\tHydra.EventSend(\"DONAN_EXIT\")\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -935,8 +924,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1025,7 +1013,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tID_DONAN_DUNGEON_EXIT = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_End\")[1]\r\n\tidDonanLocDungeon = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_EndLoc\")[1]\r\n\t\r\n\t--Move and Fade Donan\r\n\tHydra.Wait(2)\r\n\tHydra.ActorSetConversationList(idDonanTomb, \"\")\r\n\tHydra.QActorWaitForConversationFinished(ID_DONAN_DUNGEON_EXIT, CONVO_DONAN_WAIT_01)\r\n\tHydra.QActorWaitForConversationFinished(ID_DONAN_DUNGEON_EXIT, CONVO_DONAN_WAIT_02)\r\n\tHydra.QActorWaitForConversationFinished(ID_DONAN_DUNGEON_EXIT, CONVO_DONAN_WAIT_03)\r\n\tHydra.QActorWaitForConversationFinished(ID_DONAN_DUNGEON_EXIT, S_CONVO_DONAN_06)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(ID_DONAN_DUNGEON_EXIT, idDonanLocDungeon, \"NPC_Walk\", true)\r\n\tHydra.QActorFadeAndDelete(ID_DONAN_DUNGEON_EXIT, 1)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1102,8 +1089,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1123,8 +1109,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1263,7 +1247,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tidDonanTomb = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_End\")[1]\r\n\tidDonanFollower = Hydra.QuestGetFollower(S_DONAN_FOLLOWER)\t\r\n\t\r\n\t-- Donan move action\r\n\tHydra.QuestFollowerTakeOwnership(idActor)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idActor, idDonanTomb, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(idActor, idDonanTomb)\r\n\tHydra.QActorEventSend(idActor, \"ARRIVED\")\r\n\tHydra.WaitForQEmpty(idActor)\r\n\tHydra.ActorDelete(idActor)\r\n\tHydra.ActorEnable(idDonanTomb)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1349,8 +1332,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1454,7 +1436,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1540,8 +1521,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1561,8 +1541,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1695,7 +1673,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1772,8 +1749,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1793,8 +1769,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1956,7 +1930,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2033,8 +2006,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2054,8 +2026,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2189,7 +2159,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\t--Disable Door + Enables Door Monster\r\n\ttDoor = Hydra.ActorsInGroup(\"QST_Hawe_ZakfortKeep_Dungeon_Door_Monster\")\r\n\tfor i, idDoor in ipairs(tDoor) do\r\n\t\tHydra.ActorEnableAI(idDoor, false)\r\n\t\tHydra.ActorSetInvulnerable(idDoor, true)\r\n\t\tHydra.ActorSetTargetable(idDoor, false)\r\n\t\tHydra.ActorSetTeam(idDoor, Hydra.TEAM_SCENERY)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2275,8 +2244,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2296,8 +2264,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2384,7 +2350,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\tidDonanTomb = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_End\")[1]\r\n\tidRitualFX = Hydra.ActorsInGroup(\"QST_Hawe_ZakFortKeep_RitualFX\")[1]\r\n\t\r\n\t--Donan begins Ritual \r\n\t--Hydra.Wait(1.4)\r\n\tHydra.ActorFaceActor(idDonanTomb, idRitualFX) \r\n\tHydra.QActorSetAnimSetOverride(idDonanTomb, ANIM_DONAN_USE)\r\n\tHydra.ActorPlayEffectGroup(idDonanTomb, FX_SOULSTONE_INTRO)\r\n\tHydra.WaitForQEmpty(idDonanTomb)\r\n\tHydra.ActorEnable(idRitualFX)\r\n\tHydra.ActorPlayEffectGroupActorToActor(idDonanTomb, idRitualFX, \"fxKit_harmless_persistentRope_horadric\", true, \"HP_Portrait\", \"HP_Mouth\")\r\n\tHydra.ActorPlayEffectGroup(idDonanTomb, \"fxKit_harmless_persistentCast_2hand_horadric\", true)\r\n\tHydra.QActorWait(idDonanTomb, 0.5)\r\n\tHydra.QActorPlaySimpleConversation(S_CONVO_DONAN_11, idDonanTomb)\r\n\tHydra.QActorWaitForConversationFinished(idDonanTomb, S_CONVO_DONAN_11)\r\n\tHydra.QActorWait(idDonanTomb, 0.5)\r\n\tHydra.WaitForQEmpty(idDonanTomb)\r\n\t\t\r\n\t--Donan fails Ritual\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idDonanTomb, \"fxKit_harmless_persistentRope_horadric\")\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(idDonanTomb, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\tHydra.QActorPlayEffectGroup(idDonanTomb, SNO_EXPLOSION_FX)\r\n\tHydra.ActorDisable(idRitualFX)\r\n\tHydra.ActorPlayEffectGroup(idDonanTomb, FX_SOULSTONE_OUTRO)\t\r\n\t\r\n\t--Donan reacts to failing Ritual\r\n\tHydra.QActorSetAnimSetOverride(idDonanTomb, ANIM_DONAN_WOUNDED, false, false)\r\n\tHydra.QActorPlaySimpleConversation(CONVO_DONAN_EXPLODE, idDonanTomb)\r\n\tHydra.QActorWaitForConversationFinished(idDonanTomb, CONVO_DONAN_EXPLODE)\r\n\tHydra.QActorWait(idDonanTomb, 1)\r\n\tHydra.WaitForQEmpty(idDonanTomb)\r\n\r\n\tHydra.QActorEventSend(idDonanTomb, \"QST_VERGE1_ADVANCE\")\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2461,8 +2426,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2558,7 +2522,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2635,8 +2598,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2656,8 +2618,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2744,7 +2704,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\tidDonanTomb = Hydra.ActorsInGroup(\"QST_Hawe_Verge_Donan_Tomb_End\")[1]\r\n\tidRitualFX = Hydra.ActorsInGroup(\"QST_Hawe_ZakFortKeep_RitualFX\")[1]\r\n\t\r\n\t--Spawn Angry Ghosts\r\n\ttGhostSpawner = Hydra.ActorsInGroup(\"QST_Hawe_Verge1_Ghost_Spawner\")\r\n\tfor i, Spawner in ipairs(tGhostSpawner) do\r\n\t\tHydra.ActorEnable(Spawner)\r\n\tend\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\t--Burn Holy Scrolls\r\n\t\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Hawe_ZakFortKeep_ZakScrolls\")) do\r\n\t\tHydra.ActorGizmoOperate(i)\r\n\tend\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\t--Burn Holy Scrolls Set 2\r\n\t\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Hawe_ZakFortKeep_ZakScrolls_02\")) do\r\n\t\tHydra.ActorGizmoOperate(i)\r\n\tend\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\t--Burn Holy Scrolls Set 3\r\n\t\tfor id, i in ipairs(Hydra.ActorsInGroup(\"QST_Hawe_ZakFortKeep_ZakScrolls_03\")) do\r\n\t\tHydra.ActorGizmoOperate(i)\r\n\tend\r\n\t\r\n\t\r\n\t--Spawn Ghosts\r\n\ttGhostHordeSpawners = Hydra.ActorsInGroup(\"QST_Hawe_Verge1_GhostHorde_Spawner\")\r\n\tfor i, Spawners in ipairs(tGhostHordeSpawners) do\r\n\t\tHydra.ActorEnable(Spawners)\r\n\tend\r\n\t\r\n\tHydra.Wait(6)\r\n\t\r\n\t\ttGhostHordeSpawners2 = Hydra.ActorsInGroup(\"QST_Hawe_Verge1_GhostHorde2_Spawner\")\r\n\tfor i, Spawners2 in ipairs(tGhostHordeSpawners2) do\r\n\t\tHydra.ActorEnable(Spawners2)\r\n\tend\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2821,8 +2780,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2909,7 +2867,6 @@
         "name": "CSD_Hawe_Wetland_ZakFortKeep"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2986,8 +2943,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3007,8 +2963,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3052,11 +3006,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

@@ -145,7 +145,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tbloodStag = Hydra.ActorsInGroup(\"QST_Scos_Druid_CQ_BloodStag\")[1]\r\n\t\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"GOAT\")\r\n\tHydra.ActorEnable(ID_DEER_HEAD)\r\n\tHydra.ActorEnable(bloodStag)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -222,8 +221,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -243,8 +241,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -356,7 +352,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n\tHydra.QActorWait(idActorKiller, 1.5)\r\n\tHydra.ActorPlayDisembodiedConversation(CONVO_BIRD_SUFFER, idActorKiller)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -433,8 +428,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -454,8 +448,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -597,7 +589,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t--Play SFX + Enable \r\n\tHydra.Wait(2)\r\n\tlocal tBandits = Hydra.ActorsInGroup(\"QST_Scos_Druid_CQ_BloodStag\")\r\n\tfor i, idBandit in ipairs(tBandits) do\r\n\t\tif Hydra.ActorIsValid(idBandit) then\t\t\t\r\n\t\t\tHydra.ActorSetPowerEffectSize(idBandit, 5)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, EG_LIGHTNING_01)\r\n\t\t\tHydra.QActorWait(idBandit, 1)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, EG_LIGHTNING_03)\r\n\t\t\tHydra.QActorWait(idBandit, 0.6)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, EG_LIGHTNING_02)\r\n\t\t\tHydra.QActorWait(idBandit, 0.2)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, EG_LIGHTNING_02)\r\n\t\t\tHydra.QActorWait(idBandit, 0.2)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, EG_LIGHTNING_03)\r\n\t\t\tHydra.QActorPlayEffectGroup(idBandit, FX_BLAST_BLOOD)\r\n\t\t\tHydra.WaitForQEmpty(idBandit)\r\n\t\t\tHydra.QActorFadeAndDelete(idBandit, 1)\r\n\t\tend\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -674,8 +665,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -695,8 +685,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -802,7 +790,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--Special Effects\r\n\tfleshTrap = Hydra.ActorsInGroup(\"QST_Scos_Druid_ClassQuest_SpiritDeer_Tortured\")[1]\r\n\tbloodStag = Hydra.ActorsInGroup(\"QST_Scos_Druid_CQ_BloodStag\")[1]\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idActorGizmo, 5)\r\n\tHydra.QActorPlayEffectGroup(idActorGizmo, FX_BLAST_BLOOD)\r\n\r\n\tHydra.ActorClearAnimSetOverride(bloodStag)\r\n\tHydra.EventSend(\"DRUID_STAG_REBORN\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -888,8 +875,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -978,7 +964,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1055,8 +1040,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1076,8 +1060,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1143,7 +1125,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1220,8 +1201,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1241,8 +1221,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1272,11 +1250,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

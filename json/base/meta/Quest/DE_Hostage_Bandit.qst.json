@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\r\n-- If the monster family is Bandit have them say something, if it's Cannibal they just attack.\r\n\tif Hydra.ActorIsValid(idStartingMonster) then\r\n\t\tif Hydra.ActorGetMonsterFamily(idStartingMonster) == \"Bandit\" then\r\n\t\t\tHydra.ActorPlaySimpleConversation(S_BANDIT_INTRO_02, idStartingMonster)\r\n\t\tend\r\n\t\tHydra.ActorEnableAI(idStartingMonster, true)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -308,7 +306,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n-- If the monster family is Cannibal they attack when the player approaches.\r\n\tif Hydra.ActorIsValid(idStartingMonster) then\r\n\t\tif Hydra.ActorGetMonsterFamily(idStartingMonster) == \"cannibal\" then\r\n\t\t\tHydra.ActorEnableAI(idStartingMonster, true)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -385,8 +382,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n-- If the monster family is cannibal advance the quest.\r\nif Hydra.ActorGetMonsterFamily(idStartingMonster) == \"cannibal\" then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -406,8 +402,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -498,7 +492,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -575,8 +568,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -610,7 +602,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Enable bandit spawners.\r\n\tfor i, idBanditSpawners in ipairs(tBanditSpawners) do\r\n\t\tif Hydra.ActorIsValid(idBanditSpawners) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idBanditSpawners, false)\r\n\t\tend\r\n\tend\r\n\t\r\n-- Set player team for the hostages.\r\n\tfor i, idHostage in ipairs(tVillagers) do\r\n\t\tif Hydra.ActorIsValid(idHostage) then\r\n\t\t\tHydra.ActorSetTeam(idHostage, Hydra.TEAM_PLAYER_DEFAULT)\t\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -687,8 +678,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -740,7 +730,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeElapsed)\r\n\r\n-- Grab a random hostage from those remaining.\r\n\tlocal nHostagesLeft = Hydra.ActorGroupGetCount(S_HOSTAGES)\r\n\tlocal nRandomHostage = Hydra.GetRandomInt(1, nHostagesLeft)\r\n\tidSelectedHostage = Hydra.ActorsInGroup(S_HOSTAGES)[nRandomHostage]\r\n\r\n-- Bandits\t\r\n\tlocal tBanditAttack = Hydra.ActorsInGroup(S_BANDITS)\r\n\t\r\n-- Increment the counter for Elite spawns.\r\n\tnEliteSpawns = nEliteSpawns + 1\r\n\t\r\n-- Set a variable to indicate that the villagers can start crying out for help.\r\n\tbVillagerCry = true\r\n\t\r\n-- Have a random villager cry out for help. This will also cause Bandits to target them.\t\r\n\tif nHostagesLeft >= 1 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_VILLAGER_CONVO, idSelectedHostage)\r\n\tend\r\n\t\r\n-- At certain intervals spawn an Elite.\r\n\tif nEliteSpawns == 3 and nHostagesLeft >= 1 then\r\n\t\tHydra.ActorGizmoSetDisabled(idElite, false)\r\n\t\tHydra.ActorTriggerSpawnerUpdate(idElite)\r\n\tend\r\n\t\r\n\tif nEliteSpawns == 4 and nHostagesLeft >= 2 then\r\n\t\tHydra.ActorGizmoSetDisabled(idElite, false)\r\n\t\tHydra.ActorTriggerSpawnerUpdate(idElite)\r\n\tend\r\n\r\n\tif nEliteSpawns == 5 and nHostagesLeft >= 3 then\r\n\t\tHydra.ActorGizmoSetDisabled(idElite, false)\r\n\t\tHydra.ActorTriggerSpawnerUpdate(idElite)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -817,8 +806,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -890,7 +878,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -967,8 +954,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1021,7 +1007,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1098,8 +1083,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1119,8 +1103,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1216,7 +1198,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1293,8 +1274,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1328,7 +1308,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Disable bandit spawners.\r\n\tfor i, idBanditSpawners in ipairs(tBanditSpawners) do\r\n\t\tif Hydra.ActorIsValid(idBanditSpawners) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idBanditSpawners, true)\r\n\t\tend\r\n\tend\r\n\t\r\n-- For any villagers still alive set them to a neutral team to keep them from dying at this point.\t\r\n\tif Hydra.ActorIsAlive(idVillager01) and Hydra.ActorIsValid(idVillager01) then\r\n\t\tHydra.ActorSetTeam(idVillager01, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsAlive(idVillager02) and Hydra.ActorIsValid(idVillager02) then\r\n\t\tHydra.ActorSetTeam(idVillager02, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsAlive(idVillager03) and Hydra.ActorIsValid(idVillager03) then\r\n\t\tHydra.ActorSetTeam(idVillager03, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1405,8 +1384,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1459,7 +1437,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1536,8 +1513,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1557,8 +1533,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1673,7 +1647,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n-- Drop a marker for npcs to run to when freed at the end.\r\n\tidLeaveMarker = Hydra.ActorSpawnActor(S_ACTOR_MARKER_LOCATION, idActor, false, 0,0)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1750,8 +1723,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1834,7 +1806,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n-- If the starting monster is a bandit have them say something as the player approaches.\r\n\tif Hydra.ActorIsAlive(idStartingMonster) and Hydra.ActorIsValid(idStartingMonster) then\r\n\t\tif Hydra.ActorGetMonsterFamily(idStartingMonster) == \"Bandit\" then\r\n\t\t\tHydra.ActorPlaySimpleConversation(S_BANDIT_INTRO_01, idStartingMonster)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1911,8 +1882,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1980,7 +1950,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n-- Turn off the AI of the initial monster so they don't attack right away.\r\n\tidStartingMonster = idActorSpawned\r\n\tHydra.ActorEnableAI(idStartingMonster, false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2057,8 +2026,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2078,8 +2046,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2180,7 +2146,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n-- Villager rewards the player and then runs off.\r\n\tUF_RewardAndRun(idVillager01)\r\n\t\r\n-- Trigger user event to count NPCs spoken to.\r\n\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2268,7 +2233,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n-- Villager rewards the player and then runs off.\r\n\tUF_RewardAndRun(idVillager02)\r\n\r\n-- Trigger user event to count NPCs spoken to.\r\n\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2356,7 +2320,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n-- Villager rewards the player and then runs off.\r\n\tUF_RewardAndRun(idVillager03)\r\n\r\n-- Trigger user event to count NPCs spoken to.\r\n\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2433,8 +2396,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2524,7 +2486,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2601,8 +2562,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2636,7 +2596,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Triggers user event for any villagers who died.\r\n\tif Hydra.ActorIsAlive(idVillager01) == false then\r\n\t\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\t\tHydra.ActorGizmoSetDisabled(idVillager01Stake, true)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsAlive(idVillager02) == false then\r\n\t\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\t\tHydra.ActorGizmoSetDisabled(idVillager02Stake, true)\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsAlive(idVillager03) == false then\r\n\t\tHydra.EventSend(\"TriggerEnd\", idSelf)\r\n\t\tHydra.ActorGizmoSetDisabled(idVillager03Stake, true)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2713,8 +2672,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2767,7 +2725,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2844,8 +2801,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2865,8 +2821,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2932,7 +2886,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Enable the chest\r\n\tif Hydra.ActorIsValid(idChest) then \r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend \r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3009,8 +2962,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3030,8 +2982,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3145,7 +3095,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3222,8 +3171,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3295,7 +3243,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3372,8 +3319,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3393,8 +3339,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 34,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3424,11 +3368,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "----------------------------------------\r\n-- NPCs thank the player and run away --\r\nfunction UF_RewardAndRun(idVillager)\r\n\r\n-- Have the NPC get out of the stocks.\r\n\tHydra.QActorAnimAndNewIdle(idVillager, S_VILLAGER_FREE, S_VILLAGER_IDLE_ALT)\r\n\r\n-- Start reward conversation.\r\n\tHydra.ActorPlaySimpleConversation(S_VILLAGER_CONVO_REWARD, idVillager)\r\n\r\n-- Drop reward and run away.\r\n\tHydra.Wait(2)\r\n\tHydra.TreasureClassDropAtActor(idVillager, S_VILLAGER_REWARD)\r\n\tHydra.ActorEnableAI(idVillager, true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idVillager, idLeaveMarker, \"IGC_NPC_Sprint_Fast\", false)\r\n\tHydra.QActorFadeAndDelete(idVillager, 1)\r\n\r\nend",
- "szOnStartupScript": "-- ======= CONSTANTS =======\r\n\r\n-- Variables\r\n\tbVillagerCry = false\r\n\tnEliteSpawns = 0\r\n\tnRange = 10\r\n\tnRangeSqr = math.pow(nRange, 2)\r\n\r\n-- Set villager tied up animation\r\n\r\nfor i, idHostage in ipairs(tVillagers) do\r\n\tif Hydra.ActorIsValid(idHostage) then\r\n\t\tHydra.ActorSetAnimSetOverride(idHostage, S_VILLAGER_TIEDUP)\r\n\t\tHydra.ActorEnableAI(idHostage, false)\r\n\t\tHydra.ActorSetHitPointsPercent(idHostage, 0.5)\r\n\tend\r\nend\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

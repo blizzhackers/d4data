@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 97,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t--Hydra.ActorGizmoSetDisabled(idRunestone, true)\r\n\tHydra.ActorSetInvisible(idRunestone, false)\r\n\tHydra.ActorDelete(idDummyGizmo)\r\n\t\r\n\tHydra.ActorPlayEffectGroup(idRunestone, S_CHARGED_EFFECT)\r\n\r\n\r\n\t-- Activate remaining wraiths if gizmo is operated before they are active\r\n\tfor i, idWraith in pairs (tMonsters) do\r\n\t\tif Hydra.ActorIsAlive(idWraith) then\r\n\t\t\tHydra.ActorSetInvulnerable(idWraith, false)\r\n\t\t\tHydra.ActorEnableAI(idWraith, true)\r\n\t\tend\r\n\tend\r\n\r\n\tHydra.SetPlayerVariableFlag(idActorPlayer, \"QST_Scos_TheDiviner_Runestone02_Active\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -285,7 +283,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(listValidActors, idActorDetector)\r\n\r\n\t-- Checks to see if a player is within the trigger volume and has the Hazel-Witch Ley Buff so\r\n\t-- it unhides the runestone and makes it interactable.\r\n\t-- Its giving a count for the number of valid players here too\r\n\r\n\tnPlayer = 0\r\n\t\r\n\tfor u, idActor in pairs(listValidActors) do\r\n\r\n\t\tif Hydra.ActorIsPlayer(idActor) then\r\n\t\t\t\r\n\t\t\tnPlayer = nPlayer + 1\r\n\t\t\t\r\n\t\t\tbHasBuff = Hydra.BuffIsOnActor(sPower, idBuff, idActor)\r\n\t\t\t\r\n\t\t\tif bHasBuff then\r\n\t\t\t\tHydra.ActorSetInvisible(idRunestone, false)\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idRunestone, false)\r\n\t\t\t\t\r\n\t\t\t\t-- One time spawn monsters. Set them to disabled to activate later\r\n\t\t\t\tif bSpawnMonsters then\r\n\t\t\t\t\r\n\t\t\t\t\tHydra.ActorTriggerSpawnerUpdate(idSpawnerWoodWraith)\r\n\t\t\t\t\ttMonsters = Hydra.ActorsInGroup(\"QST_Scos_TheDiviner_MonsterGrp\")\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\tfor u, idMonster in pairs(tMonsters) do\r\n\t\t\t\t\t\tHydra.ActorSetInvulnerable(idMonster, true)\r\n\t\t\t\t\t\tHydra.ActorEnableAI(idMonster, false)\r\n\t\t\t\t\tend\r\n\t\t\t\t\t\r\n\t\t\t\t\tbSpawnMonsters = false\r\n\t\t\t\t\tUF_SpawnWaves()\r\n\t\t\t\tend\r\n\t\t\t\t\t\t \r\n\t\t\t\tbBuffedPlayerInTrigger = true\r\n\t\t\t\tbreak\r\n\t\t\telse\r\n\t\t\t\tbBuffedPlayerInTrigger = false\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -362,8 +359,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -432,7 +428,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorSetInvisible(idRunestone, true)\r\n\tHydra.ActorGizmoSetDisabled(idRunestone, true)\r\n\t\r\n\tbBuffedPlayerInTrigger = false\r\n\t\r\n\tnPlayer = nPlayer - 1\r\n\r\n--\tfor f, idMonster in pairs(tMonsters) do\r\n--\t\tHydra.ActorSetInvisible(idMonster, true)\r\n--\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -509,8 +504,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -562,7 +556,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\r\n\tif bBuffedPlayerInTrigger == true then\r\n\t\tnCounter = nCurrentCount\r\n\t\t--UF_SpawnWaves()\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -639,8 +632,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -712,7 +704,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.ActorRemoveFromGroup(idActorKilled, \"QST_Scos_TheDiviner_MonsterGrp\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -789,8 +780,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -859,7 +849,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t\tbSpawnMonsters = true\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -936,8 +925,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -957,8 +945,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1024,7 +1010,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1101,8 +1086,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1122,8 +1106,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1238,7 +1220,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1315,8 +1296,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1336,8 +1316,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1367,11 +1345,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function UF_SpawnWaves()\r\n\r\n\tnCounter = nCounter + 1\r\n\r\n\ttMonsters = Hydra.ActorsInGroup(\"QST_Scos_TheDiviner_MonsterGrp\")\r\n\tidMonster = tMonsters[1]\r\n\t\r\n\tif Hydra.ActorIsAlive(idMonster) then\r\n\t\tif nCounter == 1 then\r\n\t\t\tHydra.Wait(2)\r\n\t\t\tHydra.ActorSetInvulnerable(idMonster, false)\r\n\t\t\tHydra.ActorEnableAI(idMonster, true)\r\n\t\tend\r\n\t\t\r\n--\t\tif nCounter == 3 then\r\n--\t\t\tHydra.ActorSetInvulnerable(idMonster, false)\r\n--\t\t\tHydra.ActorEnableAI(idMonster, true)\r\n--\t\tend\r\n\t\t\r\n--\t\tif nCounter == 5 then\r\n--\t\t\t--idMonster = tMonsters[1]\r\n--\t\t\tHydra.ActorSetInvulnerable(idMonster, false)\r\n--\t\t\tHydra.ActorEnableAI(idMonster, true)\r\n--\t\tend\r\n\tend\r\n\r\n\tnCurrentCount = nCounter\r\n\r\nend",
- "szOnStartupScript": "-- //////////////////////////////////////////// --\r\n-- Core Vars\r\n-- //////////////////////////////////////////// --\r\n\r\nsPower = Hydra.ReferencePower(\"QST_Scos_TheDiviner_RunestoneDetection\")\r\nidBuff = \"RUNESTONE_DETECT_BUFF\"\r\n\r\nidThisQuest = Hydra.QuestGetOwner()\r\n\r\nidRunestone = Hydra.ActorsLinkedByActorInGroup(idThisQuest, \"Runestone\")[1]\r\nidDummyGizmo = Hydra.ActorsLinkedByActorInGroup(idThisQuest, \"DummyGizmo\")[1]\r\nidSpawnerWoodWraith = Hydra.ActorsLinkedByActorInGroup(idThisQuest, \"SpawnerWoodWraith\")[1]\r\n\r\nnPlayer = 0\r\nnCounter = 0\r\nnCurrentCount = 0\r\nbSpawnMonsters = false\r\n\r\n-- ///////////////////////////////////////////// --\r\n-- Setup invisibility\r\n\r\nHydra.ActorSetInvisible(idRunestone, true)\r\nHydra.ActorSetInvisible(idDummyGizmo, true)\r\n\r\nHydra.ActorGizmoSetDisabled(idRunestone, true)\r\n\r\n--Hydra.Wait(1)\r\n--Spawn Woodwraiths\r\n\r\n--tMonsters = Hydra.ActorsInGroup(\"QST_Scos_TheDiviner_MonsterGrp\")\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

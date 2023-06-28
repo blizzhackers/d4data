@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t-- Get References\r\n\t-- tVeins = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"VEINS\")\r\n\t-- tFleshWalls = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"FLESH_WALLS\")\r\n\t\r\n\t-- Hydra.TraceScreen(#tVeins)\r\n\t-- Hydra.TraceScreen(#tFleshWalls)\r\n\t\r\n\t-- tVeins = SortActorListByDistance(idActorKilled, tVeins)\r\n\t\r\n\t-- Destroy Veins\r\n\t-- for i, idVein in ipairs(tVeins) do\r\n\t--\tHydra.ActorDelete(idVein)\r\n\t--\tHydra.Wait(0.2)\r\n\t--end\r\n\t\r\n\t-- Destroy Door\r\n\t--\tfor i, idFleshWall in ipairs(tFleshWalls) do\r\n\t--\tHydra.ActorDelete(idFleshWall)\r\n\t-- end\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -197,7 +196,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t-- Dynamically Disable the Traversals in the back of the chamber\r\n\ttTraversalControllers = Hydra.ActorsLinkedByActorInGroup(idSelf, \"TRAVERSAL_CONTROLLERS\")\r\n\t\r\n\t\r\n\tfor i, idTraversalController in ipairs(tTraversalControllers) do\r\n\t\tSetTraversalEnabled(idTraversalController, false)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -274,8 +272,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.ActorGizmoSetDisabled(idUniqueSpawner, false)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -350,7 +347,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -427,8 +423,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -448,8 +443,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -554,7 +547,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--Hydra.TraceScreen(idFinalFleshWall)\r\n\t-- Hydra.ActorKill(idFinalFleshWall)\r\n\t\r\n\tlocal tFinalFleshWall = Hydra.ActorsLinkedByActorInGroup(idSelf, \"FINAL_FLESH_WALL\")\r\n\t\r\n\tfor i, actorID in pairs(tFinalFleshWall) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.ActorDelete(idFinalFleshWallCollider)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -640,8 +632,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -661,8 +652,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -762,7 +751,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tlocal idTraversalProp = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"TRAVERSAL_CONTROLLER\")[1]\r\n\t\r\n\tSetTraversalEnabled(idTraversalProp, true)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -839,8 +827,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -918,7 +905,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tKillGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup1\")\r\n\tlocal tKillGroup2 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup2\")\r\n\tlocal tColliderGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"colliderGroup1\")\r\n\t\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\t--Hydra.Wait(3.5)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup2) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(5.5)\r\n\t\r\n\tfor i, actorID in pairs(tColliderGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorDelete(actorID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1015,7 +1001,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tKillGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup1\")\r\n\tlocal tKillGroup2 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup2\")\r\n\tlocal tKillGroup3 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup3\")\r\n\tlocal tColliderGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"colliderGroup1\")\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup2) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup3) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tfor i, actorID in pairs(tColliderGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorDelete(actorID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1112,7 +1097,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tKillGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup1\")\r\n\tlocal tKillGroup2 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup2\")\r\n\tlocal tKillGroup3 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup3\")\r\n\tlocal tColliderGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"colliderGroup1\")\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(5.5)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup2) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup3) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tfor i, actorID in pairs(tColliderGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorDelete(actorID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1209,7 +1193,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tKillGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup1\")\r\n\tlocal tKillGroup2 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup2\")\r\n\tlocal tKillGroup3 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup3\")\r\n\tlocal tKillGroup4 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup4\")\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup2) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(3)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup3) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup4) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1306,7 +1289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal tKillGroup1 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup1\")\r\n\tlocal tKillGroup2 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup2\")\r\n\tlocal tKillGroup3 = Hydra.ActorsLinkedByActorInGroup(idActorKilled, \"killGroup3\")\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup1) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(1.5)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup2) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\n\t\t\r\n\tHydra.Wait(1.5)\r\n\t\r\n\tfor i, actorID in pairs(tKillGroup3) do\r\n\t\tif Hydra.ActorIsValid(actorID) then\r\n\t\t\tHydra.ActorKill(actorID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1383,8 +1365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1404,8 +1385,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1435,11 +1414,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

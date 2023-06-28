@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tT_MONSTERS = Hydra.ActorsLinkedByActorInGroup(idSelf, \"MONSTERS\")\r\n\tidCorpse = Hydra.ActorsLinkedByActorInGroup(idSelf, \"CORPSE\")[1]\r\n\tT_GORE = Hydra.ActorsLinkedByActorInGroup(idSelf, \"GORE\")\r\n\r\n\t-- Spawn\r\n\tfor i, idMonster in ipairs(T_MONSTERS) do\r\n\t\tif Hydra.ActorIsValid(idMonster) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idMonster, false)\r\n\t\tend\r\n\tend\r\n\t\r\n\t--Pauses to give time for spawners to line up with blood splat\r\n\t--Hydra.Wait(0.375)\r\n\t\r\n\tHydra.ActorTriggerPowerAtFeet(idCorpse, S_PWR_BURST)\r\n\t\r\n\tfor i, idGore in ipairs(T_GORE) do\r\n\t\tif Hydra.ActorIsValid(idGore) then\r\n\t\t\tHydra.ActorEnable(idGore)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -194,8 +192,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -301,7 +297,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -378,8 +373,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -399,8 +393,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -430,11 +422,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "T_MONSTERS = Hydra.ActorsLinkedByActorInGroup(idSelf, \"MONSTERS\")\r\nidCorpse = Hydra.ActorsLinkedByActorInGroup(idSelf, \"CORPSE\")[1]\r\n\r\n-- Initial Setup\r\nfor i, idMonster in ipairs(T_MONSTERS) do\r\n\t--Playing dead\r\n\tHydra.ActorEnableAI(idMonster, false)\r\n\tHydra.ActorSetTargetable(idMonster, false)\r\n\tHydra.ActorSetInvisible(idMonster, true)\r\n\tHydra.ActorSetIdleAnim(idMonster, S_ANIM_DEAD)\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

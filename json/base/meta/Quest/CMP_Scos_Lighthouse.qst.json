@@ -178,7 +178,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -310,8 +309,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -392,7 +390,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\tSetTraversalEnabled(ID_MAST_TRAVERSAL_1)\r\n\tSetTraversalEnabled(ID_MAST_TRAVERSAL_1_2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -501,7 +498,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -610,7 +606,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\tHydra.ActorDelete(ID_MAST2_BLOCKER)\r\n\tSetTraversalEnabled(ID_MAST_TRAVERSAL_2_1)\r\n\tSetTraversalEnabled(ID_MAST_TRAVERSAL_2_2)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -696,8 +691,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -776,7 +770,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.ActorPlayEffectGroup(BOSS_PROJ_START1, \"SoundGroup_Mon_Drowned_SeaHag_Scream\");\r\n\t\r\n\tHydra.Wait(1);\r\n\t\r\n\tHydra.ActorTriggerPowerAtFeet(BOSS_PROJ_START1, BOSS_POOL_POWER);\r\n\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -853,8 +846,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -874,8 +866,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -994,7 +984,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tHydra.ActorPlayConversation(CONV_PreClaim, idActorKiller)\r\n\t--Hydra.BossEncounterManuallyComplete(BOSS_LEVEL_AREA);\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n     \r\n    for i, idPlayer in ipairs(tAllPlayers) do\r\n        -- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n        -- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n        Hydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Stronghold_HopesLight\", idPlayer)\r\n         \r\n        -- Set the variable, to mark that this player has recieved a reward\r\n        Hydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Stronghold_HopesLight\")\r\n    end\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lighthouse_Stronghold_Complete\")\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1094,8 +1083,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1174,7 +1162,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\t--Hydra.BossEncounterManuallyQueueStart(BOSS_LEVEL_AREA);\r\n\t--Hydra.ActorSetTargetable(BOSS_ID, true);\r\n\t--Hydra.ActorEnableAI(BOSS_ID, true);\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lighthouse_Stronghold_Boss\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1251,8 +1238,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1272,8 +1258,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorSpawnActor(\"Graveyard\", ID_BOSS_GY, false, 0, 0)",
-   "szOnExitScript": "-- Delete boss area props\r\nlocal tProps = Hydra.ActorsInGroup(\"CAMP_Lighthouse_BossProps\")\r\n\r\nfor i, idProp in pairs(tProps) do\r\n\tHydra.ActorDelete(idProp)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1391,7 +1375,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tSetTraversalEnabled(CLIMB_CONTROLLER_00, false)\r\n\tSetTraversalEnabled(CLIMB_CONTROLLER_01, false)\r\n\tCamps.ClaimCamera(idActorPlayer, idActorGizmo);\r\n\tCamps.ActivateWaypoint(idActorGizmo)\r\n\tHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1477,8 +1460,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1498,8 +1480,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1604,7 +1584,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tIslandEntered(idActorDetector)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1718,7 +1697,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tCamps.PlayIntroConv(idActor, CONV_INTRO, S_GBID_PV_HAS_PLAYED_INTRO)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1832,7 +1810,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorRemoveMergedAIState(idActorDetector, BELL_AI)\r\n\tHydra.QActorFaceActor(idActorDetector, idActor)\r\n\tHydra.QActorPower(idActorDetector, TAUNT_POWER)\r\n--\tHydra.ActorTriggerBrainStancePowerAtTarget(idActorDetector, idActor, TAUNT_POWER)\r\n\tHydra.ActorAIForcePrimaryTarget(idActorDetector, idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1909,8 +1886,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1990,7 +1966,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lighthouse_Stronghold\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2092,8 +2067,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2113,8 +2087,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2239,7 +2211,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorPlayEffectGroup(idActorGizmo, \"environmentVFX_fire_wild_scalable\")\r\n\tHydra.ActorPlayEffectGroup(idActorGizmo, \"HopesLight_Beacon_Lights\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2316,8 +2287,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2337,8 +2307,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "SetTraversalEnabled(ID_POSTBOSS_LADDER_LOCATOR, true)\r\nHydra.ActorGizmoSetDisabled(LIGHTHOUSE_FLAME, false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2368,11 +2336,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function IslandEntered(idTrigger)\r\n\t-- Enable Spawners\r\n\tHydra.ActorsEnableLinkedByActorInGroup(idTrigger, \"Spawner\")\r\n\t\r\nend",
- "szOnStartupScript": "AG_NORMAL = \"CAMP_Lighthouse_NormalMonsters\"\r\nS_GBID_PV_HAS_PLAYED_INTRO = \"CAMP_Scos_HopesLight_Has_Played_Intro_VO\"\r\n\r\nSetTraversalEnabled(ID_POSTBOSS_LADDER_LOCATOR, false)\r\nSetTraversalEnabled(ID_MAST_TRAVERSAL_1, false)\r\nSetTraversalEnabled(ID_MAST_TRAVERSAL_1_2, false)\r\nSetTraversalEnabled(ID_MAST_TRAVERSAL_2_1, false)\r\nSetTraversalEnabled(ID_MAST_TRAVERSAL_2_2, false)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

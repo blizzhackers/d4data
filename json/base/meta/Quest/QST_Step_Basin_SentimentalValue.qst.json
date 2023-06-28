@@ -199,7 +199,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -290,8 +289,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -332,7 +330,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif Hydra.ActorIsValid(id_Ulagan_Overlook) then\r\n\r\n\tid_Ulagan_Clone = Hydra.CreatePersonalClone(id_Ulagan_Overlook, true)\r\n\t\tif Hydra.ActorIsValid(id_Ulagan_Clone) then\r\n\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(id_Ulagan_Clone, loc_UlaganLeaves_Basin, \"NPC_Run\", true)\r\n \t\tHydra.QActorDeletePersonalClone(id_Ulagan_Clone)\r\n\t\t\r\n\t\tend\r\n\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -409,8 +406,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -430,8 +426,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -579,7 +573,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -665,8 +658,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -686,8 +678,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -812,7 +802,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- if sign not previously operated\r\n\tif Hydra.IsPlayerVariableSet(idSelf, \"QST_Step_SentimentalValue_Sign01Read\") == false then\r\n\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_Sign01Read\")\r\n\t\tHydra.EventSend(\"SentimentalValue_SignRead\", idSelf)\r\n\t\tHydra.IncrementPlayerVariableNumeric(idSelf, \"QST_Step_SentimentalValue_SignsRead\", 1)\r\n\t\t\r\n\t\tlocal idUlaganFollower = Hydra.QuestGetFollower(\"NPC_QST_Step_Ulagan_Follower\")\r\n\t\t\r\n\t\tif Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 1 then\r\n\t\t\tHydra.QActorPlayConversation(conv_Ulagan_02b, idSelf, idUlaganFollower)\r\n\t\telse if Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 3 then\r\n\t\t\t\r\n\t\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_UlaganLoc01\")\r\n\t\t\tHydra.QuestFollowerTakeOwnership(idUlaganFollower)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganFollower, id_Ulagan_Report01, \"NPC_RUN\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(idUlaganFollower, id_Ulagan_Report01)\r\n\t\t\tHydra.QActorFadeAndDelete(idUlaganFollower, 0.5)\r\n\t\t\t-- send user event\r\n\t\t\tHydra.EventSend(\"SentimentalValue_AllSignsRead\", idSelf)\r\n\t\t\t\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -940,7 +929,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- if sign not previously operated\r\n\tif Hydra.IsPlayerVariableSet(idSelf, \"QST_Step_SentimentalValue_Sign02Read\") == false then\r\n\t\t\r\n\t\tHydra.EventSend(\"SentimentalValue_SignRead\", idSelf)\r\n\t\tHydra.IncrementPlayerVariableNumeric(idSelf, \"QST_Step_SentimentalValue_SignsRead\", 1)\r\n\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_Sign02Read\")\r\n\t\t\r\n\t\tlocal idUlaganFollower = Hydra.QuestGetFollower(\"NPC_QST_Step_Ulagan_Follower\")\r\n\t\t\r\n\t\tif Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 1 then\r\n\t\t\t\t\tHydra.QActorPlayConversation(conv_Ulagan_02b, idSelf, idUlaganFollower)\r\n\t\telse if Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 3 then\r\n\t\t\t\r\n\t\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_UlaganLoc02\")\r\n\t\t\tHydra.QuestFollowerTakeOwnership(idUlaganFollower)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganFollower, id_Ulagan_Report02, \"NPC_RUN\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(idUlaganFollower, id_Ulagan_Report02)\r\n\t\t\tHydra.QActorFadeAndDelete(idUlaganFollower, 0.5)\r\n\t\t\t-- send user event\r\n\t\t\tHydra.EventSend(\"SentimentalValue_AllSignsRead\", idSelf)\r\n\t\t\t\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1073,7 +1061,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t-- if sign not previously operated\r\n\tif Hydra.IsPlayerVariableSet(idSelf, \"QST_Step_SentimentalValue_Sign03Read\") == false then\r\n\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_Sign03Read\")\r\n\t\tHydra.EventSend(\"SentimentalValue_SignRead\", idSelf)\r\n\t\tHydra.IncrementPlayerVariableNumeric(idSelf, \"QST_Step_SentimentalValue_SignsRead\", 1)\r\n\t\t\r\n\t\tlocal idUlaganFollower = Hydra.QuestGetFollower(\"NPC_QST_Step_Ulagan_Follower\")\r\n\t\t\r\n\t\tif Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 1 then\r\n\t\t\tHydra.QActorPlayConversation(conv_Ulagan_02b, idSelf, idUlaganFollower)\r\n\t\telse if Hydra.GetPlayerVariableNumericValue(idSelf, \"QST_Step_SentimentalValue_SignsRead\") == 3 then\r\n\t\t\t\r\n\t\t\tHydra.SetPlayerVariableFlag(idSelf, \"QST_Step_SentimentalValue_UlaganLoc03\")\r\n\t\t\t\r\n\t\t\tHydra.QuestFollowerTakeOwnership(idUlaganFollower)\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganFollower, id_Ulagan_Report03, \"NPC_RUN\", true)\r\n\t\t\tHydra.QActorFaceSameAsActor(idUlaganFollower, id_Ulagan_Report03)\r\n\t\t\tHydra.QActorFadeAndDelete(idUlaganFollower, 0.5)\r\n\t\t\t-- send user event\r\n\t\t\tHydra.EventSend(\"SentimentalValue_AllSignsRead\", idSelf)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1178,8 +1165,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1269,7 +1255,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1355,8 +1340,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1376,8 +1360,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1532,7 +1514,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Report01, true)\r\n\t\r\n\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Cower_N, \"NPC_Run\", true)\r\n\t\tHydra.QActorSetAnimSetOverride(idUlaganClone, \"NPC_Idle_Crouch_Cower\")\r\n\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1623,8 +1604,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1747,7 +1727,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Report02, true)\r\n\t\r\n\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Cower_E, \"NPC_Run\", true)\r\n\t\tHydra.QActorSetAnimSetOverride(idUlaganClone, \"NPC_Idle_Crouch_Cower\")\r\n\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1838,8 +1817,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1962,7 +1940,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Report03, true)\r\n\t\r\n\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Cower_S, \"NPC_Run\", true)\r\n\t\tHydra.QActorSetAnimSetOverride(idUlaganClone, \"NPC_Idle_Crouch_Cower\")\r\n\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2053,8 +2030,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2074,8 +2050,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2230,7 +2204,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2321,8 +2294,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2445,7 +2417,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2536,8 +2507,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2660,7 +2630,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2751,8 +2720,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2772,8 +2740,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2921,7 +2887,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3027,8 +2992,7 @@
        "groupName": "Item",
        "name": "QST_Step_SentimentalValue_Heirloom"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3144,7 +3108,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3250,8 +3213,7 @@
        "groupName": "Item",
        "name": "QST_Step_SentimentalValue_Heirloom"
       }
-     ],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     ]
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3367,7 +3329,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3453,8 +3414,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3570,7 +3530,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3656,8 +3615,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3773,7 +3731,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3859,8 +3816,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3880,8 +3836,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3954,7 +3908,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- if Hydra.IsPlayerVariableSet(idSelf, \"QST_Step_SentimentalValue_UlaganLoc01\") == true then\r\n\t\tHydra.EventSend(\"SentimentalValue_BanditAmbush_North\", idSelf)\r\n\t-- else if Hydra.IsPlayerVariableSet(idSelf, \"QST_Step_SentimentalValue_UlaganLoc02\") == true then\r\n\t\t-- Hydra.EventSend(\"SentimentalValue_BanditAmbush_East\", idSelf)\r\n\t-- else\r\n\t\t-- Hydra.EventSend(\"SentimentalValue_BanditAmbush_South\", idSelf)\r\n\t-- end\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4040,8 +3993,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4129,7 +4081,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Cower_N, true)\r\n\t\r\n\t\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Report01, \"NPC_Run\", true)\r\n\t\t\tHydra.QActorClearAnimSetOverride(idUlaganClone)\r\n\t\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\t\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4229,8 +4180,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4316,7 +4266,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4407,8 +4356,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4428,8 +4376,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4502,7 +4448,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.EventSend(\"SentimentalValue_BanditAmbush_East\", idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4588,8 +4533,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4677,7 +4621,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Cower_E, true)\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Report02, \"NPC_Run\", true)\r\n\t\t\tHydra.QActorClearAnimSetOverride(idUlaganClone)\r\n\t\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\t\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4777,8 +4720,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4864,7 +4806,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4955,8 +4896,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 80,
@@ -4976,8 +4916,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5050,7 +4988,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.EventSend(\"SentimentalValue_BanditAmbush_South\", idSelf)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5136,8 +5073,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5225,7 +5161,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idItem)\r\n\tidUlaganClone = Hydra.CreatePersonalClone(id_Ulagan_Cower_S, true)\r\n\t\t\r\n\t\tif Hydra.ActorIsValid(idUlaganClone) then\r\n\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idUlaganClone, id_Ulagan_Report03, \"NPC_Run\", true)\r\n\t\t\tHydra.QActorClearAnimSetOverride(idUlaganClone)\r\n\t\t\tHydra.QActorDeletePersonalClone(idUlaganClone)\r\n\t\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5325,8 +5260,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5412,7 +5346,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5503,8 +5436,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 80,
@@ -5524,8 +5456,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5564,11 +5494,6 @@
   }
  ],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

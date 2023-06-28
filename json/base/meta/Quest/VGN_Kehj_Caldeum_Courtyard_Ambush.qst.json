@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n--local idKnight = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Knight\")[1]\r\n--Hydra.QActorAnim(idKnight, ANIMKEY_CRAWL)\r\n\r\n\tHydra.QActorClearAnimSetOverride(KNIGHT_STOMP)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(KNIGHT_STOMP, STOMP_MARKER, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorFaceSameAsActor(KNIGHT_STOMP, STOMP_MARKER)\r\n\tHydra.QActorSetAnimSetOverride(KNIGHT_STOMP, KNIGHT_INSPECT_GROUND_ANIMSET)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -332,7 +328,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\n\r\n\tHydra.ActorTriggerSpawnerUpdateInActorGroup(\"QST_Caldeum_VGN_Mega_Spawner\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -409,8 +404,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -489,7 +483,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t\r\n\tlocal idKnight = Hydra.ActorsLinkedByActorInGroup(idSelf, \"knight_stomp\")[1]\r\n\tDeathPower = Hydra.ReferencePower(\"death_decapitate_physical_default\")\r\n\t\r\n\tHydra.Wait(0.5)\r\n\tHydra.QActorKill(idKnight, DeathPower)\r\n\r\n\tlocal tKnights = Hydra.ActorsLinkedByActorInGroup(idSelf, \"knight\")\r\n\tfor i, idActor in pairs (tKnights) do\r\n\t\tif Hydra.ActorIsAlive(idActor) then\r\n\t\t\tHydra.QActorClearAnimSetOverride(idActor)\r\n\t\t\tHydra.ActorAIForcePrimaryTarget(idActor, idActorSpawned)\r\n\t\t\tHydra.ActorEnableAI(idActor)\r\n\t\t\tHydra.ActorSetTeam(idActor, Hydra.TEAM_PLAYER_DEFAULT)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -566,8 +559,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -587,8 +579,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -692,7 +682,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n-- Post fight setup\r\n-- Knight 1\r\n\tif Hydra.ActorIsAlive(KNIGHT_01) then\r\n\t\tHydra.QActorClearAnimSetOverride(KNIGHT_01)\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(KNIGHT_01, FINISH_MARKER_01, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(KNIGHT_01, FINISH_MARKER_01)\r\n\t\tHydra.QActorSetAnimSetOverride(KNIGHT_01, KNIGHT_STAND_GUARD_ANIMSET)\r\n\t\tHydra.ActorDisableAI(KNIGHT_01)\r\n\t\tHydra.ActorSetTeam(KNIGHT_01, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n-- Knight 2\r\n\tif Hydra.ActorIsAlive(KNIGHT_02) then\r\n\t\tHydra.QActorClearAnimSetOverride(KNIGHT_02)\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(KNIGHT_02, FINISH_MARKER_02, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(KNIGHT_02, FINISH_MARKER_02)\r\n\t\tHydra.QActorSetAnimSetOverride(KNIGHT_02, KNIGHT_INSPECT_GROUND_ANIMSET)\r\n\t\tHydra.ActorDisableAI(KNIGHT_02)\r\n\t\tHydra.ActorSetTeam(KNIGHT_02, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n-- Knight 3\r\n\tif Hydra.ActorIsAlive(KNIGHT_03) then\r\n\t\tHydra.QActorClearAnimSetOverride(KNIGHT_03)\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(KNIGHT_03, FINISH_MARKER_03, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(KNIGHT_03, FINISH_MARKER_03)\r\n\t\tHydra.QActorSetAnimSetOverride(KNIGHT_03, KNIGHT_INSPECT_GROUND_ANIMSET)\r\n\t\tHydra.ActorDisableAI(KNIGHT_03)\r\n\t\tHydra.ActorSetTeam(KNIGHT_03, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n-- Knight 4\r\n\tif Hydra.ActorIsAlive(KNIGHT_04) then\r\n\t\tHydra.QActorClearAnimSetOverride(KNIGHT_04)\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(KNIGHT_04, FINISH_MARKER_04, \"NPC_Walk_Fast\", true)\r\n\t\tHydra.QActorFaceSameAsActor(KNIGHT_04, FINISH_MARKER_04)\r\n\t\tHydra.QActorSetAnimSetOverride(KNIGHT_04, KNIGHT_STAND_GUARD_ANIMSET)\r\n\t\tHydra.ActorDisableAI(KNIGHT_04)\r\n\t\tHydra.ActorSetTeam(KNIGHT_04, Hydra.TEAM_NEUTRAL)\r\n\tend\r\n\tif Hydra.ActorIsAlive(KNIGHT_01) then\r\n\t\tHydra.WaitForQEmpty(KNIGHT_01)\r\n\tend\r\n\tif Hydra.ActorIsAlive(KNIGHT_02) then\r\n\t\tHydra.WaitForQEmpty(KNIGHT_02)\r\n\tend\r\n\tif Hydra.ActorIsAlive(KNIGHT_03) then\r\n\t\tHydra.WaitForQEmpty(KNIGHT_03)\r\n\tend\r\n\tif Hydra.ActorIsAlive(KNIGHT_04) then\r\n\t\tHydra.WaitForQEmpty(KNIGHT_04)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -769,8 +758,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -790,8 +778,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -821,11 +807,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--Play Victory Music Stinger\r\n\tHydra.MusicOverride(WORLD_SANC, \"Music_Boss_Duriel_Victory\")\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -263,7 +261,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif not playersAreReadyForBoss() then\r\n\t\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_01B_DurielBoss_Abandoned\")\r\n\t\treturn\r\n\tend \r\n\t\r\n\tif durielHasBeenAttempted() then\r\n\t\tHydra.Wait(.25)\r\n\t\tlocal nTimeToModify = 1 - Hydra.QuestTimerGetTimeRemaining()\r\n\t\tHydra.QuestTimerModifyTime(nTimeToModify)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -354,7 +351,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif not durielHasBeenAttempted() and playersAreReadyForBoss() and PRD:Roll() then\r\n\t\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_01B_DurielBoss_DurielUnburrow\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -425,7 +421,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t\r\n\tif playersAreReadyForBoss() then\r\n\t\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_01B_DurielBoss_DurielUnburrow\")\r\n\telse\r\n\t\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_01B_DurielBoss_Abandoned\")\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -502,8 +497,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -585,7 +579,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.ActorEnable(ID_BOSS)\r\n\tHydra.ActorTriggerPowerAtFeet(ID_BOSS, BOSS_INTRO_POWER)\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_LEVEL_AREA) \t--Manually Start Encounter\r\n\t\r\n\tif not durielHasBeenAttempted() then\r\n\t\tHydra.SetGameVariableFlag(sVarDurielAlreadyAttempted)\r\n\tend\r\n\t\r\n\t--Play Victory Music Stinger\r\n\tHydra.MusicOverride(WORLD_SANC,  \"Music_Boss_Duriel_Phase1\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -662,8 +655,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -752,7 +744,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -829,8 +820,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.Wait(1)\r\nHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -918,7 +908,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tHydra.ClearMusicOverride(WORLD_SANC)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1004,8 +993,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1025,8 +1013,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "PRD = PRD.Create(0.10)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1092,7 +1078,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif (Hydra.BossEncounterIsInProgress(BOSS_LEVEL_AREA)) then\r\n\t\tHydra.BossEncounterManuallyComplete(BOSS_LEVEL_AREA)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1169,8 +1154,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1190,8 +1174,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1312,7 +1294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1389,8 +1370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1471,7 +1451,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\t\r\n\tfor i, playerID in pairs(Hydra.PlayerActors()) do\r\n\t\tGlobalScreenshake(playerID, \"Heavy\")\r\n\tend\r\n\t\r\n\tHydra.ActorSetPowerEffectSize(idSelf, 12)\r\n\tHydra.ActorSetPowerEffectDuration(idSelf, 5)\r\n\tHydra.ActorPlayEffectGroup(idSelf, EG_INTRO_ROCKS)\r\n\tHydra.ActorPlayEffectGroup(idSelf, EG_INTRO_DIRT)\r\n\t\r\n\tif not durielHasBeenAttempted() then\r\n\t\tHydra.ActorPlayConversation(CONV_INTRO, idActorPlayer)\r\n\tend\r\n\t\r\n\tHydra.EventSend(\"QST_VGN_Kehj_Caldeum_01B_DurielBoss_Start\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1557,8 +1536,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1578,8 +1556,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1609,11 +1585,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function durielHasBeenAttempted()\r\n\treturn Hydra.IsGameVariableSet(sVarDurielAlreadyAttempted)\r\nend\r\n\r\nlocal function playersAreReadyForBoss()\r\n\tfor i, playerID in pairs(Hydra.PlayerActorsInLevelArea(BOSS_LEVEL_AREA)) do -- check to see if anyone is actually in the boss encounter\r\n\t\tif Hydra.ActorIsAlive(playerID) then\r\n\t\t\treturn true\r\n\t\tend\r\n\tend\r\n\t\r\n\treturn false\r\nend",
- "szOnStartupScript": "sVarDurielAlreadyAttempted = \"QST_Kehj_Caldeum_01B_Duriel_Already_Attempted\"\r\nWORLD_SANC = Hydra.ReferenceWorld(\"Sanctuary_Eastern_Continent\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

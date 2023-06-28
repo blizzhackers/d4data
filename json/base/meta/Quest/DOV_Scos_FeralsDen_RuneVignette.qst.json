@@ -131,7 +131,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif Hydra.ActorGetSNOName(idActor) == \"spider_adult\" then\r\n\t\ttable.insert(tSpiders, idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -208,8 +207,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -292,7 +290,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tif #tSpiders > 0 then\r\n\t\tfor i, idSpider in pairs(tSpiders) do\r\n\t\t\tif Hydra.ActorIsValid(idSpider) then\r\n\t\t\t\tidChosenSpider = idSpider\r\n\t\t\t\t\r\n\t\t\t\tHydra.ActorAddToGroup(idChosenSpider, \"DRV_MonsterSpawn_Spider\")\r\n\t\t\t\t\r\n\t\t\t\tHydra.ActorEnableAI(idChosenSpider, false)\r\n\t\t\t\t\r\n\t\t\t\tHydra.QActorMoveToLocationConstantSpeed(idChosenSpider, idJumpLoc, Hydra.MOVE_RATE_RUN, false)\r\n\t\t\t\tHydra.QActorFaceActor(idChosenSpider, idLootCorpse)\r\n\t\t\t\tHydra.QActorPower(idChosenSpider, S_ANIM_SPIDER_MOUNT)\r\n\t\t\t\t\r\n\t\t\t\tHydra.EventSend(\"Spider_Found\")\r\n\t\t\t\t\r\n\t\t\t\tbreak\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -369,8 +366,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -459,7 +455,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -536,8 +531,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -606,7 +600,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorFadeAndDelete(idLootCorpseCover, 0.5)\r\n\tHydra.ActorTriggerPowerAtFeet(idCorpse, S_PWR_BURST)\r\n\t\r\n\tHydra.ActorDelete(idFX)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -683,8 +676,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -704,8 +696,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -809,7 +799,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif idActorKilled == idChosenSpider then\r\n\t\tHydra.EventSend(\"Spider Killed\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -886,8 +875,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -976,7 +964,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1053,8 +1040,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1118,7 +1104,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\tHydra.ActorEnable(idCorpse)\r\n\t--Hydra.ActorGizmoOperate(idLootCorpse, idCorpse)\r\n\tHydra.QActorAnimAndNewIdle(idCorpse, S_ANIM_HOST_MOUNT, S_ANIM_HOST_IDLE)\r\n\tHydra.ActorEnableAI(idCorpse, true)\r\n\tif Hydra.ActorIsValid(idLootCorpseCover) then\r\n\t\tHydra.ActorFadeAndDelete(idLootCorpseCover, 0.5)\r\n\t\tHydra.ActorTriggerPowerAtFeet(idCorpse, S_PWR_BURST)\r\n\t\tHydra.ActorDelete(idFX)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1195,8 +1180,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1265,7 +1249,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorFadeAndDelete(idLootCorpseCover, 0.5)\r\n\tHydra.ActorTriggerPowerAtFeet(idCorpse, S_PWR_BURST)\r\n\tHydra.ActorDelete(idFX)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1342,8 +1325,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1363,8 +1345,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1430,7 +1410,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorFadeAndDelete(idLootCorpse, 1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1507,8 +1486,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1581,7 +1559,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.ActorGizmoSetDisabled(idOperate, false)\r\n\tHydra.ActorDelete(idSpawner)\r\n\tHydra.ActorFadeAndDelete(idBubble, 0.5)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1667,8 +1644,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1688,8 +1664,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1719,11 +1693,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idCorpse = Hydra.ActorsLinkedByActorInGroup(idSelf, \"CORPSE\")[1]\r\nidLootCorpse = Hydra.ActorsLinkedByActorInGroup(idSelf, \"LOOT_CORPSE\")[1]\r\nidLootCorpseCover = Hydra.ActorsLinkedByActorInGroup(idSelf, \"LOOT_CORPSE_COVER\")[1]\r\nidJumpLoc = Hydra.ActorsLinkedByActorInGroup(idSelf, \"JUMPLOC\")[1]\r\nidFX = Hydra.ActorsLinkedByActorInGroup(idSelf, \"FX\")[1]\r\n\r\ntSpiders = {}\r\nidChosenSpider = Hydra.ACDID_INVALID\r\n\r\nHydra.ActorEnableAI(idCorpse, false)\r\nHydra.ActorSetIdleAnim(idCorpse, S_ANIM_HOSTCORPSE)\r\nHydra.ActorDisable(idCorpse)\r\n\r\nHydra.ActorPlayEffectGroup(idFX, S_FX_SPIDERS, true)\r\nHydra.ActorPlayEffectGroup(idFX, S_FX_SPIDERS, true)\r\nHydra.ActorPlayEffectGroup(idFX, S_FX_SPIDERS, true)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

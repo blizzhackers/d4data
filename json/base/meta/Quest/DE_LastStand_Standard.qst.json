@@ -154,7 +154,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n--NPC yells at the player as they approach.\r\n\tHydra.ActorPlayConversation(S_INITIAL_BARK, idActor, idActorDetector)\r\n\r\n-- Sets up a marker for any surviving NPCs to run to at the end.\r\n\tidLeaveMarker = Hydra.ActorSpawnActor(ID_LEAVEMARKER, idActor, false, 0,0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -231,8 +230,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -252,8 +250,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -384,7 +380,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Have the NPC use a battlecry and then remove their idle so they can fight.\r\n\tif Hydra.ActorIsValid(idActorNPC) then\r\n\t\tHydra.ActorPlayConversation(S_BATTLECRY, idActorPlayer, idActorNPC)\r\n\t\tHydra.ActorClearAnimSetOverride(idFightingHero)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -461,8 +456,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -553,7 +547,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Turning off the No Damage modifier on the 3 adventurers.\t\r\n\tfor i, idHero in ipairs(tHEROES) do\r\n\t\tif Hydra.ActorIsValid(idHero) then\r\n\t\t\tHydra.ActorSetNoDamage(idHero, false)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -630,8 +623,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -651,8 +643,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -743,7 +733,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -820,8 +809,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Checks how many NPCs have died when the timer expires.\r\nif nDeaths < 3 then\r\n\tHydra.EventSend(\"HeroSurvived\", idSelf)\r\nend\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -855,7 +843,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Start spawners\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, false)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -932,8 +919,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -985,7 +971,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n--Random hero gives an update\r\n\tlocal nHeroesLeft = Hydra.ActorGroupGetCount(S_HERO_GROUP)\r\n\tlocal nRandomHero = Hydra.GetRandomInt(1, nHeroesLeft)\r\n\tlocal idSelectedHero = Hydra.ActorsInGroup(S_HERO_GROUP)[nRandomHero]\r\n\t\t\t\r\n\tif nDeaths < 2 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_DOINGGOOD, idSelectedHero)\r\n\telseif nDeaths == 2 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_DOINGBAD, idSelectedHero)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1062,8 +1047,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1135,7 +1119,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1212,8 +1195,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1266,7 +1248,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1343,8 +1324,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1364,8 +1344,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1431,7 +1409,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n-- Spawns a reward chest.\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\t\r\n\t\r\n-- Spawns in the follower version of the saved NPC that was chosen.\t\r\n\tidRewardFollower = Hydra.ActorSpawnActor(S_FOLLOWER_MELEE, idFollower, false, 0,0)\r\n\tHydra.ActorSetBloody(idRewardFollower, 1)\r\n\t\r\n\tfor i, idHero in ipairs(tHEROES) do\r\n\t\tif Hydra.ActorIsValid(idHero) then\r\n\t\t\tHydra.ActorDelete(idHero)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1508,8 +1485,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1529,8 +1505,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1596,7 +1570,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Spawns a reward chest.\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1673,8 +1646,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1694,8 +1666,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1826,7 +1796,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1903,8 +1872,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1924,8 +1892,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1998,7 +1964,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2075,8 +2040,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Checking if any of the NPCs survived\r\nif nFollowerSaved == 0 then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2117,7 +2081,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n--\t\r\n-- The follower functionality of this was cut super last minute so I did the bare minimum to get this working due to time constraints.\r\n--\r\n\r\n-- Whichever adventurer has the highest health becomes the follower.\r\n\t--[[if nFollowerSaved == 1 then\r\n\t\tnCurrentHeroHealth = 0\r\n\t\tnBestHeroHealth = 0\r\n\t\tfor i, idHero in ipairs(tHEROES) do\r\n\t\t\tif Hydra.ActorIsValid(idHero) then\r\n\t\t\t\tnCurrentHeroHealth = Hydra.ActorGetHitPointsPercent(idHero)\r\n\t\t\t\tif nCurrentHeroHealth > nBestHeroHealth then\r\n\t\t\t\t\tnBestHeroHealth = nCurrentHeroHealth\r\n\t\t\t\t\tidFollower = idHero\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend]]--\r\n\t\t\r\n-- Any adventurers alive drop loot and leave.\r\n\t-- If the adventurer is not the one up and fighting clear anim overrides and have them stand up.\t\r\n\t\tfor j, idHero in ipairs(tHEROES) do\r\n\t\t\tif Hydra.ActorIsValid(idHero) then \r\n\t\t\t\tif idHero ~= idFightingHero then\r\n\t\t\t\t\tHydra.QActorClearAnimSetOverride(idHero)\r\n\t\t\t\t\tHydra.QActorAnim(idHero, S_ANIMPOWER_GETUP)\r\n\t\t\t\telse\r\n\t\t\t\t\tHydra.QActorWait(idHero, 6)\r\n\t\t\t\tend\r\n\t\t\t-- Non-followers say thanks and drop loot.\r\n\t\t\t\tif idHero ~= idFollower then\r\n\t\t\t\t\tHydra.Wait(2)\r\n\t\t\t\t\tif idHero == idWarrior then\r\n\t\t\t\t\t\tHydra.ActorPlaySimpleConversation(S_REWARD, idWarrior)\r\n\t\t\t\t\t\tHydra.WaitForConversationFinished(S_REWARD)\r\n\t\t\t\t\t\tHydra.TreasureClassDropAtActor(idWarrior, S_REWARD_TREASURE)\r\n\t\t\t\t\telseif idHero == idArcher then\r\n\t\t\t\t\t\tHydra.ActorPlaySimpleConversation(S_REWARD, idArcher)\r\n\t\t\t\t\t\tHydra.WaitForConversationFinished(S_REWARD)\r\n\t\t\t\t\t\tHydra.TreasureClassDropAtActor(idArcher, S_REWARD_TREASURE)\r\n\t\t\t\t\telse\r\n\t\t\t\t\t\tHydra.ActorPlaySimpleConversation(S_REWARD, idCaster)\r\n\t\t\t\t\t\tHydra.WaitForConversationFinished(S_REWARD)\r\n\t\t\t\t\t\tHydra.TreasureClassDropAtActor(idCaster, S_REWARD_TREASURE)\r\n\t\t\t\t\tend\r\n\t\t\t\t-- Non-followers leave.\r\n\t\t\t\t\tHydra.QActorMoveToLocationDynamicSpeed(idHero, idLeaveMarker, \"NPC_RUN\", true)\r\n\t\t\t\t\tHydra.QActorFadeAndDelete(idHero, 1)\r\n\t\t\t\tend\r\n\t\t\tend\r\n\t\tend\r\n\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2194,8 +2157,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Checking if any of the NPCs survived\r\nif nFollowerSaved > 0 then\r\n\tHydra.QuestAdvancePhase()\r\nend"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2236,7 +2198,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2313,8 +2274,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- If the warrior was selected as the follower.\r\nif idFollower == idWarrior then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2355,7 +2315,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2432,8 +2391,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- If the caster was selected as the follower.\r\nif idFollower == idCaster then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2474,7 +2432,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2551,8 +2508,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- If the ranged fighter was selected as the follower.\r\nif idFollower == idArcher then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2572,8 +2528,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2704,7 +2658,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2781,8 +2734,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2802,8 +2754,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2934,7 +2884,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3011,8 +2960,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3032,8 +2980,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3099,7 +3045,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n-- Spawns a reward chest.\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\t\r\n\t\r\n-- Spawns in the follower version of the saved NPC that was chosen.\t\t\r\n\tidRewardFollower = Hydra.ActorSpawnActor(S_FOLLOWER_RANGED, idFollower, false, 0,0)\r\n\tHydra.ActorSetBloody(idRewardFollower, 1)\r\n\t\r\n\tfor i, idHero in ipairs(tHEROES) do\r\n\t\tif Hydra.ActorIsValid(idHero) then\r\n\t\t\tHydra.ActorDelete(idHero)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3176,8 +3121,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3197,8 +3141,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3264,7 +3206,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n-- Spawns a reward chest.\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\t\r\n\t\r\n-- Spawns in the follower version of the saved NPC that was chosen.\t\t\r\n\tidRewardFollower = Hydra.ActorSpawnActor(S_FOLLOWER_CASTER, idFollower, false, 0,0)\r\n\tHydra.ActorSetBloody(idRewardFollower, 1)\r\n\t\r\n\tfor i, idHero in ipairs(tHEROES) do\r\n\t\tif Hydra.ActorIsValid(idHero) then\r\n\t\t\tHydra.ActorDelete(idHero)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3341,8 +3282,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3362,8 +3302,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3477,7 +3415,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3554,8 +3491,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3623,7 +3559,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tlocal nHeroesLeft = Hydra.ActorGroupGetCount(S_HERO_GROUP)\r\n\tlocal nRandomHero = Hydra.GetRandomInt(1, nHeroesLeft)\r\n\tlocal idSelectedHero = Hydra.ActorsInGroup(S_HERO_GROUP)[nRandomHero]\r\n\tnDeaths = nDeaths + 1\r\n\t\r\n\tif nDeaths == 1 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_DEATH, idSelectedHero)\r\n\telseif nDeaths == 2 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_DEATH, idSelectedHero)\r\n\telseif nDeaths == 3 then\r\n\t\tHydra.ActorPlaySimpleConversation(S_DEATH, idSelectedHero)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3700,8 +3635,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "nFollowerSaved = 0"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3721,8 +3655,6 @@
    "unk_669bcf8": 10,
    "unk_287ecb5": 150,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3818,7 +3750,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\n\r\n-- Grabbing the first adventurer available in the group.\r\n\tlocal idSpeaker = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Heroes\")[1]\r\n\r\n-- If only one NPC is alive have them drop their reward before joining.\t\r\n\tif nDeaths == 2 then\r\n\t\tif Hydra.ActorIsValid(idSpeaker) then\r\n\t\t\tHydra.Wait(2)\t\r\n\t\t\tHydra.QActorPlaySimpleConversation(S_REWARD, idSpeaker)\r\n\t\t\tHydra.WaitForConversationFinished(S_REWARD)\r\n\t\t\tHydra.TreasureClassDropAtActor(idSpeaker, S_REWARD_TREASURE)\r\n\t\tend\r\n\tend\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3895,8 +3826,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3930,7 +3860,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Stop spawners\r\n\tfor i, idSpawners in ipairs(tSpawners) do\r\n\t\tif Hydra.ActorIsValid(idSpawners) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawners, true)\r\n\t\tend\r\n\tend\r\n\t\r\n-- Set surviving NPCs to take no damage\r\n\tfor i, idSurvivor in ipairs(tHEROES) do\r\n\t\tif Hydra.ActorIsValid(idSurvivor) then\r\n\t\t\tHydra.ActorSetNoDamage(idSurvivor, true)\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4007,8 +3936,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4028,8 +3956,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4095,7 +4021,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Spawns a reward chest.\r\n\tif Hydra.ActorIsValid(idChest) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChest, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4172,8 +4097,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4193,8 +4117,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4245,8 +4167,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4276,11 +4196,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "--===== References =======\r\n\r\n--NPC\r\nidFightingHero = nil\r\n\r\n--General\r\nnWave = 1\r\nnDeaths = 0\r\nnFollowerSaved = 1\r\nidFollower = nil\r\nidPortal = nil\r\n\r\n-- Randomly choose which hero will be up and fighting.\r\nnRand = Hydra.GetRandomInt(1, 3)\r\n\r\n-- Randomly chosen hero gets wounded standing, others get wounded sitting.\r\n\tfor i, idHero in pairs(tHEROES) do\r\n\t\tif i == nRand then\r\n\t\t\tHydra.ActorSetAnimSetOverride(idHero, S_ANIM_STANDING_WOUNDED)\r\n\t\t\tidFightingHero = idHero\r\n\t\t\tHydra.ActorSetBloody(idHero, 1)\r\n\t\telse\r\n\t\t\tHydra.ActorEnableAI(idHero, false)\r\n\t\t\tHydra.ActorSetAnimSetOverride(idHero, S_ANIM_GROUND_WOUNDED)\r\n\t\t\tHydra.ActorSetBloody(idHero, 1)\r\n\t\tend\r\n\tend\r\n\r\n-- Turning on the initial spawns.\r\nif Hydra.ActorIsValid(idInitialSpawn) then\r\n\tHydra.ActorGizmoSetDisabled(idInitialSpawn, false)\r\nend\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -161,7 +161,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -238,8 +237,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -322,7 +320,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n-- Drop a marker at the location the player is coming from.\r\n-- This sets the escape direction for the NPC.\r\n\tidEscapeLoc = Hydra.ActorSpawnActor(S_ACTOR_MARKER_LOCATION, idActor, false, 0,0)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -399,8 +396,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -420,8 +416,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -521,7 +515,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t\r\n-- Sets a damage cap on the elite so it can't die until the hunter kills it.\r\n\tHydra.ActorSetDamageCap(idActorSpawned, 0.25)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -598,8 +591,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -619,8 +611,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -711,7 +701,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -788,8 +777,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -861,7 +849,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n-- Increment the number of normals killed.\t\t\r\n\tN_NORMAL_KILLED = N_NORMAL_KILLED + 1\t\r\n\r\n-- For every 5 normal monsters killed spawn the special elite and reset the counter.\t\t\r\n\tif N_NORMAL_KILLED >= 5 and bEliteCanSpawn == true then\r\n\t\tif Hydra.ActorIsValid(ID_ELITE_SPAWNER) then\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(ID_ELITE_SPAWNER)\r\n\t\t\tbEliteCanSpawn = false\r\n\t\tend\r\n\t\tN_NORMAL_KILLED = 0\r\n\tend\t\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -938,8 +925,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1011,7 +997,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n-- Increment the number of elites killed\t\t\r\n\tN_ELITE_KILLED = N_ELITE_KILLED + 1\t\r\n\tbEliteCanSpawn = true\r\n\t\r\n-- Spawn a specific monster near the player in response to the elite dying\r\n\t\tif Hydra.ActorIsValid(ID_ELITE_DEAD_SPAWN) then\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(ID_ELITE_DEAD_SPAWN)\r\n\t\tend\r\n\r\n-- After the first elite dies add more monsters\t\t\r\n\tif \tN_ELITE_KILLED == 1 then\r\n\t\tfor i, idWave02Spawn in ipairs(T_WAVE02) do\r\n\t\t\tif Hydra.ActorIsValid(idWave02Spawn) then\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idWave02Spawn, false)\r\n\t\t\tend\r\n\t\tend\r\n\t\tHydra.ActorPlaySimpleConversation(S_CONVERSATION_NORMALDEFEATED, ID_NPC_DRUID)\r\n\t\t\r\n\t-- After more elites die add even more monsters\t\r\n\telseif N_ELITE_KILLED == 2 then\r\n\t\tfor i, idWave03Spawn in ipairs(T_WAVE03) do\r\n\t\t\tif Hydra.ActorIsValid(idWave03Spawn) then\r\n\t\t\t\tHydra.ActorGizmoSetDisabled(idWave03Spawn, false)\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1088,8 +1073,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1109,8 +1093,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorSetAIState(ID_NPC_DRUID,\"InCombat\")\r\n\r\n--Start spawning Wave 01\r\n\tfor i, idWave01Spawn in ipairs(T_WAVE01) do\r\n\t\tif Hydra.ActorIsValid(idWave01Spawn) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idWave01Spawn, false)\r\n\t\tend\r\n\tend\r\n\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1240,7 +1222,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--Start victory conversation\r\n\t--Hydra.QActorPlayConversation(S_CONVERSATION_OUTRO_MAJOR_RUNAWAY,Hydra.ActorGetClosestPlayer(ID_NPC_DRUID),ID_NPC_DRUID)\r\n\r\n--Start elite spawns. Spawns have a delay so they starts spawning in just before the conversation is done\r\n\tif Hydra.ActorIsValid(S_BONUSELITES) then\r\n\t\tHydra.ActorGizmoSetDisabled(S_BONUSELITES, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1317,8 +1298,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1338,8 +1318,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1435,7 +1413,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1512,8 +1489,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1533,8 +1509,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n-- Disable spawners\r\n\tfor i, idSpawner in ipairs(T_SPAWNERS) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorGizmoSetDisabled(idSpawner, true)\r\n\t\tend\r\n\tend\r\n\t",
-   "szOnExitScript": "-- Set the AI state for the NPC\r\nHydra.ActorSetAIState(ID_NPC_DRUID,\"EventFinished\")\r\n\r\n-- Trigger mastery failure if applicable.\r\n\tif bBonusEarned == false then\r\n\t\tHydra.EventSend(\"BonusFail\")\r\n\tend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1657,7 +1631,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Enable reward chest.\r\n\tif Hydra.ActorIsValid(S_CHEST) then\r\n\t\tHydra.ActorGizmoSetDisabled(S_CHEST, false)\r\n\tend\r\n\r\n--NPC run away\r\n\tif Hydra.ActorIsValid(ID_NPC_DRUID) then\r\n\t\tHydra.TreasureClassDropAtActor(ID_NPC_DRUID, S_TREASURECLASS_NORMAL)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(ID_NPC_DRUID, idEscapeLoc, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFadeAndDelete(ID_NPC_DRUID,1.0)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1734,8 +1707,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1755,8 +1727,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1867,7 +1837,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\n\r\n--Start victory conversation\r\n\tHydra.QActorPlayConversation(S_CONVERSATION_OUTRO_MAJOR_RUNAWAY,Hydra.ActorGetClosestPlayer(ID_NPC_DRUID),ID_NPC_DRUID)\r\n\r\n--[[ Enable reward chest.\r\n\tif Hydra.ActorIsValid(S_CHEST) then\r\n\t\tHydra.ActorGizmoSetDisabled(S_CHEST, false)\r\n\tend]]--\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1944,8 +1913,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1965,8 +1933,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Set the AI state for the NPC\r\nHydra.ActorSetAIState(ID_NPC_DRUID,\"InCombat\")",
-   "szOnExitScript": "-- Set the AI state for the NPC\r\n--Hydra.ActorSetAIState(ID_NPC_DRUID,\"EventFinished\")",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2039,7 +2005,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2116,8 +2081,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "if bBonusEarned then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2158,7 +2122,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2235,8 +2198,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "if not bBonusEarned then\r\n\tHydra.QuestAdvancePhase()\r\nend\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2256,8 +2218,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2361,7 +2321,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2438,8 +2397,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Set bonus variable\r\n\tbBonusEarned = true\r\n\r\n-- Sets the DRLG designer variable so the chest encounter spawns the correct one.\r\n\tHydra.SetGameVariableNumeric(\"DE_ChestRewardRare\", 1)"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2521,7 +2479,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2598,8 +2555,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2619,8 +2575,6 @@
    "unk_669bcf8": 85,
    "unk_287ecb5": 175,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2743,7 +2697,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n--NPC drop treasure and run away\r\n\tif Hydra.ActorIsValid(ID_NPC_DRUID) then\r\n\t\tHydra.TreasureClassDropAtActor(ID_NPC_DRUID, S_TREASURECLASS_NORMAL)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(ID_NPC_DRUID, idEscapeLoc, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFadeAndDelete(ID_NPC_DRUID, 1)\r\n\tend\r\n\r\n-- Enable reward chest.\r\n\tif Hydra.ActorIsValid(S_CHEST) then\r\n\t\tHydra.ActorGizmoSetDisabled(S_CHEST, false)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2820,8 +2773,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2841,8 +2793,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2872,11 +2822,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Variables\r\nN_ELITE_KILLED = 0 -- number of elites killed\r\nN_NORMAL_KILLED = 0 -- number of non-elite monsters killed\r\nbEliteCanSpawn = true\r\nbBonusEarned = false  \r\n\r\n\r\n-- Enabling the special Elite spawners. Spawns will be triggered manually.\r\nHydra.ActorGizmoSetDisabled(ID_ELITE_SPAWNER, false)\r\nHydra.ActorGizmoSetDisabled(ID_ELITE_DEAD_SPAWN, false)\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

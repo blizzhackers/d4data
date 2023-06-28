@@ -190,7 +190,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Checking to see if this trigger logic has already been activated (just in case)\r\n\t-- Trigger volume is actually set to just fire once then delete\r\n\tif bCliffTrigger then\t\t\r\n\t\tHydra.ActorSetNodePath(ID_WHITE_WOLF, tAIPaths[5], Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\t\tHydra.QActorFollowPathDynamicSpeed(ID_WHITE_WOLF, tAIPaths[5], \"NPC_Run\", false)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -267,8 +266,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -333,7 +331,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -419,8 +416,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -440,8 +436,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -573,7 +567,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--If Wolf never moved to cliff\r\n\tif bWarpTrigger == false then\r\n\t\tbWarpTrigger = true\r\n\t\tHydra.ActorWarpToActor(ID_WOLF_VFX_LOCATION, ID_WHITE_WOLF)\r\n\t\tflVFXTime = Hydra.EffectGroupGetDuration(S_DISSOLVE_OUT)\r\n\t\tflVFXTime = flVFXTime - 0.05\r\n\t\tHydra.ActorPlayEffectGroup(ID_WOLF_VFX_LOCATION, S_DISSOLVE_OUT)\t\t\r\n\t\tHydra.Wait(flVFXTime)\r\n\t\tHydra.ActorSetInvisible(ID_WHITE_WOLF, true)\r\n\t\tHydra.ActorWarpToActor(ID_WHITE_WOLF, ID_WOLF_VFX_LOCATION_CLIFFTOP)\r\n\t\tHydra.ActorSetPowerEffectSize(ID_WOLF_VFX_LOCATION_CLIFFTOP, 5)\r\n\t\teWolf = Hydra.ActorPlayEffectGroup(ID_WOLF_VFX_LOCATION_CLIFFTOP, S_WOLF_APPEAR_VFX, true)\r\n\t\tHydra.Wait(0.1)\r\n\t\tHydra.ActorSetInvisible(ID_WHITE_WOLF, false)\t\t\r\n\tend\r\n\t\r\n\t-- If player has triggered this\r\n\tbCliffTrigger = false\r\n\r\n\r\n\tHydra.ActorSetNodePath(ID_WHITE_WOLF, tAIPaths[5], Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\tHydra.QActorFollowPathDynamicSpeed(ID_WHITE_WOLF, tAIPaths[5], \"NPC_Run\", false)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -650,8 +643,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -731,7 +723,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPathNodeName)\r\n\r\n\tif Hydra.ActorIsValid(ID_WHITE_WOLF) then\r\n\t\tHydra.QActorFaceSameAsActor(ID_WHITE_WOLF, ID_WOLF_VIGILANT)\r\n\t\tHydra.WaitForQEmpty(ID_WHITE_WOLF)\r\n\t\tHydra.ActorDisableAI(ID_WHITE_WOLF)\r\n\t\t--Hydra.QActorSetAnimSetOverride(ID_WHITE_WOLF, \"NafainWolf_Idle_HotM\")\r\n\t\t--Hydra.QActorSetIdleAnim(ID_WHITE_WOLF, \"NafainWolf_idle_sit\")\r\n\tend\r\n\t \r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -808,8 +799,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -900,7 +890,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tif Hydra.ActorIsValid(eWolf) then\r\n\t\tHydra.ActorRemoveComplexEffect(ID_WOLF_VFX_LOCATION_CLIFFTOP, eWolf)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -977,8 +966,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -998,8 +986,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1133,7 +1119,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\ttAIPaths = Hydra.PathsLinkedByActor(idActorDetector)\r\n\t\r\n\tAIPath = tAIPaths[1]\r\n\t\r\n\tHydra.ActorSetNodePath(idActorDetector, AIPath, Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\t\r\n\tHydra.QActorFollowPathDynamicSpeed(idActorDetector, AIPath, \"NPC_Run\", false)\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1210,8 +1195,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1276,7 +1260,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1362,8 +1345,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1383,8 +1365,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1539,7 +1519,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\t\tbWarpTrigger = true\r\n\r\n--Wolf moves up cliff\r\n\t\tHydra.ActorWarpToActor(ID_WOLF_VFX_LOCATION, ID_WHITE_WOLF)\r\n\t\tflVFXTime = Hydra.EffectGroupGetDuration(S_DISSOLVE_OUT)\r\n\t\tflVFXTime = flVFXTime - 0.05\r\n\t\tHydra.ActorPlayEffectGroup(ID_WOLF_VFX_LOCATION, S_DISSOLVE_OUT)\t\t\r\n\t\tHydra.Wait(flVFXTime)\r\n\t\tHydra.ActorSetInvisible(ID_WHITE_WOLF, true)\r\n\t\tHydra.ActorWarpToActor(ID_WHITE_WOLF, ID_WOLF_VFX_LOCATION_CLIFFTOP)\r\n\t\tHydra.ActorSetPowerEffectSize(ID_WOLF_VFX_LOCATION_CLIFFTOP, 5)\r\n\t\teWolf = Hydra.ActorPlayEffectGroup(ID_WOLF_VFX_LOCATION_CLIFFTOP, S_WOLF_APPEAR_VFX, true)\r\n\t\tHydra.Wait(0.1)\r\n\t\tHydra.ActorSetInvisible(ID_WHITE_WOLF, false)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1633,8 +1612,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1654,8 +1632,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1781,7 +1757,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPathNodeName)\r\n\r\n\tHydra.ActorSetAITether(ID_WHITE_WOLF)\r\n\t--This is here in case we want the wolf to be a combant each time he pauses\r\n\t--Hydra.QActorSetTeam(ID_WHITE_WOLF, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tbFirstStop = true\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1880,7 +1855,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPathNodeName)\r\n\r\n\tHydra.ActorSetAITether(ID_WHITE_WOLF)\r\n\t--This is here in case we want the wolf to be a combant each time he pauses\r\n\t--Hydra.QActorSetTeam(ID_WHITE_WOLF, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tbSecondStop = true\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1979,7 +1953,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPathNodeName)\r\n\r\n\tHydra.ActorSetAITether(ID_WHITE_WOLF)\r\n\t--This is here in case we want the wolf to be a combant each time he pauses\r\n\t--Hydra.QActorSetTeam(ID_WHITE_WOLF, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tHydra.ActorTriggerSpawnerUpdate(ActorGrp_BearElite[1])\r\n\tbThirdStop = true\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2056,8 +2029,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2144,7 +2116,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPathNodeName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2221,8 +2192,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2317,7 +2287,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\r\n\tif Hydra.ActorIsInCombat(ID_WHITE_WOLF) then\r\n\r\n\t-- Checks to see which path node the wolf has stopped at once the player is within range\r\n\telse\r\n\t\tif bFirstStop then\r\n\t\t\tbFirstStop = false\r\n\t\t\t\r\n\t\t\tAIPath = tAIPaths[2]\r\n\t\t\tUF_Move_To_Next_Path()\r\n\t\tend\r\n\t\t\r\n\t\tif bSecondStop then\r\n\t\t\tbSecondStop = false\r\n\r\n\t\t\tAIPath = tAIPaths[3]\r\n\t\t\tUF_Move_To_Next_Path()\r\n\t\tend\r\n\t\t\r\n\t\tif bThirdStop then\r\n\t\t\tbThirdStop = false\r\n\r\n\t\t\tAIPath = tAIPaths[4]\r\n\t\t\tUF_Move_To_Next_Path()\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2394,8 +2363,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2460,7 +2428,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2546,8 +2513,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2619,7 +2585,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\tHydra.ActorPlaySound(idActorSpawned, sBearRoarSFX)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2696,8 +2661,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2717,8 +2681,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2857,7 +2819,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.QActorPlayConversation(S_CONVO_NAFAIN_00, idActor, ID_NPC_NAFAIN)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2965,8 +2926,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2986,8 +2946,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3142,7 +3100,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3219,8 +3176,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3240,8 +3196,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorSetConversationStatus(ID_NPC_NAFAIN, true)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3285,11 +3239,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function UF_Move_To_Next_Path()\r\n\r\n\tHydra.ActorClearAITether(ID_WHITE_WOLF)\r\n\t--This is here in case we set the wolf to a combant at each pause and need it to resume its parth again\r\n\t--Hydra.QActorSetTeam(ID_WHITE_WOLF, Hydra.TEAM_NEUTRAL)\r\n\tHydra.ActorSetNodePath(ID_WHITE_WOLF, AIPath, Hydra.PATH_FOLLOW_ONE_WAY, false)\r\n\tHydra.QActorFollowPathDynamicSpeed(ID_WHITE_WOLF, AIPath, \"NPC_Run\", false)\r\n\r\nend",
- "szOnStartupScript": "bFirstStop = false\r\nbSecondStop = false\r\nbThirdStop = false\r\nbCliffTrigger = true\r\nbWarpTrigger = false\r\n\r\nHydra.ActorEnable(ID_WHITE_WOLF)\r\nHydra.ActorWarpToActor(ID_WHITE_WOLF, idWolfWarptoStart)\r\nHydra.QActorFaceSameAsActor(ID_WHITE_WOLF, idWolfWarptoStart)\r\n\r\nHydra.ActorSetConversationStatus(ID_NPC_NAFAIN, false)\r\n\r\nfor i = 1, #ActorGrp_Bears do\r\n\tif Hydra.ActorIsValid(ActorGrp_Bears[i]) then\r\n\t\tHydra.ActorTriggerSpawnerUpdate(ActorGrp_Bears[i])\r\n\tend\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "if Hydra.ActorIsValid(eWolf) then\r\n\tHydra.ActorRemoveComplexEffect(ID_WOLF_VFX_LOCATION_CLIFFTOP, eWolf)\r\nend",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

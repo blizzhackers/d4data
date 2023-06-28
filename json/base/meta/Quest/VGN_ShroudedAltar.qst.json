@@ -150,7 +150,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, sPowerName, idTarget)\r\n\r\n\t-- If the player uses the correct emote inside of the area triger, then cast the statue's specific buff\r\n\t-- The buff application is handled by script operating the shrine gizmo (for which normal gizmo operation is disabled)\r\n\tif sPowerName == tEmotes[nRandomRoll] then\r\n\t\tHydra.Wait(1);\r\n\t\tif Hydra.ActorIsValid(idActor) and Hydra.ActorIsValid(idStatue) then\r\n\t\t\t-- Apply \"used emote\" buff. The shrine gizmo operation is conditioned against this\r\n\t\t\tHydra.BuffApplyToTarget(S_PWR_BUFF, \"USED_EMOTE\", idActor);\r\n\t\t\t-- Immediately force operate the shrine for the player\r\n\t\t\tHydra.ActorGizmoOperate(idStatue, idActor);\r\n\t\tend\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -227,8 +226,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -248,8 +246,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -300,8 +296,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -331,11 +325,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "-- Initialize tables of paired statues, signs, and emotes\r\ntStatues = {S_STATUE_1,\r\n\t\t\tS_STATUE_2,\r\n\t\t\tS_STATUE_3,\r\n\t\t\tS_STATUE_4,\r\n\t\t\tS_STATUE_5,\r\n\t\t\tS_STATUE_6,\r\n\t\t\tS_STATUE_7};\r\n\t\t\t\r\ntSigns =   {S_SIGN_1,\r\n\t\t\tS_SIGN_2,\r\n\t\t\tS_SIGN_3,\r\n\t\t\tS_SIGN_4,\r\n\t\t\tS_SIGN_5,\r\n\t\t\tS_SIGN_6,\r\n\t\t\tS_SIGN_7};\r\n\t\t\t\t\t\r\ntEmotes =  {S_PWR_EMOTE_1,\r\n\t\t\tS_PWR_EMOTE_2,\r\n\t\t\tS_PWR_EMOTE_3,\r\n\t\t\tS_PWR_EMOTE_4,\r\n\t\t\tS_PWR_EMOTE_5,\r\n\t\t\tS_PWR_EMOTE_6,\r\n\t\t\tS_PWR_EMOTE_7};\r\n\r\n-- Randomize selection and spawn statue & sign\r\nnRandomRoll = Hydra.GetRandomInt(1, #tStatues);\r\nidStatue = Hydra.ActorSpawnActor(tStatues[nRandomRoll], idStatueLoc, false, 0, 0);\r\nidSign = Hydra.ActorSpawnActor(tSigns[nRandomRoll], idSignLoc, false, 0, 0);",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -206,7 +206,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\tHydra.ActorSetNodePath(Donan_Prava, Escort_Spline_Intro, Hydra.PATH_FOLLOW_ONE_WAY, false, false, \"NPC_Run\")\r\n\tHydra.Wait(0.1)\r\n\tHydra.ActorSetFollowTarget(Lorath_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\tHydra.Wait(0.1)\r\n\tHydra.ActorSetFollowTarget(Neyrelle_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\t\r\n\tHydra.EventSend(\"EnableMegaDemonSpawners\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -283,8 +282,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -318,7 +316,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n-- Disable traversal in the battlefield\r\n\tSetTraversalEnabled(idTraversalKiller01, false)\r\n\tSetTraversalEnabled(idTraversalKiller02, false)\r\n\tSetTraversalEnabled(idTraversalKiller03, false)\r\n\r\n-- Set Bridge to be Invulnerable\r\n\tfor i, idBridge in ipairs( Hydra.ActorsInGroup(\"QST_Hell_Breaking_Bridge\")) do \r\n\t\tHydra.ActorSetInvulnerable(idBridge, true)\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -395,8 +392,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -416,8 +412,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -533,7 +527,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -610,8 +603,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -674,7 +666,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\n\tHydra.ActorPlaySimpleConversation(\"QST_Hell_Ambush_2\", Donan_Prava, Lorath_Prava)\r\n\tHydra.WaitForConversationFinished(\"QST_Hell_Ambush_2\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -772,7 +763,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -849,8 +839,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"ArtilleryAmbushOne\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -939,7 +928,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Horadrim chanting shield\r\n\tHydra.ActorPlaySimpleConversation(\"QST_Hell_Horadric_Sphere\", Donan_Prava, Lorath_Prava)\r\n\t\r\n\t-- Horadrim casting shield\r\n\tHydra.ActorDisableAI(Donan_Prava)\r\n\tHydra.QActorFaceActor(Donan_Prava, Loc_Ambush_1_Horadric_Bubble)\r\n\tHydra.ActorPlayEffectGroup(Donan_Prava, \"fxKit_harmless_persistentCast_2hand_horadric\", true)\r\n\tHydra.QActorPhasedAnimLoop(Donan_Prava, \"AnimKey_Chant_Ritual_EyeLevel\", 0)\r\n\t\r\n\tHydra.ActorDisableAI(Lorath_Prava)\r\n\tHydra.QActorFaceActor(Lorath_Prava, Loc_Ambush_1_Horadric_Bubble)\r\n\tHydra.ActorPlayEffectGroup(Lorath_Prava, \"fxKit_harmless_persistentCast_2hand_horadric\", true)\r\n\tHydra.QActorPhasedAnimLoop(Lorath_Prava, \"AnimKey_Chant_Ritual_EyeLevel\", 0)\r\n\t\r\n\tHydra.ActorDisableAI(Neyrelle_Prava)\r\n\t\r\n\t-- Shield spawning\r\n\tHydra.ActorSetPowerEffectSize(Loc_Ambush_1_Horadric_Bubble, 10)\r\n\tHydra.ActorPlayEffectGroup(Loc_Ambush_1_Horadric_Bubble, \"fxKit_harmless_persistentBarrierCylindrical_horadric_Impact\", true, Hydra.ACDID_INVALID, true);\r\n\t\r\n\tID_BUBBLE = Hydra.ActorSpawnActor(PROJECTILE_SUPPRESSING_TRIGGER, Loc_Ambush_1_Horadric_Bubble, true, 0, 0);\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1016,8 +1004,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1108,7 +1095,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.ActorResetFollowTarget(Lorath_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Lorath_Prava, Lorath_Ambush_1, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Lorath_Prava, Lorath_Ambush_1)\r\n\t\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Donan_Prava, Donan_Ambush_1, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Donan_Prava, Donan_Ambush_1)\r\n\t\r\n\tHydra.ActorResetFollowTarget(Neyrelle_Prava);\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Prava, Neyrelle_Ambush_1, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Neyrelle_Prava, Neyrelle_Ambush_1)\r\n\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1185,8 +1171,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1277,7 +1262,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\r\n\tHydra.ActorPlaySimpleConversation(\"QST_Hell_Ambush_1\", Neyrelle_Prava, Donan_Prava)\r\n\r\n\tlocal tAmbushesIfPlayerRunsAhead = Hydra.ActorsInGroup(\"QST_Hell_Battlefield_AmbushesIfPlayerRunsAhead\");\r\n\t\t\r\n\tif (#tAmbushesIfPlayerRunsAhead > 0) then\r\n\t\tfor i, idAmbushActor in ipairs(tAmbushesIfPlayerRunsAhead) do\r\n\t\t\tHydra.ActorDelete(idAmbushActor);\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.EventSend(\"ArtilleryAmbushOne\")\r\n\t\r\n\tlocal tMeteorsLocations = Hydra.ActorsInGroup(\"QST_Hell_Bombardment_Marker_1\");\r\n\tShuffleTable(tMeteorsLocations)\r\n\tlocal flTotalDuration = 10;\r\n\t\r\n\tfor i, idMeteor in ipairs(tMeteorsLocations) do \r\n\t\tHydra.ActorTriggerPowerAtFeet(idMeteor, \"QST_Hell_Main_Meteor\")\r\n\t\tHydra.Wait(flTotalDuration/#tMeteorsLocations);\r\n\tend\r\n\t\r\n\t\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1354,8 +1338,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1418,7 +1401,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1500,7 +1482,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1608,7 +1589,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1685,8 +1665,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- After conversation is finished, Lorath and Donan create magical sphere\r\n-- Conversation is triggered in AIQueue Empty callback\r\n\r\nHydra.EventSend(\"HoradrimAttacked\")\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1706,8 +1685,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1841,7 +1818,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\n-- Succubus callout as she escapes\r\nfor i, idPlayer in pairs(Hydra.QuestGetParticipants()) do\r\n\tHydra.ActorPlayDisembodiedConversation(\"QST_Hell_Succubus_Escape\", idPlayer)\r\n\tend\r\n\r\n-- Horadrim stop casting a sphere \r\n\tHydra.ActorEnableAI(Donan_Prava)\r\n\tHydra.ActorTriggerPhaseJump(Donan_Prava)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(Donan_Prava, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\r\n\tHydra.ActorEnableAI(Lorath_Prava)\r\n\tHydra.ActorTriggerPhaseJump(Lorath_Prava)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(Lorath_Prava, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\r\n\tHydra.ActorEnableAI(Neyrelle_Prava)\r\n\r\n-- Horadrim run along path\r\n\tHydra.ActorSetAlwaysDoFullAIUpdate(Donan_Prava, true)\r\n\tHydra.ActorSetNodePath(Donan_Prava, Escort_Spline_First_Stop, Hydra.PATH_FOLLOW_ONE_WAY, false, false, \"NPC_Run\")\r\n\t\r\n\tHydra.ActorSetAlwaysDoFullAIUpdate(Lorath_Prava, true)\r\n\tHydra.ActorSetFollowTarget(Lorath_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\t\r\n\tHydra.ActorSetAlwaysDoFullAIUpdate(Neyrelle_Prava, true)\r\n\tHydra.ActorSetFollowTarget(Neyrelle_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\r\n-- Remove Horadric barrier\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(Loc_Ambush_1_Horadric_Bubble, \"fxKit_harmless_persistentBarrierCylindrical_horadric_Impact\")\r\n\tHydra.ActorDelete(ID_BUBBLE);\r\n\tID_BUBBLE = nil;\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1918,8 +1894,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2005,7 +1980,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n-- Horadrim stop at the wall of fire, waiitng for players to join them\r\nHydra.QActorStopAllQueuedActions(Lorath_Prava)\r\nHydra.QActorStopAllQueuedActions(Donan_Prava)\r\nHydra.QActorStopAllQueuedActions(Neyrelle_Prava)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2091,8 +2065,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2174,7 +2147,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2251,8 +2223,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2272,8 +2243,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2389,7 +2358,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2466,8 +2434,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2556,7 +2523,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\nHydra.QActorEnableAI(Donan_Prava, true)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2633,8 +2599,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2732,7 +2697,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Horadrim move to their spots\r\n\t\r\n\tHydra.ActorResetFollowTarget(Lorath_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Lorath_Prava, Lorath_Ambush_2, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Lorath_Prava, Lorath_Ambush_2)\r\n\t\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Donan_Prava, Donan_Ambush_2, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Donan_Prava, Donan_Ambush_2)\r\n\t\r\n\tHydra.ActorResetFollowTarget(Neyrelle_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Prava, Neyrelle_Ambush_2, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Neyrelle_Prava, Neyrelle_Ambush_2)\r\n\t\r\n\tHydra.WaitForQEmpty(Neyrelle_Prava)\r\n\tHydra.WaitForQEmpty(Lorath_Prava)\r\n\tHydra.WaitForQEmpty(Donan_Prava)\r\n\t\r\n\tHydra.QActorEventSend(Neyrelle_Prava, \"SecondAmbush\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2809,8 +2773,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2901,7 +2864,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\r\n\r\n\t-- Horadrim run to their spots at second firewall\r\n\tHydra.ActorResetFollowTarget(Lorath_Prava)\r\n\tHydra.ActorDisableAI(Lorath_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Lorath_Prava, Loc_Lorath_Halfway, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Lorath_Prava, Loc_Lorath_Halfway)\r\n\t\r\n\tHydra.QActorStopAllQueuedActions(Donan_Prava)\r\n\tHydra.ActorDisableAI(Donan_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Donan_Prava, Loc_Donan_Halfway, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Donan_Prava, Loc_Donan_Halfway)\r\n\t\r\n\tHydra.ActorResetFollowTarget(Neyrelle_Prava)\r\n\tHydra.ActorDisableAI(Neyrelle_Prava)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Prava, Loc_Neyrelle_Halfway, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(Neyrelle_Prava, Loc_Neyrelle_Halfway)\r\n\t\r\n\t-- Neyrelle removing the barrier\r\n\t--Hydra.QActorSetAnimSetOverride(Neyrelle_Prava, \"NPC_Neyrelle_Attk_Cast_Runes\")\r\n\t--Hydra.QActorPlayEffectGroup(Neyrelle_Prava, \"fxKit_harmless_persistentCast_1hand_horadric\", true)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2999,7 +2961,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3076,8 +3037,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Lorath and Donan banter about Bulwark\r\nHydra.ActorPlaySimpleConversation(\"QST_Hell_Bridge_Bulwark_End\", Donan_Prava, Lorath_Prava)\r\nHydra.QActorWaitForConversationFinished(Donan_Prava, \"QST_Hell_Bridge_Bulwark_End\")\r\nHydra.QActorEventSend(Donan_Prava, \"Battlefield_Firewall_Reached\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3159,7 +3119,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n-- Neyrelle dispells the wall of fire in the middle of the battlefield\r\n-- Wait for chanting conversation to be finished\r\n\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Prava, Loc_Neyrelle_Halfway_Cast, \"NPC_Walk_Fast\", true)\r\n\tHydra.QActorSendMessage(Neyrelle_Prava, \"Neyrelle_Dispelling_Firewall\")\r\n\tHydra.QActorSetAnimSetOverride(Neyrelle_Prava, \"NPC_Neyrelle_Attk_Cast_Runes\")\r\n\tHydra.QActorPlayEffectGroup(Neyrelle_Prava, \"fxKit_harmless_persistentCast_1hand_horadric\", true)\r\n\tHydra.QActorPlaySimpleConversation(Conv_Firewall_Chant_2, Neyrelle_Prava)\r\n\tHydra.QActorWaitForConversationFinished(Neyrelle_Prava, Conv_Firewall_Chant_2)\r\n\tHydra.QActorEventSend(Neyrelle_Prava, \"Firewall_Halfway_Dispel\")\r\n\t\r\n-- Lorath and Donan turn\r\n\t\r\n\tHydra.QActorWaitForMessage(Donan_Prava, \"Neyrelle_Dispelling_Firewall\", 5)\r\n\tHydra.QActorFaceActor(Donan_Prava, Neyrelle_Prava)\r\n\tHydra.QActorWaitForMessage(Lorath_Prava, \"Neyrelle_Dispelling_Firewall\", 5)\r\n\tHydra.QActorFaceActor(Lorath_Prava, Neyrelle_Prava)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3236,8 +3195,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3319,7 +3277,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n-- Disable wall of fire\r\nfor i, idFireBlockers in ipairs( Hydra.ActorsInGroup(\"QST_Hell_Battlefield_Firewall\")) do \r\n\t\tHydra.ActorDisable(idFireBlockers, true)\r\n\t\tend\r\n\t\t\r\n-- Neyrelle finishes casting\r\n\tHydra.ActorClearAnimSetOverride(Neyrelle_Prava)\r\n\tHydra.QActorRemoveComplexEffectByEffectGroupSNO(Neyrelle_Prava, \"fxKit_harmless_persistentCast_1hand_horadric\")\r\n\r\n-- Wait\r\n\tHydra.WaitForQEmpty(Neyrelle_Prava)\r\n\r\n-- Horadrim continue along path\r\n\tHydra.ActorEnableAI(Donan_Prava)\r\n\tHydra.ActorEnableAI(Lorath_Prava)\r\n\tHydra.ActorEnableAI(Neyrelle_Prava)\r\n\tHydra.ActorSetNodePath(Donan_Prava, Escort_Spline_Second_Stop, Hydra.PATH_FOLLOW_ONE_WAY, false, false, \"NPC_Run\")\r\n\tHydra.ActorSetFollowTarget(Lorath_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\tHydra.ActorSetFollowTarget(Neyrelle_Prava, Donan_Prava, Hydra.FOLLOW_TYPE_DEFAULT);\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3396,8 +3353,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3417,8 +3373,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3557,7 +3511,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3634,8 +3587,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3705,7 +3657,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3782,8 +3733,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3803,8 +3753,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Remove previous instances of actors\t\r\nHydra.ActorDelete(Lorath_Prava)\r\nHydra.ActorDelete(Donan_Prava)\r\nHydra.ActorDelete(Neyrelle_Prava)\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3937,7 +3885,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4023,8 +3970,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4058,7 +4004,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\r\n\tHydra.ActorTriggerSpawnerUpdateInActorGroup(\"QST_Hell_Battlefield_MegaDemon\")\r\n\tHydra.QActorSetTeam(Lorath_Ambush_2, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tHydra.QActorSetTeam(Donan_Ambush_2, Hydra.TEAM_PLAYER_DEFAULT)\r\n\tHydra.QActorSetTeam(Neyrelle_Ambush_2, Hydra.TEAM_PLAYER_DEFAULT)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4135,8 +4080,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4156,8 +4100,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4291,7 +4233,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\n\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4382,8 +4323,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4403,8 +4343,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4566,7 +4504,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\nHydra.EventSend(\"AshavaStart\")\r\n\r\ntPlayers = Hydra.PlayerActors()\r\n\t\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\t--Play screen shake\r\n\t\tHydra.BuffApplyToTarget(\"Generic_Camera_Shake\", \"Shake_Med\", idPlayer)\r\n\tend\r\n\r\n\tfor i, idWall in ipairs( Hydra.ActorsInGroup(\"QST_Hell_Ashava_Arena_Blockers\")) do \r\n\t\tHydra.ActorKill(idWall)\r\n\tend\r\n\t\r\n\t-- Clear tired animsets\r\n\tHydra.ActorClearAnimSetOverride(Lorath_Horde)\r\n\tHydra.ActorClearAnimSetOverride(Donan_Horde)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4643,8 +4580,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4664,8 +4600,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4792,7 +4726,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4883,8 +4816,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "-- Horadrim move to a new location closer to the Spire to avoid clipping through Ashava's corpse\r\nHydra.QActorStopAllQueuedActions(Neyrelle_Horde)\r\nHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Horde, Loc_Neyrelle_After_Ashava, \"NPC_Run\", true)\r\nHydra.QActorFaceSameAsActor(Neyrelle_Horde, Loc_Neyrelle_After_Ashava)\r\nHydra.WaitForQEmpty(Neyrelle_Horde)\r\n\r\nHydra.QActorStopAllQueuedActions(Lorath_Horde)\r\nHydra.QActorMoveToLocationDynamicSpeed(Lorath_Horde, Loc_Lorath_After_Ashava, \"NPC_Run\", true)\r\nHydra.QActorFaceSameAsActor(Lorath_Horde, Loc_Lorath_After_Ashava)\r\nHydra.WaitForQEmpty(Lorath_Horde)\r\n\r\nHydra.QActorStopAllQueuedActions(Donan_Horde)\r\nHydra.QActorMoveToLocationDynamicSpeed(Donan_Horde, Loc_Donan_After_Ashava, \"NPC_Run\", true)\r\nHydra.QActorFaceSameAsActor(Donan_Horde, Loc_Donan_After_Ashava)\r\nHydra.WaitForQEmpty(Donan_Horde)\r\nHydra.QActorEventSend(Donan_Horde, \"Horadrim_After_Ashava\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4973,7 +4905,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5050,8 +4981,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5071,8 +5001,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5159,7 +5087,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5236,8 +5163,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5257,8 +5183,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -5379,7 +5303,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5456,8 +5379,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QActorDelete(followerDonan)\r\nHydra.QActorDelete(followerLorath)\r\nHydra.QActorDelete(followerNeyrelle)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5550,7 +5472,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nfollowerLorath = Hydra.QuestGetFollower(\"NPC_QST_Lorath_Follower\")\r\nfollowerDonan = Hydra.QuestGetFollower(\"NPC_QST_Donan_Follower_Horadrim\")\r\nfollowerNeyrelle = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_OneArmed\")\r\n\r\n\r\n-- Lorath follower runs to his static place\r\n\t\t\t\tHydra.QuestFollowerTakeOwnership(followerLorath)\r\n\t\t\t\tHydra.ActorEnableAI(followerLorath, false)\r\n\t\t\t\tHydra.QActorMoveToLocationDynamicSpeed(followerLorath, Lorath_Horde, \"NPC_Run\", true)\r\n\t\t\t\tHydra.QActorFaceSameAsActor(followerLorath, Lorath_Horde)\r\n\t\t\t\t\r\n-- Donan follower runs to his static place\t\t\r\n\t\t\t\tHydra.QuestFollowerTakeOwnership(followerDonan)\r\n\t\t\t\tHydra.ActorEnableAI(followerDonan, false)\r\n\t\t\t\tHydra.QActorMoveToLocationDynamicSpeed(followerDonan, Donan_Horde, \"NPC_Run\", true)\r\n\t\t\t\tHydra.QActorFaceSameAsActor(followerDonan, Donan_Horde)\r\n\t\t\t\t\r\n-- Neyrelle follower runs to her static place\r\n\t\t\t\tHydra.QuestFollowerTakeOwnership(followerNeyrelle)\r\n\t\t\t\tHydra.ActorEnableAI(followerNeyrelle, false)\r\n\t\t\t\tHydra.QActorMoveToLocationDynamicSpeed(followerNeyrelle, Neyrelle_Horde, \"NPC_Run\", true)\r\n\t\t\t\tHydra.QActorFaceSameAsActor(followerNeyrelle, Neyrelle_Horde)\r\n\t\t\t\t\r\n-- Event sent to progress the quest\r\n\t\t\t\tHydra.QActorEventSend(followerNeyrelle, \"HordeArea\")\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5687,8 +5608,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5746,7 +5666,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5832,8 +5751,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -5867,7 +5785,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tSetTraversalEnabled(idTraversalKiller01, true)\r\n\tSetTraversalEnabled(idTraversalKiller02, true)\r\n\tSetTraversalEnabled(idTraversalKiller03, true)\r\n\r\n\t-- Neyrelle calls out\r\n\tfollowerNeyrelle = Hydra.QuestGetFollower(\"NPC_QST_Neyrelle_Follower_OneArmed\")\r\n\t\r\n\t\tif Hydra.ActorIsValid(followerNeyrelle) then\r\n\t\t\tHydra.ActorPlaySimpleConversation(\"QST_Hell_Escort_02_BridgeAtk\", followerNeyrelle)\r\n\t\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -5944,8 +5861,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -5965,8 +5881,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6121,7 +6035,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\r\n-- Variable to remove camera override\r\n--\tHydra.SetGameVariableFlag(\"QST_Hell_Bridge_Camera\", true)\r\n\r\n\r\n-- Neyrelle preparing to remove Wall of Fire\r\n\tHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Ambush_2, Loc_Neyrelle_Firewall, \"NPC_Walk\", true)\r\n\tHydra.QActorSetAnimSetOverride(Neyrelle_Ambush_2, \"NPC_Neyrelle_Attk_Cast_Runes\")\r\n\tHydra.QActorPlayEffectGroup(Neyrelle_Ambush_2, \"fxKit_harmless_persistentCast_1hand_horadric\", true)\r\n\tHydra.QActorPlaySimpleConversation(Conv_Firewall_Chant_2, Neyrelle_Ambush_2)\r\n\tHydra.QActorWaitForConversationFinished(Neyrelle_Ambush_2, Conv_Firewall_Chant_2)\r\n\tHydra.QActorEventSend(Neyrelle_Ambush_2, \"Dispelling_Firewall\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6198,8 +6111,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6288,7 +6200,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6365,8 +6276,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6448,7 +6358,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n-- Spawn meteors in marker locations \r\nfor i, idMeteorAttractor in ipairs (Hydra.ActorsInGroup(\"QST_Hell_Bridge_Meteor_Locations\")) do\r\n\tHydra.ActorTriggerPowerAtFeet(idMeteorAttractor, METEOR_STRIKE);\r\n\tHydra.Wait(0.2)\r\n\tend\r\n\t\r\n-- TEMP for destroying the bridge\r\n\tif Hydra.ActorIsValid(idDestructibleBridge) then\r\n\t\tHydra.ActorKill(idDestructibleBridge)\r\n\tend\r\n\r\n-- Disable fire wall\r\nfor i, idFireBlockers in ipairs( Hydra.ActorsInGroup(\"QST_Hell_Bridge_Breaking_Blockers\")) do \r\n\t\tHydra.ActorDisable(idFireBlockers, true)\r\n\t\t\r\n\tend\r\n\r\n-- Callout from succubus summoning mega demon\r\nfor i, idPlayer in pairs(Hydra.QuestGetParticipants()) do\r\n\tHydra.ActorPlayDisembodiedConversation(\"QST_Hell_Succubus_Summon\", idPlayer)\r\n\tend\r\n\t\r\n\t-- Reset Neyrelle's casting animation and progress the quest when conversation finishes\r\n\tHydra.ActorClearAnimSetOverride(Neyrelle_Ambush_2)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(Neyrelle_Ambush_2, \"fxKit_harmless_persistentCast_2hand_horadric\")\r\n\r\n\tHydra.QActorEventSend(Neyrelle_Ambush_2, \"MegaDemonAmbush\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6525,8 +6434,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -6546,8 +6454,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6612,8 +6518,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -6686,7 +6590,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n-- Horadrim move to a new location near wall where Ashava spawns\r\nHydra.QActorMoveToLocationDynamicSpeed(Neyrelle_Horde, Loc_Neyrelle_After_Horde, \"NPC_Walk_Fast\", true)\r\nHydra.QActorFaceSameAsActor(Neyrelle_Horde, Loc_Neyrelle_After_Horde)\r\n\r\nHydra.QActorMoveToLocationDynamicSpeed(Lorath_Horde, Loc_Lorath_After_Horde, \"NPC_Walk_Fast\", true)\r\nHydra.QActorFaceSameAsActor(Lorath_Horde, Loc_Lorath_After_Horde)\r\nHydra.QActorSetAnimSetOverride(Lorath_Horde, \"NPC_Lorath_2HT_Idle_heavyBreathing\")\r\n\r\nHydra.QActorMoveToLocationDynamicSpeed(Donan_Horde, Loc_Donan_After_Horde, \"NPC_Walk_Fast\", true)\r\nHydra.QActorFaceSameAsActor(Donan_Horde, Loc_Donan_After_Horde)\r\nHydra.QActorSetAnimSetOverride(Donan_Horde, \"NPC_Donan_1HM_idle_heavyBreathing\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6763,8 +6666,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6853,7 +6755,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -6930,8 +6831,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -6994,7 +6894,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7076,7 +6975,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7158,7 +7056,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7235,8 +7132,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.EventSend(\"Horadrim_Ashava_Spot\")"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -7306,7 +7202,6 @@
         "name": "Kehj_Hell"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -7383,8 +7278,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -7404,8 +7298,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -7470,8 +7362,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -7501,11 +7391,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "ID_BUBBLE = nil;\r\n\r\nHydra.ActorSetSheathPreference(Donan_Prava, 2)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

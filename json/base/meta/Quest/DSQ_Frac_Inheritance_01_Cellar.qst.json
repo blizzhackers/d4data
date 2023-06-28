@@ -155,7 +155,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tHydra.QActorClearAnimSetOverride(ID_MAGS)\r\n\tHydra.QActorUnsheath(ID_MAGS)\r\n\tHydra.WaitForQEmpty(ID_MAGS)\r\n\tHydra.Wait(1)\r\n\tHydra.ActorDisable(ID_MAGS)\r\n\tHydra.ActorEnable(ID_POSSESSED)\r\n\t\r\n\tHydra.QActorPlaySimpleConversation(CONVO_MAGS_01, ID_POSSESSED)\r\n\tHydra.QActorWait(ID_POSSESSED, 1)\r\n\tHydra.QActorWaitForConversationFinished(ID_POSSESSED, CONVO_MAGS_01)\r\n\tHydra.QActorSetTeam(ID_POSSESSED, Hydra.TEAM_MONSTER_DEFAULT)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -232,8 +231,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -335,7 +333,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorPlaySimpleConversation(CONVO_MAGS_00, ID_MAGS)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -412,8 +409,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -433,8 +429,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -547,7 +541,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\tidPriest = Hydra.ActorsInGroup(\"QST_Frac_Inheritance_01_Priest\")\r\n\tHydra.ActorEnable(ID_PRIEST)\r\n\t\r\n\t--Deserter Movement\r\n\tif Hydra.ActorIsValid(ID_PRIEST) then\t\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(ID_PRIEST, LOC_PRIEST, \"NPC_RUN\", true)\r\n\t\tHydra.QActorPlaySimpleConversation(CONVO_PRIEST, ID_PRIEST)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -633,8 +626,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -654,8 +646,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -796,7 +786,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.ActorSetConversationList(ID_PRIEST, CONVOL_PRIEST)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -873,8 +862,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -894,8 +882,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -925,11 +911,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "Hydra.QActorSheath(ID_MAGS)\r\nHydra.ActorSetAnimSetOverride(ID_MAGS, \"NPC_Idle_SitGround_EatFlesh_Campaign\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

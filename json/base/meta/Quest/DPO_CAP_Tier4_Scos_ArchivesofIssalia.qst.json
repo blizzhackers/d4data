@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif Hydra.QuestCallbackCountGet(61) > 2 then\r\n\t\tHydra.ActorEnable(idFinalGrowth)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -333,7 +331,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, snoSubzone, dwDungeonType, dwDungeonTier)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -410,8 +407,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -431,8 +427,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -544,7 +538,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -630,8 +623,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "for i, idWall in ipairs(tCorruption) do\r\n\tHydra.Wait(1)\r\n\tif Hydra.ActorIsValid(idWall) then\r\n\t\tHydra.ActorKill(idWall)\r\n\tend\r\nend\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -651,8 +643,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -743,7 +733,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\t\r\n\t--Turn on Portal Icon\r\n\tHydra.SetGameVariableFlag(\"CAP_Tier4_Scos_ArchivesofIssalia_PortalVisiblity\")\r\n\t\r\n\t--Shrines Cleanup\r\n\tHOLDOUT_SHRINES = 0\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[1])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[2])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[3])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[4])\r\n\t\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(S_HOLDOUT_LEVEL_AREA)\r\n\tlocal tSpawners = Hydra.ActorsInGroup(\"CAP_Tier4_Scos_ArchivesofIssalia_HoldoutSpawners\")\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tif Hydra.ActorIsValid(idSpawner) then\r\n\t\t\tHydra.ActorDelete(idSpawner)\r\n\t\tend\r\n\tend\r\n\t\r\n\tlocal idActorPlayer = Hydra.GetPrimaryPlayer()\r\n\tlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\t--Remove Debuff\r\n\tpersistantDamageBuff = 0\r\n\tif #tplayers > 0 then\r\n\t\t\r\n\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\tHydra.BuffRemove(HealthDrainDebuff,\"HealthDrain\",idplayer)\r\n\t\tend\r\n\tend\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -820,8 +809,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -893,7 +881,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tHOLDOUT_SHRINES = 0\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[1])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[2])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[3])\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[4])\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -970,8 +957,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1005,7 +991,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n--While this may look crazy, there is a method to the madness. The shrines in the room cycle between\r\n--one of four spots. If the player succeeds or fails, we need to immediately turn them off. The \r\n--HOLDOUT_SHRINES variable can be found in the other callbacks in this phase as well as the previous\r\n--callback in terms of when it equals 1 or 0.\r\n\r\n\twhile (HOLDOUT_SHRINES == 1) do\r\n\t\r\n\t\tif (HOLDOUT_SHRINES == 1) then\r\n\t\t\tHydra.BuffApplyToTarget(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[1])\r\n\t\t\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[4])\r\n\t\t\tlocal nCount = 0\r\n\t\t\t\twhile (nCount < 10 and HOLDOUT_SHRINES == 1) do\r\n\t\t\t\t Hydra.Wait(1);\r\n\t\t\t\t nCount = nCount + 1;\r\n\t\t\t\tend\r\n\t\t\tnCount = 0\r\n\t\tend\r\n\t\t\r\n\t\tif (HOLDOUT_SHRINES == 1) then\r\n\t\t\tHydra.BuffApplyToTarget(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[2])\r\n\t\t\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[1])\r\n\t\t\tlocal nCount = 0\r\n\t\t\t\twhile (nCount < 10 and HOLDOUT_SHRINES == 1) do\r\n\t\t\t\t Hydra.Wait(1);\r\n\t\t\t\t nCount = nCount + 1;\r\n\t\t\t\tend\r\n\t\t\tnCount = 0\r\n\t\tend\r\n\t\t\r\n\t\tif (HOLDOUT_SHRINES == 1) then\t\r\n\t\t\tHydra.BuffApplyToTarget(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[3])\r\n\t\t\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[2])\r\n\t\t\tlocal nCount = 0\r\n\t\t\t\twhile (nCount < 10 and HOLDOUT_SHRINES == 1) do\r\n\t\t\t\t Hydra.Wait(1);\r\n\t\t\t\t nCount = nCount + 1;\r\n\t\t\t\tend\r\n\t\t\tnCount = 0\r\n\t\tend\r\n\t\t\r\n\t\tif (HOLDOUT_SHRINES == 1) then\r\n\t\t\tHydra.BuffApplyToTarget(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[4])\r\n\t\t\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",Shrine_Trigger[3])\r\n\t\t\tlocal nCount = 0\r\n\t\t\t\twhile (nCount < 10 and HOLDOUT_SHRINES == 1) do\r\n\t\t\t\t Hydra.Wait(1);\r\n\t\t\t\t nCount = nCount + 1;\r\n\t\t\t\tend\r\n\t\t\tnCount = 0\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1082,8 +1067,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1103,8 +1087,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1217,7 +1199,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\t\r\n\t--Enable Holdout Shrines\r\n\tHOLDOUT_SHRINES = 1\r\n\t\r\n\t--Start Boss fight\r\n\tHydra.BossEncounterManuallyQueueStart(S_HOLDOUT_LEVEL_AREA)\r\n\tlocal tSpawners = Hydra.ActorsInGroup(\"CAP_Tier4_Scos_ArchivesofIssalia_HoldoutSpawners\")\r\n\tfor i, idSpawner in ipairs(tSpawners) do\r\n\t\tHydra.ActorGizmoSetDisabled(idSpawner,false)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1303,8 +1284,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1324,8 +1304,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1437,7 +1415,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1514,8 +1491,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1535,8 +1511,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorGizmoSetDisabled(idTeleporter,false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1609,7 +1583,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1686,8 +1659,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\nHydra.ActorFadeAndDelete(BossRoomWall,2)\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1760,7 +1732,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1861,7 +1832,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1947,8 +1917,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1968,8 +1937,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2074,7 +2041,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2160,8 +2126,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2242,7 +2207,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2328,8 +2292,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2349,8 +2312,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2463,7 +2424,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2549,8 +2509,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2570,8 +2529,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2677,7 +2634,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n--Turn on Debuff\r\nlocal idActorPlayer = Hydra.GetPrimaryPlayer()\r\nlocal tplayers = Hydra.PlayerActorsInParty(idActorPlayer)\r\n\r\n\tif  (persistantDamageBuff == 1) then\r\n\t\tif #tplayers > 0 then\r\n\t\t\t\r\n\t\t\tfor i, idplayer in ipairs(tplayers) do\r\n\t\t\t\tHydra.BuffApplyToTarget(HealthDrainDebuff,\"HealthDrain\",idplayer)\r\n\t\t\tend\r\n\t\tend\t\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2754,8 +2710,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2775,8 +2730,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2827,8 +2780,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2858,11 +2809,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_HOLDOUT_LEVEL_AREA = Hydra.ReferenceLevelArea(\"CAP_Tier4_Scos_ArchivesofIssalia_Holdout\")\r\nidProxy = Hydra.ACDID_INVALID\r\n\r\n--Turn off the Shrines inside the Holdout room until the Holdout actually starts\r\nfor i, idShrine in ipairs(Shrine_Trigger) do\r\n\tHydra.BuffRemove(Shrine_VisualBuff,\"Buff_Visual\",idShrine)\r\nend\r\n\r\npersistantDamageBuff = 1\r\n\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -130,7 +130,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t-- Get the door\r\n\tidDoor = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BARRICADE\")[1]\r\n\t\r\n\tidSmasher = idActorSpawned\r\n\t\r\n\t-- if valid, set up targeting\r\n\tif Hydra.ActorIsValid(idDoor) then\r\n\t\tHydra.ActorSetTeam(idDoor, Hydra.TEAM_HATE_ALL_EXCEPT_PLAYERS_0)\r\n\t\tif Hydra.ActorIsValid(idDoor) and Hydra.ActorIsValid(idSmasher) then\r\n\t\t\tHydra.ActorAddAITarget(idActorSpawner, idDoor, true)\r\n\t\tend\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -220,7 +219,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t--NOTE: This is only used for charging enemies like the Beast. Most enemies actually attack the barricade to kill. Beasts charge at it.\r\n\tif Hydra.ActorIsValid(idBarricade) then\r\n\t\tHydra.ActorKill(idBarricade)\r\n\t\tHydra.ActorTriggerPowerAtFeet(idActor, S_PWR_SHOULDERCHARGE)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -308,7 +306,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--Causes the dramatic scattering of the barricade\r\n\tHydra.ActorTriggerPowerAtFeet(idActorKiller, S_PWR_SHOULDERCHARGE)\r\n\t--Targets the player immediately after\r\n\tHydra.ActorAddAITarget(idActorKiller, idTriggeringPlayer, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -399,7 +396,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--In the event the player somehow kills the enemy behind the barricade, the barricade will topple over\r\n\tif (idActorKilled == idSmasher) and Hydra.ActorIsValid(idBarricade) then\r\n\t\tHydra.ActorKill(idBarricade)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -503,7 +499,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tidTriggeringPlayer = idActor\r\n\t\r\n\t-- Get the Spawner Opposite side of the door\r\n\tidChosenSpawner = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\t\r\n\t\r\n\t--Enable the Good Spawner\r\n\tif Hydra.ActorIsValid(idChosenSpawner) then\r\n\t\tHydra.ActorGizmoSetDisabled(idChosenSpawner, false)\r\n\tend\r\n\r\n\t-- Marks the Spawner that was approached as the target to charge to\r\n\tidRunLoc = Hydra.ActorSpawnActor(S_RUNLOC, idActorDetector, false, 1, 1)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -580,8 +575,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -601,8 +595,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -632,11 +624,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idDoor = Hydra.ACDID_INVALID\r\nidSmasher = Hydra.ACDID_INVALID\r\nidTriggeringPlayer = Hydra.ACDID_INVALID\r\nidRunLoc = Hydra.ACDID_INVALID",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

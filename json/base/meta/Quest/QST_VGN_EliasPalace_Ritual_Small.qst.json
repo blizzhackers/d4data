@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -236,8 +234,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -356,7 +352,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -433,8 +428,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -454,8 +448,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorDelete(ID_FXLOC_CHARGE)\r\n\r\nHydra.Wait(0.3)\r\n\r\nif Hydra.ActorIsValid(ID_SUMMONER) then\r\n\tHydra.ActorTriggerPowerAtFeet(ID_SUMMONER, ANIMKEY_OMNICAST)\r\n\tHydra.QActorSetIdleAnim(ID_SUMMONER, ANIMKEY_NEUTRAL)\r\nend\r\n\r\nHydra.Wait(0.3)\r\n\r\nlocal idSpawned = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SUMMON, idSelf), ID_VICTIM, false, 0, 0, Hydra.MR_NORMAL, POWER_SPAWN)\r\nHydra.ActorSetTeam(idSpawned, Hydra.TEAM_NEUTRAL)\r\n\r\nHydra.ActorPlayEffectGroup(ID_FXLOC_BURST, EG_BURST)\r\nHydra.ActorFadeAndDelete(ID_VICTIM, .2)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -485,11 +477,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "\r\nPOWER_SPAWN = Hydra.PowerSNOFromName(POWER_SPAWN)\r\n\r\nif Hydra.GetRandomFloat() <= 0.05 then\r\n\tMR_RARITY = Hydra.MR_SUPER_ELITE\r\nend\r\n\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_BURST, 8)\r\nHydra.ActorSetPowerEffectSize(ID_FXLOC_CHARGE, 4)\r\nHydra.ActorSetPowerEffectDuration(ID_FXLOC_CHARGE, 5)\r\n\r\nHydra.ActorPlayEffectGroup(ID_FXLOC_CHARGE, EG_CHARGE, true, Hydra.ACDID_INVALID, true)\r\n\r\nHydra.ActorSetIdleAnim(ID_SUMMONER, ANIMKEY_OMNICHANNEL)\r\nHydra.ActorDisableAI(ID_SUMMONER)\r\n\r\nfor i, actorID in pairs(T_PROPS) do\r\n\tHydra.ActorSetInvulnerable(actorID, true)\r\n\tHydra.ActorSetTargetable(actorID, false)\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

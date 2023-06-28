@@ -96,7 +96,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t--NOTE: maybe we should convert these infinity while loop into hearbeat callbacks? and have a timer phase before that to do cool up\r\n\t--a while infinite loop always feels dangerous, not sure if it's 100% sure, but it should be tho\r\n\t-- If the area somehow is NOT a dungeon, stop this loop. It must be some errors, or a misuseage since dungeon affixes are only supposed to be in a dungeon\r\n\tif not Hydra.SubzoneIsDungeon() then\r\n\t\treturn;\r\n\tend\r\n\t\r\n\t--initial delay before affix takes effects\r\n\tHydra.Wait(1);\r\n\t\r\n\t--This quest solely handles situations when AI cannot handle itself. Eg. cannot find a nearby alive target, too far from target(cause AI to freeze), etc\r\n\twhile (true) do\r\n\t\t--give while loop a global cooldown\r\n\t\tHydra.Wait(0.5)\r\n\tend -- while loop\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -173,8 +172,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -226,7 +224,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\t\r\n\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\tif not Hydra.ActorIsValid(idFollower) then\r\n\t\t--if we don't have a follower, spawn one\r\n\t\tUF_SpawnFollower();\r\n\telse\t\r\n\t\t--we have a follower, and it does have a target. If the target is too far, warp to it.\r\n\t\tlocal idFollowerTarget = Hydra.ActorGetAIPrimaryTarget(idFollower)\r\n\t\tif Hydra.ActorIsValid(idFollowerTarget) then\r\n\t\t\tif Hydra.ActorDistanceSquaredBetweenActors(idFollowerTarget, idFollower) > ( nWARP_DISTANCE * nWARP_DISTANCE )\r\n\t\t\t\tand not Hydra.BuffIsOnActor(S_PWR_PROTECTION, \"is_In_Dome_Phase\", idFollower) then\r\n\t\t\t\tHydra.ActorWarpToActor(idFollower, idFollowerTarget)\r\n\t\t\tend\r\n\t\telse\r\n\t\t\t--we have a follower but it has no target, find an alive one as new target\r\n\t\t\tUF_SearchForAliveTarget()\r\n\t\tend\r\n\tend\r\n\t--=====SPAWN, WARP IF TOO FAR, SEARCH NEW TARGET IF NO TARGET====--\r\n\t\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -303,8 +300,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -324,8 +320,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -355,11 +349,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function UF_SpawnFollower ()\r\n\tlocal tPlayers = Hydra.PlayerActors();\r\n\tlocal tAlivePlayers = {};\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\ttable.insert(tAlivePlayers, idPlayer);\r\n\t\tend\r\n\tend\r\n\r\n\tif Hydra.ActorIsValid(tAlivePlayers[1]) and Hydra.ActorFinishedLoading(tAlivePlayers[1]) then\r\n\t\tShuffleTable(tAlivePlayers);\r\n\t\tlocal ptTargetLoc = Hydra.ActorGetPosition(tAlivePlayers[1]);\r\n\t\tlocal ptFacing = Hydra.ActorGetFacing(tAlivePlayers[1]);\r\n\t\tlocal ptSpawnLoc = Hydra.PositionSearchForNearbyNavmeshPosition(ptTargetLoc, 2, 4, true);\r\n\t\tidFollower = Hydra.ActorSpawnActor(S_FOLLOWER_ACTOR, ptSpawnLoc, ptFacing, true, 0, 0);\r\n\t\tif Hydra.ActorIsValid(idFollower) then\r\n\t\t\t--target a random player\r\n\t\t\tHydra.ActorAIForcePrimaryTarget(idFollower, tAlivePlayers[1]);\r\n\t\t\t--apply death monitor so it can detect wipe or frustration, then give players a long break.\r\n\t\t\t--solo play will make this easier since every death is a wipe, but I think we are fine with it.\r\n\t\t\tHydra.QActorPower(idFollower,S_PWR_DEATHMONITOR);\r\n\t\tend\r\n\telse\r\n\t\t--nope, everyone is dead, or people are still in limbo loading screen, do nothing this turn\r\n\tend\r\nend\r\n\r\nfunction UF_SearchForAliveTarget ()\r\n\tlocal tPlayers = Hydra.PlayerActors();\r\n\tlocal tAlivePlayers = {};\r\n\tfor i, idPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.ActorIsAlive(idPlayer) then\r\n\t\t\ttable.insert(tAlivePlayers, idPlayer);\r\n\t\tend\r\n\tend\r\n\t\r\n\tif Hydra.ActorIsValid(tAlivePlayers[1]) then\r\n\t\t--target a random player\r\n\t\tShuffleTable(tAlivePlayers);\r\n\t\tHydra.ActorAIForcePrimaryTarget(idFollower, tAlivePlayers[1]);\r\n\t\t\r\n\t\t--if the target is too far, warp to it (this fixes portal issues with certain dungeons, especially in a single person party)\r\n\t\tif Hydra.ActorDistanceSquaredBetweenActors(tAlivePlayers[1], idFollower) > ( nWARP_DISTANCE * nWARP_DISTANCE )\r\n\t\tand not Hydra.BuffIsOnActor(S_PWR_PROTECTION, \"is_In_Dome_Phase\", idFollower) then\r\n\t\t\tHydra.ActorWarpToActor(idFollower, tAlivePlayers[1])\r\n\t\tend\r\n\telse\r\n\t\t--nope, everyone is dead, do nothing this turn\r\n\tend\r\nend\r\n\r\n",
- "szOnStartupScript": "S_DUNGEON_AFFIX_NAME = \"Thunder Storm\";\r\nnWARP_DISTANCE = 16;\r\nidFollower = Hydra.ACDID_INVALID;",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

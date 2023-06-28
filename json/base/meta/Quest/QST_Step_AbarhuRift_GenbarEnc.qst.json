@@ -135,7 +135,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tif(Hydra.ActorIsAlive(idActorPlayer)) then\r\n\t\t--Boss Respawn Trigger Enabled\r\n\t\tHydra.ActorEnable(BOSS_TRIGGER)\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -233,7 +232,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tif(Hydra.ActorIsAlive(idActor)) then\r\n\t\t--Disable Trigger\r\n\t\tHydra.ActorDisable(BOSS_TRIGGER)\r\n\t\t--Send Event\r\n\t\tHydra.EventSend(\"QST_Step_AbarhuRift_GenbarEnc_Start\")\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -310,8 +308,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -400,7 +397,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t--Reset Boss Encounter\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorEnable(bossID)\r\n\t\tHydra.ActorSetNeverDie(bossID, true)\r\n\t\tHydra.ActorClearAnimSetOverride(bossID)\r\n\tend\t\r\n\t--Enable Demon Spawners\r\n\tlocal demon = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SPAWNERS\")\r\n\tfor i, demonID in ipairs(demon) do\r\n\t\tHydra.ActorEnable(demonID)\r\n\tend\t\r\n\t--Manually Start Encounter\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_LEVEL_AREA)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -477,8 +473,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -498,8 +493,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -606,7 +599,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\t--Stop Spawners/Kill Demon Adds\r\n\tlocal demon = Hydra.ActorsInGroup(\"Step_Saga_CultistCanyon_Adds\")\r\n\tfor i, demonID in ipairs(demon) do\r\n\t\tHydra.ActorDelete(demonID)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -698,7 +690,6 @@
        "unk_9c1ea4f": 82,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n--Empower Genbar on Megademon death, if alive\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\tif Hydra.ActorIsAlive(boss) then\r\n\t\tHydra.BuffApplyToTarget(\"MonsterAffix_Teleporter\", \"MonsterAffix_Teleporter\", boss)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -784,8 +775,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Conclude Boss Encounter, removing fog walls/portal restrictions\r\nHydra.BossEncounterManuallyComplete(BOSS_LEVEL_AREA)\r\n\r\nHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -873,7 +863,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t--Reset Boss Encounter\r\n\t--Enable Genbar and Demon\r\n\tHydra.ActorFadeAndDelete(ID_GENBAR, 2)\r\n\tHydra.ActorFadeAndDelete(ID_MEGADEMON, 2)\r\n\t--Enable Demon Spawners\r\n\tlocal demon = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SPAWNERS\")\r\n\tfor i, demonID in ipairs(demon) do\r\n\t\tHydra.ActorFadeAndDelete(demonID, 2);\r\n\tend\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -959,8 +948,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1030,7 +1018,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\t--Make Genbar immortal/untargetable and move to summoning area\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\t\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorTriggerPowerAtFeet(bossID, POWER_KNOCKBACK)\r\n\t\tHydra.ActorSetNoDamage(bossID, true)\r\n\t\tHydra.ActorEnableAI(bossID, false)\r\n\t\tHydra.ActorSetTargetable(bossID, false)\r\n\t\tHydra.QActorClearAnimSetOverride(bossID)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(bossID, GENBAR_SUMMON_MARKER, \"NPC_Run\", true)\r\n\t\tHydra.QActorFaceSameAsActor(bossID, GENBAR_SUMMON_MARKER)\r\n\t\r\n\t\tHydra.WaitForQEmpty(bossID)\r\n\t\tHydra.QActorSetAnimSetOverride(bossID, S_GENBAR_CRYOUT_ANIMSET)\r\n\t\tHydra.QActorPlaySimpleConversation(CONV_GENBAR_SUMMON, bossID)\r\n\t\tHydra.WaitForQEmpty(bossID)\r\n\tend\r\n\t\r\n\t\r\n\t\r\n\t--Genbar consumes any remaining demons\r\n\tlocal spawners = Hydra.ActorsLinkedByActorInGroup(idSelf, \"SPAWNERS\")\r\n\tfor i, spawnerID in ipairs(spawners) do\r\n\t\tHydra.ActorDisable(spawnerID)\r\n\tend\t\r\n\t\r\n\tlocal demon = Hydra.ActorsInGroup(\"Step_Saga_CultistCanyon_Adds\")\r\n\tfor i, demonID in ipairs(demon) do\r\n\t\tHydra.ActorKill(demonID)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1137,7 +1124,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t--Disembodied Elias\r\n\tlocal tParticipants = Hydra.QuestGetParticipants()\r\n\tfor i, idParticipant in ipairs(tParticipants) do\r\n\t\tHydra.ActorPlayDisembodiedConversation(CONV_ELIAS_CALLOUT, idParticipant)\r\n\tend\r\n\tHydra.WaitForConversationFinished(CONV_ELIAS_CALLOUT)\r\n\r\n\t--Enable Megademon and make Genbar active again\r\n\tHydra.EventSendToActor(\"QST_Step_AbarhuRift_GenbarEnc_DemonSummon\", idSelf, idSelf)\r\n\tHydra.ActorGizmoSetDisabled(ID_MEGADEMON, false)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1224,7 +1210,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t--Slight pause for pacing\r\n\tHydra.ActorSetNoDamage(idActorSpawned, true)\r\n\tHydra.ActorEnableAI(idActorSpawned, false)\r\n\tHydra.ActorSetTargetable(idActorSpawned, false)\r\n\tHydra.ActorSetNeverDie(idActorSpawned, true)\r\n\t\r\n\tHydra.Wait(1)\r\n\tHydra.EventSend(\"QST_Step_CCanyon_GenbarEnc_LorathBark\")\r\n\t-- Enable the Megademon\r\n\tHydra.ActorSetNoDamage(idActorSpawned, false)\r\n\tHydra.ActorEnableAI(idActorSpawned, true)\r\n\tHydra.ActorSetTargetable(idActorSpawned, true)\r\n\tHydra.ActorSetNeverDie(idActorSpawned, false)\r\n\t\r\n\t--Enable Genbar to restart fight\r\n\tlocal boss = Hydra.ActorsLinkedByActorInGroup(idSelf, \"BOSS\")\r\n\t\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.QActorClearAnimSetOverride(bossID)\r\n\t\tHydra.ActorSetNoDamage(bossID, false)\r\n\t\tHydra.ActorEnableAI(bossID, true)\r\n\t\tHydra.ActorSetTargetable(bossID, true)\r\n\t\tHydra.ActorSetNeverDie(bossID, false)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1301,8 +1286,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1322,8 +1306,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "if Hydra.ActorIsValid(ID_GENBAR) then\r\n\tHydra.QActorPlaySimpleConversation(S_CONV_CULTIST_02, ID_GENBAR)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1433,7 +1415,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n--Empower Megademon on Genbar death, if alive\r\n\tif Hydra.ActorIsAlive(ID_MEGADEMON) then\r\n\t\tHydra.BuffApplyToTarget(\"MonsterAffix_ShadowEnchanted\", \"MonsterAffix_ShadowEnchanted\", ID_MEGADEMON)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1532,7 +1513,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n--Summon Megademon Effect\r\n\tHydra.ActorPlayEffectGroup(DEMON_SUMMON_MARKER, S_EFFECTGROUP_DEMON_SUMMON, true)\r\n\tHydra.Wait(2.0)\r\n\tHydra.ActorRemoveComplexEffectByEffectGroupSNO(DEMON_SUMMON_MARKER, S_EFFECTGROUP_DEMON_SUMMON)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1639,7 +1619,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSummoner, idActorSummoned, sPowerName)\r\n\r\n--Add Summon to Summon Group\r\n\tHydra.ActorAddToGroup(idActorSummoned, \"Step_Saga_CultistCanyon_Adds\")\r\n\tHydra.BuffApplyToTarget(Hydra.ReferencePower(\"generic_deathAppend_unsummonEffect\"), \"BUFF_UNSUMMON_DEATH_DEMONIC\", idActorSummoned)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1735,7 +1714,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.BuffApplyToTarget(Hydra.ReferencePower(\"generic_deathAppend_unsummonEffect\"), \"BUFF_UNSUMMON_DEATH_DEMONIC\", idActorSpawned)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1812,8 +1790,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1833,8 +1810,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1900,7 +1875,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1977,8 +1951,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1998,8 +1971,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2072,7 +2043,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2149,8 +2119,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2170,8 +2139,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2201,11 +2168,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_EFFECTGROUP_DEMON_ROPE = Hydra.ReferenceEffectGroup(\"fxKit_harmless_persistentRope_demonic\")\r\nS_EFFECTGROUP_DEMON_SUMMON = Hydra.ReferenceEffectGroup(\"mouthOfHell_take3\")\r\n\r\nS_GENBAR_CRYOUT_ANIMSET= Hydra.ReferenceAnimset(\"NPC_Genbar_Cry_Out_campaign\")",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

@@ -152,7 +152,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -229,8 +228,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -303,7 +301,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tif Hydra.ActorIsValid(tCocoonedVillagers[idActorGizmo]) then\r\n\t\t\r\n\t\tidLastSavedVillager = tCocoonedVillagers[idActorGizmo]\r\n\t\tHydra.ActorRemoveFromPrefabScopedGroup(idLastSavedVillager, PSAG_WEBBED_VILLAGERS)\r\n\t\ttCocoonedVillagers[idActorGizmo] = nil\r\n\t\tHydra.ActorSetInvisible(idLastSavedVillager, false)\r\n\t\t\r\n\t\tHydra.EventSendToActor(\"AdvancePhase\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\r\n\t\tif Hydra.PrefabScopedActorGroupGetCount(PSAG_WEBBED_VILLAGERS) > 0 then \r\n\t\t\tHydra.QActorPlaySimpleConversation(CONV_FREED, idLastSavedVillager) \r\n\t\tend\r\n\t\t\r\n\t\tHydra.QActorAnimAndNewIdle(idLastSavedVillager, ANIMKEY_SICK_PRONE_GETUP, ANIMKEY_NEUTRAL)\r\n\t\t\r\n\telse\r\n\t\r\n\t\tlocal spawn\r\n\t\tif Hydra.GetRandomInt(1, 2) == 1 then\r\n\t\t\tspawn = GetRandomTableEntry(T_RANDOM_SPAWNS)\r\n\t\telse\r\n\t\t\tspawn = Hydra.ActorPickFromEncounter(GetRandomTableEntry(T_RANDOM_ENCOUNTERS), ID_THIS_QUEST)\r\n\t\tend\r\n\t\tHydra.ActorSpawnActor(\r\n\t\t\tspawn, \r\n\t\t\tHydra.PositionSnapToGround(Hydra.ActorGetPosition(idActorGizmo)), \r\n\t\t\tHydra.ActorGetFacing(idActorGizmo), \r\n\t\t\tfalse, \r\n\t\t\t0, \r\n\t\t\t0)\r\n\tend\r\n\t\r\n\tcocoonOpened(idActorGizmo)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -411,7 +408,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorPlaySimpleConversation(CONV_SCREAM, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -488,8 +484,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -509,8 +504,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -601,7 +594,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -678,8 +670,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -751,7 +742,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\t--No super elite if a villager dies.\r\n\tif SUPER_SPAWNS == true then\r\n\t\tSUPER_SPAWNS = false\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -828,8 +818,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -897,7 +886,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\tif not Hydra.ActorIsArchetype(idActorSpawned, \"mini\") then\r\n\t\tHydra.ActorMergeAIState(idActorSpawned, STATE_KILL_PREY, idActorSpawned, 0)\r\n\t\tHydra.ActorAddToPrefabScopedGroup(idActorSpawned, PSAG_SPIDERS)\r\n\tend\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -988,7 +976,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tHydra.ActorPlaySimpleConversation(CONV_UNDER_ATTACK, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1079,7 +1066,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1156,8 +1142,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1209,7 +1194,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\tif SUPER_SPAWNS == true then\r\n\t\tif Hydra.PrefabScopedActorGroupGetCount(\"LE_Spider_Elite\") == 0 then\r\n\t\t\tHydra.ActorTriggerSpawnerUpdate(SUPER_SPAWNER)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1286,8 +1270,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1307,8 +1290,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0.8999999761581421,
-   "szOnEnterScript": "Hydra.Wait(1)\r\n\r\nHydra.ActorPlaySimpleConversation(CONV_WARNING, idLastSavedVillager)\r\nHydra.WaitForConversationFinished(CONV_WARNING)\r\n\r\nHydra.ActorPlayEffectGroup(ID_THIS_QUEST, SFX_WAVE_MINOR)\r\n\r\nfor i, idVillager in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_VILLAGERS)) do\r\n\tHydra.ActorSetInvulnerable(idVillager, false)\r\n\tHydra.ActorSetTargetable(idVillager, true)\r\n\tHydra.ActorMergeAIState(idVillager, AISTATE_FLEE, idVillager, 0)\r\nend\r\n\r\nfor i, spawnerID in pairs(T_SPAWNERS) do\r\n\tHydra.ActorEnable(spawnerID)\r\nend\r\n\r\nfor i, cocoonID in pairs(T_COCOONS) do\r\n\tif Hydra.ActorIsValid(cocoonID) then\r\n\t\tcocoonOpened(cocoonID)\r\n\tend\r\n\t\r\nend\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1419,7 +1400,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1496,8 +1476,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1517,8 +1496,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "for i, spawnerID in pairs(T_SPAWNERS) do\r\n\tif Hydra.ActorIsValid(spawnerID) then\r\n\t\tHydra.ActorDelete(spawnerID)\r\n\tend\r\nend",
-   "szOnExitScript": "for i, idVillager in pairs(Hydra.ActorsInPrefabScopedGroup(PSAG_VILLAGERS)) do\r\n\tHydra.ActorSetInvulnerable(idVillager, true)\r\n\tHydra.ActorSetTargetable(idVillager, false)\r\n\tHydra.ActorRemoveMergedAIState(idVillager, AISTATE_FLEE)\r\nend",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1584,7 +1561,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tlocal sChest = ACTOR_CHEST_REWARD\r\n\r\n\tif Hydra.QuestGetBonusPhaseResult() then\r\n\t\tsChest = ACTOR_CHEST_REWARD_HEROIC\r\n\tend\r\n\t\r\n\tEvents.SpawnRewardChest(CHEST_LOCATION, sChest)\r\n\r\n\tlocal idSpeaker = GetRandomTableEntry(Hydra.ActorsInPrefabScopedGroup(PSAG_VILLAGERS))\r\n\t\r\n\tif Hydra.ActorIsValid(idSpeaker) then\r\n\t\tHydra.ActorPlaySimpleConversation(CONV_VICTORY, idSpeaker)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1661,8 +1637,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1682,8 +1657,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1787,7 +1760,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1864,8 +1836,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1917,7 +1888,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1994,8 +1964,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2015,8 +1984,6 @@
    "unk_669bcf8": 5,
    "unk_287ecb5": 13,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2046,11 +2013,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function GetRandomTableEntry(t)\r\n\treturn t[Hydra.GetRandomInt(1,#t)]\r\nend\r\n\r\nlocal function IsNearAnotherCocoon(pt, tSpawnPoints)\r\n\t\r\n\tlocal nSpawnPoints = #tSpawnPoints\r\n\t\r\n\tif nSpawnPoints <= 0 then \r\n\t\treturn false \r\n\tend\r\n\t\r\n\tfor i=1, nSpawnPoints do\r\n\t\tif Hydra.PositionGetDistanceToPosition(pt, (tSpawnPoints[i])) < 4 then\r\n\t\t\treturn true\r\n\t\tend\t\t\t\r\n\tend\r\nend\r\n\r\nlocal function cocoonOpened(idActor)\r\n\tHydra.ActorTriggerPowerAtFeet(idActor, POWER_SPAWN_MINIS)\r\n\tHydra.ActorKill(idActor)\r\n\tHydra.ActorFadeAndDelete(idActor, 2)\r\nend",
- "szOnStartupScript": "ID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\nPSAG_COCOONS = \"LE_Hatchery_Cocoons\"\r\nPSAG_SPAWNERS = \"LE_Hatchery_Spawners\"\r\nPSAG_SPIDERS = \"LE_Hatchery_Spiders\"\r\nPSAG_VILLAGERS = \"LE_Hatchery_Villagers\"\r\nPSAG_WEBBED_VILLAGERS = \"LE_Hatchery_Webbed_Villagers\"\r\n\r\nSUPER_SPAWNS = true\r\n\r\nT_ANIMSETS = {ANIMSET_WOUNDED, ANIMSET_WOUNDED_ARM, ANIMSET_WOUNDED_HEAD}\r\n\r\nT_RANDOM_SPAWNS = \r\n\t{\r\n\tHydra.ReferenceActor(\"Generic_Corpse_Horse_Part_Head_Any_1x1_01_Arrangement\"),\r\n\tHydra.ReferenceActor(\"Generic_Corpse_Horse_Part_Leg_Any_1x1_01_Arrangement\")\r\n\t}\r\n\r\nT_RANDOM_ENCOUNTERS =\r\n\t{\r\n\t\tENCOUNTER_CORPSE,\r\n\t\tENCOUNTER_BLOATED_CORPSE\r\n\t}\r\n\t\r\nT_COCOONS = {}\r\n\t\r\nlocal T_ACTOR_COCOONS =\r\n\t{\r\n\t\tACTOR_COCOON_GIZMO_01,\r\n\t\tACTOR_COCOON_GIZMO_02,\r\n\t\tACTOR_COCOON_GIZMO_03,\r\n\t\tACTOR_COCOON_GIZMO_04,\r\n\t\tACTOR_COCOON_GIZMO_05\r\n\t}\r\n\r\nlocal T_SPAWN_PTS = {}\r\n\r\nlocal PT_THIS_QUEST = Hydra.ActorGetPosition(ID_THIS_QUEST)\r\nlocal PT_FACING_THIS_QUEST = Hydra.ActorGetFacing(ID_THIS_QUEST)\r\n\r\nlocal N_COCOON_MIN = 7\r\nlocal N_COCOON_MAX = 9\r\nlocal N_VILLAGER_COUNT = 3\r\n\r\nfor i=1, Hydra.GetRandomInt(N_COCOON_MIN, N_COCOON_MAX) do\r\n\t\r\n\tlocal ptSpawn = Hydra.PositionSearchForNearbyNavmeshPosition(PT_THIS_QUEST, 0, 9)\r\n\t\r\n\tfor i=1, 50 do\r\n\t\tif IsNearAnotherCocoon(ptSpawn, T_SPAWN_PTS) then\r\n\t\t\tptSpawn = Hydra.PositionSearchForNearbyNavmeshPosition(PT_THIS_QUEST, 0, 9)\r\n\t\telse\r\n\t\t\tbreak\r\n\t\tend\r\n\tend\r\n\r\n\tptSpawn = Hydra.PositionSnapToGround(ptSpawn)\r\n\tT_SPAWN_PTS[#T_SPAWN_PTS+1] = ptSpawn\r\n\t\r\nend\r\n\r\nHydra.Wait(1)\r\n\r\nfor i=1, #T_SPAWN_PTS do\r\n\tlocal idCocoon = Hydra.ActorSpawnActor(\r\n\t\tGetRandomTableEntry(T_ACTOR_COCOONS),\r\n\t\tT_SPAWN_PTS[i],\r\n\t\tPT_FACING_THIS_QUEST,\r\n\t\ttrue,\r\n\t\t0,\r\n\t\t0)\r\n\tT_COCOONS[#T_COCOONS+1] = idCocoon\r\n\tHydra.ActorAddToPrefabScopedGroup(idCocoon, PSAG_COCOONS)\r\nend\r\n\r\ntCocoonedVillagers = {}\r\n\r\nfor i=1, N_VILLAGER_COUNT do\r\n\r\n\tlocal idLastCreatedActor = Hydra.ActorSpawnActor(\r\n\t\tHydra.ActorPickFromEncounter(ENCOUNTER_NPC, ID_THIS_QUEST), \r\n\t\tT_COCOONS[i], \r\n\t\ttrue, \r\n\t\t0, \r\n\t\t0)\r\n\t\r\n\tHydra.ActorSetIdleAnim(idLastCreatedActor, ANIMKEY_SICK_PRONE)\r\n\ttCocoonedVillagers[T_COCOONS[i]] = idLastCreatedActor\r\n\tHydra.ActorSetInvulnerable(idLastCreatedActor, true)\r\n\tHydra.ActorSetTargetable(idLastCreatedActor, false)\r\n\tHydra.ActorSetInvisible(idLastCreatedActor, true)\r\n\tHydra.ActorAddToPrefabScopedGroup(idLastCreatedActor, PSAG_WEBBED_VILLAGERS)\r\n\tHydra.ActorAddToPrefabScopedGroup(idLastCreatedActor, PSAG_VILLAGERS)\r\n\tHydra.ActorSetAITether(idLastCreatedActor, ID_THIS_QUEST)\r\n\t\r\n\tHydra.ActorSetAnimSetOverride(\r\n\t\tidLastCreatedActor, \r\n\t\tT_ANIMSETS[Hydra.GetRandomInt(1, #T_ANIMSETS)],\r\n\t\tfalse)\r\n\r\n\tend\r\n\t\r\n\tfor i, actorID in pairs(Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"initialSpiders\")) do\r\n\t\tHydra.ActorMergeAIState(actorID, STATE_IDLE, actorID, 0)\r\n\tend",
- "szOnShutdownScript": "Events.Despawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

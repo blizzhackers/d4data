@@ -176,7 +176,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tCamps.ClaimCamera(idActorPlayer, idActorGizmo);\r\n\tHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -253,8 +252,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -274,8 +272,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorGizmoSetDisabled(ClaimSwitch, false)",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -394,7 +390,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\n--\tHydra.ActorGizmoSetDisabled(idActorSign, true)\r\n\tHydra.ActorRemoveFromGroup(idActorSign, \"CMP_Scos_MoordaineLodge_CorpseClues\")\r\n\r\n\tiCount = Hydra.QuestCallbackCountGet(210)\r\n\t\r\n\tif iCount == 1 and first_hunter == true then\r\n--\t\tHydra.ActorPlayConversation(CONV_HUNTER_FIRST, idActorPlayer)\r\n--\t\tHydra.WaitForConversationFinished(CONV_HUNTER_FIRST)\r\n\t\tHydra.Wait(1)\r\n\t\tHunterAmbush(idActorSign)\r\n\t\tlocal tEliteSpawners = Hydra.ActorsLinkedByActorInGroup(idActorSign, \"Elite\")\r\n\t\tHydra.ActorGizmoSetDisabled(tEliteSpawners[1], false)\r\n\telseif iCount == 1 and first_hunter == false then\r\n\t\tHydra.Wait(1)\r\n\t\tHunterAmbush(idActorSign)\r\n\t\tlocal tEliteSpawners = Hydra.ActorsLinkedByActorInGroup(idActorSign, \"Elite\")\r\n\t\tHydra.ActorGizmoSetDisabled(tEliteSpawners[1], false)\r\n\telseif iCount == 2 then\r\n\t\tHydra.Wait(1)\r\n\t\tHunterAmbush(idActorSign)\r\n\t\tlocal tEliteSpawners = Hydra.ActorsLinkedByActorInGroup(idActorSign, \"Elite\")\r\n\t\tHydra.ActorGizmoSetDisabled(tEliteSpawners[1], false)\r\n\telseif iCount == 3 then\r\n\t\tHydra.Wait(1)\r\n\t\tHunterAmbush(idActorSign)\r\n\t\tWOLF_ESCAPE_POINT = Hydra.ActorsLinkedByActorInGroup(idActorSign, \"Wolf_Escape\")[1]\r\n\t\tlocal tBossSpawner = Hydra.ActorsLinkedByActorInGroup(idActorSign, \"Boss\")\r\n\t\tHydra.ActorGizmoSetDisabled(tBossSpawner[1], false)\r\n\t\tHydra.Wait(.5)\r\n\t\tlocal idBoss = Hydra.ActorsInGroup(\"CMP_Scos_MoordaineLodge_WolfBoss\")[1]\r\n\t\tHydra.ActorSetDamageCap(idBoss, .6)\r\n\t\tHydra.ActorAddAITarget(idBoss, idActorPlayer)\r\n\t\t\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -518,8 +513,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -608,7 +602,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.QuestCallbackCountSet(210, 1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -685,8 +678,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -706,8 +698,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "local idWorld = Hydra.ActorGetWorld(ClaimSwitch)\r\nHydra.WeatherIntensityOverride(idWorld, 0.5, 100)\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -819,7 +809,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -905,8 +894,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -988,7 +976,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\tHydra.BuffApplyToTarget(P_UNSTOPPABLE, \"Unstoppable\", idActor)\r\n\tHydra.BuffApplyToTarget(P_PASS, \"MAIN\", idActor)\r\n\tHydra.QActorMoveToLocationConstantSpeed(idActor, WOLF_ESCAPE_POINT, Hydra.MOVE_RATE_SPRINT, true)\r\n\tHydra.ActorMergeAIState(idActor, AI_BOSSRUN, idActor, 0)\r\n\tHydra.ActorAddAITarget(idActor, ID_BOSS_RUNTO, true)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1074,8 +1061,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1095,8 +1081,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "local tTriggers = Hydra.ActorsInGroup(\"CMP_Scos_MoordaineLodge_SoundTriggers\")\r\nfor i, idTrigger in pairs(tTriggers) do\r\n\tHydra.ActorDisable(idTrigger)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1221,7 +1205,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1298,8 +1281,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1319,8 +1301,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "local tWolfTracks = Hydra.ActorsInGroup(\"CAMP_AbandonedLodge_WolfTracks\")\r\nfor i, idWolfTracks in pairs(tWolfTracks) do\r\n\tHydra.ActorGizmoSetDisabled(idWolfTracks, true)\r\nend",
-   "szOnExitScript": "Hydra.ActorSpawnActor(ACTOR_GRAVEYARD, ID_GRAVEYARD_MARKER, false, 0, 0)",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1440,7 +1420,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\n\tHydra.ActorPlayConversation(CONV_PreClaim, idActor);\r\n--\tHydra.ActorDisable(BOSS_WAVE1);\r\n--\tHydra.ActorDisable(BOSS_WAVE2);\r\n--\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActor), \"weather_scosglen_abandoned_lodge\")\r\nHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lodge_Stronghold_Complete\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1526,8 +1505,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1615,7 +1593,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSummoner, idActorSummoned, sPowerName)\r\n\t\r\n\tidPlayer = Hydra.ActorGetClosestPlayer(idActorSummoned);\r\n\tHydra.Wait(1);\r\n\tpClass = Hydra.PlayerGetClass(idPlayer)\r\n\tHydra.ActorPlayConversation(CONV_DRUID_INTRO, idPlayer, idActorSummoned);\r\n\tif pClass == \"Dru\" then\r\n\t\tHydra.Wait(6)\r\n\t\tHydra.ActorPlayConversation(CONV_DRUID_INTRO_DRUVERSION, idPlayer, idActorSummoned);\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1701,8 +1678,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1781,7 +1757,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.EventSend(\"Start_Boss\", ID_BOSS_VGN)\r\n\tHydra.ActorPlaySound(idActorDetector, SOUND_FOREST_1)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lodge_Stronghold_Boss\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1858,8 +1833,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1879,8 +1853,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1985,7 +1957,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\ti = Hydra.GetRandomInt(1, 3)\r\n\r\n\tif i == 1 then\r\n\t\tHydra.ActorPlaySound(idActorDetector, SOUND_FOREST_1)\r\n\telseif i == 2 then\r\n\t\tHydra.ActorPlaySound(idActorDetector, SOUND_FOREST_2)\r\n\telseif i == 3 then\r\n\t\tHydra.ActorPlaySound(idActorDetector, SOUND_FOREST_3)\r\n\telse\r\n\t\t-- Nothing / Invalid\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2093,7 +2064,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\t\r\n\tCamps.PlayIntroConv(idActor, CONV_INTRO, S_GBID_PV_HAS_PLAYED_INTRO)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2185,7 +2155,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorsEnableLinkedByActor(idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2277,7 +2246,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\ttMonsters = Hydra.ActorsLinkedByActor(idActorDetector)\r\n\tfor i, idMonster in pairs(tMonsters) do\r\n\t\tHydra.ActorEnableAI(idMonster)\r\n--\t\tlocal roll = Hydra.GetRandomInt(1,2)\r\n--\t\tif roll == 2 then\r\n--\t\t\tHydra.QActorAnim(idMonster, \"Generic_Taunt\")\r\n--\t\tend\r\n\t\tHydra.ActorAIForcePrimaryTarget(idMonster, idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2368,7 +2336,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tHydra.ActorEnableAI(idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2445,8 +2412,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2526,7 +2492,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2603,8 +2568,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2685,7 +2649,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_Scosglen_Lodge_Stronghold\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2780,8 +2743,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2801,8 +2763,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2927,7 +2887,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorPlayConversation(CONV_SETUP, idActor)\r\n\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActor), \"weather_scosglen_abandoned_lodge_storm_start\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3004,8 +2963,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3085,7 +3043,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorSign)\r\n--\tfirst_hunter = true\r\n--\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActorPlayer), \"weather_scosglen_abandoned_lodge_storm_start\")\r\n--\tHydra.ActorGizmoSetDisabled(idActorSign, true)\r\n--\tHydra.ActorRemoveFromGroup(idActorSign, \"CMP_Scos_MoordaineLodge_CorpseClues\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3162,8 +3119,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3259,7 +3215,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tHydra.ActorPlayConversation(CONV_HUNTER_FIRST, idActor)\r\n\tHydra.WeatherOverride(Hydra.ActorGetWorld(idActor), \"weather_scosglen_abandoned_lodge_storm_start\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3336,8 +3291,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3357,8 +3311,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3483,7 +3435,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3588,7 +3539,6 @@
        "unk_9c1ea4f": 288,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tboss_at_blocker = true\r\n\tidGate = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"Gate\")[1]\r\n\tHydra.ActorSetCollidable(idGate, false)\r\n\tHydra.ActorSetInvulnerable(idGate, false)\r\n\tHydra.ActorTriggerPowerAtTarget(idActor, BOSS_LEAP_TARGET, \"werewolf_miniboss_attack\")\r\n\tHydra.Wait(.6)\r\n\tHydra.ActorKill(idGate)\r\n\tHydra.ActorDelete(TELE_BLOCKER_00)\r\n\tHydra.ActorDelete(TELE_BLOCKER_01)\r\n\tHydra.QActorMoveToLocationConstantSpeed(idActor, WOLF_ESCAPE_POINT_2, Hydra.MOVE_RATE_SPRINT, true)\r\n\tHydra.Wait(4)\r\n\tHydra.ActorFadeAndDelete(idActor, 1)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3674,8 +3624,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3755,7 +3704,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.ActorsEnableLinkedByActor(idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3841,8 +3789,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3916,7 +3863,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tHydra.ActorPlayConversation(CONV_TRACKS, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4002,8 +3948,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4055,7 +4000,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flGameTime)\r\n\tif boss_at_blocker == false then\r\n\t\tlocal tWolfBoss = Hydra.ActorsInGroup(\"CMP_Scos_MoordaineLodge_WolfBoss\")\r\n\t\tif #tWolfBoss > 0 then\r\n\t\t\tidActor = tWolfBoss[1]\r\n\t\t\tHydra.BuffApplyToTarget(P_UNSTOPPABLE, \"Unstoppable\", idActor)\r\n\t\t\tHydra.BuffApplyToTarget(P_PASS, \"MAIN\", idActor)\r\n\t\t\tHydra.QActorMoveToLocationConstantSpeed(idActor, WOLF_ESCAPE_POINT, Hydra.MOVE_RATE_SPRINT, true)\r\n\t\t\tHydra.ActorMergeAIState(idActor, AI_BOSSRUN, idActor, 0)\r\n\t\t\tHydra.ActorAddAITarget(idActor, ID_BOSS_RUNTO, true)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4132,8 +4076,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4153,8 +4096,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "tPlayers = Hydra.ActorGetPlayersAndPetsInRange(SEED_MARKER, 500, false, false)\r\n\r\ntDestroy = Hydra.ActorsLinkedByActorInGroup(WOLF_ESCAPE_POINT, \"Destroyable\")\r\nfor i, idActor in ipairs(tDestroy) do\r\n\tHydra.ActorSetInvulnerable(idActor, false)\r\n\tHydra.ActorKill(idActor)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4184,11 +4125,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "local function HunterAmbush(idGizmo)\r\n\r\n\tHydra.ActorsEnableLinkedByActor(idGizmo)\r\n\tlocal tDestroy = Hydra.ActorsLinkedByActorInGroup(idGizmo, \"Destroyable\")\r\n\tfor i, idActor in ipairs(tDestroy) do\r\n\t\tHydra.Wait(0.1)\r\n\t\tHydra.ActorSetInvulnerable(idActor, false)\r\n\t\tHydra.ActorKill(idActor)\r\n\tend\r\n\r\nend",
- "szOnStartupScript": "local tEaters = Hydra.ActorsInGroup(\"CMP_Scos_MoordaineLodge_Eaters\")\r\nfor i, idEater in pairs(tEaters) do\r\n\tHydra.ActorSetIdleAnim(idEater, \"GenericJobState\")\r\nend\r\n\r\nWOLF_ESCAPE_POINT = nil\r\n\r\nSOUND_FOREST_4 = Hydra.ReferenceSound(\"Play_Pamb_SEC_ShroudedMoors_Trees\")\r\n\r\nHydra.ActorGizmoSetDisabled(ClaimSwitch, true)\r\n\r\nS_GBID_PV_HAS_PLAYED_INTRO = \"CAMP_Scos_AbandonedLodge_Has_Played_Intro_VO\"\r\n\r\nfirst_hunter = false\r\n\r\nboss_at_blocker = false\r\n\r\ntInvulnerable = Hydra.ActorsLinkedByActorInGroup(SEED_MARKER, \"Invulnerable\")\r\n\r\nfor i, idActor in ipairs(tInvulnerable) do\r\n\tHydra.ActorSetInvulnerable(idActor, true)\r\n\tHydra.ActorSetTargetable(idActor, false)\r\nend\r\n\r\n--Hydra.ActorSetHitPointsPercent(WOLF_BOSS, .5)",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

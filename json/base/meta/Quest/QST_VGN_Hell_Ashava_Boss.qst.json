@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\t\r\n--\t-- Play victory music\r\n--\tHydra.MusicOverride(\"Kehj_Hell\", \"Music_WorldBoss_Ashava_EndVictory\");\r\n\t-- Clear Weather override for Ashava fight\r\n\tHydra.ClearWeatherOverride(Hydra.ReferenceWorld(\"Kehj_Hell\"))\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(BOSS_LEVEL_AREA);\r\n\t\r\n\tlocal tHoradrim = Hydra.ActorsInGroup(\"QST_Hell_Battlefield_Ashava_Horadrim\");\r\n\t\r\n\tif (#tHoradrim > 0) then\r\n\t\tfor i, idHoradrim in ipairs(tHoradrim) do\r\n\t\t\tHydra.ActorOverrideAIAwarenessRadius(idHoradrim, 0, false);\r\n\t\t\tHydra.ActorOverrideAIAwarenessRadius(idHoradrim, 0, true);\r\n\t\tend\r\n\tend\r\n\t\r\n\t\t------------------------------------------------------\r\n\t-- First Time Rewards\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n\t\r\n\tfor i, idPlayer in ipairs(tAllPlayers) do\r\n\t\t-- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n\t\t-- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n\t\tHydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Campaign_Ashava\", idPlayer)\r\n\t\t\r\n\t\t-- Set the variable, to mark that this player has recieved a reward\r\n\t\tHydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Campaign_Ashava\")\r\n\tend\r\n\t\r\n\t------------------------------------------------------\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -317,7 +315,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\r\n\t-- Clear Weather override for Ashava fight\r\n\tHydra.ClearWeatherOverride(\"Kehj_Hell\")\r\n\t\r\n\tHydra.ActorFadeAndDelete(BOSS, 2);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -403,8 +400,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -424,8 +420,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "Hydra.ActorDisable(Hydra.ActorsLinkedByActorInGroup(idSelf, \"Trigger\")[1]);\r\n\r\n-- Clear Weather override for Ashava fight\r\nHydra.WeatherOverride(\"Kehj_Hell\", \"weather_Hell_Exterior_physical_FarObserver\")\r\n\r\nHydra.BossEncounterManuallyQueueStart(BOSS_LEVEL_AREA);\r\n\r\nlocal tHoradrim = Hydra.ActorsInGroup(\"QST_Hell_Battlefield_Ashava_Horadrim\");\r\n\r\nif (#tHoradrim > 0) then\r\n\tfor i, idHoradrim in ipairs(tHoradrim) do\r\n\t\tHydra.ActorAddAITarget(BOSS, idHoradrim, true);\r\n\t\tHydra.ActorOverrideAIAwarenessRadius(idHoradrim, 100, false);\r\n\t\tHydra.ActorOverrideAIAwarenessRadius(idHoradrim, 100, true);\r\n\t\tHydra.ActorAIForcePrimaryTarget(idHoradrim, BOSS);\r\n\t\r\n\t\tHydra.ActorFaceActor(idHoradrim, BOSS, true);\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -491,7 +485,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -568,8 +561,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -589,8 +581,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -663,7 +653,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -740,8 +729,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -761,8 +749,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -883,7 +869,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\tHydra.ActorEnable(BOSS)\r\n\tHydra.ActorTriggerPowerAtFeet(BOSS, SPAWN_POWER);\r\n\tHydra.MusicOverride(\"Kehj_Hell\", \"Music_WorldBoss_Ashava_Spawn\");\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -960,8 +945,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1042,7 +1026,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\n\r\n\tif (Hydra.ActorIsAlive(idActorPlayer)) then\r\n\t\tHydra.ActorEnable(Hydra.ActorsLinkedByActorInGroup(idSelf, \"Trigger\")[1]);\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1128,8 +1111,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1205,7 +1187,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t-- Play boss start music\r\n\tHydra.MusicOverride(\"Kehj_Hell\", \"Music_WorldBoss_TreasureBeast_Phase1\");\r\n\t\r\n\t-- Horadrim move to a new location near wall where Ashava spawns\r\n\tHydra.QActorMoveToLocationDynamicSpeed(NEYRELLE, Loc_Neyrelle_After_Horde, \"NPC_Run\", true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(LORATH, Loc_Lorath_After_Horde, \"NPC_Run\", true)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(DONAN, Loc_Donan_After_Horde, \"NPC_Run\", true)\r\n\t\t\r\n\tHydra.ActorEnable(BOSS)\r\n\r\n\tHydra.ActorAddAITarget(BOSS, NEYRELLE, true);\r\n\tHydra.ActorAIForcePrimaryTarget(NEYRELLE, BOSS);\r\n\tHydra.ActorOverrideAIAwarenessRadius(NEYRELLE, 100, false);\r\n\tHydra.ActorOverrideAIAwarenessRadius(NEYRELLE, 100, true);\r\n\t\r\n\t\r\n\tHydra.ActorAddAITarget(BOSS, LORATH, true);\r\n\tHydra.ActorAIForcePrimaryTarget(LORATH, BOSS);\r\n\tHydra.ActorOverrideAIAwarenessRadius(LORATH, 100, false);\r\n\tHydra.ActorOverrideAIAwarenessRadius(LORATH, 100, true);\r\n\t\r\n\t\r\n\tHydra.ActorAddAITarget(BOSS, DONAN, true);\r\n\tHydra.ActorAIForcePrimaryTarget(DONAN, BOSS);\r\n\tHydra.ActorOverrideAIAwarenessRadius(DONAN, 100, false);\r\n\tHydra.ActorOverrideAIAwarenessRadius(DONAN, 100, true);\r\n\t\r\n\t\r\n\tHydra.ActorAddAITarget(BOSS, idActor, true);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1282,8 +1263,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1324,7 +1304,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorWarpToActor(DONAN, Hydra.ActorsLinkedByActorInGroup(idSelf, \"DONAN_RESET_LOC\")[1], 0);\r\n\tHydra.ActorWarpToActor(LORATH, Hydra.ActorsLinkedByActorInGroup(idSelf, \"LORATH_RESET_LOC\")[1], 0);\r\n\tHydra.ActorWarpToActor(NEYRELLE, Hydra.ActorsLinkedByActorInGroup(idSelf, \"NEYRELLE_RESET_LOC\")[1], 0);\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1401,8 +1380,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1422,8 +1400,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1453,11 +1429,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_WEATHER_BOSS_HELL = Hydra.ReferenceWeather(\"weather_Hell_Exterior_physical_FarObserver\");",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

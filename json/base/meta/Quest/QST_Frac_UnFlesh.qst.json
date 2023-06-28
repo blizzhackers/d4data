@@ -183,7 +183,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tid_Self = Hydra.QuestGetOwner()\r\n\t\r\n\t--Yulia Move + Bark\r\n\tcloneYULIA = Hydra.CreatePersonalClone(ID_YULIA)\r\n\tif Hydra.ActorIsValid(cloneYULIA) then\r\n\t\tHydra.QActorPlayConversation(CONVO_YULIA, id_Self, cloneYULIA)\r\n\t\tHydra.QActorWaitForConversationFinished(cloneYULIA, CONVO_YULIA)\r\n\t\tHydra.QActorWait(cloneYULIA, 1.5)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(cloneYULIA, LOC_YULIA, \"NPC_RUN\", true)\r\n\t\tHydra.QActorDeletePersonalClone(cloneYULIA, 1)\r\n\tend\r\n\t\t\r\n\t--Follower to Static + Bark\r\n\tidKrys = Hydra.QuestGetFollower(ID_KRYS_FOLLOWER)\r\n\tif Hydra.ActorIsValid(idKrys) then\r\n\t\tHydra.QuestFollowerTakeOwnership(idKrys)\r\n\t\tHydra.QActorEnableAI(idKrys, false)\r\n\t\tHydra.QActorMoveToLocationDynamicSpeed(idKrys, ID_KRYS_ARRIVE, \"NPC_RUN\", true)\r\n\t\tHydra.QActorFaceSameAsActor(idKrys, ID_KRYS_ARRIVE)\r\n\t\t\r\n\t\t--Follower Bark + Anim\r\n\t\tHydra.QActorWait(idKrys, 1.5)\r\n\t\tHydra.QActorSetAnimSetOverride(idKrys, ANIM_PRAY)\r\n\t\tHydra.QActorWaitForConversationFinished(idKrys, CONVO_YULIA)\r\n\t\tHydra.WaitForQEmpty(idKrys)\r\n\t\t--Hydra.QActorEventSendToActor(idKrys, \"QST_UNFLESH_ARRIVE\", idSelf)\r\n\t\tHydra.QActorPlayConversation(CONVO_KRYS, id_Self, idKrys)\r\n\t\tHydra.QActorWaitForConversationFinished(idKrys, CONVO_KRYS)\r\n\t\t\t\t\r\n\t\tHydra.QActorWait(idKrys, 0.5)\r\n\t\tHydra.QActorDelete(idKrys)\r\n\tend\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -325,8 +324,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -346,8 +344,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "\r\n",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -467,7 +463,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, snoQuest)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -558,8 +553,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -579,8 +573,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -705,7 +697,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t--Hydra.QActorSheath\r\n\tid_Self = Hydra.QuestGetOwner()\t\r\n\r\n\tHydra.QActorWait(ID_KRYS_CLOSE, 1)\r\n\tHydra.QActorPlayConversation(CONVO_FEODOR, id_Self, ID_KRYS_CLOSE)\r\n\tHydra.QActorWaitForConversationFinished(ID_KRYS_CLOSE,CONVO_FEODOR)\r\n\tHydra.QActorWait(ID_KRYS_CLOSE, 1)\r\n\t\t\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -796,8 +787,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -817,8 +807,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -966,7 +954,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1052,8 +1039,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1073,8 +1059,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1222,7 +1206,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\t\r\n\t--Static Run from A to B\r\n\tCloneKrysEnd = Hydra.CreatePersonalClone(ID_KRYS_CLOSE)\r\n\t\r\n\tHydra.QActorMoveToLocationDynamicSpeed(CloneKrysEnd, LOC_KRYS_END, \"NPC_WALK\", true)\r\n\tHydra.QActorDeletePersonalClone(CloneKrysEnd, 1)\r\n\t\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1313,8 +1296,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1334,8 +1316,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1453,7 +1433,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\t\r\n\tHydra.ActorPlayConversation(CONVO_DIE, idActorPlayer, ID_FEODOR)\r\nend",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1550,8 +1529,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1571,8 +1549,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1678,7 +1654,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(snoQuest, idActorFollower)\r\n\t\r\n\tfollowerKrys = Hydra.QuestGetFollower(ID_KRYS_FOLLOWER)\r\n\tif Hydra.ActorIsValid(followerKrys) then \r\n\t\tHydra.ActorClearAnimSetOverride(followerKrys)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1788,8 +1763,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1809,8 +1783,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1847,11 +1819,6 @@
   "groupName": "Condition",
   "name": "Level8Plus"
  },
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

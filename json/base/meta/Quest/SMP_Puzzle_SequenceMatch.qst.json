@@ -103,7 +103,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Turn Pillar on, awaiting Player activation\r\n\tPillarOn()\r\n\t\r\n\t-- Ensure all torches off\r\n\tfor i, idTorch in ipairs(tTorches) do\r\n\t\tTorchOff(idTorch)\r\n\tend\r\n\t\r\n\t-- Disable all Sigils\r\n\tfor i, idSigil in ipairs(tSigils) do\r\n\t\tHydra.ActorDisable(idSigil)\r\n\tend\r\n\t\r\n\tlastSigil = 0\r\n\t\r\n\t-- Event is in start state\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -180,8 +179,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -201,8 +199,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -310,7 +306,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tPillarOff()\r\n\t\r\n\t-- Number of lights in next sequence\r\n\tnSequenceSize = 3\r\n\r\n\t-- Determine Sequence\r\n\tSetSequence(nSequenceSize)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -387,8 +382,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -408,8 +402,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Reset pattern vars\r\ntSequence = {}\r\nnSequenceSize = 0\r\nidNextTorch = 1",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -510,7 +502,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t-- Store last player to trigger the event\r\n\tidPlayer = idActorPlayer\r\n\t\r\n\t-- Turn on Flame\r\n\tTorchOn(idActorGizmo)\r\n\r\n\t-- Check if correct\r\n\tif idActorGizmo == tSequence[nNextTorch] then\r\n\t\t-- Correct, turn off Torch and continue\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tnNextTorch = nNextTorch + 1\r\n\t\t\r\n\t\tif nNextTorch > nSequenceSize then\r\n\t\t\t-- Sequence Finished\r\n\t\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_PASS\")\r\n\t\tend\r\n\t\t\r\n\telse\r\n\t\t-- Incorrect, turn off torch and fail puzzle\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_FAIL\")\r\n\tend\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -587,8 +578,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -677,7 +667,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Turn Pillar on, awaiting Player activation\r\n\tPillarOn()\r\n\t\r\n\t-- Turn on Sigil\r\n\tNextSigilOn()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -754,8 +743,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -844,7 +832,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -921,8 +908,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -942,8 +928,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Set next torch var\r\nnNextTorch = 1",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1016,7 +1000,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Play fail sound\r\n\tHydra.ActorPlaySound(idSelf, FAIL_SFX)\r\n\tHydra.Wait(0.25)\r\n\t\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idCaster, idPlayer, \"MonsterAffix_FireOrbs_Cast\")\r\n\tHydra.Wait(1.5)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1093,8 +1076,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1114,8 +1096,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1181,7 +1161,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\tHydra.Wait(.5)\r\n\t--Hydra.BuffRemove(CHEST_LOCK, \"LOCKED\", idChest)\r\n\tHydra.ActorSpawnActor(SNO_CHEST, idChestSpawn, false, 0, 0)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1258,8 +1237,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1279,8 +1257,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1388,7 +1364,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tPillarOff()\r\n\t\r\n\t-- Number of lights in next sequence\r\n\tnSequenceSize = 5\r\n\r\n\t-- Determine Sequence\r\n\tSetSequence(nSequenceSize)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1465,8 +1440,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1486,8 +1460,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Reset pattern vars\r\ntSequence = {}\r\nnSequenceSize = 0\r\nidNextTorch = 1\r\n\r\n-- Turn Pillar on, awaiting Player activation\r\nPillarOn()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1588,7 +1560,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t-- Store last player to trigger the event\r\n\tidPlayer = idActorPlayer\r\n\t\r\n\t-- Turn on Flame\r\n\tTorchOn(idActorGizmo)\r\n\r\n\t-- Check if correct\r\n\tif idActorGizmo == tSequence[nNextTorch] then\r\n\t\t-- Correct, turn off Torch and continue\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tnNextTorch = nNextTorch + 1\r\n\t\t\r\n\t\tif nNextTorch > nSequenceSize then\r\n\t\t\t-- Sequence Finished\r\n\t\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_PASS\")\r\n\t\tend\r\n\t\t\r\n\telse\r\n\t\t-- Incorrect, turn off torch and fail puzzle\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_FAIL\")\r\n\tend\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1665,8 +1636,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1755,7 +1725,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Turn Pillar on, awaiting Player activation\r\n\tPillarOn()\r\n\t\r\n\t-- Turn on Sigil\r\n\tNextSigilOn()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1832,8 +1801,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1922,7 +1890,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1999,8 +1966,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2020,8 +1986,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Set next torch var\r\nnNextTorch = 1",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2129,7 +2093,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\tPillarOff()\r\n\t\r\n\t-- Number of lights in next sequence\r\n\tnSequenceSize = 7\r\n\r\n\t-- Determine Sequence\r\n\tSetSequence(nSequenceSize)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2206,8 +2169,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2227,8 +2189,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Reset pattern vars\r\ntSequence = {}\r\nnSequenceSize = 0\r\nidNextTorch = 1\r\n\r\n-- Turn Pillar on, awaiting Player activation\r\nPillarOn()",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2329,7 +2289,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\r\n\t-- Store last player to trigger the event\r\n\tidPlayer = idActorPlayer\r\n\t\r\n\t-- Turn on Flame\r\n\tTorchOn(idActorGizmo)\r\n\r\n\t-- Check if correct\r\n\tif idActorGizmo == tSequence[nNextTorch] then\r\n\t\t-- Correct, turn off Torch and continue\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tnNextTorch = nNextTorch + 1\r\n\t\t\r\n\t\tif nNextTorch > nSequenceSize then\r\n\t\t\t-- Sequence Finished\r\n\t\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_PASS\")\r\n\t\tend\r\n\t\t\r\n\telse\r\n\t\t-- Incorrect, turn off torch and fail puzzle\r\n\t\tHydra.Wait(0.25)\r\n\t\tTorchOff(idActorGizmo)\r\n\t\tHydra.EventSend(\"SMP_PUZZLE_SEQUENCEMATCH_FAIL\")\r\n\tend\t\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2406,8 +2365,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2496,7 +2454,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\t-- Turn Pillar on, awaiting Player activation\r\n\tPillarOn()\r\n\t\r\n\t-- Turn on Sigil\r\n\tNextSigilOn()\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2573,8 +2530,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2663,7 +2619,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2740,8 +2695,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2761,8 +2715,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "-- Set next torch var\r\nnNextTorch = 1",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2835,7 +2787,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Play fail sound\r\n\tHydra.ActorPlaySound(idSelf, FAIL_SFX)\r\n\tHydra.Wait(0.25)\r\n\t\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idCaster, idPlayer, \"MonsterAffix_Mortar_Cast\")\r\n\tHydra.Wait(1.5)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2912,8 +2863,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2933,8 +2883,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3007,7 +2955,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Play fail sound\r\n\tHydra.ActorPlaySound(idSelf, FAIL_SFX)\r\n\tHydra.Wait(0.25)\r\n\t\r\n\tHydra.ActorTriggerPowerAtTargetsFeet(idCaster, idPlayer, \"MonsterAffix_Mortar_Cast\")\r\n\tHydra.Wait(1.5)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3084,8 +3031,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3105,8 +3051,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3136,11 +3080,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "function SetSequence(nSeqSize)\r\n\r\n\t-- Randomly select torches, displaying them one by one\r\n\tfor i=1, nSeqSize, 1 do\r\n\t\tnIndex = Hydra.GetRandomInt(1, #tTorches)\r\n\t\ttSequence[i] = tTorches[nIndex]\r\n\t\tTorchOn(tTorches[nIndex])\r\n\t\tHydra.Wait(.25)\r\n\t\tTorchOff(tTorches[nIndex])\r\n\t\tHydra.Wait(.75)\r\n\tend\r\n\t\r\n\t-- Turn Pillar off, to show sequence is set\r\n\tPillarOff()\r\n\r\nend\r\n\r\nfunction PillarOn()\r\n\t-- Add VFX\r\n\tif Hydra.BuffIsOnActor(TORCH_FLAME, \"FLAME_STONE_BRAZIER\", Hydra.ActorsLinkedByActorInGroup(idPillar, \"VFX\")[1]) then\r\n\t\t-- Do nothing, pillar already on\r\n\telse\r\n\t\tHydra.BuffApplyToTarget(TORCH_FLAME, \"FLAME_STONE_BRAZIER\", Hydra.ActorsLinkedByActorInGroup(idPillar, \"VFX\")[1])\r\n\tend\r\nend\r\n\r\nfunction PillarOff()\r\n\t-- Remove VFX\r\n\tHydra.BuffRemove(TORCH_FLAME, \"FLAME_STONE_BRAZIER\", Hydra.ActorsLinkedByActorInGroup(idPillar, \"VFX\")[1])\r\nend\r\n\r\nfunction TorchOn(idTorch)\r\n\t-- Add VFX\r\n\tHydra.BuffApplyToTarget(TORCH_FLAME, tFlames[idTorch], Hydra.ActorsLinkedByActorInGroup(idTorch, \"VFX\")[1])\r\n\t-- Disable until flame is out\r\n\tHydra.ActorGizmoSetDisabled(idTorch, true)\r\nend\r\n\r\nfunction TorchOff(idTorch)\r\n\t-- Remove VFX\r\n\tHydra.BuffRemove(TORCH_FLAME, tFlames[idTorch], Hydra.ActorsLinkedByActorInGroup(idTorch, \"VFX\")[1])\r\n\t-- Re-enable Gizmo\r\n\tHydra.ActorGizmoSetDisabled(idTorch, false)\r\nend\r\n\r\nfunction NextSigilOn()\r\n\t-- Set sigil tracker\r\n\tlastSigil = lastSigil + 1\r\n\t\r\n\t-- Flash all torches on\r\n\tfor i, idTorch in ipairs(tTorches) do\r\n\t\tTorchOn(idTorch)\r\n\tend\r\n\t\r\n\tHydra.Wait(0.25)\r\n\t\r\n\t-- Flash flame at Sigil\r\n\tHydra.BuffApplyToTarget(TORCH_FLAME, tFlames[1], Hydra.ActorsLinkedByActorInGroup(tSigils[lastSigil], \"VFX\")[1])\r\n\t\r\n\tHydra.Wait(0.25)\r\n\t\r\n\tHydra.ActorEnable(tSigils[lastSigil])\r\n\t\r\n\tHydra.Wait(0.125)\r\n\t\r\n\tHydra.BuffRemove(TORCH_FLAME, tFlames[1], Hydra.ActorsLinkedByActorInGroup(tSigils[lastSigil], \"VFX\")[1])\r\n\t\r\n\tHydra.ActorPlaySound(tSigils[lastSigil], SIGIL_SFX)\r\n\t\r\n\tHydra.Wait(0.125)\r\n\t\r\n\t-- Turn torches back off\r\n\tfor i, idTorch in ipairs(tTorches) do\r\n\t\tTorchOff(idTorch)\r\n\tend\r\n\r\n\r\nend\r\n",
- "szOnStartupScript": "-- Puzzle vars\r\ntTorches = {}\r\ntSigils = {}\r\ntSigils[1] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Sigil1\")[1]\r\ntSigils[2] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Sigil2\")[1]\r\ntSigils[3] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Sigil3\")[1]\r\nlastSigil = 0\r\n\t\t\t\r\nidPillar = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Pillar\")[1]\r\n--idChest = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Chest\")[1]\r\nidChestSpawn = Hydra.ActorsLinkedByActorInGroup(idSelf, \"ChestSpawn\")[1]\r\nidPlayer = nil\r\nidCaster = Hydra.ActorsLinkedByActorInGroup(idSelf, \"AffixCaster\")[1]\r\n\r\n--[[-- Chest Lock VFX\r\nHydra.ActorSetPowerEffectSize(idChest, 2)\r\nHydra.Wait(0.1)\r\nHydra.BuffApplyToTarget(CHEST_LOCK, \"LOCKED\", idChest)\r\n]]\r\n\r\n-- Flame pairings\r\ntFlames = {\"FLAME_RED\", \"FLAME_PURPLE\", \"FLAME_BLUE\", \"FLAME_GREEN\"}\r\nFYShuffle(tFlames)\r\n\r\n-- Since we only have 4 colors, we're just using a random oolor for the puzzle\r\n-- If we end up with enough colors >= torches, we can make them all unique here\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch1\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch2\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch3\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch4\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch5\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch6\")[1]] = tFlames[1]\r\ntFlames[Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch7\")[1]] = tFlames[1]\r\n\r\n-- Select #Torches\r\ntTorches = {}\r\ntTorches[1] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch1\")[1]\r\ntTorches[2] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch2\")[1]\r\ntTorches[3] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch3\")[1]\r\ntTorches[4] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch4\")[1]\r\ntTorches[5] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch5\")[1]\r\ntTorches[6] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch6\")[1]\r\ntTorches[7] = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch7\")[1]\r\n\r\nrandomTorches = {3, 5}--, 7}\r\nFYShuffle(randomTorches)\r\n\r\n-- Delete unused torches\r\nfor i=1, 7, 1 do\r\n\tif i > randomTorches[1] then\r\n\t\tHydra.ActorDelete(tTorches[i])\r\n\tend\r\nend\r\n\r\n-- Set torch table\r\ntTorches = {}\r\ntempTorches = Hydra.ActorsLinkedByActorInGroup(idSelf, \"Torch\")\r\n\r\nfor i, idTorch in ipairs(tempTorches) do\r\n\tif Hydra.ActorIsValid(idTorch) then\r\n\t\ttable.insert(tTorches, idTorch)\r\n\tend\r\nend\r\n\r\n-- Pattern Vars\r\ntSequence = {}\r\nnSequenceSize = 0\r\nnNextTorch = 1",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

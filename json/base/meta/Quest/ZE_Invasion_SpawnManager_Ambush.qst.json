@@ -152,7 +152,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tbEncounterActive = true\r\n\t--Hydra.ActorTriggerPowerAtFeet(ID_THIS_QUEST, S_POWER_SPAWN_ATTACK)\r\n\tidPing = Hydra.MinimapAddPing(ID_THIS_QUEST, 900, true)\r\n\tbPinged = true\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\tHydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"ambushSpawner\")\r\n\t\r\n\tlocal eliteSpawners = Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"elitePackSpawner\")\r\n\tif #eliteSpawners > 0 then\r\n\t\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"elitePackSpawner\")\r\n\t\tif worldTier == Hydra.WORLD_TIER_3 then\r\n\t\t\tnElitesSpawned = 2\r\n\t\t\tbElitePack = true\r\n\t\t\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"elitePackSpawner\")\r\n\t\telseif worldTier == Hydra.WORLD_TIER_4 then\r\n\t\t\tnElitesSpawned = 3\r\n\t\t\tbElitePack = true\r\n\t\t\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"elitePackSpawner\")\r\n\t\t\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(ID_THIS_QUEST, \"elitePackSpawner\")\r\n\t\tend\r\n\tend\r\n\t\r\n--\tfor i = 1, #tNextSpawners do\r\n--\t\tHydra.EventSendToActor(\"ADD_SPAWNER_PARENT\", ID_THIS_QUEST, tNextSpawners[i])\r\n--\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -229,8 +228,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1)\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -312,7 +310,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tnSpawnerRequestOn = nSpawnerRequestOn + 1\r\n\r\n-- call the add parent event on linked spawners, then wait .5 seconds before checking parent/request again and spawning\r\n-- (this is to cover an edge case where spawners could become active before all their parent spawners where cleared)\r\n\tif nSpawnerRequestOn == nSpawnerParents and bAddedSpawnParents == false then\r\n\t\tbAddedSpawnParents = true\r\n\t\tfor i = 1, #tNextSpawners do\r\n\t\t\tHydra.EventSendToActor(\"ADD_SPAWNER_PARENT\", ID_THIS_QUEST, tNextSpawners[i])\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.Wait(0.5)\r\n\t\r\n\tif nSpawnerRequestOn == nSpawnerParents then\r\n\t\tHydra.EventSendToActor(\"Start_Stage\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -413,7 +410,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\tnSpawnerParents = nSpawnerParents + 1\r\n\t\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -490,8 +486,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -580,7 +575,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -657,8 +651,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -678,8 +671,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "\r\n",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -745,7 +736,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\t\r\n\t--send an event to add progress to the main quest\r\n\tlocal nProgress = 100 - nProgressSent\r\n\tif nProgress > 0 then\r\n\t\tHydra.EventSend(\"FakeProgress\", idSelf, nProgress)\r\n\tend\r\n\t\r\n\tHydra.Wait(1)\r\n\t\r\n\tfor i = 1, #tNextSpawners do\r\n\t\tHydra.EventSendToActor(\"TURN_ON_SPAWNERS\", ID_THIS_QUEST, tNextSpawners[i])\r\n\tend\r\n\tHydra.MinimapRemovePing(idPing)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -822,8 +812,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -843,8 +832,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -966,7 +953,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tbEncounterActive = false\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1043,8 +1029,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1112,7 +1097,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tlocal nProgress = math.floor(70/nEnemyCount)\r\n\r\n\r\n\tif Hydra.ActorIsInGroup(idActorKilled, \"WE_Invasion_Normal\") then\r\n\t\tnEnemyKilled = nEnemyKilled + 1\r\n\t\tHydra.EventSend(\"FakeProgress\", idSelf, nProgress)\r\n\t\tnProgressSent = nProgressSent + nProgress\r\n\tend\r\n\t\r\n\tif bReadyToEnd == true and bSpecialKilled == true and nEnemyKilled > nEnemyCount * fNextSpawnBreakpoint then\r\n\t\tHydra.EventSendToActor(\"EndEncounter\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1199,7 +1183,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tif bElitePack then\r\n\t\tnElitesKilled = nElitesKilled + 1\r\n\t\tif nElitesKilled >= nElitesSpawned then\r\n\t\t\tbSpecialKilled = true\r\n\t\tend\r\n\t\tlocal nEliteVal = 30/nElitesSpawned\r\n\t\tHydra.EventSend(\"FakeProgress\", idSelf, nEliteVal)\r\n\t\tnProgressSent = nProgressSent + nEliteVal\r\n\telse\r\n\t\tbSpecialKilled = true\r\n\t\tHydra.EventSend(\"FakeProgress\", idSelf, 30)\r\n\t\tnProgressSent = nProgressSent + 30\r\n\tend\r\n\t\r\n\tif bReadyToEnd == true and bSpecialKilled == true and nEnemyKilled > nEnemyCount * fNextSpawnBreakpoint then\r\n\t\tHydra.EventSendToActor(\"EndEncounter\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1286,7 +1269,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\r\n\tif Hydra.ActorIsInGroup(idActorSpawned, \"WE_Invasion_Normal\") then\r\n\t\tnEnemyCount = nEnemyCount + 1\r\n\tend\r\n\t\r\n--\tif bReadyToEnd == true and nEnemyKilled > nEnemyCount * fNextSpawnBreakpoint then\r\n--\t\tHydra.EventSendToActor(\"EndEncounter\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n--\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1357,7 +1339,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(flTimeRemaining)\r\n\r\n\tbReadyToEnd = true\r\n\tHydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf, Hydra.DESPAWN_BEHAVIOR_LOCAL_EVENT)\r\n\tif bReadyToEnd == true and bSpecialKilled == true and nEnemyKilled > nEnemyCount * fNextSpawnBreakpoint then\r\n\t\tHydra.EventSendToActor(\"EndEncounter\", ID_THIS_QUEST, ID_THIS_QUEST)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1410,7 +1391,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tHydra.ActorsEnableLinkedByActorInGroup(ID_THIS_QUEST, \"baseSpawner\")\r\n\tHydra.ActorPlayEffectGroup(ID_THIS_QUEST, SFX_WAVE_SPAWN)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1487,8 +1467,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1577,7 +1556,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1654,8 +1632,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1675,8 +1652,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1742,7 +1717,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\tif bPinged then\r\n\t\tHydra.MinimapRemovePing(idPing)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1819,8 +1793,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1840,8 +1813,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1950,7 +1921,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2027,8 +1997,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -2117,7 +2086,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2194,8 +2162,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2215,8 +2182,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2246,11 +2211,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "ID_THIS_QUEST = Hydra.QuestGetOwner()\r\n\r\nbAddedSpawnParents = false\r\nbEncounterActive = false\r\nbReadyToEnd = false\r\nfNextSpawnBreakpoint = 0.5\r\n\r\ntNextSpawners = Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"nextSpawner\")\r\ntEnemyGroups = Hydra.ActorsLinkedByActorInGroup(ID_THIS_QUEST, \"baseSpawner\")\r\n\r\nnSpawnerRequestOn = 0\r\nnSpawnerParents = 0\r\nnEnemyCount = 0\r\nnEnemyKilled = 0\r\n\r\nidRegion = 0\r\nidRegion2 = 0\r\nidMarker = 0\r\nfRegionSize = 11\r\n\r\nbSpecialKilled = false\r\nbElitePack = false\r\nnElitesSpawned = 0\r\nnElitesKilled = 0\r\nnProgressSent = 0\r\n\r\nworldTier = Hydra.GameGetCurrentWorldTier()\r\n\r\nbPinged = false",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

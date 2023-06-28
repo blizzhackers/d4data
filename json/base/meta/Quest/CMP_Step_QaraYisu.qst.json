@@ -186,7 +186,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -263,8 +262,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "for i, idLoc in pairs(Hydra.ActorsInGroup(\"CAMP_QARA_YISU_BOSS_START_SOUND\")) do\r\n\tHydra.ActorPlayEffectGroup(idLoc, SFX_BOSS_SCREAM)\r\nend\r\n\r\nHydra.Wait(3.5)\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -344,7 +342,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\r\n\tlocal tPlayers = Hydra.PlayerActors();\r\n\t\r\n\tfor i, playerID in pairs(tPlayers) do\r\n\t\tHydra.ActorPlayEffectGroup(playerID, S_VFX_SCREENSHAKE);\r\n\tend\r\n\t\r\n\tif Hydra.QuestCallbackCountGet(7) == 1 then\r\n\t\tHydra.Wait(3)\r\n\t\t-- using Disembodied Voice for these conversations\r\n\t\tfor i, playerID in pairs(tPlayers) do\r\n\t\t\tHydra.ActorPlayDisembodiedConversation(S_CONV_ELDER_OBJ1, playerID)\r\n\t\tend\r\n\telseif Hydra.QuestCallbackCountGet(7) == 2 then\r\n\t\tHydra.Wait(3)\r\n\t\tfor i, playerID in pairs(tPlayers) do\r\n\t\t\tHydra.ActorPlayDisembodiedConversation(S_CONV_ELDER_OBJ2, playerID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -448,8 +445,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "for i, playerID in pairs(Hydra.PlayerActors()) do\r\n\tHydra.ActorPlayDisembodiedConversation(S_CONV_BOSS_ROAR, playerID)\r\nend\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -524,7 +520,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorTriggerSpawnerUpdate(Hydra.ActorsEnableLinkedByActorInGroup(idActor, \"Spawner\")[1])\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -627,7 +622,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\nHydra.ActorTriggerSpawnerUpdate(Hydra.ActorsEnableLinkedByActorInGroup(idActor, \"Spawner\")[1])\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -730,7 +724,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\nHydra.ActorTriggerSpawnerUpdate(Hydra.ActorsEnableLinkedByActorInGroup(idActor, \"Extra\")[1])\r\nHydra.ActorTriggerSpawnerUpdate(Hydra.ActorsEnableLinkedByActorInGroup(idActor, \"Mega\")[1])\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -833,7 +826,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorTriggerSpawnerUpdate(Hydra.ActorsEnableLinkedByActorInGroup(idActor, \"Spawner\")[1])\r\n\tif Hydra.QuestCallbackCountGet(7) == 2 then\r\n\t\tlocal tPlayers = Hydra.PlayerActors()\r\n\t\tfor i, playerID in pairs(tPlayers) do\r\n\t\t\tHydra.ActorPlayDisembodiedConversation(S_CONV_ELDER_QUARRY, playerID)\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -919,8 +911,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -998,7 +989,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nT_SALT_PEOPLE1 = Hydra.ActorsInGroup(\"CAMP_QARA_YISU_SALTPEOPLE_1\")\r\n\tfor i, idActor in pairs(T_SALT_PEOPLE1) do\r\n\t\tHydra.ActorKill(idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1095,7 +1085,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nT_SALT_PEOPLE2 = Hydra.ActorsInGroup(\"CAMP_QARA_YISU_SALTPEOPLE_2\")\r\n\tfor i, idActor in pairs(T_SALT_PEOPLE2) do\r\n\t\tHydra.ActorKill(idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1192,7 +1181,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nT_SALT_PEOPLE3 = Hydra.ActorsInGroup(\"CAMP_QARA_YISU_SALTPEOPLE_3\")\r\n\tfor i, idActor in pairs(T_SALT_PEOPLE3) do\r\n\t\tHydra.ActorKill(idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1269,8 +1257,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1290,8 +1277,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1410,7 +1395,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_DrySteppes_EasternRuins_Victory\")\r\n--\t-- Turn off Boss Waves\r\n--\tfor i, actorID in pairs(tBossWaves) do\r\n--\t\tif Hydra.ActorIsEnabled(actorID) then \r\n--\t\t\tHydra.ActorDisable(actorID)\r\n--\t\tend\r\n--\tend\r\n\t\r\n--\t-- Kill remaining monsters\r\n--\tfor i, actorID in pairs(Hydra.ActorsInGroup(\"Camp_CityOfSalt_BossWaveMonsters\")) do\r\n--\t\tif Hydra.ActorIsValid(actorID) then\r\n--\t\t\tHydra.QActorWait(actorID, Hydra.GetRandomFloat())\r\n--\t\t\tHydra.QActorKill(actorID)\r\n--\t\tend\r\n--\tend\r\n\t\r\n\tHydra.BossEncounterManuallyComplete(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\t\r\n\tfor i, playerID in pairs(Hydra.PlayerActors()) do\r\n\t\tHydra.ActorPlayConversation(S_CONV_PLAYER_CLAIM, playerID);\r\n\tend\r\n\t\r\n\tlocal tAllPlayers = Hydra.QuestGetParticipants()\r\n     \r\n    for i, idPlayer in ipairs(tAllPlayers) do\r\n        -- Drop the TreasureClass, which contains both \"always\" and \"first time\" rewards\r\n        -- The First Time stuff is conditioned by the flag that is set after the drop occurs\r\n        Hydra.TreasureClassDropAtActorForPlayer(idActorKilled, \"FirstTimeReward_Stronghold_QaraYisu\", idPlayer)\r\n         \r\n        -- Set the variable, to mark that this player has recieved a reward\r\n        Hydra.SetPlayerVariableFlag(idPlayer, \"FirstTimeReward_Stronghold_QaraYisu\")\r\n    end\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1510,8 +1494,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1586,7 +1569,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorPlaySimpleConversation(S_CONV_BOSS_HALF, idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1695,7 +1677,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tfor i, actorID in pairs(Hydra.ActorsInGroup(ACTORGROUP_BOSS_ADD_SPAWNERS)) do\r\n\t\tHydra.ActorEnable(actorID)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1781,8 +1762,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1854,7 +1834,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\t\r\n\tlocal boss = Hydra.ActorsInGroup(\"Camp_KeironsPyre_Boss\");\r\n\t\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\tHydra.ActorFadeAndDelete(bossID, 2);\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1931,8 +1910,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1952,8 +1930,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2072,7 +2048,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_DrySteppes_EasternRuins_Hostile\")\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2181,8 +2156,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2202,8 +2176,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "--Hydra.ActorSetInvulnerable(ID_Elder, true)\r\nfor i, idObelisk in pairs(Hydra.ActorsInGroup(\"CAMP_QARA_YISU_OBELISK\")) do\r\n\tHydra.BuffApplyToTarget(POWER_SPIRE_BUFF, \"SHIELD_BUFF\", idObelisk)\r\nend\r\n\tfor i, actorID in pairs(T_BOSS_DESTRUCTIBLES) do\r\n\t\tHydra.ActorSetInvulnerable(actorID, true)\r\n\t\tHydra.ActorSetTargetable(actorID, true)\r\n\t\tHydra.ActorSetNeverDie(actorID, true)\r\n\tend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2321,7 +2293,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, idActorGizmo)\r\n\tCamps.ClaimCamera(idActorPlayer, idActorGizmo);\r\n\tCamps.ActivateWaypoint(idActorGizmo)\r\n\tHydra.ClearMusicOverride(\"Sanctuary_Eastern_Continent\")\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2407,8 +2378,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -2428,8 +2398,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "T_SALT_PEOPLE = Hydra.ActorsInGroup(\"CAMP_QARA_YISU_SALTPEOPLE\")\r\nfor i, idActor in pairs(T_SALT_PEOPLE) do\r\n\tHydra.ActorKill(idActor)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -2534,7 +2502,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 1);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FOREMAN, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2635,7 +2602,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 3);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_MINER, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2736,7 +2702,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 1);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_BULLY, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2837,7 +2802,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 1);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_HEALER, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -2938,7 +2902,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 1);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_MATRON, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3039,7 +3002,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\n\tif encountered_first_unique then\r\n\t--\tHydra.QActorWait(idActorDetector, 1);\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_COOK, idActorDamaged);\r\n\telse\r\n\t\tencountered_first_unique = true\r\n\t\tHydra.QActorPlaySimpleConversation(S_CONV_FIRSTUNIQUE, idActorDamaged)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3125,8 +3087,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3199,7 +3160,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_DrySteppes_EasternRuins_Hostile\")\r\n\tfor i, SaltPerson in pairs(INTRO_SALTPEOPLE) do\r\n\t\tHydra.ActorSetTeam(SaltPerson, Hydra.TEAM_MONSTER_0)\r\n\t\tHydra.ActorSetDamageCap(SaltPerson, 0)\r\n\t\tHydra.ActorSetConversationList(SaltPerson, \"\")\r\n\t\tHydra.ActorEnableAI(SaltPerson, true)\r\n\t\tHydra.ActorSetAIState(SaltPerson, \"aggressive\")\r\n\tend\r\n\tHydra.Wait(4)\r\n\tif Hydra.ActorIsValid(idActor) then\r\n\t\tHydra.ActorPlayConversation(S_CONV_INTRO_DEMON, idActor)\r\n\tend\r\n\tHydra.Wait(4)\r\n\tif Hydra.ActorIsValid(idActor) then\r\n\t\tHydra.ActorPlayDisembodiedConversation(S_CONV_BOSS_INTRO, idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3306,7 +3266,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorNPC, sConversation, idActorPlayer)\r\n\tHydra.Wait(2)\r\n\tfor i, idActor in pairs(T_INTRO_SEQUENCE_TRIGGERS) do\r\n\t\tHydra.ActorEnable(idActor)\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3405,7 +3364,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3491,8 +3449,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -3512,8 +3469,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -3640,7 +3595,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sWorldName, sLevelAreaName)\r\n\tHydra.MusicOverride(\"Sanctuary_Eastern_Continent\", \"Music_DrySteppes_EasternRuins_Boss\")\r\n\tlocal idBoss = Hydra.ActorsInGroup(ACTORGROUP_BOSS)[1]\r\n\tHydra.ActorEnable(idBoss);\r\n\tHydra.ActorSetTargetable(idBoss, false)\r\n\tHydra.ActorSetInvulnerable(idBoss, true)\r\n\tHydra.ActorEnableAI(idBoss, false)\r\n\tHydra.QActorPlaySimpleConversation(CONV_BOSS_TAUNT, idBoss)\r\n\t\r\n\tHydra.ActorTriggerPowerAtFeet(idBoss, bossIntroPower);\r\n\r\n\t\r\n\tHydra.QActorWait(idBoss, 1)\r\n\tHydra.QActorEnableAI(idBoss, true)\r\n\tHydra.WaitForQEmpty(idBoss)\r\n\tHydra.ActorSetTargetable(idBoss, true)\r\n\tHydra.ActorSetInvulnerable(idBoss, false)\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3750,7 +3704,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tfor i, playerID in pairs(Hydra.PlayerActors()) do\r\n\t\tHydra.ActorPlayEffectGroup(playerID, S_VFX_EARTHQUAKE_SCREENSHAKE);\r\n\tend\r\n\t\r\n\tHydra.Wait(.5)\r\n\t\r\n\r\n\t\r\n\tfor i, actorID in pairs(T_BOSS_DESTRUCTIBLES) do\r\n\t\tHydra.ActorSetInvulnerable(actorID, false)\r\n\t\tHydra.ActorSetTargetable(actorID, false)\r\n\t\tHydra.ActorSetNeverDie(actorID, false)\r\n\t\tHydra.ActorKill(actorID)\r\n\tend\r\n\t\r\n--\tfor i, actorID in pairs(T_BOSS_TRAVERSAL_LOCS) do\r\n--\t\tSetTraversalEnabled(actorID)\r\n--\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -3827,8 +3780,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -3909,7 +3861,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sLevelAreaName)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4057,8 +4008,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": ""
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4137,7 +4087,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4214,8 +4163,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4235,8 +4183,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "for i, playerID in pairs(Hydra.PlayerActors()) do\r\n\tHydra.ActorPlayConversation(CONV_BOSS_PHASE_START, playerID)\r\nend\r\n\r\nlocal tBlockers = Hydra.ActorsInGroup(\"Step_QaraYisu_TeleportBlockers\")\r\nfor i, idBlocker in pairs(tBlockers) do\r\n\tif Hydra.ActorIsValid(idBlocker) then\r\n\t\tHydra.ActorDelete(idBlocker)\r\n\tend\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4354,7 +4300,6 @@
         "name": "Sanctuary_Eastern_Continent"
        },
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\t\r\n\tif(Hydra.ActorIsAlive(idActor)) then\r\n\t\r\n\t\tHydra.EventSend(\"StartQaraYisuBoss\");\r\n\t\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4445,8 +4390,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -4535,7 +4479,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\t\r\n\t--spawn boss\r\n\tlocal boss = Hydra.ActorsInGroup(\"Step_QaraYisu_Boss\");\r\n\t\t\r\n\tfor i, bossID in ipairs(boss) do\r\n\t\r\n\t\t-- Enable Boss\r\n\t\tHydra.ActorEnable(bossID);\r\n\t\tHydra.ActorTriggerPowerAtFeet(bossID, bossIntroPower);\r\n\r\n\tend\r\n\t\r\n\tHydra.BossEncounterManuallyQueueStart(BOSS_ENCOUNTER_LEVEL_AREA);\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -4612,8 +4555,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -4633,8 +4575,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -4664,11 +4604,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "S_GBID_PV_HAS_PLAYED_INTRO = \"CAMP_Step_QaraYisu_Has_Played_Intro_VO\"\r\nencountered_first_unique = false\r\nfor i, actorID in pairs(T_BOSS_TRAVERSAL_LOCS) do\r\n\tSetTraversalEnabled(actorID, false)\r\nend\r\n\r\nfor i, SaltPerson in pairs(INTRO_SALTPEOPLE) do\r\n\tHydra.ActorSetTeam(SaltPerson, Hydra.TEAM_SCENERY)\r\n\tHydra.ActorSetDamageCap(SaltPerson, 1)\r\n\tHydra.ActorSetConversationList(SaltPerson, \"VGN_QaraYisu_03\")\r\n\tHydra.ActorEnableAI(SaltPerson, false)\r\nend",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

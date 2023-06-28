@@ -138,7 +138,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -215,8 +214,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(1)\r\nHydra.QuestAdvancePhase()"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -296,7 +294,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorDamager, idActorDamaged)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -373,8 +370,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -394,8 +390,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -499,7 +493,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(szScopedGroup, PrefabID)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -576,8 +569,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -597,8 +589,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "if Hydra.ActorIsValid(ID_CHOPPER) then\r\n\tHydra.ActorRemoveMergedAIState(ID_CHOPPER, AISTATE_BODYCHOP)\r\nend\r\n\r\nif Hydra.ActorIsValid(ID_BODY) then\r\n\tHydra.ActorDelete(ID_BODY)\r\nend\r\n\r\nif Hydra.ActorIsValid(ID_EATER) then\r\n\tHydra.ActorTriggerPhaseJump(ID_EATER)\r\nend\r\n\r\nif Hydra.ActorIsValid(ID_PROP) then\r\n\tEvents.ActorSetPhased(ID_PROP, false)\r\nend\r\n\r\nfor i, actorID in pairs(Hydra.ActorsInPrefabScopedGroup(\"SMP_BodyChop_Crowd\")) do\r\n\tHydra.ActorRemoveMergedAIState(actorID, AISTATE_TAUNT)\r\n\tHydra.ActorOverrideAIAwarenessRadius(actorID, 0, true)\r\nend",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -698,7 +688,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\tHydra.ActorMergeAIState(idActorSpawned, AISTATE_TAUNT, idActorSpawned, 0)\r\n\tHydra.ActorOverrideAIAwarenessRadius(idActorSpawned, 3, true)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -775,8 +764,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -796,8 +784,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -827,11 +813,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idSelf = Hydra.QuestGetOwner()\r\n\r\nlocal MR_RARITY\r\n\r\nif Events.SMPShouldBeElite(idSelf) then\r\n\tMR_RARITY = Hydra.MR_SUPER_ELITE\r\nelse\r\n\tMR_RARITY = Hydra.MR_NORMAL\r\nend\r\n\r\nID_CHOPPER = Hydra.ActorSpawnActor(Hydra.ActorPickFromEncounter(ENCOUNTER_SPAWN, idSelf), ID_CANNIBAL_SPAWN, false, 0, 0, MR_RARITY)\r\nHydra.ActorAddToPrefabScopedGroup(ID_CHOPPER, \"SMP_Monsters\")\r\nHydra.ActorMergeAIState(ID_CHOPPER, AISTATE_BODYCHOP, ID_CHOPPER, 0)\r\nHydra.ActorAddAITarget(ID_CHOPPER, ID_BODY, true)\r\n\r\nEvents.ActorSetPhased(ID_PROP, true)\r\n\r\nHydra.QActorPower(ID_EATER, \"GenericJobState\")\r\nHydra.ActorSetBloody(ID_EATER, 1)",
- "szOnShutdownScript": "Hydra.ActorFlagDynamicPrefabGroupForDespawn(idSelf)",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],

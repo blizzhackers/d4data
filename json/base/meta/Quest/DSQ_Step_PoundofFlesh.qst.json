@@ -142,7 +142,6 @@
        "unk_9c1ea4f": 57,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\t-- Take control of follower, turn off AI, run to location\r\n\t-- Replace Follower with static Nizaar\r\n\t-- Nizaar yells out for Borza to show himself\r\n\t\r\n\tfollowerNizaar = idActor\r\n\tidTrigger = idActorDetector\r\n\tidStartConvoTrigger = Hydra.ActorsLinkedByActorInGroup(idTrigger, \"StartConvoTrigger\")[1]\r\n\ttPlayers = Hydra.PlayerActors()\r\n\t\r\n\t-- find the player the follower is attached to\r\n\tfor i, idQuestPlayer in ipairs(tPlayers) do\r\n\t\tif Hydra.PlayerGetFollowers(idQuestPlayer) == 1 then\r\n\t\t\tidPlayer = idQuestPlayer\r\n\t\tend\r\n\tend\r\n\t\r\n\tHydra.QuestFollowerTakeOwnership(followerNizaar)\r\n\tHydra.ActorEnableAI(followerNizaar, false)\r\n\tHydra.QActorSheath(followerNizaar)\r\n\tHydra.QActorPlaySimpleConversation(convNizaarCallout, followerNizaar)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(followerNizaar, idActorDetector, \"NPC_Run\", true)\r\n\tHydra.QActorFaceSameAsActor(followerNizaar, idActorDetector)\r\n\tHydra.WaitForQEmpty(followerNizaar)\r\n\tHydra.WaitForConversationFinished(convNizaarCallout)\r\n\tHydra.EventSend(\"NizaarStopped\", idActorDetector)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -228,8 +227,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -318,7 +316,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\n\r\n\tHydra.ActorDelete(followerNizaar)\r\n\tidStaticNizaar = Hydra.ActorSpawnActor(\"QST_Step_PoundofFlesh_NizaarCombat\", idTrigger, false, 0, 0)\r\n\t\r\n\t-- Equip static Nizaar\r\n\tif Hydra.IsGameVariableStringEqual(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Bow\") then\r\n\t\r\n\t\tHydra.QActorSetLoadout(idStaticNizaar, id2HBow)\r\n\t\tHydra.ActorAIOverrideNormalBehavior(idStaticNizaar, \"Generic_Event_NPC_Combat_Ranged\")\r\n\t\t--Hydra.TraceScreen(\"@@@@@ BOW\")\r\n\t\t\r\n\telseif Hydra.IsGameVariableStringEqual(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Greatsword\") then\r\n\t\r\n\t\tHydra.QActorSetLoadout(idStaticNizaar, id2HSword)\r\n\t\t--Hydra.TraceScreen(\"@@@@@ GREATSWORD\")\r\n\t\r\n\telseif Hydra.IsGameVariableStringEqual(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Mace\") then\r\n\t\r\n\t\tHydra.QActorSetLoadout(idStaticNizaar, id1HMace)\r\n\t\t--Hydra.TraceScreen(\"@@@@@ MACE\")\r\n\t\t\r\n\telseif Hydra.IsGameVariableStringEqual(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Sword\") then\r\n\t\r\n\t\tHydra.QActorSetLoadout(idStaticNizaar, id1HSword, id1HShield)\r\n\t\t--Hydra.TraceScreen(\"@@@@@ SWORD SHIELD\")\r\n\r\n\telse\r\n\t\r\n\t\tHydra.QActorSetLoadout(idStaticNizaar, id1HSword, id1HShield)\r\n\t\t--Hydra.TraceScreen(\"@@@@@ NOTHING! FALLING BACK TO SWORD SHIELD\")\r\n\t\t\r\n\tend\r\n\t\r\n\tHydra.ActorEnable(idStartConvoTrigger)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -395,8 +392,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -470,7 +466,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, idActorDetector)\r\n\r\n\tidPlayer = idActor\r\n\t\r\n\t-- Spawn Boss, make him invuln & untargetable for dialog scene\r\n\tHydra.WaitForConversationFinished(convNizaarCallout)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"Boss\")\r\n\tidBoss = Hydra.ActorsInGroup(\"QST_Step_PoundofFlesh_BanditBoss\")[1]\r\n\tidHalseyLoc = Hydra.ActorsLinkedByActorInGroup(idActorDetector, \"HalseyLoc\")[1]\r\n\tHydra.ActorEnableAI(idBoss, false)\r\n\tHydra.ActorSetInvulnerable(idBoss, true)\r\n\tHydra.ActorSetTargetable(idBoss, false)\r\n\tHydra.Wait(1)\r\n\tHydra.QActorMoveToLocationDynamicSpeed(idBoss, idHalseyLoc, \"NPC_Walk\", true)\r\n\t\r\n\t-- Start scene between Nizaar and Borza\r\n\tHydra.ActorPlayConversation(convHalseyConfront,idPlayer, idBoss, idStaticNizaar)\r\n\tHydra.Wait(2)\r\n\tHydra.ActorTriggerSpawnerUpdateLinkedToActor(idActorDetector, \"Gang\")\r\n\ttBanditSpawners = Hydra.ActorsInGroup(\"QST_Step_PoundofFlesh_BanditBossCrew\")\r\n\t\r\n\tfor i, idBanditCrew in ipairs(tBanditSpawners) do\r\n\t\r\n\t\tHydra.ActorEnableAI(idBanditCrew, false)\r\n\t\tHydra.ActorSetInvulnerable(idBanditCrew, true)\r\n\t\tHydra.ActorSetTargetable(idBanditCrew, false)\r\n\t\r\n\tend\r\n\t\r\n\tHydra.WaitForConversationFinished(convHalseyConfront)\r\n\tHydra.EventSend(\"BetrayalRevealed\")\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -556,8 +551,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -631,7 +625,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorPlayer, sWorldName)\r\n\r\n\tidPlayer = idActorPlayer\r\n\tfollowerNizaar = Hydra.QuestGetFollower(\"QST_Step_PoundofFlesh_NizaarFollower_Armed\")\r\n\t\r\n\t-- Only fire if the dungeon was previously empty. Don't keep\r\n\t-- swapping Nizaar's weapon if another party member joins late\r\n\tif #Hydra.PlayerActors() == 1 then\r\n\t\r\n\t\tif Hydra.IsPlayerVariableStringEqual(idPlayer, \"QST_Step_PoundofFlesh_WeaponPicked\", \"Bow\") then\r\n\t\t\r\n\t\t\tHydra.QActorSetLoadout(followerNizaar, id2HBow)\r\n\t\t\tHydra.ActorAIOverrideNormalBehavior(followerNizaar, \"NPC_Follower_Ranged\")\r\n\t\t\tHydra.SetGameVariableString(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Bow\")\r\n\t\t\t\r\n\t\telseif Hydra.IsPlayerVariableStringEqual(idPlayer, \"QST_Step_PoundofFlesh_WeaponPicked\", \"Mace\") then\r\n\t\t\r\n\t\t\tHydra.QActorSetLoadout(followerNizaar, id1HMace)\r\n\t\t\tHydra.SetGameVariableString(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Mace\")\r\n\t\t\t\r\n\t\telseif Hydra.IsPlayerVariableStringEqual(idPlayer, \"QST_Step_PoundofFlesh_WeaponPicked\", \"Greatsword\") then\r\n\t\t\r\n\t\t\tHydra.QActorSetLoadout(followerNizaar, id2HSword)\r\n\t\t\tHydra.SetGameVariableString(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Greatsword\")\r\n\t\t\r\n\t\telseif Hydra.IsPlayerVariableStringEqual(idPlayer, \"QST_Step_PoundofFlesh_WeaponPicked\", \"Sword\") then\r\n\t\t\r\n\t\t\tHydra.QActorSetLoadout(followerNizaar, id1HSword, id1HShield)\r\n\t\t\tHydra.SetGameVariableString(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Sword\")\r\n\t\r\n\t\telse\r\n\t\t\r\n\t\t\tHydra.QActorSetLoadout(followerNizaar, id1HSword, id1HShield)\r\n\t\t\tHydra.SetGameVariableString(\"QST_Step_PoundofFlesh_WeaponPickedDungeon\", \"Sword\")\r\n\t\t\t\r\n\t\tend\r\n\tend\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -708,8 +701,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -813,7 +805,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, snoMonsterFamily, szArchetype, idActorVictim)\r\n\r\n\tHydra.QActorPlaySimpleConversation(convNizaarBark1, followerNizaar)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -936,7 +927,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, snoMonsterFamily, szArchetype, idActorVictim)\r\n\r\n\tHydra.QActorPlaySimpleConversation(convNizaarBark2, followerNizaar)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1013,8 +1003,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1103,7 +1092,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(sEventName, idActor, nUserParam)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1180,8 +1168,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1201,8 +1188,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1268,7 +1253,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start()\r\n\r\n\t-- Turn all the Naughty Boys hostile and set them as killable\r\n\tHydra.WaitForConversationFinished(convHalseyConfront)\r\n\t\r\n\tfor i, idBanditCrew in ipairs(tBanditSpawners) do\r\n\t\r\n\t\tHydra.ActorEnableAI(idBanditCrew, true)\r\n\t\tHydra.ActorSetInvulnerable(idBanditCrew, false)\r\n\t\tHydra.ActorSetTargetable(idBanditCrew, true)\r\n\t\r\n\tend\r\n\t\r\n\tHydra.ActorEnableAI(idBoss, true)\r\n\tHydra.ActorSetInvulnerable(idBoss, false)\r\n\tHydra.ActorSetTargetable(idBoss, true)\r\n\t\r\n\tHydra.ActorSetTeam(idStaticNizaar, Hydra.TEAM_MONSTER_DEFAULT)\r\n\tHydra.ActorSetDamageCap(idStaticNizaar, 0.01)\r\n\tHydra.ActorSetUseAlternateName(idStaticNizaar, true)\r\n\t\r\n\tHydra.Wait(2)\r\n\t\r\n\tif Hydra.QuestCallbackCountGet(37) == 0 then\r\n\t\tHydra.ActorPlaySimpleConversation(convNizaarLaugh, idStaticNizaar)\r\n\tend\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1345,8 +1329,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1419,7 +1402,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1520,7 +1502,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, idActorKilled)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1620,7 +1601,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorKiller, szGroup)\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1697,8 +1677,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.Wait(2)\r\nif Hydra.ActorIsValid(idPlayer) then\r\n\r\n\tHydra.ActorPlayConversation(convPlayerEnd, idPlayer)\r\n\r\nend\r\n\r\nHydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     },
     {
      "__type__": "QuestObjectiveSet",
@@ -1773,7 +1752,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, flPrevHP, flHp)\r\n\r\n\tHydra.ActorSetTargetable(idActor, false)\r\n\tHydra.ActorEnableAI(idActor, false)\r\n\tHydra.ActorSetAnimSetOverride(idActor, animsetDie, true)\r\n\tHydra.ActorSetIdleAnim(idActor, \"AnimKey_Wounded_Crawl_Death\")\r\n\tHydra.ActorPlaySimpleConversation(convNizaarDie, idActor)\r\n\tHydra.WaitForConversationFinished(convNizaarDie)\r\n\tHydra.ActorSetIdleAnim(idActor, \"AnimKey_Dead\")\r\n\tHydra.ActorKill(idActor)\r\n\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -1859,8 +1837,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "--Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -1880,8 +1857,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -1911,11 +1886,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [
   {
    "__type__": "QuestFollower",

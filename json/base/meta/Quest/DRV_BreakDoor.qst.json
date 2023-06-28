@@ -147,7 +147,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActor, fRange, idActorDetector)\r\n\tidTriggeringPlayer = idActor\r\n\t\r\n\t-- Get the Spawner Opposite side of the door\r\n\tidChosenSpawner = Hydra.ActorsLinkedByActor(idActorDetector)[1]\r\n\t\r\n\t\r\n\t--Enable the Good Spawner\r\n\tHydra.ActorGizmoSetDisabled(idChosenSpawner, false)\r\n\r\n\r\n\t-- Delete the Spawner that was approached\r\n\tHydra.ActorDelete(idActorDetector)\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -234,7 +233,6 @@
        "unk_9c1ea4f": 0,
        "snoWorld": null,
        "unk_e879cce": null,
-       "szOnCallbackCompleteScript": "function Start(idActorSpawned, idActorSpawner)\r\n\t-- Get the door\r\n\tlocal idDoor = Hydra.ActorsLinkedByActorInGroup(idSelf, \"DOOR\")[1]\r\n\t\r\n\t-- Find nearby valid player\r\n\tlocal idNearestPlayer = Hydra.ActorGetClosestPlayer(idSelf, 5, true)\r\n\t\r\n\t-- Open the door\r\n\tHydra.ActorGizmoOperate(idDoor, idTriggeringPlayer)\r\n\t\r\n\t-- if valid, set up targeting\r\n\tif Hydra.ActorIsValid(idNearestPlayer) then\r\n\t\tHydra.ActorAddAITarget(idActorSpawner, idNearestPlayer, true)\r\n\tend\r\n\t\r\nend\r\n",
        "fDebugDisable": 0,
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
@@ -311,8 +309,7 @@
      },
      "unk_8c63f3c": 0,
      "unk_e903c4e": null,
-     "unk_8f432f8": [],
-     "szOnSetCompleteScript": "Hydra.QuestAdvancePhase()\r\n"
+     "unk_8f432f8": []
     }
    ],
    "unk_4b2de13": 4294967295,
@@ -332,8 +329,6 @@
    "unk_669bcf8": 4294967295,
    "unk_287ecb5": 4294967295,
    "unk_6344bd7": 0,
-   "szOnEnterScript": "",
-   "szOnExitScript": "",
    "unk_fab6e45": {
     "__type__": "MarkerHandle",
     "__typeHash__": 3934284334,
@@ -363,11 +358,6 @@
  "arReputationRewards": [],
  "unk_46e3956": [],
  "snoStartCondition": null,
- "szUserFunctionsScript": "",
- "szOnStartupScript": "idDoor = Hydra.ACDID_INVALID\r\nidTriggeringPlayer = Hydra.ACDID_INVALID\r\n",
- "szOnShutdownScript": "",
- "szOnAbandonScript": "",
- "szOnEventDespawnScript": "",
  "arFollowers": [],
  "arQuestItems": [],
  "arQuestDungeons": [],
