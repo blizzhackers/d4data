@@ -675,7 +675,7 @@ int main(int argc, char *argv[]) {
   bool noPrefix = false;
   bool ignoreAllCaps = true;
   bool useEnglish = false;
-  bool gettingThreads = true;
+  bool gettingThreads = false;
 
   signal(SIGINT, &signal_callback_handler);
   signal(SIGTERM, &signal_callback_handler);
