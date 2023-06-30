@@ -993,7 +993,10 @@ int main(int argc, char *argv[]) {
     auto seconds = (float)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - start).count() / 1000000.f;
 
     for (uint32_t c = 0; c < workerCount; c++) {
-      hashCount += pool[c].hashCount;
+      if (pool[c].thread) {
+        pool[c].thread->join();
+        hashCount += pool[c].hashCount;
+      }
     }
 
     if (seconds > 0 && hashCount > 0) {
