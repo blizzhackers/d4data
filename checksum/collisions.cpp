@@ -6,17 +6,26 @@
 #include <unistd.h>
 #include <algorithm>
 #include <filesystem>
+#include <thread>
+#include <atomic>
+#include <mutex>
+#include <chrono>
+#include <cstdlib>
+#include <signal.h>
 
 std::string rootPath = "";
 
-uint32_t tmp[64]{ 0 };
-uint32_t maxPos = sizeof(tmp) / sizeof(uint32_t);
+std::mutex outputLock;
+std::mutex fileLock;
+
+uint32_t masterTmp[64]{ 0 };
+uint32_t maxPos = sizeof(masterTmp) / sizeof(uint32_t);
 uint32_t minPos = 0;
 
 std::unordered_set<uint32_t> checksumMatch;
 std::unordered_set<uint32_t> checksumMatchSecondary;
 uint32_t hashType = 0;
-bool outputLog = true;
+bool outputLog = false;
 bool paired = false, usingFieldTypeMap = false;
 
 std::vector<std::string> subdict[64];
@@ -25,18 +34,54 @@ std::unordered_map<std::string, bool> stringUsed;
 std::unordered_map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
 std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 
-uint32_t checksum(std::string str, uint32_t hash = 0, uint32_t hashType = 0) {
-  if (hashType == 2) { // gbid strings are lowercased
-    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
+unsigned int maxThreads = std::thread::hardware_concurrency(), threadLevel = 0;
+
+struct WorkerData {
+  uint32_t tmp[64]{ 0 };
+  long pos = 0;
+  long max = 0;
+  uint32_t currentChecksum = 0;
+  std::thread *thread = nullptr;
+  std::atomic_bool ready = true;
+  uint32_t threadIndex = 0;
+} pool[64];
+
+uint32_t threadIndex = 0;
+uint32_t workerCount = maxThreads;
+std::atomic_int64_t hashCount = 0;
+std::atomic_int64_t lastReport = 0;
+auto start = std::chrono::steady_clock::now();
+
+uint32_t typeChecksum(std::string str, uint32_t hash) {
+  for (size_t i = 0; i < str.length(); i++) {
+    hash = (hash << 5) + hash + (unsigned char)str[i];
   }
+
+  // field names have an additional mask
+  return hash;
+}
+
+uint32_t fieldChecksum(std::string str, uint32_t hash) {
+  for (size_t i = 0; i < str.length(); i++) {
+    hash = (hash << 5) + hash + (unsigned char)str[i];
+  }
+
+  // field names have an additional mask
+  return hash & 0xfffffff;
+}
+
+uint32_t gbidChecksum(std::string str, uint32_t hash) {
+  std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); });
 
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
   }
 
   // field names have an additional mask
-  return hashType == 1 ? (hash & 0xfffffff) : hash;
+  return hash;
 }
+
+uint32_t (*checksum)(std::string str, uint32_t hash) = typeChecksum;
 
 auto getDictSize(long pos, long max) {
   // If suffixes exist, use those.
@@ -66,7 +111,7 @@ std::string getDictEntry(long index, long pos, long max) {
   return dict[index];
 }
 
-std::string getWord(int32_t max) {
+std::string getWord(uint32_t *tmp, int32_t max) {
   std::string ret = "";
 
   for (int32_t pos = 0; pos < max; pos++) {
@@ -86,43 +131,43 @@ bool hasCaps(std::string word) {
   return false;
 }
 
-bool checkPaired(int32_t max) {
+bool checkPaired(uint32_t *tmp, int32_t max) {
   if (!paired) {
     return true;
   }
 
   if (hashType == 0) {
-    std::string word = getWord(max);
-    uint32_t wordChecksum = checksum("t" + word, 0, 1);
+    std::string word = getWord(tmp, max);
+    uint32_t wordChecksum = fieldChecksum("t" + word, 0);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("pt" + word, 0, 1);
+    wordChecksum = fieldChecksum("pt" + word, 0);
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("ar" + word, 0, 1);
-
-    if (checksumMatchSecondary.count(wordChecksum) > 0) {
-      return true;
-    }
-
-    wordChecksum = checksum("t" + word + "s", 0, 1);
+    wordChecksum = fieldChecksum("ar" + word, 0);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("pt" + word + "s", 0, 1);
+    wordChecksum = fieldChecksum("t" + word + "s", 0);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
     }
 
-    wordChecksum = checksum("ar" + word + "s", 0, 1);
+    wordChecksum = fieldChecksum("pt" + word + "s", 0);
+
+    if (checksumMatchSecondary.count(wordChecksum) > 0) {
+      return true;
+    }
+
+    wordChecksum = fieldChecksum("ar" + word + "s", 0);
 
     if (checksumMatchSecondary.count(wordChecksum) > 0) {
       return true;
@@ -133,7 +178,7 @@ bool checkPaired(int32_t max) {
   return false;
 }
 
-bool correctType(uint32_t currentChecksum) {
+bool correctType(uint32_t *tmp, uint32_t currentChecksum) {
   if (!usingFieldTypeMap || subdict[0].size() < 1) {
     return true;
   }
@@ -151,11 +196,38 @@ bool correctType(uint32_t currentChecksum) {
   return false;
 }
 
-void collisions(long pos, long max, uint32_t currentChecksum = 0) {
+void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, bool useThread) {
+  if (useThread) {
+    while (true) {
+      threadIndex = (threadIndex + 1) % workerCount;
+
+      if (pool[threadIndex].ready) {
+        break;
+      }
+    }
+
+    for (uint32_t i = 0; i < 64; i++) {
+      pool[threadIndex].tmp[i] = masterTmp[i];
+    }
+
+    pool[threadIndex].pos = pos;
+    pool[threadIndex].max = max;
+    pool[threadIndex].currentChecksum = currentChecksum;
+    pool[threadIndex].ready = false;
+
+    return;
+  }
+
   if (pos >= max) {
-    if(checksumMatch.count(currentChecksum) > 0 && checkPaired(max) && correctType(currentChecksum)) {
-      std::string word = getWord(max);
+    hashCount++;
+
+    if(checksumMatch.count(currentChecksum) > 0 && checkPaired(tmp, max) && correctType(tmp, currentChecksum)) {
+      std::string word = getWord(tmp, max);
+      outputLock.lock();
+
       std::cout << "  " << std::hex << currentChecksum << ": " << word << std::endl;
+
+      outputLock.unlock();
 
       if (outputLog) {
         std::stringstream outfilePath;
@@ -172,9 +244,11 @@ void collisions(long pos, long max, uint32_t currentChecksum = 0) {
 
         outfilePath << std::hex << currentChecksum << ".yml";
 
+        fileLock.lock();
         std::ofstream outfile(outfilePath.str(), std::ios::app);
         outfile << std::hex << currentChecksum << ": " << word << std::endl;
         outfile.close();
+        fileLock.unlock();
       }
     }
 
@@ -185,8 +259,17 @@ void collisions(long pos, long max, uint32_t currentChecksum = 0) {
 
   for (long c = 0; c < cmax; c++) {
     tmp[pos] = c;
-    uint32_t newChecksum = checksum(getDictEntry(c, pos, max), currentChecksum, hashType);
-    collisions(pos + 1, max, newChecksum);
+    uint32_t newChecksum = checksum(getDictEntry(c, pos, max), currentChecksum);
+    collisions(tmp, pos + 1, max, newChecksum, workerCount > 1 && pos == threadLevel);
+  }
+}
+
+void collisionWorker(WorkerData *workerData) {
+  while (true) {
+    if (!workerData->ready) {
+      collisions(workerData->tmp, workerData->pos, workerData->max, workerData->currentChecksum, false);
+      workerData->ready = true;
+    }
   }
 }
 
@@ -328,238 +411,258 @@ void loadFieldTypeMap () {
   fieldTypes.close();
 
   typePrefixes[0].insert(""); // ?
-  typePrefixes[checksum("DT_FLOAT")].insert("a"); // DT_FLOAT
-  typePrefixes[checksum("DT_INT64")].insert("m_a"); // DT_INT64
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_INT")].insert("b"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_b"); // DT_INT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("a"); // DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_a"); // DT_INT64
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("b"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_b"); // DT_INT
   typePrefixes[0].insert("bc"); // ?
   typePrefixes[0].insert("m_bc"); // ?
-  typePrefixes[checksum("DT_WORD")].insert("bone"); // DT_WORD, DT_INT
-  typePrefixes[checksum("DT_WORD")].insert("m_bone"); // DT_WORD, DT_INT
-  typePrefixes[checksum("DT_INT")].insert("bone"); // DT_WORD, DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_bone"); // DT_WORD, DT_INT
-  typePrefixes[checksum("DT_INT64")].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("DT_INT64")].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("AICellData")].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("AICellData")].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("AICellBytes")].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("AICellBytes")].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[checksum("DT_INT")].insert("count"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_count"); // DT_INT
-  typePrefixes[checksum("DT_UINT")].insert("dw"); // DT_UINT
-  typePrefixes[checksum("DT_UINT")].insert("m_dw"); // DT_UINT
-  typePrefixes[checksum("DT_ENUM")].insert("e"); // DT_ENUM
-  typePrefixes[checksum("DT_ENUM")].insert("m_e"); // DT_ENUM
-  typePrefixes[checksum("DT_WORD")].insert("end"); // DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_end"); // DT_WORD
-  typePrefixes[checksum("DT_INT")].insert("f"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_f"); // DT_INT
-  typePrefixes[checksum("DT_FLOAT")].insert("fl"); // DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("m_fl"); // DT_FLOAT
-  typePrefixes[checksum("DT_BYTE")].insert("game"); // DT_BYTE
-  typePrefixes[checksum("DT_BYTE")].insert("m_game"); // DT_BYTE
-  typePrefixes[checksum("DT_GBID")].insert("gbid"); // DT_GBID
-  typePrefixes[checksum("DT_GBID")].insert("m_gbid"); // DT_GBID
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("bone"); // DT_WORD, DT_INT
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_bone"); // DT_WORD, DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("bone"); // DT_WORD, DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_bone"); // DT_WORD, DT_INT
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("AICellData", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("AICellData", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("AICellBytes", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("AICellBytes", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("count"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_count"); // DT_INT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("dw"); // DT_UINT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_dw"); // DT_UINT
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("e"); // DT_ENUM
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("m_e"); // DT_ENUM
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("end"); // DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_end"); // DT_WORD
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("f"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_f"); // DT_INT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("fl"); // DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("m_fl"); // DT_FLOAT
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("game"); // DT_BYTE
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("m_game"); // DT_BYTE
+  typePrefixes[typeChecksum("DT_GBID", 0)].insert("gbid"); // DT_GBID
+  typePrefixes[typeChecksum("DT_GBID", 0)].insert("m_gbid"); // DT_GBID
   typePrefixes[0].insert("h"); // ?, DT_UINT
   typePrefixes[0].insert("m_h"); // ?, DT_UINT
-  typePrefixes[checksum("DT_UINT")].insert("h"); // ?, DT_UINT
-  typePrefixes[checksum("DT_UINT")].insert("m_h"); // ?, DT_UINT
-  typePrefixes[checksum("DT_INT")].insert("i"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_i"); // DT_INT
-  typePrefixes[checksum("DT_ENUM")].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_ENUM")].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_INT")].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_INT")].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_UINT")].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_UINT")].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_SHARED_SERVER_DATA_ID")].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_SHARED_SERVER_DATA_ID")].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[checksum("DT_VECTOR4D")].insert("inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[checksum("DT_VECTOR4D")].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[checksum("DT_INT")].insert("is"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_is"); // DT_INT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("h"); // ?, DT_UINT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_h"); // ?, DT_UINT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("i"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_i"); // DT_INT
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_SHARED_SERVER_DATA_ID", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_SHARED_SERVER_DATA_ID", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("inv"); // DT_VECTOR4D, DT_FLOAT
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("inv"); // DT_VECTOR4D, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("is"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_is"); // DT_INT
   typePrefixes[0].insert("l"); // ?
   typePrefixes[0].insert("m_l"); // ?
-  typePrefixes[checksum("PRTransform")].insert("local"); // PRTransform, 0x5f527528
-  typePrefixes[checksum("PRTransform")].insert("m_local"); // PRTransform, 0x5f527528
+  typePrefixes[typeChecksum("PRTransform", 0)].insert("local"); // PRTransform, 0x5f527528
+  typePrefixes[typeChecksum("PRTransform", 0)].insert("m_local"); // PRTransform, 0x5f527528
   typePrefixes[0x5f527528].insert("local"); // PRTransform, 0x5f527528
   typePrefixes[0x5f527528].insert("m_local"); // PRTransform, 0x5f527528
-  typePrefixes[checksum("Matrix3x3")].insert("m"); // Matrix3x3
-  typePrefixes[checksum("Matrix3x3")].insert("m_m"); // Matrix3x3
-  typePrefixes[checksum("DT_WORD")].insert("max"); // DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_max"); // DT_WORD
-  typePrefixes[checksum("DT_INT")].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_INT")].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_UINT")].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_UINT")].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_WORD")].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_WORD")].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_INT64")].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_INT64")].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[checksum("DT_INT64")].insert("parent"); // DT_INT64, DT_WORD
-  typePrefixes[checksum("DT_INT64")].insert("m_parent"); // DT_INT64, DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("parent"); // DT_INT64, DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_parent"); // DT_INT64, DT_WORD
-  typePrefixes[checksum("VectorPath")].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[checksum("VectorPath")].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
+  typePrefixes[typeChecksum("Matrix3x3", 0)].insert("m"); // Matrix3x3
+  typePrefixes[typeChecksum("Matrix3x3", 0)].insert("m_m"); // Matrix3x3
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("max"); // DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_max"); // DT_WORD
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("parent"); // DT_INT64, DT_WORD
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_parent"); // DT_INT64, DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("parent"); // DT_INT64, DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_parent"); // DT_INT64, DT_WORD
+  typePrefixes[typeChecksum("VectorPath", 0)].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
+  typePrefixes[typeChecksum("VectorPath", 0)].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0xcbfdd2ea].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0xcbfdd2ea].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0x560ae4cf].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0x560ae4cf].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0xcc354444].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
   typePrefixes[0xcc354444].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[checksum("DT_GBID")].insert("pgbid"); // DT_GBID
-  typePrefixes[checksum("DT_GBID")].insert("m_pgbid"); // DT_GBID
-  typePrefixes[checksum("DT_WORD")].insert("plane"); // DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_plane"); // DT_WORD
-  typePrefixes[checksum("DT_INT64")].insert("pn"); // DT_INT64
-  typePrefixes[checksum("DT_INT64")].insert("m_pn"); // DT_INT64
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_VARIABLEARRAY")].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_POLYMORPHIC_VARIABLEARRAY")].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_FIXEDARRAY")].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_INT64")].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_INT64")].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_INT64")].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("DT_INT64")].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[checksum("bcQuat")].insert("q"); // bcQuat
-  typePrefixes[checksum("bcQuat")].insert("m_q"); // bcQuat
-  typePrefixes[checksum("DT_RGBACOLOR")].insert("rgba"); // DT_RGBACOLOR
-  typePrefixes[checksum("DT_RGBACOLOR")].insert("m_rgba"); // DT_RGBACOLOR
-  typePrefixes[checksum("DT_RGBACOLORVALUE")].insert("rgbaval"); // DT_RGBACOLORVALUE
-  typePrefixes[checksum("DT_RGBACOLORVALUE")].insert("m_rgbaval"); // DT_RGBACOLORVALUE
-  typePrefixes[checksum("DT_UINT")].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[checksum("DT_UINT")].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
+  typePrefixes[typeChecksum("DT_GBID", 0)].insert("pgbid"); // DT_GBID
+  typePrefixes[typeChecksum("DT_GBID", 0)].insert("m_pgbid"); // DT_GBID
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("plane"); // DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_plane"); // DT_WORD
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("pn"); // DT_INT64
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_pn"); // DT_INT64
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_VARIABLEARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_FIXEDARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
+  typePrefixes[typeChecksum("bcQuat", 0)].insert("q"); // bcQuat
+  typePrefixes[typeChecksum("bcQuat", 0)].insert("m_q"); // bcQuat
+  typePrefixes[typeChecksum("DT_RGBACOLOR", 0)].insert("rgba"); // DT_RGBACOLOR
+  typePrefixes[typeChecksum("DT_RGBACOLOR", 0)].insert("m_rgba"); // DT_RGBACOLOR
+  typePrefixes[typeChecksum("DT_RGBACOLORVALUE", 0)].insert("rgbaval"); // DT_RGBACOLORVALUE
+  typePrefixes[typeChecksum("DT_RGBACOLORVALUE", 0)].insert("m_rgbaval"); // DT_RGBACOLORVALUE
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
   typePrefixes[0xcc139f31].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
   typePrefixes[0xcc139f31].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
   typePrefixes[0xe562d892].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
   typePrefixes[0xe562d892].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[checksum("DT_INT")].insert("sample"); // DT_INT
-  typePrefixes[checksum("DT_INT")].insert("m_sample"); // DT_INT
-  typePrefixes[checksum("SerializeData")].insert("ser"); // SerializeData
-  typePrefixes[checksum("SerializeData")].insert("m_ser"); // SerializeData
-  typePrefixes[checksum("DT_SNO")].insert("sno"); // DT_SNO
-  typePrefixes[checksum("DT_SNO")].insert("m_sno"); // DT_SNO
-  typePrefixes[checksum("DT_WORD")].insert("start"); // DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_start"); // DT_WORD
-  typePrefixes[checksum("DT_CHARARRAY")].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_CHARARRAY")].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_STRING_FORMULA")].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_STRING_FORMULA")].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_CSTRING")].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_CSTRING")].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_UINT")].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[checksum("DT_UINT")].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("sample"); // DT_INT
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_sample"); // DT_INT
+  typePrefixes[typeChecksum("SerializeData", 0)].insert("ser"); // SerializeData
+  typePrefixes[typeChecksum("SerializeData", 0)].insert("m_ser"); // SerializeData
+  typePrefixes[typeChecksum("DT_SNO", 0)].insert("sno"); // DT_SNO
+  typePrefixes[typeChecksum("DT_SNO", 0)].insert("m_sno"); // DT_SNO
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("start"); // DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_start"); // DT_WORD
+  typePrefixes[typeChecksum("DT_CHARARRAY", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_CHARARRAY", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_STRING_FORMULA", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_STRING_FORMULA", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_CSTRING", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_CSTRING", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
   typePrefixes[0].insert("t"); // ?, DT_ENUM
   typePrefixes[0].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[checksum("DT_ENUM")].insert("t"); // ?, DT_ENUM
-  typePrefixes[checksum("DT_ENUM")].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[checksum("DT_STRING_FORMULA")].insert("t"); // ?, DT_ENUM
-  typePrefixes[checksum("DT_STRING_FORMULA")].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[checksum("DT_TAGMAP")].insert("tag"); // DT_TAGMAP
-  typePrefixes[checksum("DT_TAGMAP")].insert("m_tag"); // DT_TAGMAP
-  typePrefixes[checksum("DT_BYTE")].insert("twin"); // DT_BYTE
-  typePrefixes[checksum("DT_BYTE")].insert("m_twin"); // DT_BYTE
-  typePrefixes[checksum("DT_UINT")].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_UINT")].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_STARTLOC_NAME")].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_STARTLOC_NAME")].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_WORD")].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_WORD")].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_INT64")].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_INT64")].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_BYTE")].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_BYTE")].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[checksum("DT_VECTOR2D")].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR2D")].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR3D")].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR3D")].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR4D")].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR4D")].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_INT")].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_INT")].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR2D")].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR2D")].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR3D")].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR3D")].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR4D")].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_VECTOR4D")].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_INT")].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_INT")].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_BCVEC2I")].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[checksum("DT_WORD")].insert("vertex"); // DT_WORD
-  typePrefixes[checksum("DT_WORD")].insert("m_vertex"); // DT_WORD
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("t"); // ?, DT_ENUM
+  typePrefixes[typeChecksum("DT_ENUM", 0)].insert("m_t"); // ?, DT_ENUM
+  typePrefixes[typeChecksum("DT_STRING_FORMULA", 0)].insert("t"); // ?, DT_ENUM
+  typePrefixes[typeChecksum("DT_STRING_FORMULA", 0)].insert("m_t"); // ?, DT_ENUM
+  typePrefixes[typeChecksum("DT_TAGMAP", 0)].insert("tag"); // DT_TAGMAP
+  typePrefixes[typeChecksum("DT_TAGMAP", 0)].insert("m_tag"); // DT_TAGMAP
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("twin"); // DT_BYTE
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("m_twin"); // DT_BYTE
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_UINT", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_STARTLOC_NAME", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_STARTLOC_NAME", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_INT64", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_BYTE", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_VECTOR4D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_INT", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_BCVEC2I", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("vertex"); // DT_WORD
+  typePrefixes[typeChecksum("DT_WORD", 0)].insert("m_vertex"); // DT_WORD
   typePrefixes[0].insert("vw"); // ?
   typePrefixes[0].insert("m_vw"); // ?
-  typePrefixes[checksum("AxialCylinder")].insert("wcyl"); // AxialCylinder
-  typePrefixes[checksum("AxialCylinder")].insert("m_wcyl"); // AxialCylinder
-  typePrefixes[checksum("DT_FLOAT")].insert("wd"); // DT_FLOAT
-  typePrefixes[checksum("DT_FLOAT")].insert("m_wd"); // DT_FLOAT
-  typePrefixes[checksum("DT_VECTOR2D")].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR2D")].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("AxialCylinder", 0)].insert("wcyl"); // AxialCylinder
+  typePrefixes[typeChecksum("AxialCylinder", 0)].insert("m_wcyl"); // AxialCylinder
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("wd"); // DT_FLOAT
+  typePrefixes[typeChecksum("DT_FLOAT", 0)].insert("m_wd"); // DT_FLOAT
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
   typePrefixes[0].insert("wr"); // ?
   typePrefixes[0].insert("m_wr"); // ?
-  typePrefixes[checksum("Sphere")].insert("ws"); // Sphere
-  typePrefixes[checksum("Sphere")].insert("m_ws"); // Sphere
-  typePrefixes[checksum("DT_VECTOR2D")].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR2D")].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR2D")].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR2D")].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[checksum("DT_VECTOR3D")].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("Sphere", 0)].insert("ws"); // Sphere
+  typePrefixes[typeChecksum("Sphere", 0)].insert("m_ws"); // Sphere
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR2D", 0)].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
+  typePrefixes[typeChecksum("DT_VECTOR3D", 0)].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
+}
+
+void signal_callback_handler(int signum) {
+  auto seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - start).count();
+
+  if (seconds > 0 && hashCount > 0) {
+    float hashRate = (float)hashCount / (float)seconds;
+
+    if (hashRate >= 1000000.f) {
+      std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000000.f) << "M/s" << std::endl;
+    }
+    else if (hashRate >= 1000.f) {
+      std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000.f) << "K/s" << std::endl;
+    }
+    else {
+      std::cerr << std::endl << std::endl << "Hash rate: " << hashRate << "/s" << std::endl;
+    }
+  }
+
+  exit(0);
 }
 
 int main(int argc, char *argv[]) {
@@ -572,6 +675,10 @@ int main(int argc, char *argv[]) {
   bool noPrefix = false;
   bool ignoreAllCaps = true;
   bool useEnglish = false;
+  bool gettingThreads = true;
+
+  signal(SIGINT, &signal_callback_handler);
+  signal(SIGTERM, &signal_callback_handler);
 
   int pos = 0;
 
@@ -623,8 +730,8 @@ int main(int argc, char *argv[]) {
       else if(arg == "--max") {
         gettingMax = true;
       }
-      else if(arg == "--no-log") {
-        outputLog = false;
+      else if(arg == "--log") {
+        outputLog = true;
       }
       else if(arg == "--no-dict") {
         useDict = false;
@@ -634,6 +741,9 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--english") {
         useEnglish = true;
+      }
+      else if(arg == "--threads") {
+        gettingThreads = true;
       }
       else if(arg[0] == '-') {
         // discard unknown option
@@ -672,7 +782,7 @@ int main(int argc, char *argv[]) {
         ss << arg;
         ss >> uTmp;
 
-        if (uTmp >= 1 && uTmp < sizeof(tmp) / sizeof(uint32_t)) {
+        if (uTmp >= 1 && uTmp < sizeof(masterTmp) / sizeof(uint32_t)) {
           minPos = uTmp - 1;
           std::cerr << "Using min of " << minPos << std::endl;
         }
@@ -686,12 +796,30 @@ int main(int argc, char *argv[]) {
         ss << arg;
         ss >> uTmp;
 
-        if (uTmp >= 1 && uTmp < sizeof(tmp) / sizeof(uint32_t)) {
+        if (uTmp >= 1 && uTmp < sizeof(masterTmp) / sizeof(uint32_t)) {
           maxPos = uTmp;
           std::cerr << "Using max of " << maxPos << std::endl;
         }
 
         gettingMax = false;
+      }
+      else if(gettingThreads) {
+        uint32_t uTmp = 0;
+        std::stringstream ss;
+
+        ss << arg;
+        ss >> uTmp;
+
+        workerCount = uTmp;
+
+        if (workerCount < 1) {
+          workerCount = 1;
+        }
+        else if (workerCount > maxThreads - 1) {
+          workerCount = maxThreads - 1;
+        }
+
+        gettingThreads = false;
       }
       else {
         uint32_t uTmp = 0;
@@ -702,6 +830,13 @@ int main(int argc, char *argv[]) {
         checksumMatch.insert(uTmp);
       }
     }
+  }
+
+  if (hashType == 1) {
+    checksum = fieldChecksum;
+  }
+  else if (hashType == 2) {
+    checksum = gbidChecksum;
   }
 
   if (!isatty(0)) {
@@ -797,14 +932,44 @@ int main(int argc, char *argv[]) {
     loadFieldTypeMap();
   }
 
+  workerCount -= 1;
+
+  if (workerCount > 1) {
+    uint32_t threadPotential = 1;
+
+    for (uint32_t c = 0; c < 64; c++) {
+      threadPotential *= getDictSize(c, 64);
+
+      if (threadPotential >= workerCount) {
+        threadLevel = c;
+        break;
+      }
+    }
+  }
+
   if (checksumMatch.size()) {
     std::cerr << "Prefix size: " << subdict[0].size() << std::endl;
     std::cerr << "Dictionary size: " << dict.size() << std::endl;
     std::cerr << "Suffix size: " << subdict[63].size() << std::endl;
     std::cerr << "Matching " << checksumMatch.size() << " hashes." << std::endl;
+
+    if (workerCount > 1) {
+      std::cerr << "Using " << (workerCount + 1) << " workers." << std::endl;
+      std::cerr << "Threading at level " << (threadLevel + 1) << "." << std::endl;
+    }
+
+    for (uint32_t c = 0; c < workerCount; c++) {
+      pool[c].thread = new std::thread(collisionWorker, &pool[c]);
+      pool[c].threadIndex = c;
+    }
+
+    start = std::chrono::steady_clock::now();
+
     for (uint32_t c = minPos; c < maxPos; c++) {
+      outputLock.lock();
       std::cerr << "Length: " << (c + 1) << std::endl;
-      collisions(0, c + 1);
+      outputLock.unlock();
+      collisions(masterTmp, 0, c + 1, 0, false);
     }
   }
 
