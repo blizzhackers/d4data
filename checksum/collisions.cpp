@@ -12,6 +12,16 @@
 #include <chrono>
 #include <cstdlib>
 #include <signal.h>
+#include <new>
+
+#ifdef __cpp_lib_hardware_interference_size
+    using std::hardware_constructive_interference_size;
+    using std::hardware_destructive_interference_size;
+#else
+    // 64 bytes on x86-64 │ L1_CACHE_BYTES │ L1_CACHE_SHIFT │ __cacheline_aligned │ ...
+    constexpr std::size_t hardware_constructive_interference_size = 64;
+    constexpr std::size_t hardware_destructive_interference_size = 64;
+#endif
 
 std::string rootPath = "";
 
@@ -37,17 +47,16 @@ std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 
 unsigned int maxThreads = std::thread::hardware_concurrency(), threadLevel = 0;
 
-struct WorkerData {
-  uint32_t tmp[64]{ 0 };
-  long pos = 0;
-  long max = 0;
-  uint32_t currentChecksum = 0;
-  std::thread *thread = nullptr;
-  std::atomic_bool ready = true;
-  uint32_t threadIndex = 0;
+struct alignas(hardware_constructive_interference_size) WorkerData {
+  alignas(hardware_destructive_interference_size) uint32_t tmp[64]{ 0 };
+  alignas(hardware_destructive_interference_size) long pos = 0;
+  alignas(hardware_destructive_interference_size) long max = 0;
+  alignas(hardware_destructive_interference_size) uint32_t currentChecksum = 0;
+  alignas(hardware_destructive_interference_size) std::thread *thread = nullptr;
+  alignas(hardware_destructive_interference_size) std::atomic_bool ready = true;
+  alignas(hardware_destructive_interference_size) uint32_t threadIndex = 0;
 } pool[64];
 
-uint32_t threadIndex = 0;
 uint32_t workerCount = maxThreads;
 std::atomic_int64_t hashCount = 0;
 std::atomic_int64_t lastReport = 0;
@@ -203,24 +212,20 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, boo
   }
 
   if (useThread) {
-    while (true) {
-      threadIndex = (threadIndex + 1) % workerCount;
-
+    for (uint32_t threadIndex = 0; true; threadIndex = (threadIndex + 1) % workerCount) {
       if (pool[threadIndex].ready) {
-        break;
+        for (uint32_t i = 0; i < 64; i++) {
+          pool[threadIndex].tmp[i] = masterTmp[i];
+        }
+
+        pool[threadIndex].pos = pos;
+        pool[threadIndex].max = max;
+        pool[threadIndex].currentChecksum = currentChecksum;
+        pool[threadIndex].ready = false;
+
+        return;
       }
     }
-
-    for (uint32_t i = 0; i < 64; i++) {
-      pool[threadIndex].tmp[i] = masterTmp[i];
-    }
-
-    pool[threadIndex].pos = pos;
-    pool[threadIndex].max = max;
-    pool[threadIndex].currentChecksum = currentChecksum;
-    pool[threadIndex].ready = false;
-
-    return;
   }
 
   if (pos >= max) {
@@ -228,10 +233,9 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, boo
 
     if(checksumMatch.count(currentChecksum) > 0 && checkPaired(tmp, max) && correctType(tmp, currentChecksum)) {
       std::string word = getWord(tmp, max);
+
       outputLock.lock();
-
       std::cout << "  " << std::hex << currentChecksum << ": " << word << std::endl;
-
       outputLock.unlock();
 
       if (outputLog) {
@@ -804,8 +808,8 @@ int main(int argc, char *argv[]) {
         if (workerCount < 1) {
           workerCount = 1;
         }
-        else if (workerCount > maxThreads) {
-          workerCount = maxThreads;
+        else if (workerCount > 64) {
+          workerCount = 64;
         }
 
         gettingThreads = false;
@@ -923,19 +927,6 @@ int main(int argc, char *argv[]) {
 
   workerCount -= 1;
 
-  if (workerCount > 1) {
-    uint32_t threadPotential = 1;
-
-    for (uint32_t c = 0; c < 64; c++) {
-      threadPotential *= getDictSize(c, 64);
-
-      if (threadPotential >= workerCount) {
-        threadLevel = c;
-        break;
-      }
-    }
-  }
-
   if (checksumMatch.size()) {
     std::cerr << "Prefix size: " << subdict[0].size() << std::endl;
     std::cerr << "Dictionary size: " << dict.size() << std::endl;
@@ -944,7 +935,6 @@ int main(int argc, char *argv[]) {
 
     if (workerCount > 1) {
       std::cerr << "Using " << (workerCount + 1) << " workers." << std::endl;
-      std::cerr << "Threading at level " << (threadLevel + 1) << "." << std::endl;
     }
 
     for (uint32_t c = 0; c < workerCount; c++) {
@@ -961,10 +951,10 @@ int main(int argc, char *argv[]) {
       collisions(masterTmp, 0, c + 1, 0, false);
     }
 
-    auto seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - start).count();
+    auto seconds = (float)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - start).count() / 1000000.f;
 
     if (seconds > 0 && hashCount > 0) {
-      float hashRate = (float)hashCount / (float)seconds;
+      float hashRate = (float)hashCount / seconds;
 
       if (hashRate >= 1000000.f) {
         std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000000.f) << "M/s" << std::endl;
