@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <unordered_set>
-#include <unistd.h>
+#include <unordered_map>
 #include <algorithm>
 #include <filesystem>
 #include <thread>
@@ -13,6 +13,13 @@
 #include <cstdlib>
 #include <signal.h>
 #include <new>
+
+#if __GNUC__
+  #include <unistd.h>
+#else
+  #include <io.h>
+  #define isatty _isatty
+#endif
 
 #ifdef __cpp_lib_hardware_interference_size
     using std::hardware_constructive_interference_size;
@@ -74,7 +81,7 @@ bool hasChecksum(ChecksumSetType &checksumSet, uint32_t hash) {
 ChecksumSetType checksumMatch;
 ChecksumSetType checksumMatchSecondary;
 
-uint32_t typeChecksum(std::string &str, uint32_t hash) {
+uint32_t typeChecksum(const std::string &str, uint32_t hash) {
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
   }
@@ -87,7 +94,7 @@ uint32_t typeChecksumNonRef(std::string str, uint32_t hash) {
   return typeChecksum(str, hash);
 }
 
-uint32_t fieldChecksum(std::string &str, uint32_t hash) {
+uint32_t fieldChecksum(const std::string &str, uint32_t hash) {
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
   }
@@ -100,7 +107,7 @@ uint32_t fieldChecksumNonRef(std::string str, uint32_t hash) {
   return fieldChecksum(str, hash);
 }
 
-uint32_t gbidChecksum(std::string &str, uint32_t hash) {
+uint32_t gbidChecksum(const std::string &str, uint32_t hash) {
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)std::tolower(str[i]);
   }
@@ -113,7 +120,7 @@ uint32_t gbidChecksumNonRef(std::string str, uint32_t hash) {
   return gbidChecksum(str, hash);
 }
 
-uint32_t (*checksum)(std::string &str, uint32_t hash) = typeChecksum;
+uint32_t (*checksum)(const std::string &str, uint32_t hash) = typeChecksum;
 uint32_t (*checksumNonRef)(std::string str, uint32_t hash) = typeChecksumNonRef;
 
 auto getDictSize(long pos, long max) {
