@@ -25,6 +25,7 @@ uint32_t minPos = 0;
 std::unordered_set<uint32_t> checksumMatch;
 std::unordered_set<uint32_t> checksumMatchSecondary;
 uint32_t hashType = 0;
+bool terminating = false;
 bool outputLog = false;
 bool paired = false, usingFieldTypeMap = false;
 
@@ -197,6 +198,10 @@ bool correctType(uint32_t *tmp, uint32_t currentChecksum) {
 }
 
 void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, bool useThread) {
+  if (terminating) {
+    return;
+  }
+
   if (useThread) {
     while (true) {
       threadIndex = (threadIndex + 1) % workerCount;
@@ -257,7 +262,7 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, boo
 
   long cmax = getDictSize(pos, max);
 
-  for (long c = 0; c < cmax; c++) {
+  for (long c = 0; c < cmax && !terminating; c++) {
     tmp[pos] = c;
     uint32_t newChecksum = checksum(getDictEntry(c, pos, max), currentChecksum);
     collisions(tmp, pos + 1, max, newChecksum, workerCount > 1 && pos == threadLevel);
@@ -265,7 +270,7 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, boo
 }
 
 void collisionWorker(WorkerData *workerData) {
-  while (true) {
+  while (!terminating) {
     if (!workerData->ready) {
       collisions(workerData->tmp, workerData->pos, workerData->max, workerData->currentChecksum, false);
       workerData->ready = true;
@@ -646,23 +651,7 @@ void loadFieldTypeMap () {
 }
 
 void signal_callback_handler(int signum) {
-  auto seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - start).count();
-
-  if (seconds > 0 && hashCount > 0) {
-    float hashRate = (float)hashCount / (float)seconds;
-
-    if (hashRate >= 1000000.f) {
-      std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000000.f) << "M/s" << std::endl;
-    }
-    else if (hashRate >= 1000.f) {
-      std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000.f) << "K/s" << std::endl;
-    }
-    else {
-      std::cerr << std::endl << std::endl << "Hash rate: " << hashRate << "/s" << std::endl;
-    }
-  }
-
-  exit(0);
+  terminating = true;
 }
 
 int main(int argc, char *argv[]) {
@@ -965,11 +954,27 @@ int main(int argc, char *argv[]) {
 
     start = std::chrono::steady_clock::now();
 
-    for (uint32_t c = minPos; c < maxPos; c++) {
+    for (uint32_t c = minPos; c < maxPos && !terminating; c++) {
       outputLock.lock();
       std::cerr << "Length: " << (c + 1) << std::endl;
       outputLock.unlock();
       collisions(masterTmp, 0, c + 1, 0, false);
+    }
+
+    auto seconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::steady_clock::now() - start).count();
+
+    if (seconds > 0 && hashCount > 0) {
+      float hashRate = (float)hashCount / (float)seconds;
+
+      if (hashRate >= 1000000.f) {
+        std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000000.f) << "M/s" << std::endl;
+      }
+      else if (hashRate >= 1000.f) {
+        std::cerr << std::endl << std::endl << "Hash rate: " << (hashRate / 1000.f) << "K/s" << std::endl;
+      }
+      else {
+        std::cerr << std::endl << std::endl << "Hash rate: " << hashRate << "/s" << std::endl;
+      }
     }
   }
 
