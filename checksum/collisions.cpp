@@ -804,8 +804,8 @@ int main(int argc, char *argv[]) {
         if (workerCount < 1) {
           workerCount = 1;
         }
-        else if (workerCount > maxThreads - 1) {
-          workerCount = maxThreads - 1;
+        else if (workerCount > maxThreads) {
+          workerCount = maxThreads;
         }
 
         gettingThreads = false;
