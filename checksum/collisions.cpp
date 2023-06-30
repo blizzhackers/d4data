@@ -952,6 +952,13 @@ int main(int argc, char *argv[]) {
 
   workerCount -= 1;
 
+  for (uint64_t c = 0, threadPotential = getDictSize(c, 64); c < 64; c++, threadPotential *= getDictSize(c, 64)) {
+    if (threadPotential >= threadLevel && threadPotential >= workerCount) {
+      threadLevel = c;
+      break;
+    }
+  }
+
   if (checksumMatch.size()) {
     std::cerr << "Prefix size: " << subdict[0].size() << std::endl;
     std::cerr << "Dictionary size: " << dict.size() << std::endl;
