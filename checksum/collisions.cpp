@@ -48,13 +48,13 @@ std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 unsigned int maxThreads = std::thread::hardware_concurrency(), threadLevel = 0;
 
 struct alignas(hardware_constructive_interference_size) WorkerData {
-  alignas(hardware_destructive_interference_size) uint32_t tmp[64]{ 0 };
-  alignas(hardware_destructive_interference_size) long pos = 0;
-  alignas(hardware_destructive_interference_size) long max = 0;
-  alignas(hardware_destructive_interference_size) uint32_t currentChecksum = 0;
-  alignas(hardware_destructive_interference_size) std::thread *thread = nullptr;
-  alignas(hardware_destructive_interference_size) std::atomic_bool ready = true;
-  alignas(hardware_destructive_interference_size) uint32_t threadIndex = 0;
+  uint32_t tmp[64]{ 0 };
+  long pos = 0;
+  long max = 0;
+  uint32_t currentChecksum = 0;
+  std::thread *thread = nullptr;
+  std::atomic_bool ready = true;
+  uint32_t threadIndex = 0;
 } pool[64];
 
 uint32_t workerCount = maxThreads;
