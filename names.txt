@@ -36,6 +36,7 @@ ActivityLinks
 ActivityMetadata
 ActivityReward
 ActorAIData
+ActorAnimSetPreloadHelper
 ActorBrainData
 ActorCollisionData
 ActorCollisionFlags
@@ -58,12 +59,14 @@ ActorMovingData
 ActorNPCData
 ActorPhysicsData
 ActorPlayerData
+ActorPreloadHelper
 ActorProjectileData
 ActorPropData
 ActorServerData
 ActorSoundTableData
 ActorUIData
 ActorVOData
+ActorVariantPreloadHelper
 ActorWeaponData
 AffixDefinition
 AffixMessage
@@ -304,6 +307,7 @@ EffectGroupACDToACDMessage
 EffectGroupDefinition
 EffectGroupHardpoint
 EffectGroupKey
+EffectGroupPreloadHelper
 EffectItem
 EliteKilledMessage
 EmblemDefinition
@@ -464,6 +468,7 @@ ItemAffixAttribute
 ItemCountSubcondition
 ItemDefinition
 ItemPowerSubcondition
+ItemPreloadHelper
 ItemQualityModifierSubcondition
 ItemQualitySubcondition
 ItemRequirementDefinition
@@ -611,6 +616,7 @@ NetAttributeKeyValue
 NotLogicSubcondition
 NpcArchetypeTemplate
 NpcGenerationData
+NpcLookEntry
 NpcLookTemplate
 NpcTemplate
 OBB
@@ -620,8 +626,19 @@ OctreeCube
 OctreeLeaf
 OctreeNode
 OctreePrimitive
+OnAssistBuffCallback
+OnAttackBuffCallback
+OnCreatePowerCallback
+OnDeathBuffCallback
+OnDodgeBuffCallback
 OnEndPowerCallback
+OnEquipPowerCallback
+OnHitBuffCallback
 OnInterruptPowerCallback
+OnKillBuffCallback
+OnPhaseEnteredPowerCallback
+OnPhaseExitedPowerCallback
+OnProjectileImpactPowerCallback
 OnStartPowerCallback
 OnUnequipPowerCallback
 POICameraGizmoData
@@ -720,14 +737,36 @@ PowerBuffDefinition
 PowerCallbackBase
 PowerConditionBase
 PowerConditionDungeonTier
+PowerConditionHasActorTarget
+PowerConditionHasAffixEquipped
 PowerConditionHasBuff
 PowerConditionHasDamage
 PowerConditionHasDot
 PowerConditionHasFortifiedHealth
 PowerConditionHasHealth
+PowerConditionHasItemEquipped
+PowerConditionHasModPoints
 PowerConditionHasResource
+PowerConditionHasSkillRequirement
+PowerConditionHasSkillTag
+PowerConditionIsActorBerserk
+PowerConditionIsActorUnstoppable
+PowerConditionIsAutoCast
+PowerConditionIsChannelled
+PowerConditionIsCrowdControlled
+PowerConditionIsDamageType
+PowerConditionIsFortified
+PowerConditionIsInCombat
+PowerConditionIsMonsterFamilyArchetype
+PowerConditionIsMonsterRarity
 PowerConditionIsPet
 PowerConditionIsPower
+PowerConditionIsShapeshiftForm
+PowerConditionIsSkillSlot
+PowerConditionIsSpecificActor
+PowerConditionIsStealthed
+PowerConditionIsTrackedActor
+PowerConditionIsVulnerable
 PowerConditionOnChance
 PowerCrowdControlInfo
 PowerDefinition
@@ -761,6 +800,7 @@ PreloadSceneDataMessage
 PresetBannerData
 PresetNPCComponent
 PrivateGameSubcondition
+ProjectileImpactEffect
 ProximityAdjustment
 PublicGameSubcondition
 PvPChestGizmoData
@@ -778,6 +818,7 @@ QuestItemCountSubcondition
 QuestObjectiveSet
 QuestObjectiveSetLink
 QuestPhase
+QuestPreloadHelper
 QuestReward
 QuestSubcondition
 QuestSubconditionBase
@@ -953,6 +994,7 @@ SubzoneModifierTagsEntry
 SubzoneModifierTagsEntry_Table
 SubzoneTypeSubcondition
 SummonActorEntry
+SummonedActorsPreloadHelper
 SupportedServices
 SurfaceDefinition
 SurfaceGrid
@@ -1186,6 +1228,7 @@ aPitchOffset
 aRotationInitial
 aSamples
 aShaderMapOverrides
+aSkyboxYaw
 aSpeed
 aStartFacing
 aThreshold
@@ -1230,7 +1273,11 @@ arAIBehaviors
 arAchievementSnos
 arActiveSkillEntries
 arActivityQuests
+arActorAnimSetPreloadHelpers
 arActorGroups
+arActorPreloadHelpers
+arActorVariantPreloadHelpers
+arAdditionalTargets
 arAffixes
 arAllReferencedItems
 arAnimSetOverrides
@@ -1259,12 +1306,14 @@ arCampaignArcs
 arCampaignConditions
 arCamps
 arCardArtVariants
+arCarryables
 arCategories
 arCategoryIcons
 arChildControls
 arChildNodes
 arChildren
 arClutter
+arCollisionChecks
 arCollisionSettings
 arColorSamples
 arColors
@@ -1285,6 +1334,7 @@ arDOTEffectGroups
 arDRLGEvents
 arDRLGLevelAreas
 arDRLGTiles
+arDeathEffectGroups
 arDeathLookTemplates
 arDeathMaterialTemplates
 arDeathTemplates
@@ -1296,6 +1346,7 @@ arDungeonLists
 arDungeonStates
 arDungeons
 arDyeList
+arEffectGroupPreloadHelpers
 arElevations
 arEmbroideries
 arEndingPreplayed
@@ -1341,6 +1392,7 @@ arInterpScalar
 arInterruptFrames
 arInventories
 arItemLabels
+arItemPreloadHelpers
 arItemTiers
 arItems
 arJewelryChoices
@@ -1399,6 +1451,7 @@ arQuestChains
 arQuestDungeons
 arQuestItems
 arQuestPhases
+arQuestPreloadHelpers
 arQuests
 arRainSounds
 arRanges
@@ -1483,6 +1536,7 @@ area
 arnPowerKeyParam
 arrCosmeticItems
 arrItems
+arrReloadedBits
 arrWeapons
 atKeyVals
 b
@@ -1797,6 +1851,7 @@ dwPhaseUID
 dwPitch
 dwPlaylistID
 dwPlaylistIndex
+dwPortalDestSubzoneFlags
 dwPortalType
 dwQuestHash
 dwRank
@@ -1932,6 +1987,7 @@ eDefaultMode
 eDefaultTeam
 eDefaultVariant
 eDestBlendFactor
+eDevicePlugin
 eDisplayedQualityLevel
 eDropMinWorldTier
 eDruidSpiritType
@@ -2038,6 +2094,7 @@ ePlayerCountCondition
 ePlayerGender
 ePlayerQuestType
 ePlayerReset
+ePortalDestSubzoneType
 ePositionFrom
 ePositionTo
 ePowerCategory
@@ -2092,6 +2149,7 @@ eSocketTarget
 eSolverOverride
 eSoundType
 eSource
+eSpawnMonsterRarity
 eSpawnTriggerType
 eSpawnType
 eSpeakerClass
@@ -2102,6 +2160,7 @@ eStat
 eStatType
 eState
 eStepComparison
+eStyle
 eSubject
 eSwitchBehavior
 eSyncGroupType
@@ -2237,6 +2296,7 @@ fWater
 fXOffset
 fYOffset
 fZBufferWriteEnable
+flAbsorptionCoeff
 flAcceleration
 flAccelerationMax
 flAdditionalRotation
@@ -2510,7 +2570,10 @@ flSpeed
 flSpeedMax
 flSpeedMult
 flSpeedMultiplier
+flSpeedRunning
 flSpeedScale
+flSpeedSprinting
+flSpeedStrafing
 flSpeedWalking
 flSpeedWander
 flSpin
@@ -2561,6 +2624,7 @@ flVar1
 flVar2
 flVar3
 flVar4
+flVectorFieldScrollSpeed
 flVelRule
 flVelocityFactor
 flVolume
@@ -2815,6 +2879,7 @@ nFrameEnd
 nFrameIndex
 nFrameNumber
 nFrameStart
+nGlyphExperience
 nGold
 nGoldCost
 nGoldGranted
@@ -2973,6 +3038,9 @@ nType
 nUIBusyTime
 nUnlockLevel
 nUnlockQuestLevel
+nUpperX
+nUpperY
+nUpperZ
 nVal
 nValue
 nVendorDropMaxLevel
@@ -3088,6 +3156,7 @@ pathV
 pathVectorFieldRotation
 pathVignetteColor
 pathVignetteIntensity
+pathVignetteSmoothness
 pathWaterBloodiness
 pathWeatherIntensity
 pathWidth
@@ -3108,9 +3177,11 @@ ptActorGizmoData
 ptAppearanceLooks
 ptAppearanceMaterials
 ptArrayNodes
+ptAttachmentLengths
 ptAttributes
 ptBase
 ptBendingConstraints
+ptBindVertices
 ptBlendWeights
 ptBoneData
 ptBoneKeys
@@ -3139,6 +3210,7 @@ ptCritterData
 ptData
 ptDeathData
 ptDistanceConstraints
+ptDistortions
 ptDominoNodes
 ptDominoTriangles
 ptDominoVertices
@@ -3265,6 +3337,7 @@ qInitialOrientation
 qRot
 qRotationOffset
 qTextureRotation
+qTwistAxis
 quantity
 r
 reason
@@ -3276,9 +3349,13 @@ rgbaDebugColor
 rgbaDropShadow
 rgbaFadeColor
 rgbaForeground
+rgbaForegroundDisabled
+rgbaForegroundHighlight
+rgbaForegroundPushed
 rgbaInner
 rgbaOuter
 rgbaTint
+rgbavalAvgColor
 right
 rx
 ry
@@ -3351,8 +3428,10 @@ snoCampaignEnableCondition
 snoCampaignTownCondition
 snoCampaignVisibilityCondition
 snoCarryable
+snoCarryablePower
 snoCastingEffectGroup
 snoChampionEffectGroup
+snoChannelingEffect
 snoChildHoverTiledStyle
 snoClass
 snoClassPassiveReputation
@@ -3365,6 +3444,7 @@ snoClothOverride
 snoClutter
 snoCollision
 snoCombatDismountPower
+snoCompletionSubzoneOverride
 snoComponentSet
 snoCondition
 snoConsumable
@@ -3396,6 +3476,7 @@ snoDisembodiedVoice
 snoDye
 snoEffect
 snoEffectGroup
+snoEffectGroupSummoned
 snoEmblem
 snoEmissiveMask
 snoEmote
@@ -3566,6 +3647,7 @@ snoPowerDeath
 snoPowerDmgSource
 snoPowerEffectParam
 snoPowerFrom
+snoPowerInterrupted
 snoPowerOperate
 snoPowerOperateActive
 snoPowerOperator
@@ -3610,6 +3692,7 @@ snoRewardItem
 snoRightClickSound
 snoRitualItem
 snoRiverAmbient
+snoRootMarkerSet
 snoRope
 snoRoughness
 snoRunSoundTable
@@ -3690,6 +3773,7 @@ snoTiledStyle
 snoTiledStyleCheckedDisabled
 snoTiledStyleCheckedNormal
 snoTiledStyleMouseOver
+snoTiledStyleSelected
 snoTiledStyleSoundsRetreatTiledStyle
 snoTiledStyleUnselected
 snoTorso
@@ -3708,6 +3792,7 @@ snoTriggerEffectGroup
 snoTriggerEnteredPower
 snoTriggerExitedPower
 snoTriggerPulsePower
+snoTriggeringPower
 snoUI
 snoUIRActor
 snoUnlockQuest
@@ -3827,6 +3912,7 @@ szParent
 szPath
 szPayloadName
 szPowerMod
+szPowerName
 szProductId
 szProgressTarget
 szQuest
@@ -3856,6 +3942,7 @@ szValue
 szVariableName
 tAABB
 tActiveSkills
+tAdvanceEvent
 tAlphaBlend
 tAnim
 tAnimPreplayData
@@ -3944,8 +4031,10 @@ tFOV
 tFace
 tFacialHair
 tFacingData
+tFailEvent
 tFirstReward
 tFlatLevel
+tFlipLocationMarkerHandle
 tFogMask
 tFoliageSettings
 tFont
@@ -4008,6 +4097,7 @@ tMakeup
 tMargins
 tMarker
 tMarkerHandle
+tMarkerHandleDevStartLocation
 tMarkerHandleStartLocation
 tMarkerSet
 tMatTex
@@ -4233,19 +4323,23 @@ vVelocity
 vWorldPos
 value
 vbid
+vecDevStartLocation
 vecFlipLocation
 vecGridOffset
+vecLocalScale
 vecMarkerLocation
 vecMicrophoneOffset
 vecOffset
 vecPivot
 vecPos
 vecPosition
+vecProximityOffset
 vecScalar
 vecScale
 vecStartLocation
 vecTangent
 vecTargetOffset
+vecVignetteCenter
 vecWorldOffset
 vecWorldSize
 vertexCapacity

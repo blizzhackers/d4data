@@ -204,7 +204,7 @@ PRTransformMessage (29a95f43): {}
 DRLGSpawningData (29aeb8aa): {}
 DRLGSpawningPool (29b5882a): {}
 WorldDeletedMessage (29d08b04): {}
-0x29d35c79: {}
+QuestPreloadHelper (29d35c79): {}
 0x29da0a90: {}
 DisplayMode (2a394bbb): {}
 0x2aa25a47: {}
@@ -228,7 +228,7 @@ POICameraInstanceData (2d410740): {}
 PrefetchRunOnDisk (2e1ea00e): {}
 WorldServerData (2e510e19): {}
 SocketedEffects (2e76b412): {}
-0x2e7b70b1: {}
+ActorAnimSetPreloadHelper (2e7b70b1): {}
 ParagonUnequipBoardMessage (2f75b7fc): {}
 ActorMonsterData (2f81f05b): {}
 0x2f8b25ef: {}
@@ -279,7 +279,7 @@ ActorPlayerData (35abf7a0): {}
 0x36837ce3: {}
 ShaderDefinition (370bc360): {}
 BoolDataMessage (3758d64b): {}
-0x377ff5a8: {}
+NpcLookEntry (377ff5a8): {}
 EmoteDefinition (37b1da83): {}
 ListenerReaction (37c232db): {}
 EnterKnownShaderMapOverrides (37cff633): {}
@@ -354,7 +354,7 @@ DemonSummoningQuestBucket (41e42840): {}
 0x42378b43: {}
 ConversationCooldown (42648320): {}
 0x431a27f7: {}
-0x4335f281: {}
+EffectGroupPreloadHelper (4335f281): {}
 0x43385d9b: {}
 RopeEffectMessageACDToPlace (4368d578): {}
 0x44293b37: {}
@@ -838,19 +838,19 @@ PolymorphicBase (5d4bac71):
     0x553ae3d5: {}
     OnStartPowerCallback (699bf885): {}
     OnInterruptPowerCallback (77f55e04): {}
-    0x7862162b: {}
+    OnCreatePowerCallback (7862162b): {}
     0x96ebc824: {}
     OnEndPowerCallback (ab476e6e): {}
     0xaf6f9d33: {}
     0xaf88dbb5: {}
     OnUnequipPowerCallback (b7e9ad7e): {}
     0xbb6f3f3b: {}
-    0xca9c8b4f: {}
-    0xcc15aee6: {}
+    OnPhaseEnteredPowerCallback (ca9c8b4f): {}
+    OnProjectileImpactPowerCallback (cc15aee6): {}
     0xf5318ac4: {}
-    0xf57ba7fb: {}
+    OnEquipPowerCallback (f57ba7fb): {}
     0xfe214945: {}
-    0xfe26d54b: {}
+    OnPhaseExitedPowerCallback (fe26d54b): {}
   0xa5c1f30e:
     0x2ff98b4b: {}
     0x9c9af4b3: {}
@@ -881,19 +881,19 @@ PolymorphicBase (5d4bac71):
     0x7eaf5b8: {}
     AffixSyncComponents (8af9af1): {}
     0x9d7affe: {}
-    0xe3f0b44: {}
+    OnAssistBuffCallback (e3f0b44): {}
     0xf87e21c: {}
     0x13cd3f1b: {}
     0x13f8b65f: {}
-    0x14b7b585: {}
+    OnAttackBuffCallback (14b7b585): {}
     0x1d15fe71: {}
     0x28dc8b5b: {}
     0x29e548a8: {}
     0x3071f19a: {}
     0x337fb4ec: {}
-    0x353c7499: {}
+    OnKillBuffCallback (353c7499): {}
     0x35a12884: {}
-    0x45412253: {}
+    OnDeathBuffCallback (45412253): {}
     0x4a573bb2: {}
     0x4f98cc21: {}
     0x5202b239: {}
@@ -907,7 +907,7 @@ PolymorphicBase (5d4bac71):
     PeriodicBuffCallback (8166b77f): {}
     0x85f9f3fc: {}
     0x897512c1:
-      0x5c4c3552: {}
+      OnHitBuffCallback (5c4c3552): {}
       0x7334ae1e: {}
       0xd60b0d5f: {}
     0x8a6a0a47: {}
@@ -917,7 +917,7 @@ PolymorphicBase (5d4bac71):
     0x9ea8dcb4: {}
     RemovedBuffCallback (a69e4942): {}
     PreApplyBuffCallback (aacca5dd): {}
-    0xb8cadcb0: {}
+    OnDodgeBuffCallback (b8cadcb0): {}
     DamageTakenBuffCallback (bae3dde2): {}
     0xc6437cd7: {}
     0xd2a40e41: {}
@@ -1057,56 +1057,56 @@ PolymorphicBase (5d4bac71):
     0xb5e9e0a3: {}
     0xfbeaa6f5: {}
   PowerConditionBase (e196846f):
-    0xbb29c0: {}
-    0x8c3fab3: {}
+    PowerConditionIsVulnerable (bb29c0): {}
+    PowerConditionIsShapeshiftForm (8c3fab3): {}
     PowerConditionIsPower (cd7907d): {}
-    0x12de4f0f: {}
+    PowerConditionIsSpecificActor (12de4f0f): {}
     PowerConditionIsPet (14ef0839): {}
     0x1cacaaed: {}
-    0x24ef403b: {}
+    PowerConditionHasAffixEquipped (24ef403b): {}
     0x352f49ec: {}
     PowerConditionDungeonTier (366480b8): {}
-    0x42d4eded: {}
+    PowerConditionHasModPoints (42d4eded): {}
     0x474afa29: {}
     0x4cd375c6: {}
     0x5b4bfa41: {}
-    0x5dcb1af1: {}
-    0x5e9beb0e: {}
+    PowerConditionIsSkillSlot (5dcb1af1): {}
+    PowerConditionIsStealthed (5e9beb0e): {}
     0x6105185b: {}
     0x61d80fcd: {}
     0x679d7816: {}
     0x6dfbcf0d: {}
-    0x73b68c10: {}
+    PowerConditionHasActorTarget (73b68c10): {}
     0x7c82504a: {}
     0x835b496b: {}
-    0x8552b0bd: {}
-    0x8683827c: {}
+    PowerConditionIsInCombat (8552b0bd): {}
+    PowerConditionHasItemEquipped (8683827c): {}
     0x8a6fda3f: {}
-    0x8c14a98b: {}
+    PowerConditionHasSkillTag (8c14a98b): {}
     0x904ab211: {}
     PowerConditionOnChance (9193c653): {}
     PowerConditionHasBuff (98411c93): {}
-    0x9b22bbf3: {}
-    0xa142f7f6: {}
-    0xa1de3fa7: {}
+    PowerConditionIsMonsterRarity (9b22bbf3): {}
+    PowerConditionIsActorUnstoppable (a142f7f6): {}
+    PowerConditionIsTrackedActor (a1de3fa7): {}
     0xa248a466: {}
     PowerConditionHasFortifiedHealth (a4438562): {}
-    0xa46a4aa5: {}
-    0xa5893491: {}
+    PowerConditionIsCrowdControlled (a46a4aa5): {}
+    PowerConditionIsDamageType (a5893491): {}
     PowerConditionHasDot (af47d257): {}
     0xaf47e1c0: {}
     PowerConditionHasDamage (b03ec38f): {}
-    0xb0516ff4: {}
-    0xb6e5e27e: {}
+    PowerConditionIsAutoCast (b0516ff4): {}
+    PowerConditionIsChannelled (b6e5e27e): {}
     PowerConditionHasHealth (b9d56406): {}
     0xd9ea8458: {}
-    0xe768a7d7: {}
+    PowerConditionIsActorBerserk (e768a7d7): {}
     PowerConditionHasResource (e984b738): {}
-    0xebca2ccc: {}
+    PowerConditionIsFortified (ebca2ccc): {}
     0xee5a7d4a: {}
     0xf36b7fbd: {}
-    0xf692c2c0: {}
-    0xf7ffb49f: {}
+    PowerConditionHasSkillRequirement (f692c2c0): {}
+    PowerConditionIsMonsterFamilyArchetype (f7ffb49f): {}
     0xfff40bd8: {}
   0xe3f5648a:
     0x13006658: {}
@@ -1223,7 +1223,7 @@ MaterialValueSetDefinition (6ce65741): {}
 PlayCutsceneMessage (6d6923d5): {}
 0x6de8333b: {}
 MapPinMessage (6e3bbfca): {}
-0x6e65a695: {}
+ActorVariantPreloadHelper (6e65a695): {}
 0x6e7f0459: {}
 AttributeSetValueMessage (6ee82d42): {}
 0x6ee9427a: {}
@@ -1547,7 +1547,7 @@ HotbarButtonData (a7913f56): {}
 StoryboardDefinition (a83c7e92): {}
 CurrencyItem (a8549fba): {}
 SkillTreeNodeMessage (a89caf5a): {}
-0xa89e6440: {}
+ActorPreloadHelper (a89e6440): {}
 0xa8e85f45: {}
 0xa9417475: {}
 ValidComponent (a96996c3): {}
@@ -1706,12 +1706,12 @@ JoinLANGameMessage (c0a0ed6a): {}
 0xc0fa945c: {}
 0xc1762b19: {}
 NpcArchetypeTemplate (c1ccb782): {}
-0xc1d35c16: {}
+ItemPreloadHelper (c1d35c16): {}
 0xc1ddc6d3: {}
 SpawnGenerator (c22163b0): {}
 SkillTag (c2bc153b): {}
 0xc2ce8583: {}
-0xc2e1c5fc: {}
+ProjectileImpactEffect (c2e1c5fc): {}
 FogOfWarImage (c329b4be): {}
 UILayoutList (c36fb4b8): {}
 0xc40ea787: {}
@@ -1889,7 +1889,7 @@ WorldSyncedData (df72b548): {}
 0xdff70e83: {}
 AnimContactFrame (e050809c): {}
 ComplexEffectAddMessage (e0a77a33): {}
-0xe11de1bb: {}
+SummonedActorsPreloadHelper (e11de1bb): {}
 0xe12242af: {}
 0xe1291b50: {}
 0xe1a124f1: {}
