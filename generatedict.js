@@ -7,7 +7,7 @@ let banned = {
   'wcyl': true,
 };
 
-let names = JSON.parse(fs.readFileSync('dict.json').toString());
+let names = {};
 let newnames = {};
 
 fs.readFileSync('names.txt').toString().split(/\s+/gi).forEach(name => {
@@ -131,10 +131,10 @@ names = newnames;
 newnames = {};
 
 fs.writeFileSync('prefix.json', JSON.stringify(prefix, null, ' '));
-fs.writeFileSync('dict.json', JSON.stringify(dict, null, ' '));
+fs.writeFileSync('prefix.txt', Object.keys(prefix).sort().join('\n'));
+fs.writeFileSync('dict.txt', Object.keys(dict).sort().join('\n'));
 
-prefix = Object.keys(prefix).sort();
-dict = Object.keys(dict).sort();
+dict = Object.assign({}, JSON.parse(fs.readFileSync('dict_expanded.json').toString()), dict);
 
-fs.writeFileSync('prefix.txt', prefix.sort().join('\n'));
-fs.writeFileSync('dict.txt', dict.sort().join('\n'));
+fs.writeFileSync('dict_expanded.json', JSON.stringify(dict, null, ' '));
+fs.writeFileSync('dict_expanded.txt', Object.keys(dict).sort().join('\n'));

@@ -378,11 +378,16 @@ std::vector<std::string> defaultDict {
   "Z",
 };
 
-std::vector<std::string> getDict(bool english = false) {
+std::vector<std::string> getDict(std::string dictPathOrString) {
   std::vector<std::string> ret;
 
-  {
-    std::ifstream dict("../dict.txt");
+  std::ifstream dict(dictPathOrString);
+
+  if (!dict) {
+    dict.open("../" + dictPathOrString);
+  }
+
+  if (dict) {
     std::string tmp;
 
     dict >> tmp;
@@ -391,15 +396,15 @@ std::vector<std::string> getDict(bool english = false) {
       dict >> tmp;
     }
   }
+  else {
+    std::stringstream ss(dictPathOrString);
 
-  if (english) {
-    std::ifstream dict("../english_dict.txt");
     std::string tmp;
 
-    dict >> tmp;
-    while (dict) {
+    ss >> tmp;
+    while (ss) {
       ret.push_back(tmp);
-      dict >> tmp;
+      ss >> tmp;
     }
   }
 
@@ -691,14 +696,17 @@ void signal_callback_handler(int signum) {
 int main(int argc, char *argv[]) {
   uint32_t gettingSubDict = 0;
   uint32_t subDictPos = 0;
+
+  std::string dictPathOrString = "../dict.txt";
+
   bool gettingMin = false;
   bool gettingMax = false;
   bool useDict = true;
   bool wordsOnly = false;
   bool noPrefix = false;
   bool ignoreAllCaps = true;
-  bool useEnglish = false;
   bool gettingThreads = false;
+  bool gettingDict = false;
 
   signal(SIGINT, &signal_callback_handler);
   signal(SIGTERM, &signal_callback_handler);
@@ -763,7 +771,13 @@ int main(int argc, char *argv[]) {
         paired = true;
       }
       else if(arg == "--english") {
-        useEnglish = true;
+        dictPathOrString = "../english.txt";
+      }
+      else if(arg == "--expanded") {
+        dictPathOrString = "../dict_expanded.txt";
+      }
+      else if(arg == "--dict") {
+        gettingDict = true;
       }
       else if(arg == "--threads") {
         gettingThreads = true;
@@ -844,6 +858,10 @@ int main(int argc, char *argv[]) {
 
         gettingThreads = false;
       }
+      else if(gettingDict) {
+        dictPathOrString = arg;
+        gettingDict = false;
+      }
       else {
         uint32_t uTmp = 0;
         std::stringstream ss;
@@ -917,7 +935,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (useDict) {
-    for (const auto &baseelem : (useDict ? getDict(useEnglish) : defaultDict)) {
+    for (const auto &baseelem : (useDict ? getDict(dictPathOrString) : defaultDict)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
         std::string newelem = elem;
