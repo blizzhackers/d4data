@@ -42,6 +42,7 @@ ActorCollisionData
 ActorCollisionFlags
 ActorCombatData
 ActorCritterData
+ActorCustomizationHelper
 ActorDeathData
 ActorDefinition
 ActorEffectData
@@ -82,6 +83,7 @@ AnimFacingWindow
 AnimPayloadData
 AnimPermutation
 AnimPreplayData
+AnimSetAnimPreloadHelper
 AnimSetDefinition
 AnimSetOrderTagEntry
 AnimSetOrderTagEntry_Table
@@ -93,6 +95,9 @@ AnimTreeLayerName
 AnimTreeLeaf
 AnimTreeNode
 AnimTreeNodeBase
+AnimTreeNodeChild
+AnimTreeNodeOverride
+AnimTreeNodeOverrideWrapper
 AnimTreeOverride
 Animation2DDefinition
 AnimationClothOverride
@@ -275,14 +280,19 @@ DebugActorTooltipMessage
 DebugDrawPrimMessage
 DebugEventLogMessage
 DebugEventLogMetaData
+DebugProjectileCollisionCheck
 DecalTemplate
+DefaultMaterialValueDefinition
 DemonScrollDefinition
 DemonScrollReward
 DemonSummoningQuestBucket
 DemonSummoningQuestBucket_Table
 DesignerVariable
+DesignerVariableChanged
+DesignerVariablePayload
 DesignerVariable_Table
 DestroySceneMessage
+DestroyableObjectGizmoData
 DisplayGameTextMessage
 DisplayMode
 DoorGizmoData
@@ -307,6 +317,7 @@ EffectGroupACDToACDMessage
 EffectGroupDefinition
 EffectGroupHardpoint
 EffectGroupKey
+EffectGroupKeyData
 EffectGroupPreloadHelper
 EffectItem
 EliteKilledMessage
@@ -315,6 +326,8 @@ EmitterBoxData
 EmitterCylinderData
 EmitterDataBase
 EmitterPointData
+EmitterSphericalCapData
+EmitterSubObjectData
 EmoteDefinition
 EnchantAffixChoice
 EnchantAffixChooseMessage
@@ -393,6 +406,7 @@ GlobalFontColor
 GlobalHealthPotionData
 GlobalIntensityLevels
 GlobalMarkerActor
+GlobalMarkerActorData
 GlobalNPCCustomizationData
 GlobalNightmareDungeonData
 GlobalPortalData
@@ -505,6 +519,7 @@ LineSeg2D
 LineSeg3D
 ListenerReaction
 LocalPlayerNetEvent
+LockingGizmoData
 LogicSubcondition
 LogoutContextMessage
 LogoutTickTimeMessage
@@ -540,6 +555,7 @@ MarkerCameraData
 MarkerChestGizmoData
 MarkerDataBase
 MarkerDecalData
+MarkerDestroyableObjectGizmoData
 MarkerDoorGizmoData
 MarkerEffectGroupData
 MarkerEncounterData
@@ -571,10 +587,13 @@ MarkerWeatherVolumeData
 MarkingColorDefinition
 MarkingShapeDefinition
 Material
+MaterialBoolValueDefinition
+MaterialColorValueDefinition
 MaterialDefinition
 MaterialEnum
 MaterialEnumValue
 MaterialEnumValueDefinition
+MaterialScalarValueDefinition
 MaterialTexture
 MaterialTextureEntry
 MaterialValueDefinition
@@ -603,6 +622,7 @@ NPCACDInfo
 NPCComponentEntry
 NPCComponentGroup
 NPCComponentSetDefinition
+NPCComponentSetPreloadHelper
 NPCHairColors
 NPCInteractOptionsMessage
 NPCInteraction
@@ -627,18 +647,34 @@ OctreeLeaf
 OctreeNode
 OctreePrimitive
 OnAssistBuffCallback
+OnAssistTriggeredBuffCallback
 OnAttackBuffCallback
 OnCreatePowerCallback
 OnDeathBuffCallback
 OnDodgeBuffCallback
+OnDotApplyBuffCallback
+OnDotReceivedBuffCallback
 OnEndPowerCallback
 OnEquipPowerCallback
+OnGetHitBuffCallback
+OnGizmoOperatedBuffCallback
+OnHealingReceivedBuffCallback
 OnHitBuffCallback
+OnHitEffectTriggeredBuffCallback
+OnInitializeAttackBuffCallback
+OnInitializeDamageBuffCallback
 OnInterruptPowerCallback
+OnItemPickupBuffCallback
 OnKillBuffCallback
+OnKillTriggeredBuffCallback
+OnPetAddBuffCallback
+OnPetDeathBuffCallback
 OnPhaseEnteredPowerCallback
 OnPhaseExitedPowerCallback
+OnProjectileCreateBuffCallback
 OnProjectileImpactPowerCallback
+OnResourceGainedBuffCallback
+OnResourceSpentBuffCallback
 OnStartPowerCallback
 OnUnequipPowerCallback
 POICameraGizmoData
@@ -736,6 +772,11 @@ PostFXParams
 PowerBuffDefinition
 PowerCallbackBase
 PowerConditionBase
+PowerConditionDamageHasFortified
+PowerConditionDamageHasVulnerable
+PowerConditionDamageIsCrit
+PowerConditionDamageIsDot
+PowerConditionDamageIsOverpower
 PowerConditionDungeonTier
 PowerConditionHasActorTarget
 PowerConditionHasAffixEquipped
@@ -756,6 +797,7 @@ PowerConditionIsChannelled
 PowerConditionIsCrowdControlled
 PowerConditionIsDamageType
 PowerConditionIsFortified
+PowerConditionIsInActorGroup
 PowerConditionIsInCombat
 PowerConditionIsMonsterFamilyArchetype
 PowerConditionIsMonsterRarity
@@ -768,6 +810,7 @@ PowerConditionIsStealthed
 PowerConditionIsTrackedActor
 PowerConditionIsVulnerable
 PowerConditionOnChance
+PowerConditionSkillRankCompare
 PowerCrowdControlInfo
 PowerDefinition
 PowerFormulaTableEntry
@@ -803,7 +846,9 @@ PrivateGameSubcondition
 ProjectileImpactEffect
 ProximityAdjustment
 PublicGameSubcondition
+PvPBucketLevels
 PvPChestGizmoData
+PvPResurrectTriggeredBuffCallback
 Quaternion16
 QuestCallback
 QuestCallbackRegion
@@ -818,6 +863,7 @@ QuestItemCountSubcondition
 QuestObjectiveSet
 QuestObjectiveSetLink
 QuestPhase
+QuestPhasePreloadHelper
 QuestPreloadHelper
 QuestReward
 QuestSubcondition
@@ -876,6 +922,7 @@ SceneChunk
 SceneData
 SceneDefinition
 SceneSpecification
+SceneSubzoneMarkerSetPreloadHelper
 SchedulerGlobalUniqueCategory
 SchedulerGlobalUniqueCategory_Table
 ScreenStaticCamps
@@ -967,6 +1014,7 @@ SpawnerGizmoData
 SpeakerActorOverride
 SpeakerDefinition
 Sphere
+SphereProximityData
 StackPortionMessage
 StaggerDefinition
 StarsSettings
@@ -993,6 +1041,7 @@ SubzoneDefinition
 SubzoneModifierTagsEntry
 SubzoneModifierTagsEntry_Table
 SubzoneTypeSubcondition
+SubzoneWorldMarkerSetEntry
 SummonActorEntry
 SummonedActorsPreloadHelper
 SupportedServices
@@ -1005,6 +1054,7 @@ SurveyTypeEntry
 SurveyTypeEntry_Table
 SwitchBehaviorGizmoData
 SwitchGizmoData
+TalentMaybeIncrementedSubcondition
 TerritoryDefinition
 TexAnim
 TexAnimTranslation
@@ -1043,10 +1093,12 @@ TriggerEventAddObject
 TriggerEventAddRope
 TriggerEventAddTrail
 TriggerEventAttachCamera
+TriggerEventAttachSpawnedActor
 TriggerEventCancelLook
 TriggerEventChangeLook
 TriggerEventDeleteObject
 TriggerEventDetachObject
+TriggerEventDisableCollisionMessages
 TriggerEventDisableConstraint
 TriggerEventEnableRagdoll
 TriggerEventFade
@@ -1063,8 +1115,10 @@ TriggerEventHitFlashDuration
 TriggerEventMsg
 TriggerEventMusic
 TriggerEventNull
+TriggerEventOutroAllObjects
 TriggerEventOutroEffectGroup
 TriggerEventOutroObject
+TriggerEventOutroServicesDisable
 TriggerEventPlayMovie
 TriggerEventRestoreCamera
 TriggerEventScreenFade
@@ -1098,6 +1152,7 @@ UIControlIcon
 UIControlStyle
 UIControlTemplate
 UICutsceneStyle
+UIDateTimeStyle
 UIDialogDefinition
 UIDownloadImageStyle
 UIDrawHookStyle
@@ -1280,6 +1335,7 @@ arActorVariantPreloadHelpers
 arAdditionalTargets
 arAffixes
 arAllReferencedItems
+arAnimSetAnimPreloadHelpers
 arAnimSetOverrides
 arAnimSets
 arAppearances
@@ -1418,6 +1474,7 @@ arModifier
 arMods
 arMounts
 arMusicSegments
+arNPCComponentSetPreloadHelpers
 arNPCs
 arNewItems
 arNodes
@@ -1447,9 +1504,11 @@ arPrefetchEntries
 arPreloadData
 arPrimitives
 arProximityAdjustments
+arPublicLevelScaling
 arQuestChains
 arQuestDungeons
 arQuestItems
+arQuestPhasePreloadHelpers
 arQuestPhases
 arQuestPreloadHelpers
 arQuests
@@ -1474,6 +1533,7 @@ arRules
 arSNONames
 arSNOs
 arSavedTransmogs
+arSceneSubzoneMarkerSetPreloadHelpers
 arSections
 arSegmentIndices
 arSegments
@@ -1518,6 +1578,7 @@ arUILayoutEntries
 arUnlockedTransmogs
 arUpdates
 arUpgradeOptions
+arUsableByClass
 arUsedStrings
 arValues
 arVariantKeys
@@ -1526,6 +1587,7 @@ arVendors
 arWaypointEffects
 arWaypoints
 arWaypointsActivated
+arWeaponItemTypes
 arWeatherSNOs
 arWorldMarkerSets
 arWorldPoints
@@ -1543,6 +1605,7 @@ b
 bAcceptsReturn
 bAccountBound
 bActive
+bAimedPower
 bAlphaTestRefValue
 bAlwaysProcs
 bAnimated
@@ -1646,6 +1709,7 @@ bMountSummoned
 bMounted
 bMultiplayerEnabled
 bMute
+bMuteExternal
 bNegate
 bNoSnap
 bNoZ
@@ -1685,6 +1749,7 @@ bStaticActor
 bSubMenu
 bSuccess
 bTargetAlive
+bTargetFullFamily
 bTargetGroundOnly
 bToggleSelection
 bTriggersImmediately
@@ -2104,6 +2169,7 @@ ePowerTargetingType
 ePreferredMenu
 ePreferredZone
 eProximityType
+ePvPType
 eQuestChainType
 eQuestType
 eRarity
@@ -2227,6 +2293,7 @@ fEnableMovement
 fEnableOverride
 fEnableRagdoll
 fEvenDistribution
+fFadeOwner
 fFemale
 fFirstTexels
 fFlatten
@@ -2318,6 +2385,7 @@ flAttachmentScaleFactor
 flAttenuationFactor
 flAttributesCritPercentBase
 flAttributesHitPoints
+flAttributesOverpowerChanceBase
 flAttributesResistChill
 flAttributesResistCold
 flAttributesResistFire
@@ -2389,6 +2457,7 @@ flDurationMicroseconds
 flEffectDuration
 flEmissive
 flEmissiveStrength
+flEnemyAttenuationFactor
 flExpectedValue
 flExperienceScalar
 flExplosionFactor
@@ -2411,12 +2480,14 @@ flFloatLiteral
 flFloatValue
 flFlowPower
 flFlowSpeed
+flFocalDistance
 flFollowSpeed
 flFootprint
 flFrameRate
 flFrequency
 flFriction
 flFrictionScale
+flFriendlyAttenuationFactor
 flGPR
 flGravityMagnitude
 flGravityMultiplier
@@ -2424,6 +2495,7 @@ flGravityPadding
 flGridSize
 flGroundDistance
 flHPScalar
+flHairColorInfluence
 flHaze
 flHealthBase
 flHealthPercent
@@ -2443,6 +2515,7 @@ flIdleRadius
 flImageScale
 flImpactDirection
 flImpactPitch
+flImpulseCap
 flImpulseFactor
 flIntensity
 flIrisBrightness
@@ -2473,11 +2546,15 @@ flMaxSpeed
 flMaxValue
 flMaxX
 flMaxY
+flMaximumAnimationScale
 flMin
 flMinValue
 flMinX
 flMinY
+flMinimapDistortionFactor
+flMinimapDistortionScale
 flMinimapRevealRadius
+flMinimumAnimationScale
 flMonsterCritDamageScalar
 flMovementSpeed
 flNearPlane
@@ -2543,6 +2620,7 @@ flRotation
 flRotationAngle
 flRotationSpeed
 flRoughness
+flRunTurnSpeed
 flSSAOOcclusionRadius
 flSacredAffixScalarDefense
 flSacredAffixScalarOffense
@@ -2593,6 +2671,8 @@ flStepUpHeight
 flStiffness
 flStrengthRange
 flStretchingStiffness
+flStructurePadding1
+flStructurePadding2
 flSummonLifetime
 flSunAltitude
 flSunAzimuth
@@ -2600,6 +2680,8 @@ flSunRadius
 flSystemDuration
 flTargetAbandonTime
 flTetherRadius
+flTextAdvanceScalar
+flTextLineSpacingScalar
 flThickness
 flTileX
 flTileY
@@ -2963,6 +3045,7 @@ nNumToChoose
 nOffset
 nOpAmount
 nPadding
+nPadding1
 nPageIncrement
 nParam
 nParam1
@@ -3138,6 +3221,7 @@ pathRadius
 pathScaleOverLength
 pathScaleOverTime
 pathSeparation
+pathSequentialRange
 pathShadowIntensity
 pathSourcePointAlongRopeMotion
 pathSourcePointPerpendicularMotion
@@ -3209,6 +3293,7 @@ ptConversationSamples
 ptCritterData
 ptData
 ptDeathData
+ptDestroyableObjectGizmoData
 ptDistanceConstraints
 ptDistortions
 ptDominoNodes
@@ -3602,6 +3687,7 @@ snoOccluded
 snoOceanAmbient
 snoOceanMaterial
 snoOffHand
+snoOnClickEffect
 snoOnCloseSound
 snoOnDeathPower
 snoOnOpenSound
@@ -3805,6 +3891,7 @@ snoWalkSoundTable
 snoWeather
 snoWeatherOverride
 snoWorld
+snoWorldDevStartLocation
 snoWorldStartLocation
 snoWorldState
 snoname
@@ -3959,6 +4046,8 @@ tBaseACDInfo
 tBaseData
 tBaseLook
 tBlendCase
+tBlendIn
+tBlendOut
 tBone
 tBoneInfluence
 tBoneName
@@ -3971,6 +4060,7 @@ tCastTargetNecroCorpsesOnly
 tChance
 tChannellingCost
 tChargeCost
+tChildOverride
 tChillAmount
 tClassInfo
 tCleanup
@@ -3994,6 +4084,7 @@ tCornerPieces
 tCost
 tCrowdControl
 tCurrency
+tCustomCollFlags
 tCustomization
 tCustomizationData
 tCylinder
@@ -4063,6 +4154,8 @@ tHull
 tIKData
 tIcon
 tIconScale
+tImpactVelocityRange
+tImpactWeightRange
 tInfo
 tInitialCost
 tInstanceData
@@ -4149,6 +4242,7 @@ tPrepumpDuration
 tPrimaryGroup
 tPrimaryResource
 tPrimaryTag
+tPrivateLevelScaling
 tProcChance
 tPrograms
 tRadius
@@ -4168,9 +4262,11 @@ tSacrifice
 tSavedData
 tSavedPlayerTitle
 tScale
+tScaleRange
 tSceneSpec
 tScriptMessageMap
 tSecondReward
+tSecondaryBlendCase
 tSecondaryGroup
 tSecondaryResource
 tSeed
@@ -4199,10 +4295,13 @@ tSubzoneMarkerSets
 tSwitchBehaviorData
 tSyncedData
 tSystemDuration
+tSystemDurationRange
 tSystemDurationScalar
 tTangents
 tTemplates
 tTexture
+tThresholdAttribute
+tThresholdValueFormula
 tTime
 tTrace
 tTraceId
@@ -4211,6 +4310,7 @@ tTransform
 tTransmog
 tTriangle
 tTriggerData
+tTriggerProxData
 tTurret
 tType
 tUberMaterial
