@@ -136,6 +136,7 @@ AssignArsenalSkillSlotMessage
 AssignClassPassiveSkillSlotMessage
 AssignSkillMessage
 AssignTechniqueSlotMessage
+AtLeastLogicSubcondition
 AttachActorToActorMessage
 AttachCarryableToPlayerMessage
 AttackerEnemiesParam
@@ -199,6 +200,7 @@ CampaignCallbackSubcondition
 CampaignChain
 CampaignData
 Capsule
+CapsuleProximityData
 CardArt
 CarryableGizmoData
 CarryableReceptacleGizmoData
@@ -321,6 +323,7 @@ DebugEventLogMetaData
 DebugProjectileCollisionCheck
 DecalTemplate
 DefaultMaterialValueDefinition
+DefaultTextureInfo
 DemonScrollDefinition
 DemonScrollReward
 DemonSummoningQuestBucket
@@ -357,7 +360,17 @@ EffectGroupDefinition
 EffectGroupHardpoint
 EffectGroupKey
 EffectGroupKeyData
+EffectGroupMaterialValueKeyData
+EffectGroupPositionXKeyData
+EffectGroupPositionYKeyData
+EffectGroupPositionZKeyData
 EffectGroupPreloadHelper
+EffectGroupRotationPitchKeyData
+EffectGroupRotationRollKeyData
+EffectGroupRotationYawKeyData
+EffectGroupScaleXKeyData
+EffectGroupScaleYKeyData
+EffectGroupScaleZKeyData
 EffectGroupTrack
 EffectItem
 EliteKilledMessage
@@ -721,6 +734,7 @@ NpcLookTemplate
 NpcTemplate
 NullProximityData
 OBB
+ObjectiveRegionParams
 ObserverDefinition
 Octree
 OctreeCube
@@ -728,6 +742,7 @@ OctreeLeaf
 OctreeNode
 OctreePrimitive
 OffHandItemLabelSubcondition
+OnAIUpdatePowerCallback
 OnAssistBuffCallback
 OnAssistTriggeredBuffCallback
 OnAttackBuffCallback
@@ -753,6 +768,7 @@ OnInterruptPowerCallback
 OnItemPickupBuffCallback
 OnKillBuffCallback
 OnKillTriggeredBuffCallback
+OnKnockbackEndPowerCallback
 OnPetAddBuffCallback
 OnPetDeathBuffCallback
 OnPhaseEnteredPowerCallback
@@ -869,6 +885,7 @@ PowerConditionDamageHasFortified
 PowerConditionDamageHasVulnerable
 PowerConditionDamageIsCrit
 PowerConditionDamageIsDot
+PowerConditionDamageIsFromPayload
 PowerConditionDamageIsOverpower
 PowerConditionDistanceToTarget
 PowerConditionDungeonTier
@@ -943,6 +960,7 @@ PresetNPCComponent
 PrivateGameSubcondition
 ProjectileImpactEffect
 ProximityAdjustment
+ProximityDataBase
 PublicGameSubcondition
 PvPBucketLevels
 PvPChestGizmoData
@@ -1009,6 +1027,7 @@ SNODataMessage
 SNODiskEntry
 SNOFileHeader
 SNONameDataMessage
+SalvageResultItem
 SalvageResultsMessage
 SalvagedItemLabelSubcondition
 SavePointPortalGizmoData
@@ -1019,6 +1038,7 @@ SavedTransmog
 ScaleCurve
 ScaleKey
 SceneChunk
+SceneCommonSpecification
 SceneData
 SceneDefinition
 SceneSpecification
@@ -1079,9 +1099,11 @@ SerializeContainerData
 SerializeData
 ServerLogMessage
 ServerNotificationDataMessage
+SetBonusTier
 SetIdleAnimationMessage
 SetItemBonusDefinition
 ShaderDefinition
+ShaderInputLayout
 ShaderMapDefinition
 ShaderMapOverride
 ShaderOverride
@@ -1131,6 +1153,7 @@ StencilParams
 StopConvLineMessage
 StoreProductDefinition
 StoryboardDefinition
+StoryboardGenericTrack
 StoryboardTrack
 StringLabelHandleEx
 StringListDefinition
@@ -1184,6 +1207,7 @@ TransmogSlotData
 TransmogSlotMessage
 TraversalGizmoData
 TraversalInstanceData
+TraversalSurfaceOptions
 Triangle2D
 Triangle3D
 TrickleMessage
@@ -1193,6 +1217,7 @@ TriggerData
 TriggerEvent
 TriggerEventActorMovement
 TriggerEventActorPlayAnimation
+TriggerEventAddBaseMountLoadout
 TriggerEventAddEffectGroup
 TriggerEventAddObject
 TriggerEventAddRope
@@ -1337,6 +1362,7 @@ UberMaterial
 UnassignSkillMessage
 UniqueOperatorChestGizmoData
 UpdateConvAutoAdvanceMessage
+UpgradeItemMessage
 UpgradedItemLabelSubcondition
 ValidComponent
 ValidComponents
@@ -1382,8 +1408,17 @@ WorldSyncedData
 WorldSyncedDataMessage
 WorldTierData
 WorldTierSubcondition
+WwiseConversationSoundBank
+WwiseExternalSource
+WwiseExternalSourceSoundBank
 WwiseGameParameter
+WwiseInitSoundBank
+WwiseMetaDataSoundBank
+WwiseName
+WwiseSoundBankContentBase
+WwiseSwitchValue
 XboxConsoleAwardDefinition
+ZoneMapParams
 _11
 _12
 _13
@@ -1437,6 +1472,7 @@ aYaw
 aYawMax
 aYawMin
 aabb
+aabbAppearanceBoundingBox
 aabbBounds
 aabbCollision
 accept
@@ -1717,6 +1753,8 @@ arReputation
 arReputationRewards
 arRequiredCompletedQuests
 arRequiredReputations
+arRequiresNotOwning
+arRequiresOwning
 arResourceCosts
 arRewardData
 arRewardList
@@ -2303,6 +2341,7 @@ eBaseElement
 eBeardState
 eBehavior
 eBehaviorType
+eBendModel
 eBenefitCondition
 eBlendCurve
 eBlendEasing
@@ -2313,6 +2352,7 @@ eBoneWeightSet
 eBonusOperation
 eBountyTier
 eBountyType
+eBreaksOn
 eButtonIconAlignment
 eCCType
 eCategory
@@ -2926,6 +2966,7 @@ flHitFlashMultiplier
 flHitFlashPower
 flHorizontalStiffness
 flHue
+flIconHeightScalar
 flIdleRadius
 flImageScale
 flImpactDirection
@@ -2939,6 +2980,7 @@ flIntensity
 flIrisBrightness
 flIrisRotation
 flIrisRoughness
+flIrisShadowIntensity
 flIrisSize
 flJitterSpeed
 flLODDistance
@@ -2956,6 +2998,9 @@ flLethalExplosionMagnitude
 flLifeStealMultiplier
 flLiftFactor
 flLightningAzimuth
+flLimbusBlur
+flLimbusBrightness
+flLimbusThickness
 flLineDisplayTime
 flLineWidth
 flLinearDamping
@@ -2981,6 +3026,7 @@ flMaxX
 flMaxY
 flMaximumAnimationScale
 flMetalness
+flMicrophoneTiltCorrection
 flMiddleWeight
 flMin
 flMinOffset
@@ -3091,6 +3137,7 @@ flSacredAffixScalarOffense
 flSaturation
 flScale
 flScaredRadius
+flScleraBrightness
 flScleraRoughness
 flScrollbarWidth
 flScrollerEndDelay
@@ -3249,6 +3296,7 @@ gbidReward
 gbidSkillTag
 gbidSpawnLocType
 gbidSpawnLocTypes
+gbidSpawningPool
 gbidSubzoneModifierTag
 gbidSurveyType
 gbidType
@@ -3460,6 +3508,7 @@ nExclusiveGroupId
 nFacing
 nFadeGroup
 nFadeTime
+nFixedIPowerLevel
 nFontSizeFallback
 nFormulaCount
 nFrame
@@ -4317,6 +4366,7 @@ snoPickupOverrideSound
 snoPlayerActor
 snoPlayerAnimSetOverrides
 snoPlayerAttachCondition
+snoPlayerParticipatingEffect
 snoPlayerTitle
 snoPopulation
 snoPortalDestLevelArea
@@ -4527,6 +4577,7 @@ szCameraMarker
 szCameraMarkerName
 szCheat
 szCheatString
+szChosenHex
 szClickPredicate
 szComboboxPlaceholderText
 szCommand
@@ -4977,6 +5028,7 @@ tWeaponData
 tWorldLocationData
 tWorldTransform
 tYaw
+tZoneMapParams
 tail
 top
 transform
