@@ -43,11 +43,11 @@
 0x114: unk_3616d3 # DT_ENUM (32 bits used)
 0x118: unk_41a3d22 # DT_INT (1 bits used)
 0x11c: unk_2df4181 # DT_INT (1 bits used)
-0x120: unk_91a127f # DT_INT (1 bits used)
+0x120: bSetLookAtTarget # DT_INT (1 bits used)
 0x124: bForceSheath # DT_INT (1 bits used)
 0x128: unk_48531b6 # DT_INT (1 bits used)
 0x130: arEndingPreplayed # DT_POLYMORPHIC_VARIABLEARRAY => PowerPhasePreplay
-0x148: unk_fda753d # DT_POLYMORPHIC_VARIABLEARRAY => unknown 0xe24901c6
+0x148: ptPhaseInitialization # DT_POLYMORPHIC_VARIABLEARRAY => unknown 0xe24901c6
 0x160: arPhases # DT_POLYMORPHIC_VARIABLEARRAY => DT_INT64
 0x178: unk_92fea1c # DT_INT (1 bits used)
 0x17c: unk_8cdde38 # DT_INT (1 bits used)
@@ -60,7 +60,7 @@
 0x1c4: unk_7a86b64 # DT_INT (1 bits used)
 0x1c8: eDamageType # DT_ENUM (32 bits used)
 0x1cc: unk_752edeb # DT_INT (1 bits used)
-0x1d0: unk_623da19 # DT_STRING_FORMULA
+0x1d0: tCombatEffectChance # DT_STRING_FORMULA
 0x1f0: unk_7cfb7ba # DT_STRING_FORMULA
 0x210: unk_923b5fb # DT_INT (1 bits used)
 0x214: unk_e517f6f # DT_INT (1 bits used)
@@ -69,7 +69,7 @@
 0x228: unk_1a5392 # DT_INT (32 bits used)
 0x22c: unk_97eadb8 # DT_UINT (32 bits used)
 0x230: unk_5e1a52d # DT_INT (1 bits used)
-0x234: unk_3f1f0ff # DT_INT (1 bits used)
+0x234: bCaptionsInside # DT_INT (1 bits used)
 0x238: eShapeshiftForm # DT_ENUM (32 bits used)
 0x240: arResourceCosts # DT_VARIABLEARRAY => PowerResourceCost
 0x250: tHealthCost # DT_STRING_FORMULA
@@ -81,10 +81,10 @@
 0x310: unk_86a6e05 # DT_STRING_FORMULA
 0x330: bTargetGroundOnly # DT_INT (1 bits used)
 0x334: unk_fc01065 # DT_ENUM (32 bits used)
-0x338: unk_2ce4eb5 # DT_INT (1 bits used)
+0x338: bWalksCloserIfOutOfRange # DT_INT (1 bits used)
 0x33c: bCanSteer # DT_INT (1 bits used)
 0x340: unk_67b65e9 # DT_INT (1 bits used)
-0x344: unk_a00c5eb # DT_INT (1 bits used)
+0x344: bAutoTargetingEnabled # DT_INT (1 bits used)
 0x348: unk_42057f3 # DT_INT (1 bits used)
 0x34c: unk_fbccf7 # DT_INT (1 bits used)
 0x350: unk_7cdc8cb # DT_INT (1 bits used)
@@ -124,14 +124,14 @@
 0x464: unk_f70b0d # DT_ENUM (32 bits used)
 0x468: unk_e65d245 # DT_GBID (32 bits used) {group 0x22}
 0x46c: unk_17dddfd # DT_INT (1 bits used)
-0x470: unk_d897ba6 # unknown 0x9794644b
-0x4e8: unk_4d3c3c1 # DT_ENUM (32 bits used)
-0x4ec: unk_d2e4b3e # DT_ENUM (32 bits used)
+0x470: unk_d897ba6 # ActorMovementPowerData
+0x4e8: eMovementStyleOverride # DT_ENUM (32 bits used)
+0x4ec: eFacingStyleOverride # DT_ENUM (32 bits used)
 0x4f0: unk_6714077 # DT_INT (1 bits used)
 0x4f4: bRequiresActorTarget # DT_INT (1 bits used)
 0x4f8: unk_805ebfc # DT_INT (1 bits used)
 0x4fc: unk_b4ad6e7 # DT_INT (1 bits used)
-0x500: unk_6fdff1 # DT_ENUM (32 bits used)
+0x500: eLOSCheck # DT_ENUM (32 bits used)
 0x504: unk_ea58c49 # DT_FLOAT (32 bits used)
 0x508: unk_692752d # DT_FLOAT (32 bits used)
 0x50c: unk_eb84fbe # DT_INT (1 bits used)
@@ -150,7 +150,7 @@
 0xa7c: snoItemRequirement # DT_SNO (32 bits used) {group 0x49 "Item"}
 0xa80: snoHeroConditionRequirement # DT_SNO (32 bits used) {group 0x33 "Condition"}
 0xa84: bUsableInTown # DT_INT (1 bits used)
-0xa88: unk_f49838b # DT_INT (1 bits used)
+0xa88: bUsableInCombat # DT_INT (1 bits used)
 0xa8c: bIsCraftItemName # DT_INT (1 bits used)
 0xa90: unk_744a4fd # DT_INT (1 bits used)
 0xa94: unk_a8611dd # DT_INT (1 bits used)
@@ -159,12 +159,12 @@
 0xaa0: unk_9aaab79 # DT_INT (1 bits used)
 0xaa4: unk_b15bf7f # DT_INT (1 bits used)
 0xaa8: unk_8fe39cf # DT_UINT (32 bits used)
-0xaac: unk_ef10d9b # DT_INT (1 bits used)
-0xab0: unk_ecb7a82 # DT_INT (1 bits used)
+0xaac: bPassabilityDuringEnabled # DT_INT (1 bits used)
+0xab0: bPassabilityDestEnabled # DT_INT (1 bits used)
 0xab4: arCollisionSettings # DT_FIXEDARRAY [2 array size] => CollisionSettings
 0xadc: fCannotLMBAssign # DT_INT (1 bits used)
-0xae0: unk_2e3cde8 # DT_INT (1 bits used)
-0xae4: unk_fc20c9f # DT_INT (1 bits used)
+0xae0: fMouseAssignable # DT_INT (1 bits used)
+0xae4: fHotbarAssignable # DT_INT (1 bits used)
 0xae8: unk_a75e08a # DT_INT (1 bits used)
 0xaec: unk_89134c5 # DT_INT (1 bits used)
 0xaf0: hIconNormal # DT_UINT (32 bits used)

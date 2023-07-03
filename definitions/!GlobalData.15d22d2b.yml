@@ -82,7 +82,7 @@
 0x198: unk_882ccc8 # DT_FLOAT (32 bits used)
 0x19c: flMonsterCritDamageScalar # DT_FLOAT (32 bits used)
 0x1a0: flPlayerCritDamageScalar # DT_FLOAT (32 bits used)
-0x1a4: unk_976d470 # DT_FLOAT (32 bits used)
+0x1a4: flPvPMaxCritDamagePercent # DT_FLOAT (32 bits used)
 0x1a8: unk_66251ff # DT_FLOAT (32 bits used)
 0x1ac: unk_251341c # DT_FLOAT (32 bits used)
 0x1b0: unk_352d6bc # DT_FLOAT (32 bits used)
@@ -92,16 +92,16 @@
 0x1c0: unk_d37d3d4 # DT_FLOAT (32 bits used)
 0x1c4: nStashSlotsCost # DT_INT (32 bits used)
 0x1c8: nStashTabCost # DT_FIXEDARRAY (32 bits used) [4 array size] => DT_INT
-0x1d8: unk_78da4f8 # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
+0x1d8: nClanBankTabCost # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
 0x1f0: unk_a9e9f16 # DT_STRING_FORMULA
 0x210: unk_ea4532f # DT_STRING_FORMULA
-0x230: unk_ff18811 # DT_INT (32 bits used)
+0x230: nItemPowerOffset # DT_INT (32 bits used)
 0x234: unk_62802da # DT_INT (32 bits used)
 0x238: unk_3c98a40 # DT_INT (32 bits used)
 0x23c: unk_21a6a21 # DT_INT (32 bits used)
 0x240: unk_60132bb # DT_INT (32 bits used)
 0x248: arStartingParagonGlyphs # DT_VARIABLEARRAY (32 bits used) {group 0x6f "ParagonGlyph"} => DT_SNO
-0x258: unk_d5f76ea # DT_FIXEDARRAY (32 bits used) [11 array size] => DT_FLOAT
+0x258: arParagonPowerBudgetMultiplier # DT_FIXEDARRAY (32 bits used) [11 array size] => DT_FLOAT
 0x284: unk_4b766ae # DT_FLOAT (32 bits used)
 0x288: unk_5a673c4 # DT_FLOAT (32 bits used)
 0x28c: unk_4a89716 # DT_FLOAT (32 bits used)
@@ -123,8 +123,8 @@
 0x430: unk_7452a15 # DT_INT (32 bits used)
 0x434: unk_4b7eea0 # DT_INT (32 bits used)
 0x438: unk_3890cf4 # DT_FLOAT (32 bits used)
-0x43c: unk_4e9b997 # DT_FLOAT (32 bits used)
-0x440: unk_1bfea8a # DT_FLOAT (32 bits used)
+0x43c: flLegendaryAffixTwoHandBonus # DT_FLOAT (32 bits used)
+0x440: flLegendaryAffixAmuletBonus # DT_FLOAT (32 bits used)
 0x444: flSacredAffixScalarOffense # DT_FLOAT (32 bits used)
 0x448: flSacredAffixScalarDefense # DT_FLOAT (32 bits used)
 0x44c: flAncestralAffixScalarOffense # DT_FLOAT (32 bits used)
@@ -174,7 +174,7 @@
 0x608: unk_468a2dc # DT_FLOAT (32 bits used)
 0x60c: unk_3debe95 # DT_FLOAT (32 bits used)
 0x610: unk_e8e5c04 # DT_FLOAT (32 bits used)
-0x614: unk_c19e188 # DT_FLOAT (32 bits used)
+0x614: flVulnerableDamageBonus # DT_FLOAT (32 bits used)
 0x618: unk_2c3c144 # DT_FLOAT (32 bits used)
 0x61c: unk_e82db97 # DT_FLOAT (32 bits used)
 0x620: unk_c097750 # DT_FLOAT (32 bits used)
@@ -263,7 +263,7 @@
 0x804: unk_b01ac6a # DT_FLOAT (32 bits used)
 0x808: unk_e0fb29d # DT_FLOAT (32 bits used)
 0x80c: nControllerReboundDuration # DT_INT (32 bits used)
-0x810: unk_a41f4fc # DT_FLOAT (32 bits used)
+0x810: flFacingMult # DT_FLOAT (32 bits used)
 0x814: unk_eb3e3e1 # DT_FLOAT (32 bits used)
 0x818: unk_724e40 # DT_FLOAT (32 bits used)
 0x81c: flControllerNormalTurnSpeed # DT_FLOAT (32 bits used)
@@ -357,9 +357,9 @@
 0xa48: unk_c84a3db # DT_FLOAT (32 bits used)
 0xa4c: unk_fc90e9d # DT_FLOAT (32 bits used)
 0xa50: flChillDuration # DT_FLOAT (32 bits used)
-0xa54: unk_96c2aec # DT_FLOAT (32 bits used)
+0xa54: flFrozenDuration # DT_FLOAT (32 bits used)
 0xa58: unk_66303a6 # DT_FLOAT (32 bits used)
-0xa5c: unk_611fb0f # DT_RANGE => DT_INT
+0xa5c: tConfuseRadius # DT_RANGE => DT_INT
 0xa64: unk_421e1a # DT_FLOAT (32 bits used)
 0xa68: unk_fd978e4 # DT_FLOAT (32 bits used)
 0xa6c: unk_5e484f3 # DT_FLOAT (32 bits used)
@@ -384,7 +384,7 @@
 0xaf4: unk_d85b358 # DT_INT (32 bits used)
 0xaf8: unk_463f23c # DT_FIXEDARRAY (32 bits used) [3 array size] => DT_INT
 0xb08: arWorldTiers # DT_FIXEDARRAY [4 array size] => WorldTierData
-0xe68: unk_acf9234 # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_FLOAT
+0xe68: arFlippyHangTime # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_FLOAT
 0xe7c: unk_c9c1b78 # DT_FIXEDARRAY (32 bits used) [5 array size] {group 0x1b "Particle"} => DT_SNO
 0xe90: unk_765a638 # DT_FLOAT (32 bits used)
 0xe94: unk_d12a366 # DT_FLOAT (32 bits used)
@@ -401,7 +401,7 @@
 0xedc: unk_5d34691 # DT_FLOAT (32 bits used)
 0xee0: unk_237d1fa # DT_FLOAT (32 bits used)
 0xee4: unk_38a54aa # DT_UINT (32 bits used)
-0xee8: unk_fc0177a # DT_UINT (32 bits used)
+0xee8: nDRLGSeedType # DT_UINT (32 bits used)
 0xeec: unk_71d473f # DT_FLOAT (32 bits used)
 0xef0: unk_7a4dcca # DT_FLOAT (32 bits used)
 0xef4: unk_97bf60d # DT_FLOAT (32 bits used)
@@ -430,7 +430,7 @@
 0xf50: unk_8d7337 # DT_FLOAT (32 bits used)
 0xf54: unk_d714948 # DT_FLOAT (32 bits used)
 0xf58: unk_4e0583b # DT_FLOAT (32 bits used)
-0xf5c: unk_92b61b5 # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
+0xf5c: nTransmogSnapshotCosts # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
 0xf70: unk_fd42f01 # DT_VARIABLEARRAY (32 bits used) {group 0x16 "LevelArea"} => DT_SNO
 0xf80: unk_91356ce # DT_FLOAT (32 bits used)
 0xf84: unk_4ab0243 # DT_INT (32 bits used)
@@ -448,8 +448,8 @@
 0x10c8: unk_2bb7f27 # DT_FLOAT (32 bits used)
 0x10cc: unk_50c5dba # DT_FLOAT (32 bits used)
 0x10d0: unk_a19cbf3 # DT_FLOAT (32 bits used)
-0x10d4: unk_72c4d45 # DT_FLOAT (32 bits used)
-0x10d8: unk_5fd762b # DT_FLOAT (32 bits used)
+0x10d4: flPowerEffectIntensityPerSkillRank # DT_FLOAT (32 bits used)
+0x10d8: flMaxPowerEffectIntensityFromSkillRanks # DT_FLOAT (32 bits used)
 0x10dc: unk_57c5af4 # DT_FLOAT (32 bits used)
 0x10e0: unk_7125533 # DT_VARIABLEARRAY => unknown 0xb9be6132
 0x10f0: unk_5beabc1 # DT_FLOAT (32 bits used)
