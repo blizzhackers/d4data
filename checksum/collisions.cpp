@@ -411,20 +411,6 @@ std::vector<std::string> getDict(std::string dictPathOrString) {
   return ret;
 }
 
-std::vector<std::string> getPrefixes() {
-  std::ifstream prefixes("../prefix.txt");
-  std::string tmp;
-  std::vector<std::string> ret;
-
-  prefixes >> tmp;
-  while (prefixes) {
-    ret.push_back(tmp);
-    prefixes >> tmp;
-  }
-
-  return ret;
-}
-
 bool isAllCaps(std::string elem) {
   if (elem.length() < 2) {
     return false;
@@ -771,7 +757,7 @@ int main(int argc, char *argv[]) {
         paired = true;
       }
       else if(arg == "--english") {
-        dictPathOrString = "../english.txt";
+        dictPathOrString = "../english_dict.txt";
       }
       else if(arg == "--expanded") {
         dictPathOrString = "../dict_expanded.txt";
@@ -935,7 +921,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (useDict) {
-    for (const auto &baseelem : (useDict ? getDict(dictPathOrString) : defaultDict)) {
+    for (const auto &baseelem : getDict(dictPathOrString)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
         std::string newelem = elem;
@@ -966,13 +952,28 @@ int main(int argc, char *argv[]) {
     dict.push_back(elem.first);
   }
 
-  if (hashType == 1 && !noPrefix && subdict[0].size() < 1) {
-    subdict[0] = getPrefixes();
-    subdict[0].push_back("");
-  }
-
   if (hashType == 1) {
     loadFieldTypeMap();
+
+    if (!noPrefix && subdict[0].size() < 1) {
+      subdict[0].push_back("");
+
+      std::unordered_map<std::string, bool> prefixMap;
+
+      for (const auto &fieldEntry : fieldTypeMap) {
+        if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {
+          for (const auto &typeHash : fieldEntry.second) {
+            for (const auto &prefix : typePrefixes[typeHash]) {
+              prefixMap[prefix] = true;
+            }
+          }
+        }
+      }
+
+      for (const auto &prefixMapEntry : prefixMap) {
+        subdict[0].push_back(prefixMapEntry.first);
+      }
+    }
   }
 
   workerCount -= 1;
