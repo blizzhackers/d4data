@@ -461,7 +461,6 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[1028170061].insert("n");
   typePrefixes[1028680983].insert("dw");
   typePrefixes[1028680983].insert("h");
-  typePrefixes[1028680983].insert("n");
   typePrefixes[1028680983].insert("sz");
   typePrefixes[1028680983].insert("u");
   if (!common) typePrefixes[1028680983].insert("s");
@@ -526,7 +525,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[2594652800].insert("path");
   typePrefixes[2764320258].insert("b");
   if (!common) typePrefixes[2764320258].insert("count");
-  typePrefixes[2764320258].insert("dw");
   if (!common) typePrefixes[2764320258].insert("e");
   typePrefixes[2764320258].insert("f");
   if (!common) typePrefixes[2764320258].insert("i");
