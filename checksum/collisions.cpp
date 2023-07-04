@@ -117,8 +117,9 @@ auto getDictSize(long pos, long max) {
   }
 
   // If positional dict overrides exist, use those.
-  if (subdict[pos].size() > 0) {
-    return subdict[pos].size();
+  const auto subdictSize = subdict[pos].size();
+  if (subdictSize > 0) {
+    return subdictSize;
   }
 
   return dict.size();
@@ -131,18 +132,19 @@ const std::string &getDictEntry(long index, long pos, long max) {
   }
 
   // If positional dict overrides exist, use those.
-  if (subdict[pos].size() > 0) {
-    return subdict[pos][index];
+  const auto &subdictEntry = subdict[pos];
+  if (!subdictEntry.empty()) {
+    return subdictEntry[index];
   }
 
   return dict[index];
 }
 
 std::string getWord(uint32_t *tmp, int32_t max) {
-  std::string ret = "";
+  std::string ret;
 
   for (int32_t pos = 0; pos < max; pos++) {
-    ret = ret + getDictEntry(tmp[pos], pos, max);
+    ret += getDictEntry(tmp[pos], pos, max);
   }
 
   return ret;
@@ -205,8 +207,9 @@ bool correctType(uint32_t *tmp, uint32_t currentChecksum) {
   }
 
   for (uint32_t typeHash : fieldTypeMap[currentChecksum]) {
-    if (typePrefixes[typeHash].size()) {
-      return typePrefixes[typeHash].count(subdict[0][tmp[0]]) > 0;
+    const auto &prefixes = typePrefixes[typeHash];
+    if (!prefixes.empty()) {
+      return prefixes.count(subdict[0][tmp[0]]) > 0;
     }
     else {
       return false; //typePrefixes[0].count(subdict[0][tmp[0]]) > 0;
