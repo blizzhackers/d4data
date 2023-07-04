@@ -91,7 +91,7 @@ uint32_t typeChecksum(const std::string &str, uint32_t hash) {
   return hash;
 }
 
-uint32_t typeChecksumNonRef(std::string str, uint32_t hash) {
+uint32_t typeChecksumNonRef(const std::string &str, uint32_t hash) {
   return typeChecksum(str, hash);
 }
 
@@ -104,7 +104,7 @@ uint32_t fieldChecksum(const std::string &str, uint32_t hash) {
   return hash & 0xfffffff;
 }
 
-uint32_t fieldChecksumNonRef(std::string str, uint32_t hash) {
+uint32_t fieldChecksumNonRef(const std::string &str, uint32_t hash) {
   return fieldChecksum(str, hash);
 }
 
@@ -117,12 +117,12 @@ uint32_t gbidChecksum(const std::string &str, uint32_t hash) {
   return hash;
 }
 
-uint32_t gbidChecksumNonRef(std::string str, uint32_t hash) {
+uint32_t gbidChecksumNonRef(const std::string &str, uint32_t hash) {
   return gbidChecksum(str, hash);
 }
 
 uint32_t (*checksum)(const std::string &str, uint32_t hash) = typeChecksum;
-uint32_t (*checksumNonRef)(std::string str, uint32_t hash) = typeChecksumNonRef;
+uint32_t (*checksumNonRef)(const std::string &str, uint32_t hash) = typeChecksumNonRef;
 
 auto getDictSize(long pos, long max) {
   // If suffixes exist, use those.
@@ -138,7 +138,7 @@ auto getDictSize(long pos, long max) {
   return dict.size();
 }
 
-std::string getDictEntry(long index, long pos, long max) {
+const std::string &getDictEntry(long index, long pos, long max) {
   // If suffixes exist, use those.
   if (subdict[63].size() > 0 && pos == max - 1) {
     pos = 63;
