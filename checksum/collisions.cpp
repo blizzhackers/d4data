@@ -46,7 +46,6 @@ bool paired = false, usingFieldTypeMap = false;
 
 std::vector<std::string> subdict[64];
 std::vector<std::string> dict;
-std::unordered_map<std::string, bool> stringUsed;
 std::unordered_map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
 std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 
@@ -147,16 +146,6 @@ std::string getWord(uint32_t *tmp, int32_t max) {
   }
 
   return ret;
-}
-
-bool hasCaps(std::string word) {
-  for (uint32_t c = 0; c < word.size(); c++) {
-    if (word[c] >= 'A' && word[c] <= 'Z') {
-      return true;
-    }
-  }
-
-  return false;
 }
 
 bool checkPaired(uint32_t *tmp, int32_t max) {
@@ -854,7 +843,6 @@ int main(int argc, char *argv[]) {
     paired = false;
   }
 
-  int32_t dictmax = dict.size();
   std::unordered_map<std::string, bool> dictmap;
 
   if (useDict) {
