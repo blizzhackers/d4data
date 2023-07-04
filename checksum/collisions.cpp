@@ -581,6 +581,7 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[3244749660].insert("ser");
   typePrefixes[3244749660].insert("sno");
   if (!common) typePrefixes[3244749660].insert("v");
+  typePrefixes[3339108615].insert("snoname");
   typePrefixes[3339108615].insert("sno");
   typePrefixes[3384912071].insert("ws");
   typePrefixes[3422409450].insert("path");
