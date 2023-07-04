@@ -906,7 +906,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (hashType == 1) {
-    if (noPrefix) {
+    if (noPrefix && subdict[0].size() < 1) {
       std::transform(dict.cbegin(), dict.cend(), std::back_inserter(subdict[0]), [](std::string s) {
         if (!s.empty()) {
             s[0] = std::tolower(s[0]);
@@ -969,6 +969,8 @@ int main(int argc, char *argv[]) {
       outputLock.unlock();
       collisions(masterTmp, 0, c + 1, 0, hashCount, false);
     }
+
+    terminating = true;
 
     auto seconds = (float)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - start).count() / 1000000.f;
 
