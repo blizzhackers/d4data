@@ -425,7 +425,7 @@ bool isAllCaps(std::string elem) {
   return true;
 }
 
-void loadFieldTypeMap () {
+void loadFieldTypeMap (bool common = true) {
   std::ifstream fieldTypes("../field_types.txt");
   uint32_t v1 = 0, v2 = 0;
 
@@ -441,238 +441,189 @@ void loadFieldTypeMap () {
   fieldTypes.close();
 
   typePrefixes[0].insert(""); // ?
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("a"); // DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_a"); // DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_ar"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_arn"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_arr"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("b"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_b"); // DT_INT
-  typePrefixes[0].insert("bc"); // ?
-  typePrefixes[0].insert("m_bc"); // ?
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("bone"); // DT_WORD, DT_INT
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_bone"); // DT_WORD, DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("bone"); // DT_WORD, DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_bone"); // DT_WORD, DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("AICellData", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("AICellData", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("AICellBytes", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("AICellBytes", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("m_cell"); // ?, DT_INT64, AICellData, AICellBytes, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("count"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_count"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("dw"); // DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_dw"); // DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("e"); // DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("m_e"); // DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("end"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_end"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("f"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_f"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("fl"); // DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("m_fl"); // DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("game"); // DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("m_game"); // DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_GBID", 0)].insert("gbid"); // DT_GBID
-  typePrefixes[typeChecksumNonRef("DT_GBID", 0)].insert("m_gbid"); // DT_GBID
-  typePrefixes[0].insert("h"); // ?, DT_UINT
-  typePrefixes[0].insert("m_h"); // ?, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("h"); // ?, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_h"); // ?, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("i"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_i"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_SHARED_SERVER_DATA_ID", 0)].insert("id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_SHARED_SERVER_DATA_ID", 0)].insert("m_id"); // ?, DT_ENUM, DT_INT, DT_UINT, DT_SHARED_SERVER_DATA_ID
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("m_inv"); // DT_VECTOR4D, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("is"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_is"); // DT_INT
-  typePrefixes[0].insert("l"); // ?
-  typePrefixes[0].insert("m_l"); // ?
-  typePrefixes[typeChecksumNonRef("PRTransform", 0)].insert("local"); // PRTransform, 0x5f527528
-  typePrefixes[typeChecksumNonRef("PRTransform", 0)].insert("m_local"); // PRTransform, 0x5f527528
-  typePrefixes[0x5f527528].insert("local"); // PRTransform, 0x5f527528
-  typePrefixes[0x5f527528].insert("m_local"); // PRTransform, 0x5f527528
-  typePrefixes[typeChecksumNonRef("Matrix3x3", 0)].insert("m"); // Matrix3x3
-  typePrefixes[typeChecksumNonRef("Matrix3x3", 0)].insert("m_m"); // Matrix3x3
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("max"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_max"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("m_n"); // DT_INT, DT_UINT, DT_WORD, DT_INT64, DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("m_p"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("parent"); // DT_INT64, DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_parent"); // DT_INT64, DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("parent"); // DT_INT64, DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_parent"); // DT_INT64, DT_WORD
-  typePrefixes[typeChecksumNonRef("VectorPath", 0)].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[typeChecksumNonRef("VectorPath", 0)].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0xcbfdd2ea].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0xcbfdd2ea].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0x560ae4cf].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0x560ae4cf].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0xcc354444].insert("path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[0xcc354444].insert("m_path"); // VectorPath, 0xcbfdd2ea, 0x560ae4cf, 0xcc354444
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_pdw"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY
-  typePrefixes[typeChecksumNonRef("DT_GBID", 0)].insert("pgbid"); // DT_GBID
-  typePrefixes[typeChecksumNonRef("DT_GBID", 0)].insert("m_pgbid"); // DT_GBID
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("plane"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_plane"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("pn"); // DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_pn"); // DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_VARIABLEARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_POLYMORPHIC_VARIABLEARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_FIXEDARRAY", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_pt"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_pwv"); // DT_VARIABLEARRAY, DT_POLYMORPHIC_VARIABLEARRAY, DT_FIXEDARRAY, DT_INT64
-  typePrefixes[typeChecksumNonRef("bcQuat", 0)].insert("q"); // bcQuat
-  typePrefixes[typeChecksumNonRef("bcQuat", 0)].insert("m_q"); // bcQuat
-  typePrefixes[typeChecksumNonRef("DT_RGBACOLOR", 0)].insert("rgba"); // DT_RGBACOLOR
-  typePrefixes[typeChecksumNonRef("DT_RGBACOLOR", 0)].insert("m_rgba"); // DT_RGBACOLOR
-  typePrefixes[typeChecksumNonRef("DT_RGBACOLORVALUE", 0)].insert("rgbaval"); // DT_RGBACOLORVALUE
-  typePrefixes[typeChecksumNonRef("DT_RGBACOLORVALUE", 0)].insert("m_rgbaval"); // DT_RGBACOLORVALUE
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[0xcc139f31].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[0xcc139f31].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[0xe562d892].insert("s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[0xe562d892].insert("m_s"); // DT_UINT, 0xcc139f31, 0xe562d892
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("sample"); // DT_INT
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_sample"); // DT_INT
-  typePrefixes[typeChecksumNonRef("SerializeData", 0)].insert("ser"); // SerializeData
-  typePrefixes[typeChecksumNonRef("SerializeData", 0)].insert("m_ser"); // SerializeData
-  typePrefixes[typeChecksumNonRef("DT_SNO", 0)].insert("sno"); // DT_SNO
-  typePrefixes[typeChecksumNonRef("DT_SNO", 0)].insert("m_sno"); // DT_SNO
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("start"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_start"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_CHARARRAY", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_CHARARRAY", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_STRING_FORMULA", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_STRING_FORMULA", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_CSTRING", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_CSTRING", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_sz"); // DT_CHARARRAY, DT_STRING_FORMULA, DT_CSTRING, DT_UINT
-  typePrefixes[0].insert("t"); // ?, DT_ENUM
-  typePrefixes[0].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("t"); // ?, DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_ENUM", 0)].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_STRING_FORMULA", 0)].insert("t"); // ?, DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_STRING_FORMULA", 0)].insert("m_t"); // ?, DT_ENUM
-  typePrefixes[typeChecksumNonRef("DT_TAGMAP", 0)].insert("tag"); // DT_TAGMAP
-  typePrefixes[typeChecksumNonRef("DT_TAGMAP", 0)].insert("m_tag"); // DT_TAGMAP
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("twin"); // DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("m_twin"); // DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_UINT", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_STARTLOC_NAME", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_STARTLOC_NAME", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_INT64", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_BYTE", 0)].insert("m_u"); // DT_UINT, DT_STARTLOC_NAME, DT_WORD, DT_INT64, DT_BYTE
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("m_v"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_VECTOR4D", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_INT", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_BCVEC2I", 0)].insert("m_vec"); // DT_VECTOR2D, DT_VECTOR3D, DT_VECTOR4D, DT_INT, DT_BCVEC2I
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("vertex"); // DT_WORD
-  typePrefixes[typeChecksumNonRef("DT_WORD", 0)].insert("m_vertex"); // DT_WORD
-  typePrefixes[0].insert("vw"); // ?
-  typePrefixes[0].insert("m_vw"); // ?
-  typePrefixes[typeChecksumNonRef("AxialCylinder", 0)].insert("wcyl"); // AxialCylinder
-  typePrefixes[typeChecksumNonRef("AxialCylinder", 0)].insert("m_wcyl"); // AxialCylinder
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("wd"); // DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_FLOAT", 0)].insert("m_wd"); // DT_FLOAT
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("m_wp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[0].insert("wr"); // ?
-  typePrefixes[0].insert("m_wr"); // ?
-  typePrefixes[typeChecksumNonRef("Sphere", 0)].insert("ws"); // Sphere
-  typePrefixes[typeChecksumNonRef("Sphere", 0)].insert("m_ws"); // Sphere
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR2D", 0)].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("m_wv"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("wvp"); // DT_VECTOR2D, DT_VECTOR3D
-  typePrefixes[typeChecksumNonRef("DT_VECTOR3D", 0)].insert("m_wvp"); // DT_VECTOR2D, DT_VECTOR3D
+
+  typePrefixes[2408934].insert("aabb");
+  if (!common) typePrefixes[231895989].insert("h");
+  typePrefixes[248064347].insert("wp");
+  typePrefixes[721585600].insert("h");
+  typePrefixes[1028015787].insert("dw");
+  if (!common) typePrefixes[1028015787].insert("u");
+  if (!common) typePrefixes[1028015787].insert("n");
+  if (!common) typePrefixes[1028015787].insert("game");
+  if (!common) typePrefixes[1028015787].insert("b");
+  if (!common) typePrefixes[1028015787].insert("twin");
+  typePrefixes[1028111660].insert("e");
+  if (!common) typePrefixes[1028111660].insert("id");
+  if (!common) typePrefixes[1028111660].insert("n");
+  if (!common) typePrefixes[1028111660].insert("dw");
+  if (!common) typePrefixes[1028111660].insert("sno");
+  typePrefixes[1028170061].insert("gbid");
+  if (!common) typePrefixes[1028170061].insert("n");
+  typePrefixes[1028680983].insert("dw");
+  typePrefixes[1028680983].insert("h");
+  typePrefixes[1028680983].insert("n");
+  typePrefixes[1028680983].insert("sz");
+  typePrefixes[1028680983].insert("u");
+  if (!common) typePrefixes[1028680983].insert("s");
+  if (!common) typePrefixes[1028680983].insert("id");
+  if (!common) typePrefixes[1028680983].insert("w");
+  if (!common) typePrefixes[1028680983].insert("b");
+  if (!common) typePrefixes[1028680983].insert("sno");
+  typePrefixes[1028759507].insert("bone");
+  typePrefixes[1028759507].insert("dw");
+  if (!common) typePrefixes[1028759507].insert("vertex");
+  if (!common) typePrefixes[1028759507].insert("kinematic");
+  if (!common) typePrefixes[1028759507].insert("triangle");
+  if (!common) typePrefixes[1028759507].insert("constraint");
+  if (!common) typePrefixes[1028759507].insert("max");
+  if (!common) typePrefixes[1028759507].insert("plane");
+  typePrefixes[1028759507].insert("n");
+  typePrefixes[1028759507].insert("u");
+  if (!common) typePrefixes[1028759507].insert("m_bone");
+  if (!common) typePrefixes[1028759507].insert("parent");
+  if (!common) typePrefixes[1028759507].insert("attachment");
+  if (!common) typePrefixes[1028759507].insert("start");
+  if (!common) typePrefixes[1028759507].insert("end");
+  typePrefixes[1443554511].insert("path");
+  typePrefixes[1599239464].insert("local");
+  typePrefixes[1599239464].insert("m_local");
+  typePrefixes[1683664497].insert("pt");
+  typePrefixes[1683664497].insert("ar");
+  typePrefixes[1797021084].insert("h");
+  if (!common) typePrefixes[1797021084].insert("ar");
+  typePrefixes[1931092405].insert("vec");
+  typePrefixes[1931092405].insert("p");
+  typePrefixes[2170423475].insert("m");
+  typePrefixes[2175310548].insert("sz");
+  typePrefixes[2175310548].insert("us");
+  typePrefixes[2193642883].insert("u");
+  typePrefixes[2193642883].insert("dw");
+  typePrefixes[2384880434].insert("rgba");
+  if (!common) typePrefixes[2384880434].insert("fl");
+  typePrefixes[2388214534].insert("a");
+  typePrefixes[2388214534].insert("ar");
+  if (!common) typePrefixes[2388214534].insert("arn");
+  typePrefixes[2388214534].insert("arr");
+  typePrefixes[2388214534].insert("at");
+  typePrefixes[2388214534].insert("dw");
+  typePrefixes[2388214534].insert("e");
+  typePrefixes[2388214534].insert("f");
+  typePrefixes[2388214534].insert("fl");
+  if (!common) typePrefixes[2388214534].insert("h");
+  typePrefixes[2388214534].insert("n");
+  typePrefixes[2388214534].insert("p");
+  if (!common) typePrefixes[2388214534].insert("pdw");
+  if (!common) typePrefixes[2388214534].insert("pgbid");
+  typePrefixes[2388214534].insert("pt");
+  typePrefixes[2388214534].insert("rgba");
+  typePrefixes[2388214534].insert("sno");
+  typePrefixes[2388214534].insert("sz");
+  if (!common) typePrefixes[2388214534].insert("v");
+  if (!common) typePrefixes[2388214534].insert("vec");
+  typePrefixes[2450313795].insert("v");
+  typePrefixes[2450313795].insert("sz");
+  typePrefixes[2588169118].insert("local");
+  typePrefixes[2594652800].insert("path");
+  typePrefixes[2764320258].insert("b");
+  if (!common) typePrefixes[2764320258].insert("count");
+  typePrefixes[2764320258].insert("dw");
+  if (!common) typePrefixes[2764320258].insert("e");
+  typePrefixes[2764320258].insert("f");
+  if (!common) typePrefixes[2764320258].insert("i");
+  typePrefixes[2764320258].insert("id");
+  if (!common) typePrefixes[2764320258].insert("is");
+  if (!common) typePrefixes[2764320258].insert("m_");
+  if (!common) typePrefixes[2764320258].insert("m_bone");
+  if (!common) typePrefixes[2764320258].insert("m_face");
+  if (!common) typePrefixes[2764320258].insert("m_plane");
+  if (!common) typePrefixes[2764320258].insert("m_vertex");
+  typePrefixes[2764320258].insert("n");
+  if (!common) typePrefixes[2764320258].insert("sample");
+  if (!common) typePrefixes[2764320258].insert("sno");
+  if (!common) typePrefixes[2764320258].insert("w");
+  typePrefixes[2764331143].insert("sno");
+  if (!common) typePrefixes[2764331143].insert("h");
+  typePrefixes[2866333320].insert("ann");
+  if (!common) typePrefixes[2866333320].insert("m_ann");
+  typePrefixes[3017070665].insert("wcyl");
+  typePrefixes[3045283369].insert("id");
+  typePrefixes[3063971755].insert("h");
+  if (!common) typePrefixes[3121633597].insert("a");
+  typePrefixes[3121633597].insert("ann");
+  typePrefixes[3121633597].insert("b");
+  typePrefixes[3121633597].insert("dw");
+  typePrefixes[3121633597].insert("e");
+  if (!common) typePrefixes[3121633597].insert("f");
+  typePrefixes[3121633597].insert("fl");
+  typePrefixes[3121633597].insert("h");
+  typePrefixes[3121633597].insert("n");
+  if (!common) typePrefixes[3121633597].insert("q");
+  typePrefixes[3121633597].insert("sno");
+  typePrefixes[3121633597].insert("u");
+  typePrefixes[3121633597].insert("v");
+  typePrefixes[3121633597].insert("wp");
+  typePrefixes[3124492544].insert("v");
+  typePrefixes[3124492544].insert("vec");
+  if (!common) typePrefixes[3124492544].insert("wp");
+  if (!common) typePrefixes[3124492544].insert("wv");
+  typePrefixes[3124492577].insert("wv");
+  typePrefixes[3124492577].insert("wp");
+  typePrefixes[3124492577].insert("v");
+  typePrefixes[3124492577].insert("vec");
+  if (!common) typePrefixes[3124492610].insert("inv");
+  if (!common) typePrefixes[3124492610].insert("m_inv");
+  if (!common) typePrefixes[3124492610].insert("pt");
+  typePrefixes[3124492610].insert("v");
+  if (!common) typePrefixes[3124492610].insert("vec");
+  typePrefixes[3212271855].insert("rgbaval");
+  typePrefixes[3244749660].insert("ar");
+  if (!common) typePrefixes[3244749660].insert("gbid");
+  if (!common) typePrefixes[3244749660].insert("m_cell");
+  typePrefixes[3244749660].insert("p");
+  typePrefixes[3244749660].insert("path");
+  typePrefixes[3244749660].insert("pt");
+  if (!common) typePrefixes[3244749660].insert("pwv");
+  if (!common) typePrefixes[3244749660].insert("ser");
+  typePrefixes[3244749660].insert("sno");
+  if (!common) typePrefixes[3244749660].insert("v");
+  typePrefixes[3339108615].insert("sno");
+  typePrefixes[3384912071].insert("ws");
+  typePrefixes[3422409450].insert("path");
+  typePrefixes[3423838001].insert("s");
+  typePrefixes[3493213809].insert("m_e");
+  if (!common) typePrefixes[3493213809].insert("h");
+  typePrefixes[3846829457].insert("sz");
+  if (!common) typePrefixes[3846829457].insert("n");
+  typePrefixes[3846829457].insert("s");
+  typePrefixes[3848460434].insert("s");
+  typePrefixes[3864020909].insert("a");
+  if (!common) typePrefixes[3864020909].insert("cell");
+  if (!common) typePrefixes[3864020909].insert("dw");
+  typePrefixes[3864020909].insert("f");
+  typePrefixes[3864020909].insert("fl");
+  if (!common) typePrefixes[3864020909].insert("inv");
+  if (!common) typePrefixes[3864020909].insert("m_cell");
+  typePrefixes[3864020909].insert("n");
+  if (!common) typePrefixes[3864020909].insert("pt");
+  typePrefixes[3864020909].insert("wd");
+  typePrefixes[3867655596].insert("a");
+  if (!common) typePrefixes[3867655596].insert("blend");
+  if (!common) typePrefixes[3867655596].insert("constraint");
+  typePrefixes[3867655596].insert("dw");
+  if (!common) typePrefixes[3867655596].insert("follower");
+  typePrefixes[3867655596].insert("m_a");
+  if (!common) typePrefixes[3867655596].insert("m_cell");
+  typePrefixes[3867655596].insert("n");
+  if (!common) typePrefixes[3867655596].insert("parent");
+  if (!common) typePrefixes[3867655596].insert("pn");
+  typePrefixes[3867655596].insert("pt");
+  if (!common) typePrefixes[3867655596].insert("sz");
+  typePrefixes[3867655596].insert("u");
+  typePrefixes[3877855748].insert("fl");
+  typePrefixes[3877855748].insert("f");
+  typePrefixes[3955716320].insert("q");
+  typePrefixes[4111826321].insert("transform");
+  typePrefixes[4121727419].insert("id");
 }
 
 void signal_callback_handler(int signum) {
@@ -693,6 +644,7 @@ int main(int argc, char *argv[]) {
   bool ignoreAllCaps = true;
   bool gettingThreads = false;
   bool gettingDict = false;
+  bool useCommonPrefixes = true;
 
   signal(SIGINT, &signal_callback_handler);
   signal(SIGTERM, &signal_callback_handler);
@@ -755,6 +707,12 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--paired") {
         paired = true;
+      }
+      else if(arg == "--common") {
+        useCommonPrefixes = true;
+      }
+      else if(arg == "--uncommon") {
+        useCommonPrefixes = false;
       }
       else if(arg == "--english") {
         dictPathOrString = "../english_dict.txt";
@@ -953,7 +911,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (hashType == 1) {
-    loadFieldTypeMap();
+    loadFieldTypeMap(useCommonPrefixes);
 
     if (!noPrefix && subdict[0].size() < 1) {
       subdict[0].push_back("");
