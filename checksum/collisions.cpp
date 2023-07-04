@@ -456,7 +456,6 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[1028111660].insert("id");
   if (!common) typePrefixes[1028111660].insert("n");
   if (!common) typePrefixes[1028111660].insert("dw");
-  if (!common) typePrefixes[1028111660].insert("sno");
   typePrefixes[1028170061].insert("gbid");
   if (!common) typePrefixes[1028170061].insert("n");
   typePrefixes[1028680983].insert("dw");
@@ -471,7 +470,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[1028759507].insert("bone");
   typePrefixes[1028759507].insert("dw");
   if (!common) typePrefixes[1028759507].insert("vertex");
-  if (!common) typePrefixes[1028759507].insert("kinematic");
   if (!common) typePrefixes[1028759507].insert("triangle");
   if (!common) typePrefixes[1028759507].insert("constraint");
   if (!common) typePrefixes[1028759507].insert("max");
@@ -479,7 +477,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[1028759507].insert("n");
   typePrefixes[1028759507].insert("u");
   if (!common) typePrefixes[1028759507].insert("m_bone");
-  if (!common) typePrefixes[1028759507].insert("parent");
   if (!common) typePrefixes[1028759507].insert("attachment");
   if (!common) typePrefixes[1028759507].insert("start");
   if (!common) typePrefixes[1028759507].insert("end");
@@ -612,7 +609,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[3867655596].insert("m_a");
   if (!common) typePrefixes[3867655596].insert("m_cell");
   typePrefixes[3867655596].insert("n");
-  if (!common) typePrefixes[3867655596].insert("parent");
   if (!common) typePrefixes[3867655596].insert("pn");
   typePrefixes[3867655596].insert("pt");
   if (!common) typePrefixes[3867655596].insert("sz");
@@ -909,9 +905,17 @@ int main(int argc, char *argv[]) {
   }
 
   if (hashType == 1) {
-    loadFieldTypeMap(useCommonPrefixes);
-
-    if (!noPrefix && subdict[0].size() < 1) {
+    if (noPrefix) {
+      std::transform(dict.cbegin(), dict.cend(), std::back_inserter(subdict[0]), [](std::string s) {
+        if (!s.empty()) {
+            s[0] = std::tolower(s[0]);
+        }
+  
+        return s;
+      });
+    }
+    else if (subdict[0].size() < 1) {
+      loadFieldTypeMap(useCommonPrefixes);
       subdict[0].push_back("");
 
       std::unordered_map<std::string, bool> prefixMap;
