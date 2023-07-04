@@ -14,7 +14,7 @@
 #include <signal.h>
 #include <new>
 
-#if __GNUC__
+#ifdef __GNUC__
   #include <unistd.h>
 #else
   #include <io.h>
