@@ -709,7 +709,8 @@ int main(int argc, char *argv[]) {
         gettingThreads = true;
       }
       else if(arg[0] == '-') {
-        // discard unknown option
+        std::cerr << "Error: Unknown option: " << arg << "\n";
+        return 1;
       }
       else if(gettingSubDict == 1) {
         std::stringstream ss;
