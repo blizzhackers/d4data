@@ -906,33 +906,38 @@ int main(int argc, char *argv[]) {
   }
 
   if (hashType == 1) {
-    if (noPrefix && subdict[0].size() < 1) {
-      std::transform(dict.cbegin(), dict.cend(), std::back_inserter(subdict[0]), [](std::string s) {
-        if (!s.empty()) {
-            s[0] = std::tolower(s[0]);
-        }
-  
-        return s;
-      });
+    if (noPrefix) {
+      if (subdict[0].size() < 1) {
+        std::transform(dict.cbegin(), dict.cend(), std::back_inserter(subdict[0]), [](std::string s) {
+          if (!s.empty()) {
+              s[0] = std::tolower(s[0]);
+          }
+    
+          return s;
+        });
+      }
     }
-    else if (subdict[0].size() < 1) {
+    else {
       loadFieldTypeMap(useCommonPrefixes);
-      subdict[0].push_back("");
 
-      std::unordered_map<std::string, bool> prefixMap;
+      if (subdict[0].size() < 1) {
+        subdict[0].push_back("");
 
-      for (const auto &fieldEntry : fieldTypeMap) {
-        if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {
-          for (const auto &typeHash : fieldEntry.second) {
-            for (const auto &prefix : typePrefixes[typeHash]) {
-              prefixMap[prefix] = true;
+        std::unordered_map<std::string, bool> prefixMap;
+
+        for (const auto &fieldEntry : fieldTypeMap) {
+          if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {
+            for (const auto &typeHash : fieldEntry.second) {
+              for (const auto &prefix : typePrefixes[typeHash]) {
+                prefixMap[prefix] = true;
+              }
             }
           }
         }
-      }
 
-      for (const auto &prefixMapEntry : prefixMap) {
-        subdict[0].push_back(prefixMapEntry.first);
+        for (const auto &prefixMapEntry : prefixMap) {
+          subdict[0].push_back(prefixMapEntry.first);
+        }
       }
     }
   }
