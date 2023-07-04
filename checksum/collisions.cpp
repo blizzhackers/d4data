@@ -604,9 +604,22 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[4121727419].insert("id");
 }
 
+#ifdef _WIN32
+#include <Windows.h>
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
+{
+  if (fdwCtrlType == CTRL_C_EVENT) {
+    terminating = true;
+    return true;
+  }
+
+  return false;
+}
+#else
 void signal_callback_handler(int signum) {
   terminating = true;
 }
+#endif
 
 int main(int argc, char *argv[]) {
   uint32_t gettingSubDict = 0;
@@ -625,8 +638,12 @@ int main(int argc, char *argv[]) {
   bool useCommonPrefixes = true;
   bool literalDict = false;
 
+#ifdef _WIN32
+  SetConsoleCtrlHandler(CtrlHandler, TRUE);
+#else
   signal(SIGINT, &signal_callback_handler);
   signal(SIGTERM, &signal_callback_handler);
+#endif
 
   int pos = 0;
 
