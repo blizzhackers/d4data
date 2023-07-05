@@ -621,6 +621,7 @@ int main(int argc, char *argv[]) {
   bool gettingDict = false;
   bool useCommonPrefixes = true;
   bool literalDict = false;
+  bool forceProvidedHashes = false;
 
 #ifdef _WIN32
   SetConsoleCtrlHandler(CtrlHandler, TRUE);
@@ -705,6 +706,9 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--literal") {
         literalDict = true;
+      }
+      else if(arg == "--force") {
+        forceProvidedHashes = true;
       }
       else if(arg == "--threads") {
         gettingThreads = true;
@@ -818,23 +822,40 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  if (hashType == 0 && checksumMatch.size() == 0) {
+  ChecksumSetType checksumUnfound;
+  if (hashType == 0) {
     std::ifstream hashes("../unfound_hashes.txt");
     size_t uTmp;
     hashes >> std::hex >> uTmp;
 
     while (hashes) {
-      addChecksum(checksumMatch, uTmp);
+      addChecksum(checksumUnfound, uTmp);
       hashes >> std::hex >> uTmp;
     }
-  } else if(hashType == 1 && checksumMatch.size() == 0) {
+  } else if (hashType == 1) {
     std::ifstream hashes("../unfound_field_hashes.txt");
     size_t uTmp;
 
     hashes >> std::hex >> uTmp;
     while (hashes) {
-      addChecksum(checksumMatch, uTmp);
+      addChecksum(checksumUnfound, uTmp);
       hashes >> std::hex >> uTmp;
+    }
+  }
+  if (checksumMatch.empty()) {
+    checksumMatch = checksumUnfound;
+  } else {
+    // remove already known hashes
+    if (!forceProvidedHashes) {
+      for (auto it = checksumMatch.begin(), itEnd = checksumMatch.end(); it != itEnd; ) {
+        if (checksumUnfound.count(*it) == 0) {
+          std::cout << "removing already known hash: " << std::hex << *it << "\n";
+          it = checksumMatch.erase(it);
+        } else {
+          ++it;
+        }
+      }
+      std::cout << std::dec << std::endl;
     }
   }
 
@@ -973,6 +994,7 @@ int main(int argc, char *argv[]) {
   }
 
   if (checksumMatch.size()) {
+    std::cerr << "Type prefix size: " << typePrefixes.size() << std::endl;
     std::cerr << "Prefix size: " << subdict[0].size() << std::endl;
     std::cerr << "Dictionary size: " << dict.size() << std::endl;
     std::cerr << "Suffix size: " << subdict[63].size() << std::endl;
