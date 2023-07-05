@@ -439,7 +439,6 @@ void loadFieldTypeMap (bool common = true) {
   const auto HASH_DT_GBID = typeChecksum("DT_GBID", 0);
   const auto HASH_DT_INT = typeChecksum("DT_INT", 0);
   const auto HASH_DT_INT64 = typeChecksum("DT_INT64", 0);
-  const auto HASH_DT_OPTIONAL = typeChecksum("DT_OPTIONAL", 0);
   const auto HASH_DT_POLYMORPHIC_VARIABLEARRAY = typeChecksum("DT_POLYMORPHIC_VARIABLEARRAY", 0);
   const auto HASH_DT_RANGE = typeChecksum("DT_RANGE", 0);
   const auto HASH_DT_RGBACOLOR = typeChecksum("DT_RGBACOLOR", 0);
@@ -574,18 +573,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[HASH_AxialCylinder].insert("wcyl");
   typePrefixes[HASH_DT_SHARED_SERVER_DATA_ID].insert("id");
   typePrefixes[HASH_UIControlHandle].insert("h");
-  if (!common) typePrefixes[HASH_DT_OPTIONAL].insert("a");
-  typePrefixes[HASH_DT_OPTIONAL].insert("ann");
-  typePrefixes[HASH_DT_OPTIONAL].insert("dw");
-  typePrefixes[HASH_DT_OPTIONAL].insert("e");
-  typePrefixes[HASH_DT_OPTIONAL].insert("fl");
-  typePrefixes[HASH_DT_OPTIONAL].insert("h");
-  typePrefixes[HASH_DT_OPTIONAL].insert("n");
-  if (!common) typePrefixes[HASH_DT_OPTIONAL].insert("q");
-  typePrefixes[HASH_DT_OPTIONAL].insert("sno");
-  typePrefixes[HASH_DT_OPTIONAL].insert("u");
-  typePrefixes[HASH_DT_OPTIONAL].insert("v");
-  typePrefixes[HASH_DT_OPTIONAL].insert("wp");
   typePrefixes[HASH_DT_VECTOR2D].insert("v");
   typePrefixes[HASH_DT_VECTOR2D].insert("vec");
   if (!common) typePrefixes[HASH_DT_VECTOR2D].insert("wp");
