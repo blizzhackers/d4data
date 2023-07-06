@@ -8,6 +8,7 @@ const attributes = Object.values(require('./attributes.json')).reduce((t, v) => 
 }, {});
 
 const snoGroups = require('./json/snoGroups.json');
+const snoFileInfo = require('./json/snoFileInfo.json');
 
 const DEV_NONE = 0;
 const DEV_INFO = 1;
@@ -18,6 +19,7 @@ const devAttributes = DEV_INFO;
 process.chdir(__dirname);
 
 let toc = {};
+let snoPayloadMap = {};
 let gbid = fs.existsSync('json/GBID.json') ? JSON.parse(fs.readFileSync('json/GBID.json'), null, ' ') : {};
 let readLog = [];
 let fieldHashes = {};
@@ -97,6 +99,40 @@ if (fs.existsSync('data/base/CoreTOC.dat')) {
 }
 else {
   toc = JSON.parse(fs.readFileSync('json/base/CoreTOC.dat.json'));
+}
+
+let tocLookup = {};
+
+Object.keys(toc).forEach(group => {
+  Object.keys(toc[group]).forEach(snoID => {
+    tocLookup[snoID] = {
+      group,
+      name: toc[group][snoID],
+    };
+  });
+});
+
+if (fs.existsSync('data/base/CoreTOCSharedPayloadsMapping.dat')) {
+  let file = fs.readFileSync('data/base/CoreTOCSharedPayloadsMapping.dat');
+  let entryCount = file.readUInt32LE(4);
+
+  for (let i = 0; i < entryCount; i++) {
+    let source = file.readUInt32LE(8 + i * 8);
+    let destination = file.readUInt32LE(12 + i * 8);
+
+    if (tocLookup[source] && tocLookup[destination]) {
+      let [sourceDir, sourceExt] = snoFileInfo[tocLookup[source].group];
+      let sourceName = tocLookup[source].name;
+      let [destinationDir, destinationExt] = snoFileInfo[tocLookup[destination].group];
+      let destinationName = tocLookup[destination].name;
+      snoPayloadMap[`base/payload/${sourceDir}/${sourceName}.${sourceExt}`] = `base/payload/${destinationDir}/${destinationName}.${destinationExt}`;
+    }
+  }
+
+  fs.writeFileSync('json/base/CoreTOCSharedPayloadsMapping.dat.json', JSON.stringify(snoPayloadMap, null, ' '));
+}
+else {
+  snoPayloadMap = JSON.parse(fs.readFileSync('json/base/CoreTOCSharedPayloadsMapping.dat.json'));
 }
 
 function devCombine(normal, dev, verbose) {
@@ -194,14 +230,18 @@ let basicTypes = {
       return;
     }
 
-    if (devAttributes >= DEV_INFO) {
-      ret.__group__ = field.group;
-      ret.__type__ = 'DT_SNO';
-      ret.__typeHash__ = typeHashes[0];
-      ret.groupName = snoGroups[ret.__group__];
-      if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
-        ret.name = toc[ret.__group__][ret.__raw__];
-      }
+    ret.__group__ = field.group;
+    ret.__type__ = 'DT_SNO';
+    ret.__typeHash__ = typeHashes[0];
+
+    if (toc[ret.__group__] && snoFileInfo[ret.__group__]) {
+      ret.__targetFileName__ = 'base/meta/' + snoFileInfo[ret.__group__][0] + '/' + toc[ret.__group__][ret.__raw__] + '.' + snoFileInfo[ret.__group__][1];
+    }
+
+    ret.groupName = snoGroups[ret.__group__];
+
+    if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
+      ret.name = toc[ret.__group__][ret.__raw__];
     }
   },
   "DT_SNO_NAME": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
@@ -218,12 +258,15 @@ let basicTypes = {
     ret.__group__ = file.readInt32LE(offset);
     ret.__type__ = 'DT_SNO_NAME';
     ret.__typeHash__ = typeHashes[0];
+
+    if (toc[ret.__group__] && snoFileInfo[ret.__group__]) {
+      ret.__targetFileName__ = 'base/meta/' + snoFileInfo[ret.__group__][0] + '/' + toc[ret.__group__][ret.__raw__] + '.' + snoFileInfo[ret.__group__][1];
+    }
+
     ret.groupName = snoGroups[ret.__group__];
 
-    if (devAttributes >= DEV_INFO) {
-      if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
-        ret.name = toc[ret.__group__][ret.__raw__];
-      }
+    if (toc[ret.__group__] && toc[ret.__group__][ret.__raw__]) {
+      ret.name = toc[ret.__group__][ret.__raw__];
     }
   },
   "DT_GBID": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
@@ -745,10 +788,21 @@ fileNames.forEach((fileName, index) => {
           gbMap[data.eGameBalanceType].push(newFileName);
         }
 
-        fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
-          __fileName__: fileName,
-          __snoID__: snoID,
-        }), null, ' ') + '\n');
+        let payloadName = fileName.replace(/^data\/base\/meta/g, 'base/payload');
+
+        if (snoPayloadMap[payloadName]) {
+          fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
+            __fileName__: fileName.replace(/^data\//g, ''),
+            __snoID__: snoID,
+            __payloadOverride__: snoPayloadMap[payloadName],
+          }), null, ' ') + '\n');
+        }
+        else {
+          fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
+            __fileName__: fileName,
+            __snoID__: snoID,
+          }), null, ' ') + '\n');
+        }
 
         success++;
       }
