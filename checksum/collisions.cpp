@@ -842,9 +842,12 @@ int main(int argc, char *argv[]) {
       hashes >> std::hex >> uTmp;
     }
   }
+
+  bool checksumProvided = false;
   if (checksumMatch.empty()) {
     checksumMatch = checksumUnfound;
   } else {
+    checksumProvided = true;
     // remove already known hashes
     if (!forceProvidedHashes) {
       for (auto it = checksumMatch.begin(), itEnd = checksumMatch.end(); it != itEnd; ) {
@@ -941,8 +944,7 @@ int main(int argc, char *argv[]) {
           return s;
         });
       }
-    }
-    else {
+    } else if (subdict[0].empty() || !checksumProvided) {
       loadFieldTypeMap(useCommonPrefixes);
 
       if (subdict[0].size() < 1) {
