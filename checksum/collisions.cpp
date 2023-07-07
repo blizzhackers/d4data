@@ -374,23 +374,13 @@ std::vector<std::string> getDict(std::string dictPathOrString) {
   }
 
   if (dict) {
-    std::string tmp;
+    std::string line;
 
-    dict >> tmp;
-    while (dict) {
-      ret.push_back(tmp);
-      dict >> tmp;
-    }
-  }
-  else {
-    std::stringstream ss(dictPathOrString);
-
-    std::string tmp;
-
-    ss >> tmp;
-    while (ss) {
-      ret.push_back(tmp);
-      ss >> tmp;
+    while (std::getline(dict, line)) {
+      if (line.empty() || line[0] == '#') {
+        continue;
+      }
+      ret.push_back(line);
     }
   } else {
     std::cerr << "Dictionary " << dictPathOrString << " not found." << std::endl;
