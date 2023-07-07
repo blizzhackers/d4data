@@ -228,8 +228,11 @@ bool correctType(uint32_t *tmp, uint32_t currentChecksum) {
   }
 
   for (uint32_t typeHash : fieldTypeMap[currentChecksum]) {
-    if (typePrefixes[typeHash].count(subdict[0][tmp[0]]) > 0) {
-      return true;
+    if (typePrefixes[typeHash].size()) {
+      return typePrefixes[typeHash].count(subdict[0][tmp[0]]) > 0;
+    }
+    else {
+      return true; //typePrefixes[0].count(subdict[0][tmp[0]]) > 0;
     }
   }
 
@@ -440,7 +443,7 @@ void loadFieldTypeMap (bool common = true) {
 
   fieldTypes.close();
 
-  typePrefixes[0].insert(""); // ?
+  typePrefixes[0].insert("t"); // ?
 
   typePrefixes[2408934].insert("aabb");
   if (!common) typePrefixes[231895989].insert("h");
@@ -921,15 +924,20 @@ int main(int argc, char *argv[]) {
       loadFieldTypeMap(useCommonPrefixes);
 
       if (subdict[0].size() < 1) {
-        subdict[0].push_back("");
-
         std::unordered_map<std::string, bool> prefixMap;
 
         for (const auto &fieldEntry : fieldTypeMap) {
           if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {
             for (const auto &typeHash : fieldEntry.second) {
-              for (const auto &prefix : typePrefixes[typeHash]) {
-                prefixMap[prefix] = true;
+              if (typePrefixes[typeHash].size()) {
+                for (const auto &prefix : typePrefixes[typeHash]) {
+                  prefixMap[prefix] = true;
+                }
+              }
+              else {
+                for (const auto &prefix : typePrefixes[0]) {
+                  prefixMap[prefix] = true;
+                }
               }
             }
           }
