@@ -188,11 +188,19 @@ let basicTypes = {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
     ret.value = file.readUInt8(offset);
     results.readLength += 1;
+
+    if (field.serializedBitCount === 1) {
+      ret.value = Boolean(ret.value);
+    }
   },
   "DT_WORD": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
     ret.value = file.readUInt16LE(offset);
     results.readLength += 2;
+
+    if (field.serializedBitCount === 1) {
+      ret.value = Boolean(ret.value);
+    }
   },
   "DT_ENUM": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     ret.value = file.readInt32LE(offset);
@@ -202,6 +210,10 @@ let basicTypes = {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
     ret.value = file.readInt32LE(offset);
     results.readLength += 4;
+
+    if (field.serializedBitCount === 1) {
+      ret.value = Boolean(ret.value);
+    }
   },
   "DT_FLOAT": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
@@ -302,6 +314,10 @@ let basicTypes = {
     ret.value = file.readUInt32LE(offset);
 
     results.readLength += 4;
+
+    if (field.serializedBitCount === 1) {
+      ret.value = Boolean(ret.value);
+    }
   },
   "DT_ACD_NETWORK_NAME": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
@@ -320,6 +336,10 @@ let basicTypes = {
     ret.value = file.readBigInt64LE(offset).toString(16);
 
     results.readLength += 8;
+
+    if (field.serializedBitCount === 1) {
+      ret.value = Boolean(ret.value);
+    }
   },
   "DT_RANGE": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
@@ -799,7 +819,7 @@ fileNames.forEach((fileName, index) => {
         }
         else {
           fs.writeFileSync(newFileName, JSON.stringify(devCombine(data, {
-            __fileName__: fileName,
+            __fileName__: fileName.replace(/^data\//g, ''),
             __snoID__: snoID,
           }), null, ' ') + '\n');
         }
