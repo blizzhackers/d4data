@@ -60,6 +60,7 @@ ActorCustomizationHelper
 ActorDeathData
 ActorDefinition
 ActorEffectData
+ActorFaceHelper
 ActorFacingData
 ActorFoleySoundOverride
 ActorGizmoData
@@ -82,6 +83,7 @@ ActorProjectileData
 ActorPropData
 ActorServerData
 ActorShaderMapOverrideChangedMessage
+ActorSlotHelper
 ActorSoundTableData
 ActorUIData
 ActorVOData
@@ -114,6 +116,7 @@ AnimSetPowerEntry
 AnimSyncGroup
 AnimTangent
 AnimTreeBlendCase
+AnimTreeBlendTriangle
 AnimTreeDefinition
 AnimTreeLayerName
 AnimTreeLeaf
@@ -225,18 +228,22 @@ ClanBankDepositMessage
 ClanBankMoveItemMessage
 ClanBankWithdrawMessage
 ClanLabel
+ClassInfoDataArray
+ClassInfoPlayStyle
 ClientDebugLogMessage
 CloneBeingDeletedMessage
 ClothData
 ClothDefinition
 CollSettingsParam
 CollisionCapsule
+CollisionHeightField
 CollisionMesh
 CollisionSettings
 CollisionSettingsDefinition
 CollisionShape
 ColorCorrectionParams
 CommandFrameSynchronizeMessage
+CommonPortalGizmoData
 CompInfluence
 CompVertInfluences
 ComplexEffectAddMessage
@@ -269,6 +276,7 @@ ConversationScopeNode
 ConversationSpeakerCaseNode
 ConversationSpeakerSwitchNode
 ConversationTreeNode
+ConversationTypeSounds
 ConvexHull
 CountdownStartedMessage
 CraftMultipleMessage
@@ -389,6 +397,7 @@ DynamicMovementData
 DynamicMovementData_Table
 DynamicPortalInfo
 EffectGroupACDToACDMessage
+EffectGroupActorVariant
 EffectGroupDefinition
 EffectGroupHardpoint
 EffectGroupKey
@@ -458,6 +467,7 @@ FogVolumeDefinition
 FogVolumeInstanceData
 FoleyMaterialTag
 FoleyMaterialTagInfo
+FoleyOverridePreloadHelper
 FoliageGrid
 FoliageSettings
 FontDefinition
@@ -544,6 +554,7 @@ GlobalVendorEvents
 GlobalWaypointData
 GlobalZoneProgressData
 GoToWaypointMessage
+GroundTestPosition
 GroupRegionEntry
 GroupRegionEntry_Table
 GroupTransferQueryMessage
@@ -658,6 +669,7 @@ LimboWarpPrefetchBeginMessage
 Line3D
 LineSeg2D
 LineSeg3D
+LinearAxisParams
 ListenerReaction
 LocalEventDataMessage
 LocalPlayerNetEvent
@@ -901,6 +913,7 @@ ParametricLayer
 ParametricSettings
 ParticleDefinition
 ParticleKeyFrames
+ParticleLifeEvent
 PartyVoteReplyMessage
 PathLink
 PayloadOnHitMessage
@@ -931,6 +944,8 @@ PlayerACDInfo
 PlayerActorSetInitialMessage
 PlayerBuffSubcondition
 PlayerClassBarbData
+PlayerClassCoreStatBenefitData
+PlayerClassCoreStatBenefitEntry
 PlayerClassDefinition
 PlayerClassDruidData
 PlayerClassNecroData
@@ -1175,6 +1190,7 @@ SavedCameraState
 SavedCameraStates
 SavedPlayerTitle
 SavedTransmog
+ScalarFunctionFormula
 ScaleCurve
 ScaleKey
 SceneChunk
@@ -1254,6 +1270,7 @@ ShakeDefinition
 Shape
 SharedChildFile
 SharedServerWorldPlace
+ShoreWaveSettings
 ShrineGizmoData
 SignGizmoData
 SimpleMessage
@@ -1300,6 +1317,7 @@ StartLocationName
 StartPowerMessage
 StartingAllowedWeather
 Stat
+StaticLoadingImages
 StencilParams
 StopConvLineMessage
 StoreCameraTransition
@@ -1576,6 +1594,7 @@ WorldSetRemainingReviveCountMessage
 WorldStateDefinition
 WorldStateFullUpdateMessage
 WorldStateSubcondition
+WorldStateUpdateData
 WorldStateUpdateMessage
 WorldSyncedData
 WorldSyncedDataMessage
@@ -1709,8 +1728,10 @@ arAchievementSnos
 arActiveSkillEntries
 arActivityQuests
 arActorAnimSetPreloadHelpers
+arActorFaceHelpers
 arActorGroups
 arActorPreloadHelpers
+arActorSlotHelpers
 arActorVariantPreloadHelpers
 arActorVariantTypes
 arAdditionalTargets
@@ -1798,6 +1819,7 @@ arDungeonLists
 arDungeonStates
 arDungeons
 arDyeList
+arEffectGroupActorVariants
 arEffectGroupPreloadHelpers
 arElevations
 arEmbroideries
@@ -1818,6 +1840,7 @@ arFlippyHangTime
 arFogMask
 arFogOfWar
 arFoleyMaterialTags
+arFoleyOverridePreloadHelpers
 arFoleyOverrides
 arFollowers
 arForcedAffixes
@@ -2076,6 +2099,7 @@ bAutoTargetingEnabled
 bBackpack
 bBlinkForever
 bBlizzconDropEnabled
+bBookendConversation
 bCanSteer
 bCancellable
 bCannotDieDuring
@@ -3393,6 +3417,7 @@ flSlopeMin
 flSlopeMinSmoothness
 flSmoothingSpeed
 flSpacing
+flSpawnCountPercent
 flSpawnStayOpenTime
 flSpecificFacing
 flSpeed
@@ -4199,6 +4224,7 @@ ptFrames
 ptGameParameters
 ptGizmoConditionData
 ptGizmoData
+ptGroundTests
 ptGroupData
 ptHardpoints
 ptHiddenCacheGizmoData
@@ -4257,6 +4283,7 @@ ptPortalGizmoData
 ptPositions
 ptPostData
 ptPostprocessed
+ptPowerEntryList
 ptPrefabDataMap
 ptPrimitives
 ptProjData
@@ -5005,6 +5032,7 @@ szVendorCamera
 tAABB
 tActiveSkills
 tAdvanceEvent
+tAllowedScaleRange
 tAlphaBlend
 tAlternateBone
 tAnim
@@ -5012,6 +5040,7 @@ tAnimPreplayData
 tAnimSet
 tAnimTreeOverride
 tAnimatedInterval
+tAnimationDelayRange
 tAppearance
 tApplyFreeze
 tAssetLists
@@ -5053,6 +5082,7 @@ tColorCorrection
 tColorSet
 tCombatEffectChance
 tCombatEffectOverride
+tCommonPortalData
 tComponent
 tComponentArray
 tComponentId
@@ -5112,6 +5142,7 @@ tEnterKnownLookOverrides
 tEnterKnownShaderMapOverrides
 tEntries
 tEnvironment
+tEquipParamPermutation
 tEquipment
 tFOV
 tFace
@@ -5128,6 +5159,7 @@ tFont
 tFormula
 tFortifiedHealth
 tFrameAnim
+tFrameRateRange
 tGroup
 tHairStyle
 tHardpoint
@@ -5140,9 +5172,11 @@ tHeader
 tHeal
 tHealth
 tHealthCost
+tHeightRange
 tHireling
 tHirelingSavedData
 tHitpointScalar
+tHorizontalAngleRange
 tHorizontalOffset
 tHotbarBtnAssignments
 tHover
@@ -5154,6 +5188,7 @@ tImpactVelocityRange
 tImpactWeightRange
 tInfo
 tInitialCost
+tInputRange
 tInstanceData
 tInterval
 tIntervalDelta
@@ -5169,6 +5204,7 @@ tKeyedDungeonReward
 tLevelScaling
 tLevelScalingData
 tLightInfluenceSettings
+tLightningDelayRange
 tLinkEnd
 tLinkStart
 tLinks
@@ -5212,6 +5248,7 @@ tName
 tNameInfo
 tNecroData
 tNecroPet
+tNoiseRateRange
 tNpcGenerationData
 tOffsetRadius
 tOutroDuration
@@ -5246,11 +5283,13 @@ tProcChance
 tPrograms
 tRadius
 tRadiusRange
+tRandomAccelRange
 tRandomSounds
 tRareItemName
 tRechargeTime
 tRegionDefault
 tRegions
+tRemapRange
 tRenderParams
 tResolvedDest
 tReward
@@ -5263,6 +5302,7 @@ tSavedData
 tSavedPlayerTitle
 tScale
 tScaleRange
+tScaredTimeRange
 tSceneSpec
 tScriptMessageMap
 tSecondReward
@@ -5274,6 +5314,8 @@ tServices
 tSessionKey
 tSettings
 tShaderMapOverrides
+tShoreWaveSettings
+tSigilTierRange
 tSinData
 tSlopeBone
 tSlot
@@ -5282,19 +5324,25 @@ tSlowAmount
 tSorcererData
 tSoundPlayHistory
 tSourceAttribute
+tSpawnCountRange
 tSpawnPopulationGroup
+tSpawnQuantityRange
+tSpawnTimeRange
 tSpecificItem
+tSpeedMultRange
 tSpeedVarianceRange
 tSphere
 tStaggerMultiplier
 tStarsSettings
 tStartEvent
+tStartFrameRange
 tStateA
 tStencilParams
 tStringLabel
 tStructure
 tStyle
 tSubzoneMarkerSets
+tSummonRange
 tSwitchBehaviorData
 tSyncedData
 tSystemDuration
@@ -5305,15 +5353,19 @@ tTemplates
 tTexture
 tThresholdAttribute
 tThresholdValueFormula
+tTierRange
 tTime
 tTrace
 tTraceId
 tTracked
+tTrailDurationRange
+tTrailLengthRange
 tTransform
 tTransmog
 tTriangle
 tTriggerData
 tTriggerProxData
+tTriggerRange
 tTurret
 tType
 tUberMaterial
@@ -5322,11 +5374,15 @@ tValidWindow
 tValue
 tValueMax
 tValueMin
+tValueRange
 tVariant
 tVertexCountSettings
 tVertexDensitySettings
+tVerticalAngleRange
 tVerticalOffset
 tVisualItem
+tWanderDelayRange
+tWanderRadiusRange
 tWeaponData
 tWorldLocationData
 tWorldTransform
