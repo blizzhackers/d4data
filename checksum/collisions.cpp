@@ -59,6 +59,7 @@ struct alignas(hardware_constructive_interference_size) WorkerData {
   uint32_t currentChecksum = 0;
   std::thread *thread = nullptr;
   std::atomic_bool ready = true;
+  std::atomic_bool stayReady = true;
   uint32_t threadIndex = 0;
   std::uint64_t hashCount = 0;
 } pool[64];
@@ -307,7 +308,7 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, uin
 }
 
 void collisionWorker(WorkerData *workerData) {
-  while (!terminating) {
+  while (workerData->stayReady && !terminating) {
     if (!workerData->ready) {
       collisions(workerData->tmp, workerData->pos, workerData->max, workerData->currentChecksum, workerData->hashCount, false);
       workerData->ready = true;
@@ -966,16 +967,15 @@ int main(int argc, char *argv[]) {
       collisions(masterTmp, 0, c + 1, 0, hashCount, false);
     }
 
-    terminating = true;
-
-    auto seconds = (float)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - start).count() / 1000000.f;
-
     for (uint32_t c = 0; c < workerCount; c++) {
       if (pool[c].thread) {
+        pool[c].stayReady = false;
         pool[c].thread->join();
         hashCount += pool[c].hashCount;
       }
     }
+
+    auto seconds = (float)std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - start).count() / 1000000.f;
 
     if (seconds > 0 && hashCount > 0) {
       float hashRate = (float)hashCount / seconds;
