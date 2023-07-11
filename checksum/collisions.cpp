@@ -233,7 +233,7 @@ bool correctType(uint32_t *tmp, uint32_t currentChecksum) {
       return typePrefixes[typeHash].count(subdict[0][tmp[0]]) > 0;
     }
     else {
-      return true; //typePrefixes[0].count(subdict[0][tmp[0]]) > 0;
+      return false; //typePrefixes[0].count(subdict[0][tmp[0]]) > 0;
     }
   }
 
@@ -446,6 +446,13 @@ void loadFieldTypeMap (bool common = true) {
 
   typePrefixes[0].insert("t"); // ?
 
+  // Fake type DT_BOOL
+  typePrefixes[0x3d461b83].insert("b");
+  typePrefixes[0x3d461b83].insert("f");
+  if (!common) typePrefixes[0x3d461b83].insert("m_b");
+  if (!common) typePrefixes[0x3d461b83].insert("m_f");
+
+  // Rest of existing types.
   typePrefixes[2408934].insert("aabb");
   if (!common) typePrefixes[231895989].insert("h");
   typePrefixes[248064347].insert("wp");
@@ -454,7 +461,6 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[1028015787].insert("u");
   if (!common) typePrefixes[1028015787].insert("n");
   if (!common) typePrefixes[1028015787].insert("game");
-  if (!common) typePrefixes[1028015787].insert("b");
   if (!common) typePrefixes[1028015787].insert("twin");
   typePrefixes[1028111660].insert("e");
   if (!common) typePrefixes[1028111660].insert("id");
@@ -469,7 +475,6 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[1028680983].insert("s");
   if (!common) typePrefixes[1028680983].insert("id");
   if (!common) typePrefixes[1028680983].insert("w");
-  if (!common) typePrefixes[1028680983].insert("b");
   if (!common) typePrefixes[1028680983].insert("sno");
   typePrefixes[1028759507].insert("bone");
   typePrefixes[1028759507].insert("dw");
@@ -512,10 +517,8 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[2450313795].insert("sz");
   typePrefixes[2588169118].insert("local");
   typePrefixes[2594652800].insert("path");
-  typePrefixes[2764320258].insert("b");
   if (!common) typePrefixes[2764320258].insert("count");
   if (!common) typePrefixes[2764320258].insert("e");
-  typePrefixes[2764320258].insert("f");
   if (!common) typePrefixes[2764320258].insert("i");
   typePrefixes[2764320258].insert("id");
   if (!common) typePrefixes[2764320258].insert("is");
@@ -537,10 +540,8 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[3063971755].insert("h");
   if (!common) typePrefixes[3121633597].insert("a");
   typePrefixes[3121633597].insert("ann");
-  typePrefixes[3121633597].insert("b");
   typePrefixes[3121633597].insert("dw");
   typePrefixes[3121633597].insert("e");
-  if (!common) typePrefixes[3121633597].insert("f");
   typePrefixes[3121633597].insert("fl");
   typePrefixes[3121633597].insert("h");
   typePrefixes[3121633597].insert("n");
@@ -582,7 +583,6 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[3864020909].insert("a");
   if (!common) typePrefixes[3864020909].insert("cell");
   if (!common) typePrefixes[3864020909].insert("dw");
-  typePrefixes[3864020909].insert("f");
   typePrefixes[3864020909].insert("fl");
   if (!common) typePrefixes[3864020909].insert("inv");
   if (!common) typePrefixes[3864020909].insert("m_cell");
@@ -602,7 +602,6 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[3867655596].insert("sz");
   typePrefixes[3867655596].insert("u");
   typePrefixes[3877855748].insert("fl");
-  typePrefixes[3877855748].insert("f");
   typePrefixes[3955716320].insert("q");
   typePrefixes[4111826321].insert("transform");
   typePrefixes[4121727419].insert("id");
