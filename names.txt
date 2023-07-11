@@ -363,6 +363,7 @@ DecalTemplate
 DefaultMaterialValueDefinition
 DefaultTextureInfo
 DemonScrollDefinition
+DemonScrollNodeMessage
 DemonScrollReward
 DemonScrollRewardChoicePickedMessage
 DemonSummoningQuestBucket
@@ -589,6 +590,7 @@ HeroDetailsEntry
 HeroDetailsValue
 HeroPreset
 HeroStateRewardsMessage
+HeroStatusDataMessage
 HiddenCacheEntry
 HiddenCacheEntry_Table
 HiddenCacheGizmoData
@@ -857,9 +859,12 @@ OnAIUpdatePowerCallback
 OnAssistBuffCallback
 OnAssistTriggeredBuffCallback
 OnAttackBuffCallback
+OnBerserkAppliedCallback
+OnBerserkRemovedCallback
 OnContactFramePowerCallback
 OnCreatePowerCallback
 OnDeathBuffCallback
+OnDismountCallback
 OnDoDamageBuffCallback
 OnDodgeBuffCallback
 OnDotApplyBuffCallback
@@ -880,6 +885,8 @@ OnItemPickupBuffCallback
 OnKillBuffCallback
 OnKillTriggeredBuffCallback
 OnKnockbackEndPowerCallback
+OnOtherBuffAddedCallback
+OnOtherBuffRemovedCallback
 OnPetAddBuffCallback
 OnPetDeathBuffCallback
 OnPhaseEnteredPowerCallback
@@ -888,6 +895,8 @@ OnProjectileCreateBuffCallback
 OnProjectileImpactPowerCallback
 OnResourceGainedBuffCallback
 OnResourceSpentBuffCallback
+OnRetreatCallback
+OnRetreatCompleteCallback
 OnShapeshiftCallback
 OnStartPowerCallback
 OnUnequipPowerCallback
@@ -1103,6 +1112,7 @@ PrefabDataInfo
 PrefabScopedActorGroupData
 PrefabScopedActorGroupData_Table
 PrefetchActorMessage
+PrefetchMarkerSetMessage
 PrefetchQuestMessage
 PrefetchRunOnDisk
 PrefetchSceneMessage
@@ -1363,6 +1373,7 @@ SubObjectNameInfo
 SubObjectSegment
 Subcondition
 SubzoneDefinition
+SubzoneModifierStateMessage
 SubzoneModifierTagsEntry
 SubzoneModifierTagsEntry_Table
 SubzoneTypeSubcondition
@@ -1402,6 +1413,7 @@ TranslationCurve
 TranslationKey
 Transmog
 TransmogEnableMessage
+TransmogMultipleSlotsMessage
 TransmogSaveSnapshotMessage
 TransmogSlot
 TransmogSlotData
@@ -1710,6 +1722,8 @@ afDistance
 afFrequency
 afGlobalDirectionAdherence
 afGlobalDistance
+afTurbulence
+afTurbulenceFrequency
 afWhip
 ann
 annACD
@@ -3521,6 +3535,7 @@ flSystemDuration
 flSystemTime
 flTargetAbandonTime
 flTargetImpactHeight
+flTargetImpactPitch
 flTetherRadius
 flTextAdvanceScalar
 flTextInsetX
@@ -3695,7 +3710,6 @@ hSpiritBondIcon
 hSpiritIcon
 hSplashImage
 hStateImages
-hStructure
 hSubtitle
 hTemplate
 hText
@@ -3742,6 +3756,7 @@ localFrame2
 localTransform
 mInertiaTensor
 m_FaceCount
+m_SubEdgeCount
 m_VertexCount
 m_aAnchorMap
 m_aBendingConstraints
@@ -3753,10 +3768,13 @@ m_aPlanes
 m_aSubEdges
 m_aVertexMap
 m_aVertices
+m_anchorCount
 m_annItem
 m_area
+m_bendingConstraintCount
 m_boneCount
 m_boneIndex
+m_capsuleCount
 m_cellBytes
 m_cellData
 m_cellHeight
@@ -3764,6 +3782,7 @@ m_cellId
 m_cellWidth
 m_centroid
 m_data
+m_distanceConstraintCount
 m_eHasModifiedPowerTagMap
 m_faceCount
 m_friction
@@ -4613,8 +4632,13 @@ snoFogOfWar
 snoFogParticle
 snoFoleySoundTable
 snoFont
+snoFootstepDragEffect
+snoFootstepEffectLeft
+snoFootstepEffectRight
+snoFootstepLiftEffect
 snoFootstepSoundTable
 snoFootstepSurface
+snoFootstepTrailEffect
 snoFur
 snoFurBaseShader
 snoGizmo
@@ -4694,6 +4718,8 @@ snoMonster
 snoMonsterActor
 snoMonsterAffixes
 snoMonsterFamily
+snoMonsterFootstepEffect
+snoMonsterFootstepWalkEffect
 snoMonsterRarityEffectGroup
 snoMount
 snoMountPaperdollWorld
@@ -4727,6 +4753,7 @@ snoOnOpenSound
 snoOutroEffect
 snoOverrideMaterial
 snoOverridePower
+snoOverrideWhenWet
 snoPOICamera
 snoParagonGlyph
 snoParagonGlyphAffix
@@ -4811,6 +4838,8 @@ snoReputation
 snoRequiredPower
 snoResetQuest
 snoResetSubzone
+snoResidualFootstepParticleLeft
+snoResidualFootstepParticleRight
 snoRetreatOverride
 snoReverb
 snoReward
@@ -4882,7 +4911,6 @@ snoStoreProduct
 snoStoryboard
 snoStreamAmbient
 snoStringList
-snoSubmitTransition
 snoSubtitles
 snoSubzone
 snoSubzoneDefault
@@ -5315,6 +5343,8 @@ tMarkerHandleDevStartLocation
 tMarkerHandleStartLocation
 tMarkerSet
 tMatTex
+tMatTexCloud
+tMatTexCloud2
 tMatTexProjected
 tMaterial
 tMax
