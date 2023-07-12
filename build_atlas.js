@@ -345,13 +345,13 @@ function processMarkerSet(marker_set, offset = { x: 0, y: 0, z: 0 }) {
           `Coordinates: ${adjusted.x}, ${adjusted.y}`,
         ].filter(Boolean).join('\n');
 
-        markers[['actor', eActorType, eGizmoType, adjusted.x, adjusted.y].join('|')] = (`<path data-search-text="${[
+        markers[['actor', eActorType, eGizmoType, adjusted.x, adjusted.y].join('|')] = (`<path id="00000" data-search-text="${[
           'actor',
           ActorTypeEnumLabels[eActorType],
           GizmoTypeEnumLabels[eGizmoType],
           strings.Name ? strings.Name : null,
           snoReference.name ? snoReference.name.replace(/"/g, '&quot;') : null,
-        ].join(' ')}" class="searchable actor actor-type-${eActorType} gizmo-type-${eGizmoType}${snoReference.name ? (' sno-name-' + snoReference.name.replace(/[ _]/g, '-').replace(/"/g, '&quot;')) : ''}" data-actor-type="${eActorType}" data-gizmo-type="${eGizmoType}" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M ${adjusted.x} ${adjusted.y} l 0.0001 0"><title>${lines}</title></path>`);
+        ].join(' ')}" class="searchable actor actor-type-${eActorType} gizmo-type-${eGizmoType}${snoReference.name ? (' sno-name-' + snoReference.name.replace(/[ _]/g, '-').replace(/"/g, '&quot;')) : ''}" data-actor-type="${eActorType}" data-gizmo-type="${eGizmoType}" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M ${adjusted.x} ${adjusted.y} l 0.0001 0" data-popup-content="${lines}"></path>`);
       }
       else if (marker.ptBase && marker.ptBase.some(baseData => {
         return baseData.__type__ === 'MarkerSpawnLocData';
@@ -372,9 +372,9 @@ function processMarkerSet(marker_set, offset = { x: 0, y: 0, z: 0 }) {
         ].filter(Boolean).join('\n');
   
 
-        markers[['spawn', gbidSpawnLocType, adjusted.x, adjusted.y].join('|')] = (`<path data-search-text="${[
+        markers[['spawn', gbidSpawnLocType, adjusted.x, adjusted.y].join('|')] = (`<path id="00000" data-search-text="${[
           gbidSpawnLocType ? gbidSpawnLocType.replace(/"/g, '&quot;') : null,
-        ].join(' ')}" class="searchable spawn spawn-type-${gbidSpawnLocType.replace(/[ _]/g, '-').replace(/"/g, '&quot;')}" data-actor-type="" data-gizmo-type="" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M ${adjusted.x} ${adjusted.y} l 0.0001 0"><title>${lines}</title></path>`);
+        ].join(' ')}" class="searchable spawn spawn-type-${gbidSpawnLocType.replace(/[ _]/g, '-').replace(/"/g, '&quot;')}" data-actor-type="" data-gizmo-type="" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M ${adjusted.x} ${adjusted.y} l 0.0001 0" data-popup-content="${lines}"></path>`);
       }
     });
   }
@@ -431,6 +431,13 @@ fs.writeFileSync('docs/atlas.html', `<html>
         </g>
       </g>
     </svg>
+    <div class="popup-box">PHContent</div>
+    <div class="slider-container">
+      <div class="slider-content">
+        <div class="close-btn">&times;</div>
+      </div>
+      </div>
+    </div>
     <script src="atlas.js"></script>
   </body>
 </html>`);
