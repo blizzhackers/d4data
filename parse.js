@@ -217,7 +217,7 @@ let basicTypes = {
 
     ret.__raw__ = file.readInt32LE(offset);
 
-    if (ret.__raw__ === -1 || ret.__raw__ === 0xFFFFFFFF) {
+    if (ret.__raw__ === -1 || ret.__raw__ === 0 || ret.__raw__ === 0xFFFFFFFF) {
       ret.__raw__ = null;
       return;
     }
@@ -244,7 +244,7 @@ let basicTypes = {
 
     ret.__raw__ = file.readInt32LE(offset + 4);
 
-    if (ret.__raw__ === -1 || ret.__raw__ === 0xFFFFFFFF) {
+    if (ret.__raw__ === -1 || ret.__raw__ === 0 || ret.__raw__ === 0xFFFFFFFF) {
       ret.__raw__ = null;
       return;
     }
