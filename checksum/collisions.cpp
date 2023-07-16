@@ -495,6 +495,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[1683664497].insert("ar");
   if (!common) typePrefixes[1683664497].insert("arn");
   typePrefixes[1683664497].insert("arr");
+  if (!common) typePrefixes[1683664497].insert("af");
   if (!common) typePrefixes[1683664497].insert("at");
   typePrefixes[1683664497].insert("pt");
   typePrefixes[1797021084].insert("h");
@@ -511,6 +512,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[2388214534].insert("ar");
   if (!common) typePrefixes[2388214534].insert("arn");
   typePrefixes[2388214534].insert("arr");
+  if (!common) typePrefixes[2388214534].insert("af");
   if (!common) typePrefixes[2388214534].insert("at");
   typePrefixes[2388214534].insert("pt");
   typePrefixes[2450313795].insert("v");
@@ -567,6 +569,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[3244749660].insert("ar");
   if (!common) typePrefixes[3244749660].insert("arn");
   typePrefixes[3244749660].insert("arr");
+  if (!common) typePrefixes[3244749660].insert("af");
   if (!common) typePrefixes[3244749660].insert("at");
   typePrefixes[3244749660].insert("pt");
   typePrefixes[3339108615].insert("snoname");

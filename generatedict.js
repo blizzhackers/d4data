@@ -1,138 +1,155 @@
 const fs = require('fs');
 
-let prefix = {};
-let dict = {};
-
-let banned = {
-  'wcyl': true,
+let dict = {
+  '2D': '2D',
+  '3D': '3D',
+  '4D': '4D',
 };
 
-let names = {};
-let newnames = {};
+let prefixes = {
+  'a': 'a',
+  'aabb': 'aabb',
+  'af': 'af',
+  'ann': 'ann',
+  'ar': 'ar',
+  'arn': 'arn',
+  'arr': 'arr',
+  'at': 'at',
+  'attachment': 'attachment',
+  'b': 'b',
+  'blend': 'blend',
+  'bone': 'bone',
+  'cell': 'cell',
+  'constraint': 'constraint',
+  'count': 'count',
+  'dw': 'dw',
+  'e': 'e',
+  'end': 'end',
+  'f': 'f',
+  'face': 'face',
+  'fl': 'fl',
+  'follower': 'follower',
+  'game': 'game',
+  'gbid': 'gbid',
+  'h': 'h',
+  'i': 'i',
+  'id': 'id',
+  'inv': 'inv',
+  'is': 'is',
+  'local': 'local',
+  'm': 'm',
+  'max': 'max',
+  'n': 'n',
+  'p': 'p',
+  'path': 'path',
+  'plane': 'plane',
+  'pn': 'pn',
+  'pt': 'pt',
+  'q': 'q',
+  'rgba': 'rgba',
+  'rgbaval': 'rgbaval',
+  's': 's',
+  'sample': 'sample',
+  'sno': 'sno',
+  'snoname': 'snoname',
+  'start': 'start',
+  'sz': 'sz',
+  't': 't',
+  'transform': 'transform',
+  'triangle': 'triangle',
+  'twin': 'twin',
+  'u': 'u',
+  'us': 'us',
+  'v': 'v',
+  'vec': 'vec',
+  'vertex': 'vertex',
+  'w': 'w',
+  'wcyl': 'wcyl',
+  'wd': 'wd',
+  'wp': 'wp',
+  'ws': 'ws',
+  'wv': 'wv',
+};
 
-fs.readFileSync('names.txt').toString().split(/\s+/gi).forEach(name => {
-  names[name] = name;
-});
+let typeNames = {};
+let fieldNames = {};
 
-Object.keys(names).forEach(name => {
-  let matches = name.split(/^((?:(?:m_)?(?:a|ar|arn|arr|b|bc|dw|e|f|fl|gbid|h|i|id|rgba|is|inv|wcyl|m|n|p|pn|pt|pgbid|q|s|ser|sz|t|tag|u|v|vec|pwv|sno|pdw|vw|wd|wvp|rgbaval|wp|wr|ws|wv|bone|cell|end|game|local|max|parent|path|plane|sample|start|twin|vertex|count|l))(?=[0-9A-Z_]))/g).filter(Boolean);
+let definitions = require('./definitions.json');
 
-  matches.forEach(subname => {
-    if (/^[^a-zA-Z]+$/.test(subname)) {
-      return;
-    }
+Object.values(definitions).forEach(definition => {
+  if (definition.name.slice(0, 5) !== 'Type_' && definition.type === 'complex') {
+    typeNames[definition.name] = definition.name;
+  }
 
-    if (/^((?:m_)?(?:a|ar|arn|arr|b|bc|dw|e|f|fl|gbid|h|i|id|rgba|is|inv|wcyl|m|n|p|pn|pt|pgbid|q|s|ser|sz|t|tag|u|v|vec|pwv|sno|pdw|vw|wd|wvp|rgbaval|wp|wr|ws|wv|bone|cell|end|game|local|max|parent|path|plane|sample|start|twin|vertex|count|l))$/g.test(subname)) {
-      if (!prefix[subname]) {
-        prefix[subname] = names[name];
+  if (definition.fields && definition.fields.length) {
+    definition.fields.forEach(field => {
+      if (field.name.slice(0, 4) !== 'unk_') {
+        fieldNames[field.name] = field.name;
       }
-    } else {
-      newnames[subname] = names[name];
-    }
-  });
+    });
+  }
 });
 
-names = newnames;
-newnames = {};
+function isWord (str) {
+  return str && str.length;
+}
 
-Object.keys(names).forEach(name => {
-  let matches = name.split(/(3x3|4x4|BCVEC2I|IDs(?![a-z])|By(?![a-z])|To(?![a-z])|In(?![a-z])|Is(?![a-z])|On(?![a-z])|No(?![a-z])|(?<![0-9])2D|(?<![0-9])3D|(?<![0-9])4D)/g).filter(Boolean);
+function *parseTypeName (name) {
+  for (let subname of name.split(/_|FoW|(?<![0-9])2D|(?<![0-9])3D|(?<![0-9])4D/g).filter(isWord)) {
+    for (let subsubname of subname.split(/([A-Z][a-z][a-z0-9]*)/g).filter(isWord)) {
+      if (subsubname.length > 1) {
+        if (subsubname.slice(1) === subsubname.slice(1).toLowerCase()) {
+          subsubname = subsubname.toLowerCase();
+        }
 
-  matches.forEach(subname => {
-    if (/^([^a-zA-Z]+)$/.test(subname) || subname.length < 3) {
-      return;
-    }
+        yield subsubname;
 
-    if (/^(3x3|4x4|BCVEC2I|IDs(?![a-z])|By(?![a-z])|To(?![a-z])|In(?![a-z])|Is(?![a-z])|On(?![a-z])|No(?![a-z])|(?<![0-9])2D|(?<![0-9])3D|(?<![0-9])4D)$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      if (!dict[subname]) {
-        dict[subname] = names[name];
-      }
-    } else {
-      newnames[subname] = names[name];
-    }
-  });
-});
-
-names = newnames;
-newnames = {};
-
-Object.keys(names).forEach(name => {
-  let matches = name.split(/([A-Z][a-z]{2,})/g).filter(Boolean);
-
-  matches.forEach(subname => {
-    if (/^[^a-zA-Z]+$/.test(subname)) {
-      return;
-    }
-
-    if (/^([A-Z][a-z]+)$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      if (!dict[subname]) {
-        dict[subname] = names[name];
-      }
-    } else {
-      newnames[subname] = names[name];
-    }
-  });
-});
-
-names = newnames;
-newnames = {};
-
-Object.keys(names).forEach(name => {
-  let matches = name.split(/([A-Z]{2,})/g).filter(Boolean);
-
-  matches.forEach(subname => {
-    if (/^[^a-zA-Z]+$/.test(subname)) {
-      return;
-    }
-
-    if (/^([A-Z]{2,})$/g.test(subname) || /^[a-z]{3,}$/g.test(subname)) {
-      if (!dict[subname]) {
-        dict[subname] = names[name];
-      }
-    } else {
-      newnames[subname] = names[name];
-    }
-  });
-});
-
-names = newnames;
-newnames = {};
-
-Object.keys(names).forEach(name => {
-  let matches = name.split(/_+/g).filter(Boolean);
-
-  matches.forEach(subname => {
-    if (subname.length > 1 && !/^[^a-z]+$/gi.test(subname)) {
-      newnames[subname] = names[name];
-    }
-  });
-});
-
-names = newnames;
-newnames = {};
-
-Object.keys(names).forEach(name => {
-  let matches = name.split(/([a-z]+[0-9]*)/g).filter(Boolean);
+        let trimmed = subsubname;
   
-  matches.forEach(subname => {
-    if (subname.toLowerCase() == '') {
-      debugger;
-    }
+        while (trimmed.length > 1 && ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].indexOf(trimmed[trimmed.length - 1]) >= 0) {
+          trimmed = trimmed.slice(0, -1);
+        }
 
-    if (subname.length > 2 && !/^[^a-z]+$/gi.test(subname) && !banned[subname.toLowerCase()]) {
-      if (!dict[subname]) {
-        dict[subname] = names[name];
+        if (trimmed.length > 1 && trimmed !== subsubname) {
+          yield trimmed;
+        }
       }
     }
-  });
-});
+  }
+}
 
-names = newnames;
-newnames = {};
+function *parseFieldName (name) {
+  name = name.split('m_').pop();
 
-fs.writeFileSync('dict.txt', Object.keys(dict).sort().join('\n'));
+  let parts = name.split(/^([a-z0-9_]+)/g);
 
-dict = Object.assign({}, JSON.parse(fs.readFileSync('dict_expanded.json').toString()), dict);
+  if (parts.length === 3) {
+    let prefix = parts[1];
 
-fs.writeFileSync('dict_expanded.json', JSON.stringify(dict, null, ' '));
-fs.writeFileSync('dict_expanded.txt', Object.keys(dict).sort().join('\n'));
+    if (!prefixes[prefix] && prefix.length > 1) {
+      yield prefix;
+    }
+
+    parts = parts.slice(2);
+  }
+
+  for (let subname of parts) {
+    for (let subsubname of parseTypeName(subname)) {
+      yield subsubname;
+    }  
+  }
+}
+
+for (let i in typeNames) {
+  for (let subname of parseTypeName(typeNames[i])) {
+    dict[subname] = subname;
+  }
+}
+
+for (let i in fieldNames) {
+  for (let subname of parseFieldName(fieldNames[i])) {
+    dict[subname] = subname;
+  }
+}
+
+fs.writeFileSync(__dirname + '/dict.txt', Object.values(dict).sort().join('\n'));
