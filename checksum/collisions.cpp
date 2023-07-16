@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <unordered_set>
-#include <map>
+#include <unordered_map>
 #include <algorithm>
 #include <filesystem>
 #include <thread>
@@ -46,9 +46,9 @@ bool paired = false, usingFieldTypeMap = false;
 
 std::vector<std::string> subdict[64];
 std::vector<std::string> dict;
-std::map<std::string, bool> stringUsed;
-std::map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
-std::map<uint32_t, std::unordered_set<std::string>> typePrefixes;
+std::unordered_map<std::string, bool> stringUsed;
+std::unordered_map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
+std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 
 unsigned int maxThreads = std::thread::hardware_concurrency(), threadLevel = 0;
 
@@ -854,13 +854,7 @@ int main(int argc, char *argv[]) {
   }
 
   int32_t dictmax = dict.size();
-  std::map<std::string, bool> dictmap;
-
-  if (!wordsOnly) {
-    for (const auto &baseelem : defaultDict) {
-      dictmap[baseelem] = true;
-    }
-  }
+  std::unordered_map<std::string, bool> dictmap;
 
   if (useDict) {
     if (dictPathOrString == "../english_dict.txt") {
@@ -877,8 +871,9 @@ int main(int argc, char *argv[]) {
             continue;
           }
 
-          if (hashType == 2) {
+          if (hashType == 2 && !dictmap[newelem2]) {
             dictmap[newelem2] = true;
+            dict.push_back(newelem2);
             continue;
           }
 
@@ -886,7 +881,10 @@ int main(int argc, char *argv[]) {
             elem = newelem.substr(0, 1) + newelem2.substr(1);
           }
 
-          dictmap[elem] = true;
+          if (!dictmap[elem]) {
+            dictmap[elem] = true;
+            dict.push_back(elem);
+          }
         }
       }
     }
@@ -904,8 +902,9 @@ int main(int argc, char *argv[]) {
           continue;
         }
 
-        if (hashType == 2) {
+        if (hashType == 2 && !dictmap[newelem2]) {
           dictmap[newelem2] = true;
+          dict.push_back(newelem2);
           continue;
         }
 
@@ -913,13 +912,21 @@ int main(int argc, char *argv[]) {
           elem = newelem.substr(0, 1) + newelem2.substr(1);
         }
 
-        dictmap[elem] = true;
+        if (!dictmap[elem]) {
+          dictmap[elem] = true;
+          dict.push_back(elem);
+        }
       }
     }
   }
 
-  for (const auto elem : dictmap) {
-    dict.push_back(elem.first);
+  if (!wordsOnly) {
+    for (const auto &baseelem : defaultDict) {
+      if (!dictmap[baseelem]) {
+        dictmap[baseelem] = true;
+        dict.push_back(baseelem);
+      }
+    }
   }
 
   if (hashType == 1) {
@@ -938,7 +945,7 @@ int main(int argc, char *argv[]) {
       loadFieldTypeMap(useCommonPrefixes);
 
       if (subdict[0].size() < 1) {
-        std::map<std::string, bool> prefixMap;
+        std::unordered_map<std::string, bool> prefixMap;
 
         for (const auto &fieldEntry : fieldTypeMap) {
           if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {

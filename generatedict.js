@@ -223,4 +223,12 @@ Object.keys(markov).filter(key => markov[key] > 1).forEach(chain => {
   dict[chain] = (dict[chain] || 0) + count;
 });
 
-fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).sort().sort((a, b) => dict[b] - dict[a]).join('\n'));
+fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).sort((a, b) => {
+  if (dict[b] - dict[a]) {
+    return dict[b] - dict[a];
+  }
+
+  let tmp = [a, b].sort();
+
+  return tmp.indexOf(a) - tmp.indexOf(b);
+}).join('\n'));
