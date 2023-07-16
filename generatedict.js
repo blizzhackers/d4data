@@ -1,9 +1,9 @@
 const fs = require('fs');
 
 let dict = {
-  '2D': '2D',
-  '3D': '3D',
-  '4D': '4D',
+  '2D': 0,
+  '3D': 0,
+  '4D': 0,
 };
 
 let prefixes = {
@@ -71,6 +71,8 @@ let prefixes = {
   'wv': 'wv',
 };
 
+let markov = {};
+
 let typeNames = {};
 let fieldNames = {};
 
@@ -95,25 +97,22 @@ function isWord (str) {
 }
 
 function *parseTypeName (name) {
-  for (let subname of name.split(/_|FoW|(?<![0-9])2D|(?<![0-9])3D|(?<![0-9])4D/g).filter(isWord)) {
+  for (let subname of name.split(/(_|FoW|(?<![0-9])[234]D)/g).filter(isWord)) {
+    if (subname === '_') {
+      continue;
+    }
+
+    if (subname === 'FoW' || subname === '2D' || subname === '3D' || subname === '4D') {
+      yield subname;
+      continue;
+    }
+
     for (let subsubname of subname.split(/([A-Z][a-z][a-z0-9]*)/g).filter(isWord)) {
-      if (subsubname.length > 1) {
-        if (subsubname.slice(1) === subsubname.slice(1).toLowerCase()) {
-          subsubname = subsubname.toLowerCase();
-        }
-
-        yield subsubname;
-
-        let trimmed = subsubname;
-  
-        while (trimmed.length > 1 && ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'].indexOf(trimmed[trimmed.length - 1]) >= 0) {
-          trimmed = trimmed.slice(0, -1);
-        }
-
-        if (trimmed.length > 1 && trimmed !== subsubname) {
-          yield trimmed;
-        }
+      if (subsubname.slice(1) === subsubname.slice(1).toLowerCase()) {
+        subsubname = subsubname.toLowerCase();
       }
+
+      yield subsubname;
     }
   }
 }
@@ -141,15 +140,87 @@ function *parseFieldName (name) {
 }
 
 for (let i in typeNames) {
-  for (let subname of parseTypeName(typeNames[i])) {
-    dict[subname] = subname;
+  let names = Array.from(parseTypeName(typeNames[i]));
+
+  for (let subname of names) {
+    if (subname.length > 1) {
+      if (/[a-z]/gi.test(subname)) {
+        dict[subname] = (dict[subname] || 0) + 1;
+
+        let orig = subname;
+
+        while ('0123456789'.indexOf(subname[subname.length - 1]) >= 0) {
+          subname = subname.slice(0, -1);
+        }
+  
+        if (subname !== orig && subname.length > 1) {
+          dict[subname] = dict[subname] || 0;
+        }  
+      }
+    }
+  }
+
+  for (let len = 2; len <= names.length; len++) {
+    for (let i = 0; i < names.length; i++) {
+      let cluster = names.slice(i, len).filter(str => str && str.length);
+
+      if (cluster.length === len) {
+        cluster = cluster.join(' ');
+        markov[cluster] = (markov[cluster] || 0) + 1;
+      }
+    }
   }
 }
 
 for (let i in fieldNames) {
-  for (let subname of parseFieldName(fieldNames[i])) {
-    dict[subname] = subname;
+  let names = Array.from(parseFieldName(fieldNames[i]));
+
+  for (let subname of names) {
+    if (subname.length > 1) {
+      if (/[a-z]/gi.test(subname)) {
+        dict[subname] = (dict[subname] || 0) + 1;
+
+        let orig = subname;
+
+        while ('0123456789'.indexOf(subname[subname.length - 1]) >= 0) {
+          subname = subname.slice(0, -1);
+        }
+  
+        if (subname !== orig && subname.length > 1) {
+          dict[subname] = dict[subname] || 0;
+        }  
+      }
+    }
+  }
+
+  for (let len = 2; len <= names.length; len++) {
+    for (let i = 0; i < names.length; i++) {
+      let cluster = names.slice(i, len).filter(str => str && str.length);
+
+      if (cluster.length === len) {
+        cluster = cluster.join(' ');
+        markov[cluster] = (markov[cluster] || 0) + 1;
+      }
+    }
   }
 }
 
-fs.writeFileSync(__dirname + '/dict.txt', Object.values(dict).sort().join('\n'));
+Object.keys(markov).filter(key => markov[key] > 1).forEach(chain => {
+  let count = markov[chain];
+
+  chain = chain.split(' ');
+
+  chain = chain.map(word => {
+    if (word === word.toLowerCase() && word !== 'dm') {
+      return word.slice(0, 1).toUpperCase() + word.slice(1);
+    }
+
+    return word;
+  });
+
+  chain = chain.join('');
+
+  dict[chain] = (dict[chain] || 0) + count;
+});
+
+fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).sort().sort((a, b) => dict[b] - dict[a]).join('\n'));

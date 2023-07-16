@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <unordered_set>
-#include <unordered_map>
+#include <map>
 #include <algorithm>
 #include <filesystem>
 #include <thread>
@@ -46,9 +46,9 @@ bool paired = false, usingFieldTypeMap = false;
 
 std::vector<std::string> subdict[64];
 std::vector<std::string> dict;
-std::unordered_map<std::string, bool> stringUsed;
-std::unordered_map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
-std::unordered_map<uint32_t, std::unordered_set<std::string>> typePrefixes;
+std::map<std::string, bool> stringUsed;
+std::map<uint32_t, std::vector<uint32_t>> fieldTypeMap;
+std::map<uint32_t, std::unordered_set<std::string>> typePrefixes;
 
 unsigned int maxThreads = std::thread::hardware_concurrency(), threadLevel = 0;
 
@@ -854,7 +854,7 @@ int main(int argc, char *argv[]) {
   }
 
   int32_t dictmax = dict.size();
-  std::unordered_map<std::string, bool> dictmap;
+  std::map<std::string, bool> dictmap;
 
   if (!wordsOnly) {
     for (const auto &baseelem : defaultDict) {
@@ -910,7 +910,7 @@ int main(int argc, char *argv[]) {
       loadFieldTypeMap(useCommonPrefixes);
 
       if (subdict[0].size() < 1) {
-        std::unordered_map<std::string, bool> prefixMap;
+        std::map<std::string, bool> prefixMap;
 
         for (const auto &fieldEntry : fieldTypeMap) {
           if (hasChecksum(checksumMatch, fieldEntry.first) || hasChecksum(checksumMatchSecondary, fieldEntry.first)) {
