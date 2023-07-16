@@ -205,7 +205,7 @@ for (let i in fieldNames) {
   }
 }
 
-Object.keys(markov).filter(key => markov[key] > 1).forEach(chain => {
+Object.keys(markov).filter(key => markov[key] > 0).forEach(chain => {
   let count = markov[chain];
 
   chain = chain.split(' ');
