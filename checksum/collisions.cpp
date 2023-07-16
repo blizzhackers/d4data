@@ -863,6 +863,34 @@ int main(int argc, char *argv[]) {
   }
 
   if (useDict) {
+    if (dictPathOrString == "../english_dict.txt") {
+      for (const auto &baseelem : getDict("../dict.txt")) {
+        if (baseelem.length() > 1) {
+          std::string elem = baseelem;
+          std::string newelem = elem;
+          std::string newelem2 = elem;
+
+          std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
+          std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
+
+          if (ignoreAllCaps && isAllCaps(elem)) {
+            continue;
+          }
+
+          if (hashType == 2) {
+            dictmap[newelem2] = true;
+            continue;
+          }
+
+          if (elem == newelem2) {
+            elem = newelem.substr(0, 1) + newelem2.substr(1);
+          }
+
+          dictmap[elem] = true;
+        }
+      }
+    }
+
     for (const auto &baseelem : getDict(dictPathOrString)) {
       if (baseelem.length() > 1) {
         std::string elem = baseelem;
