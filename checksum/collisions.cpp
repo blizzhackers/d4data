@@ -629,6 +629,7 @@ int main(int argc, char *argv[]) {
   bool gettingThreads = false;
   bool gettingDict = false;
   bool useCommonPrefixes = true;
+  bool literalDict = false;
 
   signal(SIGINT, &signal_callback_handler);
   signal(SIGTERM, &signal_callback_handler);
@@ -706,6 +707,9 @@ int main(int argc, char *argv[]) {
       }
       else if(arg == "--dict") {
         gettingDict = true;
+      }
+      else if(arg == "--literal") {
+        literalDict = true;
       }
       else if(arg == "--threads") {
         gettingThreads = true;
@@ -859,7 +863,16 @@ int main(int argc, char *argv[]) {
   if (useDict) {
     if (dictPathOrString == "../english_dict.txt") {
       for (const auto &baseelem : getDict("../dict.txt")) {
-        if (baseelem.length() > 1) {
+        if (baseelem.length() > 1 || wordsOnly) {
+          if (literalDict) {
+            if (!dictmap[baseelem]) {
+              dictmap[baseelem] = true;
+              dict.push_back(baseelem);
+            }
+
+            continue;
+          }
+
           std::string elem = baseelem;
           std::string newelem = elem;
           std::string newelem2 = elem;
@@ -890,7 +903,16 @@ int main(int argc, char *argv[]) {
     }
 
     for (const auto &baseelem : getDict(dictPathOrString)) {
-      if (baseelem.length() > 1) {
+      if (baseelem.length() > 1 || wordsOnly) {
+        if (literalDict) {
+          if (!dictmap[baseelem]) {
+            dictmap[baseelem] = true;
+            dict.push_back(baseelem);
+          }
+
+          continue;
+        }
+
         std::string elem = baseelem;
         std::string newelem = elem;
         std::string newelem2 = elem;
@@ -931,7 +953,7 @@ int main(int argc, char *argv[]) {
 
   if (hashType == 1) {
     if (noPrefix) {
-      if (subdict[0].size() < 1) {
+      if (!literalDict && subdict[0].size() < 1) {
         std::transform(dict.cbegin(), dict.cend(), std::back_inserter(subdict[0]), [](std::string s) {
           if (!s.empty()) {
               s[0] = std::tolower(s[0]);
