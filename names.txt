@@ -172,6 +172,9 @@ BiomeItem
 BiomeObject
 BlendSettings
 BlendTimeOverrideEntry
+BlessingLevel
+Blessings
+Blessings_Table
 BlizzconCVarsMessage
 BlizzconSubcondition
 BlockedDamageVisualsMessage
@@ -475,6 +478,10 @@ EyeColorDefinition
 FaceDefinition
 FacialHairDefinition
 FatVertex
+FavorLevel
+FavorLevel_Table
+FavorSeason
+FavorSeason_Table
 FlagLookup
 FlagSetDefinition
 FlippyMessage
@@ -651,6 +658,8 @@ Influence
 InitiateGroupTransferMessage
 Int64DataMessage
 IntDataMessage
+IntDataRequest
+IntDataResponse
 IntensityParam
 IntensitySubParam
 InterpolationPathHeader
@@ -747,6 +756,10 @@ MailSendMessage
 MailSentResponseMessage
 MainHandItemLabelSubcondition
 MakeupDefinition
+MalignantColor
+MalignantColorWeight
+MalignantMonsterColorSubcondition
+MalignantMonsterTierSubcondition
 MapImageHandleReference
 MapPinMessage
 MapPingMessage
@@ -836,6 +849,10 @@ MonsterFamilyDefinition
 MonsterFamilySubcondition
 MonsterRaritySubcondition
 MonsterSubcondition
+MonsterTagOverrideData
+MonsterTagSubcondition
+MonsterTags
+MonsterTags_Table
 MountACDInfo
 MountClearMessage
 MountPreset
@@ -974,6 +991,7 @@ ParagonUnequipSocketMessage
 ParametricInfo
 ParametricLayer
 ParametricSettings
+ParticipantTimerGizmoData
 ParticleDefinition
 ParticleKeyFrames
 ParticleLifeEvent
@@ -1027,6 +1045,7 @@ PlayerEnterKnownMessage
 PlayerFlagSubcondition
 PlayerForceShapeshiftMessage
 PlayerGenderSubcondition
+PlayerHasEarnedAchievementSubcondition
 PlayerHasFollowerSubcondition
 PlayerHasUnlockedMountsSubcondition
 PlayerHealthSubcondition
@@ -1085,7 +1104,9 @@ PowerConditionDamageHasFortified
 PowerConditionDamageHasVulnerable
 PowerConditionDamageIsCrit
 PowerConditionDamageIsDot
+PowerConditionDamageIsFar
 PowerConditionDamageIsFromPayload
+PowerConditionDamageIsNear
 PowerConditionDamageIsOverpower
 PowerConditionDistanceToTarget
 PowerConditionDungeonTier
@@ -1093,6 +1114,7 @@ PowerConditionHasActorTarget
 PowerConditionHasAffixEquipped
 PowerConditionHasBuff
 PowerConditionHasDamage
+PowerConditionHasDamageShield
 PowerConditionHasDot
 PowerConditionHasFortifiedHealth
 PowerConditionHasHealth
@@ -1286,6 +1308,7 @@ ScoreStatistic
 ScreenStaticCamps
 ScriptEventDescription
 ScriptEventInvalidType
+ScriptEventParamAchievement
 ScriptEventParamActor
 ScriptEventParamActorGroup
 ScriptEventParamAllowAny
@@ -1337,6 +1360,8 @@ ScrollbarElementImages
 ScrollbarStyle
 SeasonDefinition
 SeasonSubcondition
+SeasonWorldTierData
+SeasonalPostCampaignCompleteSubcondition
 SerialDataInfo
 SerializeContainerData
 SerializeData
@@ -1455,6 +1480,14 @@ SurveyTypeEntry
 SurveyTypeEntry_Table
 SwitchBehaviorGizmoData
 SwitchGizmoData
+TAG_VS_ALPHATESTFUNC
+TAG_VS_EARLY_DEPTH_STENCIL
+TAG_VS_ENABLE_FOGGING
+TAG_VS_ENABLE_SKINNING
+TAG_VS_FLIP_NORMAL_BACKFACE
+TAG_VS_LIGHTING
+TAG_VS_NUM_BONE_WEIGHTS
+TAG_VS_TIMER_PERIOD
 TelemetryBugEnteredMessage
 TempCollisionMesh
 TerritoryDefinition
@@ -1804,8 +1837,13 @@ afDistance
 afFrequency
 afGlobalDirectionAdherence
 afGlobalDistance
+afRippleDistance
+afTumbleDirectionAdherence
+afTumbleFlip
+afTumbleTwist
 afTurbulence
 afTurbulenceFrequency
+afTwitchThrow
 afWhip
 ann
 annACD
@@ -1880,6 +1918,7 @@ arAvailableParagonBoards
 arBannerShapes
 arBiomeClutters
 arBiomes
+arBlessings
 arBodySlots
 arBones
 arBonusAttributes
@@ -2026,6 +2065,7 @@ arLayersVertexAO
 arLegComponents
 arLevelAreaSNOs
 arLevelAreas
+arLevels
 arLines
 arListenerReactions
 arLookVariantMap
@@ -2035,6 +2075,7 @@ arLookVariantOverrides
 arLookVariants
 arMakeupChoices
 arMaleOffsets
+arMalignantTags
 arMarkingColorChoices
 arMarkingShapeChoices
 arMask
@@ -2047,6 +2088,8 @@ arModifier
 arMods
 arMonsterArchetypes
 arMonsterRarities
+arMonsterTagOverride
+arMonsterTags
 arMounts
 arMusicSegments
 arNPCComponentSetPreloadHelpers
@@ -2429,6 +2472,7 @@ bUnlocked
 bUnlockedTownPortal
 bUntargetableDuring
 bUsableInCombat
+bUsableInPrologue
 bUsableInTown
 bUse2D
 bUseAltName
@@ -2605,6 +2649,7 @@ dwMSAALevel
 dwMachineTime
 dwMarkerActorFlags
 dwMarkerFlags
+dwMarkerFlagsEx
 dwMarkerPathID
 dwMarkerSetFlags
 dwMaterialHash
@@ -2846,6 +2891,7 @@ eFollowMode
 eFootstepSide
 eFootstepType
 eForcedDamageType
+eForcedItemQualityModifier
 eFormat
 eGameBalanceType
 eGameReset
@@ -2898,6 +2944,7 @@ eLoadBehavior
 eLocationType
 eLogoutContext
 eMagicType
+eMalignantTier
 eMaterial
 eMetaDataType
 eMicrophoneMode
@@ -3323,12 +3370,14 @@ flControllerMaxMoveThreshold
 flControllerMoveFacingZone
 flControllerNormalTurnSpeed
 flControllerReboundDetectionZone
+flConversationCancelDistance
 flCooldown
 flCooldownDuration
 flCooldownSeconds
 flCooldownTime
 flCutoffRadius
 flDamage
+flDamageBonus
 flDamageScalar
 flDamageScalarOverride
 flDamageUnscaled
@@ -3424,6 +3473,7 @@ flHPScalarOverride
 flHairColorInfluence
 flHaze
 flHealthBase
+flHealthBonus
 flHealthPercent
 flHeight
 flHeightMax
@@ -3790,6 +3840,7 @@ gbidAchievementEvent
 gbidActorGroup
 gbidAffixFamily
 gbidCategory
+gbidCostScalingFormula
 gbidData
 gbidDesignerVariable
 gbidDungeonState
@@ -3798,10 +3849,15 @@ gbidHelpCode
 gbidHiddenCache
 gbidHiddenCaches
 gbidLabel
+gbidLabelOverride
 gbidLookTag
+gbidMalignantColor
+gbidMonsterTag
 gbidName
 gbidNightmareDungeonSurveyType
+gbidOrderTag
 gbidPetType
+gbidPowerBudgetFormula
 gbidPrefabScopedActorGroup
 gbidRankReward
 gbidRanks
@@ -3834,9 +3890,11 @@ hDetailsDisplayImage
 hDisplayedString
 hDownCornerImage
 hFemaleImage
+hFlavorTextOverride
 hFloatingIcon
 hFluidObjectsImage
 hGB
+hGizmoLockLockedMsgLabel
 hHitMaskImage
 hIcon
 hIconDisabled
@@ -3871,8 +3929,10 @@ hImageRenderSourceOverlay
 hLabel
 hLargeIcon
 hLeftBorder
+hListItemTemplate
 hMaskImage
 hMinimapIcon
+hMinimapIconGizmoUsed
 hMinimapIconImage
 hMinimapStringLabel
 hNotificationIcon
@@ -3884,11 +3944,13 @@ hPieceLeft
 hPieceMiddle
 hPieceRight
 hPieceTop
+hPoILabel
 hPortraitImage
 hProgressBackgroundImage
 hProgressForegroundImage
 hResource
 hRightBorder
+hSkillRequirementLabel
 hSmallIcon
 hSocketedActiveImage
 hSocketedImage
@@ -3916,6 +3978,8 @@ iPowerNeedTarget
 ibid
 ibidIndices
 id
+idBnetAccount
+idClientUser
 idEffectGroup
 idErr
 idGameAccount
@@ -3933,16 +3997,20 @@ idValue
 invMass
 isDungeon
 isOpen
+islandIndex
 key
 kinematicCount
 kinematicRoots
 left
 levels
+lhf
 localFrame1
 localFrame2
 localTransform
 mInertiaTensor
 m_FaceCount
+m_ItemSno
+m_PowerSno
 m_SubEdgeCount
 m_VertexCount
 m_aAnchorMap
@@ -3969,12 +4037,16 @@ m_cellId
 m_cellWidth
 m_centroid
 m_data
+m_detailGrid
+m_dimensions
 m_distanceConstraintCount
 m_eHasModifiedPowerTagMap
 m_faceCount
+m_flCursorTops
 m_friction
 m_id
 m_invScale
+m_islandCount
 m_localFrame
 m_localTransform
 m_name
@@ -3984,6 +4056,7 @@ m_params
 m_planeCount
 m_platform
 m_scale
+m_stapleCount
 m_stiffness
 m_transform1
 m_transform2
@@ -4056,6 +4129,7 @@ nEffectWeightMethod
 nElevationsCount
 nEnchantSlot
 nExclusiveGroupId
+nExplicitRequiredLevel
 nFacing
 nFadeGroup
 nFadeTime
@@ -4314,9 +4388,11 @@ null or eof
 offset
 onHitSounds
 p
+pBBEFormulas
 pBoneIDs
 pHotspot
 pKillerRareNameGBIDs
+pMessageFilter
 pPolytopeData
 pProtoData
 pRareNameGBIDs
@@ -4356,6 +4432,7 @@ pathGroundFogFogColor
 pathGroundFogHeight
 pathHeight
 pathHeightColor
+pathHeightFogStart
 pathHotspot
 pathInitialAngularVelocity
 pathInitialScale
@@ -4384,6 +4461,7 @@ pathNoiseFrequency
 pathNoiseRangeOverLength
 pathNoiseSmoothness
 pathOrientationAxis
+pathOrientationAxis2
 pathOrientationPosition
 pathOrientationVelocity
 pathParticleAlpha
@@ -4419,7 +4497,9 @@ pathTangentSourceOverTime
 pathTurbulenceStrength
 pathU
 pathV
+pathValGraph
 pathVectorFieldRotation
+pathVertexAOPower
 pathVignetteColor
 pathVignetteIntensity
 pathVignetteSmoothness
@@ -4436,6 +4516,7 @@ pgbidRareNames
 planeCount
 planeDefs
 pnAnimToStructure
+polytopeDataMirror
 positionOffset
 pt
 ptAIBroadcasts
@@ -4652,6 +4733,7 @@ r
 radius1
 radius2
 reason
+rgbaButtonDisabledColor
 rgbaChildHoverForeground
 rgbaChildHoverForegroundDisabled
 rgbaColor
@@ -4660,6 +4742,7 @@ rgbaColorMul
 rgbaColors
 rgbaDebugColor
 rgbaDropShadow
+rgbaEditPlaceholderTextForeground
 rgbaFadeColor
 rgbaForeground
 rgbaForegroundDisabled
@@ -4676,6 +4759,7 @@ rgbaSlopeColor
 rgbaTint
 rgbavalAvgColor
 right
+rtpcName
 rx
 ry
 rz
@@ -5182,6 +5266,7 @@ snoUpgradePower
 snoVariantMaterial
 snoVectorField
 snoVendorWorld
+snoVisibilityCondition
 snoVoiceSoundTable
 snoWalkSoundTable
 snoWarpInPower
@@ -5196,10 +5281,12 @@ snoname
 snonameAnim
 snonameObject
 solver
+stapleIndex
 startIndex
 stiffness
 surfaceArea
 szAccountName
+szActorMarkerName
 szAnchorControl
 szArchetype
 szArchetypeName
@@ -5270,6 +5357,8 @@ szMonsterCategory
 szMsg
 szNPCName
 szName
+szNewHeroId
+szNewHeroName
 szOnBack
 szOnButton1
 szOnButton2
@@ -5354,8 +5443,10 @@ szValue
 szVariableName
 szVendorCamera
 szVoiceTypeTag
+szWeaponPrefix
 tAABB
 tActiveSkills
+tAdditionalRandomAffixesRange
 tAdvanceEvent
 tAllowedScaleRange
 tAlphaBlend
@@ -5378,6 +5469,7 @@ tAttachmentHardpointLink
 tAttackRadius
 tAttackSpeed
 tAttribute
+tAudioContextGrid
 tAudioState
 tAudioVisual
 tAuxBus
@@ -5389,6 +5481,7 @@ tBaseLook
 tBlendCase
 tBlendIn
 tBlendOut
+tBlessingData
 tBlockedSnos
 tBone
 tBoneInfluence
@@ -5486,6 +5579,8 @@ tFacialHair
 tFacingData
 tFailEvent
 tFallbackEffect
+tFavorData
+tFavorTableData
 tFirstReward
 tFirstTimeReward
 tFlatLevel
@@ -5526,6 +5621,7 @@ tHover
 tHoverTracked
 tHull
 tIKData
+tIKHardpoint
 tIcon
 tIconScale
 tImpactVelocityRange
@@ -5555,6 +5651,8 @@ tLinkEnd
 tLinkStart
 tLinks
 tLocType
+tLocalEventLocations
+tLocalEventQuests
 tLocalSyncTransform
 tLocalTransform
 tLocation
@@ -5562,6 +5660,7 @@ tLockData
 tLookAtData
 tLookLink
 tLookOverrides
+tLoopDelay
 tLoopPointEnd
 tLoopPointStart
 tLuxSettings
@@ -5586,6 +5685,7 @@ tMinBlend
 tMinRequired
 tMonsterACDInfo
 tMountACDInfo
+tMovementPowerData
 tMovementSpeed
 tMsgTriggeredEvents
 tNPCACDInfo
@@ -5601,8 +5701,10 @@ tNoiseRateRange
 tNpcGenerationData
 tOceanIndicesInfo
 tOffsetRadius
+tOnClickEffect
 tOutroDuration
 tOverrideLook
+tPOICameraData
 tPS4AwardDefinitionList
 tPS5AwardDefinitionList
 tPair
@@ -5617,6 +5719,7 @@ tPathData
 tPathHandle
 tPathProps
 tPayload
+tPeriodRange
 tPhaseName
 tPitch
 tPlace
@@ -5635,6 +5738,7 @@ tPrimaryTag
 tPrivateLevelScaling
 tProcChance
 tPrograms
+tProgressBarBase
 tRadius
 tRadiusRange
 tRagdollParams
@@ -5644,10 +5748,12 @@ tRareItemName
 tRechargeTime
 tRegionDefault
 tRegions
+tRelocChain
 tRemapRange
 tRenderParams
 tReputationObjective
 tResolvedDest
+tResourceCostReductionCoefficient
 tReward
 tRoadProps
 tRogueData
@@ -5662,6 +5768,7 @@ tSavedPlayerTitle
 tScalarFormulas
 tScale
 tScaleRange
+tScaredRunAwayDistanceRange
 tScaredTimeRange
 tSceneSpec
 tScriptMessageMap
@@ -5689,6 +5796,8 @@ tSoundPlayHistory
 tSourceAttribute
 tSpawnBehavior
 tSpawnCountRange
+tSpawnGroupCountRange
+tSpawnInitialDelayRange
 tSpawnPopulationGroup
 tSpawnQuantityRange
 tSpawnTimeRange
@@ -5711,6 +5820,7 @@ tSummonRange
 tSummonedActors
 tSwitchBehaviorData
 tSyncedData
+tSyncedDebugData
 tSystemDuration
 tSystemDurationRange
 tSystemDurationScalar
@@ -5726,6 +5836,7 @@ tTownPortalReturnDest
 tTrace
 tTraceId
 tTracked
+tTrackingData
 tTrailDurationRange
 tTrailDurationScalar
 tTrailLengthRange
@@ -5739,6 +5850,7 @@ tTriggerProxData
 tTriggerRange
 tTurret
 tType
+tUIRoot
 tUberMaterial
 tUnlockCondition
 tValidWindow
@@ -5747,10 +5859,12 @@ tValueMax
 tValueMin
 tValueRange
 tVariant
+tVertexAO
 tVertexCountSettings
 tVertexDensitySettings
 tVerticalAngleRange
 tVerticalOffset
+tVisualInvData
 tVisualItem
 tWanderDelayRange
 tWanderRadiusRange
@@ -5766,6 +5880,7 @@ tangentIndex
 tangentIndices
 timeOfDay
 top
+trailBase
 transform
 transformInv
 transformOffset
@@ -5799,10 +5914,13 @@ uHeroId
 uID
 uKeyedDungeonTier
 uKickTicks
+uLevel
 uLifetimeInTicks
 uMaterial
+uMaxLevel
 uMaxWaitTicks
 uMinAmount
+uMinLevel
 uMinRequiredCriteria
 uMinWaitTicks
 uMoveFlags
@@ -5817,6 +5935,8 @@ uProfileAwardId
 uProtocolHash
 uQuantity
 uRagdollDegrade
+uRewardClaimedFlags
+uSeasonFeature
 uSec
 uSecondsPlayed
 uServiceHash
@@ -5828,6 +5948,7 @@ uToken
 uTradeId
 uUserData
 uVal
+uidActorOwner
 updateInterval
 usHeroName
 usItemGenerator
@@ -5852,11 +5973,17 @@ vHardpointLocalOffset
 vImpactPos
 vLocalImpactPos
 vLocalOffset
+vNegXAxis
+vNegYAxis
+vNegZAxis
 vNodeMaxPositions
 vNodeMinPositions
 vNoiseOffset
 vPolygonPoints
 vPos
+vPosXAxis
+vPosYAxis
+vPosZAxis
 vPosition
 vProjectileImpactDirection
 vRootNodeCenterPosition
@@ -5875,10 +6002,12 @@ vecChunkIndex
 vecDevStartLocation
 vecFlipLocation
 vecGridOffset
+vecInTangent
 vecLocalScale
 vecMarkerLocation
 vecMicrophoneOffset
 vecOffset
+vecOutTangent
 vecPivot
 vecPos
 vecPosition
@@ -5895,6 +6024,7 @@ vecWorldSize
 vecZoneArtCenter
 vertexCapacity
 vertexCount
+vfid
 vote
 vw
 w
@@ -5902,7 +6032,6 @@ w1
 w2
 w3
 wCollisionMask
-wEid
 wWiseSoundBankDefinition
 warpClusters
 wcylBounds
@@ -5941,6 +6070,8 @@ wpPlace
 wpPos
 wpPosOffset
 wpPosition
+wpRainVolumeMax
+wpRainVolumeMin
 wpSource
 wpStart
 wpStartData
