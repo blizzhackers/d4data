@@ -182,7 +182,7 @@
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
  },
- "unk_b26a921": {
+ "tResourceCostReductionCoefficient": {
   "value": "1",
   "compiled": "BgAAAAAAgD8AAAAA"
  },
@@ -258,7 +258,7 @@
  "unk_f70b0d": -1,
  "unk_e65d245": null,
  "unk_17dddfd": true,
- "unk_d897ba6": {
+ "tMovementPowerData": {
   "__type__": "ActorMovementPowerData",
   "__typeHash__": 2543084619,
   "unk_b1f0f4e": {
@@ -553,7 +553,7 @@
  "bIsCraftItemName": false,
  "unk_744a4fd": false,
  "unk_a8611dd": false,
- "unk_365e3c2": true,
+ "bUsableInPrologue": true,
  "unk_83d96df": false,
  "unk_9aaab79": false,
  "unk_b15bf7f": false,
@@ -1471,6 +1471,102 @@
      "compiled": "BgAAAAAAAAAAAAAA"
     }
    }
+  },
+  {
+   "__type__": "PowerBuffDefinition",
+   "__typeHash__": 1071057721,
+   "dwID": 4167730103,
+   "dwBuffId": 21,
+   "bHarmful": false,
+   "bInfinite": false,
+   "tDuration": {
+    "value": "0.25",
+    "compiled": "BgAAAAAAgD4AAAAA"
+   },
+   "tMaxStackCount": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "unk_89134c5": false,
+   "bShowDuration": false,
+   "bCancellable": false,
+   "unk_99b5752": false,
+   "unk_93cd85f": false,
+   "unk_5c11505": false,
+   "unk_9eb6fb0": false,
+   "unk_e8f1e19": false,
+   "unk_9cb4832": false,
+   "unk_71ba554": false,
+   "hIcon": 0,
+   "hFloatingIcon": 0,
+   "unk_78b0ca1": 0,
+   "unk_c35001": 0,
+   "unk_395ccd6": false,
+   "unk_200bd12": false,
+   "tDOT": {
+    "__type__": "Type_e3f28f16",
+    "__typeHash__": 3824324374,
+    "eDamageType": -1,
+    "tDamage": {
+     "__type__": "HitpointSpecifier",
+     "__typeHash__": 1185241065,
+     "eType": 0,
+     "tHitpointScalar": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     },
+     "tFlatLevel": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     }
+    },
+    "unk_89dc285": false,
+    "unk_6331bb5": 1,
+    "unk_f551941": -1,
+    "unk_dd4b5bf": false,
+    "unk_3d768b7": false,
+    "unk_b8f2b": -1,
+    "bHasCombatEffectOverride": false,
+    "tCombatEffectOverride": {
+     "value": "100",
+     "compiled": "BgAAAAAAyEIAAAAA"
+    },
+    "unk_693b6db": false,
+    "unk_d50fe6e": false
+   },
+   "unk_dcb22bd": false,
+   "tCrowdControl": {
+    "__type__": "PowerBuffCrowdControl",
+    "__typeHash__": 4138865712,
+    "unk_c63f49e": true,
+    "dwCCFlags": 0,
+    "tSlowAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tChillAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tStaggerMultiplier": {
+     "value": "1",
+     "compiled": "BgAAAAAAgD8AAAAA"
+    }
+   },
+   "bHasDamageShield": false,
+   "tDamageShield": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   }
   }
  ],
  "ptScriptFormulas": [
@@ -1591,7 +1687,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "Affix_Value_2#1HDagger_Unique_Rogue_001 / 100",
-    "compiled": "BQAAAAAAAADRAwAAMNUIAAAAAAAGAAAAAADIQg4AAAAAAAAA"
+    "compiled": "BQAAAAAAAADVAwAAMNUIAAAAAAAGAAAAAADIQg4AAAAAAAAA"
    }
   },
   {
@@ -1648,6 +1744,14 @@
    "tFormula": {
     "value": "0.35",
     "compiled": "BgAAADQzsz4AAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix_Value_1#legendary_rogue_126 / 100",
+    "compiled": "BQAAAAAAAADUAwAAAvgVAAAAAAAGAAAAAADIQg4AAAAAAAAA"
    }
   }
  ],
@@ -1838,6 +1942,99 @@
     "unk_4588331": null,
     "unk_632d790": null
    }
+  },
+  {
+   "__type__": "PowerPayloadDefinition",
+   "__typeHash__": 812993760,
+   "unk_84473c1": null,
+   "unk_2c0d1b7": null,
+   "dwID": 592190413,
+   "eForcedDamageType": -1,
+   "tDamage": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "SF_0 * SF_21",
+     "compiled": "BQAAAAYAAAAAAAAAAAAAAAAAAAAFAAAAGwAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "unk_16bcce1": false,
+   "tDamageVariance": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_c1c7b04": false,
+   "unk_907cc39": {
+    "value": "SF_2",
+    "compiled": "BQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA"
+   },
+   "tFortifiedHealth": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "tApplyFreeze": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_634341a": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_e659b0f": -1,
+   "tHeal": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "eHealType": 0,
+   "unk_58227bf": true,
+   "unk_8bc45f2": false,
+   "unk_15c6c03": false,
+   "unk_e842c84": false,
+   "unk_b8f2b": 3,
+   "bHasCombatEffectOverride": false,
+   "tCombatEffectOverride": {
+    "value": "100",
+    "compiled": "BgAAAAAAyEIAAAAA"
+   },
+   "unk_ddcd868": 2,
+   "snoNormalHitEffectGroup": null,
+   "snoTargetImpactEffectGroup": null,
+   "unk_b65cd61": 1,
+   "iPowerNeedTarget": false,
+   "unk_b9a00d9": false,
+   "unk_969096b": false,
+   "unk_5885b8": 0,
+   "unk_f38eac9": false,
+   "unk_67260fc": {
+    "__type__": "OnHitSounds",
+    "__typeHash__": 960545022,
+    "unk_85f3271": null,
+    "unk_4588331": null,
+    "unk_632d790": null
+   }
   }
  ],
  "arMods": [
@@ -1906,13 +2103,6 @@
    "bAppendDescription": true,
    "unk_7b47c37": false,
    "arSkillTags": [
-    {
-     "__raw__": 2434110708,
-     "__type__": "DT_GBID",
-     "__typeHash__": 1028170061,
-     "group": 56,
-     "name": "Keyword_Vulnerable"
-    },
     {
      "__raw__": 2892145024,
      "__type__": "DT_GBID",
