@@ -584,14 +584,8 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[3846829457].insert("s");
   typePrefixes[3848460434].insert("s");
   typePrefixes[3864020909].insert("a");
-  if (!common) typePrefixes[3864020909].insert("cell");
-  if (!common) typePrefixes[3864020909].insert("dw");
   typePrefixes[3864020909].insert("fl");
-  if (!common) typePrefixes[3864020909].insert("inv");
-  if (!common) typePrefixes[3864020909].insert("m_cell");
-  typePrefixes[3864020909].insert("n");
-  if (!common) typePrefixes[3864020909].insert("pt");
-  typePrefixes[3864020909].insert("wd");
+  if (!common) typePrefixes[3864020909].insert("wd");
   typePrefixes[3867655596].insert("a");
   if (!common) typePrefixes[3867655596].insert("blend");
   if (!common) typePrefixes[3867655596].insert("constraint");
