@@ -19,7 +19,6 @@ let encryptedSnos = {};
 let snoPayloadMap = {};
 let gbid = fs.existsSync('json/GBID.json') ? JSON.parse(fs.readFileSync('json/GBID.json'), null, ' ') : {};
 let readLog = [];
-let fieldHashes = {};
 let incoming = {};
 let outgoing = {};
 
@@ -57,15 +56,13 @@ function fieldHash(str) {
   return hash[0] & 0xFFFFFFF;
 }
 
-fs.readFileSync('names.txt').toString().split(/[\n\r\s]+/gi).forEach(word => {
-  let hash = fieldHash(word);
+if (!fs.existsSync('json/')) {
+  fs.mkdirSync('json');
+}
 
-  fieldHashes[hash] = fieldHashes[hash] || [];
-
-  if (!fieldHashes[hash].includes(word)) {
-    fieldHashes[hash].push(word);
-  }
-});
+if (!fs.existsSync('json/base/')) {
+  fs.mkdirSync('json/base');
+}
 
 if (fs.existsSync('data/base/CoreTOC.dat')) {
   let file = fs.readFileSync('data/base/CoreTOC.dat');
