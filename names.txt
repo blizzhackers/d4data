@@ -69,6 +69,7 @@ ActorGroupData
 ActorGroupData_Table
 ActorGroupSubcondition
 ActorHitCollisionShape
+ActorHitRotationJoint
 ActorItemData
 ActorJitterJoint
 ActorLookOverrideChangedMessage
@@ -1446,6 +1447,7 @@ StaticLoadingImages
 StencilParams
 StopConvLineMessage
 StoreCameraTransition
+StoreCameraZoomMapping
 StoreDisclaimerData
 StoreProductDefinition
 StoryboardDefinition
@@ -1801,6 +1803,7 @@ aCone
 aDesiredYaw
 aEndFOV
 aFOV
+aFacingAngleThreshold
 aGroups
 aHorizontalAngle
 aInfluences
@@ -1863,6 +1866,7 @@ annDefender
 annDest
 annFrom
 annGizmo
+annInteractTargetName
 annItem
 annItemDest
 annItemSrc
@@ -1948,6 +1952,7 @@ arCategories
 arCategoryIcons
 arChildControls
 arChildNodes
+arChildRotationJoints
 arChildTags
 arChildren
 arClutter
@@ -2043,6 +2048,7 @@ arHitReactionOverrides
 arIKFrames
 arIKLimbs
 arIKWindows
+arIconAnchorPointIndices
 arIconAnchorPoints
 arIconLayouts
 arIcons
@@ -2169,6 +2175,7 @@ arRequiredReputations
 arRequiresNotOwning
 arRequiresOwning
 arResourceCosts
+arRevealedLevelAreaSNOs
 arRevealedPortalInfo
 arRewardData
 arRewardList
@@ -2874,6 +2881,7 @@ eDPath
 eDRLGTileType
 eDamageType
 eDamageTypeOverride
+eDateTimeType
 eDefaultBrain
 eDefaultFacingStyle
 eDefaultMode
@@ -2933,6 +2941,7 @@ eHotkey
 eHotkeyAlternate
 eIKLimb
 eIKTarget
+eIKTargetActor
 eIQL
 eIcon
 eId
@@ -3014,6 +3023,7 @@ ePortalDestSubzoneType
 ePositionFrom
 ePositionTo
 ePowerAnimMovement
+ePowerAnimPriority
 ePowerCategory
 ePowerFallback
 ePowerSyncType
@@ -3109,6 +3119,7 @@ eTraversalType
 eTrickleInfoType
 eTriggerBehavior
 eType
+eUnitDamageType
 eUnitType
 eUpdateMode
 eVBFormat
@@ -3257,7 +3268,14 @@ fNotConsideredInMarkersetBounds
 fOptional
 fOrthographic
 fOverrideActorVariant
+fOverrideExperienceScalar
 fOverrideHardpoint
+fOverridePowerEffectDuration
+fOverridePowerEffectHeight
+fOverridePowerEffectIntensity
+fOverridePowerEffectLength
+fOverridePowerEffectSize
+fOverridePowerEffectWidth
 fPersonaMaterial
 fPlayedBit
 fPlayerCanCloseDoor
@@ -3359,6 +3377,9 @@ flAttributesRunSpeed
 flAttributesWalkSpeed
 flBase
 flBaseWidth
+flBeginFStop
+flBeginFocalDistance
+flBeginFocalRegion
 flBendingStiffness
 flBlendApproachSpeed
 flBlendInTime
@@ -3384,6 +3405,7 @@ flCavitySmoothness
 flCavityTolerance
 flChance
 flChanceOverride
+flChatMessageTimeUntilFade
 flChillDuration
 flClassBaseDamageScalar
 flCloudIntensity
@@ -3450,7 +3472,9 @@ flDurationMicroseconds
 flEffectDuration
 flEmissive
 flEmissiveStrength
+flEndFStop
 flEndFocalDistance
+flEndFocalRegion
 flEnemyAttenuationFactor
 flExpectedValue
 flExperienceScalar
@@ -3516,6 +3540,7 @@ flHeightMin
 flHeightMinSmoothness
 flHeightScale
 flHeightTexturesSize
+flHighlightBrightness
 flHighlightedBorderStrength
 flHirelingDiminishedBonusRatio
 flHitFlashIntensity
@@ -3619,9 +3644,11 @@ flMinimapRevealRadius
 flMinimumAnimationScale
 flMinimumDuration
 flMonsterCritDamageScalar
+flMountedTargetAbandonTime
 flMouseWheelScaleFactor
 flMovementSpeed
 flMultiplayerSmoothing
+flNPCInteractDistance
 flNearPlane
 flNoSpawnChance
 flNoSpawnRadius
@@ -3695,6 +3722,7 @@ flRadiusB
 flRadiusConstraint
 flRadiusRatio
 flRadiusTriggerRadius
+flRagdollActorMomentumFactor
 flRagdollConeAngle
 flRagdollMomentumFactor
 flRagdollTwistHigh
@@ -3793,6 +3821,9 @@ flStructurePadding2
 flSummonLifetime
 flSunAltitude
 flSunAzimuth
+flSunDiskAltitude
+flSunDiskAzimuth
+flSunIntensityFactor
 flSunRadius
 flSunShadowAltitude
 flSunShadowAzimuth
@@ -3913,6 +3944,7 @@ gbidPrefabScopedActorGroup
 gbidRankReward
 gbidRanks
 gbidRequiredDungeonState
+gbidRequiredLevelAreaTag
 gbidReward
 gbidSkillTag
 gbidSpawnLocType
@@ -4506,6 +4538,8 @@ pathInitialSourceRelativeVelocity
 pathInitialWorldRelativeVelocity
 pathIntensity
 pathLightningThreshold
+pathLocalVelocityOverLength
+pathLocalVelocityOverTime
 pathMotionAttractorPos
 pathMotionAttractorVel
 pathMotionCylinderAngleVel
@@ -4574,6 +4608,8 @@ pathWidth
 pathWidthOverLength
 pathWidthOverTime
 pathWind
+pathWorldVelocityOverLength
+pathWorldVelocityOverTime
 pathXAmpOverLength
 pathYAmpOverLength
 pdwChildren
@@ -4793,6 +4829,7 @@ q16
 qInitialOrientation
 qRot
 qRotationOffset
+qSkylightTexRotation
 qTextureRotation
 qTwistAxis
 quantity
@@ -5063,6 +5100,7 @@ snoLootFlippyParticle
 snoLootOverlay
 snoLootSpecialFlippyActor
 snoLore
+snoMagMaxBoxMap
 snoMainHand
 snoMakeup
 snoMale
@@ -5406,6 +5444,7 @@ szGroup
 szGroupType
 szHands
 szHead
+szHeldButtonPredicate
 szHeroName
 szHotkeyClickPredicate
 szIDNext
@@ -5508,6 +5547,7 @@ szQuest
 szRStickDownHandler
 szRStickHandler
 szRStickLeftHandler
+szRStickPredicate
 szRStickRightHandler
 szRStickUpHandler
 szRegionName
@@ -5520,6 +5560,7 @@ szSourceFileName
 szSpanId
 szSpawnLocatorName
 szSplineName
+szStorePreviewHardpoint
 szString
 szStyleName
 szSubObjectName
