@@ -317,6 +317,7 @@ DRLGDungeonState
 DRLGEventDebugInfo
 DRLGNodeLink
 DRLGPortalInfo
+DRLGSpawnGroupTypeData
 DRLGSpawningData
 DRLGSpawningPool
 DRLGTileDebugInfo
@@ -761,6 +762,7 @@ MakeupDefinition
 MalignantColor
 MalignantColorWeight
 MalignantColor_Table
+MalignantGeneralData
 MalignantMonsterColorSubcondition
 MalignantMonsterTierSubcondition
 MapImageHandleReference
@@ -1008,6 +1010,11 @@ PetDetachMessage
 PetMessage
 PetType
 PetType_Table
+PhaseJumpBase
+PhaseJumpNotMoving
+PhaseJumpScriptTriggeredEvent
+PhaseJumpServerTriggeredEnd
+PhaseJumpStoppedChannelling
 PhysicsDefinition
 Plane
 PlasmaAttachMessage
@@ -1302,6 +1309,7 @@ ScalarFunctionFormula
 ScaleCurve
 ScaleKey
 SceneChunk
+SceneCommonSpecAudioVisual
 SceneCommonSpecification
 SceneData
 SceneDefinition
@@ -1438,10 +1446,8 @@ SphereProximityData
 SplineEasingWeight
 StackPortionMessage
 StaggerDefinition
-StarsSettings
 StartLocationName
 StartPowerMessage
-StartingAllowedWeather
 Stat
 StaticLoadingImages
 StencilParams
@@ -1480,7 +1486,6 @@ SupportedServices
 SurfaceDefinition
 SurfaceGrid
 SurfaceGridPrimitive
-SurfaceWorldConstraints
 SurveyMessage
 SurveyTypeEntry
 SurveyTypeEntry_Table
@@ -1766,6 +1771,8 @@ WwiseExternalSourceSoundBank
 WwiseGameParameter
 WwiseInitSoundBank
 WwiseMetaDataSoundBank
+WwiseMusicPlaylistItem
+WwiseMusicPlaylistItemKey
 WwiseName
 WwiseSoundBankContentBase
 WwiseStandardSoundBank
@@ -2132,6 +2139,7 @@ arPermutationIndices
 arPetSpawns
 arPetType
 arPetTypes
+arPhaseJumps
 arPhases
 arPieces
 arPlatforms
@@ -2808,11 +2816,13 @@ dwWindowMode
 dwWorldAppearanceFlags
 dwWwiseFlags
 dwXMLHash
+eAITargetAwareness
 eAITargetStyleElite
 eAITargetStyleNormal
 eActivateBehavior
 eActiveHireling
 eActorGender
+eActorGenderRestriction
 eActorGizmoType
 eActorType
 eActorVariantType
@@ -2974,6 +2984,7 @@ eListBoxStyle
 eLoadBehavior
 eLocationType
 eLogoutContext
+eLookAtTargetType
 eMagicType
 eMalignantTier
 eMaterial
@@ -3330,6 +3341,8 @@ fTwitch
 fTwitchFreqScale
 fTwitchSharpness
 fUsableByClass
+fUseClassHairStateOverrides
+fUseDynamicMovement
 fUseLinkedMarkersForLocation
 fUseStringListName
 fVOPlaysOnPlayer
@@ -3509,7 +3522,9 @@ flFlowPower
 flFlowSpeed
 flFocalDistance
 flFocalPlane
+flFogExponentScalar
 flFogMaskBuffersSize
+flFogStartScalar
 flFollowSpeed
 flFootprint
 flFps
@@ -3808,6 +3823,7 @@ flStarsDensity
 flStarsDistance
 flStarsScale
 flStart
+flStartingBonusScalar
 flStartingDexterity
 flStartingIntelligence
 flStartingStrength
@@ -4010,6 +4026,7 @@ hImageFrameIconMouseOverSelected
 hImageFrameIconPressed
 hImageFrameIconPressedSelected
 hImageFrameIconSelected
+hImageFrameListMouseOver
 hImageFrameMouseOver
 hImageFramePressed
 hImageFrameSelected
@@ -4511,16 +4528,21 @@ pathCloudShadowIntensity
 pathCloudShadowOffset
 pathCloudTypeBias
 pathColor
+pathColorIntensityOverLength
+pathColorIntensityOverTime
 pathColorOverLength
 pathColorOverTime
 pathDestPointAlongRopeMotion
 pathDestPointPerpendicularMotion
 pathDestPointWorldUpMotion
+pathDistortionFactorOverLength
+pathDistortionFactorOverTime
 pathFalloff
 pathFalloffBias
 pathFogColor
 pathFogExponent
 pathFogIntensityBias
+pathFogIntensitySunFactor
 pathFogStart
 pathFreqOverTime
 pathGroundFogAbsorptionCoeff
@@ -4938,6 +4960,10 @@ snoBossEncounterLevelArea
 snoBossObserver
 snoBounty
 snoBountySubzone
+snoBtnTiledStyleDisabled
+snoBtnTiledStyleMouseOver
+snoBtnTiledStyleNormal
+snoBtnTiledStylePressed
 snoBuff
 snoBuffPower
 snoCameraEffect
@@ -5048,6 +5074,7 @@ snoFootstepTrailEffect
 snoFur
 snoFurBaseShader
 snoFusedPrefab
+snoGameObserverOverride
 snoGizmo
 snoGizmoCondition
 snoGizmoLockItemRequiredToOperate
@@ -5259,6 +5286,10 @@ snoRiverAmbient
 snoRootMarkerSet
 snoRope
 snoRoughness
+snoRuleFoleyMaterialLandSoundTable
+snoRuleFoleyMaterialRunSoundTable
+snoRuleFoleyMaterialSlideSoundTable
+snoRuleFoleyMaterialWalkSoundTable
 snoRunSoundTable
 snoRunePower
 snoSacrificePower
@@ -5290,6 +5321,7 @@ snoSkillRequirement
 snoSkippedOutroEffect
 snoSkyboxActor
 snoSkylightTex
+snoSlideSoundTable
 snoSound
 snoSoundBankMedia
 snoSoundFriendly
@@ -5371,6 +5403,7 @@ snoTriggerEnteredPower
 snoTriggerExitedPower
 snoTriggerPulsePower
 snoTriggeringPower
+snoTutorialOnPickup
 snoUI
 snoUIRActor
 snoUnlockQuest
@@ -5610,6 +5643,7 @@ tAttribute
 tAudioContextGrid
 tAudioState
 tAudioVisual
+tAudioVisualDungeonAlternate
 tAuxBus
 tAwareness
 tBarbData
@@ -5805,6 +5839,7 @@ tLoopPointEnd
 tLoopPointStart
 tLuxSettings
 tMakeup
+tMalignantGeneralData
 tMargins
 tMarker
 tMarkerHandle
@@ -6082,6 +6117,7 @@ uSecondsPlayed
 uServiceHash
 uSig
 uStart
+uSubzoneOverrideEntranceGUID
 uTimeLastLevel
 uTimerDuration
 uToken
@@ -6216,6 +6252,7 @@ wpSource
 wpStart
 wpStartData
 wpStartPos
+wpSyncPlace
 wpTarget
 wpTargetOffset
 wpTargetPos

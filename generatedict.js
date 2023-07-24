@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const MAX_MARKOV_CHAIN = 3;
+
 let dict = {
   '2D': 0,
   '3D': 0,
@@ -160,7 +162,7 @@ for (let i in typeNames) {
     }
   }
 
-  for (let len = 2; len <= names.length; len++) {
+  for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
       let cluster = names.slice(i, len).filter(str => str && str.length);
 
@@ -193,7 +195,7 @@ for (let i in fieldNames) {
     }
   }
 
-  for (let len = 2; len <= names.length; len++) {
+  for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
       let cluster = names.slice(i, len).filter(str => str && str.length);
 
