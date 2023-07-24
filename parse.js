@@ -842,7 +842,9 @@ fileNames.forEach((fileName, index) => {
 
         if (data.eGameBalanceType !== null && data.eGameBalanceType !== undefined) {
           gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
-          gbMap[data.eGameBalanceType].push(newFileName);
+          if (gbMap[data.eGameBalanceType].indexOf(newFileName) < 0) {
+            gbMap[data.eGameBalanceType].push(newFileName);
+          }
         }
 
         let payloadName = fileName.replace(/^data\/base\/meta/g, 'base/payload');
