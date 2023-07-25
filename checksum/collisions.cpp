@@ -528,7 +528,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[HASH_dmTransformMirror].insert("m_local");
   typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("ar");
   if (!common) typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("arn");
-  typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("arr");
+  if (!common) typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("arr");
   if (!common) typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("at");
   typePrefixes[HASH_DT_POLYMORPHIC_VARIABLEARRAY].insert("pt");
   typePrefixes[HASH_UIImageHandleReference].insert("h");
@@ -544,7 +544,7 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[HASH_DT_RGBACOLOR].insert("fl");
   typePrefixes[HASH_DT_FIXEDARRAY].insert("ar");
   if (!common) typePrefixes[HASH_DT_FIXEDARRAY].insert("arn");
-  typePrefixes[HASH_DT_FIXEDARRAY].insert("arr");
+  if (!common) typePrefixes[HASH_DT_FIXEDARRAY].insert("arr");
   if (!common) typePrefixes[HASH_DT_FIXEDARRAY].insert("at");
   typePrefixes[HASH_DT_FIXEDARRAY].insert("pt");
   typePrefixes[HASH_DT_STRING_FORMULA].insert("v");
@@ -555,7 +555,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[HASH_DT_INT].insert("dw");
   if (!common) typePrefixes[HASH_DT_INT].insert("e");
   if (!common) typePrefixes[HASH_DT_INT].insert("i");
-  typePrefixes[HASH_DT_INT].insert("id");
+  if (!common) typePrefixes[HASH_DT_INT].insert("id");
   if (!common) typePrefixes[HASH_DT_INT].insert("is");
   if (!common) typePrefixes[HASH_DT_INT].insert("m_");
   if (!common) typePrefixes[HASH_DT_INT].insert("m_bone");
@@ -589,7 +589,7 @@ void loadFieldTypeMap (bool common = true) {
   typePrefixes[HASH_DT_RGBACOLORVALUE].insert("rgbaval");
   typePrefixes[HASH_DT_VARIABLEARRAY].insert("ar");
   if (!common) typePrefixes[HASH_DT_VARIABLEARRAY].insert("arn");
-  typePrefixes[HASH_DT_VARIABLEARRAY].insert("arr");
+  if (!common) typePrefixes[HASH_DT_VARIABLEARRAY].insert("arr");
   if (!common) typePrefixes[HASH_DT_VARIABLEARRAY].insert("at");
   typePrefixes[HASH_DT_VARIABLEARRAY].insert("pt");
   typePrefixes[HASH_DT_SNO_NAME].insert("snoname");
@@ -603,7 +603,7 @@ void loadFieldTypeMap (bool common = true) {
   if (!common) typePrefixes[HASH_DT_CSTRING].insert("n");
   typePrefixes[HASH_DT_CSTRING].insert("s");
   typePrefixes[HASH_SpeedTree8RippleGroup].insert("s");
-  typePrefixes[HASH_DT_FLOAT].insert("a");
+  if (!common) typePrefixes[HASH_DT_FLOAT].insert("a");
   typePrefixes[HASH_DT_FLOAT].insert("f");
   typePrefixes[HASH_DT_FLOAT].insert("fl");
   if (!common) typePrefixes[HASH_DT_FLOAT].insert("wd");
