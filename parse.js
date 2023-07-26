@@ -641,8 +641,8 @@ let basicTypes = {
   "DT_BCVEC2I": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
     ret.value = {
-      x: file.readFloatLE(offset),
-      y: file.readFloatLE(offset + 4),
+      x: file.readInt32LE(offset),
+      y: file.readInt32LE(offset + 4),
     };
     results.readLength += 8;
   },
