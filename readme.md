@@ -8,8 +8,6 @@ Data Browser: https://blizzhackers.dev/#/d4data
 
 Texture assets (work in progress): https://files.blizzhackers.dev/d4tex/
 
-Comprehensive Atlas: https://blizzhackers.github.io/d4data/atlas.html
-
 # Field Notes
 
 DT_SNO and DT_SNONAME fields are file references exclusively.
