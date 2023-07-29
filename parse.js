@@ -285,14 +285,14 @@ let basicTypes = {
     this.references = this.references || {};
     this.references[ret.__raw__] = ret.__raw__;
 
-    if (tocflat[ret.__raw__] && snoFileInfo[ret.__group__] && snoFileInfo[ret.__group__][1]) {
+    if (!encryptedSnos[ret.__raw__] && tocflat[ret.__raw__] && snoFileInfo[ret.__group__] && snoFileInfo[ret.__group__][1]) {
       let baseDir = ret.__group__ == 42 ? 'enUS_Text' : 'base';
       ret.__targetFileName__ = baseDir + '/meta/' + snoFileInfo[ret.__group__][0] + '/' + tocflat[ret.__raw__][0] + '.' + snoFileInfo[ret.__group__][1];
     }
 
     ret.groupName = snoGroups[ret.__group__];
 
-    if (tocflat[ret.__raw__]) {
+    if (!encryptedSnos[ret.__raw__] && tocflat[ret.__raw__]) {
       ret.name = tocflat[ret.__raw__][0];
     }
   },
@@ -321,14 +321,14 @@ let basicTypes = {
     this.references = this.references || {};
     this.references[ret.__raw__] = ret.__raw__;
 
-    if (tocflat[ret.__raw__] && snoFileInfo[ret.__group__] && snoFileInfo[ret.__group__][1]) {
+    if (!encryptedSnos[ret.__raw__] && tocflat[ret.__raw__] && snoFileInfo[ret.__group__] && snoFileInfo[ret.__group__][1]) {
       let baseDir = ret.__group__ == 42 ? 'enUS_Text' : 'base';
       ret.__targetFileName__ = baseDir + '/meta/' + snoFileInfo[ret.__group__][0] + '/' + tocflat[ret.__raw__][0] + '.' + snoFileInfo[ret.__group__][1];
     }
 
     ret.groupName = snoGroups[ret.__group__];
 
-    if (tocflat[ret.__raw__]) {
+    if (!encryptedSnos[ret.__raw__] && tocflat[ret.__raw__]) {
       ret.name = tocflat[ret.__raw__][0];
     }
   },
