@@ -899,7 +899,7 @@ int main(int argc, char *argv[]) {
     populateDict(dictPathOrString);
   }
 
-  if (!wordsOnly) {
+  if (!wordsOnly || !useDict) {
     if (hashType != 2) {
       std::for_each(std::cbegin(defaultDictUpperCase), std::cend(defaultDictUpperCase), addDictEntry);
     }
