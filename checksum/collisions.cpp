@@ -392,6 +392,8 @@ std::vector<std::string> getDict(std::string dictPathOrString) {
       ret.push_back(tmp);
       ss >> tmp;
     }
+  } else {
+    std::cerr << "Dictionary " << dictPathOrString << " not found." << std::endl;
   }
 
   return ret;
