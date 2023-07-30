@@ -844,17 +844,19 @@ int main(int argc, char *argv[]) {
   }
 
   std::unordered_map<std::string, bool> dictmap;
+  auto addDictEntry = [&dictmap](const std::string &entry) {
+      if (!dictmap[entry]) {
+          dictmap[entry] = true;
+          dict.push_back(entry);
+      }
+  };
 
   if (useDict) {
     if (dictPathOrString == "../english_dict.txt") {
       for (const auto &baseelem : getDict("../dict.txt")) {
         if (baseelem.length() > 1 || wordsOnly) {
           if (literalDict) {
-            if (!dictmap[baseelem]) {
-              dictmap[baseelem] = true;
-              dict.push_back(baseelem);
-            }
-
+            addDictEntry(baseelem);
             continue;
           }
 
@@ -869,9 +871,8 @@ int main(int argc, char *argv[]) {
             continue;
           }
 
-          if (hashType == 2 && !dictmap[newelem2]) {
-            dictmap[newelem2] = true;
-            dict.push_back(newelem2);
+          if (hashType == 2) {
+            addDictEntry(newelem2);
             continue;
           }
 
@@ -879,10 +880,7 @@ int main(int argc, char *argv[]) {
             elem = newelem.substr(0, 1) + newelem2.substr(1);
           }
 
-          if (!dictmap[elem]) {
-            dictmap[elem] = true;
-            dict.push_back(elem);
-          }
+          addDictEntry(elem);
         }
       }
     }
@@ -890,11 +888,7 @@ int main(int argc, char *argv[]) {
     for (const auto &baseelem : getDict(dictPathOrString)) {
       if (baseelem.length() > 1 || wordsOnly) {
         if (literalDict) {
-          if (!dictmap[baseelem]) {
-            dictmap[baseelem] = true;
-            dict.push_back(baseelem);
-          }
-
+          addDictEntry(baseelem);
           continue;
         }
 
@@ -909,9 +903,8 @@ int main(int argc, char *argv[]) {
           continue;
         }
 
-        if (hashType == 2 && !dictmap[newelem2]) {
-          dictmap[newelem2] = true;
-          dict.push_back(newelem2);
+        if (hashType == 2) {
+          addDictEntry(newelem2);
           continue;
         }
 
@@ -919,20 +912,14 @@ int main(int argc, char *argv[]) {
           elem = newelem.substr(0, 1) + newelem2.substr(1);
         }
 
-        if (!dictmap[elem]) {
-          dictmap[elem] = true;
-          dict.push_back(elem);
-        }
+        addDictEntry(elem);
       }
     }
   }
 
   if (!wordsOnly) {
     for (const auto &baseelem : defaultDict) {
-      if (!dictmap[baseelem]) {
-        dictmap[baseelem] = true;
-        dict.push_back(baseelem);
-      }
+      addDictEntry(baseelem);
     }
   }
 
