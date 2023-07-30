@@ -292,70 +292,76 @@ void collisionWorker(WorkerData *workerData) {
   }
 }
 
-std::vector<std::string> defaultDict {
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "_",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
+const std::string defaultDictLowerCase[] {
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+};
+const std::string defaultDictUpperCase[] {
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+};
+const std::string defaultDictNumbers[] {
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+};
+const std::string defaultDictSpecial[] {
+    "_",
 };
 
 std::vector<std::string> getDict(std::string dictPathOrString) {
@@ -918,9 +924,13 @@ int main(int argc, char *argv[]) {
   }
 
   if (!wordsOnly) {
-    for (const auto &baseelem : defaultDict) {
-      addDictEntry(baseelem);
+    if (hashType != 2) {
+      std::for_each(std::cbegin(defaultDictUpperCase), std::cend(defaultDictUpperCase), addDictEntry);
     }
+
+    std::for_each(std::cbegin(defaultDictLowerCase), std::cend(defaultDictLowerCase), addDictEntry);
+    std::for_each(std::cbegin(defaultDictNumbers), std::cend(defaultDictNumbers), addDictEntry);
+    std::for_each(std::cbegin(defaultDictSpecial), std::cend(defaultDictSpecial), addDictEntry);
   }
 
   if (hashType == 1) {
