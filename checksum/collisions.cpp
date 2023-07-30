@@ -858,69 +858,43 @@ int main(int argc, char *argv[]) {
   };
 
   if (useDict) {
+    auto populateDict = [&](const std::string &dictFilePath) {
+        for (const auto &baseelem : getDict(dictFilePath)) {
+            if (baseelem.length() > 1 || wordsOnly) {
+                if (literalDict) {
+                    addDictEntry(baseelem);
+                    continue;
+                }
+
+                if (ignoreAllCaps && isAllCaps(baseelem)) {
+                    continue;
+                }
+
+                std::string elemLower = baseelem;
+                std::transform(elemLower.begin(), elemLower.end(), elemLower.begin(), [](unsigned char c){ return std::tolower(c); });
+
+                if (hashType == 2) {
+                    addDictEntry(elemLower);
+                    continue;
+                }
+
+                std::string elem = baseelem;
+                if (elem == elemLower) {
+                    std::string elemUpper = elem;
+                    std::transform(elemUpper.begin(), elemUpper.end(), elemUpper.begin(), [](unsigned char c){ return std::toupper(c); });
+                    elem = elemUpper.substr(0, 1) + elemLower.substr(1);
+                }
+
+                addDictEntry(elem);
+            }
+        }
+    };
+
     if (dictPathOrString == "../english_dict.txt") {
-      for (const auto &baseelem : getDict("../dict.txt")) {
-        if (baseelem.length() > 1 || wordsOnly) {
-          if (literalDict) {
-            addDictEntry(baseelem);
-            continue;
-          }
-
-          std::string elem = baseelem;
-          std::string newelem = elem;
-          std::string newelem2 = elem;
-
-          std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
-          std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
-
-          if (ignoreAllCaps && isAllCaps(elem)) {
-            continue;
-          }
-
-          if (hashType == 2) {
-            addDictEntry(newelem2);
-            continue;
-          }
-
-          if (elem == newelem2) {
-            elem = newelem.substr(0, 1) + newelem2.substr(1);
-          }
-
-          addDictEntry(elem);
-        }
-      }
+      populateDict("../dict.txt");
     }
 
-    for (const auto &baseelem : getDict(dictPathOrString)) {
-      if (baseelem.length() > 1 || wordsOnly) {
-        if (literalDict) {
-          addDictEntry(baseelem);
-          continue;
-        }
-
-        std::string elem = baseelem;
-        std::string newelem = elem;
-        std::string newelem2 = elem;
-
-        std::transform(newelem.begin(), newelem.end(), newelem.begin(), [](unsigned char c){ return std::toupper(c); });
-        std::transform(newelem2.begin(), newelem2.end(), newelem2.begin(), [](unsigned char c){ return std::tolower(c); });
-
-        if (ignoreAllCaps && isAllCaps(elem)) {
-          continue;
-        }
-
-        if (hashType == 2) {
-          addDictEntry(newelem2);
-          continue;
-        }
-
-        if (elem == newelem2) {
-          elem = newelem.substr(0, 1) + newelem2.substr(1);
-        }
-
-        addDictEntry(elem);
-      }
-    }
+    populateDict(dictPathOrString);
   }
 
   if (!wordsOnly) {
