@@ -415,7 +415,9 @@ void loadFieldTypeMap (bool common = true) {
   fieldTypes >> std::hex >> v1 >> std::hex >> v2;
 
   while (fieldTypes) {
-    fieldTypeMap[v1].push_back(v2);
+    if (checksumMatch.count(v1) > 0 || checksumMatchSecondary.count(v1) > 0) {
+      fieldTypeMap[v1].push_back(v2);
+    }
     fieldTypes >> std::hex >> v1 >> std::hex >> v2;
   }
 
