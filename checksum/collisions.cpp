@@ -91,10 +91,6 @@ uint32_t typeChecksum(const std::string &str, uint32_t hash) {
   return hash;
 }
 
-uint32_t typeChecksumNonRef(const std::string &str, uint32_t hash) {
-  return typeChecksum(str, hash);
-}
-
 uint32_t fieldChecksum(const std::string &str, uint32_t hash) {
   for (size_t i = 0; i < str.length(); i++) {
     hash = (hash << 5) + hash + (unsigned char)str[i];
@@ -102,10 +98,6 @@ uint32_t fieldChecksum(const std::string &str, uint32_t hash) {
 
   // field names have an additional mask
   return hash & 0xfffffff;
-}
-
-uint32_t fieldChecksumNonRef(const std::string &str, uint32_t hash) {
-  return fieldChecksum(str, hash);
 }
 
 uint32_t gbidChecksum(const std::string &str, uint32_t hash) {
@@ -117,12 +109,7 @@ uint32_t gbidChecksum(const std::string &str, uint32_t hash) {
   return hash;
 }
 
-uint32_t gbidChecksumNonRef(const std::string &str, uint32_t hash) {
-  return gbidChecksum(str, hash);
-}
-
 uint32_t (*checksum)(const std::string &str, uint32_t hash) = typeChecksum;
-uint32_t (*checksumNonRef)(const std::string &str, uint32_t hash) = typeChecksumNonRef;
 
 auto getDictSize(long pos, long max) {
   // If suffixes exist, use those.
@@ -179,36 +166,36 @@ bool checkPaired(uint32_t *tmp, int32_t max) {
 
   if (hashType == 0) {
     std::string word = getWord(tmp, max);
-    uint32_t wordChecksum = fieldChecksumNonRef("t" + word, 0);
+    uint32_t wordChecksum = fieldChecksum("t" + word, 0);
 
     if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
       return true;
     }
 
-    wordChecksum = fieldChecksumNonRef("pt" + word, 0);
+    wordChecksum = fieldChecksum("pt" + word, 0);
     if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
       return true;
     }
 
-    wordChecksum = fieldChecksumNonRef("ar" + word, 0);
-
-    if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
-      return true;
-    }
-
-    wordChecksum = fieldChecksumNonRef("t" + word + "s", 0);
+    wordChecksum = fieldChecksum("ar" + word, 0);
 
     if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
       return true;
     }
 
-    wordChecksum = fieldChecksumNonRef("pt" + word + "s", 0);
+    wordChecksum = fieldChecksum("t" + word + "s", 0);
 
     if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
       return true;
     }
 
-    wordChecksum = fieldChecksumNonRef("ar" + word + "s", 0);
+    wordChecksum = fieldChecksum("pt" + word + "s", 0);
+
+    if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
+      return true;
+    }
+
+    wordChecksum = fieldChecksum("ar" + word + "s", 0);
 
     if (hasChecksum(checksumMatchSecondary, wordChecksum)) {
       return true;
@@ -302,7 +289,7 @@ void collisions(uint32_t *tmp, long pos, long max, uint32_t currentChecksum, uin
 
   for (long c = 0; c < cmax && !terminating; c++) {
     tmp[pos] = c;
-    uint32_t newChecksum = checksumNonRef(getDictEntry(c, pos, max), currentChecksum);
+    uint32_t newChecksum = checksum(getDictEntry(c, pos, max), currentChecksum);
     collisions(tmp, pos + 1, max, newChecksum, hashCount, workerCount > 1 && pos == threadLevel);
   }
 }
@@ -819,11 +806,9 @@ int main(int argc, char *argv[]) {
 
   if (hashType == 1) {
     checksum = fieldChecksum;
-    checksumNonRef = fieldChecksumNonRef;
   }
   else if (hashType == 2) {
     checksum = gbidChecksum;
-    checksumNonRef = gbidChecksumNonRef;
   }
 
   if (!isatty(0)) {
