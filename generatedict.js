@@ -264,7 +264,15 @@ Object.keys(markov).filter(key => markov[key] > 0).forEach(chain => {
   dict[chain] = (dict[chain] || 0) + count;
 });
 
-fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).sort((a, b) => {
+let exclusions = {};
+
+if (fs.existsSync(__dirname + '/exclusions.txt')) {
+  fs.readFileSync(__dirname + '/exclusions.txt').toString().split(/\s+/g).filter(Boolean).forEach(word => {
+    exclusions[word.toLowerCase()] = word.toLowerCase();
+  });
+}
+
+fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).filter(word => !exclusions[word.toLowerCase()]).sort((a, b) => {
   if (dict[b] - dict[a]) {
     return dict[b] - dict[a];
   }
