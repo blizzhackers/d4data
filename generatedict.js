@@ -170,7 +170,7 @@ for (let i in typeNames) {
 
   for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
-      let cluster = names.slice(i, len).filter(str => str && str.length);
+      let cluster = names.slice(i, i + len).filter(str => str && str.length);
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
@@ -203,7 +203,7 @@ for (let i in fieldNames) {
 
   for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
-      let cluster = names.slice(i, len).filter(str => str && str.length);
+      let cluster = names.slice(i, i + len).filter(str => str && str.length);
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
@@ -236,7 +236,7 @@ for (let i in attributeNames) {
 
   for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
-      let cluster = names.slice(i, len).filter(str => str && str.length);
+      let cluster = names.slice(i, i + len).filter(str => str && str.length);
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
