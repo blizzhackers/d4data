@@ -77,8 +77,10 @@ let markov = {};
 
 let typeNames = {};
 let fieldNames = {};
+let attributeNames = {};
 
 let definitions = require('./definitions.json');
+let attributes = require('./attributes.json');
 
 Object.values(definitions).forEach(definition => {
   if (definition.name.slice(0, 5) !== 'Type_' && definition.type === 'complex') {
@@ -92,6 +94,10 @@ Object.values(definitions).forEach(definition => {
       }
     });
   }
+});
+
+Object.values(attributes).forEach(attribute => {
+  attributeNames[attribute.name] = attribute.name;
 });
 
 function isWord (str) {
@@ -176,6 +182,39 @@ for (let i in typeNames) {
 
 for (let i in fieldNames) {
   let names = Array.from(parseFieldName(fieldNames[i]));
+
+  for (let subname of names) {
+    if (subname.length > 1) {
+      if (/[a-z]/gi.test(subname)) {
+        dict[subname] = (dict[subname] || 0) + 1;
+
+        let orig = subname;
+
+        while ('0123456789'.indexOf(subname[subname.length - 1]) >= 0) {
+          subname = subname.slice(0, -1);
+        }
+  
+        if (subname !== orig && subname.length > 1) {
+          dict[subname] = dict[subname] || 0;
+        }  
+      }
+    }
+  }
+
+  for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
+    for (let i = 0; i < names.length; i++) {
+      let cluster = names.slice(i, len).filter(str => str && str.length);
+
+      if (cluster.length === len) {
+        cluster = cluster.join(' ');
+        markov[cluster] = (markov[cluster] || 0) + 1;
+      }
+    }
+  }
+}
+
+for (let i in attributeNames) {
+  let names = Array.from(parseTypeName(attributeNames[i]));
 
   for (let subname of names) {
     if (subname.length > 1) {
