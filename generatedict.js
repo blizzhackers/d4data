@@ -115,9 +115,14 @@ function goodName (str) {
   return /^[a-zA-Z]/g.test(str) && /[aeiou]/g.test(str);
 }
 
+let skipName = {
+  '_': true,
+  '-': true,
+};
+
 function *parseTypeName (name) {
-  for (let subname of name.split(/( |_|\d+x\d+|FoW|(?<![0-9])[234]D)/g).filter(isWord)) {
-    if (subname === '_') {
+  for (let subname of name.split(/( |-|_|\d+x\d+|FoW|(?<![0-9])[234]D)/g).filter(isWord)) {
+    if (skipName[subname]) {
       continue;
     }
 
