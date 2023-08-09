@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const MAX_MARKOV_CHAIN = 3;
+const ALLOW_FILE_MARKOV = false;
 
 let dict = {
   '2D': 0,
@@ -108,6 +109,10 @@ Object.values(toc).forEach(entry => {
 
 function isWord (str) {
   return str && str.length;
+}
+
+function goodName (str) {
+  return /^[a-zA-Z]/g.test(str) && /[aeiou]/g.test(str);
 }
 
 function *parseTypeName (name) {
@@ -226,7 +231,7 @@ for (let i in attributeNames) {
 
   for (let subname of names) {
     if (subname.length > 1) {
-      if (/[a-z]/gi.test(subname)) {
+      if (goodName(subname)) {
         dict[subname] = (dict[subname] || 0) + 1;
 
         let orig = subname;
@@ -244,7 +249,7 @@ for (let i in attributeNames) {
 
   for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
-      let cluster = names.slice(i, i + len).filter(str => str && str.length);
+      let cluster = names.slice(i, i + len).filter(str => isWord(str) && goodName(str));
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
@@ -259,7 +264,7 @@ for (let i in tocNames) {
 
   for (let subname of names) {
     if (subname.length > 1) {
-      if (/[a-z]/gi.test(subname)) {
+      if (goodName(subname)) {
         dict[subname] = (dict[subname] || 0) + 1;
 
         let orig = subname;
@@ -275,11 +280,13 @@ for (let i in tocNames) {
     }
   }
 
-  continue;
+  if (!ALLOW_FILE_MARKOV) {
+    continue;
+  }
 
   for (let len = 2; len <= Math.min(MAX_MARKOV_CHAIN, names.length); len++) {
     for (let i = 0; i < names.length; i++) {
-      let cluster = names.slice(i, i + len).filter(str => str && str.length);
+      let cluster = names.slice(i, i + len).filter(str => isWord(str) && goodName(str));
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
