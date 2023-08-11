@@ -26,6 +26,7 @@ AIBroadcast
 AICellBytes
 AICellData
 AIPathData
+AIPropPowerPairing
 AIPropType
 AIPropType_Table
 AIStateDebugSetAllEntryStatesMessage
@@ -53,6 +54,7 @@ ActivityReward
 ActorAIData
 ActorAnimSetPreloadHelper
 ActorBrainData
+ActorChildRotationJoint
 ActorCollisionData
 ActorCollisionFlags
 ActorCombatData
@@ -135,6 +137,7 @@ AnimationClothOverride
 AnimationDefinition
 AnyLogicSubcondition
 AppBone
+AppearanceAndMaterialContent
 AppearanceDefinition
 AppearanceLook
 AppearanceMaterial
@@ -148,7 +151,6 @@ AssignTechniqueSlotMessage
 AtLeastLogicSubcondition
 AttachActorToActorMessage
 AttachCarryableToPlayerMessage
-AttackerEnemiesParam
 AttributeFormulaEntry
 AttributeFormulaEntry_Table
 AttributeFormulaRange
@@ -866,6 +868,7 @@ MonsterRaritySubcondition
 MonsterSubcondition
 MonsterTagOverrideData
 MonsterTagSubcondition
+MonsterTagTuningData
 MonsterTags
 MonsterTags_Table
 MountACDInfo
@@ -886,6 +889,7 @@ NPCComponentInstanceData
 NPCComponentRestrictionEntry
 NPCComponentSetDefinition
 NPCComponentSetPreloadHelper
+NPCComponentSlotComponentPreloadHelper
 NPCHairColors
 NPCInteractOptionsMessage
 NPCInteraction
@@ -1041,6 +1045,7 @@ PlayErrorSoundMessage
 PlayHitEffectMessage
 PlayHitJitterMessage
 PlayHotbarUIFlourishMessage
+PlayLineActorNameInfo
 PlayLineParams
 PlayMusicOverlayMessage
 PlayNonPositionalSoundMessage
@@ -1410,6 +1415,7 @@ ShaderDefinition
 ShaderInputLayout
 ShaderMapDefinition
 ShaderMapOverride
+ShaderNodeBBEFormula
 ShaderOverride
 ShaderPermShaderProgram
 ShaderPermutation
@@ -1447,6 +1453,7 @@ SocketedEffects
 SonyConsoleAwardDefinition
 SorcererEnchantSlotUnlockData
 SoundDefinition
+SoundEventGameParameter
 SoundPlayHistory
 SoundTableDefinition
 SoundTableEntry
@@ -1941,6 +1948,7 @@ annTo
 annVendor
 annWaypointSrc
 arAIBehaviors
+arAIPropPowerPairings
 arAchievementSnos
 arActiveSkillEntries
 arActivityQuests
@@ -1961,6 +1969,7 @@ arAnimSetAnimPreloadHelpers
 arAnimSetOrder
 arAnimSetOverrides
 arAnimSets
+arAppearanceAndMaterialContents
 arAppearances
 arAppliedLabels
 arArchetypes
@@ -1968,6 +1977,7 @@ arAspectAchievements
 arAtlasTextures
 arAudioMonsterCategories
 arAvailableParagonBoards
+arBakedBoneTransforms
 arBannerShapes
 arBiomeClutters
 arBiomes
@@ -2155,6 +2165,7 @@ arMonsterTags
 arMounts
 arMusicSegments
 arNPCComponentSetPreloadHelpers
+arNPCComponentSlotComponentPreloadHelpers
 arNPCs
 arNecroArmyUnitTypes
 arNewItems
@@ -2294,6 +2305,7 @@ arTransmogSlots
 arTransmogs
 arTraversalSurfaceOptions
 arTrims
+arTuningData
 arUILayoutEntries
 arUnlockedTransmogs
 arUpdates
@@ -2339,6 +2351,7 @@ bAcceptsReturn
 bAccountBound
 bActive
 bAimedPower
+bAllArsenalSlot
 bAllowsHeldRepeats
 bAlphaTestRefValue
 bAlternatesAnims
@@ -2402,6 +2415,7 @@ bForever
 bFromItem
 bFromTome
 bFullScreenElement
+bGiveFirstTimeReward
 bHarmful
 bHasCombatEffectOverride
 bHasCustomDamageVariance
@@ -2414,6 +2428,7 @@ bHasWorldEvent
 bHide
 bHideHelm
 bHideMainHand
+bHideOffhand
 bHideSheathed
 bHorizontal
 bHyperlinkAware
@@ -2595,6 +2610,7 @@ capsuleDefs
 cellWidth
 center
 clientFrame
+clothDataMirror
 coeff
 color
 component
@@ -2675,6 +2691,7 @@ dwCrowdControlTypes
 dwCurrencyAmount
 dwData
 dwDataID
+dwDecalWriteFlags
 dwDefaultShaderMapOverride
 dwDepth
 dwDestNodeId
@@ -2730,6 +2747,8 @@ dwLookVariant
 dwMSAALevel
 dwMachineTime
 dwMarkerActorFlags
+dwMarkerDecalFlags
+dwMarkerEffectGroupFlags
 dwMarkerFlags
 dwMarkerFlagsEx
 dwMarkerPathID
@@ -2879,9 +2898,11 @@ eActiveHireling
 eActorGender
 eActorGenderRestriction
 eActorGizmoType
+eActorToEvaluate
 eActorType
 eActorVariantType
 eAddType
+eAffectedNodeRarity
 eAffixCategory
 eAffixType
 eAlignHorizontal
@@ -2897,7 +2918,9 @@ eAnimReason
 eAnimationLayer
 eAnimationScalingType
 eAnimsetType
+eAspectQualityModifier
 eAttribute
+eAudioVolumeShape
 eBackStencilBufferCompareFunc
 eBackStencilOpFail
 eBackStencilOpPass
@@ -2929,6 +2952,8 @@ eClassRestriction
 eClipBehavior
 eCollisionShape
 eColorSpace
+eComboBoxTextJustify
+eComboBoxTextJustifyVertical
 eComp
 eCompare
 eComparisonOp
@@ -2937,12 +2962,14 @@ eComponentType
 eCompressorMode
 eContactFrame
 eContext
+eContributingCoreStat
 eConvType
 eConversationIcon
 eCrafterLevelCondition
 eCrafterType
 eCullMode
 eCullingLevel
+eCullingLevelOverride
 eCurrency
 eCurrencyType
 eDPath
@@ -2981,16 +3008,20 @@ eFacing
 eFacingStyleOverride
 eFacingType
 eFadeMethod
+eFadeVolumeShape
+eFadeoutBehavior
 eFillMode
 eFilterInequality
 eFinishBehavior
 eFixedKey
 eFollowMode
+eFollowerSpawnMethod
 eFootstepSide
 eFootstepType
 eForcedDamageType
 eForcedItemQualityModifier
 eFormat
+eFrameRateMode
 eFrontStencilBufferCompareFunc
 eFrontStencilOpFail
 eFrontStencilOpPass
@@ -3007,7 +3038,9 @@ eHealType
 eHintingMode
 eHintingStyle
 eHirelingClass
+eHitFlashAddFresnel
 eHitFlashCurve
+eHitFlashMulFresnel
 eHitSound
 eHotkey
 eHotkeyAlternate
@@ -3036,8 +3069,10 @@ eKillerTeam
 eLOSCheck
 eLabelType
 eLayer
+eLayeredHitSound
 eLayoutBehavior
 eLayoutType
+eLevelAreaVolumeShape
 eLineClass
 eLineGender
 eLinkType
@@ -3055,7 +3090,10 @@ eMicrophoneMode
 eMobility
 eMonsterRarity
 eMountRarity
+eMouthState
 eMoveRate
+eMoveRateOverride
+eMoveToType
 eMoveType
 eMovementStyleOverride
 eMsgPassMethod
@@ -3063,10 +3101,18 @@ eNecessaryCondition
 eNetAttributeKeyValueIndex
 eNewClass
 eNewSpec
+eNoMountVolumeShape
+eNoSpawnVolumeShape
 eNodeType
 eNormalAxis
 eObjectType
+eObserverVolumeShape
 eOldSpec
+eOnAnimationEnd
+eOnOwnerDeath
+eOnOwnerPaused
+eOnOwnerResurrection
+eOnSequenceEnd
 eOperandType
 eOptionalRarity
 eOrderOperation
@@ -3234,6 +3280,7 @@ fAttachCarryableToPlayer
 fBillboard
 fBottomless
 fBypass
+fCameraPercentFogDensity
 fCanBeSquished
 fCannotBeTargetedByAI
 fCannotDie
@@ -3570,6 +3617,7 @@ flFacingMult
 flFadeCorpseTime
 flFadeCorpseTimeUntilFade
 flFadeInTime
+flFadeoutTime
 flFalloffThickness
 flFarPlane
 flFarPlaneCap
@@ -4155,6 +4203,7 @@ hUnlockDescription
 hUpCornerImage
 hZoneLabel
 height
+heightDataMirror
 i1
 i2
 i3
@@ -4204,6 +4253,7 @@ m_aCapsules
 m_aDistanceConstraints
 m_aFaceSubEdges
 m_aFaces
+m_aFollowerIndices
 m_aPlanes
 m_aSubEdges
 m_aVertexMap
@@ -4251,6 +4301,7 @@ m_volume
 mat
 material
 maxLevel
+meshDataMirror
 nAOOffset
 nAction
 nActorCount
@@ -4801,6 +4852,7 @@ ptGroundTests
 ptGroupData
 ptHardpoints
 ptHiddenCacheGizmoData
+ptHitCollisionShapes
 ptIKBones
 ptInitBank
 ptInitialDyes
@@ -4910,8 +4962,10 @@ ptTraversalInstanceData
 ptTriangles
 ptTriggerEvent
 ptTriggerProximityGizmoData
+ptUIControlTagMapIconLabels
 ptUIData
 ptUpperLegs
+ptUsedGameParameters
 ptVOData
 ptVOParameters
 ptValidComponents
@@ -5107,10 +5161,13 @@ snoDisallowedAffixes
 snoDisembodiedVoice
 snoDisembodiedVoiceSound
 snoDropOnGroundEffect
+snoDungeonDefaultObserver
 snoDye
 snoEffect
 snoEffectGroup
+snoEffectGroupAttachToOverrideSound
 snoEffectGroupPostFlip
+snoEffectGroupPostFlipOutro
 snoEffectGroupPreFlip
 snoEffectGroupSummoned
 snoEmblem
@@ -5143,7 +5200,9 @@ snoFlippyMouseoverSound
 snoFlippyParticle
 snoFlippySoundOverride
 snoFoW
+snoFoWMaskOverlay
 snoFoWShader
+snoFoWToReveal
 snoFogOfWar
 snoFogParticle
 snoFoleySoundTable
@@ -5272,6 +5331,7 @@ snoNonParticipatingEffectGroup
 snoNormal
 snoNormalHitEffectGroup
 snoObserver
+snoObserverForOrientation
 snoObserverMount
 snoObserverOverride
 snoOccluded
@@ -5574,6 +5634,7 @@ szData
 szDebugMsg
 szDescription
 szDetailOptimize
+szDetailOptimizeHover
 szDetailThreshhold
 szDrawHook
 szEnumName
@@ -5730,6 +5791,7 @@ szVoiceTypeTag
 szWeaponPrefix
 tAABB
 tActiveSkills
+tActorNameInfo
 tAdditionalRandomAffixesRange
 tAdvanceEvent
 tAllowedScaleRange
@@ -5804,6 +5866,7 @@ tConfuseRadius
 tConsoleInput
 tConstraintLink
 tContent
+tConversationDefaultSounds
 tCooldown
 tCooldownTime
 tCornerPieces
@@ -5885,6 +5948,7 @@ tHairStateDefault
 tHairStyle
 tHardpoint
 tHardpointLink
+tHardpointLinkLookAtTarget
 tHardpointLinkTarget
 tHardpointLinks
 tHardpointOffsets
