@@ -180,7 +180,7 @@ for (let i in typeNames) {
         }
   
         if (subname !== orig && subname.length > 1) {
-          dict[subname] = dict[subname] || 0;
+          dict[subname] = dict[subname] || 1;
         }  
       }
     }
@@ -213,7 +213,7 @@ for (let i in fieldNames) {
         }
   
         if (subname !== orig && subname.length > 1) {
-          dict[subname] = dict[subname] || 0;
+          dict[subname] = dict[subname] || 1;
         }  
       }
     }
@@ -246,7 +246,7 @@ for (let i in attributeNames) {
         }
   
         if (subname !== orig && subname.length > 1) {
-          dict[subname] = dict[subname] || 0;
+          dict[subname] = dict[subname] || 1;
         }  
       }
     }
@@ -258,7 +258,7 @@ for (let i in attributeNames) {
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
-        markov[cluster] = (markov[cluster] || 0) + 1;
+        markov[cluster] = markov[cluster] || 1;
       }
     }
   }
@@ -279,7 +279,7 @@ for (let i in tocNames) {
         }
   
         if (subname !== orig && subname.length > 1) {
-          dict[subname] = dict[subname] || 0;
+          dict[subname] = dict[subname] || 1;
         }  
       }
     }
@@ -295,7 +295,7 @@ for (let i in tocNames) {
 
       if (cluster.length === len) {
         cluster = cluster.join(' ');
-        markov[cluster] = (markov[cluster] || 0) + 1;
+        markov[cluster] = markov[cluster] || 1;
       }
     }
   }
@@ -331,7 +331,7 @@ if (fs.existsSync(__dirname + '/exclusions.txt')) {
   });
 }
 
-fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).filter(word => !exclusions[word.toLowerCase()]).sort((a, b) => {
+let orderedDict = Object.keys(dict).filter(word => !exclusions[word.toLowerCase()]).sort((a, b) => {
   if (dict[b] - dict[a]) {
     return dict[b] - dict[a];
   }
@@ -339,4 +339,10 @@ fs.writeFileSync(__dirname + '/dict.txt', Object.keys(dict).filter(word => !excl
   let tmp = [a, b].sort();
 
   return tmp.indexOf(a) - tmp.indexOf(b);
-}).join('\n'));
+});
+
+fs.writeFileSync(__dirname + '/dict.txt', orderedDict.join('\n'));
+
+fs.writeFileSync(__dirname + '/dict.json', '{\n' + orderedDict.map(word => {
+  return '  ' + JSON.stringify(word) + ': ' + dict[word];
+}).join(',\n') + '\n}\n');
