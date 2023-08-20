@@ -733,7 +733,7 @@ int main(int argc, char *argv[]) {
           }
         }
         else {
-            subdict[subDictPos].push_back(arg);
+          subdict[subDictPos].push_back(arg);
         }
 
         gettingSubDict = 0;
@@ -983,6 +983,18 @@ int main(int argc, char *argv[]) {
         for (const auto &prefixMapEntry : prefixMap) {
           subdict[0].push_back(prefixMapEntry.first);
         }
+      }
+
+      std::unordered_set<uint32_t> typesReferenced;
+
+      for (uint32_t hash : checksumMatch) {
+        for (uint32_t typeHash : fieldTypeMap[hash]) {
+          typesReferenced.insert(typeHash);
+        }
+      }
+
+      if (typesReferenced.size() == 1) {
+        usingFieldTypeMap = false;
       }
     }
   }
