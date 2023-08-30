@@ -488,6 +488,7 @@ ExtractAffixResultMessage
 EyeColorDefinition
 FaceDefinition
 FacialHairDefinition
+FadeGroupParentInfo
 FatVertex
 FavorLevel
 FavorLevel_Table
@@ -812,6 +813,7 @@ MarkerAudioVolumeData
 MarkerAxeMapIconData
 MarkerBakedAISplineData
 MarkerBakedSplineData
+MarkerBakedSplineNode
 MarkerBaseGizmoData
 MarkerBoneTransform
 MarkerCameraData
@@ -836,6 +838,8 @@ MarkerHeightFieldTextureInfo
 MarkerHiddenCacheGizmoData
 MarkerInstanceChunk
 MarkerInstanceGroup
+MarkerInstanceGroupAO
+MarkerInstanceGroupsAO
 MarkerItemData
 MarkerLevelAreaVolumeData
 MarkerLightData
@@ -845,6 +849,7 @@ MarkerNPCActorData
 MarkerNoMountVolumeData
 MarkerNoSpawnVolumeData
 MarkerObserverVolumeData
+MarkerPathToAOOffset
 MarkerPortalDestGizmoData
 MarkerPortalGizmoData
 MarkerPrefabData
@@ -1126,6 +1131,7 @@ PlayerLevelSubcondition
 PlayerNonAuthoritativePositionMessage
 PlayerOwnsAMountSubcondition
 PlayerParagonPointMessage
+PlayerPartySummonReceivedMessage
 PlayerPossessActorMessage
 PlayerPotionDosesSubcondition
 PlayerQuestHistoryEntry
@@ -1258,7 +1264,9 @@ PrefetchSceneMessage
 PrefetchSubzoneEntranceDataMessage
 PrefetchWorldDataMessage
 PreloadACDDataMessage
+PreloadCompleteACDMessage
 PreloadHelper
+PreloadInactiveMarkerMessage
 PreloadSceneDataMessage
 PreloadSpawnMarkerData
 PreloadSpawnWorldDataMessage
@@ -1403,6 +1411,7 @@ ScriptEventParamFloatRangeEntered
 ScriptEventParamFloatRangeInside
 ScriptEventParamGameTime
 ScriptEventParamGizmoType
+ScriptEventParamHashedString
 ScriptEventParamItem
 ScriptEventParamLevelArea
 ScriptEventParamLinkedMarkerAny
@@ -1549,6 +1558,7 @@ StoryboardUIControlPlayStoryboardTrack
 StoryboardUIControlSetAlphaTrack
 StoryboardUIControlSetBottomTrack
 StoryboardUIControlSetFontScaleTrack
+StoryboardUIControlSetHeightTrack
 StoryboardUIControlSetLeftTrack
 StoryboardUIControlSetPivotTrack
 StoryboardUIControlSetPositionTrack
@@ -1895,6 +1905,7 @@ WwiseSoundBankContentBase
 WwiseStandardSoundBank
 WwiseSwitchValue
 XboxConsoleAwardDefinition
+ZoneMapGridSecretTextures
 ZoneMapParams
 ZoneMapSecretCondition
 ZoneMapSecretTexture
@@ -2040,6 +2051,7 @@ arActorPreloadHelpers
 arActorSlotHelpers
 arActorVariantPreloadHelpers
 arActorVariantTypes
+arAdditionalActorTypes
 arAdditionalAttachPoints
 arAdditionalCheats
 arAdditionalTargets
@@ -2063,6 +2075,7 @@ arAvailableParagonBoards
 arBakedBoneTransforms
 arBakedLayers
 arBakedMaskTexturesInfo
+arBakedSplineNodes
 arBannerShapes
 arBiomeClutters
 arBiomes
@@ -2132,6 +2145,9 @@ arDecalLookVariantMap
 arDecalTemplates
 arDefaultBanners
 arDefaultSkillLoadout
+arDirectionalHitEffectGroups
+arDisabledSpawnLocTypes
+arDisallowedAffixFamilies
 arDungeonAffixes
 arDungeonImages
 arDungeonLists
@@ -2155,6 +2171,8 @@ arEyeColorChoices
 arFaceChoices
 arFacialHairChoices
 arFacingWindows
+arFadeGroupChildren
+arFadeGroupParents
 arFamilyRestrictions
 arFemaleOffsets
 arFlagLookups
@@ -2176,6 +2194,7 @@ arGlobalMarkerActors
 arGlobalRoadGraphs
 arGlobalRoadSplines
 arGrid
+arGridSecretTextures
 arGroupTypeData
 arHairColorChoices
 arHairColorList
@@ -2186,6 +2205,7 @@ arHealthPotions
 arHelmComponents
 arHeroDetailsEntries
 arHeroes
+arHiddenProducts
 arHitReactionOverrides
 arIKFrames
 arIKLimbs
@@ -2226,6 +2246,8 @@ arLevelAreas
 arLevelUpNotificationData
 arLevels
 arLines
+arLinkedAchievements
+arLinkedPassivePowers
 arListenerReactions
 arLookVariantMap
 arLookVariantMaterialMap
@@ -2406,6 +2428,7 @@ arUpgradeOptions
 arUsableByClass
 arUsedStrings
 arVOLines
+arValidAnimSetOrderTags
 arValidTierRanges
 arValues
 arVariantKeys
@@ -2431,7 +2454,6 @@ arnPowerKeyParam
 arrCosmeticItems
 arrFlowIdenticalVectorField
 arrItems
-arrReloadedBits
 arrWeapons
 atBranch
 atKeyVals
@@ -2485,6 +2507,7 @@ bDieOverride
 bDisableDefaultDungeonStates
 bDisableDefaultLabels
 bDisableDynamicAvoidance
+bDisableFontScale
 bDisplayChatMessage
 bDoesRetreat
 bDrawBackground
@@ -2582,6 +2605,7 @@ bIsTransmog
 bIsUnique
 bIsWorldBoss
 bIsWorldEvent
+bJournalVO
 bKillSummonsOnDeath
 bLeader
 bListBoxHorizontal
@@ -2607,6 +2631,7 @@ bOptional
 bOverkillStacked
 bOverlap
 bOverridePosition
+bOverrideRewardDropLevel
 bPassabilityDestEnabled
 bPassabilityDuringEnabled
 bPassword
@@ -2825,6 +2850,7 @@ dwFogFlags
 dwFontSize
 dwFormatHash
 dwFormulaHash
+dwFrameRandomSeed
 dwGameAccountId
 dwGameFlags
 dwGateNodeIndex
@@ -2832,7 +2858,9 @@ dwGizmoContext
 dwGroupHash
 dwGroupId
 dwHardPointAttachment
+dwHardPointCarryable
 dwHardPointMain
+dwHardPointPlayer
 dwHash
 dwHashFlag
 dwHashPadding
@@ -2853,6 +2881,7 @@ dwLineFlags
 dwLineUID
 dwLinesSeconds
 dwListenerFlags
+dwLookAtTargetID
 dwLookHash
 dwLookVariant
 dwMSAALevel
@@ -3477,6 +3506,7 @@ fIsGrass
 fIsHFists
 fIsLoop
 fIsNPC
+fIsSkipPoint
 fIsSpawned
 fIsStatic
 fIsTattoo
@@ -3577,6 +3607,7 @@ fUseDynamicMovement
 fUseLinkedMarkersForLocation
 fUseShapeCollision
 fUseStringListName
+fUsesGraph
 fVOPlaysOnPlayer
 fVendor
 fVisibleToAll
@@ -3776,6 +3807,7 @@ flFogStartScalar
 flFollowSpeed
 flFootprint
 flForcedTimeOfDay
+flFortifiedHealthDamageReduction
 flFps
 flFrameRate
 flFrequency
@@ -3923,6 +3955,7 @@ flMouseWheelZoomSpeed
 flMovementSpeed
 flMultiplayerSmoothing
 flNPCInteractDistance
+flNPCInteractHeight
 flNearPlane
 flNitMax
 flNitMin
@@ -4198,6 +4231,8 @@ g
 gameFlags
 gbid
 gbidAIPropType
+gbidAITargetingStyleElite
+gbidAITargetingStyleNormal
 gbidAchievementEvent
 gbidActorGroup
 gbidAffixFamily
@@ -4208,6 +4243,7 @@ gbidDefaultDynamicMovementData
 gbidDesignerVariable
 gbidDungeonState
 gbidDynamicMovementDataOverride
+gbidForcedSocketColor
 gbidFormula
 gbidGlobalSpawningMalignantMonsterTag
 gbidHelpCode
@@ -4398,6 +4434,7 @@ hSpiritBondIcon
 hSpiritIcon
 hSplashImage
 hStateImages
+hStoreIconOverride
 hSubtitle
 hTemplate
 hText
@@ -4582,6 +4619,7 @@ nExclusiveGroupId
 nExplicitRequiredLevel
 nFacing
 nFadeGroup
+nFadeGroupParent
 nFadeTime
 nFixedIPowerLevel
 nFontSizeFallback
@@ -4604,6 +4642,7 @@ nHairColor
 nHardpointIndexForRope
 nHeight
 nHeightFieldCount
+nHeightSampleDensity
 nHeightValue
 nHitFlashAddDuration
 nHitFlashMulDuration
@@ -4618,6 +4657,7 @@ nIndexNodeA
 nIndexNodeB
 nIndexOffset
 nInputFocusOrder
+nInstanceGroupOffset
 nInt0
 nIntData
 nIntLiteral
@@ -4707,10 +4747,12 @@ nNumToChoose
 nOccurrence
 nOffset
 nOpAmount
+nOutlineStrength
 nOverrideID
 nPadding
 nPadding1
 nPageIncrement
+nParagonPointsEarnedPerLevel
 nParam
 nParam1
 nParam2
@@ -4751,8 +4793,10 @@ nScalarFunction
 nSceneChunk
 nScore
 nScrollbarPageIncrement
+nSeasonActive
 nSeed
 nSegmentCount
+nSelectedRewardIndex
 nSizeAdjustments
 nSkillModPoints
 nSkillRank
@@ -4879,6 +4923,7 @@ pathColorIntensityOverLength
 pathColorIntensityOverTime
 pathColorOverLength
 pathColorOverTime
+pathCoverageBias
 pathDestPointAlongRopeMotion
 pathDestPointPerpendicularMotion
 pathDestPointWorldUpMotion
@@ -5104,6 +5149,7 @@ ptLeaves
 ptLevels
 ptLightInstanceData
 ptLink
+ptLoadOuts
 ptLockData
 ptLoopConstraints
 ptMapStringTable
@@ -5262,6 +5308,9 @@ rgbaOuter
 rgbaOuterFalloff
 rgbaSkillTreeInvalidColor
 rgbaSlopeColor
+rgbaTextColorHighlight
+rgbaTextColorNormal
+rgbaTextColorSelected
 rgbaTint
 rgbavalAvgColor
 right
@@ -5486,6 +5535,7 @@ snoHighDefaultBaseShader
 snoHighQualityClothOverride
 snoHighlight
 snoHighlightAnim
+snoHitBySoundTable
 snoHoudini
 snoHoverAnim
 snoInfluenceSim
@@ -5502,6 +5552,8 @@ snoItemReward
 snoItemToDrop
 snoItemTransmog
 snoItemType
+snoItemTypeMainHand
+snoItemTypeOffHand
 snoItemUseLevelAreaRequirement
 snoItems
 snoJewelry
@@ -5592,10 +5644,12 @@ snoOccluded
 snoOceanAmbient
 snoOceanMaterial
 snoOffHand
+snoOnActionSound
 snoOnClickEffect
 snoOnCloseSound
 snoOnDeathPower
 snoOnOpenSound
+snoOnSelectedSound
 snoOneHandMain
 snoOneHandOff
 snoOperatePowerAnimKey
@@ -5631,6 +5685,9 @@ snoPlayerParticipatingEffect
 snoPlayerTitle
 snoPopulation
 snoPortalDestLevelArea
+snoPortalDestObjectiveDisplayItem
+snoPortalDestObjectiveQuest
+snoPortalDestObjectiveTrackedReward
 snoPortalDestSubzone
 snoPortalDestWorld
 snoPortraitWorld
@@ -6348,6 +6405,7 @@ tOffsetRadius
 tOnActivateEffect
 tOnClickEffect
 tOnEnabledEffect
+tOnHitSoundsPayload
 tOnHoverEffect
 tOutroDuration
 tOverrideLook
