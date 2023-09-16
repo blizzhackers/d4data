@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.16..3.26)
 
+# Because I forget commands:
+#   cmake .
+#   cmake --build . --config Release
+
 project(Checksum LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -7,6 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 if (MSVC)
 	add_compile_options(
+		/O2
 		/W4
 		/permissive-
 		/Zc:__cplusplus
@@ -16,7 +21,7 @@ if (MSVC)
 		/wd4267 # 'var' : conversion from 'size_t' to 'type', possible loss of data
 	)
 else()
-	add_compile_options(-Wall -Wextra -pedantic)
+	add_compile_options(-O3 -Wall -Wextra -pedantic)
 endif()
 
 
