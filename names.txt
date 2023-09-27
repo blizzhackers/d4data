@@ -331,6 +331,7 @@ DRLGEventDebugInfo
 DRLGForcedWorldParamsDebugInfo
 DRLGNodeLink
 DRLGPortalInfo
+DRLGSceneCreationInfo
 DRLGSpawnGroupTypeData
 DRLGSpawningData
 DRLGSpawningPool
@@ -946,6 +947,7 @@ NPCLegFoleyMaterialOverride
 NPCLegFootstepTypeOverride
 NPCPreset
 NPCServiceData
+NPCWeaponHardpointOverride
 NSlice
 NamedGizmoData
 NecroArmySpecMessage
@@ -988,6 +990,7 @@ OnBerserkRemovedCallback
 OnContactFramePowerCallback
 OnCreatePowerCallback
 OnDeathBuffCallback
+OnDeflectBuffCallback
 OnDismountCallback
 OnDoDamageBuffCallback
 OnDodgeBuffCallback
@@ -1045,6 +1048,7 @@ PVPMonsterMessage
 PVPObeliskGizmoData
 PVPShrineEventParticipatingMessage
 PVPShrineEventUpdateMessage
+PaintedSceneGrid
 ParagonBoardDefinition
 ParagonEquipBoardMessage
 ParagonGlyphAffixAttribute
@@ -1089,6 +1093,9 @@ PetType
 PetType_Table
 PhaseJumpAnimEnd
 PhaseJumpBase
+PhaseJumpDestinationReached
+PhaseJumpDistanceReached
+PhaseJumpDurationReached
 PhaseJumpImmediate
 PhaseJumpNotMoving
 PhaseJumpScriptTriggeredEvent
@@ -1192,6 +1199,7 @@ PowerBlendOverrideList
 PowerBuffCrowdControl
 PowerBuffDOTDamage
 PowerBuffDefinition
+PowerBuffIdentifier
 PowerCallbackBase
 PowerCastingEffectOverride
 PowerConditionBase
@@ -1418,7 +1426,6 @@ SceneSubzoneMarkerSetPreloadHelper
 SchedulerGlobalUniqueCategory
 SchedulerGlobalUniqueCategory_Table
 ScoreStatistic
-ScreenStaticCamps
 ScriptEventDescription
 ScriptEventInvalidType
 ScriptEventParamAchievement
@@ -1519,6 +1526,7 @@ SkillRankChangedMessage
 SkillTag
 SkillTagStruct
 SkillTag_Table
+SkillTreeConnectionFrameProperties
 SkillTreeNode
 SkillTreeNodeConnection
 SkillTreeNodeEntry
@@ -1623,6 +1631,7 @@ SubzoneDefinition
 SubzoneModifierStateMessage
 SubzoneModifierTagsEntry
 SubzoneModifierTagsEntry_Table
+SubzoneRelation
 SubzoneTypeSubcondition
 SubzoneWorldMarkerSetEntry
 SummonActorEntry
@@ -1658,6 +1667,7 @@ TalentRankAssignedMessage
 TelemetryBugEnteredMessage
 TempCollisionMesh
 TerritoryDefinition
+TerritoryRegionBoundary
 TerritoryRegionParams
 TexAnim
 TexAnimFrameByFrame
@@ -1934,6 +1944,8 @@ VoiceActorEntry_Table
 VoteKickMessage
 WallCornerPieces
 WallDefinition
+WallDeformData
+WallDeformPiece
 WallInstanceData
 WallPiece
 WallScatterData
@@ -2033,6 +2045,7 @@ aPitch
 aPitchMax
 aPitchMin
 aPitchOffset
+aPlayerGameAccountIds
 aRolledInherentAffixes
 aRotationInitial
 aSamples
@@ -2054,6 +2067,7 @@ aabbAppearanceBoundingBox
 aabbBounds
 aabbCollision
 aabbLayerBounds
+aabbPreventWalkableBounds
 aabbWalkableBounds
 accept
 actionType
@@ -2195,6 +2209,7 @@ arCompleteLooks
 arCompletedQuests
 arCompletionQuests
 arComponents
+arCompressedGrid
 arConditionData
 arConditionalAudioStates
 arConditionalMaterialOverrides
@@ -2212,6 +2227,7 @@ arCurveLengths
 arCustomPathPositions
 arCustomizationAppearances
 arCustomizedMarkers
+arDOTApplicationEffectGroups
 arDOTEffectGroups
 arDRLGElevations
 arDRLGEvents
@@ -2253,6 +2269,7 @@ arFacialHairChoices
 arFacingWindows
 arFadeGroupChildren
 arFadeGroupParents
+arFakeItemRewards
 arFamilyRestrictions
 arFemaleOffsets
 arFlagLookups
@@ -2428,6 +2445,7 @@ arRankRewards
 arRanks
 arRecipeTiers
 arRecipes
+arRegionBoundaries
 arRegionOverrides
 arReputation
 arReputationRewards
@@ -2488,6 +2506,7 @@ arStoreAnimSets
 arStoreDisclaimerData
 arStrings
 arSubParams
+arSubzoneRelations
 arSubzones
 arSummonActors
 arSummonedActorPreloadHelpers
@@ -2600,6 +2619,7 @@ bDisableFontScale
 bDisplayChatMessage
 bDoesRetreat
 bDrawBackground
+bDrawSlotBackground
 bDrawSockets
 bDualWielding
 bDungeon
@@ -2855,6 +2875,7 @@ dmClothDistanceConstraintOldMirror
 dmClothFaceOldMirror
 dmClothPlaneDefMirror
 dmClothPlaneOldMirror
+dmClothTuningMirror
 dmClothVertexOldMirror
 dmConstraintClusterMirror
 dmFloat4Mirror
@@ -2882,6 +2903,7 @@ dwAnimPrePlayDataFlags
 dwAnimSyncedSeed
 dwAnimWeight
 dwAppearanceFlags
+dwArcID
 dwArchetypeHash
 dwAttachHardpoint
 dwAttachedActorID
@@ -2921,6 +2943,7 @@ dwData
 dwDataID
 dwDecalWriteFlags
 dwDefaultShaderMapOverride
+dwDeltaFavor
 dwDepth
 dwDestNodeId
 dwDestinationId
@@ -2964,6 +2987,7 @@ dwID
 dwImportFlags
 dwIncludeMask
 dwInstanceID
+dwInvalidArcID
 dwItemAmount
 dwItemLabelMask
 dwKey
@@ -3407,6 +3431,7 @@ eRarity
 eRarityOverride
 eReason
 eRecipeType
+eRelationType
 eRemapEasing
 eRenderContext
 eRenderDistance
@@ -4759,6 +4784,7 @@ nCommandFrame
 nControllerReboundDuration
 nConvLineGUID
 nCooldown
+nCopyFromMarkerID
 nCorpseResurrectionChargeRegenTime
 nCorpseResurrectionMaxCharges
 nCost
@@ -4943,6 +4969,7 @@ nParagonPointsEarnedPerLevel
 nParam
 nParam1
 nParam2
+nParentFolderID
 nParentFolderIndex
 nParentIndex
 nPayloadValue
@@ -4955,6 +4982,7 @@ nPlayerKills
 nPlayers
 nPotionCount
 nPotionTier
+nPrefabOriginalID
 nPrimitiveCount
 nPrimitiveIndex
 nPriority
@@ -5002,6 +5030,7 @@ nSocketIndex
 nSortOrder
 nSortPri
 nSortPriority
+nSourcePermutationId
 nSpawnAdditionalAffixCount
 nSpawnMaxCount
 nSpawnMaxGenerated
@@ -5122,6 +5151,7 @@ pathDirectionalFogIntensitySunFactor
 pathDirectionalShadowIntensity
 pathDistortionFactorOverLength
 pathDistortionFactorOverTime
+pathExtinction
 pathFalloff
 pathFalloffBias
 pathFogColor
@@ -5357,6 +5387,7 @@ ptMsgTriggeredEvents
 ptNPCActorData
 ptNPCComponentHardpointOverrides
 ptNPCData
+ptNPCWeaponHardpointOverrides
 ptNextNode
 ptNode
 ptNodeOverrides
@@ -5510,6 +5541,8 @@ rgbaMinimapBorderColor
 rgbaMinimapExteriorColor
 rgbaMinimapHatchesTint
 rgbaMinimapHighlightedBorderColor
+rgbaMinimapHighlightedExteriorColor
+rgbaMinimapHighlightedShadowColor
 rgbaMinimapHighlightedTint
 rgbaMinimapShadowColor
 rgbaOuter
@@ -5519,7 +5552,9 @@ rgbaPlayer1Color
 rgbaPlayer2Color
 rgbaPlayer3Color
 rgbaPlayerLocalSolo
+rgbaSkillTreeBonusRanksColor
 rgbaSkillTreeInvalidColor
+rgbaSkillTreeMaxRanksColor
 rgbaSlopeColor
 rgbaTextColorHighlight
 rgbaTextColorNormal
@@ -5628,6 +5663,17 @@ snoCastingEffectGroup
 snoChampionEffectGroup
 snoChannelingEffect
 snoChapters
+snoCharacterCustomization_BodyToEnd
+snoCharacterCustomization_BodyToHead
+snoCharacterCustomization_FaceToEnd
+snoCharacterCustomization_FaceToHead
+snoCharacterCustomization_HeadToBody
+snoCharacterCustomization_HeadToEnd
+snoCharacterCustomization_HeadToFace
+snoCharacterCustomization_StartToHead
+snoCharacterSelectUIWorld
+snoCharacterSelect_BodyToHead
+snoCharacterSelect_HeadToBody
 snoChildHoverTiledStyle
 snoClass
 snoClassPassiveReputation
@@ -5769,6 +5815,7 @@ snoInteractSound
 snoInteractiveIGCSound
 snoIntroEffect
 snoInventory
+snoInventoryUIWorld
 snoItalicStyle
 snoItem
 snoItemInventorySound
@@ -5841,6 +5888,7 @@ snoMount
 snoMountPaperdollWorld
 snoMountPower
 snoMountPowerOverride
+snoMountUIWorld
 snoMountedAnimSet
 snoMountedAnimSetOverride
 snoMountedAnimTree
@@ -5851,7 +5899,19 @@ snoMouseOverSound
 snoMovie
 snoMusic
 snoMusicOverride
+snoNPCBarefootLandSoundTable
+snoNPCBarefootRunSoundTable
+snoNPCBarefootSlideSoundTable
+snoNPCBarefootWalkSoundTable
+snoNPCClothLandSoundTable
+snoNPCClothRunSoundTable
+snoNPCClothSlideSoundTable
+snoNPCClothWalkSoundTable
 snoNPCComponentSet
+snoNPCLeatherLandSoundTable
+snoNPCLeatherRunSoundTable
+snoNPCLeatherSlideSoundTable
+snoNPCLeatherWalkSoundTable
 snoNPCOperateSound
 snoNPCPowerOperate
 snoName
@@ -5863,6 +5923,7 @@ snoNonParticipatingEffectGroup
 snoNormal
 snoNormalHitEffectGroup
 snoObjectiveDiscoveredConversation
+snoObjectiveDiscoveredConversationOverride
 snoObserver
 snoObserverForOrientation
 snoObserverMount
@@ -5872,6 +5933,7 @@ snoOceanAmbient
 snoOceanMaterial
 snoOffHand
 snoOnActionSound
+snoOnBounceEffectGroup
 snoOnClickEffect
 snoOnCloseSound
 snoOnDeathPower
@@ -5964,6 +6026,7 @@ snoProgressBackgroundTiledStyle
 snoProgressChangingSound
 snoProgressForegroundTiledStyle
 snoProjectileSno
+snoPvPSourceWorld
 snoQuest
 snoQuestChain
 snoQuestIGCSound
@@ -5991,10 +6054,6 @@ snoRiverAmbient
 snoRootMarkerSet
 snoRope
 snoRoughness
-snoRuleFoleyMaterialLandSoundTable
-snoRuleFoleyMaterialRunSoundTable
-snoRuleFoleyMaterialSlideSoundTable
-snoRuleFoleyMaterialWalkSoundTable
 snoRunSoundTable
 snoRunePower
 snoSacrificePower
@@ -6063,6 +6122,7 @@ snoStartingAIBehaviorOverride
 snoStartingAnimSetOverride
 snoStartingQuest
 snoStartingSubzone
+snoStartingSubzoneCampaignSkip
 snoStencilLootSelectable
 snoStopSound
 snoStorePreviewWorld
@@ -6176,6 +6236,8 @@ szBuildVer
 szCameraMarker
 szCameraMarkerName
 szChangedArsenal
+szCharacterCustomizationCameraName
+szCharacterSelectCameraName
 szCheat
 szCheatString
 szClickPredicate
@@ -6199,6 +6261,7 @@ szFileName
 szFoleyTypeTag
 szForegroundChild
 szFormulaName
+szFrontEndHeadFaceCharacterCam
 szFuncParamNames
 szGrammar
 szGroup
@@ -6252,6 +6315,8 @@ szOnClick
 szOnClose
 szOnContextMenu
 szOnController
+szOnControllerButtonHeld
+szOnControllerButtonUp
 szOnDPadDown
 szOnDPadDownHeld
 szOnDPadLeft
@@ -6265,18 +6330,21 @@ szOnDoubleClick
 szOnDrag
 szOnDragStart
 szOnDragStop
+szOnDragTargetRelease
 szOnEnd
 szOnGainedFocus
 szOnHitRegionEnter
 szOnHitRegionExit
 szOnInit
 szOnKey
+szOnKeyHeldDown
 szOnL1
 szOnL1Held
 szOnL2
 szOnL2Held
 szOnL3
 szOnL3Held
+szOnLMBHeld
 szOnLostFocus
 szOnMiddleClick
 szOnOpen
@@ -6288,6 +6356,7 @@ szOnR2
 szOnR2Held
 szOnR3
 szOnR3Held
+szOnRMBHeld
 szOnReturnEndEdit
 szOnRightClick
 szOnSelChange
@@ -6350,6 +6419,14 @@ szValue
 szVariableName
 szVendorCamera
 szVoiceTypeTag
+szWardrobeCameraName
+szWardrobeFeetCameraName
+szWardrobeHandsCameraName
+szWardrobeHeadCameraName
+szWardrobeLegsCameraName
+szWardrobeMainHandCameraName
+szWardrobeOffHandCameraName
+szWardrobeTorsoCameraName
 szWeaponPrefix
 tAABB
 tActiveSkills
@@ -6404,6 +6481,7 @@ tBoneInfluence
 tBoneName
 tBossDoorData
 tBox
+tBreaksCC
 tCameraState
 tCampaignData
 tCapsule
@@ -6464,6 +6542,7 @@ tDefault
 tDefaultAudioState
 tDefaultEntry
 tDefaultEventTransition
+tDefaultFrameProperties
 tDefaultLegFoleyMaterialTag
 tDefaultLook
 tDefaultPortalInfo
@@ -6471,6 +6550,7 @@ tDefaultRopeAttachPoints
 tDefaultSettings
 tDefaultTextures
 tDefaultWaypointEffects
+tDeformLayers
 tDelay
 tDestination
 tDestinationAttribute
@@ -6508,6 +6588,7 @@ tFavorData
 tFavorTableData
 tFirstReward
 tFirstTimeReward
+tFixedAffixData
 tFlatLevel
 tFlipLocationMarkerHandle
 tFogMask
@@ -6745,7 +6826,13 @@ tShoreWaveSettings
 tSigilTierRange
 tSinData
 tSkillPassiveData
+tSkillTreeFrameProps
+tSkillTreePropsAvailable
+tSkillTreePropsExclusiveAvailable
+tSkillTreePropsExclusiveLocked
+tSkillTreePropsExclusivePurchased
 tSkillTreePropsExclusiveUnavailable
+tSkillTreePropsPurchased
 tSkillTreePropsUnavailable
 tSkyColorSettings
 tSlopeBone
@@ -6813,6 +6900,7 @@ tSystemDurationScalar
 tTangents
 tTargetLocatorName
 tTemplates
+tTerrainDeformLayers
 tTerritoryRegion
 tTexture
 tThresholdAttribute
