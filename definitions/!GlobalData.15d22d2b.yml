@@ -29,7 +29,7 @@
 0x90: unk_7954efd # DT_FLOAT (32 bits used)
 0x94: unk_1a40d94 # DT_FLOAT (32 bits used)
 0x98: unk_7954dff # DT_FLOAT (32 bits used)
-0x9c: unk_76813f3 # DT_FLOAT (32 bits used)
+0x9c: flFloatingTextScale # DT_FLOAT (32 bits used)
 0xa0: unk_60b79b9 # DT_INT (32 bits used)
 0xa4: unk_eec6296 # DT_FLOAT (32 bits used)
 0xa8: unk_917777c # DT_INT (32 bits used)
@@ -74,7 +74,7 @@
 0x178: unk_f1891b9 # DT_UINT (32 bits used)
 0x17c: nUIBusyTime # DT_UINT (32 bits used)
 0x180: nTrialVersionLevelCap # DT_INT (32 bits used)
-0x184: unk_579747d # DT_FLOAT (32 bits used)
+0x184: flDurabilityLossPercent # DT_FLOAT (32 bits used)
 0x188: unk_17db22a # DT_FLOAT (32 bits used)
 0x18c: flItemEffectivenessPercent # DT_FLOAT (32 bits used)
 0x190: unk_8aec133 # DT_FLOAT (32 bits used)
@@ -117,11 +117,11 @@
 0x2bc: unk_13c636 # DT_FLOAT (32 bits used)
 0x2c0: unk_fa7eefd # DT_UINT (32 bits used)
 0x2c4: unk_7176abf # DT_INT (32 bits used)
-0x2c8: unk_e2e6a87 # DT_FIXEDARRAY [8 array size] => unknown 0x7de8fcbd
-0x3e8: unk_f78b3b9 # unknown 0x7de8fcbd
-0x40c: unk_3761f84 # unknown 0x7de8fcbd
-0x430: unk_7452a15 # DT_INT (32 bits used)
-0x434: unk_4b7eea0 # DT_INT (32 bits used)
+0x2c8: tIQLPowerRanges # DT_FIXEDARRAY [8 array size] => ItemQualityLevelPowerRanges
+0x3e8: tIQLSacredPowerRanges # ItemQualityLevelPowerRanges
+0x40c: tIQLAncestralPowerRanges # ItemQualityLevelPowerRanges
+0x430: nMinimumSacredRequiredLevel # DT_INT (32 bits used)
+0x434: nMinimumAncestralRequiredLevel # DT_INT (32 bits used)
 0x438: unk_3890cf4 # DT_FLOAT (32 bits used)
 0x43c: flLegendaryAffixTwoHandBonus # DT_FLOAT (32 bits used)
 0x440: flLegendaryAffixAmuletBonus # DT_FLOAT (32 bits used)
@@ -131,11 +131,11 @@
 0x450: flAncestralAffixScalarDefense # DT_FLOAT (32 bits used)
 0x454: unk_4f066d9 # DT_INT (32 bits used)
 0x458: unk_7393144 # DT_INT (32 bits used)
-0x45c: unk_74a1c7 # DT_INT (32 bits used)
-0x460: unk_7f687df # DT_INT (32 bits used)
-0x464: unk_f484748 # DT_INT (32 bits used)
-0x468: unk_1db2e99 # DT_INT (32 bits used)
-0x46c: unk_4c46cf0 # DT_INT (32 bits used)
+0x45c: nItemUpgradesMaxCommon # DT_INT (32 bits used)
+0x460: nItemUpgradesMaxMagic # DT_INT (32 bits used)
+0x464: nItemUpgradesMaxRare # DT_INT (32 bits used)
+0x468: nItemUpgradesMaxLegendary # DT_INT (32 bits used)
+0x46c: nItemUpgradesMaxSacred # DT_INT (32 bits used)
 0x470: arItemUpgradeArmorPowerLevels # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
 0x484: arItemUpgradeWeaponPowerLevels # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
 0x498: arItemUpgradeJewelryPowerLevels # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
@@ -148,11 +148,11 @@
 0x528: flHealthBase # DT_FLOAT (32 bits used)
 0x52c: unk_1e39848 # DT_FLOAT (32 bits used)
 0x530: unk_f00d070 # DT_FLOAT (32 bits used)
-0x534: unk_7298101 # MonsterPerPlayerScalingData
-0x550: unk_6bc634b # MonsterPerPlayerScalingData
-0x56c: unk_a7e753e # MonsterPerPlayerScalingData
-0x588: unk_fcfc4af # MonsterPerPlayerScalingData
-0x5a4: unk_23a17b # MonsterPerPlayerScalingData
+0x534: tDungeonMonsterPerPlayerScaling # MonsterPerPlayerScalingData
+0x550: tOpenWorldMonsterPerPlayerScaling # MonsterPerPlayerScalingData
+0x56c: tLocalEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
+0x588: tZoneEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
+0x5a4: tWorldEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
 0x5c0: unk_57c5927 # DT_FLOAT (32 bits used)
 0x5c4: unk_54fe8b # DT_FLOAT (32 bits used)
 0x5c8: unk_ce51b5a # DT_FLOAT (32 bits used)
@@ -246,12 +246,12 @@
 0x7c0: unk_98c772 # DT_FLOAT (32 bits used)
 0x7c4: unk_26c4feb # DT_FLOAT (32 bits used)
 0x7c8: unk_9badb6d # DT_FLOAT (32 bits used)
-0x7cc: unk_87209a6 # DT_FLOAT (32 bits used)
+0x7cc: flControllerMaxDeadZone # DT_FLOAT (32 bits used)
 0x7d0: unk_c8e8eaa # DT_FLOAT (32 bits used)
 0x7d4: unk_5c72c6c # DT_FLOAT (32 bits used)
-0x7d8: unk_273be4d # DT_FLOAT (32 bits used)
-0x7dc: unk_911c30a # DT_FLOAT (32 bits used)
-0x7e0: unk_e34a591 # DT_FLOAT (32 bits used)
+0x7d8: flControllerRadialDeadZone # DT_FLOAT (32 bits used)
+0x7dc: flControllerCrossDeadZone # DT_FLOAT (32 bits used)
+0x7e0: flControllerSquareDeadZone # DT_FLOAT (32 bits used)
 0x7e4: flControllerMoveFacingZone # DT_FLOAT (32 bits used)
 0x7e8: unk_2b6ca3 # DT_FLOAT (32 bits used)
 0x7ec: unk_7b71733 # DT_FLOAT (32 bits used)
@@ -307,7 +307,7 @@
 0x8b4: unk_90ec4a9 # DT_FLOAT (32 bits used)
 0x8b8: unk_41e36fe # DT_FLOAT (32 bits used)
 0x8bc: flRetreatRadius # DT_FLOAT (32 bits used)
-0x8c0: unk_f9dbb21 # DT_FLOAT (32 bits used)
+0x8c0: flDungeonRetreatRadiusOverride # DT_FLOAT (32 bits used)
 0x8c4: unk_aca15d2 # DT_FLOAT (32 bits used)
 0x8c8: unk_dfa10f0 # DT_FLOAT (32 bits used)
 0x8cc: unk_54c9bdd # DT_FLOAT (32 bits used)
@@ -358,7 +358,7 @@
 0xa4c: unk_fc90e9d # DT_FLOAT (32 bits used)
 0xa50: flChillDuration # DT_FLOAT (32 bits used)
 0xa54: flFrozenDuration # DT_FLOAT (32 bits used)
-0xa58: unk_66303a6 # DT_FLOAT (32 bits used)
+0xa58: flChillProcAmount # DT_FLOAT (32 bits used)
 0xa5c: tConfuseRadius # DT_RANGE => DT_INT
 0xa64: unk_421e1a # DT_FLOAT (32 bits used)
 0xa68: unk_fd978e4 # DT_FLOAT (32 bits used)
@@ -385,14 +385,14 @@
 0xaf8: unk_463f23c # DT_FIXEDARRAY (32 bits used) [3 array size] => DT_INT
 0xb08: arWorldTiers # DT_FIXEDARRAY [4 array size] => WorldTierData
 0xe68: arFlippyHangTime # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_FLOAT
-0xe7c: unk_c9c1b78 # DT_FIXEDARRAY (32 bits used) [5 array size] {group 0x1b "Particle"} => DT_SNO
+0xe7c: arFlippyDefaultParticleSystems # DT_FIXEDARRAY (32 bits used) [5 array size] {group 0x1b "Particle"} => DT_SNO
 0xe90: flNPCInteractDistance # DT_FLOAT (32 bits used)
 0xe94: flNPCInteractHeight # DT_FLOAT (32 bits used)
-0xe98: unk_3ab153e # DT_FLOAT (32 bits used)
+0xe98: flConversationNearDistance # DT_FLOAT (32 bits used)
 0xe9c: flConversationCancelDistance # DT_FLOAT (32 bits used)
 0xea0: unk_ab69427 # DT_FLOAT (32 bits used)
 0xea4: snoConversationPortraitWorlds # DT_FIXEDARRAY (32 bits used) [8 array size] {group 0x30 "World"} => DT_SNO
-0xec4: unk_4a7cb26 # DT_FLOAT (32 bits used)
+0xec4: flPersonalChatterCooldown # DT_FLOAT (32 bits used)
 0xec8: unk_a1f16f1 # DT_FLOAT (32 bits used)
 0xecc: unk_efdb522 # DT_FLOAT (32 bits used)
 0xed0: unk_42948c4 # DT_FLOAT (32 bits used)
@@ -419,7 +419,7 @@
 0xf24: unk_bd84137 # DT_FLOAT (32 bits used)
 0xf28: unk_95c4279 # DT_FLOAT (32 bits used)
 0xf2c: unk_a42ecfd # DT_FLOAT (32 bits used)
-0xf30: unk_b7f7d87 # DT_FLOAT (32 bits used)
+0xf30: flPartySummonDuration # DT_FLOAT (32 bits used)
 0xf34: unk_3af447e # DT_FLOAT (32 bits used)
 0xf38: unk_ba50d0f # DT_FLOAT (32 bits used)
 0xf3c: unk_5c53403 # DT_FLOAT (32 bits used)
