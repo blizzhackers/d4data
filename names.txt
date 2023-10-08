@@ -277,6 +277,7 @@ ConditionDefinition
 ConditionProperty
 ConditionWrapper
 ConditionalAudioState
+ConditionalAudioStateSetter
 ConditionalMaterialOverride
 ConfirmDungeonKeyUseMessage
 ConnectionEstablishedMessage
@@ -1077,6 +1078,7 @@ ParticleKeyFrames
 ParticleLifeEvent
 ParticleSimKeyFrameColor
 ParticleSimKeyFrameDistortion
+ParticleSimKeyFrameNonUniformScale
 ParticleSimKeyFramePosition
 ParticleSimKeyFrameRotation
 ParticleSimKeyFrameScale
@@ -1580,6 +1582,7 @@ StopConvLineMessage
 StoreCameraTransition
 StoreCameraZoomMapping
 StoreDisclaimerData
+StorePreviewCameraPositioning
 StoreProductDefinition
 StoryboardDefinition
 StoryboardGenericTrack
@@ -1651,6 +1654,7 @@ TAG_VS_AO_LIGHTING
 TAG_VS_EARLY_DEPTH_STENCIL
 TAG_VS_ENABLE_AMBIENT_LIGHTING
 TAG_VS_ENABLE_FOGGING
+TAG_VS_ENABLE_PRE_SKINNING
 TAG_VS_ENABLE_SHADOWS
 TAG_VS_ENABLE_SKINNING
 TAG_VS_FLIP_NORMAL_BACKFACE
@@ -1659,6 +1663,7 @@ TAG_VS_NUM_BONE_WEIGHTS
 TAG_VS_SHADER_QUALITY
 TAG_VS_TIMER_PERIOD
 TAG_VS_USES_ALPHA2
+TAG_VS_USES_INSTANCING
 TAG_VS_USES_LIGHTMAP
 TAG_VS_USES_NORMAL
 TAG_VS_USES_TANGENT
@@ -2076,6 +2081,7 @@ afDirectionAdherence
 afDistance
 afFrequencies
 afFrequency
+afFrondRippleDistance
 afGlobalDirectionAdherence
 afGlobalDistance
 afRippleDistance
@@ -2427,8 +2433,11 @@ arPreviousSegmentIndices
 arPrimitives
 arProximityAdjustments
 arPublicLevelScaling
+arPublicLevelScalingDataOverride
 arPurchasedSkillTreeNodes
 arQuestACDObjectives
+arQuestACDObjectivesPrimaryPlayer
+arQuestACDObjectivesSecondaryPlayer
 arQuestChains
 arQuestChangedDestLevel
 arQuestDungeons
@@ -2499,6 +2508,7 @@ arSpecializations
 arStartCapPieces
 arStartLocationNames
 arStartingParagonGlyphs
+arStateSetters
 arStaticOptions
 arStaticValues
 arSteps
@@ -3394,6 +3404,7 @@ ePackSlot
 eParagonNodeRarity
 eParam
 eParamType
+eParentSyncLayer
 eParentZone
 ePassType
 ePersonaState
@@ -3594,6 +3605,7 @@ fDoesntCauseCriticalBloodEffect
 fDontPerturb
 fDoorOpen
 fDryCharacters
+fEnableAdvancedBloomSettings
 fEnableMovement
 fEnableOverride
 fEnableRagdoll
@@ -3604,6 +3616,8 @@ fFemale
 fFirstTexels
 fFlatten
 fForceMinimapIcon
+fFrondRippleLightingScalar
+fFrondRippleTile
 fFullRipple
 fGWriteEnable
 fGenerateFootstepParticles
@@ -3717,6 +3731,10 @@ fRollMaxScale
 fRollMinScale
 fRollSeparation
 fRollSpeed
+fRollingBranchFieldMin
+fRollingBranchLightingAdjust
+fRollingBranchRipple
+fRollingBranchVerticalOffset
 fRunAnimWhenScared
 fScaleUVsToFrame
 fScaredOfPlayers
@@ -4131,6 +4149,7 @@ flMinimapTextureAlpha
 flMinimumAnimationScale
 flMinimumDuration
 flMonsterCritDamageScalar
+flMonsterNonPhysicalDamageScalar
 flMountedTargetAbandonTime
 flMouseWheelScaleFactor
 flMouseWheelZoomSpeed
@@ -4268,6 +4287,8 @@ flScrollerRate
 flSeconds
 flSecs
 flSellPricePercent
+flShadowFadeEndRatio
+flShadowFadeStartRatio
 flShadowNearPlane
 flShadowZBias
 flShadowZSlopeScaleBias
@@ -4704,6 +4725,8 @@ m_aPlanes
 m_aSubEdges
 m_aVertexMap
 m_aVertices
+m_aabbPreventWalkableBounds
+m_aabbWalkableBounds
 m_anchorCount
 m_annItem
 m_area
@@ -4778,6 +4801,7 @@ nCallbackUID
 nChange
 nChildIndex1
 nChildIndex2
+nCircleSegmentCount
 nClanBankTabCost
 nClothBoneCount
 nCommandFrame
@@ -5185,6 +5209,7 @@ pathLightningThreshold
 pathLocalVelocityOverLength
 pathLocalVelocityOverTime
 pathMagnitudePerSec
+pathMotionAttractorOri
 pathMotionAttractorPos
 pathMotionAttractorVel
 pathMotionCylinderAngleVel
@@ -5207,7 +5232,9 @@ pathNoiseSmoothness
 pathOrientationAxis
 pathOrientationAxis2
 pathOrientationPosition
+pathOrientationPosition2
 pathOrientationVelocity
+pathOrientationVelocity2
 pathParticleAlpha
 pathParticleAlphaAux
 pathParticleColor
@@ -5226,6 +5253,8 @@ pathSeparation
 pathSequentialRange
 pathShadowIntensity
 pathShapeOcclusionStrength
+pathSineMultiplierOverLength
+pathSineMultiplierOverTime
 pathSourcePointAlongRopeMotion
 pathSourcePointPerpendicularMotion
 pathSourcePointWorldUpMotion
@@ -5235,10 +5264,12 @@ pathSunIntensity
 pathSunIntensityFactor
 pathSystemAlpha
 pathSystemAlphaAux
+pathSystemBurst
 pathSystemCount
 pathSystemScale
 pathSystemSpawnRate
 pathSystemSpeedDurationFactor
+pathSystemSpeedFraction
 pathSystemSpeedSpawnRate
 pathTangentDestinationOverTime
 pathTangentSourceOverTime
@@ -5269,6 +5300,7 @@ pnAnimToStructure
 polytopeDataMirror
 positionOffset
 pt
+pt2DBlendTriangles
 ptAIBroadcasts
 ptAIData
 ptAIPathData
@@ -5326,6 +5358,7 @@ ptDepthOfField
 ptDestroyableObjectGizmoData
 ptDistanceConstraints
 ptDistortions
+ptDominoHeightSamples
 ptDominoNodes
 ptDominoTriangles
 ptDominoVertices
@@ -5392,6 +5425,7 @@ ptNextNode
 ptNode
 ptNodeOverrides
 ptNodes
+ptNonUniformScales
 ptOffsetList
 ptPOICameraInstanceData
 ptParentIndices
@@ -5500,6 +5534,7 @@ radius2
 reason
 rgbaAltCellsBaseColor
 rgbaAltCellsDeltaColor
+rgbaBloomTint
 rgbaBloomTint0
 rgbaBloomTint1
 rgbaBloomTint2
@@ -5883,6 +5918,7 @@ snoMonsterAffixes
 snoMonsterFamily
 snoMonsterFootstepEffect
 snoMonsterFootstepWalkEffect
+snoMonsterPotentialAffixes
 snoMonsterRarityEffectGroup
 snoMount
 snoMountPaperdollWorld
@@ -6107,6 +6143,7 @@ snoSpawnEffectGroupActorToActor
 snoSpawnEncounter
 snoSpawnFixedAffix
 snoSpawnItem
+snoSpawnOnCollision
 snoSpawnPower
 snoSpawnPowerAnimKey
 snoSpeaker
@@ -6273,6 +6310,7 @@ szHeroName
 szHotkeyClickPredicate
 szIDNext
 szIDScrollbar
+szIDStoryboard
 szIconLabel
 szInternalName
 szLStickHandler
@@ -6768,6 +6806,7 @@ tPrimaryGroup
 tPrimaryResource
 tPrimaryTag
 tPrivateLevelScaling
+tPrivateLevelScalingDataOverride
 tProcChance
 tPrograms
 tProgressBarBase
@@ -6825,6 +6864,9 @@ tShaderMapOverrides
 tShoreWaveSettings
 tSigilTierRange
 tSinData
+tSineAmplitudeRange
+tSineFrequencyRange
+tSineSpeedRange
 tSkillPassiveData
 tSkillTreeFrameProps
 tSkillTreePropsAvailable
