@@ -23,11 +23,11 @@
 0x74: unk_7624717 # DT_FLOAT (32 bits used)
 0x78: flMapZoomScaleMax # DT_FLOAT (32 bits used)
 0x7c: flMapZoomSpeed # DT_FLOAT (32 bits used)
-0x80: unk_837ae57 # DT_FLOAT (32 bits used)
+0x80: flMapControllerScrollSpeedPerSecond # DT_FLOAT (32 bits used)
 0x84: unk_3e0d388 # DT_FLOAT (32 bits used)
-0x88: unk_4708c6a # DT_FLOAT (32 bits used)
-0x8c: unk_faf290a # DT_FLOAT (32 bits used)
-0x90: unk_57eb5c3 # DT_FLOAT (32 bits used)
+0x88: flMapControllerAccDelay # DT_FLOAT (32 bits used)
+0x8c: flMapControllerAccTime # DT_FLOAT (32 bits used)
+0x90: flMapControllerAccScale # DT_FLOAT (32 bits used)
 0x94: unk_1224aa7 # DT_FLOAT (32 bits used)
 0x98: flMapArrowSize # DT_FLOAT (32 bits used)
 0x9c: unk_9946cbb # DT_FLOAT (32 bits used)
@@ -38,8 +38,8 @@
 0xb0: unk_b825f41 # DT_UINT (32 bits used)
 0xb4: unk_478de7c # DT_UINT (32 bits used)
 0xb8: unk_5e323f0 # DT_UINT (32 bits used)
-0xbc: unk_c47180a # DT_FLOAT (32 bits used)
-0xc0: unk_b12c0aa # DT_FLOAT (32 bits used)
+0xbc: flMapFogOfWarFadeDelay # DT_FLOAT (32 bits used)
+0xc0: flMapFogOfWarFadeTime # DT_FLOAT (32 bits used)
 0xc4: unk_9b4effb # DT_FLOAT (32 bits used)
 0xc8: unk_f65fa83 # DT_FLOAT (32 bits used)
 0xcc: unk_d30a7e3 # DT_VECTOR2D
@@ -60,13 +60,13 @@
 0x10c: flBorderStrength # DT_FLOAT (32 bits used)
 0x110: flHighlightedBorderStrength # DT_FLOAT (32 bits used)
 0x114: flDropShadowStrength # DT_FLOAT (32 bits used)
-0x118: unk_786fe3d # DT_FLOAT (32 bits used)
+0x118: flHighlightedDropShadowStrength # DT_FLOAT (32 bits used)
 0x11c: flMinimapDistortionFactor # DT_FLOAT (32 bits used)
 0x120: flMinimapDistortionScale # DT_FLOAT (32 bits used)
 0x124: flMinimapHatchesSpacing # DT_FLOAT (32 bits used)
 0x128: flMinimapHatchesThickness # DT_FLOAT (32 bits used)
-0x12c: unk_d0f26d6 # DT_FLOAT (32 bits used)
-0x130: unk_7a8104a # DT_FLOAT (32 bits used)
+0x12c: flMinimapHatchesNoiseSize # DT_FLOAT (32 bits used)
+0x130: flMinimapHatchesNoiseStrength # DT_FLOAT (32 bits used)
 0x134: flMinimapHatchesSpread # DT_FLOAT (32 bits used)
 0x138: unk_1a7cebb # DT_VECTOR2D
 0x140: unk_cd7a774 # DT_FLOAT (32 bits used)
@@ -146,7 +146,7 @@
 0x68c: unk_f993efd # DT_UINT (32 bits used)
 0x690: unk_ba98f17 # DT_UINT (32 bits used)
 0x698: arHeroDetailsEntries # DT_FIXEDARRAY [7 array size] => HeroDetailsArray
-0x708: unk_a4d68a1 # DT_VARIABLEARRAY => unknown 0xcd74fce5
+0x708: unk_a4d68a1 # DT_VARIABLEARRAY => UILoadscreenTipData
 0x718: unk_934d708 # DT_FLOAT (32 bits used)
 0x71c: flChatMessageTimeUntilFade # DT_FLOAT (32 bits used)
 0x720: flChatMessageFadeDuration # DT_FLOAT (32 bits used)
@@ -233,8 +233,8 @@
 0xa7c: arSignMatBackgrounds # DT_FIXEDARRAY (32 bits used) [23 array size] => DT_UINT
 0xad8: arBountyIcons # DT_FIXEDARRAY [10 array size] => BountyIcons
 0xb50: arBountyTierIcons # DT_FIXEDARRAY [3 array size] => BountyTierIcons
-0xb80: unk_60c79a # DT_FIXEDARRAY [3 array size] => BountyTierIcons
-0xbb0: unk_fcde848 # DT_FIXEDARRAY [3 array size] => unknown 0x31772b15
+0xb80: arSeasonalBountyTierIcons # DT_FIXEDARRAY [3 array size] => BountyTierIcons
+0xbb0: arPrioritySideQuestIcons # DT_FIXEDARRAY [3 array size] => PrioritySideQuestIcons
 0xc10: unk_aa34698 # DT_UINT (32 bits used)
 0xc18: tClassInfo # DT_FIXEDARRAY [5 array size] => ClassInfoDataArray
 0xcb8: arLevelUpNotificationData # DT_VARIABLEARRAY => LevelUpNotificationEntry
@@ -276,5 +276,5 @@
 0xdb8: unk_c70a82f # DT_INT (32 bits used)
 0xdbc: bInfiniteAmount # DT_INT (32 bits used)
 0xdc0: arVOLines # DT_FIXEDARRAY [1 array size] => unknown 0xe3bec795
-0xde8: unk_416c951 # DT_FIXEDARRAY (32 bits used) [1 array size] {group 0x1d "Power"} => DT_SNO
+0xde8: arMountCarrotPowers # DT_FIXEDARRAY (32 bits used) [1 array size] {group 0x1d "Power"} => DT_SNO
 0xdf0: null or eof # DT_NULL
