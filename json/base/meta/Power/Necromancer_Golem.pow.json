@@ -92,7 +92,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAAC7AAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -103,10 +103,6 @@
  "tCombatEffectChance": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
- },
- "unk_7cfb7ba": {
-  "value": "20",
-  "compiled": "BgAAAAAAoEEAAAAA"
  },
  "unk_923b5fb": false,
  "bPlayNormalHitSound": true,
@@ -562,7 +558,7 @@
  "hIconInactive": 2003129003,
  "hIconInactiveMouseover": 0,
  "hIconRound": 0,
- "unk_ca85a0a": null,
+ "gbidHotbarCountPetType": null,
  "unk_159fc50": 0,
  "unk_cecdfc8": false,
  "unk_210b5d5": false,
@@ -639,6 +635,8 @@
     "__typeHash__": 4138865712,
     "unk_c63f49e": true,
     "dwCCFlags": 0,
+    "unk_7355fb9": false,
+    "unk_b7df711": 0,
     "tSlowAmount": {
      "value": "0",
      "compiled": "BgAAAAAAAAAAAAAA"
@@ -735,6 +733,8 @@
     "__typeHash__": 4138865712,
     "unk_c63f49e": true,
     "dwCCFlags": 0,
+    "unk_7355fb9": false,
+    "unk_b7df711": 0,
     "tSlowAmount": {
      "value": "0",
      "compiled": "BgAAAAAAAAAAAAAA"
@@ -764,29 +764,30 @@
    }
   }
  ],
+ "nFormulaCount": 0,
  "ptScriptFormulas": [
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "SF_38*(0.385 * Table(34, sLevel))/1.3",
-    "compiled": "BQAAACwAAAAAAAAAAAAAAAAAAAAGAAAAuB7FPgYAAAAAAAhCBQAAAAEAAAAAAAAAAAAAAAAAAAABAAAACwAAAA0AAAANAAAABgAAAGZmpj8OAAAAAAAAAA=="
+    "value": "SF_38*(0.77 * Table(34, sLevel))/1.3",
+    "compiled": "BQAAACwAAAAAAAAAAAAAAAAAAAAGAAAAuB5FPwYAAAAAAAhCBQAAAAEAAAAAAAAAAAAAAAAAAAABAAAACwAAAA0AAAANAAAABgAAAGZmpj8OAAAAAAAAAA=="
    }
   },
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "",
-    "compiled": ""
+    "value": "(1 + Pet_Health_Bonus_Percent) * (1 + NecroArmy_Pet_Type_Health_Bonus_Pct#2) * (1 + PowerTag.Paragon_Necro_Legendary_005.\"Script Formula 0\") * (1 + SF_23 * SF_39)",
+    "compiled": "BgAAAAAAgD8FAAAAAAAAADAAAAD+////AAAAAAsAAAAGAAAAAACAPwUAAAAAAAAA7AEAAAIAAAAAAAAACwAAAA0AAAAGAAAAAACAPwUAAAAFAAAAUWYKAAAAAAAAAAAACwAAAA0AAAAGAAAAAACAPwUAAAAdAAAAAAAAAAAAAAAAAAAABQAAAC0AAAAAAAAAAAAAAAAAAAANAAAACwAAAA0AAAAAAAAA"
    }
   },
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "1.57 * SF_36 * Table(34, sLevel) * (1 +.1 * SkillRank(SNO.Power.Necromancer_Talent_Golem))",
-    "compiled": "BgAAAMP1yD8FAAAAKgAAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAIQgUAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAsAAAANAAAABgAAAAAAgD8GAAAAzczMPQUAAABZAAAAhGYOAAAAAAAAAAAAAQAAABUAAAANAAAACwAAAA0AAAAAAAAA"
+    "value": "1.57 * SF_36 * Table(34, sLevel)",
+    "compiled": "BgAAAMP1yD8FAAAAKgAAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAIQgUAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAsAAAANAAAAAAAAAA=="
    }
   },
   {
@@ -833,8 +834,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "0.9 * Table(34, sLevel)",
-    "compiled": "BgAAAGZmZj8GAAAAAAAIQgUAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAsAAAANAAAAAAAAAA=="
+    "value": "1.4 * Table(34, sLevel)",
+    "compiled": "BgAAADMzsz8GAAAAAAAIQgUAAAABAAAAAAAAAAAAAAAAAAAAAQAAAAsAAAANAAAAAAAAAA=="
    }
   },
   {
@@ -898,7 +899,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "NecroArmy_Spec_For_Pet_Type#2==0",
-    "compiled": "BQAAAAAAAADdAQAAAgAAAAAAAAAGAAAAAAAAAAkAAAAAAAAA"
+    "compiled": "BQAAAAAAAADoAQAAAgAAAAAAAAAGAAAAAAAAAAkAAAAAAAAA"
    }
   },
   {
@@ -906,7 +907,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "NecroArmy_Spec_For_Pet_Type#2==1",
-    "compiled": "BQAAAAAAAADdAQAAAgAAAAAAAAAGAAAAAACAPwkAAAAAAAAA"
+    "compiled": "BQAAAAAAAADoAQAAAgAAAAAAAAAGAAAAAACAPwkAAAAAAAAA"
    }
   },
   {
@@ -914,7 +915,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "NecroArmy_Spec_For_Pet_Type#2==2",
-    "compiled": "BQAAAAAAAADdAQAAAgAAAAAAAAAGAAAAAAAAQAkAAAAAAAAA"
+    "compiled": "BQAAAAAAAADoAQAAAgAAAAAAAAAGAAAAAAAAQAkAAAAAAAAA"
    }
   },
   {
@@ -993,8 +994,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "1.75",
-    "compiled": "BgAAAAAA4D8AAAAA"
+    "value": "2",
+    "compiled": "BgAAAAAAAEAAAAAA"
    }
   },
   {
@@ -1076,9 +1077,16 @@
     "value": "Min(1,1-Min(SF_37*(50-Level), 0.20))",
     "compiled": "BgAAAAAAgD8GAAAAAACAPwUAAAArAAAAAAAAAAAAAAAAAAAABgAAAAAASEIFAAAAAAAAACUAAAD+////AAAAAAwAAAANAAAABgAAAM3MTD4BAAAAAAAAAAwAAAABAAAAAAAAAAAAAAA="
    }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "NecroPetPassiveIsActive(SNO.Power.Necromancer_Golem_Bone_Passive_UpgradeB)",
+    "compiled": "BQAAAFkAAAAMNw4AAAAAAAAAAAABAAAALgAAAAAAAAA="
+   }
   }
  ],
- "nFormulaCount": 0,
  "arPayloads": [
   {
    "__type__": "PowerPayloadDefinition",

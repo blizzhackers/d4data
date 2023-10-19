@@ -24,6 +24,18 @@
     "name": "Skill_Lightning"
    },
    "bSearchOnly": false
+  },
+  {
+   "__type__": "SkillTagStruct",
+   "__typeHash__": 4000554560,
+   "gbidSkillTag": {
+    "__raw__": 2322588634,
+    "__type__": "DT_GBID",
+    "__typeHash__": 1028170061,
+    "group": 56,
+    "name": "Search_Evade"
+   },
+   "bSearchOnly": false
   }
  ],
  "eSkillCat": 2,
@@ -84,7 +96,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAAC7AAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -95,10 +107,6 @@
  "tCombatEffectChance": {
   "value": "100",
   "compiled": "BgAAAAAAyEIAAAAA"
- },
- "unk_7cfb7ba": {
-  "value": "20",
-  "compiled": "BgAAAAAAoEEAAAAA"
  },
  "unk_923b5fb": false,
  "bPlayNormalHitSound": true,
@@ -151,7 +159,7 @@
  "bCanSteer": false,
  "unk_67b65e9": false,
  "bAutoTargetingEnabled": false,
- "unk_42057f3": false,
+ "unk_42057f3": true,
  "unk_fbccf7": true,
  "unk_7cdc8cb": false,
  "unk_37d51de": {
@@ -194,13 +202,13 @@
   "compiled": "BgAAAAAAAAAAAAAA"
  },
  "unk_e96cf25": false,
- "unk_d8f7885": false,
- "unk_8d0166c": true,
+ "unk_d8f7885": true,
+ "unk_8d0166c": false,
  "unk_1539714": 0,
- "unk_e9ac57a": false,
- "unk_61e06df": false,
- "unk_787b722": 0,
- "unk_b2d506d": 0,
+ "unk_e9ac57a": true,
+ "unk_61e06df": true,
+ "unk_787b722": 8,
+ "unk_b2d506d": 0.5235987901687622,
  "unk_8b4e7a": 3,
  "unk_44bbb8e": false,
  "tAttackRadius": {
@@ -220,8 +228,8 @@
    "value": "SF_1",
    "compiled": "BQAAAAcAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
-  "aFacingAngleThreshold": 1.7453292608261108,
-  "flFacingDistanceThreshold": 50,
+  "aFacingAngleThreshold": 1.0471975803375244,
+  "flFacingDistanceThreshold": 1,
   "eMoveRateOverride": -1,
   "flSpeedMultiplier": 1,
   "bIgnorePathfinding": false,
@@ -546,7 +554,7 @@
  "hIconInactive": 3388948515,
  "hIconInactiveMouseover": 0,
  "hIconRound": 0,
- "unk_ca85a0a": null,
+ "gbidHotbarCountPetType": null,
  "unk_159fc50": 0,
  "unk_cecdfc8": false,
  "unk_210b5d5": false,
@@ -623,6 +631,8 @@
     "__typeHash__": 4138865712,
     "unk_c63f49e": true,
     "dwCCFlags": 0,
+    "unk_7355fb9": false,
+    "unk_b7df711": 0,
     "tSlowAmount": {
      "value": "0",
      "compiled": "BgAAAAAAAAAAAAAA"
@@ -719,6 +729,8 @@
     "__typeHash__": 4138865712,
     "unk_c63f49e": true,
     "dwCCFlags": 0,
+    "unk_7355fb9": false,
+    "unk_b7df711": 0,
     "tSlowAmount": {
      "value": "0",
      "compiled": "BgAAAAAAAAAAAAAA"
@@ -748,13 +760,14 @@
    }
   }
  ],
+ "nFormulaCount": 0,
  "ptScriptFormulas": [
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "PowerTag.Sorcerer_Teleport.\"Script Formula 28\"",
-    "compiled": "BQAAAAUAAABqZQQAHAAAAAAAAAAAAAAA"
+    "value": "PowerTag.Sorcerer_Teleport.\"Script Formula 28\" * (1 - SF_8)",
+    "compiled": "BQAAAAUAAABqZQQAHAAAAAAAAAAGAAAAAACAPwUAAAAOAAAAAAAAAAAAAAAAAAAADAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -770,7 +783,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "Evade_Reduce_Cooldown_On_Attack",
-    "compiled": "BQAAAAAAAABxAwAA/v///wAAAAAAAAAA"
+    "compiled": "BQAAAAAAAACGAwAA/v///wAAAAAAAAAA"
    }
   },
   {
@@ -786,7 +799,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "Evade_Movement_Dodge_Chance",
-    "compiled": "BQAAAAAAAAByAwAA/v///wAAAAAAAAAA"
+    "compiled": "BQAAAAAAAACHAwAA/v///wAAAAAAAAAA"
    }
   },
   {
@@ -810,11 +823,18 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "Evade_Max_Charges",
-    "compiled": "BQAAAAAAAABwAwAA/v///wAAAAAAAAAA"
+    "compiled": "BQAAAAAAAACFAwAA/v///wAAAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "ParagonNodeIsPurchased(SNO.ParagonNode.Sorcerer_Legendary_015) ? PowerTag.Paragon_Sorc_Legendary_015.\"Script Formula 0\" : 0",
+    "compiled": "BQAAAFkAAACnRgoAAAAAAAAAAAABAAAAKQAAAAUAAAAFAAAAqEYKAAAAAAAAAAAABgAAAAAAAAAQAAAAAAAAAA=="
    }
   }
  ],
- "nFormulaCount": 0,
  "arPayloads": [],
  "arMods": [],
  "snoCastingEffectGroup": {

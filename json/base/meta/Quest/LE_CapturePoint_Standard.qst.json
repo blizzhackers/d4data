@@ -41,9 +41,11 @@
  "unk_14dee1b": false,
  "flParticipationRadius": 16,
  "unk_8881b0e": 20,
- "dwNextUID": 257,
+ "dwNextUID": 259,
  "fPrioritySideQuest": false,
- "unk_c18cabd": false,
+ "ePrioritySideQuestType": 0,
+ "ePersistentEventType": -1,
+ "unk_e6be43": [],
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": null,
  "snoBountySubzone": null,
@@ -81,7 +83,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 2,
        "dwFlags": 0,
        "nNeeded": 1,
@@ -156,6 +158,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -222,63 +225,36 @@
     {
      "__type__": "QuestObjectiveSet",
      "__typeHash__": 297390777,
-     "dwUID": 227,
+     "dwUID": 257,
      "ptLink": [],
      "arCallbacks": [
       {
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 228,
-       "dwFlags": 1,
+       "eProgressBarSource": 0,
+       "dwUID": 258,
+       "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 48,
+        "eEventType": 69,
         "dwListenerFlags": 0,
-        "snoCondition": null,
+        "snoCondition": {
+         "__raw__": 1453905,
+         "__group__": 51,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
+         "__targetFileName__": "base/meta/Condition/SME_Vampzone.cnd",
+         "groupName": "Condition",
+         "name": "SME_Vampzone"
+        },
         "unk_c3ba01d": false,
         "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2197444774,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamPlayer",
-            "__typeHash__": 106673333,
-            "dwType": 106673333,
-            "eParamType": 7,
-            "dwPad": 0,
-            "bIsPlayer": true
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 3941013568,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamLinkedMarkerInGroup",
-            "__typeHash__": 4047712805,
-            "dwType": 4047712805,
-            "eParamType": 20,
-            "dwPad": 0,
-            "dwGroupHash": 1921286382,
-            "idValue": 0,
-            "szGroup": "runeTrigger"
-           }
-          ]
-         }
-        ],
+        "arEventFilters": [],
         "unk_492729e": [],
-        "dwEventEntryHash": 3442249050
+        "dwEventEntryHash": 58
        },
        "dwLinesSeconds": 0,
        "unk_47705e2": 0,
@@ -304,180 +280,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 252,
-       "dwFlags": 1,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 50,
-        "dwListenerFlags": 0,
-        "snoCondition": null,
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2197444774,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamPlayer",
-            "__typeHash__": 106673333,
-            "dwType": 106673333,
-            "eParamType": 7,
-            "dwPad": 0,
-            "bIsPlayer": true
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 3941013568,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamLinkedMarkerInGroup",
-            "__typeHash__": 4047712805,
-            "dwType": 4047712805,
-            "eParamType": 20,
-            "dwPad": 0,
-            "dwGroupHash": 1921286382,
-            "idValue": 0,
-            "szGroup": "runeTrigger"
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3442249050
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 3,
-       "unk_9c1ea4f": 0,
-       "snoWorld": null,
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 253,
-       "dwFlags": 1,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 49,
-        "dwListenerFlags": 0,
-        "snoCondition": null,
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2197444774,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamPlayer",
-            "__typeHash__": 106673333,
-            "dwType": 106673333,
-            "eParamType": 7,
-            "dwPad": 0,
-            "bIsPlayer": true
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 3941013568,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamLinkedMarkerInGroup",
-            "__typeHash__": 4047712805,
-            "dwType": 4047712805,
-            "eParamType": 20,
-            "dwPad": 0,
-            "dwGroupHash": 1921286382,
-            "idValue": 0,
-            "szGroup": "runeTrigger"
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3442249050
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 3,
-       "unk_9c1ea4f": 0,
-       "snoWorld": null,
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [],
-       "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -609,14 +412,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 84,
        "dwFlags": 0,
        "nNeeded": 4,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 72,
+        "eEventType": 74,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -668,6 +471,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -741,182 +545,8 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 143,
-       "dwFlags": 1,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 48,
-        "dwListenerFlags": 0,
-        "snoCondition": null,
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2197444774,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamPlayer",
-            "__typeHash__": 106673333,
-            "dwType": 106673333,
-            "eParamType": 7,
-            "dwPad": 0,
-            "bIsPlayer": true
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 3941013568,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamLinkedMarkerInGroup",
-            "__typeHash__": 4047712805,
-            "dwType": 4047712805,
-            "eParamType": 20,
-            "dwPad": 0,
-            "dwGroupHash": 1921286382,
-            "idValue": 0,
-            "szGroup": "runeTrigger"
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3442249050
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 3,
-       "unk_9c1ea4f": 0,
-       "snoWorld": null,
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 254,
-       "dwFlags": 1,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 50,
-        "dwListenerFlags": 0,
-        "snoCondition": null,
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 2197444774,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamPlayer",
-            "__typeHash__": 106673333,
-            "dwType": 106673333,
-            "eParamType": 7,
-            "dwPad": 0,
-            "bIsPlayer": true
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 3941013568,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamLinkedMarkerInGroup",
-            "__typeHash__": 4047712805,
-            "dwType": 4047712805,
-            "eParamType": 20,
-            "dwPad": 0,
-            "dwGroupHash": 1921286382,
-            "idValue": 0,
-            "szGroup": "runeTrigger"
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3442249050
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 3,
-       "unk_9c1ea4f": 0,
-       "snoWorld": null,
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 250,
        "dwFlags": 1,
        "nNeeded": 1,
        "tScriptMessageMap": {
@@ -990,6 +620,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1002,7 +633,183 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
+       "dwUID": 254,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 51,
+        "dwListenerFlags": 0,
+        "snoCondition": null,
+        "unk_c3ba01d": false,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": true
+           }
+          ]
+         },
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamLinkedMarkerInGroup",
+            "__typeHash__": 4047712805,
+            "dwType": 4047712805,
+            "eParamType": 20,
+            "dwPad": 0,
+            "dwGroupHash": 1921286382,
+            "idValue": 0,
+            "szGroup": "runeTrigger"
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "dwEventEntryHash": 3442249050
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": null,
+       "snoObjectiveDiscoveredConversationOverride": null,
+       "fDebugDisable": false,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": false,
+        "bManuallySpecified": false
+       },
+       "arRegionOverrides": [],
+       "nValidRegionOverrides": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "unk_c181024": null,
+       "arSnonameTokens": [],
+       "tReputationObjective": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": null,
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "eProgressBarSource": 0,
+       "dwUID": 250,
+       "dwFlags": 1,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 50,
+        "dwListenerFlags": 0,
+        "snoCondition": null,
+        "unk_c3ba01d": false,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": true
+           }
+          ]
+         },
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 3941013568,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamLinkedMarkerInGroup",
+            "__typeHash__": 4047712805,
+            "dwType": 4047712805,
+            "eParamType": 20,
+            "dwPad": 0,
+            "dwGroupHash": 1921286382,
+            "idValue": 0,
+            "szGroup": "runeTrigger"
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "dwEventEntryHash": 3442249050
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 3,
+       "unk_9c1ea4f": 0,
+       "snoWorld": null,
+       "snoObjectiveDiscoveredConversationOverride": null,
+       "fDebugDisable": false,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 0,
+        "vPolygonPoints": [],
+        "vCenterPos": {
+         "x": 0,
+         "y": 0
+        },
+        "flRadius": 0,
+        "bValid": false,
+        "bManuallySpecified": false
+       },
+       "arRegionOverrides": [],
+       "nValidRegionOverrides": 0,
+       "arLevelAreas": [],
+       "arSubzones": [],
+       "unk_c181024": null,
+       "arSnonameTokens": [],
+       "tReputationObjective": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": null,
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "eProgressBarSource": 0,
        "dwUID": 233,
        "dwFlags": 1,
        "nNeeded": 1,
@@ -1080,6 +887,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1092,14 +900,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 251,
        "dwFlags": 3,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 76,
+        "eEventType": 78,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1151,6 +959,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1224,14 +1033,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 242,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1299,6 +1108,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1311,14 +1121,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 243,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1386,6 +1196,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1398,14 +1209,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 244,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1473,6 +1284,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1604,14 +1416,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 25,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 44,
+        "eEventType": 45,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1682,6 +1494,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1806,14 +1619,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 147,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1881,6 +1694,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1893,14 +1707,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 148,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1968,6 +1782,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1980,14 +1795,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 149,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2055,6 +1870,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2067,14 +1883,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 150,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2142,6 +1958,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2154,14 +1971,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 151,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2229,6 +2046,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2241,14 +2059,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 152,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2316,6 +2134,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2328,14 +2147,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 153,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2403,6 +2222,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2476,14 +2296,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 155,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2551,6 +2371,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2563,14 +2384,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 156,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2638,6 +2459,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2650,14 +2472,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 157,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2725,6 +2547,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2737,14 +2560,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 158,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2812,6 +2635,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2824,14 +2648,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 159,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2899,6 +2723,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2911,14 +2736,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 160,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2986,6 +2811,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2998,14 +2824,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 161,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3073,6 +2899,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3146,14 +2973,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 163,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3221,6 +3048,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3233,14 +3061,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 164,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3308,6 +3136,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3320,14 +3149,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 165,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3395,6 +3224,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3407,14 +3237,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 166,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3482,6 +3312,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3494,14 +3325,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 167,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3569,6 +3400,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3581,14 +3413,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 168,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3656,6 +3488,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3668,14 +3501,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 169,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3743,6 +3576,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3816,14 +3650,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 171,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3891,6 +3725,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3903,14 +3738,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 172,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -3978,6 +3813,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3990,14 +3826,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 173,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4065,6 +3901,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4077,14 +3914,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 174,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4152,6 +3989,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4164,14 +4002,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 175,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4239,6 +4077,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4251,14 +4090,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 176,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4326,6 +4165,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4338,14 +4178,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 177,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 71,
+        "eEventType": 73,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4413,6 +4253,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4486,14 +4327,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 256,
        "dwFlags": 1,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 80,
+        "eEventType": 82,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4565,6 +4406,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4689,14 +4531,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 207,
        "dwFlags": 64,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 59,
+        "eEventType": 61,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4747,6 +4589,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -4820,14 +4663,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 219,
        "dwFlags": 0,
        "nNeeded": 4,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 72,
+        "eEventType": 74,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -4879,6 +4722,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -5003,14 +4847,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 222,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 67,
+        "eEventType": 69,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -5043,6 +4887,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -5160,6 +5005,7 @@
  "unk_b43b442": [],
  "gbidSurveyType": null,
  "gbidNightmareDungeonSurveyType": null,
+ "unk_9ac873": false,
  "unk_f4b6cde": {
   "__type__": "Type_56ff7d6a",
   "__typeHash__": 1459584362,

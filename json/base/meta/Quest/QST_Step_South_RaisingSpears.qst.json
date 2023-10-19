@@ -49,9 +49,11 @@
  "unk_14dee1b": false,
  "flParticipationRadius": 12,
  "unk_8881b0e": 20,
- "dwNextUID": 53,
+ "dwNextUID": 54,
  "fPrioritySideQuest": false,
- "unk_c18cabd": false,
+ "ePrioritySideQuestType": 0,
+ "ePersistentEventType": -1,
+ "unk_e6be43": [],
  "unk_79f6e17": 0,
  "gbidSubzoneModifierTag": null,
  "snoBountySubzone": null,
@@ -89,14 +91,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 2,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 37,
+        "eEventType": 38,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -170,6 +172,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -250,7 +253,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 52,
        "dwFlags": 0,
        "nNeeded": 1,
@@ -370,6 +373,7 @@
         }
        ],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -494,14 +498,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 13,
        "dwFlags": 0,
        "nNeeded": 8,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 29,
+        "eEventType": 33,
         "dwListenerFlags": 0,
         "snoCondition": {
          "__raw__": 1261068,
@@ -518,14 +522,31 @@
          {
           "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
-          "tKey": 1387993843,
+          "tKey": 334654326,
+          "eVariableType": 7,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamString",
+            "__typeHash__": 234160671,
+            "dwType": 234160671,
+            "eParamType": 6,
+            "dwPad": 0,
+            "dwStringHash": 1532734820,
+            "szString": "RaisingSpears_SpearCollected"
+           }
+          ]
+         },
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
+            "__type__": "ScriptEventParamAllowAny",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
             "dwPad": 0
            }
           ]
@@ -533,30 +554,21 @@
          {
           "__type__": "ScriptMessageMapFilter",
           "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
+          "tKey": 2344914334,
+          "eVariableType": 11,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamActor",
-            "__typeHash__": 1286645889,
-            "dwType": 1286645889,
-            "eParamType": 4,
-            "dwPad": 0,
-            "snoActor": {
-             "__raw__": 1260243,
-             "__group__": 1,
-             "__type__": "DT_SNO",
-             "__typeHash__": 2764331143,
-             "__targetFileName__": "base/meta/Actor/QST_Step_RaisingSpears_CraneSpear_Switch.acr",
-             "groupName": "Actor",
-             "name": "QST_Step_RaisingSpears_CraneSpear_Switch"
-            }
+            "__type__": "ScriptEventParamAllowAny",
+            "__typeHash__": 1295852463,
+            "dwType": 1295852463,
+            "eParamType": 0,
+            "dwPad": 0
            }
           ]
          }
         ],
         "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
+        "dwEventEntryHash": 1212553832
        },
        "dwLinesSeconds": 0,
        "unk_47705e2": 0,
@@ -609,17 +621,8 @@
         }
        ],
        "arSubzones": [],
-       "arSnonameTokens": [
-        {
-         "__raw__": 1260243,
-         "__group__": 1,
-         "__type__": "DT_SNO_NAME",
-         "__typeHash__": 3339108615,
-         "__targetFileName__": "base/meta/Actor/QST_Step_RaisingSpears_CraneSpear_Switch.acr",
-         "groupName": "Actor",
-         "name": "QST_Step_RaisingSpears_CraneSpear_Switch"
-        }
-       ],
+       "unk_c181024": null,
+       "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
@@ -698,24 +701,16 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 38,
-       "dwFlags": 2,
+       "eProgressBarSource": 0,
+       "dwUID": 53,
+       "dwFlags": 3,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
         "eEventType": 29,
         "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
+        "snoCondition": null,
         "unk_c3ba01d": false,
         "flCooldownSeconds": 0,
         "arEventFilters": [
@@ -726,11 +721,12 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
+            "__type__": "ScriptEventParamPlayer",
+            "__typeHash__": 106673333,
+            "dwType": 106673333,
+            "eParamType": 7,
+            "dwPad": 0,
+            "bIsPlayer": true
            }
           ]
          },
@@ -741,24 +737,17 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
             "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 546736,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn)"
-             },
-             "nID": 11
+            "gbidActorGroup": {
+             "__raw__": 917506138,
+             "__type__": "DT_GBID",
+             "__typeHash__": 1028170061,
+             "group": 24,
+             "name": "QST_Step_RaisingSpears_Spears"
             }
            }
           ]
@@ -818,930 +807,7 @@
         }
        ],
        "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 39,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 546736,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn)"
-             },
-             "nID": 12
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 40,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 546736,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_NSEW_POI_MemorialCairn_01 (DGN_Step_ChampionsDemise_CraneTribeCairn)"
-             },
-             "nID": 13
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 41,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 1086954,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_E_Arena_01 (DGN_Step_ChampionsDemise_E_Arena_01).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_E_Arena_01 (DGN_Step_ChampionsDemise_E_Arena_01)"
-             },
-             "nID": 7
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 42,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 1086954,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_E_Arena_01 (DGN_Step_ChampionsDemise_E_Arena_01).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_E_Arena_01 (DGN_Step_ChampionsDemise_E_Arena_01)"
-             },
-             "nID": 8
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 43,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 1086955,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_N_Arena_01 (DGN_Step_ChampionsDemise_N_Arena_01).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_N_Arena_01 (DGN_Step_ChampionsDemise_N_Arena_01)"
-             },
-             "nID": 9
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 44,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 1086955,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_N_Arena_01 (DGN_Step_ChampionsDemise_N_Arena_01).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_N_Arena_01 (DGN_Step_ChampionsDemise_N_Arena_01)"
-             },
-             "nID": 10
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
-       "arSnonameTokens": [],
-       "tReputationObjective": {
-        "__type__": "ReputationValuePair",
-        "__typeHash__": 2871889556,
-        "snoReputation": null,
-        "nValue": 0
-       }
-      },
-      {
-       "__type__": "QuestCallback",
-       "__typeHash__": 3067360607,
-       "unk_b185921": 0,
-       "unk_5342cc0": 0,
-       "dwUID": 45,
-       "dwFlags": 2,
-       "nNeeded": 1,
-       "tScriptMessageMap": {
-        "__type__": "ScriptMessageMap",
-        "__typeHash__": 2935055576,
-        "eEventType": 29,
-        "dwListenerFlags": 0,
-        "snoCondition": {
-         "__raw__": 1261068,
-         "__group__": 51,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/Condition/QST_Step_RaisingSpears_CraneSpearHunt.cnd",
-         "groupName": "Condition",
-         "name": "QST_Step_RaisingSpears_CraneSpearHunt"
-        },
-        "unk_c3ba01d": false,
-        "flCooldownSeconds": 0,
-        "arEventFilters": [
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1387993843,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamOwnerParty",
-            "__typeHash__": 2535282083,
-            "dwType": 2535282083,
-            "eParamType": 32,
-            "dwPad": 0
-           }
-          ]
-         },
-         {
-          "__type__": "ScriptMessageMapFilter",
-          "__typeHash__": 3179414430,
-          "tKey": 1072510348,
-          "eVariableType": 1,
-          "pMessageFilter": [
-           {
-            "__type__": "ScriptEventParamMarkerHandle",
-            "__typeHash__": 3311139638,
-            "dwType": 3311139638,
-            "eParamType": 33,
-            "dwPad": 0,
-            "tMarkerHandle": {
-             "__type__": "MarkerHandle",
-             "__typeHash__": 3934284334,
-             "snoMarkerSet": {
-              "__raw__": 1086956,
-              "__group__": 24,
-              "__type__": "DT_SNO",
-              "__typeHash__": 2764331143,
-              "__targetFileName__": "base/meta/MarkerSet/Step_Grassland_W_Arena_01 (DGN_Step_ChampionsDemise_W_Arena_01).mrk",
-              "groupName": "MarkerSet",
-              "name": "Step_Grassland_W_Arena_01 (DGN_Step_ChampionsDemise_W_Arena_01)"
-             },
-             "nID": 9
-            }
-           }
-          ]
-         }
-        ],
-        "unk_492729e": [],
-        "dwEventEntryHash": 3926636179
-       },
-       "dwLinesSeconds": 0,
-       "unk_47705e2": 0,
-       "eIndicatorType": 2,
-       "unk_9c1ea4f": 13,
-       "snoWorld": {
-        "__raw__": 448510,
-        "__group__": 48,
-        "__type__": "DT_SNO",
-        "__typeHash__": 2764331143,
-        "__targetFileName__": "base/meta/World/DGN_Step_ChampionsDemise.wrl",
-        "groupName": "World",
-        "name": "DGN_Step_ChampionsDemise"
-       },
-       "snoObjectiveDiscoveredConversationOverride": null,
-       "fDebugDisable": false,
-       "tRegionDefault": {
-        "__type__": "QuestCallbackRegion",
-        "__typeHash__": 2884204419,
-        "eType": 0,
-        "vPolygonPoints": [],
-        "vCenterPos": {
-         "x": 0,
-         "y": 0
-        },
-        "flRadius": 0,
-        "bValid": false,
-        "bManuallySpecified": false
-       },
-       "arRegionOverrides": [],
-       "nValidRegionOverrides": 0,
-       "arLevelAreas": [
-        {
-         "__raw__": 448512,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise"
-        },
-        {
-         "__raw__": 1086965,
-         "__group__": 22,
-         "__type__": "DT_SNO",
-         "__typeHash__": 2764331143,
-         "__targetFileName__": "base/meta/LevelArea/DGN_Step_ChampionsDemise_02.lvl",
-         "groupName": "LevelArea",
-         "name": "DGN_Step_ChampionsDemise_02"
-        }
-       ],
-       "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -1815,14 +881,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 32,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 48,
+        "eEventType": 49,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -1936,6 +1002,7 @@
         }
        ],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2009,7 +1076,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 36,
        "dwFlags": 0,
        "nNeeded": 10,
@@ -2146,6 +1213,7 @@
         }
        ],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2219,14 +1287,14 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 34,
        "dwFlags": 0,
        "nNeeded": 1,
        "tScriptMessageMap": {
         "__type__": "ScriptMessageMap",
         "__typeHash__": 2935055576,
-        "eEventType": 32,
+        "eEventType": 33,
         "dwListenerFlags": 0,
         "snoCondition": null,
         "unk_c3ba01d": false,
@@ -2335,6 +1403,7 @@
         }
        ],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2459,7 +1528,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 22,
        "dwFlags": 0,
        "nNeeded": 1,
@@ -2569,6 +1638,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2642,7 +1712,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 30,
        "dwFlags": 0,
        "nNeeded": 1,
@@ -2752,6 +1822,7 @@
        "nValidRegionOverrides": 0,
        "arLevelAreas": [],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -2883,7 +1954,7 @@
        "__type__": "QuestCallback",
        "__typeHash__": 3067360607,
        "unk_b185921": 0,
-       "unk_5342cc0": 0,
+       "eProgressBarSource": 0,
        "dwUID": 49,
        "dwFlags": 0,
        "nNeeded": 1,
@@ -3016,6 +2087,7 @@
         }
        ],
        "arSubzones": [],
+       "unk_c181024": null,
        "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
@@ -3224,6 +2296,7 @@
  "unk_b43b442": [],
  "gbidSurveyType": null,
  "gbidNightmareDungeonSurveyType": null,
+ "unk_9ac873": false,
  "unk_f4b6cde": {
   "__type__": "Type_56ff7d6a",
   "__typeHash__": 1459584362,

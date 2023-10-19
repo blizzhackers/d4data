@@ -211,7 +211,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "4_tooltip",
-   "szText": "{c_label}Critical Strike Chance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} When a Skill deals damage, it has a chance to Critically Strike.\r\n{icon:bullet} Critical Strikes deal {c_number}{s2}{/c_number} bonus damage.\r\n{icon:bullet} Damage over time cannot Critically Strike.",
+   "szText": "{c_label}Critical Strike Chance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} When a Skill deals damage, it has a chance to Critically Strike.\r\n{icon:bullet} Critical Strikes deal {c_number}x{s2}{/c_number} bonus damage, further increased by your personal bonuses.\r\n{icon:bullet} Damage over time cannot Critically Strike.",
    "hLabel": 1109060926
   },
   {
@@ -239,22 +239,36 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "5_tooltip",
-   "szText": "{c_label}Critical Strike Damage Bonus: {/c}{c_number}{s1}{/c_number}\r\n{icon:bullet} Extra damage granted to Skills when they Critically Strike.\r\n{icon:bullet} Has a base value of {c_number}{s3}{/c_number}.",
+   "szText": "{c_label}Critical Strike Damage Bonus: {/c}{c_number}{s1}{/c_number}\r\n{icon:bullet} Extra damage granted to Skills when they Critically Strike.\r\n{icon:bullet} Includes the inherent {c_number}x{s2}{/c_number} increased damage dealt by Critical Strikes.\r\n{icon:bullet} You have {c_number}+{s3}{/c_number} of this stat from items and Paragon.",
    "hLabel": 3063373375
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "154_name",
-   "szText": "Critical Strike Damage vs Crowd Controlled",
+   "szText": "Critical Strike Damage vs Vulnerable",
    "hLabel": 2829690970
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "154_tooltip",
-   "szText": "{c_label}Bonus Critical Strike Damage vs Crowd Controlled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Extra damage granted to Skills when they Critically Strike Crowd Controlled enemies.\r\n{icon:bullet} This includes those affected by Slow, Immobilize, Stun, Knockback, Knockdown, Taunt, Fear, Tether, {c_important}{u}Daze{/u}{/c_important}, {c_important}{u}Chill{/u}{/c_important}, or {c_important}{u}Freeze{/u}{/c_important}.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types for the Staggered duration.\r\n{icon:bullet} Stacks with your normal Critical Strike Damage Bonus.",
+   "szText": "{c_label}Bonus Critical Strike Damage vs Vulnerable Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Extra damage granted to Skills when they Critically Strike {c_important}{u}Vulnerable{/u}{/c_important} enemies.\r\n{icon:bullet} Stacks with your normal Critical Strike Damage Bonus.",
    "hLabel": 2668210820
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "310_name",
+   "szText": "Critical Strike Damage vs Crowd Controlled",
+   "hLabel": 1139784852
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "310_tooltip",
+   "szText": "{c_label}Bonus Critical Strike Damage vs Crowd Controlled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Extra damage granted to Skills when they Critically Strike Crowd Controlled enemies.\r\n{icon:bullet} This includes those affected by Slow, Immobilize, Stun, Knockback, Knockdown, Taunt, Fear, Tether, {c_important}{u}Daze{/u}{/c_important}, {c_important}{u}Chill{/u}{/c_important}, or {c_important}{u}Freeze{/u}{/c_important}.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types for the Staggered duration.\r\n{icon:bullet} Stacks with your normal Critical Strike Damage Bonus.",
+   "hLabel": 3349613694
   },
   {
    "__type__": "StringTableEntry",
@@ -421,7 +435,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "7_tooltip",
-   "szText": "{c_label}Overpower Chance:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} When you cast a Skill, it has a chance to {c_important}{u}Overpower{/u}{/c_important} all of the damage it deals.\r\n{icon:bullet} {c_important}{u}Overpowers{/u}{/c_important} deal bonus damage based on the sum of your current Life and {c_important}{u}Fortify{/u}{/c_important}.\r\n{icon:bullet} The bonus damage dealt scales with the Skill that {c_important}{u}Overpowered{/u}{/c_important}.\r\n{icon:bullet} Damage over time, passive abilities, and {c_important}Channeled{/c_important} Skills cannot {c_important}{u}Overpower{/u}{/c_important}.\r\n{icon:bullet} Your chance to {c_important}{u}Overpower{/u}{/c_important} cannot increase as a basic stat, but they can be guaranteed by specific effects.",
+   "szText": "{c_label}Overpower Chance:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} When you cast a Skill, it has a chance to {c_important}{u}Overpower{/u}{/c_important} all of the damage it deals.\r\n{icon:bullet} {c_important}{u}Overpowers{/u}{/c_important} deal bonus damage based on your current Life, up to {c_number}x{s2}{/c_number} when at maximum Life, further increased by your personal bonuses.\r\n{icon:bullet} The total damage dealt scales with the Skill that {c_important}{u}Overpowered{/u}{/c_important}.\r\n{icon:bullet} Damage over time, passive abilities, and {c_important}Channeled{/c_important} Skills cannot {c_important}{u}Overpower{/u}{/c_important}.\r\n{icon:bullet} Your chance to {c_important}{u}Overpower{/u}{/c_important} cannot increase as a basic stat, but they can be guaranteed by specific effects.",
    "hLabel": 2677030977
   },
   {
@@ -435,8 +449,36 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "99_tooltip",
-   "szText": "{c_label}Overpower Damage Bonus:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} Extra damage granted to Skills when they {c_important}{u}Overpower{/u}{/c_important}.\r\n{icon:bullet} Stacks with the bonus damage inherently granted to {c_important}{u}Overpowers{/u}{/c_important} based on your current Life and {c_important}{u}Fortify{/u}{/c_important}.\r\n{icon:bullet} The bonus damage dealt scales with the Skill that {c_important}{u}Overpowered{/u}{/c_important}.\r\n{icon:bullet} Has a base value of {c_number}{s3}{/c}.",
+   "szText": "{c_label}Overpower Damage Bonus:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} Extra damage granted to Skills when they {c_important}{u}Overpower{/u}{/c_important}, further increased at the moment of impact based on your Maximum Life and Fortify amount.\r\n{icon:bullet} Includes the inherent increased damage dealt by {c_important}{u}Overpowers{/u}{/c_important} based on your current Life, up to {c_number}x{s2}{/c_number} when at maximum Life.\r\n{icon:bullet} The total damage dealt scales with the Skill that {c_important}{u}Overpowered{/u}{/c_important}.\r\n{icon:bullet} You have {c_number}+{s4}{/c_number} of this stat from Willpower, items, and Paragon.",
    "hLabel": 1860399772
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "313_name",
+   "szText": "Overpower Damage with Bludgeoning",
+   "hLabel": 1257191031
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "313_tooltip",
+   "szText": "{c_label}Overpower Damage with Two-Handed Bludgeoning Weapons:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} Extra damage granted to Skills when they {c_important}{u}Overpower{/u}{/c_important} while wielding a Two-Handed Bludgeoning weapon..\r\n{icon:bullet} Stacks with your normal Overpower Damage Bonus.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 622616449
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "314_name",
+   "szText": "Overpower Damage with Werebear",
+   "hLabel": 1296326424
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "314_tooltip",
+   "szText": "{c_label}Overpower Damage with Werebear Skills:{/c} {c_number}{s1}{/c}\r\n{icon:bullet} Extra damage granted to Skills that have the {c_important}Werebear{/c_important} tag when they {c_important}{u}Overpower{/u}.\r\n{icon:bullet} Stacks with your normal Overpower Damage Bonus.",
+   "hLabel": 2576928898
   },
   {
    "__type__": "StringTableEntry",
@@ -449,7 +491,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "35_tooltip",
-   "szText": "{c_label}Vulnerable Damage Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Extra damage granted against {c_important}{u}Vulnerable{/u}{/c_important} enemies.\r\n{icon:bullet} Has a base value of {c_number}{s2}{/c_number}.\r\n{icon:bullet} You have {c_number}+{s3}{/c_number} of this stat from items and Paragon.",
+   "szText": "{c_label}Vulnerable Damage Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Extra damage granted to Skills against {c_important}{u}Vulnerable{/u}{/c_important} enemies.\r\n{icon:bullet} Includes the inherent {c_number}x{s2}{/c_number} increased damage that {c_important}{u}Vulnerable{/u}{/c_important} enemies take from all sources.\r\n{icon:bullet} You have {c_number}+{s3}{/c_number} of this stat from items and Paragon.",
    "hLabel": 2226276306
   },
   {
@@ -465,356 +507,6 @@
    "szLabel": "1_tooltip",
    "szText": "{c_label}Bonus to All Damage: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases all of your damage dealt.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
    "hLabel": 3836058171
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "2_name",
-   "szText": "Damage vs Elites",
-   "hLabel": 2073494546
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "2_tooltip",
-   "szText": "{c_label}Bonus Damage vs Elites: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases damage dealt to Champions, Elites, Bosses and Players.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 1495403324
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "25_name",
-   "szText": "Damage vs Crowd Controlled",
-   "hLabel": 2339789735
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "25_tooltip",
-   "szText": "{c_label}Bonus Damage vs Crowd Controlled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Crowd Controlled enemies.\r\n{icon:bullet} This includes those affected by Slow, Immobilize, Stun, Knockback, Knockdown, Taunt, Fear, Tether, {c_important}{u}Daze{/u}{/c_important}, {c_important}{u}Chill{/u}{/c_important}, or {c_important}{u}Freeze{/u}{/c_important}.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 2158474929
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "26_name",
-   "szText": "Damage vs Slowed",
-   "hLabel": 2378925128
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "26_tooltip",
-   "szText": "{c_label}Bonus Damage vs Slowed Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Slowed enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Slow, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 4112787378
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "27_name",
-   "szText": "Damage vs Immobilized",
-   "hLabel": 2418060521
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "27_tooltip",
-   "szText": "{c_label}Bonus Damage vs Immobilized Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Immobilized enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Immobilize, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 1772132531
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "98_name",
-   "szText": "Damage vs Stunned",
-   "hLabel": 2907537105
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "98_tooltip",
-   "szText": "{c_label}Bonus Damage vs Stunned Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Stunned enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Stun, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 4201054619
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "33_name",
-   "szText": "Damage vs Knocked Down",
-   "hLabel": 3552986918
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "33_tooltip",
-   "szText": "{c_label}Bonus Damage vs Knocked Down Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Knocked Down enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Knockdown, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 2612618704
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "298_name",
-   "szText": "Damage vs Dazed",
-   "hLabel": 3525907139
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "298_tooltip",
-   "szText": "{c_label}Bonus Damage vs Dazed Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Daze enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Daze{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 109209677
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "31_name",
-   "szText": "Damage vs Chilled",
-   "hLabel": 3474716132
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "31_tooltip",
-   "szText": "{c_label}Bonus Damage vs Chilled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to {c_important}{u}Chilled{/u}{/c_important} enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Chill{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 2998961102
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "32_name",
-   "szText": "Damage vs Frozen",
-   "hLabel": 3513851525
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "32_tooltip",
-   "szText": "{c_label}Bonus Damage vs Frozen Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to {c_important}{u}Frozen{/u}{/c_important}enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Freeze{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 658306255
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "36_name",
-   "szText": "Damage vs Close",
-   "hLabel": 3670393097
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "36_tooltip",
-   "szText": "{c_label}Bonus Damage vs Close Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies in melee range.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 4180588755
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "37_name",
-   "szText": "Damage vs Distant",
-   "hLabel": 3709528490
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "37_tooltip",
-   "szText": "{c_label}Bonus Damage vs Distant Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies far away from you.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 1839933908
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "56_name",
-   "szText": "Damage vs Healthy",
-   "hLabel": 1958361739
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "56_tooltip",
-   "szText": "{c_label}Bonus Damage vs Healthy Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are above {c_number}80%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 21224213
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "57_name",
-   "szText": "Damage vs Injured",
-   "hLabel": 1997497132
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "57_tooltip",
-   "szText": "{c_label}Bonus Damage vs Injured Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are below {c_number}35%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 1975536662
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "163_name",
-   "szText": "Damage vs Bleeding",
-   "hLabel": 4082023546
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "163_tooltip",
-   "szText": "{c_label}Bonus Damage vs Bleeding Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Bleeding.",
-   "hLabel": 781699748
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "167_name",
-   "szText": "Damage vs Burning",
-   "hLabel": 4238565118
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "167_tooltip",
-   "szText": "{c_label}Bonus Damage vs Burning Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Burning.",
-   "hLabel": 9014952
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "166_name",
-   "szText": "Damage vs Poisoned",
-   "hLabel": 4199429725
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "166_tooltip",
-   "szText": "{c_label}Bonus Damage vs Poisoned Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Poisoned.",
-   "hLabel": 2349669799
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "165_name",
-   "szText": "Damage vs Shadow DoT",
-   "hLabel": 4160294332
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "165_tooltip",
-   "szText": "{c_label}Bonus Damage vs Enemies Affected by Shadow Damage Over Time:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are affected by Shadow damage over time.",
-   "hLabel": 395357350
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "164_name",
-   "szText": "Damage vs Trapped",
-   "hLabel": 4121158939
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "164_tooltip",
-   "szText": "{c_label}Bonus Damage vs Trapped Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are affected by a Rogue's {c_important}Trap{/c_important} Skills.",
-   "hLabel": 2736012197
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "147_name",
-   "szText": "Damage while Healthy",
-   "hLabel": 1655629180
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "147_tooltip",
-   "szText": "{c_label}Bonus Damage while Healthy:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are above {c_number}80%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
-   "hLabel": 4168379494
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "205_name",
-   "szText": "Damage while Fortified",
-   "hLabel": 375223831
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "205_tooltip",
-   "szText": "{c_label}Bonus Damage while Fortified:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while your {c_important}{u}Fortify{/u}{/c_important} is greater than or equal to your current Life.",
-   "hLabel": 2225994529
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "55_name",
-   "szText": "Damage while Berserking",
-   "hLabel": 1919226346
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "55_tooltip",
-   "szText": "{c_label}Bonus Damage while Berserking:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are {c_important}{u}Berserking{/u}{/c_important}.",
-   "hLabel": 2361879060
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "169_name",
-   "szText": "Damage while Human",
-   "hLabel": 21868608
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "169_tooltip",
-   "szText": "{c_label}Bonus Damage while in Human Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are in Human Form.",
-   "hLabel": 3917639850
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "170_name",
-   "szText": "Damage while Shapeshifted",
-   "hLabel": 961118040
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "170_tooltip",
-   "szText": "{c_label}Bonus Damage while Shapeshifted:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are Shapeshifted. This includes both Werewolf and Werebear forms.\r\n{icon:bullet} Stacks with form-specific bonuses.",
-   "hLabel": 3576498370
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "233_name",
-   "szText": "Damage while Werebear",
-   "hLabel": 4171356952
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "233_tooltip",
-   "szText": "{c_label}Bonus Damage while in Werebear Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while Shapeshifted into a Werebear.",
-   "hLabel": 2815741058
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "234_name",
-   "szText": "Damage while Werewolf",
-   "hLabel": 4210492345
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "234_tooltip",
-   "szText": "{c_label}Bonus Damage while in Werewolf Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while Shapeshifted into a Werewolf.",
-   "hLabel": 475086211
   },
   {
    "__type__": "StringTableEntry",
@@ -1113,6 +805,20 @@
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
+   "szLabel": "315_name",
+   "szText": "Damage with Ultimate",
+   "hLabel": 1335461817
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "315_tooltip",
+   "szText": "{c_label}Bonus Damage with Ultimate Skills:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt by your Skills that have the {c_important}Ultimate{/c_important} tag.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 236274051
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
    "szLabel": "273_name",
    "szText": "Damage with Brawling",
    "hLabel": 747294236
@@ -1263,6 +969,20 @@
    "szLabel": "262_tooltip",
    "szText": "{c_label}Bonus Damage with Conjuration Skills:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt by your Skills that have the {c_important}Conjuration{/c_important} tag.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
    "hLabel": 1064832740
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "312_name",
+   "szText": "Damage with Mastery",
+   "hLabel": 1218055638
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "312_tooltip",
+   "szText": "{c_label}Bonus Damage with Mastery Skills:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt by your Skills that have the {c_important}Mastery{/c_important} tag.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 2963271296
   },
   {
    "__type__": "StringTableEntry",
@@ -1491,6 +1211,356 @@
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
+   "szLabel": "36_name",
+   "szText": "Damage vs Close",
+   "hLabel": 3670393097
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "36_tooltip",
+   "szText": "{c_label}Bonus Damage vs Close Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies in melee range.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 4180588755
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "37_name",
+   "szText": "Damage vs Distant",
+   "hLabel": 3709528490
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "37_tooltip",
+   "szText": "{c_label}Bonus Damage vs Distant Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies far away from you.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 1839933908
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "2_name",
+   "szText": "Damage vs Elites",
+   "hLabel": 2073494546
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "2_tooltip",
+   "szText": "{c_label}Bonus Damage vs Elites: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases damage dealt to Champions, Elites, Bosses and Players.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 1495403324
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "25_name",
+   "szText": "Damage vs Crowd Controlled",
+   "hLabel": 2339789735
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "25_tooltip",
+   "szText": "{c_label}Bonus Damage vs Crowd Controlled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Crowd Controlled enemies.\r\n{icon:bullet} This includes those affected by Slow, Immobilize, Stun, Knockback, Knockdown, Taunt, Fear, Tether, {c_important}{u}Daze{/u}{/c_important}, {c_important}{u}Chill{/u}{/c_important}, or {c_important}{u}Freeze{/u}{/c_important}.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 2158474929
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "26_name",
+   "szText": "Damage vs Slowed",
+   "hLabel": 2378925128
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "26_tooltip",
+   "szText": "{c_label}Bonus Damage vs Slowed Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Slowed enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Slow, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 4112787378
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "27_name",
+   "szText": "Damage vs Immobilized",
+   "hLabel": 2418060521
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "27_tooltip",
+   "szText": "{c_label}Bonus Damage vs Immobilized Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Immobilized enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Immobilize, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 1772132531
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "98_name",
+   "szText": "Damage vs Stunned",
+   "hLabel": 2907537105
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "98_tooltip",
+   "szText": "{c_label}Bonus Damage vs Stunned Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Stunned enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Stun, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 4201054619
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "33_name",
+   "szText": "Damage vs Knocked Down",
+   "hLabel": 3552986918
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "33_tooltip",
+   "szText": "{c_label}Bonus Damage vs Knocked Down Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Knocked Down enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including Knockdown, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 2612618704
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "298_name",
+   "szText": "Damage vs Dazed",
+   "hLabel": 3525907139
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "298_tooltip",
+   "szText": "{c_label}Bonus Damage vs Dazed Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to Daze enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Daze{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 109209677
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "31_name",
+   "szText": "Damage vs Chilled",
+   "hLabel": 3474716132
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "31_tooltip",
+   "szText": "{c_label}Bonus Damage vs Chilled Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to {c_important}{u}Chilled{/u}{/c_important} enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Chill{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 2998961102
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "32_name",
+   "szText": "Damage vs Frozen",
+   "hLabel": 3513851525
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "32_tooltip",
+   "szText": "{c_label}Bonus Damage vs Frozen Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to {c_important}{u}Frozen{/u}{/c_important}enemies.\r\n{icon:bullet} After fully Staggering a Boss, they are considered affected by all Crowd Control types, including {c_important}{u}Freeze{/u}{/c_important}, for the Staggered duration.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 658306255
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "56_name",
+   "szText": "Damage vs Healthy",
+   "hLabel": 1958361739
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "56_tooltip",
+   "szText": "{c_label}Bonus Damage vs Healthy Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are above {c_number}80%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 21224213
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "57_name",
+   "szText": "Damage vs Injured",
+   "hLabel": 1997497132
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "57_tooltip",
+   "szText": "{c_label}Bonus Damage vs Injured Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are below {c_number}35%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 1975536662
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "163_name",
+   "szText": "Damage vs Bleeding",
+   "hLabel": 4082023546
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "163_tooltip",
+   "szText": "{c_label}Bonus Damage vs Bleeding Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Bleeding.",
+   "hLabel": 781699748
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "167_name",
+   "szText": "Damage vs Burning",
+   "hLabel": 4238565118
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "167_tooltip",
+   "szText": "{c_label}Bonus Damage vs Burning Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Burning.",
+   "hLabel": 9014952
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "166_name",
+   "szText": "Damage vs Poisoned",
+   "hLabel": 4199429725
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "166_tooltip",
+   "szText": "{c_label}Bonus Damage vs Poisoned Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are Poisoned.",
+   "hLabel": 2349669799
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "165_name",
+   "szText": "Damage vs Shadow DoT",
+   "hLabel": 4160294332
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "165_tooltip",
+   "szText": "{c_label}Bonus Damage vs Enemies Affected by Shadow Damage Over Time:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are affected by Shadow damage over time.",
+   "hLabel": 395357350
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "164_name",
+   "szText": "Damage vs Trapped",
+   "hLabel": 4121158939
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "164_tooltip",
+   "szText": "{c_label}Bonus Damage vs Trapped Enemies:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases damage dealt to enemies who are affected by a Rogue's {c_important}Trap{/c_important} Skills.",
+   "hLabel": 2736012197
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "147_name",
+   "szText": "Damage while Healthy",
+   "hLabel": 1655629180
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "147_tooltip",
+   "szText": "{c_label}Bonus Damage while Healthy:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are above {c_number}80%{/c} Life.\r\n{icon:bullet} You have {c_number}+{s2}{/c_number} of this stat from items and Paragon.",
+   "hLabel": 4168379494
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "205_name",
+   "szText": "Damage while Fortified",
+   "hLabel": 375223831
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "205_tooltip",
+   "szText": "{c_label}Bonus Damage while Fortified:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while your {c_important}{u}Fortify{/u}{/c_important} is greater than or equal to your current Life.",
+   "hLabel": 2225994529
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "55_name",
+   "szText": "Damage while Berserking",
+   "hLabel": 1919226346
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "55_tooltip",
+   "szText": "{c_label}Bonus Damage while Berserking:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are {c_important}{u}Berserking{/u}{/c_important}.",
+   "hLabel": 2361879060
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "169_name",
+   "szText": "Damage while Human",
+   "hLabel": 21868608
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "169_tooltip",
+   "szText": "{c_label}Bonus Damage while in Human Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are in Human Form.",
+   "hLabel": 3917639850
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "170_name",
+   "szText": "Damage while Shapeshifted",
+   "hLabel": 961118040
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "170_tooltip",
+   "szText": "{c_label}Bonus Damage while Shapeshifted:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while you are Shapeshifted. This includes both Werewolf and Werebear forms.\r\n{icon:bullet} Stacks with form-specific bonuses.",
+   "hLabel": 3576498370
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "233_name",
+   "szText": "Damage while Werebear",
+   "hLabel": 4171356952
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "233_tooltip",
+   "szText": "{c_label}Bonus Damage while in Werebear Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while Shapeshifted into a Werebear.",
+   "hLabel": 2815741058
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "234_name",
+   "szText": "Damage while Werewolf",
+   "hLabel": 4210492345
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "234_tooltip",
+   "szText": "{c_label}Bonus Damage while in Werewolf Form:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases your damage dealt while Shapeshifted into a Werewolf.",
+   "hLabel": 475086211
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
    "szLabel": "174_name",
    "szText": "Damage from Elite Kill",
    "hLabel": 1117659612
@@ -1674,7 +1744,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "178_name",
-   "szText": "Warrior Thorns",
+   "szText": "Golem Thorns",
    "hLabel": 1274201184
   },
   {
@@ -1877,7 +1947,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "64_tooltip",
-   "szText": "{c_label}Armor: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Physical damage taken. This applies to both direct Physical damage and Bleeding damage over time.\r\n{icon:bullet} Non-Physical damage taken is partially reduced according to your Armor Contribution.\r\n{icon:bullet} You have {c_number}{s2}{/c_number} Armor from primary equipment stats, {c_number}{s3}{/c_number} Armor from your Strength, and {c_number}{s4}{/c_number} bonus Armor from other sources.",
+   "szText": "{c_label}Armor: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Physical damage taken. This applies to both direct Physical damage and Bleeding damage over time.\r\n{icon:bullet} Cannot reduce more than {c_number}{s6}{/c} of the incoming Physical damage from a Level {c_number}{s5}{/c} enemy.\r\n{icon:bullet} You have {c_number}{s2}{/c_number} Armor from primary equipment stats, {c_number}{s3}{/c_number} Armor from your Strength, and {c_number}{s4}{/c_number} bonus Armor from other sources.",
    "hLabel": 475367988
   },
   {
@@ -1949,20 +2019,6 @@
    "szLabel": "184_tooltip",
    "szText": "{c_label}Bonus Armor while in Werewolf Form: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases your Armor while Shapeshifted into a Werewolf.",
    "hLabel": 2871614951
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "113_name",
-   "szText": "Armor Contribution",
-   "hLabel": 1919650997
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "113_tooltip",
-   "szText": "{c_label}Armor Contribution: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} The inherent percentage that Armor contributes to your base damage reduction against non-Physical attacks.\r\n{icon:bullet} The remaining damage reduction is determined by your appropriate Elemental resistances.\r\n{icon:bullet} Differs in PvP.",
-   "hLabel": 442692863
   },
   {
    "__type__": "StringTableEntry",
@@ -2051,156 +2107,30 @@
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
-   "szLabel": "61_name",
-   "szText": "Dodge Chance",
-   "hLabel": 3054152743
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "61_tooltip",
-   "szText": "{c_label}Dodge Chance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} When you would receive direct damage, you have a chance to Dodge it.\r\n{icon:bullet} Dodged attacks deal no damage.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 3202365233
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "294_name",
-   "szText": "Dodge Chance Against Close Enemies",
-   "hLabel": 3369365567
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "294_tooltip",
-   "szText": "{c_label}Dodge Chance Against Close Enemies: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Your Dodge Chance is increased when you would be damaged by enemies in melee range.\r\n{icon:bullet} Your total Dodge Chance from Close enemies is {c_number}{s2}{/c_number}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 881894473
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "297_name",
-   "szText": "Dodge Chance Against Distant Enemies",
-   "hLabel": 3486771746
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "297_tooltip",
-   "szText": "{c_label}Dodge Chance Against Distant Enemies: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Your Dodge Chance is increased when you would be damaged by enemies far away from you.\r\n{icon:bullet} Your total Dodge Chance from Distant enemies is {c_number}{s2}{/c_number}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 2449864524
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "103_name",
-   "szText": "Fortify Bonus",
-   "hLabel": 628183028
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "103_tooltip",
-   "szText": "{c_label}Fortify Generation Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases the amount of {c_important}{u}Fortify{/u}{/c_important} generated from your {c_important}{u}Fortify{/u}{/c_important} effects.",
-   "hLabel": 374891486
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "104_name",
-   "szText": "Barrier Bonus",
-   "hLabel": 667318421
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "104_tooltip",
-   "szText": "{c_label}Barrier Generation Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases the amount of {c_important}{u}Barrier{/u}{/c_important} generated from your {c_important}{u}Barrier{/u}{/c_important} effects.",
-   "hLabel": 2329203935
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "105_name",
-   "szText": "Fire Resistance",
-   "hLabel": 706453814
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "105_tooltip",
-   "szText": "{c_label}Fire Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Fire damage by {c_number}{s2}{/c_number}. This applies to both direct Fire damage and Burning damage over time.\r\n{icon:bullet} Makes up {c_number}50%{/c_number} of your initial damage reduction from Fire, with the remainder contributed by Armor.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 4283516384
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "63_name",
-   "szText": "Cold Resistance",
-   "hLabel": 3132423529
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "63_tooltip",
-   "szText": "{c_label}Cold Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Cold damage by {c_number}{s2}{/c_number}.\r\n{icon:bullet} Makes up {c_number}50%{/c_number} of your initial damage reduction from Cold, with the remainder contributed by Armor.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 2816022835
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "65_name",
-   "szText": "Lightning Resistance",
-   "hLabel": 3210694315
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "65_tooltip",
-   "szText": "{c_label}Lightning Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Lightning damage by {c_number}{s2}{/c_number}.\r\n{icon:bullet} Makes up {c_number}50%{/c_number} of your initial damage reduction from Lightning, with the remainder contributed by Armor.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 2429680437
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "66_name",
-   "szText": "Poison Resistance",
-   "hLabel": 3249829708
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "66_tooltip",
-   "szText": "{c_label}Poison Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Poison damage by {c_number}{s2}{/c_number}. This applies to both direct Poison damage and Poisoning damage over time.\r\n{icon:bullet} Makes up {c_number}50%{/c_number} of your initial damage reduction from Poison, with the remainder contributed by Armor.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 89025590
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "67_name",
-   "szText": "Shadow Resistance",
-   "hLabel": 3288965101
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "67_tooltip",
-   "szText": "{c_label}Shadow Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Shadow damage by {c_number}{s2}{/c_number}. This applies to both direct Shadow damage and Shadow damage over time.\r\n{icon:bullet} Makes up {c_number}50%{/c_number} of your initial damage reduction from Shadow, with the remainder contributed by Armor.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
-   "hLabel": 2043338039
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
    "szLabel": "185_name",
-   "szText": "Warrior Resist All",
+   "szText": "Minion Resist All",
    "hLabel": 2448262974
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "185_tooltip",
-   "szText": "{c_label}Bonus Resistance to All Elements for your Skeletal Warriors: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Skeletal Warriors.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Bonus Resistance to All Elements for your Minions: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your summoned Minions.",
    "hLabel": 530960104
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "356_name",
+   "szText": "Warrior Resist All",
+   "hLabel": 2245501790
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "356_tooltip",
+   "szText": "{c_label}Bonus Resistance to All Elements for your Skeletal Warriors: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Skeletal Warriors.",
+   "hLabel": 2461792008
   },
   {
    "__type__": "StringTableEntry",
@@ -2213,7 +2143,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "197_tooltip",
-   "szText": "{c_label}Bonus Resistance to All Elements for your Skeletal Mages: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Skeletal Mages.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Bonus Resistance to All Elements for your Skeletal Mages: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Skeletal Mages.",
    "hLabel": 212419083
   },
   {
@@ -2227,7 +2157,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "196_tooltip",
-   "szText": "{c_label}Bonus Resistance to All Elements for your Golem: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Golem.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Bonus Resistance to All Elements for your Golem: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces non-Physical damage taken by your Golem.",
    "hLabel": 2553073930
   },
   {
@@ -2241,7 +2171,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "69_tooltip",
-   "szText": "{c_label}Damage Reduction from All Sources: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming damage taken from all sources, after applying your Armor and Elemental Resistances.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Damage Reduction from All Sources: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming damage taken from all sources, after applying your Armor or non-Physical Resistances.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
    "hLabel": 1656995641
   },
   {
@@ -2255,7 +2185,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "309_tooltip",
-   "szText": "{c_label}Damage Reduction from Damage Over Time: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming damage over time taken from all sources, after applying your Armor and Elemental Resistances. This includes Bleeding, Burning, Poisoning, and Shadow damage over time, but not direct damage.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Damage Reduction from Damage Over Time: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming damage over time taken from all sources, after applying your Armor or non-Physical Resistances. This includes Bleeding, Burning, Poisoning, and Shadow damage over time, but not direct damage.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
    "hLabel": 3690755174
   },
   {
@@ -2465,7 +2395,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "242_tooltip",
-   "szText": "{c_label}Damage Reduction while Fortified:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Reduces incoming damage taken while your {c_important}{u}Fortify{/u}{/c_important} is greater than or equal to your current Life.\r\n{icon:bullet} Stacks with the damage reduction inherently received from being {c_important}{u}Fortified{/u}{/c_important}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "szText": "{c_label}Damage Reduction while Fortified:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Reduces incoming damage taken while your {c_important}{u}Fortify{/u}{/c_important} is greater than or equal to your current Life.\r\n{icon:bullet} Does not include the damage reduction inherently received from being {c_important}{u}Fortified{/u}{/c_important}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
    "hLabel": 929229986
   },
   {
@@ -2495,6 +2425,76 @@
    "szLabel": "75_tooltip",
    "szText": "{c_label}Damage Reduction for your Minions:{/c} {c_number}{s1}{/c_number}\r\n{icon:bullet} Reduces incoming damage taken by your Minions from all sources.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
    "hLabel": 2497481814
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "103_name",
+   "szText": "Fortify Bonus",
+   "hLabel": 628183028
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "103_tooltip",
+   "szText": "{c_label}Fortify Generation Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases the amount of {c_important}{u}Fortify{/u}{/c_important} generated from your {c_important}{u}Fortify{/u}{/c_important} effects.",
+   "hLabel": 374891486
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "104_name",
+   "szText": "Barrier Bonus",
+   "hLabel": 667318421
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "104_tooltip",
+   "szText": "{c_label}Barrier Generation Bonus: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Increases the amount of {c_important}{u}Barrier{/u}{/c_important} generated from your {c_important}{u}Barrier{/u}{/c_important} effects.",
+   "hLabel": 2329203935
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "61_name",
+   "szText": "Dodge Chance",
+   "hLabel": 3054152743
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "61_tooltip",
+   "szText": "{c_label}Dodge Chance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} When you would receive direct damage, you have a chance to Dodge it.\r\n{icon:bullet} Dodged attacks deal no damage.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "hLabel": 3202365233
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "294_name",
+   "szText": "Dodge Chance Against Close Enemies",
+   "hLabel": 3369365567
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "294_tooltip",
+   "szText": "{c_label}Dodge Chance Against Close Enemies: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Your Dodge Chance is increased when you would be damaged by enemies in melee range.\r\n{icon:bullet} Your total Dodge Chance from Close enemies is {c_number}{s2}{/c_number}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "hLabel": 881894473
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "297_name",
+   "szText": "Dodge Chance Against Distant Enemies",
+   "hLabel": 3486771746
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "297_tooltip",
+   "szText": "{c_label}Dodge Chance Against Distant Enemies: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Your Dodge Chance is increased when you would be damaged by enemies far away from you.\r\n{icon:bullet} Your total Dodge Chance from Distant enemies is {c_number}{s2}{/c_number}.\r\n{icon:bullet} As this stat increases, additional bonuses become less effective.",
+   "hLabel": 2449864524
   },
   {
    "__type__": "StringTableEntry",
@@ -2933,15 +2933,29 @@
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
-   "szLabel": "106_name",
+   "szLabel": "316_name",
    "szText": "Berserking Duration Bonus",
+   "hLabel": 1374597210
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "316_tooltip",
+   "szText": "{c_label}Berserking Duration Bonus:{/c_label} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases the duration of {c_important}{u}Berserking{/u}{/c_important} granted by all sources.",
+   "hLabel": 2190586500
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "106_name",
+   "szText": "Shrine Duration Bonus",
    "hLabel": 745589207
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "106_tooltip",
-   "szText": "{c_label}Berserking Duration Bonus:{/c_label} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases the duration of {c_important}{u}Berserking{/u}{/c_important} granted by all sources.",
+   "szText": "{c_label}Shrine Duration Bonus:{/c_label} {c_number}{s1}{/c_number}\r\n{icon:bullet} Increases the duration of buffs received from {c_important}Shrines{/c_important} in the world.",
    "hLabel": 1942861537
   },
   {
@@ -3171,20 +3185,6 @@
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
-   "szLabel": "112_name",
-   "szText": "Armor Contribution",
-   "hLabel": 1880515604
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
-   "szLabel": "112_tooltip",
-   "szText": "{c_label}Armor Contribution: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} The inherent percentage that Armor contributes to your base damage reduction against non-Physical attacks in PvP.\r\n{icon:bullet} The remaining damage reduction is determined by your appropriate Elemental resistance.",
-   "hLabel": 2783347710
-  },
-  {
-   "__type__": "StringTableEntry",
-   "__typeHash__": 3844612145,
    "szLabel": "116_name",
    "szText": "Gold",
    "hLabel": 2037057176
@@ -3223,6 +3223,90 @@
    "szLabel": "117_tooltip",
    "szText": "{c_label}Red Dust:{/c}\r\n{icon:bullet} Used to purchase items from PvP Vendors in Dry Steppes and Kehjistan.\r\n{icon:bullet} Earned from Altars of Extraction by successfully purifying Seeds of Hatred.\r\n{icon:bullet} Seeds of Hatred are only obtainable in PvP zones.",
    "hLabel": 3964975363
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "311_name",
+   "szText": "Midwinter Proofs",
+   "hLabel": 1178920245
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "311_tooltip",
+   "szText": "{c_label}Midwinter Proofs:{/c}\r\n{icon:bullet} Used to purchase Event Rewards from Gileon at the Midwinter Square in Kyovashad.\r\n{icon:bullet} Earned by exchanging Event Materials (Blighted Fragments, Lost Heirlooms, Red-Cloaked Trophy) at the Midwinter Square’s Collections Table in Kyovashad.",
+   "hLabel": 1008958847
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "346_name",
+   "szText": "Fire Resistance",
+   "hLabel": 954033821
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "346_tooltip",
+   "szText": "{c_label}Fire Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Fire damage by {c_number}{s1}{/c_number}. This applies to both direct Fire damage and Burning damage over time.\r\n{icon:bullet} This value is capped at your Maximum Resistance of {c_number}{s2}{/c_number}. Maximum Resistance can be increased by various sources, but cannot exceed {c_number}{s5}{/c_number}.\r\n{icon:bullet} You currently have {c_number}+{s3}{/c_number} Fire Resistance from bonuses and {c_number}-{s6}{/c_number} from penalties ({c_number}{s4}{/c_number} away from your Maximum Fire Resistance).",
+   "hLabel": 2393990631
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "352_name",
+   "szText": "Lightning Resistance",
+   "hLabel": 2088960218
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "352_tooltip",
+   "szText": "{c_label}Lightning Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Lightning damage by {c_number}{s1}{/c_number}.\r\n{icon:bullet} This value is capped at your Maximum Resistance of {c_number}{s2}{/c_number}. Maximum Resistance can be increased by various sources, but cannot exceed {c_number}{s5}{/c_number}.\r\n{icon:bullet} You currently have {c_number}+{s3}{/c_number} Lightning Resistance from bonuses and {c_number}-{s6}{/c_number} from penalties ({c_number}{s4}{/c_number} away from your Maximum Lightning Resistance).",
+   "hLabel": 3234476804
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "355_name",
+   "szText": "Cold Resistance",
+   "hLabel": 2206366397
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "355_tooltip",
+   "szText": "{c_label}Cold Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Cold damage by {c_number}{s1}{/c_number}.\r\n{icon:bullet} This value is capped at your Maximum Resistance of {c_number}{s2}{/c_number}. Maximum Resistance can be increased by various sources, but cannot exceed {c_number}{s5}{/c_number}.\r\n{icon:bullet} You currently have {c_number}+{s3}{/c_number} Cold Resistance from bonuses and {c_number}-{s6}{/c_number} from penalties ({c_number}{s4}{/c_number} away from your Maximum Cold Resistance).",
+   "hLabel": 507479559
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "353_name",
+   "szText": "Poison Resistance",
+   "hLabel": 2128095611
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "353_tooltip",
+   "szText": "{c_label}Poison Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Poison damage by {c_number}{s1}{/c_number}. This applies to both direct Poison damage and Poisoning damage over time.\r\n{icon:bullet} This value is capped at your Maximum Resistance of {c_number}{s2}{/c_number}. Maximum Resistance can be increased by various sources, but cannot exceed {c_number}{s5}{/c_number}.\r\n{icon:bullet} You currently have {c_number}+{s3}{/c_number} Poison Resistance from bonuses and {c_number}-{s6}{/c_number} from penalties ({c_number}{s4}{/c_number} away from your Maximum Poison Resistance).",
+   "hLabel": 893821957
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "354_name",
+   "szText": "Shadow Resistance",
+   "hLabel": 2167231004
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "354_tooltip",
+   "szText": "{c_label}Shadow Resistance: {c_number}{s1}{/c_number}{/c}\r\n{icon:bullet} Reduces incoming Shadow damage by {c_number}{s1}{/c_number}. This applies to both direct Shadow damage and Shadow damage over time.\r\n{icon:bullet} This value is capped at your Maximum Resistance of {c_number}{s2}{/c_number}. Maximum Resistance can be increased by various sources, but cannot exceed {c_number}{s5}{/c_number}.\r\n{icon:bullet} You currently have {c_number}+{s3}{/c_number} Shadow Resistance from bonuses and {c_number}-{s6}{/c_number} from penalties ({c_number}{s4}{/c_number} away from your Maximum Shadow Resistance).",
+   "hLabel": 2848134406
   }
  ],
  "ptMapStringTable": "0"
