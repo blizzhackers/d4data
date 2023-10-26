@@ -22,6 +22,15 @@ let readLog = [];
 let incoming = {};
 let outgoing = {};
 
+let fieldNames = {};
+Object.entries(definitions).forEach(([typeHash, type]) => {
+  if (type.fields) {
+    type.fields.forEach(field => {
+      fieldNames[field.hash] = field.name;
+    });
+  }
+});
+
 function gbidHash(str) {
   let hash = new Uint32Array(1);
 
@@ -202,6 +211,47 @@ function getTypeSize (type) {
   }
 
   return getTypeSize(type.slice(1));
+}
+
+function getBasicTypeAlignment (typeDef, typeHashes, inTagMap = false) {
+  switch(typeDef.hash) {
+    case 1683664497: // DT_POLYMORPHIC_VARIABLEARRAY
+    case 2450313795: // DT_STRING_FORMULA
+    case 3244749660: // DT_VARIABLEARRAY
+    case 3493213809: // DT_TAGMAP
+    case 3846829457: // DT_CSTRING
+      return inTagMap ? 4 : 8;
+    case 2175310548: // DT_CHARARRAY
+      return 1;
+    case 2388214534: // DT_FIXEDARRAY
+      return getTypeAlignment(typeHashes[1]);
+    case 3121633597: // DT_OPTIONAL
+      return getTypeAlignment(typeHashes[1]); // 2 for DT_WORD, 8 for DT_INT?
+    case 3339108615: // DT_SNO_NAME
+      return 4;
+    case 3877855748: // DT_RANGE
+      return getTypeAlignment(typeHashes[1]);
+    default:
+      return typeDef.size;
+  }
+}
+
+function getTypeAlignment (typeHashes, inTagMap = false) {
+  if (!Array.isArray(typeHashes)) {
+    typeHashes = [typeHashes];
+  }
+
+  let typeDef = getType(typeHashes[0]);
+  if (!Array.isArray(typeDef.fields)) {
+    if (typeDef.type === "basic") {
+      return getBasicTypeAlignment(typeDef, typeHashes, inTagMap);
+    }
+
+    console.warn('No padding information for type:', typeDef.name, typeDef.hash.toString(16));
+    return 4;
+  }
+
+  return Math.max(...typeDef.fields.map(f => getTypeAlignment(f.type)));
 }
 
 function findSnoGroup(id) {
@@ -419,11 +469,86 @@ let basicTypes = {
     let dataSize = file.readInt32LE(offset + 12);
 
     results.readLength += 16;
-    ret.padding1 = padding1;
-    ret.padding2 = padding2;
-    ret.dataOffset = dataOffset;
-    ret.dataSize = dataSize;
-    ret.__message__ = 'DT_TAGMAP not fully implemented yet';
+
+    if (dataSize < 1) {
+      return;
+    }
+
+    if (dataOffset < 1) {
+      ret.__error__ = 'Something is wrong.';
+      return;
+    }
+
+    if (dataOffset) {
+      if (dataOffset + dataSize > file.length) {
+        ret.__error__ = "Invalid Length: " + dataSize;
+        ret.value = null;
+      }
+      else {
+        const dataCount = file.readInt32LE(dataOffset);
+        dataOffset += 4;
+        dataSize -= 4;
+        ret.value = {};
+        let fieldInfoList = []
+
+        // Step 1: Read field names and types
+        for (let c = 0; c < dataCount; c++) {
+          let fieldInfo = {}
+          fieldInfo.fieldNameHash = file.readUInt32LE(dataOffset);
+          fieldInfo.fieldTypeHashes = [file.readUInt32LE(dataOffset + 4)];
+          dataOffset += 8;
+          dataSize -= 8;
+          results.readLength += 8;
+
+          // get field types
+          for (let typeIndex = 0; typeIndex < 2; typeIndex++) {
+            const type = getType(fieldInfo.fieldTypeHashes[typeIndex]);
+            if (!(type.flags & 0x8000)) {
+              break;
+            }
+
+            fieldInfo.fieldTypeHashes.push(file.readUInt32LE(dataOffset));
+            dataOffset += 4;
+            dataSize -= 4;
+            results.readLength += 4;
+          }
+
+          fieldInfo.fieldName = fieldNames[fieldInfo.fieldNameHash];
+
+          fieldInfoList[c] = fieldInfo;
+        }
+
+        // Step 2: Read values
+        let maxAlignment = 1;
+        for (let c = 0; c < dataCount; c++) {
+          const fieldInfo = fieldInfoList[c];
+
+          const requiredAlignment = getTypeAlignment(fieldInfo.fieldTypeHashes, true);
+          maxAlignment = Math.max(maxAlignment, requiredAlignment);
+          const currentAlignment = dataOffset % requiredAlignment;
+          //const currentAlignment = dataOffset & (alignment - 1);
+          if (currentAlignment) {
+            const padding = requiredAlignment - currentAlignment;
+            dataOffset += padding;
+            dataSize -= padding;
+          }
+
+          let subresults = { readLength: 0 };
+          const tmField = {
+            type: fieldInfo.fieldTypeHashes,
+            hash: fieldInfo.fieldNameHash,
+            name: fieldInfo.fieldName
+          }
+          const struct = readStructure.bind(this)(file, fieldInfo.fieldTypeHashes, dataOffset, tmField, [...fieldPath, fieldInfo.fieldName], subresults);
+          if (subresults.readLength < 1) {
+            break;
+          }
+          ret.value[fieldInfo.fieldName] = struct;
+          dataOffset += subresults.readLength;
+          dataSize -= subresults.readLength;
+        }
+      }
+    }
   },
   "DT_VARIABLEARRAY": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
