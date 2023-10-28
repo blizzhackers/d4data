@@ -719,10 +719,26 @@ let basicTypes = {
   },
   "DT_CSTRING": function (ret, file, typeHashes, offset, field, fieldPath, results = { readLength: 0 }) {
     readLog.push({fieldPath: fieldPath.join('.') + ' @ ' + offset, value: ret});
+    const padding = file.readBigInt64LE(offset);
     let stringOffset = file.readInt32LE(offset + 8);
     let stringSize = file.readInt32LE(offset + 12);
 
     results.readLength += 16;
+
+    if (padding) {
+      ret.__error__ = 'Unexpected value in padding!';
+      return;
+    }
+
+    if (stringSize < 1) {
+      ret.value = '';
+      return;
+    }
+
+    if (stringOffset < 1) {
+      ret.__error__ = 'Something is wrong';
+      return;
+    }
 
     while (stringSize > 0 && file.readUInt8(stringOffset + stringSize - 1) === 0) {
       stringSize--;
