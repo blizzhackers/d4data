@@ -965,6 +965,8 @@ fileNames.forEach((fileName, index) => {
           test: true,
         };
 
+        console.log('#' + index, newFileName);
+
         let data = readStructure.bind(globals)(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0, null, [fileName]);
         let snoID = file.readUInt32LE(0);
 
@@ -978,8 +980,6 @@ fileNames.forEach((fileName, index) => {
             outgoing[snoID][snoIDTarget] = snoIDTarget;
           });
         }
-
-        console.log('#' + index, newFileName);
 
         if (data.eGameBalanceType !== null && data.eGameBalanceType !== undefined) {
           gbMap[data.eGameBalanceType] = gbMap[data.eGameBalanceType] || [];
