@@ -417,6 +417,7 @@ DebugProjectileCollisionCheck
 DebugProjectileDetPathData
 DebugProjectileMovementUpdateMessage
 DebugProjectileRaycastMessage
+DebugSetActorAttribMessage
 DebugSetActorUpdateIntervalMessage
 DebugTrackedCheckpointRequestMessage
 DecalLookVariantMap
@@ -727,7 +728,6 @@ ImbueAffixResultMessage
 ImbueRecipe
 IncludePath
 IndexedTriangle
-IndicatorTypeMinor
 Influence
 InitiateGroupTransferMessage
 InstanceGroupInstance
@@ -822,6 +822,7 @@ LineSeg2D
 LineSeg3D
 LinearAxisParams
 ListenerReaction
+LocalCoopPlayerSubcondition
 LocalEventDataMessage
 LocalEventSpawnerDataMessage
 LocalEventTrackingData
@@ -930,6 +931,7 @@ MarkerWaypointGizmoData
 MarkerWeatherVolumeData
 MarkingColorDefinition
 MarkingShapeDefinition
+MatchmakingRating
 Material
 MaterialBoolValue
 MaterialBoolValueDefinition
@@ -1035,6 +1037,7 @@ NullProximityData
 NumericComparisonSubcondition
 OBB
 ObjectiveRegionParams
+ObjectiveRegionStateParams
 ObserverDefinition
 Octree
 OctreeCube
@@ -1042,6 +1045,7 @@ OctreeLeaf
 OctreeNode
 OctreePrimitive
 OffHandItemLabelSubcondition
+OnAIMovementCompletePowerCallback
 OnAIUpdatePowerCallback
 OnAssistBuffCallback
 OnAssistTriggeredBuffCallback
@@ -1075,8 +1079,10 @@ OnInitializeDamageBuffCallback
 OnInterruptPowerCallback
 OnItemPickupBuffCallback
 OnKillBuffCallback
+OnKillOrAssistTriggeredBuffCallback
 OnKillTriggeredBuffCallback
 OnKnockbackEndPowerCallback
+OnKnockbackHitWallPowerCallback
 OnNecroCorpseConsumedCallback
 OnOtherBuffAddedCallback
 OnOtherBuffRemovedCallback
@@ -2384,6 +2390,7 @@ arDefaultBanners
 arDefaultSkillLoadout
 arDesignerFeatureFlags
 arDirectionalHitEffectGroups
+arDisabledBloodSeals
 arDisabledSpawnLocTypes
 arDisallowedAffixFamilies
 arDoorTemplates
@@ -2401,6 +2408,7 @@ arElevations
 arEmblemTemplates
 arEmbroideries
 arEmoteTemplates
+arEnabledBloodSeals
 arEnchantCostScalarDeltas
 arEnchantSlotUnlocks
 arEndCapPieces
@@ -2969,6 +2977,7 @@ bShouldNotify
 bShowDuration
 bShowHeader
 bShowLimit
+bShowPreviewText
 bShown
 bShrinkToFit
 bSnap
@@ -3210,6 +3219,7 @@ dwMarkerSetFlags
 dwMaterialHash
 dwMaterialId
 dwMaxActorCount
+dwMaxArmorPacts
 dwMaxFavorLevel
 dwMaxInstances
 dwMaxLevel
@@ -3273,6 +3283,7 @@ dwRenderLayers
 dwReputationLevel
 dwReputationRequired
 dwRequiredSkillRank
+dwReserved
 dwRewardIndex
 dwRootNode
 dwRopeFlags
@@ -3479,6 +3490,7 @@ eFadeoutBehavior
 eFillMode
 eFilterInequality
 eFinishBehavior
+eFixedControllerButton
 eFixedKey
 eFollowMode
 eFollowSplineInterpolation
@@ -4098,6 +4110,9 @@ flCompression
 flCompressorGainReduction
 flCompressorSlope
 flContributionScalar
+flControllerAccDelay
+flControllerAccScale
+flControllerAccTime
 flControllerAutoTargetingCloseRange
 flControllerCrossDeadZone
 flControllerEvadeZone
@@ -4108,7 +4123,11 @@ flControllerMoveFacingZone
 flControllerNormalTurnSpeed
 flControllerRadialDeadZone
 flControllerReboundDetectionZone
+flControllerScrollSpeedPerSecond
 flControllerSquareDeadZone
+flControllerTooltipDelay
+flControllerTooltipWindowDelay
+flControllerZoomSpeedPerSecond
 flConversationCancelDistance
 flConversationNearDistance
 flCooldown
@@ -4569,6 +4588,7 @@ flStartingDexterity
 flStartingIntelligence
 flStartingStrength
 flStartingWillpower
+flSteeringStrength
 flStepUpHeight
 flStiffness
 flStrengthRange
@@ -4736,6 +4756,7 @@ gbidSubzoneModifierTag
 gbidSurveyType
 gbidType
 grid
+hAddOnDetailsScreenImage
 hArtificiallyOwnedTagMap
 hBackground
 hBkgrnd
@@ -4801,6 +4822,7 @@ hIconPushed
 hIconRound
 hIconSelected
 hIconTracked
+hIconUntracked
 hImage
 hImageDisabled
 hImageFrame
@@ -4839,6 +4861,7 @@ hMinimapIconGizmoUsed
 hMinimapIconImage
 hMinimapStringLabel
 hNotificationIcon
+hOrganizationLogo
 hOverview
 hPactDescription
 hPanelTemplate
@@ -6101,6 +6124,7 @@ snoFoW
 snoFoWMaskOverlay
 snoFoWShader
 snoFoWToReveal
+snoFoWUberSubzoneShader
 snoFogOfWar
 snoFogParticle
 snoFoleySoundTable
@@ -6295,6 +6319,9 @@ snoParentWeather
 snoPartialRagdollPhysics
 snoParticipatingEffectGroup
 snoParticle
+snoParticleOverheadQuestAvailable
+snoParticleOverheadQuestProgressTracked
+snoParticleOverheadQuestProgressUntracked
 snoParticleSystem
 snoParticleSystemSno
 snoPassUpgrade
@@ -6730,6 +6757,7 @@ szParamNames
 szParamValue
 szParent
 szPath
+szPathToControl
 szPayloadName
 szPowerMod
 szPowerName
@@ -6745,6 +6773,7 @@ szRStickLeftHandler
 szRStickPredicate
 szRStickRightHandler
 szRStickUpHandler
+szRadioButtonGroupPath
 szRecipeListName
 szRefundPolicyLink
 szRegionName
@@ -6759,6 +6788,8 @@ szSpanId
 szSpawnLocatorName
 szSplineName
 szStorePreviewHardpoint
+szStoryboardTransitionIn
+szStoryboardTransitionOut
 szString
 szStyleName
 szSubObjectName
@@ -6777,6 +6808,7 @@ szToolTip
 szTooltip
 szTorso
 szTreeScrollbar
+szUIRActorPath
 szUITextName
 szUserName
 szValue
