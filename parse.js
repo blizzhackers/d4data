@@ -850,7 +850,7 @@ function readStructure(file, typeHashes, offset, field, fieldPath, results = { r
     type.fields.forEach(field => {
       ret[field.name] = readStructure.bind(this)(file, field.type, offset + field.offset, field, [...fieldPath, field.name], subresults);
 
-      if (ret.eAttribute !== null && ret.eAttribute !== undefined) {
+      if (ret.eAttribute !== null && ret.eAttribute !== undefined && ret.eAttribute !== -1) {
         ret.__eAttribute_name__ = attributes[ret.eAttribute].name;
       }    
     });
