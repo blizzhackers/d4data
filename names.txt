@@ -350,6 +350,7 @@ CurrencyModifiedMessage
 CurrentLevelAreaSubcondition
 CurrentWorldSubcondition
 CurrentZoneSubcondition
+CustomStaticImage
 CustomizationData
 Cylinder
 DPathSinData
@@ -1441,6 +1442,8 @@ QuestTrackedQuestChangedMessage
 QuitGameMessage
 RNGStateData
 RainSoundSurfaceSet
+RainSplashSurfaceParticle
+RainSplashSurfaceParticleOptionalFieldMapDefaults
 RandomAffixChoice
 RandomAmbientSoundParams
 RandomItemUnluckyBonuses
@@ -1773,6 +1776,7 @@ TAG_VS_ENABLE_FOGGING
 TAG_VS_ENABLE_PRE_SKINNING
 TAG_VS_ENABLE_SHADOWS
 TAG_VS_ENABLE_SKINNING
+TAG_VS_ENABLE_VOLUMETRIC_FOG
 TAG_VS_FLIP_NORMAL_BACKFACE
 TAG_VS_LIGHTING
 TAG_VS_NUM_BONE_WEIGHTS
@@ -2066,6 +2070,8 @@ VisualInventoryMessage
 VisualItem
 VoiceActorEntry
 VoiceActorEntry_Table
+VolumetricCloudSettings
+VolumetricCloudSettingsOptionalFieldMapDefaults
 VoteKickMessage
 WallCornerPieces
 WallDefinition
@@ -2372,6 +2378,7 @@ arCurrencyCaps
 arCurrencyData
 arCurveLengths
 arCustomPathPositions
+arCustomStaticImages
 arCustomizationAppearances
 arCustomizedMarkers
 arDOTApplicationEffectGroups
@@ -2480,6 +2487,7 @@ arInherentAffixes
 arInitialDyes
 arInitialEmblems
 arInitialEmotes
+arInitialTownPortalCosmetics
 arInterpScalar
 arInterruptFrames
 arInvalidSeasonalDungeonStates
@@ -2540,6 +2548,8 @@ arMonsterTags
 arMountArmorTemplates
 arMountCarrotPowers
 arMountTrophyTemplates
+arMountTypeFootstepEffect
+arMountTypeFootstepWalkEffect
 arMounts
 arMountsTemplates
 arMusicSegments
@@ -2811,6 +2821,7 @@ bDisableDynamicAvoidance
 bDisableFontScale
 bDisplayChatMessage
 bDoesRetreat
+bDrawAsEquipped
 bDrawBackground
 bDrawSlotBackground
 bDrawSockets
@@ -4002,6 +4013,7 @@ flAbsorptionCoeff
 flAcceleration
 flAccelerationMax
 flActorTrackingFactor
+flAddedBonusScalarPerLevel
 flAdditionalPlayerDecayRate
 flAdditionalPlayerThreshold
 flAdditionalRotation
@@ -4019,6 +4031,11 @@ flAngularDampingRatio
 flAngularFrequencyHz
 flAnimSpeedScale
 flArea
+flArmorPerItemPower
+flArmorReductionExponent
+flArmorReductionLevelDamping
+flArmorReductionNumerator
+flAscentScalar
 flAspectRatio
 flAttachmentScaleFactor
 flAttachmentStiffness
@@ -4113,11 +4130,15 @@ flContributionScalar
 flControllerAccDelay
 flControllerAccScale
 flControllerAccTime
+flControllerAnalogMoveFacingZone
 flControllerAutoTargetingCloseRange
 flControllerCrossDeadZone
 flControllerEvadeZone
+flControllerForceCastAnimationZone
 flControllerMaxDeadZone
+flControllerMaxDeadZoneMultiplier
 flControllerMaxMoveThreshold
+flControllerMinDeadZoneMultiplier
 flControllerMinMoveSpeedPercent
 flControllerMoveFacingZone
 flControllerNormalTurnSpeed
@@ -4207,6 +4228,7 @@ flFirstDistance
 flFirstPercent
 flFirstWeight
 flFlatDamageBonusScalar
+flFlatDamageOnHitChance
 flFloatData
 flFloatData0
 flFloatData1
@@ -4238,6 +4260,7 @@ flFrozenDuration
 flGizmoOperateOffset
 flGizmoUseTime
 flGlobalCooldownSeconds
+flGlobalOverpowerDamageMultiplier
 flGravityMagnitude
 flGravityMultiplier
 flGravityPadding
@@ -4352,6 +4375,7 @@ flMass
 flMassEnd
 flMassTaperFactor
 flMax
+flMaxArmorPhysicalReduction
 flMaxCumulativeOffset
 flMaxDamageShield
 flMaxDeviation
@@ -4360,6 +4384,9 @@ flMaxOffsetFactor
 flMaxPerpendicularOffset
 flMaxPowerEffectIntensityFromSkillRanks
 flMaxRange
+flMaxResistanceAllBase
+flMaxResistanceAllCap
+flMaxResistanceReduction
 flMaxSpeed
 flMaxValue
 flMaxWaveLength
@@ -4425,10 +4452,12 @@ flOrbitSLerpScalar
 flOrbitSensitivity
 flOrbitTransitionDuration
 flOrbitTransitionExponentialScalar
+flOutOfCombatTransitionTime
 flOutTangentWeight
 flOuterRadius
 flOutroDuration
 flOverlayPower
+flOverpowerDamageBonusPerWillpower
 flPad0
 flPad1
 flPad2
@@ -4454,6 +4483,7 @@ flPersonalChatterCooldown
 flPlaySpeed
 flPlayerCritDamageScalar
 flPlayerErrorCooldownTime
+flPlayerPowerCacheTimeoutCrowdControlled
 flPlayerPowerCacheTimeoutInterrupt
 flPlayerPowerCacheTimeoutNormal
 flPoseFrame
@@ -4536,6 +4566,8 @@ flShadowFadeStartRatio
 flShadowNearPlane
 flShadowZBias
 flShadowZSlopeScaleBias
+flShakeScalarConsole
+flShakeScalarGlobal
 flShapeOcclusionAltitude
 flShapeOcclusionAzimuth
 flShearStiffness
@@ -5753,6 +5785,7 @@ ptPrimitives
 ptProjData
 ptPropData
 ptProxData
+ptRainSplashSurfaceParticles
 ptRecipeEventGizmoData
 ptRepeatablePermutations
 ptResourceSlot
@@ -6006,6 +6039,8 @@ snoCarrotPowerDefault
 snoCarryable
 snoCarryablePower
 snoCastingEffectGroup
+snoCastingEffectGroupOnPlayer
+snoCastingEffectGroupPortalToPlayer
 snoCastingLoopEffectGroup
 snoChampionEffectGroup
 snoChannelingEffect
@@ -6028,7 +6063,6 @@ snoClassRequirement
 snoClickSound
 snoCliffEdgeAmbient
 snoClosedCaptions
-snoClosureOuter
 snoCloth
 snoClothOverride
 snoClutter
@@ -6103,6 +6137,7 @@ snoEyeColor
 snoFace
 snoFacialHair
 snoFaded
+snoFadedFur
 snoFallbackEyeColor
 snoFallbackFace
 snoFallbackFont
@@ -6168,7 +6203,7 @@ snoHighlightAnim
 snoHitBySoundTable
 snoHoudini
 snoHoverAnim
-snoInfluenceSim
+snoInjectedQuest
 snoInputPower
 snoInteractSound
 snoInteractiveIGCSound
@@ -6309,6 +6344,7 @@ snoOutroEffect
 snoOverrideMaterial
 snoOverridePower
 snoOverrideWhenWet
+snoOverridingPopulation
 snoPOICamera
 snoParagonGlyph
 snoParagonGlyphAffix
@@ -6360,7 +6396,6 @@ snoPowerAnimKey
 snoPowerAnimKeyOverride
 snoPowerAnimationOverride
 snoPowerApproach
-snoPowerCenters
 snoPowerDeath
 snoPowerDeathOverride
 snoPowerDmgSource
@@ -6450,8 +6485,6 @@ snoSetItemBonus
 snoShader
 snoShaderEffect
 snoShaderMap
-snoShaderShowTranslateWalkShader
-snoShaderShowTranslateWallShader
 snoShieldBlockEffectGroup
 snoShrineOnCooldown
 snoSkill
@@ -6499,7 +6532,7 @@ snoStartingAnimSetOverride
 snoStartingQuest
 snoStartingSubzone
 snoStartingSubzoneCampaignSkip
-snoStencilLootSelectable
+snoStaticImage
 snoStopSound
 snoStorePreviewWorld
 snoStoreProduct
@@ -6524,6 +6557,40 @@ snoTalentPower
 snoTargetImpactEffectGroup
 snoTechniqueUnlockQuest
 snoTemplateActor
+snoTerrain1Layer
+snoTerrain2Layers
+snoTerrain3Layers
+snoTerrain4Layers
+snoTerrain5Layers
+snoTerrainAdd1Layer
+snoTerrainAdd2Layers
+snoTerrainAdd3Layers
+snoTerrainAdd4Layers
+snoTerrainPigmentCapture1Layer
+snoTerrainPigmentCapture2Layers
+snoTerrainPigmentCapture3Layers
+snoTerrainPigmentCapture4Layers
+snoTerrainPigmentCapture5Layers
+snoTerrainPigmentCaptureAdd1Layer
+snoTerrainPigmentCaptureAdd2Layers
+snoTerrainPigmentCaptureAdd3Layers
+snoTerrainPigmentCaptureAdd4Layers
+snoTerrainTranslucent1Layer
+snoTerrainTranslucent2Layers
+snoTerrainTranslucent3Layers
+snoTerrainTranslucent4Layers
+snoTerrainTranslucent5Layers
+snoTerrainVirtualTextureCapture1Layer
+snoTerrainVirtualTextureCapture2Layers
+snoTerrainVirtualTextureCapture3Layers
+snoTerrainVirtualTextureCapture4Layers
+snoTerrainVirtualTextureCapture5Layers
+snoTerrainVirtualTextureCaptureAdd1Layer
+snoTerrainVirtualTextureCaptureAdd2Layers
+snoTerrainVirtualTextureCaptureAdd3Layers
+snoTerrainVirtualTextureCaptureAdd4Layers
+snoTerrainWaterHigh
+snoTerrainWaterLow
 snoTerritory
 snoTex
 snoTexCirrus
@@ -6584,6 +6651,7 @@ snoWarpOutActor
 snoWeaponEffectSno
 snoWeather
 snoWeatherOverride
+snoWireframeOverlay
 snoWorld
 snoWorldDevStartLocation
 snoWorldStartLocation
@@ -6816,12 +6884,14 @@ szVariableName
 szVendorCamera
 szVoiceTypeTag
 szWardrobeCameraName
+szWardrobeCosmeticBackCameraName
 szWardrobeFeetCameraName
 szWardrobeHandsCameraName
 szWardrobeHeadCameraName
 szWardrobeLegsCameraName
 szWardrobeMainHandCameraName
 szWardrobeOffHandCameraName
+szWardrobeSnapshotCameraName
 szWardrobeTorsoCameraName
 szWeaponPrefix
 tAABB
@@ -7003,6 +7073,8 @@ tFoliageSettings
 tFont
 tForcedWorldParams
 tFormula
+tFormulaParagonRefundCost
+tFormulaSkillTreeRefundCost
 tFortifiedHealth
 tFrameAnim
 tFrameRateRange
@@ -7371,6 +7443,7 @@ tVerticalAngleRange
 tVerticalOffset
 tVisualInvData
 tVisualItem
+tVolumetricCloudSettings
 tWanderDelayRange
 tWanderRadiusRange
 tWaveSettings
