@@ -222,13 +222,13 @@ int main() {
     size_t bytesRead = 0;
 
     printf("{");
-    printf("\"pid\": %d,", pid);
-    printf("\"base\": %llu,", (uint64_t)modinfo.lpBaseOfDll);
-    printf("\"size\": %d,", modinfo.SizeOfImage);
+    printf("\"pid\":%d,", pid);
+    printf("\"base\":\"%llu\",", (uint64_t)modinfo.lpBaseOfDll);
+    printf("\"size\":\"%d\",", modinfo.SizeOfImage);
 
     ReadProcessMemory(hProcess, modinfo.lpBaseOfDll, D4Data, modinfo.SizeOfImage, &bytesRead);
 
-    printf("\"version\": [%d,%d,%d,%d],", buildVersion[0] >> 16 & 0xffff, buildVersion[0] & 0xffff, buildVersion[1] >> 16 & 0xffff, buildVersion[1] & 0xffff);
+    printf("\"version\":[%d,%d,%d,%d],", buildVersion[0] >> 16 & 0xffff, buildVersion[0] & 0xffff, buildVersion[1] >> 16 & 0xffff, buildVersion[1] & 0xffff);
 
     uint64_t typeOffset = findTypePointer(D4Data, modinfo.SizeOfImage);
     uint64_t groupOffset = findGroupPointer(D4Data, modinfo.SizeOfImage);
@@ -241,8 +241,8 @@ int main() {
         uint64_t rip = uint64_t(modinfo.lpBaseOfDll) + attributeOffset + 10;
         uint64_t attrStart = (uint64_t)(rip + *ptrOffset - 0x40);
         PRIu64;
-        printf("\"attributeBase\": %llu,", attrStart);
-        printf("\"attributeSize\": %lu", attrSize);
+        printf("\"attributeBase\":\"%llu\",", attrStart);
+        printf("\"attributeSize\":\"%lu\"", attrSize);
     }
 
     printf(",");
@@ -252,7 +252,7 @@ int main() {
         uint64_t rip = uint64_t(modinfo.lpBaseOfDll) + typeOffset + 19;
         uint64_t typeStart = (uint64_t)(rip + *ptrOffset);
 
-        printf("\"typeBase\": %llu", typeStart);
+        printf("\"typeBase\":\"%llu\"", typeStart);
     }
 
     printf(",");
@@ -264,8 +264,8 @@ int main() {
         uint64_t groupStart = rip + *ptrOffset;
         uint32_t arraySize = (*ptrMax - *ptrOffset - 7);
 
-        printf("\"groupBase\": %llu,", groupStart);
-        printf("\"groupSize\": %lu", arraySize);
+        printf("\"groupBase\":\"%llu\",", groupStart);
+        printf("\"groupSize\":\"%lu\"", arraySize);
     }
 
     printf("}");
