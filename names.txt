@@ -794,6 +794,10 @@ JoinGameFailedMessage
 JoinLANGameMessage
 KeyedDungeonTierEntry
 KeyedDungeonTierEntry_Table
+KeyedDungeonTierSubcondition
+KeyedDungeonTypeSubcondition
+KeyedDungeonTypes
+KeyedDungeonTypes_Table
 KillCountMessage
 KnownListUpdateQuestACDObjectives
 LabelEntry
@@ -1224,6 +1228,7 @@ PlayerForceShapeshiftMessage
 PlayerGenderSubcondition
 PlayerHasEarnedAchievementSubcondition
 PlayerHasFollowerSubcondition
+PlayerHasLearnedParagonGlyphSubcondition
 PlayerHasUnlockedMountsSubcondition
 PlayerHasUnlockedSpiritBondSubcondition
 PlayerHealthSubcondition
@@ -1481,6 +1486,7 @@ RequiredCommandFrameMessageHeader
 RequiredMessageHeader
 RequiredRequestMessageHeader
 RequiredResponseMessageHeader
+RequirementsToBeActive
 ResolvedPortalDestination
 RestrictedComponent
 RevealSceneMessage
@@ -2481,6 +2487,7 @@ arIconAnchorPoints
 arIconLayouts
 arIcons
 arImbueRecipes
+arImbueRecipesFromAspects
 arIndices
 arIngredients
 arInherentAffixes
@@ -3006,6 +3013,8 @@ bTargetGroundOnly
 bTextAllCaps
 bToggleSelection
 bTriggersImmediately
+bTriggersOnIsHealthy
+bTriggersOnIsInjured
 bTriggersOnce
 bUnlocked
 bUnlockedTownPortal
@@ -3889,6 +3898,7 @@ fIsGrass
 fIsHFists
 fIsLoop
 fIsNPC
+fIsShownForClass
 fIsSkipPoint
 fIsSpawned
 fIsStatic
@@ -3940,6 +3950,7 @@ fPlayerClass
 fPortalIsElevator
 fPrefetchRadius
 fPrefix
+fPreviewOnClasses
 fPrioritySideQuest
 fProjectileCanBeReflected
 fProjectileCanBeSlowed
@@ -3969,6 +3980,7 @@ fScaredOfPlayers
 fSeparateAlphaBlendEnable
 fSequential
 fSetsDynamicReturnLocation
+fSimulationDuration
 fSlope
 fSnapGround
 fSpawnItemRotateInGroup
@@ -3988,6 +4000,8 @@ fSwitchCanOperateMultipleTimes
 fTextureRepeatCount
 fTileBackground
 fTileCenter
+fTileHorizontalBorders
+fTileVerticalBorders
 fTop
 fTurbulence
 fTwitch
@@ -4102,6 +4116,9 @@ flCapsuleLength
 flCastingEffectGroupDuration
 flCavitySmoothness
 flCavityTolerance
+flChampionMonsterAdditionalHealth
+flChampionMonsterDamageScalar
+flChampionMonsterMinimumHealth
 flChance
 flChanceOverride
 flChatFadeDuration
@@ -4155,6 +4172,9 @@ flCooldown
 flCooldownDuration
 flCooldownSeconds
 flCooldownTime
+flCreditsFadeInTime
+flCreditsImageDisplayTime
+flCreditsImageFadeTime
 flCurveDistanceThreshold
 flCutoffRadius
 flDOTHitPercentBonus
@@ -4200,6 +4220,9 @@ flDuration
 flDurationAdjustment
 flDurationMicroseconds
 flEffectDuration
+flEliteMonsterAdditionalHealth
+flEliteMonsterDamageScalar
+flEliteMonsterMinimumHealth
 flEmissive
 flEmissiveStrength
 flEndFStop
@@ -4418,6 +4441,9 @@ flMinimapRevealRadius
 flMinimapTextureAlpha
 flMinimumAnimationScale
 flMinimumDuration
+flMinionMonsterAdditionalHealth
+flMinionMonsterDamageScalar
+flMinionMonsterMinimumHealth
 flMonsterCritDamageScalar
 flMonsterNonPhysicalDamageScalar
 flMountScaleFactor
@@ -4560,6 +4586,7 @@ flScrollerInitialDelay
 flScrollerRate
 flSeconds
 flSecs
+flSelfWindPadding
 flSellPricePercent
 flShadowFadeEndRatio
 flShadowFadeStartRatio
@@ -4636,6 +4663,9 @@ flSunIntensityFactor
 flSunRadius
 flSunShadowAltitude
 flSunShadowAzimuth
+flSuperEliteMonsterAdditionalHealth
+flSuperEliteMonsterDamageScalar
+flSuperEliteMonsterMinimumHealth
 flSyncYaw
 flSystemDuration
 flSystemTime
@@ -4695,6 +4725,7 @@ flVar4
 flVectorFieldScrollSpeed
 flVelocityCameraInterpolationSpeed
 flVelocityCameraMaxDistance
+flVelocityCameraMinSpeed
 flVelocityCameraSpeedModifier
 flVelocityFactor
 flVertexAOSize
@@ -4759,6 +4790,7 @@ gbidHiddenCaches
 gbidHotbarCountPetType
 gbidInCombatDynamicMovementData
 gbidIngredientScalingFormula
+gbidKeyedDungeonType
 gbidLabel
 gbidLabelOverride
 gbidLesserMalignantMonsterTag
@@ -4927,6 +4959,8 @@ hSocialWheelTextureFlagForPvPDisabled
 hSocialWheelTextureFlagForPvPDisabledHover
 hSocialWheelTextureFlagForPvPEnabled
 hSocialWheelTextureFlagForPvPEnabledHover
+hSocialWheelTextureFlagForPvPInactive
+hSocialWheelTextureFlagForPvPInactiveHover
 hSocialWheelTextureInspectDisabled
 hSocialWheelTextureInspectDisabledHover
 hSocialWheelTextureInspectEnabled
@@ -5285,6 +5319,9 @@ nMinWidth
 nMinimum
 nMinimumAncestralRequiredLevel
 nMinimumSacredRequiredLevel
+nMinor1AffixCount
+nMinor2AffixCount
+nMinor3AffixCount
 nMonsterLevel
 nMonsterLevelOffset
 nMonsterRarity
@@ -5412,6 +5449,7 @@ nTransmogSnapshotCosts
 nTraversalWidth
 nTreeFolderIndent
 nTreeFolderSpacing
+nTrialAffixCount
 nTrialVersionLevelCap
 nTriangleCount
 nTrueBoneLOD
@@ -5580,6 +5618,7 @@ pathScaleOverTime
 pathSeparation
 pathSequentialRange
 pathShadowIntensity
+pathShapeOcclusionPenumbra
 pathShapeOcclusionStrength
 pathSineMultiplierOverLength
 pathSineMultiplierOverTime
@@ -5605,6 +5644,7 @@ pathTurbulenceStrength
 pathU
 pathV
 pathValGraph
+pathVectorFieldMagScale
 pathVectorFieldRotation
 pathVertexAOPower
 pathVignetteColor
@@ -6226,6 +6266,7 @@ snoItemUseLevelAreaRequirement
 snoItems
 snoJewelry
 snoJournalVOSound
+snoKeyedDungeonTiers
 snoKillerActor
 snoLandSoundTable
 snoLayer
@@ -6845,6 +6886,7 @@ szRadioButtonGroupPath
 szRecipeListName
 szRefundPolicyLink
 szRegionName
+szRootControlPath
 szRootUIName
 szRuleName
 szScreenName
@@ -6864,6 +6906,7 @@ szSubObjectName
 szTOSLink
 szTabContainerName
 szTabInstanceName
+szTabRadioButtonGroupName
 szTag
 szTarget
 szTargetLocatorName
@@ -7222,6 +7265,7 @@ tPOICameraData
 tPS4AwardDefinitionList
 tPS5AwardDefinitionList
 tPactIcon
+tPactItemOverlayIcon
 tPair
 tParametricClutterIndex
 tParametricSettings
@@ -7278,6 +7322,7 @@ tRelocChain
 tRemapRange
 tRenderParams
 tReputationObjective
+tRequirementsToBeActive
 tResolvedDest
 tResourceCostReductionCoefficient
 tReward
@@ -7576,6 +7621,7 @@ vPosition
 vProjectileImpactDirection
 vRootNodeCenterPosition
 vScale
+vSelfWind
 vStartPos
 vTargetPos
 vTargetPosition
@@ -7684,6 +7730,7 @@ wvCenterOfMass
 wvDirection
 wvExt
 wvLastPOI
+wvListenerOffsetVector
 wvLookAtOffsetVector
 wvNormal
 wvOBB
@@ -7692,26 +7739,3 @@ wvVelocity
 x
 y
 z
-
-tPactItemOverlayIcon
-fSimulationDuration
-wvListenerOffsetVector
-flVelocityCameraMinSpeed
-bTriggersOnIsHealthy
-bTriggersOnIsInjured
-pathVectorFieldMagScale
-hSocialWheelTextureFlagForPvPInactive
-hSocialWheelTextureFlagForPvPInactiveHover
-flCreditsFadeInTime
-flCreditsImageDisplayTime
-flCreditsImageFadeTime
-szRootControlPath
-pathShapeOcclusionPenumbra
-fIsShownForClass
-fPreviewOnClasses
-tRequirementsToBeActive
-RequirementsToBeActive
-arImbueRecipesFromAspects
-szTabRadioButtonGroupName
-vSelfWind
-flSelfWindPadding
