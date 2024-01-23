@@ -757,7 +757,7 @@ Hitpoints_Max_Total:
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
-  Formula: Max((Hitpoints_Max + Hitpoints_Max_Bonus) * (1 + Hitpoints_Max_Percent_Bonus) * (1 + Hitpoints_Max_Percent_Bonus_Item) * (1 + Hitpoints_Max_Percent_Bonus_KeyDun) + TableHealthFromFlat(Flat_Hitpoints_Max_Bonus, Level), 0.01)
+  Formula: Max((Hitpoints_Max + Hitpoints_Max_Bonus + TableHealthFromFlat(Flat_Hitpoints_Max_Bonus, Level)) * (1 + Hitpoints_Max_Percent_Bonus) * (1 + Hitpoints_Max_Percent_Bonus_Item) * (1 + Hitpoints_Max_Percent_Bonus_KeyDun), 0.01)
   SyncFlags: 0b00000000000000000000000001111110
 Hitpoints_Max_Base:
   AttributeID: 107
@@ -1005,7 +1005,7 @@ Resource_Max_Total:
   ParameterType: 7
   AttributeOperator: 0
   AttributeDataType: 0 # float
-  Formula: Max((Resource_Max + ((Level#NONE - 1) * Resource_Max_Per_Level) + Resource_Max_Bonus + Resource_All_Primary_Max_Bonus#NONE) * (Resource_Max_Percent_Bonus + 1), 0)
+  Formula: Max((Resource_Max + ((Level#NONE - 1) * Resource_Max_Per_Level) + Resource_Max_Bonus) * (Resource_Max_Percent_Bonus + 1), 0)
   SyncFlags: 0b00000000000000000000000001001000
 Resource_Regen_Per_Second:
   AttributeID: 142
@@ -3228,456 +3228,463 @@ Custom_Target_Weight_Per_Actor:
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Malignant_Monster_Color:
+Actor_Appearance_Addon_Type:
   AttributeID: 453
   DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 4
+  AttributeOperator: 10
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000010
-Malignant_Monster_Tier:
+  SyncFlags: 0b00000000000000000000000001000010
+Malignant_Monster_Color:
   AttributeID: 454
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
-Malignant_Monster_Appearance_Enabled:
+Malignant_Monster_Tier:
   AttributeID: 455
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000010
+Malignant_Monster_Appearance_Enabled:
+  AttributeID: 456
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
 Malignant_Cage_Level:
-  AttributeID: 456
+  AttributeID: 457
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Malignant_Socket_Color:
-  AttributeID: 457
+  AttributeID: 458
   DefaultValue: -1
   ParameterType: 26
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Armor_Pact_Type_Count:
-  AttributeID: 458
+  AttributeID: 459
   DefaultValue: 0
   ParameterType: 26
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Gizmo_State:
-  AttributeID: 459
+  AttributeID: 460
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Charges:
-  AttributeID: 460
+  AttributeID: 461
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Chest_Open:
-  AttributeID: 461
+  AttributeID: 462
   DefaultValue: 0
   ParameterType: 4
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Door_Timer:
-  AttributeID: 462
+  AttributeID: 463
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Disabled_By_Script:
-  AttributeID: 463
+  AttributeID: 464
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Operator_ACDID:
-  AttributeID: 464
+  AttributeID: 465
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Triggering_Count:
-  AttributeID: 465
+  AttributeID: 466
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Operation_Radius_Override:
-  AttributeID: 466
+  AttributeID: 467
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Is_Quest_Restricted:
-  AttributeID: 467
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000100
-Gizmo_Visibility_Is_Quest_Restricted:
   AttributeID: 468
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
-Gizmo_Chair_Occupied:
+Gizmo_Visibility_Is_Quest_Restricted:
   AttributeID: 469
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
-Gizmo_Has_Been_Operated:
+Gizmo_Chair_Occupied:
   AttributeID: 470
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000100
+Gizmo_Has_Been_Operated:
+  AttributeID: 471
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Gizmo_Power_Operate:
-  AttributeID: 471
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Gizmo_Power_Operator:
   AttributeID: 472
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Pet_Owner_ANN:
+Gizmo_Power_Operator:
   AttributeID: 473
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Pet_Type:
+  SyncFlags: 0b00000000000000000000000000000000
+Pet_Owner_ANN:
   AttributeID: 474
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-DropsNoLoot:
+Pet_Type:
   AttributeID: 475
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 1
+  AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-GrantsNoXP:
+  SyncFlags: 0b00000000000000000000000001111110
+DropsNoLoot:
   AttributeID: 476
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Hireling_Class:
+GrantsNoXP:
   AttributeID: 477
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Hireling_Class:
+  AttributeID: 478
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Summoned_By_SNO:
-  AttributeID: 478
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Parent_Summoning_Skill_SNO:
   AttributeID: 479
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Pet_Cannot_Be_Dismissed:
+Parent_Summoning_Skill_SNO:
   AttributeID: 480
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Pet_Cannot_Be_Dismissed:
+  AttributeID: 481
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Follower_Quest:
-  AttributeID: 481
+  AttributeID: 482
   DefaultValue: -1
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Is_Unmanaged_Quest_Follower:
-  AttributeID: 482
+  AttributeID: 483
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Pet_Equipped_Proc_Resource_On_Hit_Percent:
-  AttributeID: 483
+  AttributeID: 484
   DefaultValue: 0
   ParameterType: 7
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Pet_Equipped_Solo_Attacker_Damage_Bonus:
-  AttributeID: 484
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Pet_Equipped_Other_Attacker_Damage_Bonus:
   AttributeID: 485
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Pet_Equipped_Recently_Summoned_Damage_Bonus:
+Pet_Equipped_Other_Attacker_Damage_Bonus:
   AttributeID: 486
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Pet_Inherit_Attrib_Bonus_Pct:
+Pet_Equipped_Recently_Summoned_Damage_Bonus:
   AttributeID: 487
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Pet_Inherit_Attrib_Bonus_Pct:
+  AttributeID: 488
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_Spec_For_Pet_Type:
-  AttributeID: 488
+  AttributeID: 489
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_Specialization1_Upgrade_For_Pet_Type:
-  AttributeID: 489
-  DefaultValue: -1
-  ParameterType: 29
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-NecroArmy_Specialization2_Upgrade_For_Pet_Type:
   AttributeID: 490
   DefaultValue: -1
   ParameterType: 29
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NecroArmy_Specialization3_Upgrade_For_Pet_Type:
+NecroArmy_Specialization2_Upgrade_For_Pet_Type:
   AttributeID: 491
   DefaultValue: -1
   ParameterType: 29
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NecroArmy_Pet_Type_Health_Bonus_Pct:
+NecroArmy_Specialization3_Upgrade_For_Pet_Type:
   AttributeID: 492
+  DefaultValue: -1
+  ParameterType: 29
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+NecroArmy_Pet_Type_Health_Bonus_Pct:
+  AttributeID: 493
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 NecroArmy_Pet_Type_Inherit_Thorns_Bonus_Pct:
-  AttributeID: 493
+  AttributeID: 494
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_All_Pet_Types_Inherit_Thorns_Bonus_Pct:
-  AttributeID: 494
+  AttributeID: 495
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_Pet_Type_Inherit_Crit_Bonus_Pct:
-  AttributeID: 495
+  AttributeID: 496
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_All_Pet_Types_Inherit_Crit_Bonus_Pct:
-  AttributeID: 496
+  AttributeID: 497
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_Pet_Type_All_Resist_Bonus_Pct:
-  AttributeID: 497
-  DefaultValue: 0
-  ParameterType: 29
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-NecroArmy_Pet_Type_Damage_Bonus_Pct:
   AttributeID: 498
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_NecroArmy_Pet_Type_Damage_Bonus_Pct:
+NecroArmy_Pet_Type_Damage_Bonus_Pct:
   AttributeID: 499
+  DefaultValue: 0
+  ParameterType: 29
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Multiplicative_NecroArmy_Pet_Type_Damage_Bonus_Pct:
+  AttributeID: 500
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 NecroArmy_Pet_Type_Armor_Bonus_Pct:
-  AttributeID: 500
+  AttributeID: 501
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 NecroArmy_Pet_Type_Attack_Speed_Bonus_Pct:
-  AttributeID: 501
+  AttributeID: 502
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 NecroArmy_Damage_Bonus_With_Active_Pet_Type:
-  AttributeID: 502
+  AttributeID: 503
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 NecroArmy_Flat_Armor_Bonus_With_Active_Pet_Type:
-  AttributeID: 503
+  AttributeID: 504
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 NecroArmy_Armor_Percent_Bonus_With_Active_Pet_Type:
-  AttributeID: 504
+  AttributeID: 505
   DefaultValue: 0
   ParameterType: 29
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Is_NPC:
-  AttributeID: 505
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-NPC_Is_Operatable:
   AttributeID: 506
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NPC_Is_Escorting:
+NPC_Is_Operatable:
   AttributeID: 507
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NPC_Has_Interact_Options:
+NPC_Is_Escorting:
   AttributeID: 508
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+NPC_Has_Interact_Options:
+  AttributeID: 509
   DefaultValue: 0
   ParameterType: 9
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Conversation_Icon:
-  AttributeID: 509
-  DefaultValue: -1
-  ParameterType: 9
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Conversation_Icon_Quest:
   AttributeID: 510
   DefaultValue: -1
   ParameterType: 9
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Callout_Cooldown:
+Conversation_Icon_Quest:
   AttributeID: 511
+  DefaultValue: -1
+  ParameterType: 9
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Callout_Cooldown:
+  AttributeID: 512
   DefaultValue: -1
   ParameterType: 13
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Banter_Cooldown:
-  AttributeID: 512
+  AttributeID: 513
   DefaultValue: -1
   ParameterType: 13
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Conversation_Heard_Count:
-  AttributeID: 513
+  AttributeID: 514
   DefaultValue: 0
   ParameterType: 13
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Last_Tick_Shop_Entered:
-  AttributeID: 514
+  AttributeID: 515
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Bow:
-  AttributeID: 515
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Crossbow:
   AttributeID: 516
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-BowAny:
+Crossbow:
   AttributeID: 517
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+BowAny:
+  AttributeID: 518
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -3686,56 +3693,56 @@ BowAny:
   Formula: Pin(Bow + Crossbow, 0, 1)
   SyncFlags: 0b00000000000000000000000001001000
 Spawned_by_ACDID:
-  AttributeID: 518
+  AttributeID: 519
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Summoned_By_ACDID:
-  AttributeID: 519
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Summoner_ID:
   AttributeID: 520
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Use_Summoner_Damage_Stats:
+Summoner_ID:
   AttributeID: 521
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Use_Summoner_Damage_Stats:
+  AttributeID: 522
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Current_WeaponClass:
-  AttributeID: 522
+  AttributeID: 523
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Follower_Sheath_Action:
-  AttributeID: 523
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Weapons_Sheathed:
   AttributeID: 524
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Held_In_OffHand:
+Weapons_Sheathed:
   AttributeID: 525
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Held_In_OffHand:
+  AttributeID: 526
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
@@ -3743,133 +3750,133 @@ Held_In_OffHand:
   Formula: 0
   SyncFlags: 0b00000000000000000000000001111110
 Active_Weapon_Slot:
-  AttributeID: 526
+  AttributeID: 527
   DefaultValue: -1
   ParameterType: 17
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 In_Combat:
-  AttributeID: 527
+  AttributeID: 528
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 Last_In_Combat_Time:
-  AttributeID: 528
+  AttributeID: 529
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Scripted_In_Combat:
-  AttributeID: 529
+  AttributeID: 530
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 Combat_Bloodiness:
-  AttributeID: 530
+  AttributeID: 531
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000110
 Shapeshifting_Stay_In_Form:
-  AttributeID: 531
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Shapeshifting_Queue_Back_To_Human:
   AttributeID: 532
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Shapeshift_Form:
+Shapeshifting_Queue_Back_To_Human:
   AttributeID: 533
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Shapeshift_Form:
+  AttributeID: 534
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Shapeshift_Form_Wolf_Override:
-  AttributeID: 534
-  DefaultValue: 0
-  ParameterType: 5
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-Skill_Shapeshift_Form_Bear_Override:
   AttributeID: 535
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-Default_Shapeshift_Form_Wolf_Override:
+Skill_Shapeshift_Form_Bear_Override:
   AttributeID: 536
   DefaultValue: 0
-  ParameterType: -1
+  ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000001000
-Default_Shapeshift_Form_Bear_Override:
+  SyncFlags: 0b00000000000000000000000000000001
+Default_Shapeshift_Form_Wolf_Override:
   AttributeID: 537
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
-In_Conversation:
+Default_Shapeshift_Form_Bear_Override:
   AttributeID: 538
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000001000
+In_Conversation:
+  AttributeID: 539
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Last_Tick_Potion_Used:
-  AttributeID: 539
+  AttributeID: 540
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Potion_Bonus_Heal_Percent:
-  AttributeID: 540
+  AttributeID: 541
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Cooldown_Reduction_Percent:
-  AttributeID: 541
+  AttributeID: 542
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Converts_Initial_Heal_To_Barrier_Percent:
-  AttributeID: 542
+  AttributeID: 543
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Tier:
-  AttributeID: 543
+  AttributeID: 544
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Doses:
-  AttributeID: 544
+  AttributeID: 545
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
@@ -3877,21 +3884,21 @@ Potion_Doses:
   Formula: Min(Potion_Doses.Agg, Potion_Max_Doses_Total)
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Max_Doses_Base:
-  AttributeID: 545
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001001000
-Potion_Max_Doses_Bonus:
   AttributeID: 546
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Potion_Max_Doses_Total:
+Potion_Max_Doses_Bonus:
   AttributeID: 547
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001001000
+Potion_Max_Doses_Total:
+  AttributeID: 548
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -3899,721 +3906,728 @@ Potion_Max_Doses_Total:
   Formula: Potion_Max_Doses_Base + Potion_Max_Doses_Bonus
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Special_Doses:
-  AttributeID: 548
+  AttributeID: 549
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Special_Dose_Power:
-  AttributeID: 549
+  AttributeID: 550
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Charge:
-  AttributeID: 550
+  AttributeID: 551
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Potion_Charge_Generation_Bonus_Pct:
-  AttributeID: 551
+  AttributeID: 552
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Charge_Yield_Bonus_Pct:
-  AttributeID: 552
+  AttributeID: 553
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Potion_Use_Granted_Barrier_Percent:
-  AttributeID: 553
+  AttributeID: 554
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Use_Granted_Primary_Resource_Amount:
-  AttributeID: 554
+  AttributeID: 555
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Use_Granted_Unstoppable_Seconds:
-  AttributeID: 555
+  AttributeID: 556
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Potion_Dose_Drop_Total_Thresholds:
-  AttributeID: 556
+  AttributeID: 557
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
 Last_Potion_Dose_Drop_Interval:
-  AttributeID: 557
+  AttributeID: 558
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Can_Use_Potion_While_Full_Health:
-  AttributeID: 558
+  AttributeID: 559
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 No_Damage_Taken_Flat_Hitpoints_Regen_Per_Second:
-  AttributeID: 559
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-No_Damage_Taken_Flat_Hitpoints_Regen_Per_Second_Unscaled_By_Player_Health:
   AttributeID: 560
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-OOC_Flat_Hitpoints_Regen_Per_Second:
+No_Damage_Taken_Flat_Hitpoints_Regen_Per_Second_Unscaled_By_Player_Health:
   AttributeID: 561
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000000
-OOC_Flat_Hitpoints_Regen_Per_Second_Unscaled_By_Player_Health:
+  SyncFlags: 0b00000000000000000000000001001000
+OOC_Flat_Hitpoints_Regen_Per_Second:
   AttributeID: 562
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Out_Of_Combat_Hitpoints_Regen_Delay_On_Leave_Combat:
+OOC_Flat_Hitpoints_Regen_Per_Second_Unscaled_By_Player_Health:
   AttributeID: 563
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000000
+Out_Of_Combat_Hitpoints_Regen_Delay_On_Leave_Combat:
+  AttributeID: 564
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Out_Of_Combat_Resource_Regen:
-  AttributeID: 564
+  AttributeID: 565
   DefaultValue: 0
   ParameterType: 7
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Out_Of_Combat_Resource_Regen_Delay_On_Spend_Resource:
-  AttributeID: 565
-  DefaultValue: 0
-  ParameterType: 7
-  AttributeOperator: 0
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Out_Of_Combat_Resource_Regen_Delay_On_Leave_Combat:
   AttributeID: 566
   DefaultValue: 0
   ParameterType: 7
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Out_Of_Combat_Resource_Regen_Allowed_Time:
+Out_Of_Combat_Resource_Regen_Delay_On_Leave_Combat:
   AttributeID: 567
   DefaultValue: 0
   ParameterType: 7
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Last_Damage_ACD:
+Out_Of_Combat_Resource_Regen_Allowed_Time:
   AttributeID: 568
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
+  DefaultValue: 0
+  ParameterType: 7
+  AttributeOperator: 0
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Attached_To_ACD:
+  SyncFlags: 0b00000000000000000000000000000000
+Last_Damage_ACD:
   AttributeID: 569
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Attachment_ACD:
+Attached_To_ACD:
   AttributeID: 570
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Knockback_Attachment_ACD:
+Attachment_ACD:
   AttributeID: 571
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Normal_Attack_Replacement_Power_SNO:
+Knockback_Attachment_ACD:
   AttributeID: 572
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Normal_Attack_Replacement_Power_SNO:
+  AttributeID: 573
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Expensive_Proc_Count:
-  AttributeID: 573
+  AttributeID: 574
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Base_Element:
-  AttributeID: 574
+  AttributeID: 575
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Enable_Base_Element_Damage_Type_Override:
-  AttributeID: 575
+  AttributeID: 576
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Projectile_Forced_Target:
-  AttributeID: 576
+  AttributeID: 577
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Projectile_Reflect_Chance:
-  AttributeID: 577
+  AttributeID: 578
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Projectile_Reflect_Damage_Scalar:
-  AttributeID: 578
+  AttributeID: 579
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Projectile_Reflect_Has_Damage_Cap:
-  AttributeID: 579
+Projectile_Reflect_Damage_Amount_Override:
+  AttributeID: 580
   DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000000
+Projectile_Reflect_Damage_Owner:
+  AttributeID: 581
+  DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Projectile_Reflect_Damage_Cap_Remaining:
-  AttributeID: 580
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000000
 Projectile_Bouncing_Enabled:
-  AttributeID: 581
+  AttributeID: 582
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Projectile_Gravity_Multiplier:
-  AttributeID: 582
+  AttributeID: 583
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Projectile_Seek_Rotation_Rate:
-  AttributeID: 583
+  AttributeID: 584
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
+Projectile_Facing_Yaw_Rotation_Rate:
+  AttributeID: 585
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000100000
 Buff_Visual_Effect:
-  AttributeID: 584
+  AttributeID: 586
   DefaultValue: 0
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Active_Weapon_Effect_Override:
-  AttributeID: 585
+  AttributeID: 587
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Could_Have_Ragdolled:
-  AttributeID: 586
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Scale_Bonus:
-  AttributeID: 587
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Scale_Bonus_Is_Immediate:
   AttributeID: 588
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Scale_Bonus_Per_Tick:
+Scale_Bonus:
   AttributeID: 589
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Deleted_On_Server:
+Scale_Bonus_Is_Immediate:
   AttributeID: 590
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Scripted_Fade_Time:
+Scale_Bonus_Per_Tick:
   AttributeID: 591
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Deleted_On_Server:
+  AttributeID: 592
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Scripted_Look_Override:
-  AttributeID: 592
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Pet_Fade_Out:
+Scripted_Fade_Time:
   AttributeID: 593
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Does_No_Damage:
+Scripted_Look_Override:
   AttributeID: 594
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Pet_Fade_Out:
+  AttributeID: 595
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-SlowTime_Debuff:
-  AttributeID: 595
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Blocks_Projectiles:
+Does_No_Damage:
   AttributeID: 596
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Blocks_Projectiles_With_Feedback:
+SlowTime_Debuff:
   AttributeID: 597
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Blocks_Projectiles:
+  AttributeID: 598
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Blocks_Projectiles_With_Feedback:
+  AttributeID: 599
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Summon_Expiration_Tick:
-  AttributeID: 598
+  AttributeID: 600
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Summon_Count:
-  AttributeID: 599
+  AttributeID: 601
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Uninterruptible:
-  AttributeID: 600
+  AttributeID: 602
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Queue Death:
-  AttributeID: 601
+  AttributeID: 603
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Death Power Override:
-  AttributeID: 602
+  AttributeID: 604
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Special Death Power Override:
-  AttributeID: 603
+  AttributeID: 605
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 CantStartDisplayedPowers:
-  AttributeID: 604
+  AttributeID: 606
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 PlayerSkillSuppressingDisplayedPowers:
-  AttributeID: 605
+  AttributeID: 607
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 DPS:
-  AttributeID: 606
+  AttributeID: 608
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 DOT_DPS:
-  AttributeID: 607
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-DOT_Total:
-  AttributeID: 608
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-DOT_Infinite_Total:
   AttributeID: 609
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-DOT_DPS_Bonus_Percent:
+DOT_Total:
   AttributeID: 610
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+DOT_Infinite_Total:
+  AttributeID: 611
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+DOT_DPS_Bonus_Percent:
+  AttributeID: 612
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 DOT_DPS_Bonus_Percent_Per_Damage_Type:
-  AttributeID: 611
+  AttributeID: 613
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_DOT_DPS_Bonus_Percent_Per_Damage_Type:
-  AttributeID: 612
+  AttributeID: 614
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 DOT_DPS_Reduction_Percent:
-  AttributeID: 613
+  AttributeID: 615
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 DOT_DPS_Reduction_Percent_Per_Damage_Type:
-  AttributeID: 614
+  AttributeID: 616
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 DOT_Speed_Bonus_Percent_Per_Damage_Type:
-  AttributeID: 615
+  AttributeID: 617
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Disable_Health_Prediction:
-  AttributeID: 616
+  AttributeID: 618
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 DamageCap_Percent:
-  AttributeID: 617
+  AttributeID: 619
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Item_Time_Sold:
-  AttributeID: 618
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000001000
-Forced_Hireling_Power:
-  AttributeID: 619
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Hide_Affixes:
   AttributeID: 620
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
-Displays_Team_Effect:
+Forced_Hireling_Power:
   AttributeID: 621
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Hide_Affixes:
+  AttributeID: 622
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000001000
+Displays_Team_Effect:
+  AttributeID: 623
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Cannot_Be_Added_To_AI_Target_List:
-  AttributeID: 622
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-SkillKit:
-  AttributeID: 623
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001000000
-In_Retreat_Volume:
   AttributeID: 624
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Damage_Shield:
+SkillKit:
   AttributeID: 625
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001000000
+In_Retreat_Volume:
+  AttributeID: 626
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Damage_Shield:
+  AttributeID: 627
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Damage_Shield_Accumulated_Amount:
-  AttributeID: 626
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Damage_Shield_Max:
-  AttributeID: 627
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Damage_Shield_Bonus_Percent_Damage:
   AttributeID: 628
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Flat_Heal_Absorb:
+Damage_Shield_Max:
   AttributeID: 629
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Flat_Heal_Absorb_Unscaled_By_Player_Health:
+Damage_Shield_Bonus_Percent_Damage:
   AttributeID: 630
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Is_Berserk:
+Flat_Heal_Absorb:
   AttributeID: 631
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Flat_Heal_Absorb_Unscaled_By_Player_Health:
+  AttributeID: 632
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Is_Berserk:
+  AttributeID: 633
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Vulnerable:
-  AttributeID: 632
+  AttributeID: 634
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Vulnerable_Health_Damage_Bonus:
-  AttributeID: 633
+  AttributeID: 635
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Multiplicative_Vulnerable_Health_Damage_Bonus:
-  AttributeID: 634
+  AttributeID: 636
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Vulnerable_Reduction_Percent:
-  AttributeID: 635
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 7
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Fortified_Health:
-  AttributeID: 636
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Fortified_Health_Damage_Reduction_Bonus:
   AttributeID: 637
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Fortified_Health_Application_Bonus:
+Fortified_Health:
   AttributeID: 638
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Fortified_Health_Damage_Reduction_Bonus:
+  AttributeID: 639
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 7
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Fortified_Health_Application_Bonus:
+  AttributeID: 640
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Damage_Percent_Bonus_When_Fortified:
-  AttributeID: 639
+  AttributeID: 641
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_To_Fortified:
-  AttributeID: 640
+  AttributeID: 642
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Follow_Target_ACDID:
-  AttributeID: 641
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Follow_Target_Type:
-  AttributeID: 642
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-NPC_Talk_Target_ANN:
   AttributeID: 643
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Look_Target_Server_ANN:
+Follow_Target_Type:
   AttributeID: 644
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+NPC_Talk_Target_ANN:
+  AttributeID: 645
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Look_Target_Server_ANN:
+  AttributeID: 646
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Look_Target_Broadcast_Intensity:
-  AttributeID: 645
+  AttributeID: 647
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Look_Target_Broadcast_Radius:
-  AttributeID: 646
+  AttributeID: 648
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Stealthed:
-  AttributeID: 647
+  AttributeID: 649
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 GemQuality:
-  AttributeID: 648
+  AttributeID: 650
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Gem_Attributes_Multiplier:
-  AttributeID: 649
+  AttributeID: 651
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000001000
 ItemBuffIcon:
-  AttributeID: 650
+  AttributeID: 652
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
@@ -4621,770 +4635,770 @@ ItemBuffIcon:
   Formula: 0
   SyncFlags: 0b00000000000000000000000001111110
 Gizmo_Actor_SNO_To_Spawn:
-  AttributeID: 651
+  AttributeID: 653
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000100
 Gizmo_Actor_To_Spawn_Scale:
-  AttributeID: 652
+  AttributeID: 654
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000100
 Attachment_Handled_By_Client:
-  AttributeID: 653
+  AttributeID: 655
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Forced_Enemy_ACDID:
-  AttributeID: 654
+  AttributeID: 656
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 9
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 AI_In_Special_State:
-  AttributeID: 655
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-AI_Used_Scripted_Spawn_Anim:
-  AttributeID: 656
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-AI_Spawned_By_Inactive_Marker:
   AttributeID: 657
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-AI_Disable_Wander:
+AI_Used_Scripted_Spawn_Anim:
   AttributeID: 658
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+AI_Spawned_By_Inactive_Marker:
+  AttributeID: 659
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+AI_Disable_Wander:
+  AttributeID: 660
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 AI_Idle_Awareness_Radius_Override:
-  AttributeID: 659
+  AttributeID: 661
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 AI_Combat_Awareness_Radius_Override:
-  AttributeID: 660
+  AttributeID: 662
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Headstone_Player_ANN:
-  AttributeID: 661
+  AttributeID: 663
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Movement_Scalar_Reduction_Percent:
-  AttributeID: 662
+  AttributeID: 664
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Movement_Scalar_Reduction_Resistance:
-  AttributeID: 663
+  AttributeID: 665
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 World_Seed:
-  AttributeID: 664
+  AttributeID: 666
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Observer:
-  AttributeID: 665
+  AttributeID: 667
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Resurrect_As_Observer:
-  AttributeID: 666
+  AttributeID: 668
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Registered_To_Tracked_Checkpoints:
-  AttributeID: 667
+  AttributeID: 669
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Checkpoint_Resurrection_Allowed_Game_Time:
-  AttributeID: 668
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Checkpoint_Resurrection_Forced_Game_Time:
-  AttributeID: 669
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Corpse_Resurrection_Allowed_Game_Time:
   AttributeID: 670
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Corpse_Resurrection_Charges:
+Checkpoint_Resurrection_Forced_Game_Time:
   AttributeID: 671
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Corpse_Resurrection_Allowed_Game_Time:
+  AttributeID: 672
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Corpse_Resurrection_Charges:
+  AttributeID: 673
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Busy:
-  AttributeID: 672
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Afk:
-  AttributeID: 673
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-RTC Playing:
   AttributeID: 674
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Portal Next Time:
+Afk:
   AttributeID: 675
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+RTC Playing:
+  AttributeID: 676
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Portal Next Time:
+  AttributeID: 677
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Operatable:
-  AttributeID: 676
+  AttributeID: 678
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Spawner_Concurrent_Count_ID:
-  AttributeID: 677
+  AttributeID: 679
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Disabled:
-  AttributeID: 678
+  AttributeID: 680
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Override:
-  AttributeID: 679
+  AttributeID: 681
   DefaultValue: -1
   ParameterType: 4
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Override_Active:
-  AttributeID: 680
+  AttributeID: 682
   DefaultValue: 0
   ParameterType: 4
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Override_Active_Any:
-  AttributeID: 681
+  AttributeID: 683
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Override_Ended:
-  AttributeID: 682
+  AttributeID: 684
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Skill_Override_Ended_Active:
-  AttributeID: 683
+  AttributeID: 685
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Skill_Icon_Override_Normal:
-  AttributeID: 684
-  DefaultValue: -2147483648
-  ParameterType: 14
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Skill_Icon_Override_Mouse_Over:
-  AttributeID: 685
-  DefaultValue: -2147483648
-  ParameterType: 14
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Skill_Icon_Override_Pushed:
   AttributeID: 686
   DefaultValue: -2147483648
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Skill_Icon_Override_Inactive:
+Skill_Icon_Override_Mouse_Over:
   AttributeID: 687
   DefaultValue: -2147483648
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Rogue_Skill_Imbue_Type:
+Skill_Icon_Override_Pushed:
   AttributeID: 688
+  DefaultValue: -2147483648
+  ParameterType: 14
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Skill_Icon_Override_Inactive:
+  AttributeID: 689
+  DefaultValue: -2147483648
+  ParameterType: 14
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Rogue_Skill_Imbue_Type:
+  AttributeID: 690
   DefaultValue: -1
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Evade_Override:
-  AttributeID: 689
+  AttributeID: 691
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Combat_Evade_Last_Equipped:
-  AttributeID: 690
+  AttributeID: 692
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Unlocked_Skill_Enchant_Slots:
-  AttributeID: 691
+  AttributeID: 693
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Unlocked_Skill_Passive_Slots:
-  AttributeID: 692
+  AttributeID: 694
   DefaultValue: 0
   ParameterType: 26
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Rogue_Specialization:
-  AttributeID: 693
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001000000
-Druid_Spirit_Bond_Unlocked:
-  AttributeID: 694
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001000000
-Druid_Spirit_Bond:
   AttributeID: 695
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
-Rogue_Inner_Sight_Gauge:
+Druid_Spirit_Bond_Unlocked:
   AttributeID: 696
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001000000
+Druid_Spirit_Bond:
+  AttributeID: 697
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001000000
+Rogue_Inner_Sight_Gauge:
+  AttributeID: 698
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
 Weapon_Expertise_Level:
-  AttributeID: 697
+  AttributeID: 699
   DefaultValue: 0
   ParameterType: 27
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Weapon_Expertise_Experience:
-  AttributeID: 698
+  AttributeID: 700
   DefaultValue: 0
   ParameterType: 27
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Active_Technique_Slot:
-  AttributeID: 699
+  AttributeID: 701
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Skill_Arsenal_Slot:
-  AttributeID: 700
+  AttributeID: 702
   DefaultValue: -1
   ParameterType: 17
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Is_Power_Proxy:
-  AttributeID: 701
+  AttributeID: 703
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
 Flippy_ID:
-  AttributeID: 702
+  AttributeID: 704
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Set_Item_Count:
-  AttributeID: 703
+  AttributeID: 705
   DefaultValue: 0
   ParameterType: 14
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Spawner_Countdown_Percent:
-  AttributeID: 704
+  AttributeID: 706
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Power_Disabled:
-  AttributeID: 705
+  AttributeID: 707
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Power_Manual_Activation_Disabled:
-  AttributeID: 706
+  AttributeID: 708
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Last_ACD_Attacked_By:
-  AttributeID: 707
+  AttributeID: 709
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Gold_PickUp_Radius:
-  AttributeID: 708
+  AttributeID: 710
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Client Only Effect:
-  AttributeID: 709
+  AttributeID: 711
   DefaultValue: -1
   ParameterType: 9
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Power_Saved_Attribute:
-  AttributeID: 710
+  AttributeID: 712
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Looping_Animation_Suppress_Item_Tooltips:
-  AttributeID: 711
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Looping_Animation_Start_Time:
-  AttributeID: 712
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Looping_Animation_End_Time:
   AttributeID: 713
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Looping_Animation_Text_SNO:
+Looping_Animation_Start_Time:
   AttributeID: 714
-  DefaultValue: -1
+  DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Looping_Animation_Text_Label:
+Looping_Animation_End_Time:
   AttributeID: 715
-  DefaultValue: -2147483648
+  DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Looping_Animation_Context_ANN:
+Looping_Animation_Text_SNO:
   AttributeID: 716
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Heal_Effect_Last_Played_Tick:
+Looping_Animation_Text_Label:
   AttributeID: 717
-  DefaultValue: -1
+  DefaultValue: -2147483648
   ParameterType: -1
-  AttributeOperator: 3
+  AttributeOperator: 1
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Resource_Effect_Last_Played_tick:
+  SyncFlags: 0b00000000000000000000000001111110
+Looping_Animation_Context_ANN:
   AttributeID: 718
   DefaultValue: -1
-  ParameterType: 7
-  AttributeOperator: 3
+  ParameterType: -1
+  AttributeOperator: 1
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Thorns_Effect_Last_Played_tick:
+  SyncFlags: 0b00000000000000000000000001111110
+Heal_Effect_Last_Played_Tick:
   AttributeID: 719
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Turn_Rate_Scalar:
+Resource_Effect_Last_Played_tick:
   AttributeID: 720
+  DefaultValue: -1
+  ParameterType: 7
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Thorns_Effect_Last_Played_tick:
+  AttributeID: 721
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Turn_Rate_Scalar:
+  AttributeID: 722
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 5
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 No_Health_Drop:
-  AttributeID: 721
+  AttributeID: 723
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Leader:
-  AttributeID: 722
+  AttributeID: 724
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 IsContentRestrictedActor:
-  AttributeID: 723
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-God:
-  AttributeID: 724
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-EasyKill:
   AttributeID: 725
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-EasyDie:
+God:
   AttributeID: 726
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NeverDie:
+EasyKill:
   AttributeID: 727
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NeverDieBuffID:
+EasyDie:
   AttributeID: 728
-  DefaultValue: -1
+  DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 3
+  AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-IAmDeath:
+NeverDie:
   AttributeID: 729
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-FreeCastCheat:
+NeverDieBuffID:
   AttributeID: 730
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 1
+  AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-FreeCastCDCheat:
+IAmDeath:
   AttributeID: 731
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-CDCheat:
+FreeCastCheat:
   AttributeID: 732
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-NoDamageRange:
+FreeCastCDCheat:
   AttributeID: 733
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-FreeCrafting:
+CDCheat:
   AttributeID: 734
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-CraftingCritCheat:
+NoDamageRange:
   AttributeID: 735
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-SkillReqsDisabled:
+FreeCrafting:
   AttributeID: 736
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-SkillSlotReqsDisabled:
+CraftingCritCheat:
   AttributeID: 737
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-DrawPathfinds:
+SkillReqsDisabled:
   AttributeID: 738
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-DisablePotionDrops:
+SkillSlotReqsDisabled:
   AttributeID: 739
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+DrawPathfinds:
+  AttributeID: 740
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+DisablePotionDrops:
+  AttributeID: 741
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 EnableWorldTierItemRestrictions:
-  AttributeID: 740
+  AttributeID: 742
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 ForceSeasonalTabEnabled:
-  AttributeID: 741
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-AllowAllProducts:
-  AttributeID: 742
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-MinimapActive:
   AttributeID: 743
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Last_Blocked_ACD:
+AllowAllProducts:
   AttributeID: 744
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+MinimapActive:
+  AttributeID: 745
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Last_Blocked_ACD:
+  AttributeID: 746
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Last_Blocked_Time:
-  AttributeID: 745
+  AttributeID: 747
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Weapons_Hidden:
-  AttributeID: 746
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Main_Hand_Weapon_Hidden:
-  AttributeID: 747
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Off_Hand_Weapon_Hidden:
   AttributeID: 748
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Actor_Updates_Attributes_From_Owner:
+Main_Hand_Weapon_Hidden:
   AttributeID: 749
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Off_Hand_Weapon_Hidden:
+  AttributeID: 750
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Actor_Updates_Attributes_From_Owner:
+  AttributeID: 751
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Taunt_Target_ACD:
-  AttributeID: 750
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Charm_Source_ACD:
-  AttributeID: 751
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Fear_Source_ACD:
   AttributeID: 752
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Update_Interval_Override:
+Charm_Source_ACD:
   AttributeID: 753
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Fear_Source_ACD:
+  AttributeID: 754
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Update_Interval_Override:
+  AttributeID: 755
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Projectile_Effect_SNO:
-  AttributeID: 754
+  AttributeID: 756
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Power_Effect_Size:
-  AttributeID: 755
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Intensity:
-  AttributeID: 756
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Duration:
   AttributeID: 757
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Size_Per_Power:
+Power_Effect_Intensity:
   AttributeID: 758
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Power_Effect_Duration:
+  AttributeID: 759
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Power_Effect_Size_Per_Power:
+  AttributeID: 760
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Power_Effect_Intensity_Per_Power:
-  AttributeID: 759
+  AttributeID: 761
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Power_Effect_Intensity_Per_Skill_Rank:
-  AttributeID: 760
+  AttributeID: 762
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
@@ -5392,840 +5406,840 @@ Power_Effect_Intensity_Per_Skill_Rank:
   Formula: Min(PowerEffectIntensityPerSkillRank * sLevel, MaxPowerEffectIntensityFromSkillRanks)
   SyncFlags: 0b00000000000000000000000001111110
 Power_Effect_Duration_Per_Power:
-  AttributeID: 761
+  AttributeID: 763
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Power_Effect_Length:
-  AttributeID: 762
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Width:
-  AttributeID: 763
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Height:
   AttributeID: 764
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Length_Per_Power:
+Power_Effect_Width:
   AttributeID: 765
   DefaultValue: 0
-  ParameterType: 5
+  ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Width_Per_Power:
+Power_Effect_Height:
   AttributeID: 766
   DefaultValue: 0
-  ParameterType: 5
+  ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Height_Per_Power:
+Power_Effect_Length_Per_Power:
   AttributeID: 767
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Custom_Value_1:
+Power_Effect_Width_Per_Power:
   AttributeID: 768
-  DefaultValue: -3.40282e+38
-  ParameterType: -1
-  AttributeOperator: 4
+  DefaultValue: 0
+  ParameterType: 5
+  AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Custom_Value_2:
+Power_Effect_Height_Per_Power:
   AttributeID: 769
-  DefaultValue: -3.40282e+38
-  ParameterType: -1
-  AttributeOperator: 4
+  DefaultValue: 0
+  ParameterType: 5
+  AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Custom_Value_3:
+Power_Effect_Custom_Value_1:
   AttributeID: 770
   DefaultValue: -3.40282e+38
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Custom_Value_4:
+Power_Effect_Custom_Value_2:
   AttributeID: 771
   DefaultValue: -3.40282e+38
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_A:
+Power_Effect_Custom_Value_3:
   AttributeID: 772
-  DefaultValue: 1
+  DefaultValue: -3.40282e+38
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_B:
+Power_Effect_Custom_Value_4:
   AttributeID: 773
-  DefaultValue: 1
+  DefaultValue: -3.40282e+38
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_C:
+Power_Effect_Routing_Function_A:
   AttributeID: 774
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Rope_Rigidity:
+Power_Effect_Routing_Function_B:
   AttributeID: 775
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_A_Per_Power:
+Power_Effect_Routing_Function_C:
   AttributeID: 776
   DefaultValue: 1
-  ParameterType: 14
+  ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_B_Per_Power:
+Power_Effect_Rope_Rigidity:
   AttributeID: 777
   DefaultValue: 1
-  ParameterType: 14
+  ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Routing_Function_C_Per_Power:
+Power_Effect_Routing_Function_A_Per_Power:
   AttributeID: 778
   DefaultValue: 1
   ParameterType: 14
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Power_Effect_Rope_Rigidity_Per_Power:
+Power_Effect_Routing_Function_B_Per_Power:
   AttributeID: 779
   DefaultValue: 1
   ParameterType: 14
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-On_Hit_CC_Proc_Chance:
+Power_Effect_Routing_Function_C_Per_Power:
   AttributeID: 780
+  DefaultValue: 1
+  ParameterType: 14
+  AttributeOperator: 4
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Power_Effect_Rope_Rigidity_Per_Power:
+  AttributeID: 781
+  DefaultValue: 1
+  ParameterType: 14
+  AttributeOperator: 4
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+On_Hit_CC_Proc_Chance:
+  AttributeID: 782
   DefaultValue: 0
   ParameterType: 19
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 On_Crit_CC_Proc_Chance:
-  AttributeID: 781
+  AttributeID: 783
   DefaultValue: 0
   ParameterType: 19
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 On_Hit_Knockback_Proc_Chance:
-  AttributeID: 782
+  AttributeID: 784
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 On_Hit_Vulnerable_Proc_Chance:
-  AttributeID: 783
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-On_Hit_Vulnerable_Proc_Duration_Seconds:
-  AttributeID: 784
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-On_Hit_Execute_Low_Health_Non_Elite_Chance:
   AttributeID: 785
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Movement_Bonus_On_Elite_Kill:
+On_Hit_Vulnerable_Proc_Duration_Seconds:
   AttributeID: 786
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Movement_Bonus_On_Elite_Kill_Duration:
-  AttributeID: 787
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_On_Elite_Kill:
+On_Hit_Execute_Low_Health_Non_Elite_Chance:
+  AttributeID: 787
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Movement_Bonus_On_Elite_Kill:
   AttributeID: 788
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_On_Elite_Kill_Duration:
+Movement_Bonus_On_Elite_Kill_Duration:
   AttributeID: 789
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_On_Elite_Kill:
+Damage_Bonus_On_Elite_Kill:
   AttributeID: 790
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 7
+  AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_On_Elite_Kill_Duration:
+Damage_Bonus_On_Elite_Kill_Duration:
   AttributeID: 791
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Hitpoints_On_Elite_Kill:
+Damage_Reduction_On_Elite_Kill:
   AttributeID: 792
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-On_Hit_Damage_Bonus_Proc_Chance:
+Damage_Reduction_On_Elite_Kill_Duration:
   AttributeID: 793
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-On_Hit_Damage_Bonus_Percent:
+Hitpoints_On_Elite_Kill:
   AttributeID: 794
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-On_Hit_Damage_Bonus_Duration:
+On_Hit_Damage_Bonus_Proc_Chance:
   AttributeID: 795
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Done_Reduction_Percent_On_Pet_Crit:
+On_Hit_Damage_Bonus_Percent:
   AttributeID: 796
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 7
+  AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Done_Reduction_On_Pet_Crit_Duration:
+On_Hit_Damage_Bonus_Duration:
   AttributeID: 797
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Attack_Speed_Bonus_On_Dodge:
+Damage_Done_Reduction_Percent_On_Pet_Crit:
   AttributeID: 798
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Attack_Speed_Bonus_On_Dodge_Duration:
+Damage_Done_Reduction_On_Pet_Crit_Duration:
   AttributeID: 799
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_Percent_On_Dodge:
+Attack_Speed_Bonus_On_Dodge:
   AttributeID: 800
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_Percent_On_Dodge_Duration:
+Attack_Speed_Bonus_On_Dodge_Duration:
   AttributeID: 801
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Fortified_When_Struck_Percent_Chance:
+Damage_Bonus_Percent_On_Dodge:
   AttributeID: 802
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Fortified_When_Struck_Amount:
+Damage_Bonus_Percent_On_Dodge_Duration:
   AttributeID: 803
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Barrier_When_Struck_Percent_Chance:
+Fortified_When_Struck_Percent_Chance:
   AttributeID: 804
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Proc_Flat_Hitpoints_On_Hit:
+Fortified_When_Struck_Amount:
   AttributeID: 805
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Proc_Flat_Hitpoints_On_Hit_Unscaled_By_Player_Health:
+Barrier_When_Struck_Percent_Chance:
   AttributeID: 806
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Done_Percent_Reduction:
+Proc_Flat_Hitpoints_On_Hit:
   AttributeID: 807
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Proc_Flat_Hitpoints_On_Hit_Unscaled_By_Player_Health:
+  AttributeID: 808
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Done_Percent_Reduction:
+  AttributeID: 809
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Reduction_From_Elites:
-  AttributeID: 808
+  AttributeID: 810
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_Vs_Elites:
-  AttributeID: 809
+  AttributeID: 811
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_Damage_Percent_Bonus_Vs_Elites:
-  AttributeID: 810
+  AttributeID: 812
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Type_Percent_Bonus_Vs_Elites:
-  AttributeID: 811
+  AttributeID: 813
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_Vs_CC_Target:
-  AttributeID: 812
+  AttributeID: 814
   DefaultValue: 0
   ParameterType: 20
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_Damage_Percent_Bonus_Vs_CC_Target:
-  AttributeID: 813
+  AttributeID: 815
   DefaultValue: 0
   ParameterType: 20
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_Vs_CC_All:
-  AttributeID: 814
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Bonus_Against_Dot_Type:
-  AttributeID: 815
-  DefaultValue: 0
-  ParameterType: 1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Bonus_While_Shapeshifted:
   AttributeID: 816
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Bonus_Per_Shapeshift_Form:
+Damage_Percent_Bonus_Against_Dot_Type:
   AttributeID: 817
+  DefaultValue: 0
+  ParameterType: 1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Percent_Bonus_While_Shapeshifted:
+  AttributeID: 818
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Percent_Bonus_Per_Shapeshift_Form:
+  AttributeID: 819
   DefaultValue: 0
   ParameterType: 30
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_Damage_Percent_Bonus_Per_Shapeshift_Form:
-  AttributeID: 818
+  AttributeID: 820
   DefaultValue: 0
   ParameterType: 30
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_When_Weapon_Swapping:
-  AttributeID: 819
+  AttributeID: 821
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Bonus_While_Affected_By_Power:
-  AttributeID: 820
+  AttributeID: 822
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Reduction_From_Dotted_Enemy:
-  AttributeID: 821
+  AttributeID: 823
   DefaultValue: 0
   ParameterType: 1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 All_Damage_Percent_Reduction_From_Dotted_Enemy:
-  AttributeID: 822
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 7
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Reduction_From_CCed_Target:
-  AttributeID: 823
-  DefaultValue: 0
-  ParameterType: 20
-  AttributeOperator: 7
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Reduction_From_CCed_Target_Any:
   AttributeID: 824
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Percent_Reduction_From_Vulnerable_Target:
+Damage_Percent_Reduction_From_CCed_Target:
   AttributeID: 825
+  DefaultValue: 0
+  ParameterType: 20
+  AttributeOperator: 7
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Percent_Reduction_From_CCed_Target_Any:
+  AttributeID: 826
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 7
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Percent_Reduction_From_Vulnerable_Target:
+  AttributeID: 827
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Percent_Reduction_From_Targets_With_Skill_Tag:
-  AttributeID: 826
+  AttributeID: 828
   DefaultValue: 0
   ParameterType: 33
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Item_Manipulation_Timeout:
-  AttributeID: 827
+  AttributeID: 829
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Picked_Up_Time:
-  AttributeID: 828
+  AttributeID: 830
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Unequipped Time:
-  AttributeID: 829
+  AttributeID: 831
   DefaultValue: 1
   ParameterType: 17
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Last_ACD_Killed_Time:
-  AttributeID: 830
+  AttributeID: 832
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 CannotDieDuring:
-  AttributeID: 831
+  AttributeID: 833
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Weapon_On_Hit_Percent_Bleed_Proc_Chance:
-  AttributeID: 832
+  AttributeID: 834
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Weapon_On_Hit_Percent_Bleed_Proc_Damage:
-  AttributeID: 833
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_Weapon_On_Hit_Percent_Bleed_Proc_Damage:
-  AttributeID: 834
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 8
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Weapon_On_Hit_Percent_Bleed_Proc_Duration:
   AttributeID: 835
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Power_Damage_Percent_Bonus:
+Multiplicative_Weapon_On_Hit_Percent_Bleed_Proc_Damage:
   AttributeID: 836
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 8
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Weapon_On_Hit_Percent_Bleed_Proc_Duration:
+  AttributeID: 837
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Power_Damage_Percent_Bonus:
+  AttributeID: 838
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_Power_Damage_Percent_Bonus:
-  AttributeID: 837
+  AttributeID: 839
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Power_Damage_Percent_Penalty:
-  AttributeID: 838
+  AttributeID: 840
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Power_Instance_Damage_Percent_Bonus:
-  AttributeID: 839
-  DefaultValue: 0
-  ParameterType: 18
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000000
-Multiplicative_Power_Instance_Damage_Percent_Bonus:
-  AttributeID: 840
-  DefaultValue: 0
-  ParameterType: 18
-  AttributeOperator: 8
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000000
-Power_Instance_Crit_Chance_Bonus:
   AttributeID: 841
   DefaultValue: 0
   ParameterType: 18
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Power_Instance_Crit_Damage_Bonus:
+Multiplicative_Power_Instance_Damage_Percent_Bonus:
   AttributeID: 842
-  DefaultValue: 0
-  ParameterType: 18
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000000
-Multiplicative_Power_Instance_Crit_Damage_Bonus:
-  AttributeID: 843
   DefaultValue: 0
   ParameterType: 18
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Power_Instance_Overpower_Chance_Bonus:
+Power_Instance_Crit_Chance_Bonus:
+  AttributeID: 843
+  DefaultValue: 0
+  ParameterType: 18
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000000
+Power_Instance_Crit_Damage_Bonus:
   AttributeID: 844
   DefaultValue: 0
   ParameterType: 18
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
-Power_Instance_Overpower_Damage_Bonus:
+Multiplicative_Power_Instance_Crit_Damage_Bonus:
   AttributeID: 845
+  DefaultValue: 0
+  ParameterType: 18
+  AttributeOperator: 8
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000000
+Power_Instance_Overpower_Chance_Bonus:
+  AttributeID: 846
+  DefaultValue: 0
+  ParameterType: 18
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000000
+Power_Instance_Overpower_Damage_Bonus:
+  AttributeID: 847
   DefaultValue: 0
   ParameterType: 18
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Multiplicative_Power_Instance_Overpower_Damage_Bonus:
-  AttributeID: 846
+  AttributeID: 848
   DefaultValue: 0
   ParameterType: 18
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Power_Cooldown_Reduction:
-  AttributeID: 847
-  DefaultValue: 0
-  ParameterType: 5
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Power_Duration_Bonus_Pct:
-  AttributeID: 848
-  DefaultValue: 0
-  ParameterType: 5
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Power_Crit_Percent_Bonus:
   AttributeID: 849
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Power_Damage_Type_Override:
+Power_Duration_Bonus_Pct:
   AttributeID: 850
+  DefaultValue: 0
+  ParameterType: 5
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Power_Crit_Percent_Bonus:
+  AttributeID: 851
+  DefaultValue: 0
+  ParameterType: 5
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Power_Damage_Type_Override:
+  AttributeID: 852
   DefaultValue: -1
   ParameterType: 5
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Item_Level_Requirement_Reduction:
-  AttributeID: 851
+  AttributeID: 853
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Waiting_To_Accept_Resurrection:
-  AttributeID: 852
+  AttributeID: 854
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Ghosted:
-  AttributeID: 853
+  AttributeID: 855
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Perk_Buff_Poll_Next_Time:
-  AttributeID: 854
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Known_By_Owner:
-  AttributeID: 855
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Never_Deactivates:
   AttributeID: 856
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Projectile_Detonate_Time:
+Known_By_Owner:
   AttributeID: 857
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Never_Deactivates:
+  AttributeID: 858
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Projectile_Detonate_Time:
+  AttributeID: 859
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000100000
 Projectile_Uncapped_Lifetime:
-  AttributeID: 858
+  AttributeID: 860
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Effect_Owner_ANN:
-  AttributeID: 859
+  AttributeID: 861
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Elite_Engaged:
-  AttributeID: 860
+  AttributeID: 862
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Engaged_Rare_Time:
-  AttributeID: 861
+  AttributeID: 863
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 CrowdControl_Projected_End_Time:
-  AttributeID: 862
+  AttributeID: 864
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Has_Dropped_Special_loot:
-  AttributeID: 863
+  AttributeID: 865
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Scroll_Buff:
-  AttributeID: 864
+  AttributeID: 866
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Buff_Exclusive_Type_Max:
-  AttributeID: 865
+  AttributeID: 867
   DefaultValue: 1
   ParameterType: 15
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Actor_Forwards_Buffs:
-  AttributeID: 866
+  AttributeID: 868
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Item_Marked_As_Junk:
-  AttributeID: 867
+  AttributeID: 869
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Item_Is_BOE:
-  AttributeID: 868
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000001000
-Season:
-  AttributeID: 869
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000001000
-Item_Base_Cost:
   AttributeID: 870
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
-Item_Enchantment_Cost:
+Season:
   AttributeID: 871
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
-DamageDoneTotalTrackedHi:
+Item_Base_Cost:
   AttributeID: 872
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-DamageDoneTotalTrackedLo:
+  SyncFlags: 0b00000000000000000000000000001000
+Item_Enchantment_Cost:
   AttributeID: 873
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-DamageDoneTrackingStartTick:
+  SyncFlags: 0b00000000000000000000000000001000
+DamageDoneTotalTrackedHi:
   AttributeID: 874
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-PowerPersistsAcrossGames:
+DamageDoneTotalTrackedLo:
   AttributeID: 875
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+DamageDoneTrackingStartTick:
+  AttributeID: 876
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+PowerPersistsAcrossGames:
+  AttributeID: 877
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Experience_Bonus_Percent_IGR_Buff:
-  AttributeID: 876
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Experience_Bonus_Percent_Anniversary_Buff:
-  AttributeID: 877
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Experience_Bonus_Percent_Community_Buff:
   AttributeID: 878
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Experience_Bonus_Percent_Super_Scalar:
+Experience_Bonus_Percent_Anniversary_Buff:
   AttributeID: 879
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Experience_Bonus_Percent_Super_Scalar_Total:
+Experience_Bonus_Percent_Community_Buff:
   AttributeID: 880
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Experience_Bonus_Percent_Super_Scalar:
+  AttributeID: 881
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Experience_Bonus_Percent_Super_Scalar_Total:
+  AttributeID: 882
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -6233,350 +6247,350 @@ Experience_Bonus_Percent_Super_Scalar_Total:
   Formula: Experience_Bonus_Percent_Super_Scalar + Experience_Bonus_Percent_Community_Buff + Experience_Bonus_Percent_IGR_Buff + Experience_Bonus_Percent_Anniversary_Buff
   SyncFlags: 0b00000000000000000000000001001000
 AlwaysShowFloatingNumbers:
-  AttributeID: 881
+  AttributeID: 883
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Supress_Thorns_Effect:
-  AttributeID: 882
+  AttributeID: 884
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Dynamic_Entrance_GUID:
-  AttributeID: 883
+  AttributeID: 885
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Bonus_Chance_To_Be_Crit_Hit:
-  AttributeID: 884
+  AttributeID: 886
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Bonus_Chance_To_Be_Crit_Hit_By_Actor:
-  AttributeID: 885
+  AttributeID: 887
   DefaultValue: 0
   ParameterType: 12
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Power Bonus Attack Radius:
-  AttributeID: 886
+  AttributeID: 888
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Power Reduction Attack Radius:
-  AttributeID: 887
+  AttributeID: 889
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Item_Store_Player_High:
-  AttributeID: 888
+  AttributeID: 890
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Item_Store_Player_Low:
-  AttributeID: 889
+  AttributeID: 891
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Item_Equipped_But_Disabled:
-  AttributeID: 890
+  AttributeID: 892
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Item_Legendary_Affix_Disabled:
-  AttributeID: 891
+  AttributeID: 893
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Attribute_Projectile_Pass_Through:
-  AttributeID: 892
+  AttributeID: 894
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Set_Item_Discount:
-  AttributeID: 893
+  AttributeID: 895
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Dont_Update_Camera_While_Attached:
-  AttributeID: 894
+  AttributeID: 896
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Linked Dynamic Entrance GUID:
-  AttributeID: 895
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Boost_TC_Index:
-  AttributeID: 896
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Boost_TC_NextTime:
   AttributeID: 897
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Item_Rest_Bonus_Pool:
+Boost_TC_Index:
   AttributeID: 898
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Boost_TC_NextTime:
+  AttributeID: 899
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Item_Rest_Bonus_Pool:
+  AttributeID: 900
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Item_Unlucky_Bonus_Secs:
-  AttributeID: 899
+  AttributeID: 901
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Item_Unlucky_Bonus_Allow:
-  AttributeID: 900
+  AttributeID: 902
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Random_Item_Unlucky_Bonus:
-  AttributeID: 901
+  AttributeID: 903
   DefaultValue: 0
   ParameterType: 17
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Avenger_Buildup_Secs:
-  AttributeID: 902
+  AttributeID: 904
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Evade_Max_Charges:
-  AttributeID: 903
+  AttributeID: 905
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Evade_Reduce_Cooldown_On_Attack:
-  AttributeID: 904
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Evade_Movement_Dodge_Chance:
-  AttributeID: 905
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Evade_Movement_Speed:
   AttributeID: 906
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Evade_Movement_Speed_Duration:
+Evade_Movement_Dodge_Chance:
   AttributeID: 907
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Prevent_Evade_During:
+Evade_Movement_Speed:
   AttributeID: 908
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Evade_Movement_Speed_Duration:
+  AttributeID: 909
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Prevent_Evade_During:
+  AttributeID: 910
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Item_Assigned_Account_High:
-  AttributeID: 909
+  AttributeID: 911
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Item_Assigned_Account_Low:
-  AttributeID: 910
+  AttributeID: 912
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Pierce_Charge:
-  AttributeID: 911
+  AttributeID: 913
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Resurrected:
-  AttributeID: 912
+  AttributeID: 914
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
 Thorns_AOE_Radius_Next_Time:
-  AttributeID: 913
+  AttributeID: 915
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Movement_Destroys_Waller_Walls:
-  AttributeID: 914
+  AttributeID: 916
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Mail_Flag_Icon:
-  AttributeID: 915
+  AttributeID: 917
   DefaultValue: 0
   ParameterType: 9
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Forced Move:
-  AttributeID: 916
+  AttributeID: 918
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 CurrentPowerHitCount:
-  AttributeID: 917
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-LastTimeBlockedAnAttack:
-  AttributeID: 918
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Last_Time_Damaged:
   AttributeID: 919
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Last_Time_Inflicted_Damage:
+LastTimeBlockedAnAttack:
   AttributeID: 920
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Disable_Proximity_Checks:
+Last_Time_Damaged:
   AttributeID: 921
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Mounted:
+Last_Time_Inflicted_Damage:
   AttributeID: 922
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Disable_Proximity_Checks:
+  AttributeID: 923
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Mounted:
+  AttributeID: 924
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 Current_Mount:
-  AttributeID: 923
+  AttributeID: 925
   DefaultValue: -1
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Dismount_Dmg_Bonus:
-  AttributeID: 924
+  AttributeID: 926
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Fear_Current:
-  AttributeID: 925
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000000000001
-Mount_Fear_Reduction_Pct:
-  AttributeID: 926
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Mount_Fear_Increase_Rate_Per_Second:
   AttributeID: 927
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
-Mount_Aggro_Reduction_Base_Pct:
+Mount_Fear_Reduction_Pct:
   AttributeID: 928
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Mount_Fear_Increase_Rate_Per_Second:
+  AttributeID: 929
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000000000001
+Mount_Aggro_Reduction_Base_Pct:
+  AttributeID: 930
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Aggro_Reduction_Bonus_Pct:
-  AttributeID: 929
+  AttributeID: 931
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Aggro_Reduction_Total:
-  AttributeID: 930
+  AttributeID: 932
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -6584,21 +6598,21 @@ Mount_Aggro_Reduction_Total:
   Formula: Mount_Aggro_Reduction_Base_Pct * (1 + Mount_Aggro_Reduction_Bonus_Pct)
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Max_Base:
-  AttributeID: 931
+  AttributeID: 933
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Max_Bonus:
-  AttributeID: 932
+  AttributeID: 934
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Max_Total:
-  AttributeID: 933
+  AttributeID: 935
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -6606,21 +6620,21 @@ Mount_Carrot_Max_Total:
   Formula: Mount_Carrot_Max_Base + Mount_Carrot_Max_Bonus
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Regen_Base:
-  AttributeID: 934
+  AttributeID: 936
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Regen_Bonus_Pct:
-  AttributeID: 935
+  AttributeID: 937
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000001
 Mount_Carrot_Regen_Total:
-  AttributeID: 936
+  AttributeID: 938
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
@@ -6628,378 +6642,378 @@ Mount_Carrot_Regen_Total:
   Formula: Mount_Carrot_Regen_Base * (1 + Mount_Carrot_Regen_Bonus_Pct)
   SyncFlags: 0b00000000000000000000000000000001
 Mounted_ACD:
-  AttributeID: 937
+  AttributeID: 939
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 Rider_ACD:
-  AttributeID: 938
+  AttributeID: 940
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000010
 Gizmo_Player_State:
-  AttributeID: 939
+  AttributeID: 941
   DefaultValue: 0
   ParameterType: 21
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Gizmo_Anim_Player_State:
-  AttributeID: 940
+  AttributeID: 942
   DefaultValue: -1
   ParameterType: 21
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Gizmo_Max_DRLG_Operate_Count:
-  AttributeID: 941
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Gizmo_Anim_Player_Global_Idle_Overridden:
-  AttributeID: 942
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Retreating:
   AttributeID: 943
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Retreat Radius Override:
+Gizmo_Anim_Player_Global_Idle_Overridden:
   AttributeID: 944
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Retreating:
+  AttributeID: 945
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Retreat Radius Override:
+  AttributeID: 946
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Retreat Soft Disable:
-  AttributeID: 945
+  AttributeID: 947
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Damage_Bonus_To_Near:
-  AttributeID: 946
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_Damage_Bonus_To_Near:
-  AttributeID: 947
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 8
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_To_Far:
   AttributeID: 948
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_Damage_Bonus_To_Far:
+Multiplicative_Damage_Bonus_To_Near:
   AttributeID: 949
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Crit_Chance_Bonus_To_Near:
+Damage_Bonus_To_Far:
   AttributeID: 950
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Crit_Chance_Bonus_To_Far:
+Multiplicative_Damage_Bonus_To_Far:
   AttributeID: 951
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Crit_Damage_Bonus_To_Near:
+Crit_Chance_Bonus_To_Near:
   AttributeID: 952
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Crit_Damage_Bonus_To_Far:
+Crit_Chance_Bonus_To_Far:
   AttributeID: 953
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_From_Near:
+Crit_Damage_Bonus_To_Near:
   AttributeID: 954
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Crit_Damage_Bonus_To_Far:
+  AttributeID: 955
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Reduction_From_Near:
+  AttributeID: 956
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Reduction_From_Far:
-  AttributeID: 955
+  AttributeID: 957
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Increase_From_Near:
-  AttributeID: 956
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Increase_From_Far:
-  AttributeID: 957
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_To_Low_Health:
   AttributeID: 958
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_Damage_Bonus_To_Low_Health:
+Damage_Increase_From_Far:
   AttributeID: 959
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 8
+  AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Bonus_To_High_Health:
+Damage_Bonus_To_Low_Health:
   AttributeID: 960
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Multiplicative_Damage_Bonus_To_High_Health:
+Multiplicative_Damage_Bonus_To_Low_Health:
   AttributeID: 961
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_At_Low_Health:
+Damage_Bonus_To_High_Health:
   AttributeID: 962
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Multiplicative_Damage_Bonus_To_High_Health:
+  AttributeID: 963
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 8
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Reduction_At_Low_Health:
+  AttributeID: 964
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Reduction_At_High_Health:
-  AttributeID: 963
+  AttributeID: 965
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Bonus_At_High_Health:
-  AttributeID: 964
+  AttributeID: 966
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Multiplicative_Damage_Bonus_At_High_Health:
-  AttributeID: 965
+  AttributeID: 967
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 8
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Reduction:
-  AttributeID: 966
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 7
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_While_Having_Shield:
-  AttributeID: 967
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 7
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_While_Crowd_Controlled:
   AttributeID: 968
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Reduction_While_Stationary:
+Damage_Reduction_While_Having_Shield:
   AttributeID: 969
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Damage_Increase_While_Stationary:
+Damage_Reduction_While_Crowd_Controlled:
   AttributeID: 970
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 7
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Reduction_While_Stationary:
+  AttributeID: 971
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 7
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Damage_Increase_While_Stationary:
+  AttributeID: 972
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Damage_Type_Damage_Reduction:
-  AttributeID: 971
+  AttributeID: 973
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Unstoppable:
-  AttributeID: 972
+  AttributeID: 974
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Crowd_Control_Build_Up:
-  AttributeID: 973
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Crowd_Control_Build_Up_Threshold_Base:
-  AttributeID: 974
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001111110
-Crowd_Control_Build_Up_Threshold:
   AttributeID: 975
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Stagger_Threshold_Additional_Player:
+Crowd_Control_Build_Up_Threshold_Base:
   AttributeID: 976
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Stagger_Decay_Rate_Additional_Player:
+Crowd_Control_Build_Up_Threshold:
   AttributeID: 977
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
-Boss_In_Combat_ANN:
+Stagger_Threshold_Additional_Player:
   AttributeID: 978
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Stagger_Decay_Rate_Additional_Player:
+  AttributeID: 979
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001111110
+Boss_In_Combat_ANN:
+  AttributeID: 980
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Health Bar Visibility:
-  AttributeID: 979
+  AttributeID: 981
   DefaultValue: 0
   ParameterType: 36
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000010
 Cannot_Be_Staggered:
-  AttributeID: 980
+  AttributeID: 982
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Staggered:
-  AttributeID: 981
+  AttributeID: 983
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Staggered_Time_Remaining:
-  AttributeID: 982
+  AttributeID: 984
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Necro_Corpse_Charges:
-  AttributeID: 983
+  AttributeID: 985
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Necro_Corpse_Source_Actor_SNO:
-  AttributeID: 984
+  AttributeID: 986
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 AI_Prop_Type:
-  AttributeID: 985
+  AttributeID: 987
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 AI_Prop_Partner_ANN:
-  AttributeID: 986
+  AttributeID: 988
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 AI_Prop_Pairing_Name:
-  AttributeID: 987
+  AttributeID: 989
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Talent_Rank:
-  AttributeID: 988
+  AttributeID: 990
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Talent_Rank_Bonus:
-  AttributeID: 989
+  AttributeID: 991
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Talent_Rank_Total:
-  AttributeID: 990
+  AttributeID: 992
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
@@ -7007,196 +7021,196 @@ Talent_Rank_Total:
   Formula: Talent_Rank + Talent_Rank_Bonus
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Bonus:
-  AttributeID: 991
+  AttributeID: 993
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Skill_Tag_Bonus:
-  AttributeID: 992
+  AttributeID: 994
   DefaultValue: 0
   ParameterType: 33
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_All_Bonus:
-  AttributeID: 993
+  AttributeID: 995
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Bonus_Temporary:
-  AttributeID: 994
+  AttributeID: 996
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Skill_Tag_Bonus_Temporary:
-  AttributeID: 995
+  AttributeID: 997
   DefaultValue: 0
   ParameterType: 33
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_All_Bonus_Temporary:
-  AttributeID: 996
+  AttributeID: 998
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Grant:
-  AttributeID: 997
+  AttributeID: 999
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_Skill_TagGrant:
-  AttributeID: 998
+  AttributeID: 1000
   DefaultValue: 0
   ParameterType: 33
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Skill_Rank_All_Grant:
-  AttributeID: 999
+  AttributeID: 1001
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Cheat_Skill_Rank_All:
-  AttributeID: 1000
+  AttributeID: 1002
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Custom_Power_Value_1:
-  AttributeID: 1001
-  DefaultValue: 0
-  ParameterType: 22
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Custom_Power_Value_2:
-  AttributeID: 1002
-  DefaultValue: 0
-  ParameterType: 22
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Custom_Power_Flat_Value_1:
   AttributeID: 1003
   DefaultValue: 0
   ParameterType: 22
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Custom_Power_Flat_Value_1_Unscaled_By_Player_Health:
+Custom_Power_Value_2:
   AttributeID: 1004
   DefaultValue: 0
   ParameterType: 22
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Custom_Power_Flat_Value_2:
+Custom_Power_Flat_Value_1:
   AttributeID: 1005
   DefaultValue: 0
   ParameterType: 22
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Custom_Power_Flat_Value_2_Unscaled_By_Player_Health:
+Custom_Power_Flat_Value_1_Unscaled_By_Player_Health:
   AttributeID: 1006
   DefaultValue: 0
   ParameterType: 22
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Value_1:
+Custom_Power_Flat_Value_2:
   AttributeID: 1007
   DefaultValue: 0
-  ParameterType: 16
-  AttributeOperator: 1
+  ParameterType: 22
+  AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Value_2:
+Custom_Power_Flat_Value_2_Unscaled_By_Player_Health:
   AttributeID: 1008
   DefaultValue: 0
-  ParameterType: 16
-  AttributeOperator: 1
+  ParameterType: 22
+  AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Flat_Value_1:
+Affix_Value_1:
   AttributeID: 1009
   DefaultValue: 0
   ParameterType: 16
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Flat_Value_1_Unscaled_By_Player_Health:
+Affix_Value_2:
   AttributeID: 1010
   DefaultValue: 0
   ParameterType: 16
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Flat_Value_2:
+Affix_Flat_Value_1:
   AttributeID: 1011
   DefaultValue: 0
   ParameterType: 16
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Affix_Flat_Value_2_Unscaled_By_Player_Health:
+Affix_Flat_Value_1_Unscaled_By_Player_Health:
   AttributeID: 1012
   DefaultValue: 0
   ParameterType: 16
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Legendary_Affix_Equipped:
+Affix_Flat_Value_2:
   AttributeID: 1013
+  DefaultValue: 0
+  ParameterType: 16
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Affix_Flat_Value_2_Unscaled_By_Player_Health:
+  AttributeID: 1014
+  DefaultValue: 0
+  ParameterType: 16
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Legendary_Affix_Equipped:
+  AttributeID: 1015
   DefaultValue: 0
   ParameterType: 16
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
 Condition_Rune_Scalar:
-  AttributeID: 1014
-  DefaultValue: 1
-  ParameterType: 22
-  AttributeOperator: 4
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Effect_Rune_Magnitude:
-  AttributeID: 1015
-  DefaultValue: 1
-  ParameterType: 22
-  AttributeOperator: 4
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Effect_Rune_Magnitude_Flat:
   AttributeID: 1016
   DefaultValue: 1
   ParameterType: 22
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Effect_Rune_Magnitude_Flat_Unscaled_By_Player_Health:
+Effect_Rune_Magnitude:
   AttributeID: 1017
   DefaultValue: 1
   ParameterType: 22
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Effect_Rune_Magnitude_Total:
+Effect_Rune_Magnitude_Flat:
   AttributeID: 1018
+  DefaultValue: 1
+  ParameterType: 22
+  AttributeOperator: 4
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Effect_Rune_Magnitude_Flat_Unscaled_By_Player_Health:
+  AttributeID: 1019
+  DefaultValue: 1
+  ParameterType: 22
+  AttributeOperator: 4
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Effect_Rune_Magnitude_Total:
+  AttributeID: 1020
   DefaultValue: 1
   ParameterType: 22
   AttributeOperator: 4
@@ -7204,364 +7218,371 @@ Effect_Rune_Magnitude_Total:
   FormulaItem: Effect_Rune_Magnitude * Effect_Rune_Magnitude_Flat * Condition_Rune_Scalar
   SyncFlags: 0b00000000000000000000000001001000
 ShopRestockTimeHi:
-  AttributeID: 1019
+  AttributeID: 1021
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 ShopRestockTimeLo:
-  AttributeID: 1020
+  AttributeID: 1022
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Resurrection_at_Headstone_Allowed:
-  AttributeID: 1021
+  AttributeID: 1023
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Players_Contributing_To_Resurrection:
-  AttributeID: 1022
+  AttributeID: 1024
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Headstone_Resurrection_Progress:
-  AttributeID: 1023
+  AttributeID: 1025
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Headstone_Resurrection_Progress_Client:
-  AttributeID: 1024
+  AttributeID: 1026
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Headstone_Actor_Override:
-  AttributeID: 1025
+  AttributeID: 1027
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 ManuallyTrackedQuestSNO:
-  AttributeID: 1026
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-OverrideTrackedQuestSNO:
-  AttributeID: 1027
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-ManuallyTrackedAchievementSNO:
   AttributeID: 1028
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-OverrideTrackedAchievementSNO:
+OverrideTrackedQuestSNO:
   AttributeID: 1029
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-Combat_Effect_Chance_Bonus:
+ManuallyTrackedAchievementSNO:
   AttributeID: 1030
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+OverrideTrackedAchievementSNO:
+  AttributeID: 1031
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+Combat_Effect_Chance_Bonus:
+  AttributeID: 1032
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Combat_Effect_Chance_Bonus_Per_Damage_Type:
-  AttributeID: 1031
+  AttributeID: 1033
   DefaultValue: 0
   ParameterType: 0
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Combat_Effect_Chance_Bonus_Per_Skill:
-  AttributeID: 1032
+  AttributeID: 1034
   DefaultValue: 0
   ParameterType: 5
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Combat_Effect_Chance_Bonus_Barrier_Active:
-  AttributeID: 1033
+  AttributeID: 1035
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Hit_Effect_Chance_Bonus_Per_Skill_Tag:
-  AttributeID: 1034
+  AttributeID: 1036
   DefaultValue: 0
   ParameterType: 33
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Slowkill:
-  AttributeID: 1035
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001001000
-XPDisable:
-  AttributeID: 1036
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001001000
-InstantRez:
   AttributeID: 1037
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Force_Crit:
+XPDisable:
   AttributeID: 1038
-  DefaultValue: -1
+  DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Force_Overpower:
+InstantRez:
   AttributeID: 1039
-  DefaultValue: -1
+  DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Force_Hit_Effect:
+Force_Crit:
   AttributeID: 1040
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Knockback:
+Force_Overpower:
   AttributeID: 1041
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-IgnoreAttackAndDefense:
+Force_Hit_Effect:
   AttributeID: 1042
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-AlwaysPlayGetHit:
+Knockback:
   AttributeID: 1043
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-Phasing Disabled:
+IgnoreAttackAndDefense:
   AttributeID: 1044
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001001000
-DebugLoggingTypesEnabled:
+AlwaysPlayGetHit:
   AttributeID: 1045
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001001000
+Phasing Disabled:
+  AttributeID: 1046
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001001000
+DebugLoggingTypesEnabled:
+  AttributeID: 1047
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 RevealMinimapAllScenes:
-  AttributeID: 1046
+  AttributeID: 1048
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Barrier_Bonus_Percent:
-  AttributeID: 1047
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Barrier_Duration_Bonus_Percent:
-  AttributeID: 1048
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 0
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001001000
-Shrine_Elixir_Duration_Bonus:
   AttributeID: 1049
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Gold_Find:
+Barrier_Duration_Bonus_Percent:
   AttributeID: 1050
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Gizmo_Active_cooldown_end_time:
+Shrine_Elixir_Duration_Bonus:
   AttributeID: 1051
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Pet_Damage_Bonus_Percent:
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Gold_Find:
   AttributeID: 1052
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
-Pet_Damage_Reduction_Percent:
+Gizmo_Active_cooldown_end_time:
   AttributeID: 1053
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Pet_Damage_Bonus_Percent:
+  AttributeID: 1054
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001001000
+Pet_Damage_Reduction_Percent:
+  AttributeID: 1055
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 7
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Pet_Attack_Speed_Bonus_Percent:
-  AttributeID: 1054
+  AttributeID: 1056
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Pet_Move_Speed_Bonus_Percent:
-  AttributeID: 1055
+  AttributeID: 1057
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 Previous_Health_Percent:
-  AttributeID: 1056
+  AttributeID: 1058
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Health_Percent_Callback_Count:
-  AttributeID: 1057
+  AttributeID: 1059
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Max_Concurrent_Summons_Override:
-  AttributeID: 1058
+  AttributeID: 1060
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Player_Is_AI_Controlled:
-  AttributeID: 1059
+  AttributeID: 1061
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
 Player_Is_Trading:
-  AttributeID: 1060
+  AttributeID: 1062
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Player_Is_Party_Invitable:
-  AttributeID: 1061
+  AttributeID: 1063
   DefaultValue: 1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Item_Find:
-  AttributeID: 1062
+  AttributeID: 1064
   DefaultValue: 0
   ParameterType: 23
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001001000
 NPC_Replaced_By_Follower:
-  AttributeID: 1063
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-NPC_Cloned_From_Actor:
-  AttributeID: 1064
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-NPC_Cloned_From_Actor_SNO:
   AttributeID: 1065
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-NPC_Clone_Visibility:
+NPC_Cloned_From_Actor:
   AttributeID: 1066
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 1
+  AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-NPC_Cloned_For_Quest:
+  SyncFlags: 0b00000000000000000000000001111110
+NPC_Cloned_From_Actor_SNO:
   AttributeID: 1067
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Chatter_Cooldown:
+NPC_Clone_Visibility:
   AttributeID: 1068
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+NPC_Cloned_For_Quest:
+  AttributeID: 1069
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Actor_Ignore_Boss_Encounter_Spawning:
+  AttributeID: 1070
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Chatter_Cooldown:
+  AttributeID: 1071
   DefaultValue: -1
   ParameterType: 13
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Imbued_Affix:
-  AttributeID: 1069
+  AttributeID: 1072
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Imbued_Affix_Seed:
-  AttributeID: 1070
+  AttributeID: 1073
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
@@ -7569,7 +7590,7 @@ Imbued_Affix_Seed:
   Formula: 0
   SyncFlags: 0b00000000000000000000000000001000
 Imbued_Affix_Carry:
-  AttributeID: 1071
+  AttributeID: 1074
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
@@ -7577,462 +7598,518 @@ Imbued_Affix_Carry:
   Formula: 0
   SyncFlags: 0b00000000000000000000000000001000
 Affix_Replaced:
-  AttributeID: 1072
+  AttributeID: 1075
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Imbued_Affix_Item_Power:
-  AttributeID: 1073
+  AttributeID: 1076
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Imbued_Affix_From_Definition:
-  AttributeID: 1074
+  AttributeID: 1077
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Carryable_Receptacle_Count:
-  AttributeID: 1075
+  AttributeID: 1078
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Carryable_Being_Carried:
-  AttributeID: 1076
+  AttributeID: 1079
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Carryable_Is_Picked_Up:
-  AttributeID: 1077
+  AttributeID: 1080
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Carryable_Accumulated_Damage:
-  AttributeID: 1078
+  AttributeID: 1081
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Chargeable_Gizmo_Progress:
-  AttributeID: 1079
+  AttributeID: 1082
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Chargeable_Paused:
-  AttributeID: 1080
+  AttributeID: 1083
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Crafting_Crit_Chance_Percent_Bonus:
-  AttributeID: 1081
+  AttributeID: 1084
   DefaultValue: 0
   ParameterType: 23
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001111110
 Use_Alternate_Name:
-  AttributeID: 1082
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Death_Message_Actor_Override:
-  AttributeID: 1083
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Use_Boss_Camera:
-  AttributeID: 1084
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Boss_Camera_Follows_Player:
   AttributeID: 1085
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Boss_Camera_Override:
+Death_Message_Actor_Override:
   AttributeID: 1086
   DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 1
+  AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Invisible_To_Spawning:
+  SyncFlags: 0b00000000000000000000000000000000
+Use_Boss_Camera:
   AttributeID: 1087
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Is_AutoCast_Effect:
+Boss_Camera_Follows_Player:
   AttributeID: 1088
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Is_Last_Shot_Effect:
+Boss_Camera_Override:
   AttributeID: 1089
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Invisible_To_Spawning:
+  AttributeID: 1090
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Is_AutoCast_Effect:
+  AttributeID: 1091
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Is_Last_Shot_Effect:
+  AttributeID: 1092
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Quest_Referencing_Actor:
-  AttributeID: 1090
+  AttributeID: 1093
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Quest_Callback_Referencing_Actor:
-  AttributeID: 1091
+  AttributeID: 1094
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Monster_Flavor_Text_Override:
-  AttributeID: 1092
+  AttributeID: 1095
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Vessel_Of_Hatred_Progress:
-  AttributeID: 1093
+  AttributeID: 1096
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Owning_Quest:
-  AttributeID: 1094
+  AttributeID: 1097
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Bounty_Points:
-  AttributeID: 1095
+  AttributeID: 1098
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Capped_Item_Spawned_By:
-  AttributeID: 1096
+  AttributeID: 1099
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Item Visible To Class Bit:
-  AttributeID: 1097
+  AttributeID: 1100
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000001000
 Power Interrupt Remaining Damage:
-  AttributeID: 1098
+  AttributeID: 1101
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000000000000
 Class_Damage_Reduction_Percent_PvP:
-  AttributeID: 1099
+  AttributeID: 1102
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
 Event_Participant_Timeout:
-  AttributeID: 1100
+  AttributeID: 1103
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 3
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Local_or_World_Event_SNO:
-  AttributeID: 1101
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Town_Portal_Return_Delete_Timer:
-  AttributeID: 1102
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Town_Portal_In_Progress:
-  AttributeID: 1103
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Gizmo_Triggered_Bounty_SNO_Target:
   AttributeID: 1104
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
-Gizmo_Triggered_Bounty_Target_Disabled:
+Town_Portal_Return_Delete_Timer:
   AttributeID: 1105
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Town_Portal_In_Progress:
+  AttributeID: 1106
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Gizmo_Triggered_Bounty_SNO_Target:
+  AttributeID: 1107
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Gizmo_Triggered_Bounty_Target_Disabled:
+  AttributeID: 1108
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Assassinate_Bounty_Target_Gizmo:
-  AttributeID: 1106
+  AttributeID: 1109
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
 Gizmo_Starts_Side_Quest:
-  AttributeID: 1107
+  AttributeID: 1110
   DefaultValue: 0
   ParameterType: 9
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Side_Quest_Started_By_Gizmo_:
-  AttributeID: 1108
+  AttributeID: 1111
   DefaultValue: -1
   ParameterType: 9
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Gizmo_Triggered_Bounty_SNO_Target_Player:
-  AttributeID: 1109
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Last_Survey_Played_Secs:
-  AttributeID: 1110
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Quest_Referencing_Item:
-  AttributeID: 1111
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Ignored_By_Quest_Objectives:
   AttributeID: 1112
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Last_New_User_Survey_Version:
+Last_Survey_Played_Secs:
   AttributeID: 1113
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000000
-Player_Has_Reward_Choice_Available:
+Quest_Referencing_Item:
   AttributeID: 1114
+  DefaultValue: -1
+  ParameterType: -1
+  AttributeOperator: 3
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001111110
+Ignored_By_Quest_Objectives:
+  AttributeID: 1115
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Last_New_User_Survey_Version:
+  AttributeID: 1116
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 4
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000000
+Player_Has_Reward_Choice_Available:
+  AttributeID: 1117
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Partition_Highest_Player_Level:
-  AttributeID: 1115
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 4
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-Quest_Phase_Referencing_Actor:
-  AttributeID: 1116
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001111110
-Dynamic_Prefab_Id:
-  AttributeID: 1117
-  DefaultValue: -1
-  ParameterType: -1
-  AttributeOperator: 3
-  AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000000
-Player_In_Town_Level_Area:
   AttributeID: 1118
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 4
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-Favor_Next_Hi:
+Quest_Phase_Referencing_Actor:
   AttributeID: 1119
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-Favor_Next_Lo:
+  SyncFlags: 0b00000000000000000000000001111110
+Dynamic_Prefab_Id:
   AttributeID: 1120
-  DefaultValue: 0
+  DefaultValue: -1
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 3
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000000000001
-Favor_Level:
+  SyncFlags: 0b00000000000000000000000000000000
+Player_In_Town_Level_Area:
   AttributeID: 1121
   DefaultValue: 0
   ParameterType: -1
-  AttributeOperator: 0
+  AttributeOperator: 4
   AttributeDataType: 1 # int
-  SyncFlags: 0b00000000000000000000000001000000
-Last_Viewed_Favor_Next_Hi:
+  SyncFlags: 0b00000000000000000000000000000001
+Favor_Next_Hi:
   AttributeID: 1122
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-Last_Viewed_Favor_Next_Lo:
+Favor_Next_Lo:
   AttributeID: 1123
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000000000001
-Last_Viewed_Favor_Level:
+Favor_Level:
   AttributeID: 1124
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000001000000
+Last_Viewed_Favor_Next_Hi:
+  AttributeID: 1125
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+Last_Viewed_Favor_Next_Lo:
+  AttributeID: 1126
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 0
+  AttributeDataType: 1 # int
+  SyncFlags: 0b00000000000000000000000000000001
+Last_Viewed_Favor_Level:
+  AttributeID: 1127
   DefaultValue: -1
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Blessing_Level:
-  AttributeID: 1125
+  AttributeID: 1128
   DefaultValue: 0
   ParameterType: 26
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Blessing_Unlock_Points:
-  AttributeID: 1126
+  AttributeID: 1129
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Blessing_Refund_Count:
-  AttributeID: 1127
+  AttributeID: 1130
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Current_TownPortalCosmetic:
-  AttributeID: 1128
+  AttributeID: 1131
   DefaultValue: -1
   ParameterType: 14
   AttributeOperator: 1
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001000000
 Monster_Kill_XP_Bonus:
-  AttributeID: 1129
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001000000
-Item_Sell_Bonus:
-  AttributeID: 1130
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001000000
-Salvage_Rarity_Bonus:
-  AttributeID: 1131
-  DefaultValue: 0
-  ParameterType: -1
-  AttributeOperator: 1
-  AttributeDataType: 0 # float
-  SyncFlags: 0b00000000000000000000000001000000
-Elixir_Duration_Bonus:
   AttributeID: 1132
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
-Malignant_Heart_Bonus:
+Item_Sell_Bonus:
   AttributeID: 1133
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
-Helltide_Loot_Bonus:
+Salvage_Rarity_Bonus:
   AttributeID: 1134
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 1
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
-Season_Rank_Bonus:
+Elixir_Duration_Bonus:
   AttributeID: 1135
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Malignant_Heart_Bonus:
+  AttributeID: 1136
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Helltide_Loot_Bonus:
+  AttributeID: 1137
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Seasonal_Loot_Bonus:
+  AttributeID: 1138
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Bounty_Loot_Bonus:
+  AttributeID: 1139
+  DefaultValue: 0
+  ParameterType: -1
+  AttributeOperator: 1
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Value_1:
+  AttributeID: 1140
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Value_2:
+  AttributeID: 1141
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Flat_Value_1:
+  AttributeID: 1142
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Flat_Value_1_Unscaled_By_Player_Health:
+  AttributeID: 1143
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Flat_Value_2:
+  AttributeID: 1144
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Collectible_Power_Flat_Value_2_Unscaled_By_Player_Health:
+  AttributeID: 1145
+  DefaultValue: 0
+  ParameterType: 37
+  AttributeOperator: 0
+  AttributeDataType: 0 # float
+  SyncFlags: 0b00000000000000000000000001000000
+Season_Rank_Bonus:
+  AttributeID: 1146
   DefaultValue: 0
   ParameterType: -1
   AttributeOperator: 0
   AttributeDataType: 1 # int
   SyncFlags: 0b00000000000000000000000001111110
 Reputation_Bonus_Percent:
-  AttributeID: 1136
+  AttributeID: 1147
   DefaultValue: 0
   ParameterType: 14
   AttributeOperator: 0
   AttributeDataType: 0 # float
   SyncFlags: 0b00000000000000000000000001000000
 Reputation_PLAYER_HAS_CLAIMABLE_REWARD:
-  AttributeID: 1137
+  AttributeID: 1148
   DefaultValue: 0
   ParameterType: 14
   AttributeOperator: 0
