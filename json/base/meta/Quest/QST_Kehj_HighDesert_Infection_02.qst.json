@@ -65,7 +65,7 @@
  "unk_14dee1b": false,
  "flParticipationRadius": 12,
  "unk_8881b0e": 20,
- "dwNextUID": 232,
+ "dwNextUID": 235,
  "fPrioritySideQuest": false,
  "ePrioritySideQuestType": 0,
  "ePersistentEventType": -1,
@@ -75,6 +75,7 @@
  "snoBountySubzone": null,
  "eBountyTier": -1,
  "eBountyType": -1,
+ "gbidBountyDefinition": null,
  "unk_313dbf6": false,
  "dwRegionSourceCallbackUID": 4294967295,
  "eSimQuestPhase": 7,
@@ -565,19 +566,17 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamActor",
-            "__typeHash__": 1286645889,
-            "dwType": 1286645889,
-            "eParamType": 4,
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
             "dwPad": 0,
-            "snoActor": {
-             "__raw__": 1040412,
-             "__group__": 1,
-             "__type__": "DT_SNO",
-             "__typeHash__": 2764331143,
-             "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-             "groupName": "Actor",
-             "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+            "gbidActorGroup": {
+             "__raw__": 1285384279,
+             "__type__": "DT_GBID",
+             "__typeHash__": 1028170061,
+             "group": 24,
+             "name": "QST_Kehj_Infection_02_Mahjoob"
             }
            }
           ]
@@ -604,15 +603,11 @@
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
         "__typeHash__": 2884204419,
-        "eType": 0,
+        "eType": 1,
         "vPolygonPoints": [
          {
           "x": -126.3759994506836,
           "y": -348.24700927734375
-         },
-         {
-          "x": -144.07699584960938,
-          "y": -377.55999755859375
          },
          {
           "x": -142.71800231933594,
@@ -620,10 +615,10 @@
          }
         ],
         "vCenterPos": {
-         "x": -135.22650146484375,
-         "y": -362.90350341796875
+         "x": -134.5469970703125,
+         "y": -357.6105041503906
         },
-        "flRadius": 17.1214542388916,
+        "flRadius": 12,
         "bValid": true,
         "bManuallySpecified": false
        },
@@ -642,17 +637,113 @@
        ],
        "arSubzones": [],
        "unk_c181024": null,
-       "arSnonameTokens": [
+       "arSnonameTokens": [],
+       "tReputationObjective": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": null,
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "eProgressBarSource": 0,
+       "dwUID": 232,
+       "dwFlags": 3,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 78,
+        "dwListenerFlags": 0,
+        "snoCondition": null,
+        "unk_c3ba01d": false,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "__raw__": 1007481,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
+              "__targetFileName__": "base/meta/MarkerSet/Kehj_HighDesert (QST_Infection).mrk",
+              "groupName": "MarkerSet",
+              "name": "Kehj_HighDesert (QST_Infection)"
+             },
+             "nID": 81
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "dwEventEntryHash": 2197444832
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 2,
+       "unk_9c1ea4f": 34,
+       "snoWorld": {
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
+        "__targetFileName__": "base/meta/World/Sanctuary_Eastern_Continent.wrl",
+        "groupName": "World",
+        "name": "Sanctuary_Eastern_Continent"
+       },
+       "snoObjectiveDiscoveredConversationOverride": null,
+       "fDebugDisable": false,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 1,
+        "vPolygonPoints": [
+         {
+          "x": -144.07699584960938,
+          "y": -377.55999755859375
+         }
+        ],
+        "vCenterPos": {
+         "x": -144.07699584960938,
+         "y": -377.55999755859375
+        },
+        "flRadius": 12,
+        "bValid": true,
+        "bManuallySpecified": false
+       },
+       "arRegionOverrides": [],
+       "nValidRegionOverrides": 0,
+       "arLevelAreas": [
         {
-         "__raw__": 1040412,
-         "__group__": 1,
-         "__type__": "DT_SNO_NAME",
-         "__typeHash__": 3339108615,
-         "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-         "groupName": "Actor",
-         "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+         "__raw__": 975602,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
+         "__targetFileName__": "base/meta/LevelArea/Kehj_HighDesert_Dunes.lvl",
+         "groupName": "LevelArea",
+         "name": "Kehj_HighDesert_Dunes"
         }
        ],
+       "arSubzones": [],
+       "unk_c181024": null,
+       "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
@@ -1870,19 +1961,24 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamActor",
-            "__typeHash__": 1286645889,
-            "dwType": 1286645889,
-            "eParamType": 4,
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
             "dwPad": 0,
-            "snoActor": {
-             "__raw__": 1040412,
-             "__group__": 1,
-             "__type__": "DT_SNO",
-             "__typeHash__": 2764331143,
-             "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-             "groupName": "Actor",
-             "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "__raw__": 1007481,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
+              "__targetFileName__": "base/meta/MarkerSet/Kehj_HighDesert (QST_Infection).mrk",
+              "groupName": "MarkerSet",
+              "name": "Kehj_HighDesert (QST_Infection)"
+             },
+             "nID": 63
             }
            }
           ]
@@ -1909,26 +2005,18 @@
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
         "__typeHash__": 2884204419,
-        "eType": 0,
+        "eType": 1,
         "vPolygonPoints": [
-         {
-          "x": -126.3759994506836,
-          "y": -348.24700927734375
-         },
-         {
-          "x": -144.07699584960938,
-          "y": -377.55999755859375
-         },
          {
           "x": -142.71800231933594,
           "y": -366.9739990234375
          }
         ],
         "vCenterPos": {
-         "x": -135.22650146484375,
-         "y": -362.90350341796875
+         "x": -142.71800231933594,
+         "y": -366.9739990234375
         },
-        "flRadius": 17.1214542388916,
+        "flRadius": 12,
         "bValid": true,
         "bManuallySpecified": false
        },
@@ -1947,17 +2035,7 @@
        ],
        "arSubzones": [],
        "unk_c181024": null,
-       "arSnonameTokens": [
-        {
-         "__raw__": 1040412,
-         "__group__": 1,
-         "__type__": "DT_SNO_NAME",
-         "__typeHash__": 3339108615,
-         "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-         "groupName": "Actor",
-         "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
-        }
-       ],
+       "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
@@ -2551,19 +2629,17 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamActor",
-            "__typeHash__": 1286645889,
-            "dwType": 1286645889,
-            "eParamType": 4,
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
             "dwPad": 0,
-            "snoActor": {
-             "__raw__": 1040412,
-             "__group__": 1,
-             "__type__": "DT_SNO",
-             "__typeHash__": 2764331143,
-             "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-             "groupName": "Actor",
-             "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+            "gbidActorGroup": {
+             "__raw__": 1285384279,
+             "__type__": "DT_GBID",
+             "__typeHash__": 1028170061,
+             "group": 24,
+             "name": "QST_Kehj_Infection_02_Mahjoob"
             }
            }
           ]
@@ -2590,15 +2666,11 @@
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
         "__typeHash__": 2884204419,
-        "eType": 0,
+        "eType": 1,
         "vPolygonPoints": [
          {
           "x": -126.3759994506836,
           "y": -348.24700927734375
-         },
-         {
-          "x": -144.07699584960938,
-          "y": -377.55999755859375
          },
          {
           "x": -142.71800231933594,
@@ -2606,10 +2678,10 @@
          }
         ],
         "vCenterPos": {
-         "x": -135.22650146484375,
-         "y": -362.90350341796875
+         "x": -134.5469970703125,
+         "y": -357.6105041503906
         },
-        "flRadius": 17.1214542388916,
+        "flRadius": 12,
         "bValid": true,
         "bManuallySpecified": false
        },
@@ -2628,17 +2700,113 @@
        ],
        "arSubzones": [],
        "unk_c181024": null,
-       "arSnonameTokens": [
+       "arSnonameTokens": [],
+       "tReputationObjective": {
+        "__type__": "ReputationValuePair",
+        "__typeHash__": 2871889556,
+        "snoReputation": null,
+        "nValue": 0
+       }
+      },
+      {
+       "__type__": "QuestCallback",
+       "__typeHash__": 3067360607,
+       "unk_b185921": 0,
+       "eProgressBarSource": 0,
+       "dwUID": 234,
+       "dwFlags": 3,
+       "nNeeded": 1,
+       "tScriptMessageMap": {
+        "__type__": "ScriptMessageMap",
+        "__typeHash__": 2935055576,
+        "eEventType": 78,
+        "dwListenerFlags": 0,
+        "snoCondition": null,
+        "unk_c3ba01d": false,
+        "flCooldownSeconds": 0,
+        "arEventFilters": [
+         {
+          "__type__": "ScriptMessageMapFilter",
+          "__typeHash__": 3179414430,
+          "tKey": 2197444774,
+          "eVariableType": 1,
+          "pMessageFilter": [
+           {
+            "__type__": "ScriptEventParamMarkerHandle",
+            "__typeHash__": 3311139638,
+            "dwType": 3311139638,
+            "eParamType": 33,
+            "dwPad": 0,
+            "tMarkerHandle": {
+             "__type__": "MarkerHandle",
+             "__typeHash__": 3934284334,
+             "snoMarkerSet": {
+              "__raw__": 1007481,
+              "__group__": 24,
+              "__type__": "DT_SNO",
+              "__typeHash__": 2764331143,
+              "__targetFileName__": "base/meta/MarkerSet/Kehj_HighDesert (QST_Infection).mrk",
+              "groupName": "MarkerSet",
+              "name": "Kehj_HighDesert (QST_Infection)"
+             },
+             "nID": 63
+            }
+           }
+          ]
+         }
+        ],
+        "unk_492729e": [],
+        "dwEventEntryHash": 2197444832
+       },
+       "dwLinesSeconds": 0,
+       "unk_47705e2": 0,
+       "eIndicatorType": 2,
+       "unk_9c1ea4f": 216,
+       "snoWorld": {
+        "__raw__": 69068,
+        "__group__": 48,
+        "__type__": "DT_SNO",
+        "__typeHash__": 2764331143,
+        "__targetFileName__": "base/meta/World/Sanctuary_Eastern_Continent.wrl",
+        "groupName": "World",
+        "name": "Sanctuary_Eastern_Continent"
+       },
+       "snoObjectiveDiscoveredConversationOverride": null,
+       "fDebugDisable": false,
+       "tRegionDefault": {
+        "__type__": "QuestCallbackRegion",
+        "__typeHash__": 2884204419,
+        "eType": 1,
+        "vPolygonPoints": [
+         {
+          "x": -142.71800231933594,
+          "y": -366.9739990234375
+         }
+        ],
+        "vCenterPos": {
+         "x": -142.71800231933594,
+         "y": -366.9739990234375
+        },
+        "flRadius": 12,
+        "bValid": true,
+        "bManuallySpecified": false
+       },
+       "arRegionOverrides": [],
+       "nValidRegionOverrides": 0,
+       "arLevelAreas": [
         {
-         "__raw__": 1040412,
-         "__group__": 1,
-         "__type__": "DT_SNO_NAME",
-         "__typeHash__": 3339108615,
-         "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-         "groupName": "Actor",
-         "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+         "__raw__": 975602,
+         "__group__": 22,
+         "__type__": "DT_SNO",
+         "__typeHash__": 2764331143,
+         "__targetFileName__": "base/meta/LevelArea/Kehj_HighDesert_Dunes.lvl",
+         "groupName": "LevelArea",
+         "name": "Kehj_HighDesert_Dunes"
         }
        ],
+       "arSubzones": [],
+       "unk_c181024": null,
+       "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
@@ -3484,19 +3652,17 @@
           "eVariableType": 1,
           "pMessageFilter": [
            {
-            "__type__": "ScriptEventParamActor",
-            "__typeHash__": 1286645889,
-            "dwType": 1286645889,
-            "eParamType": 4,
+            "__type__": "ScriptEventParamActorGroup",
+            "__typeHash__": 3481819086,
+            "dwType": 3481819086,
+            "eParamType": 35,
             "dwPad": 0,
-            "snoActor": {
-             "__raw__": 1040412,
-             "__group__": 1,
-             "__type__": "DT_SNO",
-             "__typeHash__": 2764331143,
-             "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-             "groupName": "Actor",
-             "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
+            "gbidActorGroup": {
+             "__raw__": 1285384279,
+             "__type__": "DT_GBID",
+             "__typeHash__": 1028170061,
+             "group": 24,
+             "name": "QST_Kehj_Infection_02_Mahjoob"
             }
            }
           ]
@@ -3523,15 +3689,11 @@
        "tRegionDefault": {
         "__type__": "QuestCallbackRegion",
         "__typeHash__": 2884204419,
-        "eType": 0,
+        "eType": 1,
         "vPolygonPoints": [
          {
           "x": -126.3759994506836,
           "y": -348.24700927734375
-         },
-         {
-          "x": -144.07699584960938,
-          "y": -377.55999755859375
          },
          {
           "x": -142.71800231933594,
@@ -3539,10 +3701,10 @@
          }
         ],
         "vCenterPos": {
-         "x": -135.22650146484375,
-         "y": -362.90350341796875
+         "x": -134.5469970703125,
+         "y": -357.6105041503906
         },
-        "flRadius": 17.1214542388916,
+        "flRadius": 12,
         "bValid": true,
         "bManuallySpecified": false
        },
@@ -3561,17 +3723,7 @@
        ],
        "arSubzones": [],
        "unk_c181024": null,
-       "arSnonameTokens": [
-        {
-         "__raw__": 1040412,
-         "__group__": 1,
-         "__type__": "DT_SNO_NAME",
-         "__typeHash__": 3339108615,
-         "__targetFileName__": "base/meta/Actor/NPC_QST_Kehj_Infection_Mahjoob_wFlies.acr",
-         "groupName": "Actor",
-         "name": "NPC_QST_Kehj_Infection_Mahjoob_wFlies"
-        }
-       ],
+       "arSnonameTokens": [],
        "tReputationObjective": {
         "__type__": "ReputationValuePair",
         "__typeHash__": 2871889556,
