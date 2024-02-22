@@ -158,14 +158,14 @@
 0x5ac: tLocalEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
 0x5c8: tZoneEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
 0x5e4: tWorldEventMonsterPerPlayerScaling # MonsterPerPlayerScalingData
-0x600: unk_57c5927 # DT_FLOAT (32 bits used)
-0x604: unk_54fe8b # DT_FLOAT (32 bits used)
-0x608: unk_ce51b5a # DT_FLOAT (32 bits used)
-0x60c: unk_3f05457 # DT_FLOAT (32 bits used)
-0x610: unk_5b6bd4f # DT_FLOAT (32 bits used)
-0x614: unk_bfde6a2 # DT_FLOAT (32 bits used)
-0x618: unk_fc1e7ff # DT_FLOAT (32 bits used)
-0x61c: unk_551056e # DT_FLOAT (32 bits used)
+0x600: flChampionMonsterXPScalar # DT_FLOAT (32 bits used)
+0x604: flEliteMonsterXPScalar # DT_FLOAT (32 bits used)
+0x608: flSuperEliteMonsterXPScalar # DT_FLOAT (32 bits used)
+0x60c: flDungeonBossXPScalar # DT_FLOAT (32 bits used)
+0x610: flWorldBossXPScalar # DT_FLOAT (32 bits used)
+0x614: flMinionMonsterXPScalar # DT_FLOAT (32 bits used)
+0x618: flEliteMonsterMovementSpeedScalar # DT_FLOAT (32 bits used)
+0x61c: flSuperEliteMonsterMovementSpeedScalar # DT_FLOAT (32 bits used)
 0x620: unk_d616ce9 # DT_FLOAT (32 bits used)
 0x624: unk_28a2990 # DT_FLOAT (32 bits used)
 0x628: unk_d20a438 # DT_FLOAT (32 bits used)
@@ -328,9 +328,9 @@
 0x938: unk_6b2748d # DT_FLOAT (32 bits used)
 0x93c: unk_30be3a9 # DT_FLOAT (32 bits used)
 0x940: snoChampionEffectGroup # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
-0x944: unk_89a383a # DT_FLOAT (32 bits used)
-0x948: unk_c31c69e # DT_FLOAT (32 bits used)
-0x94c: unk_d3c532d # DT_FLOAT (32 bits used)
+0x944: flChampionMonsterSizeScalar # DT_FLOAT (32 bits used)
+0x948: flEliteMonsterSizeScalar # DT_FLOAT (32 bits used)
+0x94c: flSuperEliteMonsterSizeScalar # DT_FLOAT (32 bits used)
 0x950: unk_8c04671 # DT_FLOAT (32 bits used)
 0x954: unk_25d5380 # DT_FLOAT (32 bits used)
 0x958: unk_359472b # DT_FLOAT (32 bits used)
@@ -456,30 +456,30 @@
 0x1028: unk_3021a92 # DT_UINT (32 bits used)
 0x102c: unk_496cffb # DT_UINT (32 bits used)
 0x1030: unk_56d4995 # DT_FLOAT (32 bits used)
-0x1038: arCurrencyCaps # DT_FIXEDARRAY (64 bits used) [60 array size] => DT_INT64
-0x1218: unk_606852d # unknown 0x3b00e8b9
-0x1230: ptDefaultHitEffectData # DT_VARIABLEARRAY => ActorEffectData
-0x1240: unk_2bb7f27 # DT_FLOAT (32 bits used)
-0x1244: unk_50c5dba # DT_FLOAT (32 bits used)
-0x1248: unk_a19cbf3 # DT_FLOAT (32 bits used)
-0x124c: flPowerEffectIntensityPerSkillRank # DT_FLOAT (32 bits used)
-0x1250: flMaxPowerEffectIntensityFromSkillRanks # DT_FLOAT (32 bits used)
-0x1254: unk_57c5af4 # DT_FLOAT (32 bits used)
-0x1258: arSeasons # DT_VARIABLEARRAY (32 bits used) {group 0x89 "Season"} => DT_SNO
-0x1268: tScalarFormulas # DT_VARIABLEARRAY => ScalarFunctionFormula
-0x1278: unk_5beabc1 # DT_FLOAT (32 bits used)
-0x127c: unk_72ee1ae # DT_FLOAT (32 bits used)
-0x1280: unk_b59ed1 # DT_FLOAT (32 bits used)
-0x1284: unk_38b5fed # DT_FLOAT (32 bits used)
-0x1288: unk_dbc6f0d # DT_UINT (32 bits used)
-0x128c: unk_9ea22ec # DT_UINT (32 bits used)
-0x1290: unk_9155d6b # DT_INT (32 bits used)
-0x1294: unk_b1d46f8 # DT_INT (32 bits used)
-0x1298: unk_9f4060e # DT_FLOAT (32 bits used)
-0x129c: unk_2cbcb69 # DT_FLOAT (32 bits used)
-0x12a0: unk_603d082 # DT_FLOAT (32 bits used)
-0x12a4: snoLocalPlayerHitEffect # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
-0x12a8: unk_bad483c # DT_FLOAT (32 bits used)
-0x12ac: unk_f883e95 # DT_FLOAT (32 bits used)
-0x12b0: unk_ae661d1 # DT_FLOAT (32 bits used)
-0x12b8: null or eof # DT_NULL
+0x1038: arCurrencyCaps # DT_FIXEDARRAY (64 bits used) [62 array size] => DT_INT64
+0x1228: unk_606852d # unknown 0x3b00e8b9
+0x1240: ptDefaultHitEffectData # DT_VARIABLEARRAY => ActorEffectData
+0x1250: unk_2bb7f27 # DT_FLOAT (32 bits used)
+0x1254: unk_50c5dba # DT_FLOAT (32 bits used)
+0x1258: unk_a19cbf3 # DT_FLOAT (32 bits used)
+0x125c: flPowerEffectIntensityPerSkillRank # DT_FLOAT (32 bits used)
+0x1260: flMaxPowerEffectIntensityFromSkillRanks # DT_FLOAT (32 bits used)
+0x1264: unk_57c5af4 # DT_FLOAT (32 bits used)
+0x1268: arSeasons # DT_VARIABLEARRAY (32 bits used) {group 0x89 "Season"} => DT_SNO
+0x1278: tScalarFormulas # DT_VARIABLEARRAY => ScalarFunctionFormula
+0x1288: unk_5beabc1 # DT_FLOAT (32 bits used)
+0x128c: unk_72ee1ae # DT_FLOAT (32 bits used)
+0x1290: unk_b59ed1 # DT_FLOAT (32 bits used)
+0x1294: unk_38b5fed # DT_FLOAT (32 bits used)
+0x1298: unk_dbc6f0d # DT_UINT (32 bits used)
+0x129c: unk_9ea22ec # DT_UINT (32 bits used)
+0x12a0: unk_9155d6b # DT_INT (32 bits used)
+0x12a4: unk_b1d46f8 # DT_INT (32 bits used)
+0x12a8: unk_9f4060e # DT_FLOAT (32 bits used)
+0x12ac: unk_2cbcb69 # DT_FLOAT (32 bits used)
+0x12b0: unk_603d082 # DT_FLOAT (32 bits used)
+0x12b4: snoLocalPlayerHitEffect # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
+0x12b8: unk_bad483c # DT_FLOAT (32 bits used)
+0x12bc: unk_f883e95 # DT_FLOAT (32 bits used)
+0x12c0: unk_ae661d1 # DT_FLOAT (32 bits used)
+0x12c8: null or eof # DT_NULL
