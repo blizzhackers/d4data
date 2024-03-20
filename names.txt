@@ -1141,6 +1141,7 @@ OnUnequipPowerCallback
 OpenDungeonForLFDMessage
 OperateRecipeEventMessage
 OperateWorldTierSelectMessage
+OptionalTalentKeys
 OutroPortalEffectMessage
 OutroWaypointEffectMessage
 POICameraGizmoData
@@ -2171,6 +2172,7 @@ WorldTierChangeMessage
 WorldTierData
 WorldTierSubcondition
 WorldTierUnlockedMessage
+WorldToDPOQuestList
 WwiseAudioBus
 WwiseChildFile
 WwiseConversationSoundBank
@@ -2268,6 +2270,7 @@ actorPreloadPowerCooldown
 afBend
 afDirectionAdherence
 afDistance
+afFlexibility
 afFrequencies
 afFrequency
 afFrondRippleDistance
@@ -2675,6 +2678,8 @@ arPlatforms
 arPlayStyle
 arPlayedFlags
 arPoints
+arPointsPerDataType
+arPointsPerRewardThreshold
 arPortalTypes
 arPotentialDungeonStates
 arPowerScriptParams
@@ -2839,6 +2844,7 @@ arWeatherSNOs
 arWorldMarkerSets
 arWorldPoints
 arWorldTiers
+arWorldToDPOQuestList
 arWreckableDeathEffectGroups
 arZoneProgressData
 arZoneSpecificStaticLoadingImages
@@ -2919,6 +2925,7 @@ bDungeon
 bDynamicPitchOffset
 bEarnsSeal
 bEnable
+bEnablePartyLoadingScreens
 bEnabled
 bEncloseChildren
 bEnd
@@ -3043,6 +3050,10 @@ bOnlyStopFromStaticCollision
 bOptional
 bOverkillStacked
 bOverlap
+bOverrideFixedCameraOffset
+bOverrideGlobalWind
+bOverrideImportanceScore
+bOverrideObjectNpcLook
 bOverridePosition
 bOverrideRewardDropLevel
 bPassabilityDestEnabled
@@ -3055,6 +3066,7 @@ bPlayNormalHitSound
 bPreplayAnimation
 bPrivacyFlag
 bProceduralEntrance
+bQuantityBreakup
 bRadioButtonDefault
 bRecurseForAttachments
 bRemove
@@ -3103,6 +3115,8 @@ bTargetFullFamily
 bTargetGroundOnly
 bTextAllCaps
 bToggleSelection
+bTriggerOnEnterTown
+bTriggerOnMount
 bTriggersForPets
 bTriggersImmediately
 bTriggersOnAnyCC
@@ -3212,6 +3226,7 @@ driverCount
 driverInfluences
 driverMap
 dwActorID
+dwAffectsFlags
 dwAllowedQualityLevels
 dwAlpha
 dwAmount
@@ -3232,6 +3247,8 @@ dwBAOffset
 dwBASegment
 dwBASize
 dwBlendTime
+dwBloodSealExperiencePerUpgrade
+dwBloodSealMatCost
 dwBoneHash
 dwBoostHash
 dwBountyPoints
@@ -3314,6 +3331,7 @@ dwItemLabelMask
 dwKey
 dwLastHeartbeat
 dwLastKickAttempt
+dwLastPurchasedSkillTreeNodeId
 dwLastSuccessfulKick
 dwLightingDepthLimit
 dwLimiterLookAheadMs
@@ -3386,6 +3404,15 @@ dwPhaseUID
 dwPhasesFinished
 dwPitch
 dwPlayerGameAccountId
+dwPlayerGameAccountIdInitiating
+dwPlayerGameAccountIdKiller
+dwPlayerGameAccountIdOwner
+dwPlayerGameAccountIdPorted
+dwPlayerGameAccountIdTarget
+dwPlayerGameAccountIdToKick
+dwPlayerGameAccountIdToPort
+dwPlayerGameAccountIdToPortTo
+dwPlayerGameAccountIdVictim
 dwPlaylistID
 dwPlaylistIndex
 dwPortalDestSubzoneFlags
@@ -3496,6 +3523,7 @@ eActorType
 eActorVariantType
 eAddType
 eAffectedNodeRarity
+eAffectsGeometry
 eAffixCategory
 eAffixType
 eAlignHorizontal
@@ -3941,6 +3969,7 @@ fAttachCarryableToPlayer
 fBWriteEnable
 fBillboard
 fBottomless
+fBranchStretch
 fBypass
 fCameraPercentFogDensity
 fCanBeCustomized
@@ -3960,6 +3989,7 @@ fConvertsDamageToDamageStates
 fCrafter
 fDead
 fDebugDisable
+fDefaultMountScale
 fDeleteFromOwner
 fDestroyOnImpact
 fDetachFromOwner
@@ -3983,9 +4013,11 @@ fFadeOwner
 fFastMovementUpdate
 fFemale
 fFlatten
+fFloatingWorldMarker
 fForceMinimapIcon
 fFrondRippleLightingScalar
 fFrondRippleTile
+fFullBranchMove
 fFullRipple
 fGWriteEnable
 fGenerateFootstepParticles
@@ -4076,6 +4108,7 @@ fOverrideAnimBlendFraction
 fOverrideBoneTrackingFactor
 fOverrideEffectGroupID
 fOverrideExperienceScalar
+fOverrideGlobalShoreWaveSettings
 fOverrideHardpoint
 fOverrideListenerOffsetVector
 fOverridePowerEffectDuration
@@ -4085,6 +4118,8 @@ fOverridePowerEffectLength
 fOverridePowerEffectSize
 fOverridePowerEffectWidth
 fOverrideScalarValues
+fOverrideSunDiskPosition
+fOverrideSunShadowPosition
 fOverridesDebugColor
 fPersonaMaterial
 fPlayedBit
@@ -4149,6 +4184,7 @@ fTileHorizontalBorders
 fTileVerticalBorders
 fTop
 fTurbulence
+fTurbulenceIndependence
 fTwitch
 fTwitchFreqScale
 fTwitchSharpness
@@ -4272,6 +4308,7 @@ flCameraOffsetScalar
 flCampRetreatRadiusOverride
 flCancelDistance
 flCapsuleLength
+flCaptureScale
 flCastingEffectGroupDuration
 flCavitySmoothness
 flCavityTolerance
@@ -4368,6 +4405,7 @@ flDirectionAzimuth
 flDirectionSmoothness
 flDirectionTolerance
 flDirectionalFogAltitude
+flDirectionalFogAzimuthOffset
 flDisplayTime
 flDist
 flDistance
@@ -4388,8 +4426,11 @@ flDungeonRetreatRadiusOverride
 flDurabilityLossPercent
 flDuration
 flDurationAdjustment
-flDurationMicroseconds
 flDynamicAccelerationSpeed
+flDynamicDecelerationDistance
+flDynamicDecelerationSpeed
+flDynamicSprintSpeed
+flDynamicSprintTurnSpeed
 flEffectDuration
 flEliteMonsterAdditionalHealth
 flEliteMonsterAdditionalHealthPerPlayer
@@ -4467,6 +4508,8 @@ flForcedTimeOfDay
 flFortifiedHealthDamageReduction
 flFps
 flFrameRate
+flFrameTime
+flFrameTime1Percent
 flFrequency
 flFriction
 flFrictionScale
@@ -4504,6 +4547,7 @@ flHighlightBrightness
 flHighlightedBorderStrength
 flHighlightedDropShadowStrength
 flHirelingDiminishedBonusRatio
+flHitFlashDurationScalar
 flHitFlashIntensity
 flHitFlashIntensityDuration
 flHitFlashMultiplier
@@ -4514,6 +4558,7 @@ flIconHeightScalar
 flIdleRadius
 flImageScale
 flImpactDirection
+flImpactDirectionModification
 flImpactPitch
 flImpulseCap
 flImpulseFactor
@@ -4522,6 +4567,7 @@ flIndexBuffersSize
 flInnerRadius
 flInnerScale
 flIntensity
+flIntensityForFog
 flIrisBrightness
 flIrisEmissiveStrength
 flIrisRotation
@@ -4543,6 +4589,8 @@ flLastDistance
 flLastPercent
 flLastPlayedTime
 flLastWeight
+flLatency
+flLatency1Percent
 flLateralMaxDistance
 flLateralStartDistance
 flLeft
@@ -4570,6 +4618,7 @@ flLocalCoopMagicFindBonusPerPlayer
 flLocatorBlend
 flLoopMinDuration
 flLootFlippyLandingHeight
+flLowDurabilityThreshold
 flLowFXMultiplier
 flLuxMax
 flLuxMin
@@ -4584,6 +4633,11 @@ flMapControllerAccTime
 flMapControllerScrollSpeedPerSecond
 flMapFogOfWarFadeDelay
 flMapFogOfWarFadeTime
+flMapMarkerMinimapPingDuration
+flMapMarkerPingSize
+flMapMarkerScaleBoost
+flMapMarkerScaleZoomSpeed
+flMapMarkerTooltipDistance
 flMapPingDuration
 flMapZoomScaleMax
 flMapZoomSpeed
@@ -4593,6 +4647,7 @@ flMassEnd
 flMassTaperFactor
 flMax
 flMaxArmorPhysicalReduction
+flMaxChillSlowAmount
 flMaxCumulativeOffset
 flMaxDamageShield
 flMaxDeviation
@@ -4618,6 +4673,7 @@ flMetalness
 flMicrophoneTiltCorrection
 flMiddleWeight
 flMin
+flMinChillSlowAmount
 flMinOffset
 flMinValue
 flMinWaveLength
@@ -4632,6 +4688,8 @@ flMinimapHatchesSpacing
 flMinimapHatchesSpread
 flMinimapHatchesThickness
 flMinimapHighlightedTextureAlpha
+flMinimapMapNoiseSize
+flMinimapMapNoiseStrength
 flMinimapMaxVisRange
 flMinimapRevealRadius
 flMinimapTextureAlpha
@@ -4643,6 +4701,7 @@ flMinionMonsterDamageScalar
 flMinionMonsterMinimumHealth
 flMinionMonsterXPScalar
 flMonsterCritDamageScalar
+flMonsterIntensityOffset
 flMonsterNonPhysicalDamageScalar
 flMountFearDecayRate
 flMountFearMaxRadius
@@ -4690,6 +4749,7 @@ flOuterRadius
 flOutroDuration
 flOverlayPower
 flOverpowerDamageBonusPerWillpower
+flOverpowerFortifiedScalar
 flOverriddenBlendOutTime
 flOverriddenBlendTime
 flPad0
@@ -4730,7 +4790,6 @@ flPowerEffectIntensityPerSkillRank
 flPowerEffectLengthOverride
 flPowerEffectSizeOverride
 flPowerEffectWidthOverride
-flPowerFormulaTablesResult
 flPriceMarkup
 flPriority
 flProgressMax
@@ -4869,6 +4928,7 @@ flSunAltitude
 flSunAzimuth
 flSunDiskAltitude
 flSunDiskAzimuth
+flSunFogIntensityScale
 flSunIntensityFactor
 flSunRadius
 flSunShadowAltitude
@@ -4946,6 +5006,8 @@ flVelocityCameraMinSpeed
 flVelocityCameraSpeedModifier
 flVelocityFactor
 flVertexAOSize
+flVertexAnimationHeight
+flVertexAnimationRadius
 flVolume
 flVoteKickAttemptDelay
 flVoteKickSuccessfulDelay
@@ -4958,6 +5020,7 @@ flWeatherDuration
 flWeatherIntensityOverride
 flWeight
 flWindFactor
+flWindIntensityScale
 flWindSpeedFactor
 flWorldBossMonsterAdditionalHealthPerPlayer
 flWorldBossRetreatRadiusOverride
@@ -5409,6 +5472,7 @@ nAppearanceIndex
 nApplyCountDelta
 nApplyCountMin
 nAssists
+nAudioImportance
 nBankTab
 nBaseBoneCount
 nBaseCostCurrency
@@ -5447,15 +5511,18 @@ nCorpseResurrectionMaxCharges
 nCost
 nCount
 nCountActive
+nCountPerInstance
 nCrafterType
 nCurrencyAmount
 nCustomDropWeight
 nCycleCount
+nDRLGLayoutHash
 nDRLGSeedType
 nDamageState
 nData
 nDataBlockIndex
 nDataBlocks
+nDateTimeUTC
 nDeathMessage
 nDeaths
 nDefaultChildIndex
@@ -5490,12 +5557,14 @@ nFacing
 nFadeGroup
 nFadeGroupParent
 nFadeTime
+nFavorTierOverride
 nFixedIPowerLevel
 nFloatingBuffTextFontSize
 nFloatingDamageNumberFontSize
 nFloatingDamageTextFontSize
 nFloatingTextFontSize
 nFontSizeFallback
+nForcedDungeonEventIndex
 nForcedMaxAffixCount
 nFormulaCount
 nFrame
@@ -5523,6 +5592,7 @@ nHitFlashMulDuration
 nHorizontalSpacing
 nID
 nIPower
+nImportanceScoreOverride
 nIndex
 nIndexBufferIndex
 nIndexCount
@@ -5695,6 +5765,7 @@ nSeasonActive
 nSeed
 nSegmentCount
 nSelectedRewardIndex
+nSellCostOverride
 nSizeAdjustments
 nSkillModPoints
 nSkillRank
@@ -5795,6 +5866,8 @@ nXPRewardAmount
 nXPTier
 nY
 nZoneEventWarmupTime
+nZoneProgressGold
+nZoneProgressXP
 name
 next
 normal
@@ -5930,11 +6003,16 @@ pathShapeOcclusionPenumbra
 pathShapeOcclusionStrength
 pathSineMultiplierOverLength
 pathSineMultiplierOverTime
+pathSineOffsetMultiplierOverLength
+pathSineOffsetMultiplierOverTime
+pathSineWidthMultiplierOverLength
+pathSineWidthMultiplierOverTime
 pathSourcePointAlongRopeMotion
 pathSourcePointPerpendicularMotion
 pathSourcePointWorldUpMotion
 pathSourceRadius
 pathSunColor
+pathSunGIColorOverride
 pathSunIntensity
 pathSunIntensityFactor
 pathSystemAlpha
@@ -6368,6 +6446,7 @@ snoBaseItem
 snoBaseLayer
 snoBaseMaterial
 snoBiomes
+snoBlockedCollectiblePowers
 snoBloodSeal
 snoBoard
 snoBoldItalicStyle
@@ -6479,6 +6558,8 @@ snoDungeonAffix
 snoDungeonDefaultObserver
 snoDungeonWorld
 snoDye
+snoDynamicPrefetchList
+snoDynamicPreloadList
 snoEffect
 snoEffectDirectionalHitOverride
 snoEffectGroup
@@ -7429,8 +7510,10 @@ tDruidData
 tDungeonMonsterPerPlayerScaling
 tDuration
 tDynamicAudioState
+tDynamicFacingTolerances
 tDynamicGameParameter
 tDynamicRunSpeeds
+tDynamicSprintDistances
 tDynamicTurnSpeeds
 tEasingWeight
 tEffectGroupHardpointLink
@@ -7692,6 +7775,7 @@ tRootCube
 tRootTracks
 tRopeTraversalAdjust
 tSNOName
+tSNONameGameData
 tSNONames
 tSacrifice
 tSavedData
@@ -7725,7 +7809,13 @@ tSigilTierRange
 tSinData
 tSineAmplitudeRange
 tSineFrequencyRange
+tSineOffsetAmplitudeRange
+tSineOffsetFrequencyRange
+tSineOffsetSpeedRange
 tSineSpeedRange
+tSineWidthAmplitudeRange
+tSineWidthFrequencyRange
+tSineWidthSpeedRange
 tSkillPassiveData
 tSkillTreeFrameProps
 tSkillTreePropsAvailable
@@ -7959,6 +8049,7 @@ usItemGenerator
 usMessage
 usOwner
 v
+vAbsoluteImpactDirection
 vBackgroundImagePosition
 vBoneLocalOffset
 vBoundingBoxMax
@@ -7967,6 +8058,7 @@ vBranchWindAnchor
 vCenterPos
 vCloudWind
 vConsoleCameraShakeScalar
+vDRLGTileDims
 vDefaultValue
 vDest
 vDestX
@@ -8032,6 +8124,7 @@ vecVectorFieldDim
 vecVignetteAspectRatioScale
 vecVignetteCenter
 vecWeatherDataOffset
+vecWindDirectionOverride
 vecWorldOffset
 vecWorldSize
 vecZoneArtCenter
