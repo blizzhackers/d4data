@@ -42,18 +42,20 @@ std::vector<DWORD> getBuildVersion(std::string szFileName) {
     return {};
 }
 
+// 48 8B 1D ?? ?? ?? ?? 33 ?? 4C 8D 35 ?? ?? ?? ??
 uint64_t findTypePointer(unsigned char* data, DWORD dataSize) {
     uint64_t offset = 0;
 
     for (ULONGLONG c = 0; c + 28 < dataSize; c++) {
         if (
-            data[c + 0] == 0xEB && data[c + 1] == 0x03 &&
-            data[c + 2] == 0x48 && data[c + 3] == 0x8B &&
-            data[c + 5] == 0x48 && data[c + 6] == 0x89 && data[c + 7] == 0x05 &&
-            data[c + 12] == 0x48 && data[c + 13] == 0x8B &&
-            data[c + 19] == 0x48 && data[c + 20] == 0x85 &&
-            data[c + 22] == 0x0F && data[c + 23] == 0x84 && data[c + 26] == 0x00 && data[c + 27] == 0x00
-            ) {
+            data[c + 0] == 0x48 &&
+            data[c + 1] == 0x8B &&
+            data[c + 2] == 0x1D &&
+            data[c + 7] == 0x33 &&
+            data[c + 9] == 0x4C &&
+            data[c + 10] == 0x8D &&
+            data[c + 11] == 0x35
+        ) {
             if (offset == 0) {
                 offset = c;
             }
@@ -248,8 +250,8 @@ int main() {
     printf(",");
 
     {
-        uint32_t* ptrOffset = (uint32_t*)&D4Data[typeOffset + 15];
-        uint64_t rip = uint64_t(modinfo.lpBaseOfDll) + typeOffset + 19;
+        uint32_t* ptrOffset = (uint32_t*)&D4Data[typeOffset + 3];
+        uint64_t rip = uint64_t(modinfo.lpBaseOfDll) + typeOffset + 7;
         uint64_t typeStart = (uint64_t)(rip + *ptrOffset);
 
         printf("\"typeBase\":\"%llu\"", typeStart);
