@@ -3,24 +3,24 @@
  "__snoID__": 1741100,
  "__type__": "MaterialDefinition",
  "__typeHash__": 3110834328,
- "dwFlags": 2448,
+ "dwFlags": 2064,
  "tUberMaterial": {
   "__type__": "UberMaterial",
   "__typeHash__": 377055229,
   "snoShaderMap": {
-   "__raw__": 543747,
+   "__raw__": 569477,
    "__group__": 36,
    "__type__": "DT_SNO",
    "__typeHash__": 2764331143,
-   "__targetFileName__": "base/meta/ShaderMap/vfx_actor_transparent_uber_pbr_lit_noiseAdditive.shm",
+   "__targetFileName__": "base/meta/ShaderMap/vfx_actor_transparent_uber_pbr_unlit_noiseAdditive.shm",
    "groupName": "ShaderMap",
-   "name": "vfx_actor_transparent_uber_pbr_lit_noiseAdditive"
+   "name": "vfx_actor_transparent_uber_pbr_unlit_noiseAdditive"
   },
   "snoMaterialValueSetOverride": null,
   "mat": {
    "__type__": "Material",
    "__typeHash__": 1352167279,
-   "nSortPri": 0
+   "nSortPri": -1
   },
   "ptMatTexList": [
    {
@@ -408,13 +408,13 @@
      "__type__": "MaterialTexture",
      "__typeHash__": 3890408608,
      "snoTex": {
-      "__raw__": 356603,
+      "__raw__": 498424,
       "__group__": 44,
       "__type__": "DT_SNO",
       "__typeHash__": 2764331143,
-      "__targetFileName__": "base/meta/Texture/energy_shadowyTendrils.tex",
+      "__targetFileName__": "base/meta/Texture/smoke_Streaks_Noise.tex",
       "groupName": "Texture",
-      "name": "energy_shadowyTendrils"
+      "name": "smoke_Streaks_Noise"
      },
      "ptTexAnim": [
       {
@@ -422,8 +422,8 @@
        "__typeHash__": 3866881285,
        "dwType": 3866881285,
        "dwPad": 0,
-       "flUScale": 1,
-       "flVScale": 3,
+       "flUScale": 10,
+       "flVScale": 1,
        "flUTransInitial": 0,
        "unk_803e8a7": {
         "rangeValue1": 0.10000000149011612,
@@ -524,13 +524,13 @@
      "__type__": "MaterialTexture",
      "__typeHash__": 3890408608,
      "snoTex": {
-      "__raw__": 789302,
+      "__raw__": 356603,
       "__group__": 44,
       "__type__": "DT_SNO",
       "__typeHash__": 2764331143,
-      "__targetFileName__": "base/meta/Texture/druidic_spirits_Noise.tex",
+      "__targetFileName__": "base/meta/Texture/energy_shadowyTendrils.tex",
       "groupName": "Texture",
-      "name": "druidic_spirits_Noise"
+      "name": "energy_shadowyTendrils"
      },
      "ptTexAnim": [
       {
@@ -538,7 +538,7 @@
        "__typeHash__": 3866881285,
        "dwType": 3866881285,
        "dwPad": 0,
-       "flUScale": 2,
+       "flUScale": 6,
        "flVScale": 1,
        "flUTransInitial": 0,
        "unk_803e8a7": {
@@ -561,9 +561,9 @@
         "eRemapEasing": 0,
         "szFormulaName": 0
        },
-       "flVTransInitial": 0,
+       "flVTransInitial": -0.4000000059604645,
        "unk_42b1708": {
-        "rangeValue1": 3,
+        "rangeValue1": -3,
         "rangeValue2": 0
        },
        "tVTransVelScalar": {
@@ -791,7 +791,7 @@
         "name": "Color Intensity"
        },
        "value": 1,
-       "unk_2362b28": -1
+       "unk_2362b28": 0
       }
      },
      {
@@ -1037,7 +1037,7 @@
         "groupName": "MaterialValue",
         "name": "Noise 1 - Alpha lerp to white"
        },
-       "value": 0,
+       "value": 0.6499999761581421,
        "unk_2362b28": -1
       }
      },
@@ -1132,7 +1132,7 @@
         "groupName": "MaterialValue",
         "name": "Noise 1 - Alpha Multiply"
        },
-       "value": 0.5600000023841858,
+       "value": 0.3499999940395355,
        "unk_2362b28": -1
       }
      },
@@ -1151,7 +1151,7 @@
         "groupName": "MaterialValue",
         "name": "Noise 2 - Alpha Multiply"
        },
-       "value": 1,
+       "value": 0.9399999976158142,
        "unk_2362b28": -1
       }
      },
@@ -1194,7 +1194,66 @@
       }
      }
     ],
-    "arMaterialScalarGraphs": [],
+    "arMaterialScalarGraphs": [
+     {
+      "__type__": "RunTimeMaterialScalarGraphEntry",
+      "__typeHash__": 1621969581,
+      "pathValGraph": {
+       "__type__": "InterpolationPath_float",
+       "__typeHash__": 3422409450,
+       "tHeader": {
+        "__type__": "InterpolationPathHeader",
+        "__typeHash__": 2520702334,
+        "tLoopPointStart": 0,
+        "tLoopPointEnd": 1,
+        "nDistributionFunction": 0,
+        "unk_2312508": 0,
+        "arInterpScalar": [
+         {
+          "__type__": "InterpolationScalar",
+          "__typeHash__": 991799518,
+          "nScalarFunction": 0,
+          "dwFlags": 1,
+          "tInputRange": {
+           "rangeValue1": 0,
+           "rangeValue2": 1
+          },
+          "tRemapRange": {
+           "rangeValue1": 0,
+           "rangeValue2": 0
+          },
+          "eRemapEasing": 0,
+          "szFormulaName": 0
+         }
+        ],
+        "dwFlags": 4
+       },
+       "ptArrayNodes": [
+        {
+         "__type__": "InterpolationNode_float",
+         "__typeHash__": 2007685731,
+         "tValueMin": 1.0057142972946167,
+         "tValueMax": 1.0057142972946167,
+         "tTime": 0.32608693838119507
+        },
+        {
+         "__type__": "InterpolationNode_float",
+         "__typeHash__": 2007685731,
+         "tValueMin": 0.35056325793266296,
+         "tValueMax": 0.35056325793266296,
+         "tTime": 0.4326086640357971
+        },
+        {
+         "__type__": "InterpolationNode_float",
+         "__typeHash__": 2007685731,
+         "tValueMin": 0.21263670921325684,
+         "tValueMax": 0.21263670921325684,
+         "tTime": 0.54347825050354
+        }
+       ]
+      }
+     }
+    ],
     "arMaterialVectorValues": [
      {
       "__type__": "RunTimeMaterialVectorValueEntry",
@@ -1212,9 +1271,9 @@
         "name": "Color Global Tint"
        },
        "value": {
-        "x": 1,
-        "y": 1,
-        "z": 1,
+        "x": 0.37867626547813416,
+        "y": 0,
+        "z": 0.010397803038358688,
         "w": 1
        },
        "unk_2362b28": -1
@@ -1225,7 +1284,7 @@
    }
   ],
   "nTexAnimStateCount": 6,
-  "fHasGraph": false
+  "fHasGraph": true
  },
  "arDecalLookVariantMap": [],
  "snoSurface": null,

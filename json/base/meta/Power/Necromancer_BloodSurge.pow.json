@@ -130,7 +130,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADIAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -249,6 +249,7 @@
   "value": "6",
   "compiled": "BgAAAAAAwEAAAAAA"
  },
+ "unk_699d1c4": 1,
  "unk_e7fc6fa": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -850,8 +851,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "4",
-    "compiled": "BgAAAAAAgEAAAAAA"
+    "value": "4 * SF_26",
+    "compiled": "BgAAAAAAgEAFAAAAIAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -946,8 +947,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "Affix_Flat_Value_1#Amulet_Unique_Necro_100",
-    "compiled": "BQAAAAAAAAD0AwAAS0YJAAAAAAAAAAAA"
+    "value": "Affix_Value_1#Amulet_Unique_Necro_100 * (Owner.Weapon_Damage_Min_Total + Owner.Weapon_Damage_Delta_Total) * (1 + Main_Hand_Damage_Percent_Bonus)",
+    "compiled": "BQAAAAAAAAAWBAAAS0YJAAAAAAAFAAAAAAAAAJ4BAAD+////AwAAAAUAAAAAAAAAnwEAAP7///8DAAAACwAAAA0AAAAGAAAAAACAPwUAAAAAAAAA5AAAAP7///8AAAAACwAAAA0AAAAAAAAA"
    }
   },
   {
@@ -1011,7 +1012,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "Affix_Value_1#legendary_necro_108 / 100",
-    "compiled": "BQAAAAAAAADyAwAAG6QSAAAAAAAGAAAAAADIQg4AAAAAAAAA"
+    "compiled": "BQAAAAAAAAAWBAAAG6QSAAAAAAAGAAAAAADIQg4AAAAAAAAA"
    }
   },
   {
@@ -1028,6 +1029,54 @@
    "tFormula": {
     "value": "0.3",
     "compiled": "BgAAAJqZmT4AAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "1 + AoE_Size_Bonus_Per_Power#Necromancer_BloodSurge",
+    "compiled": "BgAAAAAAgD8FAAAAAAAAAJoDAAAjCQkAAAAAAAsAAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix_Value_1#Gloves_Unique_Necro_101 * (Owner.Weapon_Damage_Min_Total + Owner.Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAWBAAAUAYdAAAAAAAFAAAAAAAAAJ4BAAD+////AwAAAAUAAAAAAAAAnwEAAP7///8DAAAACwAAAA0AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "3",
+    "compiled": "BgAAAAAAQEAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix.Gloves_Unique_Necro_101.\"Static Value 0\" / 100",
+    "compiled": "BQAAAGMAAABQBh0AAAAAAAAAAAAGAAAAAADIQg4AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix.Gloves_Unique_Necro_101.\"Static Value 1\" / 100",
+    "compiled": "BQAAAGMAAABQBh0AAQAAAAAAAAAGAAAAAADIQg4AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix.Gloves_Unique_Necro_101.\"Static Value 2\"",
+    "compiled": "BQAAAGMAAABQBh0AAgAAAAAAAAAAAAAA"
    }
   }
  ],
@@ -1341,6 +1390,99 @@
     "tHitpointScalar": {
      "value": "SF_15",
      "compiled": "BQAAABUAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "bHasCustomDamageVariance": false,
+   "tDamageVariance": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_c1c7b04": false,
+   "unk_907cc39": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tFortifiedHealth": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "tApplyFreeze": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tApplyChillAmount": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_e659b0f": -1,
+   "tHeal": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "eHealType": 0,
+   "bPlayHealEffect": true,
+   "unk_8bc45f2": false,
+   "unk_15c6c03": false,
+   "unk_e842c84": false,
+   "unk_b8f2b": -1,
+   "bHasCombatEffectOverride": false,
+   "tCombatEffectOverride": {
+    "value": "100",
+    "compiled": "BgAAAAAAyEIAAAAA"
+   },
+   "ePayloadDefaultHitEffectType": 2,
+   "snoNormalHitEffectGroup": null,
+   "snoTargetImpactEffectGroup": null,
+   "flHitFlashDurationScalar": 1,
+   "iPowerNeedTarget": false,
+   "unk_b9a00d9": false,
+   "unk_969096b": false,
+   "unk_5885b8": 0,
+   "unk_f38eac9": false,
+   "tOnHitSoundsPayload": {
+    "__type__": "OnHitSounds",
+    "__typeHash__": 960545022,
+    "sno1P": null,
+    "sno3PEnemy": null,
+    "sno3PFriendly": null
+   }
+  },
+  {
+   "__type__": "PowerPayloadDefinition",
+   "__typeHash__": 812993760,
+   "snoItemTypeMainHandEffectsOverride": null,
+   "snoItemTypeOffHandEffectsOverride": null,
+   "dwID": 3077505241,
+   "eForcedDamageType": -1,
+   "tDamage": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 3,
+    "tHitpointScalar": {
+     "value": "SF_27",
+     "compiled": "BQAAACEAAAAAAAAAAAAAAAAAAAAAAAAA"
     },
     "tFlatLevel": {
      "value": "0",
