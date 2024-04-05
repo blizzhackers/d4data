@@ -965,7 +965,7 @@ fileNames.forEach((fileName, index) => {
           test: true,
         };
 
-        console.log('#' + index, newFileName);
+        //console.log('#' + index, newFileName);
 
         let data = readStructure.bind(globals)(file, [getTypeHashFromFormatHash(header.readUInt32LE(4))], 0, null, [fileName]);
         let snoID = file.readUInt32LE(0);
@@ -1012,6 +1012,7 @@ fileNames.forEach((fileName, index) => {
       }
     }
   } catch (err) {
+    console.error('Error parsing #' + index, newFileName);
     console.error(err);
     fs.writeFileSync(newFileName, JSON.stringify({
       err,
