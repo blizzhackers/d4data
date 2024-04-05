@@ -15,14 +15,14 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "desc",
-   "szText": "{c_label}Cooldown: {/c}{c_resource}{Cooldown Time}{/c} seconds\r\n{if:ADVANCED_TOOLTIP}{c_label}Lucky Hit Chance: {/c}{c_resource}[{Combat_Effect_Chance_Script_Formula_Override:16}|%|]{/c}\r\n{/if}{c_label}Passive:{/c} Summon {c_number}{SF_0}{/c} wolf companions that bite enemies for {c_number}{payload:TOOLTIP_DAMAGE}{/c} damage.\r\n\r\n{c_label}Active{/c}: Direct your wolves to focus an enemy, leaping to them and striking for {c_number}{payload:TOOLTIP_DAMAGE_LEAP}{/c} damage.",
+   "szText": "{c_label}Cooldown: {/c}{c_resource}{Cooldown Time}{/c} seconds\r\n{if:ADVANCED_TOOLTIP}{c_label}Lucky Hit Chance: {/c}{c_resource}[{Combat_Effect_Chance_Script_Formula_Override:16}|%|]{/c}\r\n{/if}{c_label}Passive:{/c} Summon {c_number}{SF_0}{/c} wolf companions that bite enemies for {c_number}{if:SF_21}{payload:TOOLTIP_DAMAGE_LIGHTNING}{else}{payload:TOOLTIP_DAMAGE}{/if}{/c} damage.\r\n\r\n{c_label}Active:{/c} Direct your wolves to focus an enemy, becoming {c_important}{u}Unstoppable{/u}{/c} and leaping at them to strike for {c_number}{if:SF_21}{payload:TOOLTIP_DAMAGE_LEAP_LIGHTNING}{else}{payload:TOOLTIP_DAMAGE_LEAP}{/if}{/c} damage.",
    "hLabel": 3707583
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "rankup_desc",
-   "szText": " \r\n{icon:bullet,1.2} Passive Damage {icon:arrow,1.2} {c_number}{payload:TOOLTIP_DAMAGE}{/c}\r\n{icon:bullet,1.2} Active Damage {icon:arrow,1.2} {c_number}{payload:TOOLTIP_DAMAGE_LEAP}{/c}",
+   "szText": " \r\n{icon:bullet,1.2} Passive Damage {icon:arrow,1.2} {c_number}{if:SF_21}{payload:TOOLTIP_DAMAGE_LIGHTNING}{else}{payload:TOOLTIP_DAMAGE}{/if}{/c}\r\n{icon:bullet,1.2} Active Damage {icon:arrow,1.2} {c_number}{if:SF_21}{payload:TOOLTIP_DAMAGE_LEAP_LIGHTNING}{else}{payload:TOOLTIP_DAMAGE_LEAP}{/if}{/c}",
    "hLabel": 4074074671
   },
   {

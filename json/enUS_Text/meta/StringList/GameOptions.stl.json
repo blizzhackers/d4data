@@ -169,7 +169,7 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightPlayerTooltip",
-   "szText": "Draws a highlight around the player.",
+   "szText": "Adds a strong highlight to the player at all times making them easier to see.",
    "hLabel": 2100394928
   },
   {
@@ -197,21 +197,21 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightEnemy",
-   "szText": "Enemy Highlight Color",
+   "szText": "Enemy Target Highlight Color",
    "hLabel": 1698926006
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightNPC",
-   "szText": "NPC Highlight Color",
+   "szText": "NPC Target Highlight Color",
    "hLabel": 3204061625
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightObject",
-   "szText": "Object Highlight Color",
+   "szText": "Object Target Highlight Color",
    "hLabel": 607276591
   },
   {
@@ -225,21 +225,21 @@
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightNPCColorTooltip",
-   "szText": "Controls the color of NPC highlights.",
+   "szText": "Controls the color of NPC highlights. When targeted, the NPC is highlighted with the specified color.",
    "hLabel": 3271961091
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightEnemyColorTooltip",
-   "szText": "Controls the color of enemy highlights",
+   "szText": "Controls the color of enemy highlights. When targeted, the enemy is highlighted with the specified color.",
    "hLabel": 1090552192
   },
   {
    "__type__": "StringTableEntry",
    "__typeHash__": 3844612145,
    "szLabel": "HighlightObjectColorTooltip",
-   "szText": "Controls the color of interactable object highlights.",
+   "szText": "Controls the color of interactable object highlights. When targeted, the Object is highlighted with the specified color.",
    "hLabel": 2684010361
   },
   {
@@ -6051,6 +6051,195 @@
    "szLabel": "RaytracedParticlesToggleTooltip",
    "szText": "Enables ray tracing against particle effects. Disabling this setting will improve performance",
    "hLabel": 4289421523
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_Title",
+   "szText": "Character Visibility",
+   "hLabel": 2944985878
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_Tooltip",
+   "szText": "Allows a choice between the default grimdark visuals, or sets an ambient light (Additional Highlight) above all players, NPCs, and enemies to make characters more visible.",
+   "hLabel": 3272920991
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_Realistic",
+   "szText": "Standard Highlight",
+   "hLabel": 2173385524
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeLight",
+   "szText": "Additional Highlight",
+   "hLabel": 1756467137
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibilityEdgeLightSlider_Title",
+   "szText": "Additional Highlights Slider",
+   "hLabel": 1279544902
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibilityEdgeLightSlider_Tooltip",
+   "szText": "Sets the intensity of the highlights present on characters when additional highlights is enabled.",
+   "hLabel": 2083897039
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibilityEdgeLightColor_Title",
+   "szText": "Additional Highlights Color",
+   "hLabel": 42510274
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibilityEdgeLightColor_Tooltip",
+   "szText": "When enabled, allows the player to set unique colors for the additional highlights based on the entity type.",
+   "hLabel": 3572918091
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibilityEnable_Title",
+   "szText": "Character Visibility Options",
+   "hLabel": 592090877
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Player_Tooltip",
+   "szText": "Sets the color of the player's additional highlights when enabled.",
+   "hLabel": 3537701975
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_NPC_Tooltip",
+   "szText": "Sets the color of all NPC additional highlights when enabled.",
+   "hLabel": 3650753867
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Enemy_Tooltip",
+   "szText": "Sets the color of all enemy additional highlights when enabled.",
+   "hLabel": 3378427976
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Object_Tooltip",
+   "szText": "Sets the color of all object additional highlights when enabled.",
+   "hLabel": 2887406273
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Player_Title",
+   "szText": "Player Additional Highlight Color",
+   "hLabel": 271227342
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_NPC_Title",
+   "szText": "NPC Additional Highlight Color",
+   "hLabel": 2389235138
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Enemy_Title",
+   "szText": "Enemy Additional Highlight Color",
+   "hLabel": 1371444607
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "CharacterVisibility_EdgeHighlight_Object_Title",
+   "szText": "Object Additional Highlight Color",
+   "hLabel": 1974418872
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ConflictingOptionTitle",
+   "szText": "Conflicting Setting",
+   "hLabel": 3650091851
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ConflictingOptionMessage",
+   "szText": "This will unset {c_highlight}{s1}{/c}. Continue?",
+   "hLabel": 1497458958
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ViewDistanceFar",
+   "szText": "Far",
+   "hLabel": 4140565663
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ViewDistanceStandard",
+   "szText": "Standard",
+   "hLabel": 1947494423
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ViewDistanceTitle",
+   "szText": "View Distance",
+   "hLabel": 3672209736
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "ViewDistanceTooltip",
+   "szText": "Adjusts the default gameplay camera view distance.\r\n\r\n{c_highlight}Will not affect the camera in town or while mounted.{/c}",
+   "hLabel": 650752593
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "OwnHealthBarOption",
+   "szText": "Display Own Health",
+   "hLabel": 2922005304
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "OwnResourceOption",
+   "szText": "Display Own Resource",
+   "hLabel": 2231592853
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "OwnHealthTooltip",
+   "szText": "Show health bar above your own character. ",
+   "hLabel": 563443989
+  },
+  {
+   "__type__": "StringTableEntry",
+   "__typeHash__": 3844612145,
+   "szLabel": "OwnResourceTooltip",
+   "szText": "Show resource bar above your own character. ",
+   "hLabel": 2745540871
   }
  ],
  "ptMapStringTable": "0"
