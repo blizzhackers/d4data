@@ -722,6 +722,7 @@
                  "szLabel": 0
                 },
                 "szPreviewText": "Rank 2 to Rank 3",
+                "bShrinkToFit": 1,
                 "eTextJustifyVertical": 2,
                 "eResizeToFit": 1,
                 "eTextJustify": 2
@@ -751,7 +752,9 @@
               "szControlName": 0
              },
              "unk_441f783": "0",
-             "hOptionalUIControlStyleFields": {},
+             "hOptionalUIControlStyleFields": {
+              "bActive": 0
+             },
              "tConsoleInput": {
               "__type__": "UIControlConsoleInput",
               "__typeHash__": 3089331074,
@@ -842,6 +845,7 @@
                  "szLabel": 0
                 },
                 "szPreviewText": "Success Chance: 90%",
+                "bShrinkToFit": 1,
                 "eTextJustifyVertical": 2,
                 "eResizeToFit": 1,
                 "eTextJustify": 2
@@ -1202,7 +1206,7 @@
            },
            "szLabel": 434004800
           },
-          "szOnClick": "UI_ResetMasterwork_Click",
+          "szOnClick": "UI_ResetMasterwork_ToggleModal",
           "nHeight": 65,
           "eVerticalAnchoring": 0,
           "nWidth": 65,
@@ -1291,7 +1295,7 @@
          "hOptionalUIHotkeyStyleFields": {
           "eFixedControllerButton": 3,
           "szOnKeyHeldDown": "",
-          "unk_ccd9967": "UI_ResetMasterwork_Click"
+          "unk_ccd9967": "UI_ResetMasterwork_ToggleModal"
          }
         }
        ],
@@ -1370,7 +1374,8 @@
        },
        "hOptionalUIWindowStyleFields": {
         "eVerticalAnchoring": 3,
-        "eHorizontalAnchoring": 3
+        "eHorizontalAnchoring": 3,
+        "eWindowEatsClicks": 1
        }
       }
      ],
@@ -1409,10 +1414,10 @@
         "hOptionalUIControlConsoleInputFields": {}
        },
        "hOptionalUIWindowStyleFields": {
-        "nHeight": 860,
         "eVerticalAnchoring": 1,
         "bWindowIsInputFocusGroup": 1,
-        "eHorizontalAnchoring": 1
+        "eHorizontalAnchoring": 1,
+        "eWindowEatsClicks": 1
        }
       }
      ],
@@ -1684,7 +1689,7 @@
           {
            "__type__": "UIControlTemplate",
            "__typeHash__": 641859515,
-           "szName": "EnchantSlot_ItemIcon",
+           "szName": "Masterwork_Item-Box",
            "ptInlineStyle": [
             {
              "__type__": "UIItemButtonStyle",
@@ -1724,7 +1729,8 @@
                "groupName": "TiledStyle",
                "name": "ControllerSelectionRectangle"
               },
-              "eTooltipAlignVertical": 5
+              "eTooltipAlignVertical": 5,
+              "nTooltipOffsetX": 120
              },
              "tFont": {
               "__type__": "UIControlFont",
@@ -2673,6 +2679,7 @@
           "hOptionalUIControlConsoleInputFields": {}
          },
          "hOptionalUIWindowStyleFields": {
+          "nHeight": 0,
           "eVerticalAnchoring": 2,
           "eHorizontalAnchoring": 3
          }
@@ -2730,7 +2737,7 @@
           {
            "__type__": "UIControlTemplate",
            "__typeHash__": 641859515,
-           "szName": "Reset_Button",
+           "szName": "Reset_Confirm_Button",
            "ptInlineStyle": [
             {
              "__type__": "UIButtonStyle",
@@ -2759,7 +2766,7 @@
               "hOptionalUIControlConsoleInputFields": {}
              },
              "hOptionalUIWindowStyleFields": {
-              "szOnClick": "ModalNotification_OnClick_OkButton"
+              "szOnClick": "UI_ResetMasterwork_Confirm"
              },
              "tFont": {
               "__type__": "UIControlFont",
@@ -2771,8 +2778,16 @@
               "hText": {
                "__type__": "StringLabelHandleEx",
                "__typeHash__": 721585600,
-               "snoStringList": null,
-               "szLabel": 0
+               "snoStringList": {
+                "__raw__": 270735,
+                "__group__": 42,
+                "__type__": "DT_SNO",
+                "__typeHash__": 2764331143,
+                "__targetFileName__": "enUS_Text/meta/StringList/Crafting.stl",
+                "groupName": "StringList",
+                "name": "Crafting"
+               },
+               "szLabel": 3484573774
               },
               "szPreviewText": "Reset"
              },
@@ -2836,7 +2851,7 @@
               "hOptionalUIControlConsoleInputFields": {}
              },
              "hOptionalUIWindowStyleFields": {
-              "szOnClick": "ModalNotification_OnClick_CancelButton"
+              "szOnClick": "UI_ResetMasterwork_ToggleModal"
              },
              "tFont": {
               "__type__": "UIControlFont",
@@ -2928,15 +2943,7 @@
            },
            "hOptionalUIStackPanelStyleFields": {
             "nStackSpacing": 15,
-            "bHorizontal": 1,
-            "tMargins": {
-             "__type__": "UIMargins",
-             "__typeHash__": 501814863,
-             "flLeft": 0,
-             "flTop": 8,
-             "flRight": 0,
-             "flBottom": 10
-            }
+            "bHorizontal": 1
            }
           }
          ],
@@ -2972,7 +2979,9 @@
               "__typeHash__": 3089331074,
               "hOptionalUIControlConsoleInputFields": {}
              },
-             "hOptionalUIWindowStyleFields": {},
+             "hOptionalUIWindowStyleFields": {
+              "nHeight": 77
+             },
              "tFont": {
               "__type__": "UIControlFont",
               "__typeHash__": 1698657718,
@@ -3006,7 +3015,7 @@
              "hOptionalUIControlStyleFields": {},
              "hOptionalUIHotkeyStyleFields": {
               "eFixedControllerButton": 3,
-              "unk_ccd9967": "ModalNotification_OnClick_OkButton",
+              "unk_ccd9967": "UI_ResetMasterwork_Confirm",
               "snoOnActionSound": {
                "__raw__": 1369477,
                "__group__": 40,
@@ -3016,33 +3025,6 @@
                "groupName": "Sound",
                "name": "Play_UI_Menu_Confirm_Medium"
               }
-             }
-            }
-           ],
-           "arChildren": [],
-           "unk_1cb": []
-          },
-          {
-           "__type__": "UIControlTemplate",
-           "__typeHash__": 641859515,
-           "szName": "Hotkey_VirtualKeyboard",
-           "ptInlineStyle": [
-            {
-             "__type__": "UIHotkeyStyle",
-             "__typeHash__": 2577181091,
-             "dwType": 2577181091,
-             "dwPad": 0,
-             "hParentStyle": {
-              "__type__": "UIControlHandle",
-              "__typeHash__": 3063971755,
-              "snoUI": null,
-              "szControlName": 0
-             },
-             "unk_441f783": "0",
-             "hOptionalUIControlStyleFields": {},
-             "hOptionalUIHotkeyStyleFields": {
-              "eFixedControllerButton": 0,
-              "unk_ccd9967": "ModalNotification_ShowVirtualKeyboard"
              }
             }
            ],
@@ -3069,7 +3051,7 @@
              "hOptionalUIControlStyleFields": {},
              "hOptionalUIHotkeyStyleFields": {
               "eFixedControllerButton": 1,
-              "unk_ccd9967": "ModalNotification_OnClick_CancelButton",
+              "unk_ccd9967": "UI_ResetMasterwork_ToggleModal",
               "snoOnActionSound": {
                "__raw__": 157389,
                "__group__": 40,

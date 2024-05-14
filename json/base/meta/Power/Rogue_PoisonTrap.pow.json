@@ -118,7 +118,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAADIAAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADJAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -608,8 +608,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": "(SF_3 > 0.25) ? SF_3 : 0.25",
-    "compiled": "BQAAAAkAAAAAAAAAAAAAAAAAAAAGAAAAAACAPggAAAAFAAAACQAAAAAAAAAAAAAAAAAAAAYAAAAAAIA+EAAAAAAAAAA="
+    "value": "((SF_3 > 0.25) ? SF_3 : 0.25) / SF_22",
+    "compiled": "BQAAAAkAAAAAAAAAAAAAAAAAAAAGAAAAAACAPggAAAAFAAAACQAAAAAAAAAAAAAAAAAAAAYAAAAAAIA+EAAAAAUAAAAcAAAAAAAAAAAAAAAAAAAADgAAAAAAAAA="
    },
    "tMaxStackCount": {
     "value": "1",
@@ -706,8 +706,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": ".25",
-    "compiled": "BgAAAAAAgD4AAAAA"
+    "value": ".25 / SF_22",
+    "compiled": "BgAAAAAAgD4FAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -902,8 +902,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": "SF_2",
-    "compiled": "BQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "value": "SF_2 / SF_22",
+    "compiled": "BQAAAAgAAAAAAAAAAAAAAAAAAAAFAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -1098,8 +1098,8 @@
    "bHarmful": true,
    "bInfinite": false,
    "tDuration": {
-    "value": "SF_12",
-    "compiled": "BQAAABIAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "value": "SF_12 / SF_22",
+    "compiled": "BQAAABIAAAAAAAAAAAAAAAAAAAAFAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -1603,8 +1603,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "9",
-    "compiled": "BgAAAAAAEEEAAAAA"
+    "value": "9 * SF_22",
+    "compiled": "BgAAAAAAEEEFAAAAHAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -1612,7 +1612,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "1.25 - Trap_Arm_Time_Reduction_Seconds",
-    "compiled": "BgAAAAAAoD8FAAAAAAAAAB4BAAD+////AAAAAAwAAAAAAAAA"
+    "compiled": "BgAAAAAAoD8FAAAAAAAAAB8BAAD+////AAAAAAwAAAAAAAAA"
    }
   },
   {
@@ -1755,8 +1755,16 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "1 + AoE_Size_Bonus_Per_Power#Rogue_PoisonTrap",
-    "compiled": "BgAAAAAAgD8FAAAAAAAAAJoDAAAQWwYAAAAAAAsAAAAAAAAA"
+    "value": "Min(1.5, 1 + (AoE_Size_Bonus_Per_Power#Rogue_PoisonTrap / 2))",
+    "compiled": "BgAAAAAAwD8GAAAAAACAPwUAAAAAAAAAnAMAABBbBgAAAAAABgAAAAAAAEAOAAAACwAAAAEAAAAAAAAAAAAAAA=="
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "1 + Power_Duration_Bonus_Pct#Rogue_PoisonTrap",
+    "compiled": "BgAAAAAAgD8FAAAAAAAAAG4DAAAQWwYAAAAAAAsAAAAAAAAA"
    }
   }
  ],
