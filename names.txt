@@ -158,6 +158,7 @@ AnimationClothOverride
 AnimationDefinition
 AnyLogicSubcondition
 AppBone
+AppearanceAddOnPreloadHelper
 AppearanceAndMaterialContent
 AppearanceDefinition
 AppearanceLook
@@ -801,6 +802,8 @@ ImbueAffixResultMessage
 ImbueRecipe
 IncludePath
 IndexedTriangle
+IndicatorIdString
+IndicatorInfo
 Influence
 InitiateGroupTransferMessage
 InstanceGroupInstance
@@ -948,6 +951,7 @@ MalignantColor_Table
 MalignantGeneralData
 MalignantMonsterColorSubcondition
 MalignantMonsterTierSubcondition
+MalignantOrbLevelData
 MapImageHandleReference
 MapPinMessage
 MapPingMessage
@@ -1389,6 +1393,7 @@ PowerBuffDefinition
 PowerBuffIdentifier
 PowerBuffSaveAttribute
 PowerCallbackBase
+PowerCameraFocusOverride
 PowerCastingEffectOverride
 PowerConditionAILocalVariableEqualTo
 PowerConditionAILocalVariableLessThan
@@ -1478,6 +1483,7 @@ PowerStartVariant
 PowerTargetAreaDefinition
 PowerToMovementBlendOverride
 PreApplyBuffCallback
+PrefabBakedSplineCustomization
 PrefabCustomization
 PrefabCustomizedMarker
 PrefabData
@@ -2466,6 +2472,7 @@ arAdditionalCheats
 arAdditionalDungeonAffix
 arAdditionalDungeonState
 arAdditionalTargets
+arAffectedItemLabels
 arAffixSkillTags
 arAffixes
 arAllReferencedItems
@@ -2476,6 +2483,7 @@ arAnimSetAnimPreloadHelpers
 arAnimSetOrder
 arAnimSetOverrides
 arAnimSets
+arAppearanceAddOnPreloadHelpers
 arAppearanceAndMaterialContents
 arAppearanceSets
 arAppearances
@@ -2693,6 +2701,8 @@ arIconLayouts
 arIcons
 arImbueRecipes
 arImbueRecipesFromAspects
+arIndicatorIdList
+arIndicatorInfo
 arIndices
 arIngredients
 arInherentAffixes
@@ -2710,8 +2720,11 @@ arItemLabels
 arItemPreloadHelpers
 arItemTiers
 arItemTypes
+arItemUpgradeArmorLevels
 arItemUpgradeArmorPowerLevels
+arItemUpgradeJewelryLevels
 arItemUpgradeJewelryPowerLevels
+arItemUpgradeWeaponLevels
 arItemUpgradeWeaponPowerLevels
 arItems
 arJewelries
@@ -2748,6 +2761,7 @@ arLookVariants
 arMakeupChoices
 arMaleAnimSets
 arMaleOffsets
+arMalignantOrbLevelData
 arMalignantSocketColorWeights
 arMalignantTags
 arMarkingColorChoices
@@ -2826,6 +2840,7 @@ arPotentialDungeonStates
 arPowerScriptParams
 arPowerToModify
 arPowers
+arPrefabBakedSplineCustomizations
 arPrefabCustomizations
 arPrefabDataInfo
 arPrefabScopedActorGroups
@@ -3003,6 +3018,7 @@ arWorldToDPOQuestList
 arWreckableDeathEffectGroups
 arZoneProgressData
 arZoneSpecificStaticLoadingImages
+arZoneSpecificWeatherOverrides
 arZoomBreakpoints
 arZoomLevels
 area
@@ -3033,6 +3049,7 @@ bAlwaysPrivate
 bAlwaysProcs
 bAmbientInteract
 bAnimated
+bAnimatedMovement
 bAny
 bAnyWeapon
 bAppendDescription
@@ -3059,11 +3076,18 @@ bContextMenuToggle
 bCouldHaveRagdolled
 bCustomEffectTiming
 bDHunterEnabled
+bDamageCanCrit
+bDamageCanCrushingBlow
+bDamageIgnoresBonuses
+bDamageIgnoresInvulnerable
 bData
 bDealsDOT
 bDebugDraw
 bDefensive
+bDeleteOnOwnerDeath
+bDeleteOnPowerInterrupt
 bDescendingSort
+bDidCrit
 bDieOverride
 bDisableDefaultDungeonStates
 bDisableDefaultLabels
@@ -3145,6 +3169,7 @@ bIncludeTechniqueSlot
 bInfinite
 bInstant
 bInterruptCondition
+bInterruptOnDamage
 bInverse
 bInvert
 bInvertCameraY
@@ -3224,6 +3249,7 @@ bPhaseIsHidden
 bPlayEffects
 bPlayHealEffect
 bPlayNormalHitSound
+bPlayNormalHitSoundPayload
 bPreplayAnimation
 bPrivacyFlag
 bProceduralEntrance
@@ -3256,6 +3282,7 @@ bSetPlayerState
 bShadow
 bSheathed
 bShouldNotify
+bShowCastConfirmation
 bShowDuration
 bShowHeader
 bShowLimit
@@ -3586,6 +3613,7 @@ dwPortalDestSubzoneFlags
 dwPortalType
 dwPrefabShaderMapOverride
 dwPrefixValue
+dwPriority
 dwProceduralEntranceName
 dwProximityObjectID
 dwQuestHash
@@ -3672,6 +3700,7 @@ dwValue
 dwVertStride
 dwVolumeXSlices
 dwVolumeYSlices
+dwWaypointGUID
 dwWeaponSlot
 dwWeatherIntensityOverrideEnd
 dwWeight
@@ -3786,6 +3815,8 @@ eDPath
 eDRLGTileType
 eDamageType
 eDamageTypeOverride
+eDateTimeDateFormat
+eDateTimeTimeFormat
 eDateTimeType
 eDefaultBrain
 eDefaultFacingStyle
@@ -3917,6 +3948,7 @@ eMaterial
 eMaterialImportance
 eMetaDataType
 eMicrophoneMode
+eMipFilter
 eMobility
 eModType
 eMonsterRarity
@@ -4098,6 +4130,7 @@ eTextJustify
 eTextJustifyVertical
 eTextureImportance
 eTextureResourceType
+eTextureResourceUsage
 eTier
 eTileType
 eTiltType
@@ -4472,6 +4505,8 @@ flBeginNearTransition
 flBendingStiffness
 flBlendApproachSpeed
 flBlendDampingRatio
+flBlendHertz
+flBlendHertzAdd
 flBlendInTime
 flBlendOutOverrideTime
 flBlendOutTime
@@ -4789,9 +4824,6 @@ flIrisSize
 flItemCylinderHeight
 flItemCylinderRadius
 flItemEffectivenessPercent
-flItemNonAngularFrequencyA
-flItemNonAngularFrequencyB
-flItemNonAngularFrequencyC
 flJitterSpeed
 flJitterStrength
 flKeyedDungeonEscapesDuration
@@ -4869,6 +4901,7 @@ flMaxDeviation
 flMaxMovementSpeed
 flMaxOffsetFactor
 flMaxPerpendicularOffset
+flMaxPlayerInteractDistance
 flMaxPowerEffectIntensityFromSkillRanks
 flMaxRange
 flMaxResistanceAllBase
@@ -4992,6 +5025,7 @@ flPersonalChatterCooldown
 flPlaySpeed
 flPlayerCritDamageScalar
 flPlayerErrorCooldownTime
+flPlayerInteractAngle
 flPlayerPowerCacheTimeoutCrowdControlled
 flPlayerPowerCacheTimeoutInterrupt
 flPlayerPowerCacheTimeoutNormal
@@ -5199,7 +5233,6 @@ flTrimU1
 flTrimV0
 flTrimV1
 flTurnSpeed
-flTypePassabilityCap
 flU0
 flU1
 flUScale
@@ -5446,6 +5479,7 @@ hMessageText
 hMinimapIcon
 hMinimapIconGizmoUsed
 hMinimapIconImage
+hMinimapIconPromptInteract
 hMinimapStringLabel
 hNPCIcon
 hNotificationIcon
@@ -5712,9 +5746,12 @@ nBankTab
 nBaseBoneCount
 nBaseCostCurrency
 nBaseItemPower
+nBaseLODSubObjectIndex
 nBatchId
 nBatchIndex
 nBatchTotal
+nBeardStyle
+nBeardStyleIndex
 nBitOffset
 nBone1
 nBone2
@@ -5863,7 +5900,9 @@ nItemUpgradesMaxMagic
 nItemUpgradesMaxRare
 nItemUpgradesMaxSacred
 nIterations
+nJewelry
 nJewelryChoice
+nJewelryIndex
 nKey
 nKeyParam
 nKeyframeCount
@@ -5887,6 +5926,7 @@ nLineUID
 nListBoxStackSpacing
 nLocalPlayerIndex
 nLookOverrideHash
+nLowQualityLOD
 nLowerX
 nLowerY
 nLowerZ
@@ -5894,10 +5934,13 @@ nMajorAffixCount
 nMarkerID
 nMarkerId
 nMarkerIndex
+nMarkingShape
 nMarkingShapeChoice
+nMarkingShapeIndex
 nMaterialIndex
 nMax
 nMaxAffixes
+nMaxAnimLOD
 nMaxAttachments
 nMaxCount
 nMaxDepth
@@ -6006,6 +6049,7 @@ nRoomCountDelta
 nRoomCountMax
 nRoomCountMin
 nRopeType
+nSamples
 nSavePointNumber
 nScalarFunction
 nSceneChunk
@@ -6048,6 +6092,7 @@ nStashTabCost
 nStaticGoldAmount
 nStaticXPAmount
 nStepUID
+nSubObjectMaxLOD
 nSummonMaxConcurrent
 nSummonMaxTotal
 nSyncGroupIndex
@@ -6308,6 +6353,7 @@ pgbidRareNames
 planeCount
 planeDefs
 pnAnimToStructure
+pnVertexElemPerSemantic
 polytopeDataMirror
 positionOffset
 powerStartPosition
@@ -6328,6 +6374,7 @@ ptAttributes
 ptAudioBusses
 ptBase
 ptBaseBoneInfluences
+ptBaseSubObjectIndexMap
 ptBendClusters
 ptBendingConstraints
 ptBindNormals
@@ -6342,6 +6389,7 @@ ptBoneStructure
 ptBoneStructureInfo
 ptBossDoorInstanceData
 ptBrainData
+ptCampaignQuestSet
 ptCapsuleDefs
 ptCapsules
 ptChestGizmoData
@@ -6447,6 +6495,7 @@ ptNodes
 ptNonUniformScales
 ptOffsetList
 ptPOICameraInstanceData
+ptPOIs
 ptParentIndices
 ptParticlesKeyframes
 ptParticlesLifeEvents
@@ -6475,6 +6524,9 @@ ptPrimitives
 ptProjData
 ptPropData
 ptProxData
+ptQuestChainToCampaignArcMap
+ptQuestToCampaignArcMap
+ptQuestToCampaignChainMap
 ptRainSplashSurfaceParticles
 ptRecipeEventGizmoData
 ptRepeatablePermutations
@@ -6850,6 +6902,7 @@ snoEffectDirectionalHitOverride
 snoEffectGroup
 snoEffectGroupAttachToOverrideSound
 snoEffectGroupCastConfirmation
+snoEffectGroupCastConfirmationOnTargetActor
 snoEffectGroupPostFlip
 snoEffectGroupPostFlipOutro
 snoEffectGroupPreFlip
@@ -7088,6 +7141,7 @@ snoOnSelectedSound
 snoOneHandMain
 snoOneHandOff
 snoOperatePowerAnimKey
+snoOptionalPreloadCondition
 snoOriginalActorLoot
 snoOutroEffect
 snoOverrideMaterial
@@ -7509,6 +7563,7 @@ szIDNext
 szIDScrollbar
 szIDStoryboard
 szIconLabel
+szIndicatorId
 szInternalName
 szItemUseCursor
 szLStickHandler
@@ -7699,6 +7754,9 @@ tAdditionalRandomAffixesRange
 tAdvanceEvent
 tAdvancedBloomSettings
 tAllowedScaleRange
+tAllowedScaleRangeX
+tAllowedScaleRangeY
+tAllowedScaleRangeZ
 tAllowedVerticalOffsetRange
 tAlphaBlend
 tAlternateBone
@@ -7713,6 +7771,7 @@ tAnimatedInterval
 tAnimatedTotalTime
 tAnimationDelayRange
 tAppearance
+tAppearanceAddOns
 tApplyChillAmount
 tApplyFreeze
 tAssetLists
@@ -7732,6 +7791,7 @@ tBakedFlowMapTextureInfo
 tBakedFoamMaskTextureInfo
 tBakedGroundFogMaskTextureInfo
 tBakedHeightTextureInfo
+tBakedSplineData
 tBarbData
 tBaseACDInfo
 tBaseData
@@ -7945,6 +8005,7 @@ tIcons
 tImmuneToCCDuring
 tImpactVelocityRange
 tImpactWeightRange
+tIndicatorType
 tIndicesInfo
 tInfo
 tInitialCost

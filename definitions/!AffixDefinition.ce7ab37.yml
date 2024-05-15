@@ -1,6 +1,6 @@
 # Definition: AffixDefinition
 # Hash: ce7ab37
-# SNOFileHeader.dwFormatHash: a67086a7
+# SNOFileHeader.dwFormatHash: d2baf8a7
 # Flags: 0x431a
 
 0x8: dwFlags # DT_UINT (32 bits used)
@@ -9,20 +9,24 @@
 0x14: nItemPowerMin # DT_INT (32 bits used)
 0x18: nItemPowerMax # DT_INT (32 bits used)
 0x20: tCost # DT_STRING_FORMULA
-0x40: snoRareNamePrefixStringList # DT_SNO (32 bits used) {group 0x2a "StringList"}
-0x44: snoRareNameSuffixStringList # DT_SNO (32 bits used) {group 0x2a "StringList"}
-0x48: gbidAffixFamily # DT_GBID (32 bits used) {group 0x12}
-0x4c: fAllowedForPlayerClass # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
-0x60: arAllowedItemLabels # DT_VARIABLEARRAY (32 bits used) => DT_ENUM
-0x70: dwAllowedQualityLevels # DT_UINT (32 bits used)
-0x74: eAffixType # DT_ENUM (32 bits used)
-0x78: ptItemAffixAttributes # DT_VARIABLEARRAY => ItemAffixAttribute
-0x88: arStaticValues # DT_VARIABLEARRAY (32 bits used) => DT_FLOAT
-0x98: snoPassivePower # DT_SNO (32 bits used) {group 0x1d "Power"}
-0x9c: snoClassRequirement # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
-0xa0: arAffixSkillTags # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
-0xb0: arPowerToModify # DT_VARIABLEARRAY (32 bits used) {group 0x1d "Power"} => DT_SNO
-0xc0: arSkillTagsToAdd # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
-0xd0: arSkillTagsToRemove # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
-0xe0: gbidMalignantColor # DT_GBID (32 bits used) {group 0x3f}
-0xe8: null or eof # DT_NULL
+0x40: nWeight # DT_INT (32 bits used)
+0x44: flGreaterAffixPowerBonus # DT_FLOAT (32 bits used)
+0x48: snoRareNamePrefixStringList # DT_SNO (32 bits used) {group 0x2a "StringList"}
+0x4c: snoRareNameSuffixStringList # DT_SNO (32 bits used) {group 0x2a "StringList"}
+0x50: gbidAffixFamily # DT_GBID (32 bits used) {group 0x12}
+0x54: fAllowedForPlayerClass # DT_FIXEDARRAY (32 bits used) [5 array size] => DT_INT
+0x68: arAllowedItemLabels # DT_VARIABLEARRAY (32 bits used) => DT_ENUM
+0x78: dwAllowedQualityLevels # DT_UINT (32 bits used)
+0x7c: eAffixType # DT_ENUM (32 bits used)
+0x80: unk_e9c00d3 # DT_FIXEDARRAY (32 bits used) [3 array size] => DT_UINT
+0x90: ptItemAffixAttributes # DT_VARIABLEARRAY => ItemAffixAttribute
+0xa0: arStaticValues # DT_VARIABLEARRAY (32 bits used) => DT_FLOAT
+0xb0: snoPassivePower # DT_SNO (32 bits used) {group 0x1d "Power"}
+0xb4: snoClassRequirement # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
+0xb8: arAffixSkillTags # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
+0xc8: arPowerToModify # DT_VARIABLEARRAY (32 bits used) {group 0x1d "Power"} => DT_SNO
+0xd8: arSkillTagsToAdd # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
+0xe8: arSkillTagsToRemove # DT_VARIABLEARRAY (32 bits used) {group 0x38} => DT_GBID
+0xf8: gbidMalignantColor # DT_GBID (32 bits used) {group 0x3f}
+0xfc: bIsTemperedAffix # DT_INT (1 bits used)
+0x100: null or eof # DT_NULL

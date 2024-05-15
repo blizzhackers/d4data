@@ -1,6 +1,6 @@
 # Definition: PowerDefinition
 # Hash: 14af0cb6
-# SNOFileHeader.dwFormatHash: b92dbf2d
+# SNOFileHeader.dwFormatHash: a6293e5f
 # Flags: 0x433a
 
 0x8: szInternalName # DT_CHARARRAY (7 bits used) [64 array size]
@@ -19,7 +19,7 @@
 0x88: bChannelledMovement # DT_INT (1 bits used)
 0x8c: bAutoChannelled # DT_INT (1 bits used)
 0x90: unk_3837f2a # DT_INT (1 bits used)
-0x94: unk_6c6eb6b # DT_INT (1 bits used)
+0x94: bInterruptOnDamage # DT_INT (1 bits used)
 0x98: tAutoChannelledDuration # DT_STRING_FORMULA
 0xb8: unk_9aad0d1 # DT_INT (1 bits used)
 0xbc: bIsBasicAttack # DT_INT (1 bits used)
@@ -86,10 +86,10 @@
 0x320: unk_67b65e9 # DT_INT (1 bits used)
 0x324: bAutoTargetingEnabled # DT_INT (1 bits used)
 0x328: unk_42057f3 # DT_INT (1 bits used)
-0x32c: unk_fbccf7 # DT_INT (1 bits used)
+0x32c: bShowCastConfirmation # DT_INT (1 bits used)
 0x330: unk_7cdc8cb # DT_INT (1 bits used)
 0x334: snoEffectGroupCastConfirmation # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
-0x338: unk_be5487b # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
+0x338: snoEffectGroupCastConfirmationOnTargetActor # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
 0x33c: unk_66bbae7 # DT_INT (1 bits used)
 0x340: unk_5efc45c # DT_INT (1 bits used)
 0x344: unk_b9ffd91 # DT_INT (1 bits used)
@@ -106,90 +106,91 @@
 0x3a8: unk_bcdb405 # DT_INT (1 bits used)
 0x3ac: unk_6e40571 # DT_INT (1 bits used)
 0x3b0: unk_807540f # DT_STRING_FORMULA
-0x3d0: unk_e7fc6fa # DT_STRING_FORMULA
-0x3f0: unk_e96cf25 # DT_INT (1 bits used)
-0x3f4: unk_d8f7885 # DT_INT (1 bits used)
-0x3f8: unk_8d0166c # DT_INT (1 bits used)
-0x3fc: unk_1539714 # DT_FLOAT (32 bits used)
-0x400: unk_e9ac57a # DT_INT (1 bits used)
-0x404: unk_61e06df # DT_INT (1 bits used)
-0x408: unk_787b722 # DT_FLOAT (32 bits used)
-0x40c: unk_b2d506d # DT_FLOAT (32 bits used)
-0x410: unk_8b4e7a # DT_ENUM (32 bits used)
-0x414: unk_44bbb8e # DT_INT (1 bits used)
-0x418: tAttackRadius # DT_STRING_FORMULA
-0x438: bRequiresPathToTarget # DT_INT (1 bits used)
-0x43c: bIsApproachPower # DT_INT (1 bits used)
-0x440: snoPowerApproach # DT_SNO (32 bits used) {group 0x1d "Power"}
-0x444: unk_f70b0d # DT_ENUM (32 bits used)
-0x448: unk_e65d245 # DT_GBID (32 bits used) {group 0x22}
-0x44c: unk_17dddfd # DT_INT (1 bits used)
-0x450: tMovementPowerData # ActorMovementPowerData
-0x4c8: eMovementStyleOverride # DT_ENUM (32 bits used)
-0x4cc: eFacingStyleOverride # DT_ENUM (32 bits used)
-0x4d0: unk_6714077 # DT_INT (1 bits used)
-0x4d4: bRequiresActorTarget # DT_INT (1 bits used)
-0x4d8: unk_805ebfc # DT_INT (1 bits used)
-0x4dc: unk_b4ad6e7 # DT_INT (1 bits used)
-0x4e0: eLOSCheck # DT_ENUM (32 bits used)
-0x4e4: unk_ea58c49 # DT_FLOAT (32 bits used)
-0x4e8: unk_692752d # DT_FLOAT (32 bits used)
-0x4ec: unk_eb84fbe # DT_INT (1 bits used)
-0x4f0: bInvisibleDuring # DT_INT (1 bits used)
-0x4f4: bInvulnerableDuring # DT_INT (1 bits used)
-0x4f8: bUntargetableDuring # DT_INT (1 bits used)
-0x4fc: bCannotDieDuring # DT_INT (1 bits used)
-0x500: bCannotBeInterruptedDuring # DT_INT (1 bits used)
-0x504: bStunnedUnstoppableIdDuring # DT_INT (1 bits used)
-0x508: bIgnoreGravityDuring # DT_INT (1 bits used)
-0x50c: unk_7a416a6 # DT_INT (1 bits used)
-0x510: arCCInfo # DT_FIXEDARRAY [14 array size] => PowerCrowdControlInfo
-0xa50: unk_6afae78 # DT_INT (1 bits used)
-0xa54: snoClassRequirement # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
-0xa58: snoSkillRequirement # DT_SNO (32 bits used) {group 0x74 "ItemRequirement"}
-0xa5c: snoItemRequirement # DT_SNO (32 bits used) {group 0x49 "Item"}
-0xa60: snoHeroConditionRequirement # DT_SNO (32 bits used) {group 0x33 "Condition"}
-0xa64: bUsableInTown # DT_INT (1 bits used)
-0xa68: bUsableInCombat # DT_INT (1 bits used)
-0xa6c: bIsCraftItemName # DT_INT (1 bits used)
-0xa70: unk_744a4fd # DT_INT (1 bits used)
-0xa74: unk_a8611dd # DT_INT (1 bits used)
-0xa78: bUsableInPrologue # DT_INT (1 bits used)
-0xa7c: unk_83d96df # DT_INT (1 bits used)
-0xa80: unk_9aaab79 # DT_INT (1 bits used)
-0xa84: unk_b15bf7f # DT_INT (1 bits used)
-0xa88: unk_8fe39cf # DT_UINT (32 bits used)
-0xa8c: bPassabilityDuringEnabled # DT_INT (1 bits used)
-0xa90: bPassabilityDestEnabled # DT_INT (1 bits used)
-0xa94: arCollisionSettings # DT_FIXEDARRAY [2 array size] => CollisionSettings
-0xabc: fCannotLMBAssign # DT_INT (1 bits used)
-0xac0: fMouseAssignable # DT_INT (1 bits used)
-0xac4: fHotbarAssignable # DT_INT (1 bits used)
-0xac8: unk_a75e08a # DT_INT (1 bits used)
-0xacc: unk_89134c5 # DT_INT (1 bits used)
-0xad0: hIconNormal # DT_UINT (32 bits used)
-0xad4: hIconMouseover # DT_UINT (32 bits used)
-0xad8: hIconPushed # DT_UINT (32 bits used)
-0xadc: hIconInactive # DT_UINT (32 bits used)
-0xae0: hIconInactiveMouseover # DT_UINT (32 bits used)
-0xae4: hIconRound # DT_UINT (32 bits used)
-0xae8: gbidHotbarCountPetType # DT_GBID (32 bits used) {group 0x17}
-0xaec: unk_159fc50 # DT_UINT (32 bits used)
-0xaf0: unk_cecdfc8 # DT_INT (1 bits used)
-0xaf4: unk_210b5d5 # DT_INT (1 bits used)
-0xaf8: unk_1c331c3 # DT_INT (1 bits used)
-0xafc: unk_3f7ac9c # DT_INT (1 bits used)
-0xb00: unk_36a68ce # DT_INT (1 bits used)
-0xb08: arHitReactionOverrides # DT_VARIABLEARRAY => HitReactionOverride
-0xb18: arBuffs # DT_VARIABLEARRAY => PowerBuffDefinition
-0xb28: nFormulaCount # DT_INT (32 bits used)
-0xb30: ptScriptFormulas # DT_VARIABLEARRAY => ScriptFormulaInfo
-0xb40: arPayloads # DT_VARIABLEARRAY => PowerPayloadDefinition
-0xb50: arMods # DT_VARIABLEARRAY => PowerMod
-0xb60: snoCastingEffectGroup # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
-0xb64: snoAutoCastingEffectGroup # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
-0xb68: tCastingEffectGroupHardpointOverride # HardpointLink
-0xb70: flCastingEffectGroupDuration # DT_FLOAT (32 bits used)
-0xb78: arCastingEffectOverrides # DT_VARIABLEARRAY => PowerCastingEffectOverride
-0xb88: arPetSpawns # DT_VARIABLEARRAY => PowerPetSpawn
-0xb98: null or eof # DT_NULL
+0x3d0: unk_699d1c4 # DT_FLOAT (32 bits used)
+0x3d8: unk_e7fc6fa # DT_STRING_FORMULA
+0x3f8: unk_e96cf25 # DT_INT (1 bits used)
+0x3fc: unk_d8f7885 # DT_INT (1 bits used)
+0x400: unk_8d0166c # DT_INT (1 bits used)
+0x404: unk_1539714 # DT_FLOAT (32 bits used)
+0x408: unk_e9ac57a # DT_INT (1 bits used)
+0x40c: unk_61e06df # DT_INT (1 bits used)
+0x410: unk_787b722 # DT_FLOAT (32 bits used)
+0x414: unk_b2d506d # DT_FLOAT (32 bits used)
+0x418: unk_8b4e7a # DT_ENUM (32 bits used)
+0x41c: unk_44bbb8e # DT_INT (1 bits used)
+0x420: tAttackRadius # DT_STRING_FORMULA
+0x440: bRequiresPathToTarget # DT_INT (1 bits used)
+0x444: bIsApproachPower # DT_INT (1 bits used)
+0x448: snoPowerApproach # DT_SNO (32 bits used) {group 0x1d "Power"}
+0x44c: unk_f70b0d # DT_ENUM (32 bits used)
+0x450: unk_e65d245 # DT_GBID (32 bits used) {group 0x22}
+0x454: unk_17dddfd # DT_INT (1 bits used)
+0x458: tMovementPowerData # ActorMovementPowerData
+0x4d0: eMovementStyleOverride # DT_ENUM (32 bits used)
+0x4d4: eFacingStyleOverride # DT_ENUM (32 bits used)
+0x4d8: unk_6714077 # DT_INT (1 bits used)
+0x4dc: bRequiresActorTarget # DT_INT (1 bits used)
+0x4e0: unk_805ebfc # DT_INT (1 bits used)
+0x4e4: unk_b4ad6e7 # DT_INT (1 bits used)
+0x4e8: eLOSCheck # DT_ENUM (32 bits used)
+0x4ec: unk_ea58c49 # DT_FLOAT (32 bits used)
+0x4f0: unk_692752d # DT_FLOAT (32 bits used)
+0x4f4: unk_eb84fbe # DT_INT (1 bits used)
+0x4f8: bInvisibleDuring # DT_INT (1 bits used)
+0x4fc: bInvulnerableDuring # DT_INT (1 bits used)
+0x500: bUntargetableDuring # DT_INT (1 bits used)
+0x504: bCannotDieDuring # DT_INT (1 bits used)
+0x508: bCannotBeInterruptedDuring # DT_INT (1 bits used)
+0x50c: bStunnedUnstoppableIdDuring # DT_INT (1 bits used)
+0x510: bIgnoreGravityDuring # DT_INT (1 bits used)
+0x514: unk_7a416a6 # DT_INT (1 bits used)
+0x518: arCCInfo # DT_FIXEDARRAY [14 array size] => PowerCrowdControlInfo
+0xa58: unk_6afae78 # DT_INT (1 bits used)
+0xa5c: snoClassRequirement # DT_SNO (32 bits used) {group 0x4a "PlayerClass"}
+0xa60: snoSkillRequirement # DT_SNO (32 bits used) {group 0x74 "ItemRequirement"}
+0xa64: snoItemRequirement # DT_SNO (32 bits used) {group 0x49 "Item"}
+0xa68: snoHeroConditionRequirement # DT_SNO (32 bits used) {group 0x33 "Condition"}
+0xa6c: bUsableInTown # DT_INT (1 bits used)
+0xa70: bUsableInCombat # DT_INT (1 bits used)
+0xa74: bIsCraftItemName # DT_INT (1 bits used)
+0xa78: unk_744a4fd # DT_INT (1 bits used)
+0xa7c: unk_a8611dd # DT_INT (1 bits used)
+0xa80: bUsableInPrologue # DT_INT (1 bits used)
+0xa84: unk_83d96df # DT_INT (1 bits used)
+0xa88: unk_9aaab79 # DT_INT (1 bits used)
+0xa8c: unk_b15bf7f # DT_INT (1 bits used)
+0xa90: unk_8fe39cf # DT_UINT (32 bits used)
+0xa94: bPassabilityDuringEnabled # DT_INT (1 bits used)
+0xa98: bPassabilityDestEnabled # DT_INT (1 bits used)
+0xa9c: arCollisionSettings # DT_FIXEDARRAY [2 array size] => CollisionSettings
+0xac4: fCannotLMBAssign # DT_INT (1 bits used)
+0xac8: fMouseAssignable # DT_INT (1 bits used)
+0xacc: fHotbarAssignable # DT_INT (1 bits used)
+0xad0: unk_a75e08a # DT_INT (1 bits used)
+0xad4: unk_89134c5 # DT_INT (1 bits used)
+0xad8: hIconNormal # DT_UINT (32 bits used)
+0xadc: hIconMouseover # DT_UINT (32 bits used)
+0xae0: hIconPushed # DT_UINT (32 bits used)
+0xae4: hIconInactive # DT_UINT (32 bits used)
+0xae8: hIconInactiveMouseover # DT_UINT (32 bits used)
+0xaec: hIconRound # DT_UINT (32 bits used)
+0xaf0: gbidHotbarCountPetType # DT_GBID (32 bits used) {group 0x17}
+0xaf4: unk_159fc50 # DT_UINT (32 bits used)
+0xaf8: unk_cecdfc8 # DT_INT (1 bits used)
+0xafc: unk_210b5d5 # DT_INT (1 bits used)
+0xb00: unk_1c331c3 # DT_INT (1 bits used)
+0xb04: unk_3f7ac9c # DT_INT (1 bits used)
+0xb08: unk_36a68ce # DT_INT (1 bits used)
+0xb10: arHitReactionOverrides # DT_VARIABLEARRAY => HitReactionOverride
+0xb20: arBuffs # DT_VARIABLEARRAY => PowerBuffDefinition
+0xb30: nFormulaCount # DT_INT (32 bits used)
+0xb38: ptScriptFormulas # DT_VARIABLEARRAY => ScriptFormulaInfo
+0xb48: arPayloads # DT_VARIABLEARRAY => PowerPayloadDefinition
+0xb58: arMods # DT_VARIABLEARRAY => PowerMod
+0xb68: snoCastingEffectGroup # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
+0xb6c: snoAutoCastingEffectGroup # DT_SNO (32 bits used) {group 0xe "EffectGroup"}
+0xb70: tCastingEffectGroupHardpointOverride # HardpointLink
+0xb78: flCastingEffectGroupDuration # DT_FLOAT (32 bits used)
+0xb80: arCastingEffectOverrides # DT_VARIABLEARRAY => PowerCastingEffectOverride
+0xb90: arPetSpawns # DT_VARIABLEARRAY => PowerPetSpawn
+0xba0: null or eof # DT_NULL
