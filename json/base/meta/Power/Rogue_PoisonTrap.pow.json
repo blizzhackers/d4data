@@ -79,7 +79,7 @@
  "bChannelledMovement": false,
  "bAutoChannelled": false,
  "unk_3837f2a": true,
- "unk_6c6eb6b": false,
+ "bInterruptOnDamage": false,
  "tAutoChannelledDuration": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -118,7 +118,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADJAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -182,7 +182,7 @@
  "unk_67b65e9": false,
  "bAutoTargetingEnabled": true,
  "unk_42057f3": false,
- "unk_fbccf7": false,
+ "bShowCastConfirmation": false,
  "unk_7cdc8cb": false,
  "snoEffectGroupCastConfirmation": {
   "__raw__": 450718,
@@ -193,7 +193,7 @@
   "groupName": "EffectGroup",
   "name": "g_playerClicked"
  },
- "unk_be5487b": null,
+ "snoEffectGroupCastConfirmationOnTargetActor": null,
  "unk_66bbae7": false,
  "unk_5efc45c": false,
  "unk_b9ffd91": false,
@@ -219,6 +219,7 @@
   "value": "6",
   "compiled": "BgAAAAAAwEAAAAAA"
  },
+ "unk_699d1c4": 1,
  "unk_e7fc6fa": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -607,8 +608,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": "(SF_3 > 0.25) ? SF_3 : 0.25",
-    "compiled": "BQAAAAkAAAAAAAAAAAAAAAAAAAAGAAAAAACAPggAAAAFAAAACQAAAAAAAAAAAAAAAAAAAAYAAAAAAIA+EAAAAAAAAAA="
+    "value": "((SF_3 > 0.25) ? SF_3 : 0.25) / SF_22",
+    "compiled": "BQAAAAkAAAAAAAAAAAAAAAAAAAAGAAAAAACAPggAAAAFAAAACQAAAAAAAAAAAAAAAAAAAAYAAAAAAIA+EAAAAAUAAAAcAAAAAAAAAAAAAAAAAAAADgAAAAAAAAA="
    },
    "tMaxStackCount": {
     "value": "1",
@@ -650,8 +651,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -705,8 +706,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": ".25",
-    "compiled": "BgAAAAAAgD4AAAAA"
+    "value": ".25 / SF_22",
+    "compiled": "BgAAAAAAgD4FAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -748,8 +749,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -846,8 +847,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -901,8 +902,8 @@
    "bHarmful": false,
    "bInfinite": false,
    "tDuration": {
-    "value": "SF_2",
-    "compiled": "BQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "value": "SF_2 / SF_22",
+    "compiled": "BQAAAAgAAAAAAAAAAAAAAAAAAAAFAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -944,8 +945,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1042,8 +1043,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1097,8 +1098,8 @@
    "bHarmful": true,
    "bInfinite": false,
    "tDuration": {
-    "value": "SF_12",
-    "compiled": "BQAAABIAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "value": "SF_12 / SF_22",
+    "compiled": "BQAAABIAAAAAAAAAAAAAAAAAAAAFAAAAHAAAAAAAAAAAAAAAAAAAAA4AAAAAAAAA"
    },
    "tMaxStackCount": {
     "value": "1",
@@ -1140,8 +1141,8 @@
     "unk_89dc285": true,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": 3,
     "bHasCombatEffectOverride": true,
     "tCombatEffectOverride": {
@@ -1238,8 +1239,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1336,8 +1337,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1434,8 +1435,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1532,8 +1533,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1602,8 +1603,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "9",
-    "compiled": "BgAAAAAAEEEAAAAA"
+    "value": "9 * SF_22",
+    "compiled": "BgAAAAAAEEEFAAAAHAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -1611,7 +1612,7 @@
    "__typeHash__": 551777591,
    "tFormula": {
     "value": "1.25 - Trap_Arm_Time_Reduction_Seconds",
-    "compiled": "BgAAAAAAoD8FAAAAAAAAABUBAAD+////AAAAAAwAAAAAAAAA"
+    "compiled": "BgAAAAAAoD8FAAAAAAAAAB8BAAD+////AAAAAAwAAAAAAAAA"
    }
   },
   {
@@ -1634,8 +1635,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "2 * SF_19",
-    "compiled": "BgAAAAAAAEAFAAAAGQAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
+    "value": "2 * SF_19 * SF_21",
+    "compiled": "BgAAAAAAAEAFAAAAGQAAAAAAAAAAAAAAAAAAAA0AAAAFAAAAGwAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -1749,6 +1750,22 @@
     "value": "(1-POW(1-SF_1/100,1/(SF_14*2)))*100",
     "compiled": "BgAAAAAAgD8GAAAAAACAPwUAAAAHAAAAAAAAAAAAAAAAAAAABgAAAAAAyEIOAAAADAAAAAYAAAAAAIA/BQAAABQAAAAAAAAAAAAAAAAAAAAGAAAAAAAAQA0AAAAOAAAAAQAAAAcAAAAMAAAABgAAAAAAyEINAAAAAAAAAA=="
    }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Min(1.5, 1 + (AoE_Size_Bonus_Per_Power#Rogue_PoisonTrap / 2))",
+    "compiled": "BgAAAAAAwD8GAAAAAACAPwUAAAAAAAAAnAMAABBbBgAAAAAABgAAAAAAAEAOAAAACwAAAAEAAAAAAAAAAAAAAA=="
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "1 + Power_Duration_Bonus_Pct#Rogue_PoisonTrap",
+    "compiled": "BgAAAAAAgD8FAAAAAAAAAG4DAAAQWwYAAAAAAAsAAAAAAAAA"
+   }
   }
  ],
  "arPayloads": [
@@ -1833,7 +1850,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 1,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,

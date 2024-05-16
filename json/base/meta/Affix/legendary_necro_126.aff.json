@@ -3,15 +3,17 @@
  "__snoID__": 1754892,
  "__type__": "AffixDefinition",
  "__typeHash__": 216509239,
- "dwFlags": 7,
+ "dwFlags": 3,
  "eMagicType": 1,
- "eCategory": 3,
- "nItemPowerMin": 340,
+ "eCategory": 2,
+ "nItemPowerMin": 1,
  "nItemPowerMax": 2000,
  "tCost": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
  },
+ "nWeight": 100,
+ "flGreaterAffixPowerBonus": -1,
  "snoRareNamePrefixStringList": null,
  "snoRareNameSuffixStringList": null,
  "gbidAffixFamily": {
@@ -28,25 +30,37 @@
   1
  ],
  "arAllowedItemLabels": [
-  19
+  26,
+  16,
+  17,
+  29,
+  28,
+  15,
+  30
  ],
  "dwAllowedQualityLevels": 0,
  "eAffixType": 0,
+ "unk_e9c00d3": [
+  11,
+  13,
+  16
+ ],
  "ptItemAffixAttributes": [
   {
    "__type__": "ItemAffixAttribute",
    "__typeHash__": 501899601,
    "bIgnoreLegendaryScaling": false,
    "bLowerIsBetter": false,
+   "unk_1cbe733": false,
    "tAttribute": {
     "__type__": "AttributeSpecifier",
     "__typeHash__": 3218190286,
-    "eAttribute": 1010,
+    "eAttribute": 1048,
     "__eAttribute_name__": "Affix_Value_1",
     "nParam": -1,
     "szAttributeFormula": {
-     "value": "FloatRandomRangeWithInterval(10, 5, 15)",
-     "compiled": "BgAAAAAAIEEGAAAAAACgQAYAAAAAAHBBAQAAAF8AAAAAAAAA"
+     "value": "5+(CurrentLegendaryRank()-1)*1",
+     "compiled": "BgAAAAAAoEABAAAATwAAAAYAAAAAAIA/DAAAAAYAAAAAAIA/DQAAAAsAAAAAAAAA"
     },
     "gbidFormula": null,
     "unk_dffdf28": {
@@ -60,14 +74,22 @@
   1.5
  ],
  "snoPassivePower": null,
- "snoClassRequirement": null,
+ "snoClassRequirement": {
+  "__raw__": 199277,
+  "__group__": 74,
+  "__type__": "DT_SNO",
+  "__typeHash__": 2764331143,
+  "__targetFileName__": "base/meta/PlayerClass/Necromancer.pcl",
+  "groupName": "PlayerClass",
+  "name": "Necromancer"
+ },
  "arAffixSkillTags": [
   {
-   "__raw__": 1214841223,
+   "__raw__": 3054612403,
    "__type__": "DT_GBID",
    "__typeHash__": 1028170061,
    "group": 56,
-   "name": "FILTER_Legendary_Resource"
+   "name": "FILTER_Legendary_Utility"
   },
   {
    "__raw__": 3731501123,
@@ -75,10 +97,32 @@
    "__typeHash__": 1028170061,
    "group": 56,
    "name": "FILTER_Build_Necro_Army"
+  },
+  {
+   "__raw__": 1257788464,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_Build_Necro_Shadow"
+  },
+  {
+   "__raw__": 1901128789,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Search_CrowdControl"
+  },
+  {
+   "__raw__": 2549193150,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Skill_Primary_Summoning"
   }
  ],
  "arPowerToModify": [],
  "arSkillTagsToAdd": [],
  "arSkillTagsToRemove": [],
- "gbidMalignantColor": null
+ "gbidMalignantColor": null,
+ "bIsTemperedAffix": false
 }

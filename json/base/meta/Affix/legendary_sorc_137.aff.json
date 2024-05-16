@@ -6,12 +6,14 @@
  "dwFlags": 1,
  "eMagicType": 1,
  "eCategory": 0,
- "nItemPowerMin": 1,
+ "nItemPowerMin": 150,
  "nItemPowerMax": 2000,
  "tCost": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
  },
+ "nWeight": 100,
+ "flGreaterAffixPowerBonus": -1,
  "snoRareNamePrefixStringList": null,
  "snoRareNameSuffixStringList": null,
  "gbidAffixFamily": {
@@ -35,21 +37,27 @@
  ],
  "dwAllowedQualityLevels": 0,
  "eAffixType": 0,
+ "unk_e9c00d3": [
+  11,
+  13,
+  16
+ ],
  "ptItemAffixAttributes": [
   {
    "__type__": "ItemAffixAttribute",
    "__typeHash__": 501899601,
    "bIgnoreLegendaryScaling": false,
    "bLowerIsBetter": false,
+   "unk_1cbe733": false,
    "tAttribute": {
     "__type__": "AttributeSpecifier",
     "__typeHash__": 3218190286,
-    "eAttribute": 1010,
+    "eAttribute": 1048,
     "__eAttribute_name__": "Affix_Value_1",
     "nParam": -1,
     "szAttributeFormula": {
-     "value": "FloatRandomRangeWithInterval(10, 30, 40)",
-     "compiled": "BgAAAAAAIEEGAAAAAADwQQYAAAAAACBCAQAAAF8AAAAAAAAA"
+     "value": "25+(CurrentLegendaryRank()-1)*1",
+     "compiled": "BgAAAAAAyEEBAAAATwAAAAYAAAAAAIA/DAAAAAYAAAAAAIA/DQAAAAsAAAAAAAAA"
     },
     "gbidFormula": null,
     "unk_dffdf28": {
@@ -74,9 +82,60 @@
   "name": "legendary_sorc_137"
  },
  "snoClassRequirement": null,
- "arAffixSkillTags": [],
+ "arAffixSkillTags": [
+  {
+   "__raw__": 3821995300,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_Legendary_Offensive"
+  },
+  {
+   "__raw__": 226227521,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_Flex_Sorc_Hydra"
+  },
+  {
+   "__raw__": 1781266028,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_Build_Sorc_Cold"
+  },
+  {
+   "__raw__": 1840939470,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_Build_Sorc_Lightning"
+  },
+  {
+   "__raw__": 2679062080,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "FILTER_LOGICAL_OR"
+  },
+  {
+   "__raw__": 1930421581,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Skill_Primary_Conjuration"
+  },
+  {
+   "__raw__": 3540574146,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Search_LuckyHit"
+  }
+ ],
  "arPowerToModify": [],
  "arSkillTagsToAdd": [],
  "arSkillTagsToRemove": [],
- "gbidMalignantColor": null
+ "gbidMalignantColor": null,
+ "bIsTemperedAffix": false
 }

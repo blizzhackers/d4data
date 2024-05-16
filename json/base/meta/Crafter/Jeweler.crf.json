@@ -5,7 +5,7 @@
  "__typeHash__": 3351197648,
  "dwNextID": 51,
  "eCrafterType": 3,
- "unk_203acd1": true,
+ "unk_203acd1": false,
  "arCrafterTabs": [
   {
    "__type__": "CrafterTab",
@@ -22,7 +22,7 @@
    "snoCraftUnlockCondition": null,
    "snoCraftActiveTabCondition": null,
    "szTabInstanceName": "SalvageGems",
-   "szPanelInstanceName": "SalvageGems_Template",
+   "szPanelInstanceName": "SalvageGemsContent",
    "bShowHeader": true
   },
   {
@@ -39,8 +39,8 @@
    },
    "snoCraftUnlockCondition": null,
    "snoCraftActiveTabCondition": null,
-   "szTabInstanceName": "",
-   "szPanelInstanceName": "",
+   "szTabInstanceName": "CraftGemsTab",
+   "szPanelInstanceName": "CraftGemsContent",
    "bShowHeader": true
   },
   {
@@ -57,8 +57,8 @@
    },
    "snoCraftUnlockCondition": null,
    "snoCraftActiveTabCondition": null,
-   "szTabInstanceName": "",
-   "szPanelInstanceName": "",
+   "szTabInstanceName": "UnsocketTab",
+   "szPanelInstanceName": "UnsocketContent",
    "bShowHeader": true
   },
   {
@@ -75,34 +75,8 @@
    },
    "snoCraftUnlockCondition": null,
    "snoCraftActiveTabCondition": null,
-   "szTabInstanceName": "",
-   "szPanelInstanceName": "",
-   "bShowHeader": true
-  },
-  {
-   "__type__": "CrafterTab",
-   "__typeHash__": 885929342,
-   "snoTab": {
-    "__raw__": 1514973,
-    "__group__": 145,
-    "__type__": "DT_SNO",
-    "__typeHash__": 2764331143,
-    "__targetFileName__": "base/meta/CrafterTab/UpgradeJewelry.ctb",
-    "groupName": "CrafterTab",
-    "name": "UpgradeJewelry"
-   },
-   "snoCraftUnlockCondition": {
-    "__raw__": 1597486,
-    "__group__": 51,
-    "__type__": "DT_SNO",
-    "__typeHash__": 2764331143,
-    "__targetFileName__": "base/meta/Condition/Level20PartitionPlus.cnd",
-    "groupName": "Condition",
-    "name": "Level20PartitionPlus"
-   },
-   "snoCraftActiveTabCondition": null,
-   "szTabInstanceName": "",
-   "szPanelInstanceName": "",
+   "szTabInstanceName": "AddSocketsTab",
+   "szPanelInstanceName": "AddSocketsContainer",
    "bShowHeader": true
   },
   {
@@ -139,83 +113,18 @@
  "szTabContainerName": "JewelerNav_Tab_Container",
  "szTabRadioButtonGroupName": "CraftJeweler_tabs_ButtonGroup",
  "szMaterialCostContainerName": "JewelerContainer_MaterialCost",
+ "hCrafterTitleOverride": {
+  "__type__": "StringLabelHandleEx",
+  "__typeHash__": 721585600,
+  "snoStringList": null,
+  "szLabel": 0
+ },
  "hCrafterIcon": 2027691412,
  "arRecipeTiers": [
   {
    "__type__": "RecipeTier",
    "__typeHash__": 1026071916,
-   "nRequiredLevel": 1,
-   "nGoldCost": 0,
-   "arRecipes": [
-    {
-     "__raw__": 1625864,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Ruby_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Ruby_01"
-    },
-    {
-     "__raw__": 1623190,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Amethyst_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Amethyst_01"
-    },
-    {
-     "__raw__": 1625884,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Emerald_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Emerald_01"
-    },
-    {
-     "__raw__": 1627244,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Topaz_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Topaz_01"
-    },
-    {
-     "__raw__": 1627264,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Sapphire_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Sapphire_01"
-    },
-    {
-     "__raw__": 1627234,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Diamond_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Diamond_01"
-    },
-    {
-     "__raw__": 1627254,
-     "__group__": 49,
-     "__type__": "DT_SNO",
-     "__typeHash__": 2764331143,
-     "__targetFileName__": "base/meta/Recipe/Recipe_GemFromFragment_Skull_01.rcp",
-     "groupName": "Recipe",
-     "name": "Recipe_GemFromFragment_Skull_01"
-    }
-   ]
-  },
-  {
-   "__type__": "RecipeTier",
-   "__typeHash__": 1026071916,
-   "nRequiredLevel": 20,
+   "nRequiredLevel": 15,
    "nGoldCost": 0,
    "arRecipes": [
     {
@@ -295,7 +204,7 @@
   {
    "__type__": "RecipeTier",
    "__typeHash__": 1026071916,
-   "nRequiredLevel": 40,
+   "nRequiredLevel": 45,
    "nGoldCost": 0,
    "arRecipes": [
     {
@@ -366,7 +275,7 @@
   {
    "__type__": "RecipeTier",
    "__typeHash__": 1026071916,
-   "nRequiredLevel": 60,
+   "nRequiredLevel": 65,
    "nGoldCost": 0,
    "arRecipes": [
     {
@@ -446,7 +355,7 @@
   {
    "__type__": "RecipeTier",
    "__typeHash__": 1026071916,
-   "nRequiredLevel": 70,
+   "nRequiredLevel": 85,
    "nGoldCost": 0,
    "arRecipes": [
     {
@@ -546,6 +455,7 @@
    }
   }
  ],
+ "unk_745b76e": [],
  "snoOnOpenSound": {
   "__raw__": 1407071,
   "__group__": 40,

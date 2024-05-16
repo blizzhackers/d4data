@@ -6,12 +6,14 @@
  "dwFlags": 3,
  "eMagicType": 1,
  "eCategory": 0,
- "nItemPowerMin": 100,
+ "nItemPowerMin": 1,
  "nItemPowerMax": 2000,
  "tCost": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
  },
+ "nWeight": 100,
+ "flGreaterAffixPowerBonus": -1,
  "snoRareNamePrefixStringList": null,
  "snoRareNameSuffixStringList": null,
  "gbidAffixFamily": {
@@ -35,21 +37,27 @@
  ],
  "dwAllowedQualityLevels": 0,
  "eAffixType": 1,
+ "unk_e9c00d3": [
+  1,
+  2,
+  3
+ ],
  "ptItemAffixAttributes": [
   {
    "__type__": "ItemAffixAttribute",
    "__typeHash__": 501899601,
    "bIgnoreLegendaryScaling": false,
    "bLowerIsBetter": false,
+   "unk_1cbe733": false,
    "tAttribute": {
     "__type__": "AttributeSpecifier",
     "__typeHash__": 3218190286,
-    "eAttribute": 1010,
+    "eAttribute": 1048,
     "__eAttribute_name__": "Affix_Value_1",
     "nParam": -1,
     "szAttributeFormula": {
-     "value": "FloatRandomRangeWithInterval(2, 1, 2)",
-     "compiled": "BgAAAAAAAEAGAAAAAACAPwYAAAAAAABAAQAAAF8AAAAAAAAA"
+     "value": "0.5+CurrentLegendaryRank()*0.5",
+     "compiled": "BgAAAAAAAD8BAAAATwAAAAYAAAAAAAA/DQAAAAsAAAAAAAAA"
     },
     "gbidFormula": null,
     "unk_dffdf28": {
@@ -63,10 +71,11 @@
    "__typeHash__": 501899601,
    "bIgnoreLegendaryScaling": true,
    "bLowerIsBetter": false,
+   "unk_1cbe733": false,
    "tAttribute": {
     "__type__": "AttributeSpecifier",
     "__typeHash__": 3218190286,
-    "eAttribute": 1011,
+    "eAttribute": 1049,
     "__eAttribute_name__": "Affix_Value_2",
     "nParam": -1,
     "szAttributeFormula": {
@@ -108,10 +117,32 @@
    "__typeHash__": 1028170061,
    "group": 56,
    "name": "FILTER_Build_Barb_BigFury"
+  },
+  {
+   "__raw__": 2834424330,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Skill_Primary_Core"
+  },
+  {
+   "__raw__": 3476325106,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Search_Physical"
+  },
+  {
+   "__raw__": 2579369720,
+   "__type__": "DT_GBID",
+   "__typeHash__": 1028170061,
+   "group": 56,
+   "name": "Search_Copy_Core"
   }
  ],
  "arPowerToModify": [],
  "arSkillTagsToAdd": [],
  "arSkillTagsToRemove": [],
- "gbidMalignantColor": null
+ "gbidMalignantColor": null,
+ "bIsTemperedAffix": false
 }

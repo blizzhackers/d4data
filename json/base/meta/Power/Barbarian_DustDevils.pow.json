@@ -37,7 +37,7 @@
  "bChannelledMovement": false,
  "bAutoChannelled": false,
  "unk_3837f2a": true,
- "unk_6c6eb6b": false,
+ "bInterruptOnDamage": false,
  "tAutoChannelledDuration": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -76,7 +76,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total",
-  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAAAAAA"
+  "compiled": "BQAAAAAAAADJAAAA/v///wAAAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -140,7 +140,7 @@
  "unk_67b65e9": false,
  "bAutoTargetingEnabled": true,
  "unk_42057f3": false,
- "unk_fbccf7": false,
+ "bShowCastConfirmation": false,
  "unk_7cdc8cb": false,
  "snoEffectGroupCastConfirmation": {
   "__raw__": 450718,
@@ -151,7 +151,7 @@
   "groupName": "EffectGroup",
   "name": "g_playerClicked"
  },
- "unk_be5487b": null,
+ "snoEffectGroupCastConfirmationOnTargetActor": null,
  "unk_66bbae7": false,
  "unk_5efc45c": false,
  "unk_b9ffd91": false,
@@ -177,6 +177,7 @@
   "value": "6",
   "compiled": "BgAAAAAAwEAAAAAA"
  },
+ "unk_699d1c4": 1,
  "unk_e7fc6fa": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -527,7 +528,7 @@
  "fMouseAssignable": false,
  "fHotbarAssignable": false,
  "unk_a75e08a": false,
- "unk_89134c5": false,
+ "unk_89134c5": true,
  "hIconNormal": 0,
  "hIconMouseover": 0,
  "hIconPushed": 0,
@@ -546,7 +547,7 @@
   {
    "__type__": "PowerBuffDefinition",
    "__typeHash__": 1071057721,
-   "dwID": 3932172611,
+   "dwID": 3305859704,
    "dwBuffId": 6,
    "bHarmful": false,
    "bInfinite": true,
@@ -594,8 +595,106 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
+    "unk_b8f2b": -1,
+    "bHasCombatEffectOverride": false,
+    "tCombatEffectOverride": {
+     "value": "100",
+     "compiled": "BgAAAAAAyEIAAAAA"
+    },
+    "bHideDamageEffects": false,
+    "bHideGlobalApplicationEffect": false
+   },
+   "unk_dcb22bd": true,
+   "tCrowdControl": {
+    "__type__": "PowerBuffCrowdControl",
+    "__typeHash__": 4138865712,
+    "unk_c63f49e": true,
+    "dwCCFlags": 0,
+    "bUseGlobalSlowAmount": false,
+    "eGlobalSlowAmountType": 0,
+    "tSlowAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tChillAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tStaggerMultiplier": {
+     "value": "1",
+     "compiled": "BgAAAAAAgD8AAAAA"
+    }
+   },
+   "bHasDamageShield": false,
+   "tDamageShield": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   }
+  },
+  {
+   "__type__": "PowerBuffDefinition",
+   "__typeHash__": 1071057721,
+   "dwID": 1634092153,
+   "dwBuffId": 11,
+   "bHarmful": false,
+   "bInfinite": true,
+   "tDuration": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "tMaxStackCount": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "unk_89134c5": false,
+   "bShowDuration": false,
+   "bCancellable": false,
+   "unk_99b5752": false,
+   "unk_93cd85f": false,
+   "unk_5c11505": false,
+   "unk_9eb6fb0": false,
+   "unk_e8f1e19": false,
+   "unk_9cb4832": false,
+   "unk_71ba554": false,
+   "hIcon": 0,
+   "hFloatingIcon": 0,
+   "hFloatingTextLabel": 0,
+   "flFloatingTextIconRange": 0,
+   "unk_395ccd6": false,
+   "bDealsDOT": false,
+   "tDOT": {
+    "__type__": "PowerBuffDOTDamage",
+    "__typeHash__": 3824324374,
+    "eDamageType": -1,
+    "tDamage": {
+     "__type__": "HitpointSpecifier",
+     "__typeHash__": 1185241065,
+     "eType": 0,
+     "tHitpointScalar": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     },
+     "tFlatLevel": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     }
+    },
+    "unk_89dc285": false,
+    "flFlatDamageBonusScalar": 1,
+    "unk_f551941": -1,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -692,8 +791,204 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
+    "unk_b8f2b": -1,
+    "bHasCombatEffectOverride": false,
+    "tCombatEffectOverride": {
+     "value": "100",
+     "compiled": "BgAAAAAAyEIAAAAA"
+    },
+    "bHideDamageEffects": false,
+    "bHideGlobalApplicationEffect": false
+   },
+   "unk_dcb22bd": true,
+   "tCrowdControl": {
+    "__type__": "PowerBuffCrowdControl",
+    "__typeHash__": 4138865712,
+    "unk_c63f49e": true,
+    "dwCCFlags": 0,
+    "bUseGlobalSlowAmount": false,
+    "eGlobalSlowAmountType": 0,
+    "tSlowAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tChillAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tStaggerMultiplier": {
+     "value": "1",
+     "compiled": "BgAAAAAAgD8AAAAA"
+    }
+   },
+   "bHasDamageShield": false,
+   "tDamageShield": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   }
+  },
+  {
+   "__type__": "PowerBuffDefinition",
+   "__typeHash__": 1071057721,
+   "dwID": 3796870,
+   "dwBuffId": 9,
+   "bHarmful": false,
+   "bInfinite": true,
+   "tDuration": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "tMaxStackCount": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "unk_89134c5": false,
+   "bShowDuration": false,
+   "bCancellable": false,
+   "unk_99b5752": false,
+   "unk_93cd85f": false,
+   "unk_5c11505": false,
+   "unk_9eb6fb0": false,
+   "unk_e8f1e19": false,
+   "unk_9cb4832": false,
+   "unk_71ba554": false,
+   "hIcon": 0,
+   "hFloatingIcon": 0,
+   "hFloatingTextLabel": 0,
+   "flFloatingTextIconRange": 0,
+   "unk_395ccd6": false,
+   "bDealsDOT": false,
+   "tDOT": {
+    "__type__": "PowerBuffDOTDamage",
+    "__typeHash__": 3824324374,
+    "eDamageType": -1,
+    "tDamage": {
+     "__type__": "HitpointSpecifier",
+     "__typeHash__": 1185241065,
+     "eType": 0,
+     "tHitpointScalar": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     },
+     "tFlatLevel": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     }
+    },
+    "unk_89dc285": false,
+    "flFlatDamageBonusScalar": 1,
+    "unk_f551941": -1,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
+    "unk_b8f2b": -1,
+    "bHasCombatEffectOverride": false,
+    "tCombatEffectOverride": {
+     "value": "100",
+     "compiled": "BgAAAAAAyEIAAAAA"
+    },
+    "bHideDamageEffects": false,
+    "bHideGlobalApplicationEffect": false
+   },
+   "unk_dcb22bd": true,
+   "tCrowdControl": {
+    "__type__": "PowerBuffCrowdControl",
+    "__typeHash__": 4138865712,
+    "unk_c63f49e": true,
+    "dwCCFlags": 0,
+    "bUseGlobalSlowAmount": false,
+    "eGlobalSlowAmountType": 0,
+    "tSlowAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tChillAmount": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tStaggerMultiplier": {
+     "value": "1",
+     "compiled": "BgAAAAAAgD8AAAAA"
+    }
+   },
+   "bHasDamageShield": false,
+   "tDamageShield": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   }
+  },
+  {
+   "__type__": "PowerBuffDefinition",
+   "__typeHash__": 1071057721,
+   "dwID": 1547112613,
+   "dwBuffId": 12,
+   "bHarmful": false,
+   "bInfinite": true,
+   "tDuration": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "tMaxStackCount": {
+    "value": "1",
+    "compiled": "BgAAAAAAgD8AAAAA"
+   },
+   "unk_89134c5": false,
+   "bShowDuration": false,
+   "bCancellable": false,
+   "unk_99b5752": false,
+   "unk_93cd85f": false,
+   "unk_5c11505": false,
+   "unk_9eb6fb0": false,
+   "unk_e8f1e19": false,
+   "unk_9cb4832": false,
+   "unk_71ba554": false,
+   "hIcon": 0,
+   "hFloatingIcon": 0,
+   "hFloatingTextLabel": 0,
+   "flFloatingTextIconRange": 0,
+   "unk_395ccd6": false,
+   "bDealsDOT": false,
+   "tDOT": {
+    "__type__": "PowerBuffDOTDamage",
+    "__typeHash__": 3824324374,
+    "eDamageType": -1,
+    "tDamage": {
+     "__type__": "HitpointSpecifier",
+     "__typeHash__": 1185241065,
+     "eType": 0,
+     "tHitpointScalar": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     },
+     "tFlatLevel": {
+      "value": "0",
+      "compiled": "BgAAAAAAAAAAAAAA"
+     }
+    },
+    "unk_89dc285": false,
+    "flFlatDamageBonusScalar": 1,
+    "unk_f551941": -1,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -742,8 +1037,8 @@
   {
    "__type__": "PowerBuffDefinition",
    "__typeHash__": 1071057721,
-   "dwID": 3433401306,
-   "dwBuffId": 9,
+   "dwID": 140243219,
+   "dwBuffId": 14,
    "bHarmful": false,
    "bInfinite": true,
    "tDuration": {
@@ -790,8 +1085,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -801,7 +1096,7 @@
     "bHideDamageEffects": false,
     "bHideGlobalApplicationEffect": false
    },
-   "unk_dcb22bd": false,
+   "unk_dcb22bd": true,
    "tCrowdControl": {
     "__type__": "PowerBuffCrowdControl",
     "__typeHash__": 4138865712,
@@ -844,32 +1139,8 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "4",
-    "compiled": "BgAAAAAAgEAAAAAA"
-   }
-  },
-  {
-   "__type__": "ScriptFormulaInfo",
-   "__typeHash__": 551777591,
-   "tFormula": {
-    "value": "1.75",
-    "compiled": "BgAAAAAA4D8AAAAA"
-   }
-  },
-  {
-   "__type__": "ScriptFormulaInfo",
-   "__typeHash__": 551777591,
-   "tFormula": {
-    "value": "Affix_Flat_Value_1#legendary_barb_019",
-    "compiled": "BQAAAAAAAAD0AwAAlvYJAAAAAAAAAAAA"
-   }
-  },
-  {
-   "__type__": "ScriptFormulaInfo",
-   "__typeHash__": 551777591,
-   "tFormula": {
-    "value": "0.5",
-    "compiled": "BgAAAAAAAD8AAAAA"
+    "value": "1.5 * SF_10",
+    "compiled": "BgAAAAAAwD8FAAAAEAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAA"
    }
   },
   {
@@ -884,24 +1155,72 @@
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "1.25",
-    "compiled": "BgAAAAAAoD8AAAAA"
+    "value": "Affix_Value_1#legendary_barb_019 * (Weapon_Damage_Min_Total + Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAYBAAAlvYJAAAAAAAFAAAAAAAAAJ8BAAD+////AAAAAAUAAAAAAAAAoAEAAP7///8AAAAACwAAAA0AAAAAAAAA"
    }
   },
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "Affix_Flat_Value_1#legendary_barb_027",
-    "compiled": "BQAAAAAAAAD0AwAAxtQIAAAAAAAAAAAA"
+    "value": "0.5",
+    "compiled": "BgAAAAAAAD8AAAAA"
    }
   },
   {
    "__type__": "ScriptFormulaInfo",
    "__typeHash__": 551777591,
    "tFormula": {
-    "value": "Affix_Flat_Value_1#Legendary_Barb_109",
-    "compiled": "BQAAAAAAAAD0AwAACk4SAAAAAAAAAAAA"
+    "value": "Affix_Value_1#legendary_barb_027 * (Weapon_Damage_Min_Total + Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAYBAAAxtQIAAAAAAAFAAAAAAAAAJ8BAAD+////AAAAAAUAAAAAAAAAoAEAAP7///8AAAAACwAAAA0AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix_Value_1#Legendary_Barb_109 * (Weapon_Damage_Min_Total + Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAYBAAACk4SAAAAAAAFAAAAAAAAAJ8BAAD+////AAAAAAUAAAAAAAAAoAEAAP7///8AAAAACwAAAA0AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix_Value_1#Pants_Unique_Barb_100 * 2 * (Weapon_Damage_Min_Total + Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAYBAAAnQQdAAAAAAAGAAAAAAAAQA0AAAAFAAAAAAAAAJ8BAAD+////AAAAAAUAAAAAAAAAoAEAAP7///8AAAAACwAAAA0AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Percent_Bonus_Projectiles_Per_Power#Barbarian_DustDevils + Percent_Bonus_Projectiles_All",
+    "compiled": "BQAAAAAAAAB8AwAAyb0PAAAAAAAFAAAAAAAAAHsDAAD+////AAAAAAsAAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Min(1.5, 1 + (AoE_Size_Bonus_Per_Power#Barbarian_DustDevils / 2))",
+    "compiled": "BgAAAAAAwD8GAAAAAACAPwUAAAAAAAAAnAMAAMm9DwAAAAAABgAAAAAAAEAOAAAACwAAAAEAAAAAAAAAAAAAAA=="
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Affix_Value_2#legendary_barb_114 * (Weapon_Damage_Min_Total + Weapon_Damage_Delta_Total)",
+    "compiled": "BQAAAAAAAAAZBAAA5FsdAAAAAAAFAAAAAAAAAJ8BAAD+////AAAAAAUAAAAAAAAAoAEAAP7///8AAAAACwAAAA0AAAAAAAAA"
+   }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "1 + Power_Duration_Bonus_Pct#Barbarian_DustDevils",
+    "compiled": "BgAAAAAAgD8FAAAAAAAAAG4DAADJvQ8AAAAAAAsAAAAAAAAA"
    }
   }
  ],
@@ -995,7 +1314,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 1,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,
@@ -1013,6 +1332,208 @@
    "snoItemTypeMainHandEffectsOverride": null,
    "snoItemTypeOffHandEffectsOverride": null,
    "dwID": 1488590444,
+   "eForcedDamageType": -1,
+   "tDamage": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 3,
+    "tHitpointScalar": {
+     "value": "SF_4",
+     "compiled": "BQAAAAoAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "bHasCustomDamageVariance": false,
+   "tDamageVariance": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_c1c7b04": false,
+   "unk_907cc39": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tFortifiedHealth": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "tApplyFreeze": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tApplyChillAmount": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_e659b0f": -1,
+   "tHeal": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "eHealType": 0,
+   "bPlayHealEffect": true,
+   "unk_8bc45f2": false,
+   "unk_15c6c03": false,
+   "unk_e842c84": false,
+   "unk_b8f2b": 2,
+   "bHasCombatEffectOverride": false,
+   "tCombatEffectOverride": {
+    "value": "100",
+    "compiled": "BgAAAAAAyEIAAAAA"
+   },
+   "ePayloadDefaultHitEffectType": 2,
+   "snoNormalHitEffectGroup": {
+    "__raw__": 450087,
+    "__group__": 14,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
+    "__targetFileName__": "base/meta/EffectGroup/druid_tornado_impact.efg",
+    "groupName": "EffectGroup",
+    "name": "druid_tornado_impact"
+   },
+   "snoTargetImpactEffectGroup": null,
+   "flHitFlashDurationScalar": 1,
+   "iPowerNeedTarget": false,
+   "bPlayNormalHitSoundPayload": false,
+   "unk_969096b": false,
+   "unk_5885b8": 0,
+   "unk_f38eac9": false,
+   "tOnHitSoundsPayload": {
+    "__type__": "OnHitSounds",
+    "__typeHash__": 960545022,
+    "sno1P": null,
+    "sno3PEnemy": null,
+    "sno3PFriendly": null
+   }
+  },
+  {
+   "__type__": "PowerPayloadDefinition",
+   "__typeHash__": 812993760,
+   "snoItemTypeMainHandEffectsOverride": null,
+   "snoItemTypeOffHandEffectsOverride": null,
+   "dwID": 2496905583,
+   "eForcedDamageType": -1,
+   "tDamage": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 3,
+    "tHitpointScalar": {
+     "value": "SF_5",
+     "compiled": "BQAAAAsAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "bHasCustomDamageVariance": false,
+   "tDamageVariance": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_c1c7b04": false,
+   "unk_907cc39": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tFortifiedHealth": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "tApplyFreeze": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "tApplyChillAmount": {
+    "value": "0",
+    "compiled": "BgAAAAAAAAAAAAAA"
+   },
+   "unk_e659b0f": -1,
+   "tHeal": {
+    "__type__": "HitpointSpecifier",
+    "__typeHash__": 1185241065,
+    "eType": 0,
+    "tHitpointScalar": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    },
+    "tFlatLevel": {
+     "value": "0",
+     "compiled": "BgAAAAAAAAAAAAAA"
+    }
+   },
+   "eHealType": 0,
+   "bPlayHealEffect": true,
+   "unk_8bc45f2": false,
+   "unk_15c6c03": false,
+   "unk_e842c84": false,
+   "unk_b8f2b": 2,
+   "bHasCombatEffectOverride": false,
+   "tCombatEffectOverride": {
+    "value": "100",
+    "compiled": "BgAAAAAAyEIAAAAA"
+   },
+   "ePayloadDefaultHitEffectType": 2,
+   "snoNormalHitEffectGroup": {
+    "__raw__": 450087,
+    "__group__": 14,
+    "__type__": "DT_SNO",
+    "__typeHash__": 2764331143,
+    "__targetFileName__": "base/meta/EffectGroup/druid_tornado_impact.efg",
+    "groupName": "EffectGroup",
+    "name": "druid_tornado_impact"
+   },
+   "snoTargetImpactEffectGroup": null,
+   "flHitFlashDurationScalar": 1,
+   "iPowerNeedTarget": false,
+   "bPlayNormalHitSoundPayload": false,
+   "unk_969096b": false,
+   "unk_5885b8": 0,
+   "unk_f38eac9": false,
+   "tOnHitSoundsPayload": {
+    "__type__": "OnHitSounds",
+    "__typeHash__": 960545022,
+    "sno1P": null,
+    "sno3PEnemy": null,
+    "sno3PFriendly": null
+   }
+  },
+  {
+   "__type__": "PowerPayloadDefinition",
+   "__typeHash__": 812993760,
+   "snoItemTypeMainHandEffectsOverride": null,
+   "snoItemTypeOffHandEffectsOverride": null,
+   "dwID": 3375585634,
    "eForcedDamageType": -1,
    "tDamage": {
     "__type__": "HitpointSpecifier",
@@ -1096,7 +1617,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 1,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,
@@ -1113,15 +1634,15 @@
    "__typeHash__": 812993760,
    "snoItemTypeMainHandEffectsOverride": null,
    "snoItemTypeOffHandEffectsOverride": null,
-   "dwID": 2851107267,
+   "dwID": 1139867644,
    "eForcedDamageType": -1,
    "tDamage": {
     "__type__": "HitpointSpecifier",
     "__typeHash__": 1185241065,
     "eType": 3,
     "tHitpointScalar": {
-     "value": "SF_7",
-     "compiled": "BQAAAA0AAAAAAAAAAAAAAAAAAAAAAAAA"
+     "value": "SF_9",
+     "compiled": "BQAAAA8AAAAAAAAAAAAAAAAAAAAAAAAA"
     },
     "tFlatLevel": {
      "value": "0",
@@ -1197,7 +1718,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 1,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,

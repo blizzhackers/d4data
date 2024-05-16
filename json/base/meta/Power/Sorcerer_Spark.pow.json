@@ -67,7 +67,7 @@
  "bChannelledMovement": false,
  "bAutoChannelled": false,
  "unk_3837f2a": true,
- "unk_6c6eb6b": false,
+ "bInterruptOnDamage": false,
  "tAutoChannelledDuration": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -114,7 +114,7 @@
  "unk_4bf03ff": true,
  "tAttackSpeed": {
   "value": "Attacks_Per_Second_Total*1.25",
-  "compiled": "BQAAAAAAAADDAAAA/v///wAAAAAGAAAAAACgPw0AAAAAAAAA"
+  "compiled": "BQAAAAAAAADJAAAA/v///wAAAAAGAAAAAACgPw0AAAAAAAAA"
  },
  "unk_6deb090": false,
  "unk_ed2bdad": false,
@@ -178,7 +178,7 @@
  "unk_67b65e9": false,
  "bAutoTargetingEnabled": true,
  "unk_42057f3": false,
- "unk_fbccf7": false,
+ "bShowCastConfirmation": false,
  "unk_7cdc8cb": false,
  "snoEffectGroupCastConfirmation": {
   "__raw__": 450718,
@@ -189,7 +189,7 @@
   "groupName": "EffectGroup",
   "name": "g_playerClicked"
  },
- "unk_be5487b": null,
+ "snoEffectGroupCastConfirmationOnTargetActor": null,
  "unk_66bbae7": false,
  "unk_5efc45c": false,
  "unk_b9ffd91": false,
@@ -215,6 +215,7 @@
   "value": "6",
   "compiled": "BgAAAAAAwEAAAAAA"
  },
+ "unk_699d1c4": 1,
  "unk_e7fc6fa": {
   "value": "0",
   "compiled": "BgAAAAAAAAAAAAAA"
@@ -640,8 +641,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -738,8 +739,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -836,8 +837,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -898,7 +899,7 @@
     "value": "SF_18",
     "compiled": "BQAAABgAAAAAAAAAAAAAAAAAAAAAAAAA"
    },
-   "unk_89134c5": true,
+   "unk_89134c5": false,
    "bShowDuration": true,
    "bCancellable": false,
    "unk_99b5752": false,
@@ -908,7 +909,7 @@
    "unk_e8f1e19": true,
    "unk_9cb4832": true,
    "unk_71ba554": false,
-   "hIcon": 1281178120,
+   "hIcon": 0,
    "hFloatingIcon": 0,
    "hFloatingTextLabel": 0,
    "flFloatingTextIconRange": 0,
@@ -934,8 +935,8 @@
     "unk_89dc285": false,
     "flFlatDamageBonusScalar": 1,
     "unk_f551941": -1,
-    "unk_dd4b5bf": false,
-    "unk_3d768b7": false,
+    "bDamageIgnoresInvulnerable": false,
+    "bDamageIgnoresBonuses": false,
     "unk_b8f2b": -1,
     "bHasCombatEffectOverride": false,
     "tCombatEffectOverride": {
@@ -1159,6 +1160,14 @@
     "value": "9",
     "compiled": "BgAAAAAAEEEAAAAA"
    }
+  },
+  {
+   "__type__": "ScriptFormulaInfo",
+   "__typeHash__": 551777591,
+   "tFormula": {
+    "value": "Percent_Bonus_Projectiles_Per_Power#Sorcerer_Spark + Percent_Bonus_Projectiles_All",
+    "compiled": "BQAAAAAAAAB8AwAAezACAAAAAAAFAAAAAAAAAHsDAAD+////AAAAAAsAAAAAAAAA"
+   }
   }
  ],
  "arPayloads": [
@@ -1251,7 +1260,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 0.5,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,
@@ -1352,7 +1361,7 @@
    "snoTargetImpactEffectGroup": null,
    "flHitFlashDurationScalar": 0.5,
    "iPowerNeedTarget": false,
-   "unk_b9a00d9": false,
+   "bPlayNormalHitSoundPayload": false,
    "unk_969096b": false,
    "unk_5885b8": 0,
    "unk_f38eac9": false,
@@ -1390,6 +1399,13 @@
      "__typeHash__": 1028170061,
      "group": 56,
      "name": "Search_Lightning"
+    },
+    {
+     "__raw__": 1782980193,
+     "__type__": "DT_GBID",
+     "__typeHash__": 1028170061,
+     "group": 56,
+     "name": "Skill_Chain"
     }
    ]
   },
