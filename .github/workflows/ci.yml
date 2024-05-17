@@ -2,12 +2,17 @@ name: CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
     paths:
-      - checksum
-      - .github/workflows
+      - checksum/**
+      - .github/workflows/**
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
+    paths:
+      - checksum/**
+      - .github/workflows/**
 
 jobs:
   build:
@@ -49,6 +54,12 @@ jobs:
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+
+    - name: Use libc++
+      if: ${{ matrix.cpp_compiler == 'clang++' }}
+      shell: bash
+      run: |
+        echo "CXXFLAGS=-stdlib=libc++" >> $GITHUB_ENV
 
     - name: Configure CMake
       run: >
