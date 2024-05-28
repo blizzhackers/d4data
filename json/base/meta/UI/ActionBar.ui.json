@@ -157,7 +157,7 @@
           },
           "unk_441f783": "0",
           "hOptionalUIControlStyleFields": {
-           "bActive": 0
+           "bActive": 1
           },
           "tConsoleInput": {
            "__type__": "UIControlConsoleInput",
@@ -683,7 +683,6 @@
             "groupName": "Sound",
             "name": "Play_UI_HealthGlobe_State_Shielded_1P"
            },
-           "bActive": 0,
            "snoOnOpenSound": null
           },
           "tConsoleInput": {
@@ -2000,7 +1999,7 @@
           },
           "unk_441f783": "0",
           "hOptionalUIControlStyleFields": {
-           "bActive": 0
+           "bActive": 1
           },
           "tConsoleInput": {
            "__type__": "UIControlConsoleInput",
@@ -4095,7 +4094,7 @@
           },
           "unk_441f783": "0",
           "hOptionalUIControlStyleFields": {
-           "bActive": 0
+           "bActive": 1
           },
           "tConsoleInput": {
            "__type__": "UIControlConsoleInput",
@@ -8759,7 +8758,8 @@
             "nRight": 10,
             "nWidth": 700,
             "nLeft": 50,
-            "eHorizontalAnchoring": 3
+            "eHorizontalAnchoring": 3,
+            "bEncloseChildren": 1
            }
           }
          ],
@@ -8813,6 +8813,7 @@
              },
              "hOptionalUITextStyleFields": {
               "bWordWrap": 1,
+              "bShowPreviewText": 0,
               "hText": {
                "__type__": "StringLabelHandleEx",
                "__typeHash__": 721585600,
@@ -8827,7 +8828,8 @@
                },
                "szLabel": 2274432990
               },
-              "nTextLinesBeforeTruncation": 1
+              "szPreviewText": "",
+              "eResizeToFit": 1
              }
             }
            ],
@@ -8869,6 +8871,7 @@
               "nHeight": 30,
               "eVerticalAnchoring": 3,
               "nBottom": 0,
+              "nMaxWidth": 420,
               "nRight": 0,
               "nWidth": 700,
               "eHorizontalAnchoring": 3,
@@ -8880,6 +8883,8 @@
               "hOptionalUIControlFontFields": {}
              },
              "hOptionalUITextStyleFields": {
+              "bWordWrap": 1,
+              "bShowPreviewText": 0,
               "hText": {
                "__type__": "StringLabelHandleEx",
                "__typeHash__": 721585600,
@@ -8893,7 +8898,9 @@
                 "name": "ButtonLegend"
                },
                "szLabel": 3602349820
-              }
+              },
+              "szPreviewText": "",
+              "eResizeToFit": 1
              }
             }
            ],
@@ -11195,7 +11202,7 @@
                     "hOptionalUIControlConsoleInputFields": {}
                    },
                    "hOptionalUIWindowStyleFields": {
-                    "nHeight": 24,
+                    "nHeight": 32,
                     "eVerticalAnchoring": 1,
                     "nWidth": 32,
                     "hImageFrame": {
@@ -14152,6 +14159,7 @@
            "hOptionalUITextStyleFields": {
             "flTextPaddingT": 4,
             "bWordWrap": 1,
+            "bShowPreviewText": 0,
             "hText": {
              "__type__": "StringLabelHandleEx",
              "__typeHash__": 721585600,
@@ -14166,6 +14174,7 @@
              },
              "szLabel": 454263739
             },
+            "szPreviewText": "",
             "eTextJustifyVertical": 6,
             "eResizeToFit": 1
            }
@@ -14597,9 +14606,11 @@
      },
      "hOptionalUIWindowStyleFields": {
       "nHeight": 50,
+      "eClipBehavior": 2,
       "eVerticalAnchoring": 1,
+      "nRight": 0,
       "nWidth": 50,
-      "eHorizontalAnchoring": 0,
+      "eHorizontalAnchoring": 1,
       "bEncloseChildren": 1
      }
     }
@@ -14638,7 +14649,10 @@
        },
        "hOptionalUIWindowStyleFields": {
         "nHeight": 50,
+        "eVerticalAnchoring": 1,
         "nWidth": 50,
+        "eHorizontalAnchoring": 1,
+        "unk_bffade6": 4,
         "hImageFrame": {
          "__type__": "UIImageHandleReference",
          "__typeHash__": 1797021084,
@@ -14663,9 +14677,17 @@
         "hOptionalUIControlClickSoundsFields": {}
        },
        "hOptionalUIButtonStyleFields": {
+        "rgbaButtonDisabledColor": {
+         "r": 255,
+         "g": 255,
+         "b": 255,
+         "a": 255
+        },
         "bButtonIsEnabled": 0
        },
-       "hOptionalUIItemButtonStyleFields": {}
+       "hOptionalUIItemButtonStyleFields": {
+        "unk_cfc0a80": 1
+       }
       }
      ],
      "arChildren": [
@@ -14765,7 +14787,7 @@
         "name": "Notify_Material_Pickup_In"
        },
        "eLoadBehavior": 0,
-       "eActivateBehavior": 1,
+       "eActivateBehavior": 2,
        "eFinishBehavior": 0,
        "hOptionalUIStoryboard2StyleFields": {}
       }
@@ -16364,11 +16386,9 @@
          "b": 217,
          "a": 255
         },
-        "nHeight": 56,
+        "nHeight": 60,
         "nMaxWidth": 480,
-        "eHorizontalAnchoring": 3,
-        "nMaxHeight": 56,
-        "nMinHeight": 56
+        "eHorizontalAnchoring": 3
        },
        "tFont": {
         "__type__": "UIControlFont",
@@ -16389,6 +16409,7 @@
        "hOptionalUITextStyleFields": {
         "flTextPaddingL": 0,
         "bWordWrap": 1,
+        "bShowPreviewText": 1,
         "hText": {
          "__type__": "StringLabelHandleEx",
          "__typeHash__": 721585600,
@@ -16403,6 +16424,7 @@
          },
          "szLabel": 804952195
         },
+        "szPreviewText": "Déverrouiller : terminez « {icon:Marker_PriorityQuestAvailable, 2.5}{c_highlight}Sorciere: l'heritage des magi {/c} ».",
         "nTextLinesBeforeTruncation": 2,
         "eTextJustifyVertical": 2,
         "eResizeToFit": 3,
@@ -34336,491 +34358,6 @@
     {
      "__type__": "UIControlTemplate",
      "__typeHash__": 641859515,
-     "szName": "HealthBallFortified",
-     "ptInlineStyle": [
-      {
-       "__type__": "UIWindowStyle",
-       "__typeHash__": 506492871,
-       "dwType": 506492871,
-       "dwPad": 0,
-       "hParentStyle": {
-        "__type__": "UIControlHandle",
-        "__typeHash__": 3063971755,
-        "snoUI": null,
-        "szControlName": 0
-       },
-       "unk_441f783": "0",
-       "hOptionalUIControlStyleFields": {
-        "bActive": 0
-       },
-       "tConsoleInput": {
-        "__type__": "UIControlConsoleInput",
-        "__typeHash__": 3089331074,
-        "hOptionalUIControlConsoleInputFields": {}
-       },
-       "hOptionalUIWindowStyleFields": {
-        "nTop": 133,
-        "nHeight": 285,
-        "eClipBehavior": 2,
-        "nBottom": 123,
-        "nRight": 542,
-        "nWidth": 285,
-        "nLeft": 22
-       }
-      }
-     ],
-     "arChildren": [
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "FortifiedBase",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIWindowStyle",
-         "__typeHash__": 506492871,
-         "dwType": 506492871,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {
-          "bActive": 0
-         },
-         "tConsoleInput": {
-          "__type__": "UIControlConsoleInput",
-          "__typeHash__": 3089331074,
-          "hOptionalUIControlConsoleInputFields": {}
-         },
-         "hOptionalUIWindowStyleFields": {
-          "nHeight": 210,
-          "eVerticalAnchoring": 3,
-          "nBottom": 0,
-          "nWidth": 210,
-          "eHorizontalAnchoring": 3,
-          "hImageFrame": {
-           "__type__": "UIImageHandleReference",
-           "__typeHash__": 1797021084,
-           "hImageHandle": 1855465872
-          }
-         }
-        }
-       ],
-       "arChildren": [],
-       "unk_1cb": []
-      },
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "Storyboard_Fortified",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIStoryboard2Style",
-         "__typeHash__": 3193003306,
-         "dwType": 3193003306,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {},
-         "snoStoryboard": {
-          "__raw__": 215041,
-          "__group__": 90,
-          "__type__": "DT_SNO",
-          "__typeHash__": 2764331143,
-          "__targetFileName__": "base/meta/Storyboard/FadeIn_Medium.stb",
-          "groupName": "StoryBoard",
-          "name": "FadeIn_Medium"
-         },
-         "eLoadBehavior": 0,
-         "eActivateBehavior": 2,
-         "eFinishBehavior": 0,
-         "hOptionalUIStoryboard2StyleFields": {}
-        }
-       ],
-       "arChildren": [],
-       "unk_1cb": []
-      }
-     ],
-     "unk_1cb": []
-    },
-    {
-     "__type__": "UIControlTemplate",
-     "__typeHash__": 641859515,
-     "szName": "HealthBallShielded",
-     "ptInlineStyle": [
-      {
-       "__type__": "UIWindowStyle",
-       "__typeHash__": 506492871,
-       "dwType": 506492871,
-       "dwPad": 0,
-       "hParentStyle": {
-        "__type__": "UIControlHandle",
-        "__typeHash__": 3063971755,
-        "snoUI": null,
-        "szControlName": 0
-       },
-       "unk_441f783": "0",
-       "hOptionalUIControlStyleFields": {
-        "bActive": 0
-       },
-       "tConsoleInput": {
-        "__type__": "UIControlConsoleInput",
-        "__typeHash__": 3089331074,
-        "hOptionalUIControlConsoleInputFields": {}
-       },
-       "hOptionalUIWindowStyleFields": {
-        "nTop": 157,
-        "nHeight": 230,
-        "eClipBehavior": 2,
-        "nBottom": 123,
-        "nRight": 542,
-        "nWidth": 230,
-        "nLeft": 50
-       }
-      }
-     ],
-     "arChildren": [
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "OverShielded",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIWindowStyle",
-         "__typeHash__": 506492871,
-         "dwType": 506492871,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {
-          "bActive": 1
-         },
-         "tConsoleInput": {
-          "__type__": "UIControlConsoleInput",
-          "__typeHash__": 3089331074,
-          "hOptionalUIControlConsoleInputFields": {}
-         },
-         "hOptionalUIWindowStyleFields": {
-          "nHeight": 230,
-          "eVerticalAnchoring": 3,
-          "nWidth": 230,
-          "eHorizontalAnchoring": 3,
-          "hImageFrame": {
-           "__type__": "UIImageHandleReference",
-           "__typeHash__": 1797021084,
-           "hImageHandle": 2873738258
-          },
-          "dwAlpha": 0
-         }
-        }
-       ],
-       "arChildren": [],
-       "unk_1cb": []
-      },
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "ShieldedProgress",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIProgressBarStyle",
-         "__typeHash__": 3328833529,
-         "dwType": 3328833529,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {},
-         "tConsoleInput": {
-          "__type__": "UIControlConsoleInput",
-          "__typeHash__": 3089331074,
-          "hOptionalUIControlConsoleInputFields": {}
-         },
-         "hOptionalUIWindowStyleFields": {
-          "nHeight": 230,
-          "eVerticalAnchoring": 1,
-          "nWidth": 230,
-          "eHorizontalAnchoring": 1,
-          "hImageFrame": {
-           "__type__": "UIImageHandleReference",
-           "__typeHash__": 1797021084,
-           "hImageHandle": 0
-          }
-         },
-         "tProgressBarBase": {
-          "__type__": "UIProgressBarBase",
-          "__typeHash__": 4134908163,
-          "hOptionalUIProgressBarBaseFields": {
-           "hProgressBackgroundImage": {
-            "__type__": "UIImageHandleReference",
-            "__typeHash__": 1797021084,
-            "hImageHandle": 3609792024
-           },
-           "bVertical": 1,
-           "hProgressForegroundImage": {
-            "__type__": "UIImageHandleReference",
-            "__typeHash__": 1797021084,
-            "hImageHandle": 328888112
-           }
-          }
-         },
-         "hOptionalUIProgressBarStyleFields": {}
-        }
-       ],
-       "arChildren": [],
-       "unk_1cb": []
-      },
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "ShieldedEffect",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIWindowStyle",
-         "__typeHash__": 506492871,
-         "dwType": 506492871,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {
-          "bActive": 1
-         },
-         "tConsoleInput": {
-          "__type__": "UIControlConsoleInput",
-          "__typeHash__": 3089331074,
-          "hOptionalUIControlConsoleInputFields": {}
-         },
-         "hOptionalUIWindowStyleFields": {
-          "nHeight": 230,
-          "eVerticalAnchoring": 3,
-          "nWidth": 230,
-          "eHorizontalAnchoring": 3,
-          "hImageFrame": {
-           "__type__": "UIImageHandleReference",
-           "__typeHash__": 1797021084,
-           "hImageHandle": 4040530102
-          }
-         }
-        }
-       ],
-       "arChildren": [
-        {
-         "__type__": "UIControlTemplate",
-         "__typeHash__": 641859515,
-         "szName": "Storyboard_ShieldedEffect",
-         "ptInlineStyle": [
-          {
-           "__type__": "UIStoryboard2Style",
-           "__typeHash__": 3193003306,
-           "dwType": 3193003306,
-           "dwPad": 0,
-           "hParentStyle": {
-            "__type__": "UIControlHandle",
-            "__typeHash__": 3063971755,
-            "snoUI": null,
-            "szControlName": 0
-           },
-           "unk_441f783": "0",
-           "hOptionalUIControlStyleFields": {},
-           "snoStoryboard": {
-            "__raw__": 331947,
-            "__group__": 90,
-            "__type__": "DT_SNO",
-            "__typeHash__": 2764331143,
-            "__targetFileName__": "base/meta/Storyboard/ShieldedEffect_Loop.stb",
-            "groupName": "StoryBoard",
-            "name": "ShieldedEffect_Loop"
-           },
-           "eLoadBehavior": 1,
-           "eActivateBehavior": 1,
-           "eFinishBehavior": 1,
-           "hOptionalUIStoryboard2StyleFields": {}
-          }
-         ],
-         "arChildren": [],
-         "unk_1cb": []
-        },
-        {
-         "__type__": "UIControlTemplate",
-         "__typeHash__": 641859515,
-         "szName": "vfx_shielded",
-         "ptInlineStyle": [
-          {
-           "__type__": "UIRActorStyle",
-           "__typeHash__": 2564089914,
-           "dwType": 2564089914,
-           "dwPad": 0,
-           "hParentStyle": {
-            "__type__": "UIControlHandle",
-            "__typeHash__": 3063971755,
-            "snoUI": null,
-            "szControlName": 0
-           },
-           "unk_441f783": "0",
-           "hOptionalUIControlStyleFields": {},
-           "tConsoleInput": {
-            "__type__": "UIControlConsoleInput",
-            "__typeHash__": 3089331074,
-            "hOptionalUIControlConsoleInputFields": {}
-           },
-           "hOptionalUIWindowStyleFields": {
-            "eVerticalAnchoring": 1,
-            "eHorizontalAnchoring": 1,
-            "tOnActivateEffects": [
-             {
-              "__type__": "UIEffect",
-              "__typeHash__": 228221451,
-              "snoEffectGroup": {
-               "__raw__": 1293488,
-               "__group__": 14,
-               "__type__": "DT_SNO",
-               "__typeHash__": 2764331143,
-               "__targetFileName__": "base/meta/EffectGroup/ui_shielded.efg",
-               "groupName": "EffectGroup",
-               "name": "ui_shielded"
-              },
-              "szUIRActorPath": ".vfx_canvas",
-              "eScaleMethod": 0,
-              "vecScale": {
-               "x": 1,
-               "y": 1
-              },
-              "unk_4a73e5": {
-               "x": -1,
-               "y": -1
-              }
-             }
-            ]
-           },
-           "hOptionalUIRActorStyleFields": {}
-          }
-         ],
-         "arChildren": [],
-         "unk_1cb": []
-        }
-       ],
-       "unk_1cb": []
-      }
-     ],
-     "unk_1cb": []
-    },
-    {
-     "__type__": "UIControlTemplate",
-     "__typeHash__": 641859515,
-     "szName": "HealthBallInjured",
-     "ptInlineStyle": [
-      {
-       "__type__": "UIWindowStyle",
-       "__typeHash__": 506492871,
-       "dwType": 506492871,
-       "dwPad": 0,
-       "hParentStyle": {
-        "__type__": "UIControlHandle",
-        "__typeHash__": 3063971755,
-        "snoUI": null,
-        "szControlName": 0
-       },
-       "unk_441f783": "0",
-       "hOptionalUIControlStyleFields": {
-        "bActive": 1
-       },
-       "tConsoleInput": {
-        "__type__": "UIControlConsoleInput",
-        "__typeHash__": 3089331074,
-        "hOptionalUIControlConsoleInputFields": {}
-       },
-       "hOptionalUIWindowStyleFields": {
-        "nTop": 198,
-        "nHeight": 175,
-        "eVerticalAnchoring": 2,
-        "nBottom": 140,
-        "nRight": 553,
-        "nWidth": 175,
-        "nLeft": -280,
-        "eHorizontalAnchoring": 1
-       }
-      }
-     ],
-     "arChildren": [
-      {
-       "__type__": "UIControlTemplate",
-       "__typeHash__": 641859515,
-       "szName": "InjuredBaseActor",
-       "ptInlineStyle": [
-        {
-         "__type__": "UIRActorStyle",
-         "__typeHash__": 2564089914,
-         "dwType": 2564089914,
-         "dwPad": 0,
-         "hParentStyle": {
-          "__type__": "UIControlHandle",
-          "__typeHash__": 3063971755,
-          "snoUI": null,
-          "szControlName": 0
-         },
-         "unk_441f783": "0",
-         "hOptionalUIControlStyleFields": {},
-         "tConsoleInput": {
-          "__type__": "UIControlConsoleInput",
-          "__typeHash__": 3089331074,
-          "hOptionalUIControlConsoleInputFields": {}
-         },
-         "hOptionalUIWindowStyleFields": {
-          "nHeight": 169,
-          "eVerticalAnchoring": 2,
-          "nRight": -151,
-          "nWidth": 169,
-          "eHorizontalAnchoring": 1,
-          "hImageFrame": {
-           "__type__": "UIImageHandleReference",
-           "__typeHash__": 1797021084,
-           "hImageHandle": 0
-          }
-         },
-         "hOptionalUIRActorStyleFields": {
-          "snoActor": {
-           "__raw__": 1028969,
-           "__group__": 1,
-           "__type__": "DT_SNO",
-           "__typeHash__": 2764331143,
-           "__targetFileName__": "base/meta/Actor/healthGlobe_centerUI_injured.acr",
-           "groupName": "Actor",
-           "name": "healthGlobe_centerUI_injured"
-          }
-         }
-        }
-       ],
-       "arChildren": [],
-       "unk_1cb": []
-      }
-     ],
-     "unk_1cb": []
-    },
-    {
-     "__type__": "UIControlTemplate",
-     "__typeHash__": 641859515,
      "szName": "HealthBall",
      "ptInlineStyle": [
       {
@@ -35275,6 +34812,491 @@
          "unk_1cb": []
         }
        ],
+       "unk_1cb": []
+      }
+     ],
+     "unk_1cb": []
+    },
+    {
+     "__type__": "UIControlTemplate",
+     "__typeHash__": 641859515,
+     "szName": "HealthBallFortified",
+     "ptInlineStyle": [
+      {
+       "__type__": "UIWindowStyle",
+       "__typeHash__": 506492871,
+       "dwType": 506492871,
+       "dwPad": 0,
+       "hParentStyle": {
+        "__type__": "UIControlHandle",
+        "__typeHash__": 3063971755,
+        "snoUI": null,
+        "szControlName": 0
+       },
+       "unk_441f783": "0",
+       "hOptionalUIControlStyleFields": {
+        "bActive": 0
+       },
+       "tConsoleInput": {
+        "__type__": "UIControlConsoleInput",
+        "__typeHash__": 3089331074,
+        "hOptionalUIControlConsoleInputFields": {}
+       },
+       "hOptionalUIWindowStyleFields": {
+        "nTop": 133,
+        "nHeight": 285,
+        "eClipBehavior": 2,
+        "nBottom": 123,
+        "nRight": 542,
+        "nWidth": 285,
+        "nLeft": 22
+       }
+      }
+     ],
+     "arChildren": [
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "FortifiedBase",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIWindowStyle",
+         "__typeHash__": 506492871,
+         "dwType": 506492871,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {
+          "bActive": 0
+         },
+         "tConsoleInput": {
+          "__type__": "UIControlConsoleInput",
+          "__typeHash__": 3089331074,
+          "hOptionalUIControlConsoleInputFields": {}
+         },
+         "hOptionalUIWindowStyleFields": {
+          "nHeight": 210,
+          "eVerticalAnchoring": 3,
+          "nBottom": 0,
+          "nWidth": 210,
+          "eHorizontalAnchoring": 3,
+          "hImageFrame": {
+           "__type__": "UIImageHandleReference",
+           "__typeHash__": 1797021084,
+           "hImageHandle": 1855465872
+          }
+         }
+        }
+       ],
+       "arChildren": [],
+       "unk_1cb": []
+      },
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "Storyboard_Fortified",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIStoryboard2Style",
+         "__typeHash__": 3193003306,
+         "dwType": 3193003306,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {},
+         "snoStoryboard": {
+          "__raw__": 215041,
+          "__group__": 90,
+          "__type__": "DT_SNO",
+          "__typeHash__": 2764331143,
+          "__targetFileName__": "base/meta/Storyboard/FadeIn_Medium.stb",
+          "groupName": "StoryBoard",
+          "name": "FadeIn_Medium"
+         },
+         "eLoadBehavior": 0,
+         "eActivateBehavior": 2,
+         "eFinishBehavior": 0,
+         "hOptionalUIStoryboard2StyleFields": {}
+        }
+       ],
+       "arChildren": [],
+       "unk_1cb": []
+      }
+     ],
+     "unk_1cb": []
+    },
+    {
+     "__type__": "UIControlTemplate",
+     "__typeHash__": 641859515,
+     "szName": "HealthBallShielded",
+     "ptInlineStyle": [
+      {
+       "__type__": "UIWindowStyle",
+       "__typeHash__": 506492871,
+       "dwType": 506492871,
+       "dwPad": 0,
+       "hParentStyle": {
+        "__type__": "UIControlHandle",
+        "__typeHash__": 3063971755,
+        "snoUI": null,
+        "szControlName": 0
+       },
+       "unk_441f783": "0",
+       "hOptionalUIControlStyleFields": {
+        "bActive": 0
+       },
+       "tConsoleInput": {
+        "__type__": "UIControlConsoleInput",
+        "__typeHash__": 3089331074,
+        "hOptionalUIControlConsoleInputFields": {}
+       },
+       "hOptionalUIWindowStyleFields": {
+        "nTop": 160,
+        "nHeight": 230,
+        "eClipBehavior": 2,
+        "nBottom": 123,
+        "nRight": 542,
+        "nWidth": 230,
+        "nLeft": 50
+       }
+      }
+     ],
+     "arChildren": [
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "OverShielded",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIWindowStyle",
+         "__typeHash__": 506492871,
+         "dwType": 506492871,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {
+          "bActive": 1
+         },
+         "tConsoleInput": {
+          "__type__": "UIControlConsoleInput",
+          "__typeHash__": 3089331074,
+          "hOptionalUIControlConsoleInputFields": {}
+         },
+         "hOptionalUIWindowStyleFields": {
+          "nHeight": 230,
+          "eVerticalAnchoring": 3,
+          "nWidth": 230,
+          "eHorizontalAnchoring": 3,
+          "hImageFrame": {
+           "__type__": "UIImageHandleReference",
+           "__typeHash__": 1797021084,
+           "hImageHandle": 2873738258
+          },
+          "dwAlpha": 0
+         }
+        }
+       ],
+       "arChildren": [],
+       "unk_1cb": []
+      },
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "ShieldedProgress",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIProgressBarStyle",
+         "__typeHash__": 3328833529,
+         "dwType": 3328833529,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {},
+         "tConsoleInput": {
+          "__type__": "UIControlConsoleInput",
+          "__typeHash__": 3089331074,
+          "hOptionalUIControlConsoleInputFields": {}
+         },
+         "hOptionalUIWindowStyleFields": {
+          "nHeight": 222,
+          "eVerticalAnchoring": 1,
+          "nWidth": 222,
+          "eHorizontalAnchoring": 1,
+          "hImageFrame": {
+           "__type__": "UIImageHandleReference",
+           "__typeHash__": 1797021084,
+           "hImageHandle": 0
+          }
+         },
+         "tProgressBarBase": {
+          "__type__": "UIProgressBarBase",
+          "__typeHash__": 4134908163,
+          "hOptionalUIProgressBarBaseFields": {
+           "hProgressBackgroundImage": {
+            "__type__": "UIImageHandleReference",
+            "__typeHash__": 1797021084,
+            "hImageHandle": 3609792024
+           },
+           "bVertical": 1,
+           "hProgressForegroundImage": {
+            "__type__": "UIImageHandleReference",
+            "__typeHash__": 1797021084,
+            "hImageHandle": 328888112
+           }
+          }
+         },
+         "hOptionalUIProgressBarStyleFields": {}
+        }
+       ],
+       "arChildren": [],
+       "unk_1cb": []
+      },
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "ShieldedEffect",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIWindowStyle",
+         "__typeHash__": 506492871,
+         "dwType": 506492871,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {
+          "bActive": 1
+         },
+         "tConsoleInput": {
+          "__type__": "UIControlConsoleInput",
+          "__typeHash__": 3089331074,
+          "hOptionalUIControlConsoleInputFields": {}
+         },
+         "hOptionalUIWindowStyleFields": {
+          "nHeight": 230,
+          "eVerticalAnchoring": 3,
+          "nWidth": 230,
+          "eHorizontalAnchoring": 3,
+          "hImageFrame": {
+           "__type__": "UIImageHandleReference",
+           "__typeHash__": 1797021084,
+           "hImageHandle": 4040530102
+          }
+         }
+        }
+       ],
+       "arChildren": [
+        {
+         "__type__": "UIControlTemplate",
+         "__typeHash__": 641859515,
+         "szName": "Storyboard_ShieldedEffect",
+         "ptInlineStyle": [
+          {
+           "__type__": "UIStoryboard2Style",
+           "__typeHash__": 3193003306,
+           "dwType": 3193003306,
+           "dwPad": 0,
+           "hParentStyle": {
+            "__type__": "UIControlHandle",
+            "__typeHash__": 3063971755,
+            "snoUI": null,
+            "szControlName": 0
+           },
+           "unk_441f783": "0",
+           "hOptionalUIControlStyleFields": {},
+           "snoStoryboard": {
+            "__raw__": 331947,
+            "__group__": 90,
+            "__type__": "DT_SNO",
+            "__typeHash__": 2764331143,
+            "__targetFileName__": "base/meta/Storyboard/ShieldedEffect_Loop.stb",
+            "groupName": "StoryBoard",
+            "name": "ShieldedEffect_Loop"
+           },
+           "eLoadBehavior": 1,
+           "eActivateBehavior": 1,
+           "eFinishBehavior": 1,
+           "hOptionalUIStoryboard2StyleFields": {}
+          }
+         ],
+         "arChildren": [],
+         "unk_1cb": []
+        },
+        {
+         "__type__": "UIControlTemplate",
+         "__typeHash__": 641859515,
+         "szName": "vfx_shielded",
+         "ptInlineStyle": [
+          {
+           "__type__": "UIRActorStyle",
+           "__typeHash__": 2564089914,
+           "dwType": 2564089914,
+           "dwPad": 0,
+           "hParentStyle": {
+            "__type__": "UIControlHandle",
+            "__typeHash__": 3063971755,
+            "snoUI": null,
+            "szControlName": 0
+           },
+           "unk_441f783": "0",
+           "hOptionalUIControlStyleFields": {},
+           "tConsoleInput": {
+            "__type__": "UIControlConsoleInput",
+            "__typeHash__": 3089331074,
+            "hOptionalUIControlConsoleInputFields": {}
+           },
+           "hOptionalUIWindowStyleFields": {
+            "eVerticalAnchoring": 1,
+            "eHorizontalAnchoring": 1,
+            "tOnActivateEffects": [
+             {
+              "__type__": "UIEffect",
+              "__typeHash__": 228221451,
+              "snoEffectGroup": {
+               "__raw__": 1293488,
+               "__group__": 14,
+               "__type__": "DT_SNO",
+               "__typeHash__": 2764331143,
+               "__targetFileName__": "base/meta/EffectGroup/ui_shielded.efg",
+               "groupName": "EffectGroup",
+               "name": "ui_shielded"
+              },
+              "szUIRActorPath": ".vfx_canvas",
+              "eScaleMethod": 0,
+              "vecScale": {
+               "x": 1,
+               "y": 1
+              },
+              "unk_4a73e5": {
+               "x": -1,
+               "y": -1
+              }
+             }
+            ]
+           },
+           "hOptionalUIRActorStyleFields": {}
+          }
+         ],
+         "arChildren": [],
+         "unk_1cb": []
+        }
+       ],
+       "unk_1cb": []
+      }
+     ],
+     "unk_1cb": []
+    },
+    {
+     "__type__": "UIControlTemplate",
+     "__typeHash__": 641859515,
+     "szName": "HealthBallInjured",
+     "ptInlineStyle": [
+      {
+       "__type__": "UIWindowStyle",
+       "__typeHash__": 506492871,
+       "dwType": 506492871,
+       "dwPad": 0,
+       "hParentStyle": {
+        "__type__": "UIControlHandle",
+        "__typeHash__": 3063971755,
+        "snoUI": null,
+        "szControlName": 0
+       },
+       "unk_441f783": "0",
+       "hOptionalUIControlStyleFields": {
+        "bActive": 1
+       },
+       "tConsoleInput": {
+        "__type__": "UIControlConsoleInput",
+        "__typeHash__": 3089331074,
+        "hOptionalUIControlConsoleInputFields": {}
+       },
+       "hOptionalUIWindowStyleFields": {
+        "nTop": 198,
+        "nHeight": 175,
+        "eVerticalAnchoring": 2,
+        "nBottom": 140,
+        "nRight": 553,
+        "nWidth": 175,
+        "nLeft": -280,
+        "eHorizontalAnchoring": 1
+       }
+      }
+     ],
+     "arChildren": [
+      {
+       "__type__": "UIControlTemplate",
+       "__typeHash__": 641859515,
+       "szName": "InjuredBaseActor",
+       "ptInlineStyle": [
+        {
+         "__type__": "UIRActorStyle",
+         "__typeHash__": 2564089914,
+         "dwType": 2564089914,
+         "dwPad": 0,
+         "hParentStyle": {
+          "__type__": "UIControlHandle",
+          "__typeHash__": 3063971755,
+          "snoUI": null,
+          "szControlName": 0
+         },
+         "unk_441f783": "0",
+         "hOptionalUIControlStyleFields": {},
+         "tConsoleInput": {
+          "__type__": "UIControlConsoleInput",
+          "__typeHash__": 3089331074,
+          "hOptionalUIControlConsoleInputFields": {}
+         },
+         "hOptionalUIWindowStyleFields": {
+          "nHeight": 169,
+          "eVerticalAnchoring": 2,
+          "nRight": -151,
+          "nWidth": 169,
+          "eHorizontalAnchoring": 1,
+          "hImageFrame": {
+           "__type__": "UIImageHandleReference",
+           "__typeHash__": 1797021084,
+           "hImageHandle": 0
+          }
+         },
+         "hOptionalUIRActorStyleFields": {
+          "snoActor": {
+           "__raw__": 1028969,
+           "__group__": 1,
+           "__type__": "DT_SNO",
+           "__typeHash__": 2764331143,
+           "__targetFileName__": "base/meta/Actor/healthGlobe_centerUI_injured.acr",
+           "groupName": "Actor",
+           "name": "healthGlobe_centerUI_injured"
+          }
+         }
+        }
+       ],
+       "arChildren": [],
        "unk_1cb": []
       }
      ],
