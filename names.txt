@@ -486,6 +486,8 @@ DT_VELOCITY
 DT_WORD
 DWordDataMessage
 DamageTakenBuffCallback
+DataAttribute
+DataAttribute_Table
 DataIDDataMessage
 DeathFadeTimeMessage
 DeathLookTemplate
@@ -546,6 +548,8 @@ DungeonAffixFamilyEntry
 DungeonAffixFamilyEntry_Table
 DungeonAffixPreloadHelper
 DungeonAffixRange
+DungeonFlavorData
+DungeonFlavorData_Table
 DungeonKeyBlockedMessage
 DungeonList
 DungeonSigilTierSubcondition
@@ -693,6 +697,7 @@ GameTestingInteractNPC
 GameTestingInvitePlayersToPartyMessage
 GameTestingMonsterSamplingStartMessage
 GameTestingMonsterSkillSamplingStartMessage
+GameTestingMountSamplingStartMessage
 GameTestingNPCSamplingStartMessage
 GameTestingPersonaSamplingStartMessage
 GameTestingProfilingStarted
@@ -704,6 +709,7 @@ GameTestingSellItem
 GameTestingSetTimeOfDay
 GameTestingSkillSamplingStartMessage
 GameTestingSmokeSamplingStartMessage
+GameTestingStartTestMessage
 GameTestingStatusTextMessage
 GameTestingTakeScreenshotMessage
 GameTestingUnlockRecipeTier
@@ -902,6 +908,7 @@ ItemSourceWorldTierSubcondition
 ItemSpecifierData
 ItemTier
 ItemTypeDefinition
+ItemTypeHardpointOffsets
 ItemUpgradeCountSubcondition
 ItemUpgradeIQLGetAffixesMessage
 ItemUpgradeIQLGetAffixesResultMessage
@@ -936,6 +943,8 @@ LeaderboardPlatform
 LeaderboardRule
 LearnedLore
 LevelAreaDefinition
+LevelAreaEdge
+LevelAreaEdgePoints
 LevelAreaTagSubcondition
 LevelAreaTagsEntry
 LevelAreaTagsEntry_Table
@@ -944,6 +953,8 @@ LevelScalingDefinition
 LevelScalingDefinition_Table
 LevelUpNotificationEntry
 LightDefinition
+LightGroupSettings
+LightGroupSettingsOptionalFieldMapDefaults
 LightInfluenceSettings
 LightInstanceData
 LightStateParams
@@ -2006,6 +2017,8 @@ TemperData
 TemperItemMessage
 TemperItemResultMessage
 TemperLimit
+TemperRecipeFamily
+TemperRecipeFamily_Table
 TemperedAffix
 TemperingData
 TerritoryDefinition
@@ -2019,6 +2032,7 @@ TexAnimTranslationCurve
 TexFrame
 TextureContent
 TextureDefinition
+TextureOverride
 TiledStyleDefinition
 TiledStyleDefinitionOptionalFieldMapDefaults
 TiledWindowPieces
@@ -2586,6 +2600,7 @@ arBakedLayers
 arBakedMaskTexturesInfo
 arBakedSplineNodes
 arBannerShapes
+arBaseAppearanceTextureOverrides
 arBattlePassTiers
 arBeardStyleChoices
 arBindings
@@ -2872,6 +2887,7 @@ arMountTrophyTemplates
 arMountTypeFootstepEffect
 arMountTypeFootstepWalkEffect
 arMountTypeFootsteps
+arMountedClothOverrides
 arMounts
 arMountsTemplates
 arMusicSegments
@@ -2917,6 +2933,7 @@ arPieces
 arPlatforms
 arPlayStyle
 arPlayedFlags
+arPointGroups
 arPoints
 arPointsPerDataType
 arPointsPerRewardThreshold
@@ -3240,6 +3257,7 @@ bHideOffhand
 bHideRewardNotification
 bHideSheathed
 bHideWhenZero
+bHighlight
 bHitSomething
 bHorizontal
 bHyperlinkAware
@@ -3276,6 +3294,7 @@ bIsAutoPickup
 bIsBasicAttack
 bIsCheat
 bIsChild
+bIsCombatPet
 bIsCoreStat
 bIsCraftItemName
 bIsCraftingMat
@@ -3294,6 +3313,7 @@ bIsLocalCoopPickup
 bIsMale
 bIsMilestone
 bIsPassive
+bIsPassivePower
 bIsPlayer
 bIsPlayerAlly
 bIsPrimary
@@ -3313,6 +3333,7 @@ bLeader
 bListBoxHorizontal
 bLocalEventSpawned
 bLoop
+bLoopTests
 bLootExplodes
 bLowerIsBetter
 bManuallySpecified
@@ -3865,12 +3886,16 @@ eAnimLayer
 eAnimLayerMode
 eAnimLoopMode
 eAnimReason
+eAnimSetType
 eAnimationBoneMasking
 eAnimationLayer
 eAnimationScalingType
 eAnimsetType
 eAspectQualityModifier
 eAttractorVolume
+eAttribOperator
+eAttribParamType
+eAttribType
 eAttribute
 eAudioVolumeShape
 eBackStencilBufferCompareFunc
@@ -4059,6 +4084,7 @@ eLayoutBehavior
 eLayoutType
 eLeaderboardType
 eLevelAreaVolumeShape
+eLightGroup
 eLimitCondition
 eLineClass
 eLineGender
@@ -4258,6 +4284,7 @@ eTeamColoring
 eTeamIndex
 eTeamType
 eTemperingRecipeRarity
+eTestType
 eTexFormat
 eTextJustify
 eTextJustifyVertical
@@ -4402,6 +4429,7 @@ fGustFrequency
 fGustRiseScalar
 fGustStrengthMax
 fGustStrengthMin
+fHardpointOffsetsHinting
 fHasGlobalMarkers
 fHasGraph
 fHasService
@@ -4725,6 +4753,7 @@ flClutterBuffersSize
 flClutterZOffset
 flCombatAcceleration
 flCombatRadius
+flCompanionAngle
 flCompliance
 flCompression
 flCompressorAttackMs
@@ -4834,6 +4863,7 @@ flEliteMonsterSizeScalar
 flEliteMonsterXPScalar
 flEmissive
 flEmissiveStrength
+flEmoteAngle
 flEndFStop
 flEndFarTransition
 flEndFocalDistance
@@ -5108,6 +5138,7 @@ flMonsterCritDamageScalar
 flMonsterIntensityOffset
 flMonsterNonPhysicalDamageScalar
 flMonsterSeasonalBonusDamageScalar
+flMountAngle
 flMountFearDecayRate
 flMountFearMaxRadius
 flMountKnockbackDistance
@@ -5385,6 +5416,7 @@ flTimeUntilFade
 flToMovementBlendTimeOverride
 flTop
 flTotalLength
+flTownPortalCosmeticPlayerAngle
 flTrackSensitivity
 flTranslucencyNormalOffset
 flTranslucencyScale
@@ -5517,6 +5549,7 @@ gbidPrefabScopedActorGroup
 gbidPrimaryTag
 gbidRankReward
 gbidRanks
+gbidRecipeFamily
 gbidRequiredDungeonState
 gbidRequiredLevelAreaTag
 gbidReward
@@ -5655,6 +5688,7 @@ hOptionalAdvancedBloomSettingsFields
 hOptionalColorCorrectionParamsFields
 hOptionalIconAnchorPointFields
 hOptionalIconScaleFields
+hOptionalLightGroupSettingsFields
 hOptionalRainSplashSurfaceParticleFields
 hOptionalRenderPassFields
 hOptionalShaderMapFields
@@ -5952,6 +5986,7 @@ nCircleSegmentCount
 nClanBankTabCost
 nClothBoneCount
 nCommandFrame
+nCommandIndex
 nCompressedGridSubdivision
 nControllerReboundDuration
 nConvLineGUID
@@ -7309,9 +7344,12 @@ snoMonsterFootstepWalkEffect
 snoMonsterPotentialAffixes
 snoMonsterRarityEffectGroup
 snoMount
+snoMountActor
+snoMountArmor
 snoMountPaperdollWorld
 snoMountPower
 snoMountPowerOverride
+snoMountTrophy
 snoMountUIWorld
 snoMountedAnimSet
 snoMountedAnimSetOverride
@@ -7372,6 +7410,7 @@ snoOneHandOff
 snoOperatePowerAnimKey
 snoOptionalPreloadCondition
 snoOriginalActorLoot
+snoOtherLevelArea
 snoOutroEffect
 snoOverrideMaterial
 snoOverridePower
@@ -7770,6 +7809,7 @@ szComboboxOnClick
 szComboboxPlaceholderText
 szCommand
 szComment
+szCompletedTitle
 szComponent
 szControlName
 szCurrentTargetBranch
@@ -7779,11 +7819,13 @@ szDescription
 szDesignerVariable
 szDesignerVariableProgressBarTemplate
 szDrawHook
+szEntryPoint
 szEnumName
 szEventName
 szEventTrackerPrefix
 szFeet
 szFileName
+szFilter
 szFoWUIControl
 szFoleyTypeTag
 szFontColorOverride
@@ -7804,6 +7846,7 @@ szIDNext
 szIDScrollbar
 szIDStoryboard
 szIconLabel
+szIconTooltip
 szIconUIControl
 szIndicatorId
 szInternalName
@@ -7978,6 +8021,7 @@ szTestName
 szText
 szTileSet
 szTileSetName
+szTitle
 szToken
 szToolTip
 szTooltip
@@ -8007,6 +8051,7 @@ szWeaponPrefix
 tAABB
 tAIDisperseData
 tActiveSkills
+tActorFormula
 tActorNameInfo
 tAdditionalRandomAffixesRange
 tAdvanceEvent
@@ -8206,6 +8251,7 @@ tFlatLevel
 tFlickerAmount
 tFlickerDelay
 tFlipLocationMarkerHandle
+tFloatRange
 tFogMask
 tFoleyMaterialTag
 tFoliage
@@ -8277,11 +8323,13 @@ tInitialCost
 tInitialLoadingInfo
 tInputRange
 tInstanceData
+tIntRange
 tInterval
 tIntervalDelta
 tInvImages
 tInvLocationData
 tItemConfiguration
+tItemFormula
 tItemId
 tItemRewardInfo
 tItemTier
@@ -8343,6 +8391,7 @@ tMaxStackCount
 tMetadata
 tMinBlend
 tMinRequired
+tMinimapIcon
 tModalType
 tMonsterACDInfo
 tMonsterFootsteps
@@ -8725,6 +8774,7 @@ uProtocolHash
 uQuantity
 uRagdollDegrade
 uRewardClaimedFlags
+uSampleTime
 uSeason
 uSeasonFeature
 uSec
@@ -8745,6 +8795,7 @@ uToken
 uTradeId
 uUserData
 uVal
+uWaitTime
 uWeek
 uiEffect
 updateInterval
